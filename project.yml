@@ -1,12 +1,5 @@
 ---
-settings:
-  name: AFF and FAS Controller Upgrade
-  internal:
-    pdf_enabled: true
-  prod:
-    pdf_enabled: true
-    harmony_enabled: true
-    langs: ja-jp,us-en,zh-cn
+settings: {}
 sidebar:
   entries:
   - title: AFF および FAS システムのアップグレードに関するドキュメント
