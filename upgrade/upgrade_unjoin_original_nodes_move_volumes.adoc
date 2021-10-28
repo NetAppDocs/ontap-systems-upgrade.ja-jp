@@ -1,0 +1,81 @@
+---
+permalink: upgrade/upgrade-unjoin-original-nodes-move-volumes.html 
+sidebar: sidebar 
+keywords: volume, move, node, unjoin, original, cluster, configuration, disk, initialize, unjoin the original nodes from the cluster 
+summary: ボリュームを新しいノードに移動したら、クラスタから元のノードを削除します。ノードを削除すると、ノードの設定が消去され、すべてのディスクが初期化されます。 
+---
+= クラスタから元のノードを分離
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームを新しいノードに移動したら、クラスタから元のノードを削除します。ノードを削除すると、ノードの設定が消去され、すべてのディスクが初期化されます。
+
+.手順
+. 元のノードでハイアベイラビリティ構成を無効にします。「 storage failover modify -node original_node_name -enabled false
+. advanced 権限レベルに切り替えます。
++
+「 advanced 」の権限が必要です
+
+. イプシロンが設定されたノードを特定します。
++
+「 cluster show 」を参照してください
+
++
+次の例では、「 node0 」に現在イプシロンが設定されています。
+
++
+[listing]
+----
+cluster::*>
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. 元のノードのいずれかにイプシロンが設定されている場合は、別のノードにイプシロンを移動します。
++
+.. 元のノードからイプシロンを削除します。 +`cluster modify -node original_node_name -epsilon false
+.. 別のノードにイプシロンを割り当てます。 +`cluster modify -node new_node_name -epsilon true
+
+
+. クラスタに残すノードから、元の各ノードをクラスタから削除します（ advanced 権限レベル）。
++
+cluster unjoin -node original_node_name
+
++
+次のようなメッセージが表示されます。
+
++
+[listing]
+----
+Warning: This command will unjoin node node_name from the cluster. You
+         must unjoin the failover partner as well. After the node is
+         successfully unjoined, erase its configuration and initialize all
+         disks by using the "Clean configuration and initialize all disks (4)"
+         option from the boot menu.
+         Do you want to continue? {y|n}: y
+----
+. 「 y 」と入力して続行します。
++
+参加していないノードは自動的にリブートされ、ブートメニューで停止します。
+
+. 未参加ノードのブートメニューからオプション * （ 4 ） Clean configuration and initialize all disks * を選択して、ノードの設定を消去し、すべてのディスクを初期化します。
++
+次のようなメッセージが表示されます。
+
++
+[listing]
+----
+Zero disks, reset config and install a new file system?:
+This will erase all the data on the disks, are you sure?:
+----
+. 両方のプロンプトで「 y 」と入力します。
+. クラスタにノードが 2 つしか残っていない場合は、 2 ノードクラスタのハイアベイラビリティを設定します。
++
+cluster ha modify -configured true
+
+

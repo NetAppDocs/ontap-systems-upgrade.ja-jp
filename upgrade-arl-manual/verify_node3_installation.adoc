@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/verify_node3_installation.html 
+keywords: verify, node3, install, installation 
+summary: node3 のインストールとブートが完了したら、正しくインストールされていること、クラスタの一部であること、および node2 と通信できることを確認する必要があります。 
+---
+= ノード 3 のインストールを確認します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+node3 のインストールとブートが完了したら、正しくインストールされていること、クラスタの一部であること、および node2 と通信できることを確認する必要があります。
+
+.手順
+. [[step1] システムプロンプトで、ノード 3 にログインします。そのあと、 node3 が node2 と同じクラスタの両方に属しており、正常であることを確認します。
++
+「 cluster show 」を参照してください
+
+. [step2] node3 が node2 と通信できること、およびすべての LIF が動作していることを確認します。
++
+network interface show -curr-node node3
+
+. [[step3]] 次のいずれかの操作を実行します。
++
+[cols="35,65"]
+|===
+| クラスタの種類 | 作業 
+
+
+| SAN 環境の場合 | - 完了しました <<step4,手順 4>> セクションに移動します link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs.html["ノード 1 で所有されている NAS データ LIF をノード 2 からノード 3 に移動し、ノード 3 の SAN LIF を確認します"]。 
+
+
+| SAN 環境では使用できません | 手順 4 を省略して、に進みます link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs.html["ノード 1 で所有されている NAS データ LIF をノード 2 からノード 3 に移動し、ノード 3 の SAN LIF を確認します"]。 
+|===
+. [[step4]] ノードの 1 つで次のコマンドを入力し、その出力を調べて、 node2 および node3 がクォーラムにあることを確認します。
++
+event log show -messagename scsiblade. *
+
++
+次の例は、クラスタ内のノードがクォーラムにある場合の出力を示しています。
+
++
+[listing]
+----
+cluster::> event log show -messagename scsiblade.*
+Time                Node   Severity      Event
+------------------- ------ ------------- --------------------------
+8/13/2012 14:03:51  node1  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:51  node2  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:48  node3  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:43  node4  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+----
+

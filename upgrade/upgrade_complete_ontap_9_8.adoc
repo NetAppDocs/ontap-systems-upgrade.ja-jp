@@ -1,0 +1,17 @@
+---
+permalink: upgrade/upgrade-complete-ontap-9-8.html 
+sidebar: sidebar 
+keywords: complete, upgrade, ontap, complete the upgrade in ontap 9.8 
+summary: ONTAP 9.8 でアップグレードを完了するには、次の手順を実行します。 
+---
+= ONTAP 9.8 でアップグレードを完了します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.8 でアップグレードを完了するには、次の手順を実行します。
+
+* link:upgrade-map-network-ports-ontap-9-8.html["ONTAP 9.8 を使用してネットワークポートをマッピングします"]
+* link:upgrade-final-upgrade-steps-in-ontap-9-8.html["ONTAP 9.8 で最後のアップグレード手順を実行します"]
+

@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/persist_enable_switches.html 
+keywords: enable, switches, fabric, persistent 
+summary: ファブリック内のスイッチを永続的に有効にし、 Brocade 、 Cisco を有効にします 
+---
+= スイッチを永続的に有効にします
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ファブリック内のスイッチを永続的に有効にする必要があります。
+
+スイッチを永続的に有効にします。
+
+* Brocade スイッチの場合は、「 witchCfgPersistentenable 」コマンドを使用します。
++
+[listing]
+----
+FC_switch_A_1:admin> switchCfgPersistentenable
+----
+* Cisco スイッチの場合は 'no suspend' コマンドを使用します
++
+[listing]
+----
+vsan [vsna #]no suspend
+----
+

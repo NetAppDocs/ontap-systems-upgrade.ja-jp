@@ -1,0 +1,11 @@
+= 
+
+
+アップグレードの完了後、 MetroCluster 構成を使用している場合は、誤ったポートに FC 論理インターフェイス（ LIF ）が残っている可能性があります。再同期処理を実行して、 LIF を正しいポートに再割り当てすることができます。
+
+.ステップ
+. MetroCluster を正しいポートに再割り当てするには、「 cifs vserver resync 」コマンドを入力します。
++
+「 MetroCluster vserver resync -vserver vserver_name fcp-mc.headupgrade.test.vs` 」です
+
+

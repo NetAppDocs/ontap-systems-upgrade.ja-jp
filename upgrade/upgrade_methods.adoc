@@ -1,0 +1,26 @@
+---
+permalink: upgrade/upgrade-methods.html 
+sidebar: sidebar 
+keywords:  
+summary: 一般に、コントローラハードウェアのアップグレード方法は、元のノードのプラットフォームモデルによって異なります。アップグレードするには、ストレージを移動するか（停止を伴う手順）、またはボリュームを移動します（無停止の手順）。 
+---
+= コントローラハードウェアをアップグレードする方法を選択します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一般に、コントローラハードウェアのアップグレード方法は、元のノードのプラットフォームモデルによって異なります。アップグレードするには、ストレージを移動するか（停止を伴う手順）、またはボリュームを移動します（無停止の手順）。
+
+image::../media/methods_for_upgrading_controller_hardware.png[コントローラハードウェアをアップグレードする方法]
+
+
+NOTE: 内蔵ドライブを搭載したモデル： FAS2220 、 FAS2240-2 、 FAS2240-4 、 FAS2520 、 FAS2552 、 FAS2554 、 FAS2620 、 FAS2650 、 FAS2720 、 FAS2750 、 AFF A200 、 AFF A220 、 AFF A700s 、 AFF A800 、 AFF A250 。
+
+お使いのシステムが上記のリストにない場合は、を参照してください https://hwu.netapp.com["NetApp Hardware Universe の略"] 内蔵ドライブがあるかどうかを確認します。
+
+* 関連情報 *
+
+link:upgrade-by-moving-storage-parent.html["ストレージの移動によるアップグレードのワークフロー"]
+
+link:upgrade-by-moving-volumes-parent.html["ボリュームを移動することによるアップグレードのワークフロー"]

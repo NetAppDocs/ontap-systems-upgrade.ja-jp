@@ -1,0 +1,62 @@
+---
+permalink: upgrade/upgrade-delete-san-lifs.html 
+sidebar: sidebar 
+keywords: cluster, san, environment, delete, lid, original, node, unjoin, original, delete san lifs from the original nodes 
+summary: クラスタが SAN 環境にある場合は、元のノードから SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。 
+---
+= SAN LIF を元のノードから削除
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラスタが SAN 環境にある場合は、元のノードから SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。
+
+.手順
+. iSCSI イニシエータを使用している場合は、次の手順を実行します。
++
+.. 元のノードの SVM に現在接続されているアクティブなイニシエータの一覧を古い LIF ごとに 1 回表示します。 +`iscsi connection show -vserver Vserver_name -lif old_lif`
++
+次の例は、 SVM vs1 に接続されたアクティブなイニシエータを使用したコマンドの出力を示しています。
+
++
+[listing]
+----
+cluster::> iscsi connection show -vserver vs1 -lif data2
+          Tpgroup        Conn  Local           Remote          TCP Recv
+Vserver   Name     TSIH  ID    Address         Address         Size
+--------- -------- ----- ----- --------------- --------------- --------
+vs1       data         9     1 10.229.226.166  10.229.136.188    131400
+----
+.. 元のノードにログインしているイニシエータがある場合は、ホストコンピュータからセッションをログアウトします。
+
+
+. ポートセットリストを表示して、元のノードの iSCSI LIF または FC LIF がポートセットに属しているかどうかを確認します。
++
+lun portset show
+
++
+次に、「 lun portset show 」コマンドの出力例を示します。
+
++
+[listing]
+----
+cluster:> lun portset show
+Virtual
+Server    Portset      Protocol Port Names              Igroups
+--------- ------------ -------- ----------------------- ------------
+js11      ps0          mixed    LIF1,                   igroup1
+                                LIF2
+          ps1          iscsi    LIF3                    igroup2
+          ps2          fcp      LIF4                    -
+3 entries were displayed.
+----
+. 元のノードのいずれかの iSCSI または FC LIF がポートセットのメンバーである場合は、ポートセットから削除します。
++
+`lun portset remove -vserver vserver_name -portset portset_name -port-name lif_name`
+
+. 元のノードの LIF を削除します。
++
+network interface delete -vserver vserver_name -lif lif_name
+
+

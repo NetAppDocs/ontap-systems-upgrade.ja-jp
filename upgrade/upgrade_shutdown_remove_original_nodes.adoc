@@ -1,0 +1,126 @@
+---
+permalink: upgrade/upgrade-shutdown-remove-original-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: 元のノードをシャットダウンして削除するときは、アップグレードについての AutoSupport メッセージを送信し、メールボックスを削除し、ノードの電源をオフにして、シャーシを取り外す必要があります。 
+---
+= 元のノードをシャットダウンします
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+元のノードをシャットダウンして削除するときは、アップグレードについての AutoSupport メッセージを送信し、メールボックスを削除し、ノードの電源をオフにして、シャーシを取り外す必要があります。
+
+.手順
+. node1 と node2 から AutoSupport メッセージを送信し、テクニカルサポートにアップグレードについて通知します。
++
+「 system node AutoSupport invoke -node node_name -type all -message 」 MAINT=2h platform_original から platform_new への node_name のアップグレード
+
+. ノード 1 とノード 2 でハイアベイラビリティまたはストレージフェイルオーバーを無効にします。
++
+[cols="1,2"]
+|===
+| 使用する方法 | 入力するコマンド 
+
+
+ a| 
+2 ノードクラスタ
+ a| 
+.. cluster ha modify -configured false
+.. 「 storage failover modify -node node_name -enabled false 」という名前になります
+
+
+
+
+ a| 
+3 ノード以上のクラスタ
+ a| 
+「 storage failover modify -node node_name -enabled false 」という名前になります
+
+|===
+. ノードを停止します。
++
+「 system node halt -node node_name 」
+
++
+リブート・プロセス中に定足数チェックを抑制するには '-ignore-quorum -warnings オプションを使用します
+
+. シリアルコンソールに接続していない場合は、接続します。ノードに LOADER プロンプトが表示されている必要があります。「 boot_ontap maint 」コマンドを使用して、メンテナンスモードに切り替えてブートします。
++
+パートナーノードが停止しているか、パートナーノードでテイクオーバーが手動で無効になっていることの確認を求めるメッセージが表示されることがあります。続行するには 'yes' を入力します
+
+. [[shutdown_node_A_1 step5] - メンテナンスモードでディスク所有権情報を通じて取得された、各元のノードのシステム ID を記録します。
++
+「ディスクショー V 」
+
++
+システム ID は、元のノードのディスクを新しいノードに割り当てるときに必要となります。
+
++
+[listing]
+----
+*> disk show -v
+Local System ID: 118049495
+DISK    OWNER               POOL    SERIAL NUMBER          HOME
+----    -----               ----    -------------          ----
+0a.33   node1 (118049495)   Pool0   3KS6BN970000973655KL   node1 (118049495)
+0a.32   node1 (118049495)   Pool0   3KS6BCKD000097363ZHK   node1 (118049495)
+0a.36   node1 (118049495)   Pool0   3KS6BL9H000097364W74   node1 (118049495)
+...
+----
+. FC または CNA ポートを設定している場合は、設定をメンテナンスモードで表示します。
++
+ucadmin show
+
++
+あとで参照できるように、コマンドの出力を記録しておく必要があります。
+
++
+[listing]
+----
+*> ucadmin show
+Current Current Pending   Pending
+Adapter Mode    Type      Mode    Type    Status
+------- ------- --------- ------- ------- ------
+0e      fc      initiator -       -       online
+0f      fc      initiator -       -       online
+0g      cna     target    -       -       online
+0h      cna     target    -       -       online
+...
+----
+. メンテナンスモードで、 enode1 と node2 のメールボックスを破棄します： +
++
+「マイボックス破壊ローカル」
+
++
+次のようなメッセージがコンソールに表示されます。
+
++
+[listing]
+----
+Destroying mailboxes forces a node to create new empty mailboxes, which
+clears any takeover state, removes all knowledge of out-of-date plexes and
+mirrored volumes, and will prevent management services from going online in
+2-node cluster HA configurations.
+Are you sure you want to destroy the local mailboxes?
+----
+. 次のようなプロンプトが表示されたら 'y' と入力してメールボックスを削除します
++
+[listing]
+----
+.............Mailboxes destroyed
+Takeover On Reboot option will be set to ON after the node boots.
+This option is ON by default except on setups that have iSCSI or FCP license.
+Use "storage failover modify -node <nodename> -onreboot false" to turn it OFF.
+
+*>
+----
+. メンテナンスモードを終了します。
++
+「 halt 」
+
+. ノード 1 とノード 2 の電源をオフにし、電源からケーブルを抜きます。
+. ノード 1 とノード 2 からすべてのケーブルにラベルを付けて取り外します。
+. ノード 1 とノード 2 を含むシャーシを取り外します。
+

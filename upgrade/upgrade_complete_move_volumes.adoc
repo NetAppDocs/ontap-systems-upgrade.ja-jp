@@ -1,0 +1,68 @@
+---
+permalink: upgrade/upgrade-complete-move-volumes.html 
+sidebar: sidebar 
+keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade 
+summary: ボリュームを移動することでアップグレードの手順を完了するには、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは NCA ポートを設定する必要がある場合もあります。 
+---
+= アップグレードを完了します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームを移動することでアップグレードの手順を完了するには、サービスプロセッサ（ SP ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは NCA ポートを設定する必要がある場合もあります。
+
+. 必要に応じて、新しいノードで SP を設定します。
++
+「 system service-processor network modify 」を参照してください
+
+. 必要に応じて、新しいノードに新しいライセンスをインストールします。
++
+「システムライセンスが追加されました」
+
+. 新しいノードで AutoSupport をセットアップします。
++
+「システム・ノード AutoSupport modify 」
+
+. 新しい各ノードから、アップグレード後の AutoSupport メッセージをテクニカルサポートに送信します。
++
+「 system node AutoSupport invoke -node node_name -type all -message 」 node_name が platform_old から platform_new にアップグレードされました
+
+. の該当する手順を使用して、ストレージまたはボリュームの暗号化機能をリストアしますhttps://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 ネットアップ暗号化パワーガイド"]
++
+オンボードキー管理と外部キー管理のどちらを使用しているかに応じて、次のいずれかの手順を実行します。
+
++
+** 「オンボード・キー管理の暗号化キーをリストアする」
+** 「外部キー管理の暗号化キーを復元する」
+
+
+. 新しいノードに FC ポート（オンボードまたは FC アダプタ上）、オンボード CNA ポート、または CNA カードがある場合は、 FC ポートまたは CNA ポートを設定し、ストレージシステムプロンプトから次のコマンドを入力します。
++
+「 system node hardware unified-connect modify -node node-name -adapter adapter-name -mode ｛ fc | cna ｝ -type ｛ target | initiator ｝ 」です
+
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["『 ONTAP 9 SAN アドミニストレーションガイド』"]
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『 SAN アドミニストレーションガイド』を検索してください"]
+
++
+CNA の設定は、 CNA アダプタがオフラインの場合にのみ変更できます。
+
+. 必要に応じて、新しいノードにスイッチレスクラスタをセットアップします。
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+
+. 必要に応じて、ネットアップサポートサイト経由で元のシステムを運用停止にし、システムの運用を停止したこととサポートデータベースから削除できることをネットアップに通知します。
++
+.. にログインします https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"] サイト
+.. [ インストール済みシステム ] のリンクをクリックします。
+.. [ インストール済みシステム ] ページで、フォームに古いシステムのシリアル番号を入力し、 [* Go!] をクリックします
+.. Decommission Form ページでフォームに入力し、 *Submit をクリックします。
+
+
+

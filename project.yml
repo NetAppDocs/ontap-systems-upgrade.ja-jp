@@ -1,0 +1,60 @@
+---
+settings:
+  name: AFF and FAS Controller Upgrade
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: true
+    langs: ja-jp,us-en,zh-cn
+sidebar:
+  entries:
+  - title: AFF および FAS システムのアップグレードに関するドキュメント
+    url: "/index.html"
+  - section: upgrade
+  - section: upgrade-arl-auto-app
+  - section: upgrade-arl-manual-app
+  - section: upgrade-arl-auto
+  - section: upgrade-arl-manual
+homepage:
+  tiles:
+  - title: はじめに
+    links:
+    - title: ONTAP リリースノート
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
+  - title: ストレージまたはボリュームの移動によるアップグレード（ほとんどのシステム）
+    links:
+    - title: コントローラハードウェアをアップグレードします
+      url: "/upgrade/index.html"
+  - title: ONTAP 9.8 以降を実行しているシステムでアグリゲートを移動してアップグレードします
+    links:
+    - title: "「 system controller replace 」コマンドを使用（ほとんどのシステム）"
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+    - title: 手動コマンドを使用する
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+  - title: ONTAP 9.7 以前を実行しているシステムでアグリゲートを移動してアップグレードします
+    links:
+    - title: "「 system controller replace 」コマンドを使用します（ほとんどのシステム）。"
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+    - title: 手動コマンドを使用する
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+  - title: MetroCluster 構成のシステムをアップグレードする
+    links:
+    - title: MetroCluster 構成のアップグレード用手順を選択します
+      url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
+  - title: リソースの追加
+    links:
+    - title: ONTAP システムのドキュメント
+      url: https://docs.netapp.com/us-en/ontap-systems/index.html
+    - title: ONTAP スイッチのドキュメント
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
+    - title: ONTAP ソフトウェアのドキュメント
+      url: https://docs.netapp.com/us-en/ontap/index.html
+    - title: NetApp Hardware Universe の略
+      url: https://hwu.netapp.com/
+    - title: NetApp Active IQ Config Advisor の略
+      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
+    - title: NetApp Interoperability Matrix を参照してください
+      url: https://mysupport.netapp.com/matrix/#welcome
+    - title: ネットアップコミュニティ
+      url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins

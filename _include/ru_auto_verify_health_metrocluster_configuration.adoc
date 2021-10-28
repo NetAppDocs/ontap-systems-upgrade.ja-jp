@@ -1,0 +1,35 @@
+= 
+
+
+. MetroCluster チェックの実行操作が完了したら ' 結果を表示します
++
+MetroCluster チェックショー
+
++
+約 5 分後に、次の結果が表示されます。
+
++
+[listing]
+----
+metrocluster_siteA::*> metrocluster check show
+Last Checked On: 4/7/2019 21:15:05
+Component            Result
+---------------      -------
+nodes                ok
+lifs                 ok
+config-replication   ok
+aggregates           warning
+clusters             ok
+connections          not-applicable
+volumes              ok
+7 entries were displayed.
+----
+. 実行中の MetroCluster チェック処理のステータスを確認します。
++
+MetroCluster オペレーション履歴 show -job-id 38`
+
+. ヘルスアラートがないことを確認します。
++
+「 system health alert show 」というメッセージが表示されます
+
+

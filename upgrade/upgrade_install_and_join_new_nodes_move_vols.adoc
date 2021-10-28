@@ -1,0 +1,38 @@
+---
+permalink: upgrade/upgrade-install-and-join-new-nodes-move-vols.html 
+sidebar: sidebar 
+keywords: install, node, join, cluster, volume, original, node, install the new nodes and joining them to the cluster 
+summary: 元のノードからボリュームを移動できるように、新しいノードを設置してクラスタに追加する必要があります。 
+---
+= 新しいノードを設置してクラスタに追加
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+元のノードからボリュームを移動できるように、新しいノードを設置してクラスタに追加する必要があります。
+
+ボリュームを移動することでコントローラハードウェアをアップグレードする場合は、元のノードと新しいノードの両方が同じクラスタに存在する必要があります。
+
+.ステップ
+. 新しいノードを設置してクラスタに追加します。
++
+[cols="1,2"]
+|===
+| クラスタのバージョン | 参照するドキュメント 
+
+
+ a| 
+ONTAP 9.0 以降
+ a| 
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-expand/home.html["ONTAP 9 クラスタ拡張エクスプレスガイド"]
+
+
+
+ a| 
+ONTAP 9.0 より前のリリース
+ a| 
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『クラスタの拡張エクスプレスガイド』を検索してください"]
+
+|===
+

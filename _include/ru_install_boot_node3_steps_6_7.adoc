@@ -1,0 +1,31 @@
+= 
+
+
+. [[step6] 次のいずれかの操作を選択して、ネットブート接続を設定します。
++
+
+NOTE: ネットブート接続として管理ポートおよび IP を使用する必要があります。アップグレードの実行中にデータ LIF IP を使用しないでください。データ LIF が停止する可能性があります。
+
++
+[cols="25,75"]
+|===
+| 動的ホスト構成プロトコル（ DHCP ）の状態 | 作業 
+
+
+| 実行中です | ブート環境プロンプトで次のコマンドを使用して、自動的に接続を設定します。 ifconfig e0M -auto 
+
+
+| 実行されていません | ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。 ifconfig e0M -addr= <filer_addr> -mask= <netmask> -gw= <gateway> -dns= <dns_addr> domain= <dns_domain> `<filer_addr>`<netmask>` はストレージシステムのネットワークマスクです。「 <gateway>` 」は、ストレージシステムのゲートウェイです。「 <dns_addr> 」は、ネットワーク上のネームサーバの IP アドレスです。このパラメータはオプションです。「 <dns_domain> 」は、 Domain Name Service （ DNS ；ドメインネームサービス）ドメイン名です。このパラメータはオプションです。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
+|===
+. [[step7] node3 でネットブートを実行します。
++
+|===
+| 用途 | 作業 
+
+
+| FAS/AFF8000 シリーズシステム | netboot\http://<web_server_ip/path_to_web-accessible_directory>/netboot/kernel` 
+
+
+| その他すべてのシステム | netboot\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz` 
+|===
+

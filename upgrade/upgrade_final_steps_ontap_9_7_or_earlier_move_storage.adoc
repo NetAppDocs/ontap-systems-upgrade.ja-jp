@@ -1,0 +1,110 @@
+---
+permalink: upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html 
+sidebar: sidebar 
+keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, port, lif, re-enable, service, processor, sp, license, autosupport, fc, cna, por, perform final upgrade steps in ontap 9.7 or earlier 
+summary: ストレージを移動することでアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。 
+---
+= ONTAP 9.7 以前で最終アップグレード手順を実行します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ（ SP ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。
+
+以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8 を実行している場合は、の手順を使用する必要があります xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8 で最後のアップグレード手順を実行します]。
+
+.手順
+. ONTAP 9.8 を実行しているシステムの場合は、 * STOP * をクリックします。の手順を使用する必要があります xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8 で最後のアップグレード手順を実行します]。
+. ストレージシステムのプロンプトで、 LIF に関する情報を表示します。
++
+「 network interface show 」を参照してください
+
+. 新しいノードから未使用のポートを削除します（ advanced 権限レベル）。
++
+「 network port delete 」のように表示されます
+
+. SAN 環境の場合は、未使用の LIF をポートセットから削除して、 LIF を削除できるようにします。
++
+.. ポートセットリストを表示します。
++
+lun portset show
+
+.. 未使用の LIF をポートセットから削除します。
++
+「 lun portset remove 」
+
+
+
+. 新しいノードから未使用の各 LIF を削除します。
++
+「 network interface delete 」
+
+. 必要に応じて、新しいノードペアでストレージフェイルオーバーまたはハイアベイラビリティを再度有効にします。
++
+[cols="1,2"]
+|===
+| 使用する方法 | 作業 
+
+
+| 2 ノードクラスタ | 高可用性を再度有効にします : 「 cluster ha modify -configured true 
+
+
+| 3 つ以上のノードで構成されるクラスタ | ストレージフェイルオーバーを再度有効にします。「 storage failover modify -node node_name -enabled true 」 
+|===
+. 必要に応じて、新しいノードで SP を設定します。
++
+「 system service-processor network modify 」を参照してください
+
+. 必要に応じて、新しいノードに新しいライセンスをインストールします。
++
+「システムライセンスが追加されました」
+
+. 新しいノードで AutoSupport をセットアップします。
++
+「システム・ノード AutoSupport modify 」
+
+. 新しい各ノードから、アップグレード後の AutoSupport メッセージをテクニカルサポートに送信します。
++
+「 system node AutoSupport invoke -node node_name -type all -message 」 MAINT= end node_name が platform_old から platform_new に正常にアップグレードされました
+
+. の該当する手順を使用して、ストレージまたはボリュームの暗号化機能をリストアしますhttps://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["ONTAP 9 ネットアップ暗号化パワーガイド"]
++
+オンボードキー管理と外部キー管理のどちらを使用しているかに応じて、次のいずれかの手順を実行します。
+
++
+** 「オンボード・キー管理の暗号化キーをリストアする」
+** 「外部キー管理の暗号化キーを復元する」
+
+
+. 新しいノードに FC ポート（オンボードまたは FC アダプタ上）、オンボード CNA ポート、または CNA カードがある場合は、ストレージシステムプロンプトで次のコマンドを入力して、 FC ポートまたは CNA ポートを設定します。
++
+「 system node hardware unified-connect modify -node node-name -adapter adapter-name -mode ｛ fc | cna ｝ -type ｛ target | initiator ｝ 」です
+
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["『 ONTAP 9 SAN アドミニストレーションガイド』"]
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『 SAN アドミニストレーションガイド』を検索してください"]
+
++
+CNA の設定は、 CNA アダプタがオフラインの場合にのみ変更できます。
+
+. 必要に応じて、新しいノードにスイッチレスクラスタをセットアップします。
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+
+. 必要に応じて、ネットアップサポートサイト経由で元のシステムを運用停止にし、システムの運用を停止したこととサポートデータベースから削除できることをネットアップに通知します。
++
+.. にログインします https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"] サイト
+.. [ インストール済みシステム ] のリンクをクリックします。
+.. [ インストール済みシステム ] ページで、フォームに古いシステムのシリアル番号を入力し、 [* Go!] をクリックします
+.. Decommission Form ページでフォームに入力し、 *Submit をクリックします。
+
+
+
+
+手順のアップグレードが完了している。

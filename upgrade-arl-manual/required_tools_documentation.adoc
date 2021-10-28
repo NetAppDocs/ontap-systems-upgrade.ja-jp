@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/required_tools_documentation.html 
+keywords: Tool, documentation, center, guides, reference, worksheet 
+summary: アップグレード中に必要となるツールとドキュメント 
+---
+= 必要な工具とドキュメント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新しいハードウェアを設置するための特別なツールが必要です。また、アップグレードプロセス中に他のドキュメントを参照する必要があります。また、コントローラのアップグレードを完了するために必要な情報を記録しておく必要があります。情報を記録するためのワークシートが用意されています。
+
+アップグレードを実行するには、次の工具が必要です。
+
+* アースストラップ
+* No.2 プラスドライバ
+
+
+にアクセスします link:other_references.html["参考資料"] セクションをクリックして、このアップグレードに必要な参照ドキュメントのリストにアクセスします。

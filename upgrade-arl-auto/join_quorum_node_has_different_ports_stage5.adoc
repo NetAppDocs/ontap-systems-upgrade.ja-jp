@@ -1,0 +1,91 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/join_quorum_node_has_different_ports_stage5.html 
+keywords: quorum, cluster, network ports, node, broadcast domain 
+summary: ノードがクォーラムに正常に参加していることを確認する必要があります。 
+---
+= ノードのネットワークポートセットが異なる場合は、クォーラムを追加します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新しいコントローラが搭載されたノードがブートし、最初にクラスタへの追加を試みます。ただし、新しいノードのネットワークポートセットが異なる場合は、次の手順を実行して、ノードがクォーラムに正常に参加するようにする必要があります。
+
+関連するノードに対してこの手順を使用できます。node3 は、次のサンプル全体で使用されます。
+
+.手順
+. 次のコマンドを入力し、出力を確認して、新しいクラスタポートがクラスタブロードキャストドメインにあることを確認します。
++
+「 network port show -node node -port port -fields broadcast-domain 」
+
++
+次の例は、ポート「 e1a 」が node3 のクラスタドメインにあることを示しています。
+
++
+[listing]
+----
+cluster::> network port show -node node3 -port e1a -fields broadcast-domain
+node    port  broadcast-domain
+------  ----  ---------------
+node3   e1a   Cluster
+----
+. 次のコマンドを入力し、出力を確認して、クラスタブロードキャストドメインに正しいポートを追加します。
++
+network port modify -node -port -ipspace Cluster -mtu 9000`
+
++
+次の例は、ノード 3 にクラスタポート「 e1b 」を追加します。
+
++
+[listing]
+----
+network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
+----
+. 次のコマンドを使用して、 LIF ごとに 1 回、クラスタ LIF を新しいポートに移行します。
++
+network interface migrate -vserver Cluster -lif <lif_name> -source-node node3 destination-node node3 -destination-port <port_name>`
+
+. クラスタ LIF のホームポートを次のように変更します。
++
+「 network interface modify -vserver Cluster -lif <lif_name> – home-port <port_name> 」という形式になります
+
+. クラスタポートが Cluster broadcast-domain にない場合は、次のコマンドを使用して追加します。
++
+「 network port broadcast-domain add-ports -ipspace Cluster -broadcastdomain Cluster ports node: port 」のように設定されています
+
+. クラスタブロードキャストドメインから古いポートを削除します。関連する任意のノードに対してを使用できます。次のコマンドは、ノード 3 のポート「 e0d 」を削除します。
++
+「 network port broadcast-domain remove-ports network port broadcast-domain remove-ports ipspace Cluster -broadcast-domain Cluster -ports node3 ： e0d
+
+. ノードが次のようにクォーラムに再参加したことを確認します。
++
+cluster show -node node3 -fields health`
+
+. クラスタ LIF とノード管理 / クラスタ管理 LIF をホストしているブロードキャストドメインを調整します。各ブロードキャストドメインに正しいポートが含まれていることを確認してください。ポートをホストしているブロードキャストドメイン間や LIF のホームになっているブロードキャストドメイン間で移動することはできないため、 LIF を移行して変更する必要がある場合があります。
++
+.. LIF のホームポートを表示します。
++
+network interface show -fields home-node 、 home-port
+
+.. このポートを含むブロードキャストドメインを表示します。
++
+「 network port broadcast-domain show -port <node_name ： port_name> 」の形式で指定します
+
+.. ブロードキャストドメインのポートを追加または削除します。
++
+「 network port broadcast-domain add-ports network port broadcast-domain remove-port 」というメッセージが表示されます
+
+.. LIF のホームポートを変更します。
++
+「 network interface modify -vserver <vserver-name> -lif <lif_name> – home-port <port_name> 」という形式になります
+
++
+必要に応じて、クラスタ間ブロードキャストドメインを調整してクラスタ間 LIF を移行します。データ LIF は変更されません。
+
+
+
+

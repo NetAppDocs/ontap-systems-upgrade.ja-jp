@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/stage_3_install_boot_node3.html 
+keywords: relocate, retire, node1, steps 
+summary: ステージ 2 で、ノード 1 のアグリゲートと LIF をノード 2 に再配置し、ノード 1 の情報を記録してから、ノード 1 を廃棄します。 
+---
+= ステージ 3 ：ノード 3 をインストールしてブートします
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ステージ 3 で、ノード 3 をインストールしてブートし、クラスタポートとノード管理ポートをノード 1 からノード 3 にマッピングし、ノード 3 のインストールを確認して、ノード 1 に属するデータ LIF と SAN LIF をノード 2 からノード 3 に移動します。また、すべてのアグリゲートを node2 から node3 に再配置し、 node2 によって所有されているデータ LIF と SAN LIF を node3 に移動します。
+
+.手順
+. link:install_boot_node3.html["node3 をインストールしてブートします"]
+. link:set_fc_uta_uta2_config_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"]
+. link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]
+. link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["node1 で所有されている NAS データ LIF を node2 から node3 に移動し、ノード 3 の SAN LIF を確認します"]
+. link:relocate_non_root_aggr_node2_node3.html["ルート以外のアグリゲートを node2 から node3 に再配置します。"]
+. link:move_nas_lifs_node2_node3.html["node2 によって所有されている NAS データ LIF を node3 に移動する"]
+

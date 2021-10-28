@@ -1,0 +1,4 @@
+= 
+
+
+コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を使用してください link:https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/home.html["『 Controller Hardware Upgrade Express Guide 』を参照してください"] 代わりに、を参照してください  ONTAP 9 製品ドキュメントにアクセスするには、以下の手順を実行

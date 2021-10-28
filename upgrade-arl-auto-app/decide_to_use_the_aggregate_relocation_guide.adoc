@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.html 
+keywords: deciding, aggregate, relocation, guide, storage, controllers, administrators, ontap, ha, high, availability 
+summary: このガイドでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードする方法について説明します。 
+---
+= アグリゲートの再配置ガイドを使用するかどうかを決定します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+このマニュアルでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードし、既存のデータとディスクはすべて維持する方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
+
+このマニュアルは、次のような状況で使用することを想定しています。
+
+* ONTAP 9.8 以降を実行している。
+* 新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。
+* ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。
+* MetroCluster 構成をアップグレードする場合は、 4 ノード以上の FC 構成になり、すべてのノードで ONTAP 9.8 以降が実行されている必要があります。
++
+MetroCluster IP 構成のアップグレードについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび拡張ガイド _ へのリンク。
+
+
+
+
+NOTE: この手順では、 NetApp Storage Encryption （ NSE ）および NetApp Volume Encryption （ NVE ）を使用できます。
+
+次の表に、コントローラのアップグレードでサポートされるモデルマトリックスを示します。
+
+|===
+| 古いコントローラ | 交換用コントローラ 
+
+
+| FAS8020 、 FAS8040 、 FAS8060 、 FAS8080 | FAS8200 、 FAS8300 、 FAS8700 、 FAS9000 
+
+
+| AFF8020 、 AFF8040 、 AFF8060 、 AFF8080 | AFF A300 、 AFF A400 、 AFF A700 、 AFF A800^1 
+
+
+| FAS8200 | FAS8700 、 FAS9000 、 FAS8300 ^3^ 
+
+
+| AFF A300 | AFF A700 、 AFF A800^1 ^ 、 AFF A400 ^3^ 
+
+
+| AFF A320 | AFF A400 ^2^ 
+|===
+
+NOTE: コントローラのアップグレードモデルの組み合わせが上記の表にない場合は、テクニカルサポートにお問い合わせください。
+
+^1 A800 システムに必要な追加手順については、セクションの「 A800 」を参照する手順に進んでください link:set_fc_or_uta_uta2_config_on_node3.html#step23["ノード 3 の UTA / UTA2 ポートを確認して設定し、手順 23 を実行します"]または 。
+
+^2^ARL AFF A320 から AFF A400 システムへの自動アップグレードは、 ONTAP 9.9..1 からサポートされています。
+
+^3^ AFF A300 から AFF A400 または FAS8200 を 2 ノードスイッチレスクラスタ構成で FAS8300 システムにアップグレードする場合は、コントローラのアップグレード用の一時的なクラスタポートを選択する必要があります。AFF A400 および FAS8300 システムは、イーサネットバンドルとして、メザニンカードポートはイーサネットタイプ、 FC タイプの FC バンドルとして、 2 種類の構成で提供されます。
+
+* AFF A400 または FAS8300 では、イーサネットタイプの構成の場合、 2 つのメザニンポートのいずれかを一時的なクラスタポートとして使用できます。
+* AFF A400 または FC タイプの構成で FAS8300 を使用する場合は、 4 ポートの 10GbE ネットワークインターフェイスカード（パーツ番号 X1147A ）を追加して一時的なクラスタポートを提供する必要があります。
+* 一時的なクラスタポートを使用したコントローラのアップグレードが完了したら、クラスタ LIF を AFF A400 システムの e3a および e3b 、 100GbE ポート、 FAS8300 システムの e0c および e0d 、 100GbE ポートに無停止で移行できます。
+
+
+コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、『 _Controller Hardware Upgrade Express Guide 』にリンクしてください。
+
+を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。

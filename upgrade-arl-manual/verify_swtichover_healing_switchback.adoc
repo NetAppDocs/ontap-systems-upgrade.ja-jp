@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/verify_swtichover_healing_switchback.html 
+keywords: verify,switchover, healing, switchback, negotiated, mcc, metrocluster 
+summary: スイッチオーバー、修復、スイッチバックの処理を検証します。 
+---
+= スイッチオーバー、修復、スイッチバックを検証
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+MetroCluster 構成のスイッチオーバー、修復、スイッチバックの処理を検証する必要があります。
+
+を参照してください link:other_references.html["参考資料"] MetroCluster 管理およびディザスタリカバリガイド _ にリンクし、ネゴシエートスイッチオーバー、修復、スイッチバックの手順に従ってください。

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/get_address_key_management_server_encryption.html 
+keywords: storage, encryption, authentication, key, manager, external 
+summary: ストレージ暗号化を設定し、クライアント認証キーを確立します。 
+---
+= ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+アップグレード後は、すぐにストレージ暗号化を設定し、クラスタ全体の認証キーを確立して、以前のノードレベルの認証キーを置き換える必要があります。
+
+.手順
+. キー管理サーバとの通信に必要なクライアントおよびサーバの Secure Sockets Layer （ SSL ）証明書をインストールします。
++
+「セキュリティ証明書のインストール」
+
+. 各ノードで次のコマンドを使用して、すべてのノードでストレージ暗号化を設定します。
++
+「セキュリティキーマネージャの設定」
+
+. 各キー管理サーバの IP アドレスを追加します。
++
+「セキュリティキーマネージャの追加」
+
+. クラスタ内のすべてのノードで同じキー管理サーバが設定され使用可能になっていることを確認します。
++
+「 securitykey-manager show -status 」
+
+. クラスタ全体の新しい認証キーを作成します。
++
+「 securitykey-manager create-key 」を選択します
+
+. 新しい認証キー ID をメモします。
+. すべての自己暗号化ドライブのキーを新しい認証キーに変更します。
++
+「 storage encryption disk modify -disk * -data-key-id <authentication_key_id>` 」
+
+

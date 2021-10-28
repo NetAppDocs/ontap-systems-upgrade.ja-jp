@@ -1,0 +1,102 @@
+---
+permalink: upgrade/upgrade-create-aggregate-move-volumes.html 
+sidebar: sidebar 
+keywords: create, aggregate, node, store, volume, original, node, identify, aggregate, individually, create an aggregate and moving volumes to the new nodes 
+summary: 元のノードから移動するボリュームを格納するために、新しい各ノードに少なくとも 1 つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。 
+---
+= アグリゲートを作成してボリュームを新しいノードに移動
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+元のノードから移動するボリュームを格納するために、新しい各ノードに少なくとも 1 つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。
+
+ボリュームを移動するには、データ保護ミラー関係を初期化しておく必要があります。
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『データ保護ガイド』を検索してください"]
+
+.手順
+. 新しいノードごとに少なくとも 1 つのアグリゲートを作成します。
++
+「 storage aggregate create -aggregate aggr_name -node new_node_name -diskcount integer 」という形式で指定します
+
+. 新しいアグリゲートを、ボリュームを移動する元のノードのアグリゲートと同じ SVM に追加します。
++
+「 vserver add-aggregates 」
+
++
+新しいアグリゲートとボリュームの移動元となる古いアグリゲートの両方が同じ SVM に存在する必要があります。
+
+. 新しいアグリゲートが元のノードのアグリゲートと同じ SVM に割り当てられていることを確認します。
++
+vserver show -vserversvm_name'
+
+. 元のノードから新しいノードに移動するボリュームの情報を表示します。
++
+volume show -vserver svm_name -node original_node_name
+
++
+あとで参照できるように、コマンドの出力は残しておく必要があります。
+
++
+次の例は、「 vs1 」 SVM と「 node0 」ノードのボリュームを表示します。
+
++
+[listing]
+----
+cluster::> volume show -vserver vs1 -node node0
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+vs1       clone        aggr1        online     RW         40MB    37.87MB    5%
+vs1       vol1         aggr1        online     RW         40MB    37.87MB    5%
+vs1       vs1root      aggr1        online     RW         20MB    18.88MB    5%
+3 entries were displayed.
+----
+. 指定したボリュームを移動可能なアグリゲートを特定します。
++
+volume move target-aggr show -vserver SVM_name -volume vol_name `
+
++
+次の例は、「 vs2 」 SVM の「 user_max 」ボリュームを、表示されているどのアグリゲートにも移動できることを示しています。
+
++
+[listing]
+----
+cluster::> volume move target-aggr show -vserver vs2 -volume user_max
+Aggregate Name   Available Size  Storage Type
+--------------   --------------  ------------
+aggr2            467.9GB         FCAL
+node12a_aggr3    10.34GB         FCAL
+node12a_aggr2    10.36GB         FCAL
+node12a_aggr1    10.36GB         FCAL
+node12a_aggr4    10.36GB         FCAL
+5 entries were displayed
+----
+. 移動する各ボリュームで検証チェックを実行し、指定したアグリゲートに移動できることを確認します。
++
+volume move start -vserver svm_name -volume volume_name -destination -aggregate destination_aggregate-name -perform-validation-only true ’
+
+. ボリュームを一度に 1 つずつ移動します（ advanced 権限レベル）。
++
+volume move start -vserver svm_name -volume vol_name -destination-aggregate destination_aggr_name -cutover-window integer
+
++
+ノードのルートボリューム（ vol0 ）は移動できません。SVM ルートボリュームを含むその他のボリュームも移動できます。
+
+. 「 volume move 」操作の結果を表示して、ボリュームが正常に移動されたことを確認します。
++
+volume move show -vserver svm_name -volume vol_name
+
+. 複数回試行しても 'volume move' 操作が最終フェーズを完了しない場合は ' 強制的に移動を終了します
++
+volume move trigger-cutover -vserver SVM_name -volume vol_name -force true ’
+
++
+ボリュームの移動処理を強制的に終了させると、移動しているボリュームへのクライアントアクセスが中断される可能性があります。
+
+. ボリュームが指定した SVM に正常に移動され、正しいアグリゲートに配置されていることを確認します。
++
+volume show -vserver svm_name です
+
+

@@ -1,0 +1,100 @@
+---
+permalink: upgrade/upgrade-attach-shelves-reassign-disks.html 
+sidebar: sidebar 
+keywords: reassign, disk, belong, node1, node2, node3, node4, node, attach, storage, shelves, shelf, reassign, ownership, attach storage shelves reassign disk ownership 
+summary: ノード 1 とノード 2 に属していたディスクを、それぞれノード 3 とノード 4 に再割り当てする必要があります。 
+---
+= ストレージシェルフを接続し、ディスク所有権を再割り当てします
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノード 1 とノード 2 に属していたディスクを、それぞれノード 3 とノード 4 に再割り当てする必要があります。
+
+このセクションの手順は、 node3 と node4 で実行します。そのあと、 node3 の各手順を完了してから次の手順に進みます。
+
+.手順
+. ストレージシェルフのケーブルを node1 / node2 から node3 / node4 に接続します。電源装置とシェルフの物理的な接続を確認します。
+. node3 の LOADER プロンプトから、メンテナンスモードでブートします。
++
+「 boot_ontap maint 」を使用してください
+
+. node3 のシステム ID を表示します。
++
+「ディスクショー V 」
+
++
+[listing]
+----
+*> disk show -v
+Local System ID: 101268854
+...
+----
++
+以下の手順 4 で使用する node3 のシステム ID を記録します。
+
+. ノード 1 のスペアディスク、ルートアグリゲートに属するディスク、およびデータアグリゲートを再割り当てします。
++
+「ディスクの再割り当て -s _node1 _sysid _ -d _node3 _sysid _ -p _node2 _SysID_ 」
+
++
+--
+** パラメータ '_node1_sysid_' は ' で記録した値です link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["手順 5 ：元のノードをシャットダウンします"]。
+** 共有ディスクが存在する場合にのみ '--p partner_SysID_' パラメータを指定します
+
+
+[NOTE]
+====
+node2 のスペアディスク、ルートアグリゲートに属するディスク、およびすべてのデータアグリゲートを再割り当てする場合、コマンドは次のようになります。
+
+「ディスクの再割り当て -s node2_sysid -d node4 sysid -p node3 _SysID 」
+
+====
+--
++
+次のようなメッセージが表示されます。
+
++
+[listing]
+----
+Partner node must not be in Takeover mode during disk reassignment from maintenance mode.
+Serious problems could result!!
+Do not proceed with reassignment if the partner is in takeover mode. Abort reassignment (y/n)?n
+
+After the node becomes operational, you must perform a takeover and giveback of the HA partner node to ensure disk reassignment is successful.
+Do you want to continue (y/n)?y
+----
+. 「 y 」と入力して続行します。
++
+次のようなメッセージが表示されます。
+
++
+[listing]
+----
+The system displays the following message:
+Disk ownership will be updated on all disks previously belonging to Filer with sysid
+<sysid>.
+Do you want to continue (y/n)? y
+----
+. 「 y 」と入力して続行します。
+. options フィールドで node1 のルートアグリゲートが「 root 」に設定され、他のアグリゲートがオンラインであることを確認します。
++
+「 aggr status 」を入力します
+
++
+次のような出力が表示されます。
+
++
+[listing]
+----
+*> aggr status
+           Aggr State           Status                Options
+          aggr0 online          raid_dp, aggr         root
+                                64-bit
+----
+. メンテナンスモードを終了します。
++
+「 halt 」
+
+

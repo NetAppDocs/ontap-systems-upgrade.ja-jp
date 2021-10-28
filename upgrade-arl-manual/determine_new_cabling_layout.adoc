@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/determine_new_cabling_layout.html 
+keywords: cable, cabling, layout, disk shelf, fc switches 
+summary: 新しいコントローラモジュールと新しいディスクシェルフと既存の FC スイッチとのケーブル接続を決定します。 
+---
+= 新しいケーブルレイアウトを決定します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新しいコントローラモジュールおよび新しいディスクシェルフと既存の FC スイッチとのケーブル接続を決定する必要があります。
+
+このタスクは MetroCluster サイトごとに実行する必要があります。
+
+8 ノード MetroCluster 構成のポート用途に従って、スイッチタイプに対応したケーブルレイアウトを決定するには、 _ Fabric-attached MetroCluster Installation and Configuration Guide _ を使用します。リファレンス構成ファイル（ RCF ）を使用できるようにするために、 FC スイッチポートの用途がこのガイドに記載されている用途と同じである必要があります。
+
+に進みます link:other_references.html["参考資料"] ファブリック接続 MetroCluster インストールおよび設定ガイド _ へのリンク。
+
+
+NOTE: RCF を使用できるようにケーブル接続できない場合は、テクニカルサポートにお問い合わせください。RCF を使用できないケーブル接続の場合は、この手順を使用しないでください。

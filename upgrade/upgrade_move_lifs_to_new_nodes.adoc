@@ -1,0 +1,71 @@
+---
+permalink: upgrade/upgrade-move-lifs-to-new-nodes.html 
+sidebar: sidebar 
+keywords: move, volume, original, node, migrate, non-san, lif, cluster-management, move non-san data lifs and cluster management lifs to the new nodeas 
+summary: 元のノードからボリュームを移動したら、 SAN 以外のデータ LIF とクラスタ管理 LIF を元のノードから新しいノードに移行する必要があります。 
+---
+= SAN 以外のデータ LIF とクラスタ管理 LIF を新しいノードに移動します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+元のノードからボリュームを移動したら、 SAN 以外のデータ LIF とクラスタ管理 LIF を元のノードから新しいノードに移行する必要があります。
+
+VMware vStorage APIs for Array Integration （ VAAI ）でコピーオフロード処理に使用されている LIF を移行することはできません。
+
+.手順
+. クラスタ LIF がホストされているノードから、 SAN 以外のデータ LIF のホームポートを元のノードから新しいノードに変更します。
++
+network interface modify -vserver vserver_name -lif lif_name -home-node new_node_name -home-port ｛ netport | ifgrp ｝ ’
+
+. 次のいずれかを実行します。
++
+[cols="1,2"]
+|===
+| 移行する項目 | 入力するコマンド 
+
+
+ a| 
+特定の LIF
+ a| 
+「 network interface migrate -vserver vserver_name -lif lif_name -source -node source_node_name -destination -node dest_node_name -destination -port dest_port_name デスティネーション -port dest_port_name
+
+
+
+ a| 
+SAN 以外のすべてのデータ LIF とクラスタ管理 LIF
+ a| 
+「 network interface migrate-all -node node_name 」という形式で指定します
+
+|===
++
+次のコマンドは、 SVM 「 vs0 」の「 datalif1 」という名前の LIF を「 node0b 」のポート「 e0d 」に移行します。
+
++
+[listing]
+----
+cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-node node0b -destination-port e0d
+----
++
+次に、現在の（ローカル）ノードからすべてのデータ LIF とクラスタ管理 LIF を移行するコマンドを示します。
+
++
+[listing]
+----
+cluster::> network interface migrate-all -node local
+----
+. クラスタ管理 LIF のホームノードが元のいずれかのノードにあるかどうかを確認します。「 network interface show -lif cluster_mgmt -fields home-node
+. クラスタ管理 LIF のホームノードが元のいずれかのノードにある場合は、次の手順を実行します。
++
+.. クラスタ管理 LIF のホームノードを新しいノードの 1 つに切り替えます。
++
+network interface modify -vserver cluster_name -lif cluster_mgmt -home-node new_node_name -home-port ｛ netport | ifgrp ｝ ’
+
+.. クラスタ管理 LIF を新しいノードの 1 つに移行します。
++
+「 network interface migrate -vserver vserver_name -lif cluster-mgmt-destination -node new_node_name -destination -port ｛ netport | ifgrp ｝ 」という形式で指定します
+
+
+
+

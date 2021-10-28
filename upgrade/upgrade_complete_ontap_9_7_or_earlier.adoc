@@ -1,0 +1,17 @@
+---
+permalink: upgrade/upgrade-complete-ontap-9-7-or-earlier.html 
+sidebar: sidebar 
+keywords: complete, upgrade, ontap, complete the upgrade in ontap 9.7 or earlier 
+summary: ONTAP 9.7 以前でアップグレードを完了するには、次の手順を実行します。 
+---
+= ONTAP 9.7 以前でアップグレードを完了します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 9.7 以前でアップグレードを完了するには、次の手順を実行します。
+
+* link:upgrade-map-network-ports-ontap-9-7-or-earlier.html["ONTAP 9.7 以前を使用してネットワークポートをマッピングします"]
+* link:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html["ONTAP 9.7 以前で最終アップグレード手順を実行します"]
+

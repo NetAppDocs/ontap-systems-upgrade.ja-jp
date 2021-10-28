@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/persist_disable_switches.html 
+keywords: disable, switches, fabric, persistent, modify, configuration, configure 
+summary: ファブリック内のスイッチの構成を変更できるように、スイッチを永続的に無効にします。 
+---
+= スイッチを永続的に無効にします
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ファブリックの構成を変更できるように、ファブリック内のスイッチを永続的に無効にする必要があります。
+
+スイッチを無効にするには、スイッチのコマンドラインでコマンドを実行します。使用するのは ONTAP コマンドではありません。
+
+スイッチを永続的に無効にします。
+
+* Brocade スイッチの場合は、「 witchCfgPersistentDisable 」コマンドを使用します。
+* Cisco スイッチの場合は 'uspend' コマンドを使用します
+
+
+次のコマンドは Brocade スイッチを永続的に無効にします。
+
+[listing]
+----
+FC_switch_A_1:admin> switchCfgPersistentDisable
+----
+次のコマンドは、 Cisco スイッチを無効にします。
+
+[listing]
+----
+vsan [vsna #] suspend
+----

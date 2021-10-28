@@ -1,0 +1,109 @@
+---
+permalink: upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html 
+sidebar: sidebar 
+keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, physical, port, configure, setting, intend, data, map, map network ports using ontap 9.7 or earlier 
+summary: アップグレード後に node3 と node4 がクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。 
+---
+= ONTAP 9.7 以前を使用してネットワークポートをマッピングします
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレード後に node3 と node4 がクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。
+
+以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8 を実行している場合は、の手順を使用する必要があります xref:upgrade-map-network-ports-ontap-9-8.adoc[ONTAP 9.8 を使用してネットワークポートをマッピングします]。
+
+これらの手順は、 node3 と node4 に基づいて実行する必要があります。
+
+
+NOTE: 次のコマンド例では、「 node1 」と呼んでいます。この段階で手順の交換用ノード「 node3 」と「 node4 」の名前は実際には「 node1 」と「 node2 」です。
+
+.手順
+. ONTAP 9.8 を実行しているシステムの場合は、 * STOP * をクリックします。の手順を使用する必要があります xref:upgrade-map-network-ports-ontap-9-8.adoc[ONTAP 9.8 を使用してネットワークポートをマッピングします]。
+. で記録したノード 1 とノード 2 のポートと LIF の設定情報を確認します link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["ストレージ移動時にアップグレードを準備、手順 3"]。
+. で記録したポート、ブロードキャストドメイン、および IPspace の情報を確認します link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["ストレージ移動時にアップグレードを準備、手順 3"]。
++
+https://hwu.netapp.com["NetApp Hardware Universe の略"]
+
+. 次の変更を行います。
++
+.. node3 と node4 をクラスタプロンプトでブートしていない場合は、それらをブートします。
+.. 「 Cluster 」ブロードキャストドメインに正しいポートを追加します。
++
+network port modify -node node_name -port port_name -mtu 9000 -ipspace Cluster `
+
++
+次の例では 'Cluster ポート e1b を node1 に追加します
+
++
+network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000`
+
+.. LIF を 1 つずつ新しいポートに移行します。
++
+「 network interface migrate -vserver vserver_name -lif lif_name -source-node node1 -destination-node node1 -destination-port port_name 」の略
+
++
+SAN データ LIF は、オフラインの場合にのみ移行できます。
+
+.. クラスタ LIF のホームポートを変更します。
++
+「 network interface modify -vserver Cluster -lif <lif_name> – home-port <port_name> 」という形式になります
+
+.. クラスタブロードキャストドメインから古いポートを削除します。
++
+「 network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cluster -port node1 ： port 」のようになります
+
+.. node3 と node4 の健全性状態を表示します。
++
+cluster show -node node1 -fields health`
+
+
+
+. 新しいコントローラの物理ポート・レイアウトに合わせて、 VLAN および「 ifgrp config 」を変更します。
+. node3 と node4 に存在しなくなった node1 ポートと node2 ポートを削除します（ advanced 権限レベル）。
++
+'network port delete -node node1 -port port_name '
+
+. [[map_9.7_7] ノード管理ブロードキャストドメインを調整し、必要に応じてノード管理 LIF とクラスタ管理 LIF を移行します。
++
+.. LIF のホームポートを表示します。
++
+network interface show -fields home-node 、 home-port
+
+.. ポートを含むブロードキャストドメインを表示します。
++
+「 network port broadcast-domain show -port <node_name ： port_name> 」の形式で指定します
+
+.. 必要に応じて、ブロードキャストドメインにポートを追加またはドメインから削除します。
++
+「 network port broadcast-domain add-ports 」と入力します
+
++
+「 network port broadcast-domain remove-ports 」と入力します
+
+.. 必要に応じて LIF のホームポートを変更します。
++
+network interface modify -vserver vserver_name -lif lif_name – home-port port_name
+
+
+
+. 必要に応じて、のコマンドを使用して、クラスタ間ブロードキャストドメインを調整し、クラスタ間 LIF を移行します <<map_9.7_7,手順 7>>。
+. 必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <<map_9.7_7,手順 7>>。
+. すべての LIF フェイルオーバーグループを調整します。
++
+'network interface modify -failover-group <failover_group> -failover-policy <failover_policy>
+
++
+次のコマンドは、フェイルオーバーポリシーを broadcast-domain-wide に設定し、フェイルオーバーグループ「 fg1 」のポートを「 node1 」の LIF 「 data1 」のフェイルオーバーターゲットとして使用します。
+
++
+「 network interface modify -vserver node1 -lif data1 -failover-policy broadcast-domain-wide -failover-group fg1 」というメッセージが表示されます
+
+. ノード 3 とノード 4 のネットワークポートの属性を表示します。
++
+network port show -node node1
+
+
+
+これで物理ポートのマッピングが完了しました。アップグレードを完了するには、に進みます xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 以前で最終アップグレード手順を実行します]。

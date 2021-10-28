@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/stage_1_prepare_for_upgrade_overview.html 
+keywords: upgrade, preparing, preparation, prepare, overview 
+summary: ステージ 1 では、アップグレードのためのノードを準備し、一連の事前確認を実行する必要があります。 
+---
+= ステージ 1 ：アップグレードを準備
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ステージ 1 では、アップグレードのためのノードを準備し、一連の事前確認を実行する必要があります。ストレージ暗号化のためにディスクのキー変更が必要になる場合があります。また、新しいコントローラをネットブートする準備を行う必要があります。
+
+.手順
+. link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]
+. link:get_ip_address_of_external_kms_for_storage_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]
+

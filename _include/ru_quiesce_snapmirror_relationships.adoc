@@ -1,0 +1,22 @@
+= 
+
+
+手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。
+
+.手順
+. 次のコマンドを使用して、デスティネーションクラスタの SnapMirror 関係のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
++
+
+NOTE: このステータスが「 Transferring 」の場合は、次のコマンドを使用して転送を中止する必要があります。「 snapmirror abort -destination -vserver vserver name 」
+
++
+SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は失敗します。
+
+. 次のコマンドを使用して、クラスタ間のすべての関係を休止します。
++
+'snapmirror quiesce -destination-path vserver <vserver name> 」を指定します
+
+

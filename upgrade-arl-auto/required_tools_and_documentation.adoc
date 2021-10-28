@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/required_tools_and_documentation.html 
+keywords: required, tools, documentation, install, worksheet, ontap 
+summary: 新しいハードウェアを設置するには、特定のツールが必要です。その他のガイドやその他の情報も参照できます。 
+---
+= 必要な工具とドキュメント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新しいハードウェアを設置するための特別なツールが必要です。また、アップグレードプロセス中に他のドキュメントを参照する必要があります。
+
+アップグレードを実行するには、次の工具が必要です。
+
+* アースストラップ
+* No.2 プラスドライバ
+
+
+にアクセスします link:other_references.html["参考資料"] セクションをクリックして、このアップグレードに必要な参照ドキュメントのリストにアクセスします。

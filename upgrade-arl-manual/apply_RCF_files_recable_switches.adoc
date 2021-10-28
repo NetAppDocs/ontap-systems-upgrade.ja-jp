@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/apply_RCF_files_recable_switches.html 
+keywords: rcf files, reference configuration, switches, nodes, recable, fc 
+summary: 適切な RCF ファイルを適用して、新しいノードに対応するようにスイッチを再設定します。 
+---
+= RCF ファイルを適用し、スイッチを再接続します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新しいノードに合わせてスイッチを再設定するためには、適切なリファレンス構成ファイル（ RCF ）を適用する必要があります。RCF ファイルを適用したら、スイッチを再接続できます。
+
+RCF を使用するためには、 FC スイッチポートの用途がファブリック接続 MetroCluster インストールおよび設定ガイドに記載されている用途と同じである必要があります。に進みます link:other_references.html["参考資料"] ファブリック接続 MetroCluster インストールおよび設定ガイド _ へのリンク。
+
+.手順
+. 使用している構成用の RCF ファイルを探します。
++
+使用しているスイッチモデルに対応した RCF ファイルを使用する必要があります。
+
++
+link:http://mysupport.netapp.com/NOW/download/software/metrocluster_brocade/sanswitch/index.shtml["ネットアップのダウンロード： Brocade スイッチ向け MetroCluster 構成ファイル"]
+
++
+link:http://mysupport.netapp.com/NOW/download/software/metrocluster_cisco/sanswitch/index.shtml["ネットアップのダウンロード： Cisco スイッチ用の MetroCluster 構成ファイル"]
+
+. Download * ページの指示に従って RCF ファイルを適用し、必要に応じて ISL 設定を調整します。
+. スイッチの設定が保存されたことを確認します。
+. で作成したケーブルレイアウトを使用して、両方の FC-to-SAS ブリッジを FC スイッチにケーブル接続します link:determine_new_cabling_layout.html["新しいケーブルレイアウトを決定します"]。
+. ポートがオンラインであることを確認します。
++
+** Brocade スイッチの場合は 'witchshow' コマンドを使用します
+** Cisco スイッチの場合は、 show ’ interface brief ’コマンドを使用します。
+
+
+. コントローラの FC-VI ポートとスイッチをケーブル接続します。
+. 既存のノードから、 FC-VI ポートがオンラインであることを確認します。
++
+MetroCluster インターコネクト・アダプタ・ショー
+
++
+MetroCluster interconnect mirror show
+
+

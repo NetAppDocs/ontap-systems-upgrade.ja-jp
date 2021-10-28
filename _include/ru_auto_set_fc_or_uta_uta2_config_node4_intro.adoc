@@ -1,0 +1,6 @@
+= 
+
+
+ノード 4 でオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードが使用されている場合は、残りの手順を完了する前に設定する必要があります。
+
+の実行が必要な場合があります <<Configure FC ports on node4>> セクション、 <<Check and configure UTA/UTA2 ports on node4>>、または両方のセクション。

@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.html 
+keywords: node4, interface group, VLANs, broadcast domains, re-create 
+summary: ノード 4 がクォーラムにあり、ノード 3 と通信できることを確認したら、ノード 2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインをノード 4 に再作成する必要があります。 
+---
+= ノード 4 で VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ノード 4 がクォーラムにあり、ノード 3 と通信できることを確認したら、ノード 2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインをノード 4 に再作成する必要があります。node3 のポートは、新しく作成したブロードキャストドメインにも追加する必要があります。
+
+VLAN 、インターフェイスグループ、およびブロードキャストドメインの作成と再作成の詳細については、を参照してください link:other_references.html["参考資料"] および ONTAP 9 ネットワーク管理ガイドへのリンクを参照してください。
+
+.手順
+. で記録した node2 の情報を使用して、 node4 に VLAN を再作成します link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"] セクション。
++
+「 network port vlan create -node <node4 > -vlan <vlan-names> 」のように指定します
+
+. で記録した node2 の情報を使用して、 node4 にインターフェイスグループを再作成します link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"] セクション。
++
+「 network port ifgrp create -node <node4 > -ifgrp <port_ifgrp_names> -distr-func 」のように指定します
+
+. で記録した node2 の情報を使用して、 node4 にブロードキャストドメインを再作成します link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"] セクション。
++
+「 network port broadcast-domain create -ipspace Default -broadcast-domain <broadcast_domain_names> -mtu <mtu_size> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+
+. 新たに作成したブロードキャストドメインにノード 4 のポートを追加します。
++
+「 network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_names> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+
+

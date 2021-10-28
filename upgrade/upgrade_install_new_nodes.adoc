@@ -1,0 +1,27 @@
+---
+permalink: upgrade/upgrade-install-new-nodes.html 
+sidebar: sidebar 
+keywords: upgrade, moving, move, storage, install, node3, node4, attach, power, console, network, connection, install the new nodes 
+summary: ストレージを移動してアップグレードするときは、まず node3 と node4 を設置し、新しいノードへの電源、コンソール、およびネットワーク接続を接続します。 
+---
+= 新しいノードをインストール
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージを移動してアップグレードするときは、まず node3 と node4 を設置し、新しいノードへの電源、コンソール、およびネットワーク接続を接続します。
+
+.手順
+. 必要に応じて、適切なアダプタのインストールガイドの手順に従って、 node3 と node4 にアダプタをインストールします。
+. プラットフォームの _Installation and Setup Instructions _ に従って、新しいノードを設置します。
++
+この時点では、元のノードのディスクシェルフを新しいノードに接続しないでください。
+
+. プラットフォームの _Installation and Setup Instructions _ に従って、電源とコンソール接続を node3 / node4 HA ペアに接続します。
+. ネットワークケーブルを接続します。
+. ストレージシェルフのケーブルを除く残りのすべてのケーブルを、ノード 1 とノード 2 の HA ペアからノード 3 とノード 4 の対応するポートにそれぞれ転送します。
++
+ストレージシェルフの接続に使用しないファイバチャネルケーブルとイーサネットケーブルも含まれます。
+
+

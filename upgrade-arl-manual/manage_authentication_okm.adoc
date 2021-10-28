@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/manage_authentication_okm.html 
+keywords: manage, authentication, onboard key manager, okm, key, passphrase, fips 
+summary: オンボードキーマネージャを使用して、認証キーを管理できます。 
+---
+= オンボードキーマネージャを使用して認証を管理
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+オンボードキーマネージャを使用して認証キーを管理できます。オンボードキーマネージャ（ OKM ）を使用する場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。
+
+.手順
+. クラスタ内のすべてのノードがキー管理サーバを使用できることを確認します。
++
+「 securitykey -manager key show 」を参照してください
+
+. すべての自己暗号化ディスクのキーを新しい認証キーに変更します。
++
+'storage encryption disk modify -disk * [-data-key-id nonMSID AK
+
+. 連邦情報処理標準（ FIPS ）を使用する場合は、すべての自己暗号化ディスクのキーを新しい認証キーに変更してください。
++
+「 storage encryption disk * modify -disk * [-fips-key-id nonAK 」」
+
+

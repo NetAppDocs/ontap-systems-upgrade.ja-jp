@@ -1,0 +1,50 @@
+---
+permalink: upgrade/upgrade-prepare-when-moving-volumes.html 
+sidebar: sidebar 
+keywords: perform, preparation, upgrading, upgrade, controller, hardware, moving, move, volume, prepare for the upgrade when moving volumes 
+summary: ボリュームを移動してコントローラハードウェアをアップグレードする前に、いくつかの準備手順を実行する必要があります。 
+---
+= ボリューム移動時にアップグレードを準備
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームを移動してコントローラハードウェアをアップグレードする前に、いくつかの準備手順を実行する必要があります。
+
+.手順
+. 元のノード上のボリュームを表示します。
++
+volume show
+
++
+コマンド出力を使用して、新しいノードに移動するボリュームのリストを準備します。
+
+. 元のノードのライセンス情報を表示して記録します。
++
+「 system license show 」を参照してください
+
+. 元のノードでストレージ暗号化を使用しており、新しいノードに暗号化対応ディスクがある場合は、元のノードのディスクにキーが正しく設定されていることを確認します。
++
+.. 自己暗号化ディスク（ SED ）に関する情報を表示します。
++
+「 storage encryption disk show 」のように表示されます
+
+.. Manufacturer Secure ID （ MSID ；メーカーのセキュア ID ）以外のキーが関連付けられたディスクがある場合は、 MSID キーに変更します。
++
+「 storage encryption disk modify 」
+
+
+
+. 現在のクラスタが 2 ノードのスイッチレス構成である場合は、希望するタイプのスイッチを使用する 2 ノードのスイッチクラスタに移行します。
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+
+. 元の各ノードから AutoSupport メッセージを送信して、テクニカルサポートにアップグレードについて通知します。
++
+「 system node AutoSupport invoke -node node_name -type all 」「 Upgrading node_name from platform_original to platform_new 」」というメッセージが表示されます
+
+

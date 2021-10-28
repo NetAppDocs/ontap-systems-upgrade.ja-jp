@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/stage_4_relocate_retire_node2.html 
+keywords: relocate, retire, node2, LIF, node3, non-root aggregates 
+summary: ステージ 4 で、ルート以外のすべてのアグリゲートが node2 から node3 に再配置されます。 
+---
+= ステージ 4 ：ノード 2 の移動と撤去
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ステージ 4 では、ルート以外のすべてのアグリゲートが node2 から node3 に再配置され、 node2 で所有されている SAN 以外のデータ LIF が node3 に移動されます。ノード 2 の必要な情報を記録してから、 node2 を撤去する必要があります。
+
+.手順
+. link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"]
+. link:retire_node2.html["ノード 2 を撤去"]
+

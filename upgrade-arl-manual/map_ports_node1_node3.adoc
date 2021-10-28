@@ -1,0 +1,243 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/map_ports_node1_node3.html 
+keywords: map, ports, node1, node3, cluster, home port, vlan ports, broadcast domain, connectivity 
+summary: ポートを node1 から node3 にマッピングします 
+---
+= ポートを node1 から node3 にマッピングします
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ノード 1 の物理ポートがノード 3 の物理ポートに正しくマッピングされていることを確認する必要があります。ポート 3 を使用すると、クラスタ内の他のノードおよびアップグレード後にネットワークと通信できます。
+
+新しいノードのポートに関する情報を Hardware Universe から取得しておく必要があります。に進みます link:other_references.html["参考資料"] をクリックして、 Hardware Universe にリンクします。この情報は、このセクションおよびの後半で使用します 。
+
+ノード 3 のソフトウェア設定は、ノード 3 の物理的な接続と同じである必要があります。また、アップグレードを続行する前に、 IP 接続をリストアする必要があります。
+
+ポート設定は、ノードのモデルによって異なる場合があります。元のノードのポートと LIF の構成を、新しいノードの構成と互換性を持つようにする必要があります。これは、新しいノードがブート時に同じ設定を再生するためです。つまり、ノード 3 をブートすると、 ONTAP は、ノード 1 で使用されていたポートで LIF をホストしようとします。
+
+そのため、 node1 の物理ポートが node3 の物理ポートに直接マッピングされていない場合は、ブート後にクラスタ、管理、およびネットワーク接続をリストアするためにソフトウェア設定の変更が必要になります。また、ノード 1 のクラスタポートがノード 3 のクラスタポートに直接マッピングされていないと、ノード 3 は、正しい物理ポートでクラスタ LIF をホストするソフトウェア設定が変更されるまで、リブート時にクォーラムに自動的に再参加しないことがあります。
+
+.手順
+. [[step1] ノード 1 、ポート、ブロードキャストドメイン、 IPspace のすべてのケーブル接続情報を次の表に記録します。
++
+[cols=""35"]
+|===
+| LIF | Node1 ポート | ノード 1 の IPspace | ノード 1 のブロードキャストドメインです | Node3 ポート | Node3 ポート | ノード 3 のブロードキャストドメイン 
+
+
+| クラスタ 1 |  |  |  |  |  |  
+
+
+| クラスタ 2 |  |  |  |  |  |  
+
+
+| クラスタ 3 |  |  |  |  |  |  
+
+
+| クラスタ 4 |  |  |  |  |  |  
+
+
+| クラスタ 5 |  |  |  |  |  |  
+
+
+| クラスタ 6 |  |  |  |  |  |  
+
+
+| ノード管理 |  |  |  |  |  |  
+
+
+| クラスタ管理 |  |  |  |  |  |  
+
+
+| データ 1 |  |  |  |  |  |  
+
+
+| データ 2. |  |  |  |  |  |  
+
+
+| データ 3 |  |  |  |  |  |  
+
+
+| データ 4. |  |  |  |  |  |  
+
+
+| SAN |  |  |  |  |  |  
+
+
+| クラスタ間ポート |  |  |  |  |  |  
+|===
++
+を参照してください link:record_node1_information.html["ノード 1 の情報を記録します"] を実行して、この情報を取得します。
+
+. [step2] node3 のすべてのケーブル接続情報、ポート、ブロードキャストドメイン、および IPspace を、の同じ手順を使用して前のテーブルに記録します link:record_node1_information.html["ノード 1 の情報を記録します"]。
+. [[step3]] 以下の手順に従って、セットアップが 2 ノードのスイッチレスクラスタであるかどうかを確認します。
++
+.. 権限レベルを advanced に設定します。
++
+'cluster::> set -privilege advanced
+
+.. セットアップが 2 ノードスイッチレスクラスタかどうかを確認します。
++
+network options switchless-cluster show
+
++
+[listing]
+----
+ cluster::*> network options switchless-cluster show
+ Enable Switchless Cluster: false/true
+----
++
+このコマンドの値は、システムの物理状態と一致している必要があります。
+
+.. 管理者権限レベルに戻ります。
++
+[listing]
+----
+ cluster::*> set -privilege admin
+ cluster::>
+----
+
+
+. [[step4]] 次の手順を実行して、ノード 3 をクォーラムに参加させる。
++
+.. ノード 3 をブートします。を参照してください link:install_boot_node3.html["node3 をインストールしてブートします"] ノードをブートします（まだブートしていない場合）。
+.. 新しいクラスタポートが Cluster ブロードキャストドメインにあることを確認します。
++
+「 network port show -node node-name -port port -name -fields broadcast-domain 」
+
++
+次の例は、ポート「 e0a 」が node3 の「 Cluster 」ドメインにあることを示しています。
+
++
+[listing]
+----
+ cluster::> network port show -node node3 -port e0a -fields broadcast-domain
+
+ node       port broadcast-domain
+ ---------- ---- ----------------
+ node3      e1a  Cluster
+----
+.. クラスタブロードキャストドメインに適切なポートを追加します。
++
+network port modify -node node-name -port port -name -ipspace Cluster -mtu 9000`
+
++
+次の例は、ノード 3 にクラスタポート「 e1b 」を追加します。
+
++
+[listing]
+----
+ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
+----
++
+
+NOTE: MetroCluster 構成の場合、ポートのブロードキャストドメインを変更できないことがあります。これは、同期先 SVM の LIF をホストしているポートに関連付けられており、のようなエラーが表示されますが、次のメッセージに制限されないためです。
+
++
+[listing]
+----
+command failed: This operation is not permitted on a Vserver that is configured as the destination of a MetroCluster Vserver relationship.
+----
++
+リモートサイトの対応する同期元 SVM から次のコマンドを入力して、同期先の LIF を適切なポートに再割り当てします。
+
++
+「 MetroCluster vserver resync -vserver Vserver -name 」のようになります
+
+.. LIF を 1 つずつ新しいポートに移行します。
++
+network interface migrate -vserver Cluster -lif lif_name -source-node node3 -destination-node node3 -destination-port port-name
+
+.. クラスタ LIF のホームポートを変更します。
++
+network interface modify -vserver Cluster -lif lif_name – home-port port-name
+
+.. クラスタポートが Cluster broadcast-domain にない場合は、追加します。
++
+「 network port broadcast-domain add-ports -ipspace Cluster -broadcast-domain Cluster -port node ： port 」のようになります
+
+.. クラスタブロードキャストドメインから古いポートを削除します。
++
+「 network port broadcast-domain remove-ports 」と入力します
+
++
+次の例は、ノード 3 のポート「 e0d 」を削除します。
+
++
+[listing]
+----
+network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cluster ‑ports <node3:e0d>
+----
+.. ノード 3 が再びクォーラムに参加したことを確認します。
++
+cluster show -node node3 -fields health`
+
+
+
+. [[man_map_1_step5] クラスタ LIF とノード管理 LIF またはクラスタ管理 LIF をホストするブロードキャストドメインを調整します。各ブロードキャストドメインに正しいポートが含まれていることを確認してください。ポートをホストしているブロードキャストドメイン間や LIF のホームになっているブロードキャストドメイン間で移動することはできないため、 LIF を移行して変更する必要がある場合があります。
++
+.. LIF のホームポートを表示します。
++
+network interface show -fields home-node 、 home-port
+
+.. このポートを含むブロードキャストドメインを表示します。
++
+「 network port broadcast-domain show -port <node_name ： port_name> 」の形式で指定します
+
+.. ブロードキャストドメインのポートを追加または削除します。
++
+「 network port broadcast-domain add-ports 」と入力します
+
++
+「 network port broadcast-domain remove-ports 」と入力します
+
+.. LIF のホームポートを変更します。
++
+network interface modify -vserver vserver-name -lif lif_name – home-port port-name
+
+
+
+. [man_map_1_step6] 必要に応じて、に示す同じコマンドを使用して、クラスタ間ブロードキャストドメインを調整し、クラスタ間 LIF を移行します <<man_map_1_step5,手順 5>>。
+. [[step7] 必要に応じて、に示す同じコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <<man_map_1_step5,手順 5>>。
+. [[step8] 、ノード 3 に存在しないポートが node1 にある場合は、次の手順に従って削除します。
++
+.. どちらかのノードで advanced 権限レベルにアクセスします。
++
+「 advanced 」の権限が必要です
+
+.. ポートを削除します。
++
+'network port delete -node node-name -port port -name
+
+.. admin レベルに戻ります。
++
+「特権管理者」
+
+
+
+. [[step9] すべての LIF フェイルオーバーグループを調整します。
++
+network interface modify -failover-group failover-group-failover-policy failover-policy フェイルオーバーポリシー
+
++
+次の例は、フェイルオーバーポリシーを「 broadcast-domain-wide 」に設定し、フェイルオーバーグループ「 fg1 」のポートを「 node3 」の LIF 「 data1 」のフェイルオーバーターゲットとして使用します。
+
++
+[listing]
+----
+network interface modify -vserver node3 -lif data1 failover-policy broadcast-domainwide -failover-group fg1
+----
++
+に進みます link:other_references.html["参考資料"] ONTAP 9 ネットワーク管理ガイドまたは ONTAP 9 コマンド：マニュアルページリファレンスにリンクする方法については、を参照してください。
+
+. ノード 3 で変更内容を確認します。
++
+network port show -node node3
+
+

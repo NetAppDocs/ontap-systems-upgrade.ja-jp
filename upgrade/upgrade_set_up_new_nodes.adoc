@@ -1,0 +1,128 @@
+---
+permalink: upgrade/upgrade-set-up-new-nodes.html 
+sidebar: sidebar 
+keywords: Controller Hardware Upgrade Express Guide 
+summary: ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。 
+---
+= 新しいノードをセットアップ
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。元のノードと新しいノードで、物理ポートのレイアウトが異なる場合があります。ポートと接続の適切なレイアウトを特定するには、元のノードと交換用ノードの間のポートのマッピングを行う必要があります。
+
+新しいノードで実行されている ONTAP のバージョンが元のノードのバージョンと異なる場合は、ネットアップサポートサイトから Web にアクセスできるディレクトリに正しい「 <ONTAP_version>_image.tgz 」ファイルをダウンロードしておく必要があります（を参照） link:upgrade-prepare-when-moving-storage.html["ストレージ移動時にアップグレードを準備する手順 5"]）。システムのネットブートを実行するには、「 <ONTAP_version>_image.tgz 」ファイルが必要です。
+
+.手順
+. node3 の電源をオンにし、すぐにコンソール端末で Ctrl+C キーを押して LOADER プロンプトにアクセスします。
++
+node3 と node4 が同じシャーシにある場合は、手順 2 に進みます。ない場合は、手順 3 に進みます。
+
+. node3 と node4 が単一シャーシ構成（同じシャーシ内にコントローラがある場合）の場合は、次の手順を実行します。
++
+.. ノード 4 にシリアルコンソールを接続します。
+.. ノード 4 の電源がオンになっていない場合はオンにし、コンソール端末で Ctrl+C キーを押してブートプロセスを中断して LOADER プロンプトにアクセスします。
++
+両方のコントローラが同じシャーシ内にある場合は、電源はすでにオンになっているはずです。
+
++
+node4 には LOADER プロンプトが表示されたままにします。この手順に戻り、 node3 の設置後に以下の手順を繰り返します。
+
+
+
+. LOADER プロンプトで、次のコマンドを入力します。
++
+「デフォルト設定」
+
+. LOADER プロンプトで、管理 LIF のネットブート接続を設定します。
++
+[cols="25,75"]
+|===
+| IP アドレス | 作業 
+
+
+| DHCP | 自動接続を構成します :ifconfig e0M -auto 
+
+
+| 静的 | 手動接続を設定します。「 ifconfig e0M -addr= ip_addr-mask= netmask -gw= gateway 」 
+|===
+. LOADER プロンプトで、ノード 3 でネットブートを実行します。
++
+[cols="25,75"]
+|===
+| 用途 | 作業 
+
+
+| FAS2200 、 FAS2500 、 FAS3200 、 FAS6200 、 FAS/AFF8000 シリーズシステム | netboot\http://web_server_ip/path_to_webaccessible_directory/netboot/kernel` 
+
+
+| その他すべてのシステム | netboot\http://web_server_ip/path_to_webaccessible_directory/ontap_version_image.tgz` 
+|===
++
+「 path_to_the_web-accessible_directory 」は、ダウンロードした「 ONTAP_version_image.tgz 」ファイルの場所です。
+
++
+
+NOTE: 新しいコントローラをネットブートできない場合は、テクニカルサポートにお問い合わせください。
+
+. ブートメニューからオプション * （ 7 ） Install new software first * を選択し、新しいソフトウェアイメージをダウンロードしてブートデバイスにインストールします。
++
+"This 手順 is not supported for NonDisruptive Upgrade on an HA pair" というメッセージは無視しますIT 環境：ソフトウェアの無停止アップグレード。コントローラのアップグレードは対象外。
+
+. 手順を続行するかどうかを尋ねられたら、「 y 」と入力します。パッケージの入力を求められたら、イメージファイルの URL を入力します。
++
+http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz`
+
++
+必要に応じてユーザ名とパスワードを入力するか、 Enter キーを押して続行します。
+
+. 次のようなプロンプトが表示されたら 'n' を入力してバックアップ・リカバリをスキップします
++
+[listing]
+----
+`Do you want to restore the backup configuration now? {y|n}`
+----
+. 次のようなプロンプトが表示されたら 'y' と入力して再起動します
++
+[listing]
+----
+`The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}`
+----
+. リブートプロセスを中断するよう求めるプロンプトが表示されたら、 Ctrl+C キーを押してブートメニューを表示します。
+. ブートメニューから * （ 5 ） Maintenance mode boot * を選択して、メンテナンスモードにアクセスします。
+. 必要に応じて、ノードの FC ポートまたは CNA ポートへの変更を実施し、ノードをメンテナンスモードにリブートします。
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["『 ONTAP 9 SAN アドミニストレーションガイド』"]
+
++
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『 SAN アドミニストレーションガイド』を検索してください"]
+
+. コマンド出力に「 ha 」と表示されていることを確認する必要があります。
++
+[listing]
+----
+*> ha-config show
+ Chassis HA configuration: ha
+ Controller HA configuration: ha
+----
++
+システムは、 HA ペア構成かスタンドアロン構成かを PROM に記録します。状態は、スタンドアロンシステムまたは HA ペア内のすべてのコンポーネントで同じである必要があります。
+
++
+「 ha-config modify controller ha 」コマンドは、コントローラ設定の「 ha 」を設定します。「 ha-config modify chassis ha 」コマンドを実行すると、シャーシ設定に「 ha 」が設定されます。
+
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["ONTAP 9 ハイアベイラビリティ構成ガイド"]
+
++
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『ハイアベイラビリティ構成ガイド』を検索してください"]
+
+. メンテナンスモードを終了します。
++
+「 halt 」
+
++
+システムが LOADER プロンプトで停止します。
+
+

@@ -1,0 +1,100 @@
+---
+permalink: upgrade/upgrade-remove-disk-ownership-new-nodes.html 
+sidebar: sidebar 
+keywords: node, internal, disk, add-on, shelves, attach, system, interfere, controller, upgrade, remove, ownership, node3, node4, node, remove ownership of disks attached to the new nodes 
+summary: 新しいノードに内蔵ディスクまたはアドオンシェルフがシステムに接続されている場合は、コントローラのアップグレードが妨げられる可能性があります。node3 / node4 に付属した新しいディスクの所有権を削除するには、次の手順を実行します。 
+---
+= 新しいノードに接続されているディスクの所有権を削除します
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新しいノードに内蔵ディスクまたはアドオンシェルフがシステムに接続されている場合は、コントローラのアップグレードが妨げられる可能性があります。node3 / node4 に付属した新しいディスクの所有権を削除するには、次の手順を実行します。
+
+これらの手順は、 node3 と node4 に相互に実行します。ノードの順序は重要ではありません。
+
+[NOTE]
+====
+* ノード 1 とノード 2 のシェルフは、この段階ではノード 3 とノード 4 に物理的に接続されていません。
+* ディスク所有権を削除する必要があるのは、新しいコントローラが付属しているディスクとシェルフのみです。
+* 古いコントローラを内蔵ドライブプラットフォーム上の新しいコントローラと交換し、古いコントローラのシャーシとディスクを保持しながらハードウェアをアップグレードする場合、ディスクの所有権を削除する必要はありません。
++
+たとえば、古い A200 コントローラモジュールと新しい A220 コントローラモジュールを交換するだけで、古い A200 のシャーシとディスクをそのまま残して、システムを A200 から A220 にアップグレードする場合、次の手順を実行します。 新しい A220 コントローラモジュールのディスクの所有権は削除しません。このセクションの「新しいノードに接続されているディスクの所有権の削除」を参照してください。
+
++
+コントローラのアップグレード中にディスク所有権を削除する方法について不明な点がある場合は、ネットアップテクニカルサポートにお問い合わせください。
+
++
+内蔵ストレージを使用するシステムの一覧を次に示します。 FAS2220 、 FAS2240-2 、 FAS2240-4 、 FAS2520 、 FAS2552 、 FAS2554 、 FAS2620 、 FAS2650 、 FAS2720 、 FAS2750 、 AFF A200 、 AFF A220 、 AFF A700s 、 AFF A800 、 AFF A250 。
+
++
+お使いのシステムが上記のリストにない場合は、を参照してください https://hwu.netapp.com["NetApp Hardware Universe の略"] 内蔵ドライブがあるかどうかを確認します。
+
+
+
+====
+.手順
+. ノードの LOADER プロンプトで、コマンドを入力します。
++
+「 boot_ontap menu
+
+. ブートメニュープロンプトで '9a' と入力して 'Enter キーを押します
++
+次の画面はブートメニューのプロンプトを示しています。
+
++
+[listing]
+----
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  9a
+----
+. 次のようなプロンプトが表示されたら、「 y 」と入力してディスク所有権を削除します。
++
+[listing]
+----
+
+########## WARNING ##########
+
+This is a disruptive operation and will result in the
+    loss of all filesystem data. Before proceeding further,
+    make sure that:
+    1) This option (9a) has been executed or will be executed
+    on the HA partner node, prior to reinitializing either
+    system in the HA-pair.
+    2) The HA partner node is currently in a halted state or
+    at the LOADER prompt.
+
+
+    Do you still want to continue (yes/no)? yes
+----
++
+ディスク所有権が削除されてブートメニューに戻ります。
+
+. ブート・メニューで '5' を入力してメンテナンス・モードに切り替えます
+. 保守モードで、「 Disk show 」コマンドを実行します。
++
+表示されるディスクはないはずです。
+
+. コマンド： ' を実行します
++
+「ディスクショー - A` 」
+
++
+未割り当てのディスクがすべて表示されます。
+
+. メンテナンスモードを終了します。
++
+「 halt 」
+
+

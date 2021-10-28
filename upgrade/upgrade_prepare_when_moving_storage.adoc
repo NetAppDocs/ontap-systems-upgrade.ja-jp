@@ -1,0 +1,141 @@
+---
+permalink: upgrade/upgrade-prepare-when-moving-storage.html 
+sidebar: sidebar 
+keywords: licenses 
+summary: ストレージを移動してアップグレードする前に、元のノードからライセンス情報を収集し、ネットワーク設定を計画し、システム ID を記録して、ネットブートに必要なファイルを準備する必要があります。 
+---
+= ストレージ移動時にアップグレードを準備
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージを移動してアップグレードする前に、元のノードからライセンス情報を収集し、ネットワーク設定を計画し、システム ID を記録して、ネットブートに必要なファイルを準備する必要があります。
+
+.手順
+. 元のノード node1 と node2 のライセンス情報を表示して記録します。
++
+「 system license show 」を参照してください
+
+. ノード 1 / ノード 2 HA ペアでストレージ暗号化を使用していて、新しいノードに暗号化が有効なディスクがある場合は、元のノードのディスクにキーが正しく設定されていることを確認します。
++
+.. 自己暗号化ディスク（ SED ）に関する情報を表示します。
++
+「 storage encryption disk show 」のように表示されます
+
+.. Manufacturer Secure ID （ MSID ；メーカーのセキュア ID ）以外のキーが関連付けられたディスクがある場合は、 MSID キーに変更します
++
+「 storage encryption disk modify 」
+
+
+
+. [[prepare_move_store_3]] ノード 1 / ノード 2 の HA ペアにポートと LIF の設定情報を記録します。
++
+[cols="1,2"]
+|===
+| 表示する情報 | 入力するコマンド 
+
+
+ a| 
+シェルフ、各シェルフ内のディスク数、フラッシュストレージの詳細、メモリ、 NVRAM 、ネットワークカード
+ a| 
+「 system node run -node node_name sysconfig 」のように入力します
+
+
+
+ a| 
+クラスタネットワーク LIF とノード管理 LIF
+ a| 
+'network interface show -role cluster, node-mgmt
+
+
+
+ a| 
+物理ポート
+ a| 
+network port show -node node_name -type physical
+
+
+
+ a| 
+フェイルオーバーグループ
+ a| 
+network interface failover-groups show -vserver vserver_name
+
+clusterwide 以外のフェイルオーバーグループの名前とポートを記録します。
+
+
+
+ a| 
+VLAN の設定
+ a| 
+「 network port vlan show -node node_name 」
+
+各ネットワークポートと VLAN ID のペアを記録します。
+
+
+
+ a| 
+インターフェイスグループの設定
+ a| 
+「 network port ifgrp show -node node_name -instance 」のように指定します
+
+インターフェイスグループの名前と割り当てられているポートを記録します。
+
+
+
+ a| 
+ブロードキャストドメイン
+ a| 
+「 network port broadcast-domain show 」
+
+
+
+ a| 
+IPspace 情報
+ a| 
+network ipspace show
+
+|===
+. アップグレードする新しい各ノードについて、デフォルトのクラスタポート、データポート、およびノード管理ポートに関する情報を取得します。 https://hwu.netapp.com["NetApp Hardware Universe の略"]
+. ネットブートの実行に使用するファイルをダウンロードして準備
++
+新しいノードを設置したら、ネットブートを実行して、新しいノードが元のノードと同じバージョンの ONTAP を実行するようにする必要があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。
+
++
+.. にアクセスします https://mysupport.netapp.com/site/["ネットアップサポートサイト"] システムのネットブートの実行に使用するファイルをダウンロードするには、次の手順を実行します。
+.. ネットアップサポートサイトのソフトウェアダウンロードセクションから適切な ONTAP ソフトウェアをダウンロードし、「 <ONTAP_version>_image.tgz 」ファイルを Web にアクセスできるディレクトリに保存します。
+.. Web にアクセスできるディレクトリに移動し、必要なファイルが利用可能であることを確認します。
+
+
++
+[cols="1,2"]
+|===
+| 用途 | 作業 
+
+
+ a| 
+* FAS2200 、 FAS2500 、 FAS3200 、 FAS6200 、 FAS/AFF8000 シリーズシステム *
+ a| 
+「 ONTAP_version_image.tgz 」ファイルの内容をターゲットディレクトリ「 tar -zxvf ONTAP_version_image.tgz 」に展開します
+
+* 注： Windows で内容を展開する場合は、 7-Zip または WinRAR を使用してネットブート・イメージを展開します。
+
+ディレクトリの一覧には、カーネル・ファイル「 netboot/ kernel 」を含むネットブート・フォルダが含まれている必要があります
+
+
+
+ a| 
+* その他すべてのシステム *
+ a| 
+ディレクトリの一覧に次のファイルが表示されます。
+
+「 ONTAP_version_image.tgz 」
+
+
+NOTE: 「 ONTAP_version_image.tgz 」ファイルの内容を抽出する必要はありません。
+
+|===
+
+
+ディレクトリ内の情報をに使用します link:setting_up_the_new_nodes.html#["新しいノードをセットアップ"]。

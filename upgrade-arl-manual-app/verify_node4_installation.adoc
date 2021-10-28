@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/verify_node4_installation.html 
+keywords: verify, install, node4, cluster, communicate 
+summary: ノード 4 のインストールとブートが完了したら、ノード 4 が正しくインストールされていることを確認する必要があります。 
+---
+= ノード 4 のインストールを確認します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+node4 のインストールとブートの完了後、正しくインストールされていること、クラスタの一部であること、および node3 と通信できることを確認する必要があります。
+
+.手順
+. システムプロンプトで、 node4 にログインします。
+. 次のコマンドを入力して、 node4 が node3 と同じクラスタの一部であること、および healthy であることを確認します。
++
+「 cluster show 」を参照してください
+
+. 次のコマンドを入力して、ノード 4 がノード 3 と通信できること、およびすべての LIF が動作していることを確認します。
++
+network interface show -curr-node node4 ’
+
+. 次のいずれかを実行します。
++
+|===
+| ノード 4 の状態 | 作業 
+
+
+| ノード 3 とは別のシャーシに設置します  a| 
+次の手順を実行して、ノード間の HA インターコネクトを接続します。
+
+.. node3 の上部インターコネクトポートを node4 の上部インターコネクトポートに接続します。
+.. node3 の下部インターコネクトポートを node4 の下部インターコネクトポートに接続します。
+.. に進みます <<step5,手順 5>>。
+
+
+
+
+| ノード 3 と同じシャーシに搭載します | に進みます <<step5,手順 5>>。ノード間の HA インターコネクトを手動で接続する必要はありません。同じシャーシ構成では、 HA インターコネクトがバックプレーンを使用して自動的に接続されます。 
+|===
+. [[Step5] 次のいずれかの操作を行います。
++
+|===
+| クラスタの種類 | 作業 
+
+
+| SAN 環境の場合 | 手順 6 を実行し、セクションに進みます link:move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html["node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF を確認します"]。 
+
+
+| SAN 環境では使用できません | 手順 6 をスキップしてセクションに進みますlink:move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html["node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF を確認します"]。 
+|===
+. いずれかのノードで次のコマンドを入力して、 node3 と node4 の両方がクォーラムにあることを確認します。
++
+event log show -messagename scsiblade. *
+
++
+次の例は、クラスタ内のノードがクォーラムにある場合の出力を示しています。
+
++
+[listing]
+----
+cluster::> event log show -messagename scsiblade.*
+Time                Node   Severity      Event
+------------------- ------ ------------- --------------------------
+8/13/2012 14:03:51  node1  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:51  node2  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:48  node3  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:43  node4  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+----
+

@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/decide_to_use_arl_guide.html 
+keywords: decision, decision, what to use, upgrade, HA pair, metrocluster, storage encryption, volume encryption, NSE, NVE 
+summary: このガイドを使用するかどうか。 
+---
+= アグリゲートの再配置ガイドを使用するかどうかを決定します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+このマニュアルでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードし、既存のデータとディスクはすべて維持する方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
+
+このマニュアルは、次のような状況で使用することを想定しています。
+
+* 新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。
+* ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。
+* MetroCluster 9.8 以降を実行する 4 ノードおよび 8 ノードの Fabric ONTAP 構成を使用するシステムがある場合。
+
+
+
+NOTE: この手順では、 NetApp Storage Encryption （ NSE ）および NetApp Volume Encryption （ NVE ）を使用できます。
+
+コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、『 _Controller Hardware Upgrade Express Guide 』にリンクしてください。
+
+を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。

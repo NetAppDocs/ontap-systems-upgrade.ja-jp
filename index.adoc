@@ -1,0 +1,16 @@
+---
+layout: astra 
+sidebar: sidebar 
+permalink: index.html 
+lead: This site provides the upgrade procedures for AFF and FAS storage systems. Select the appropriate upgrade procedure for your storage system. 
+keywords: aggregate, relocation, moving, manual, upgrade, relocate 
+summary: アグリゲートの再配置を使用してコントローラハードウェアをアップグレードする 
+---
+= AFF および FAS システムのアップグレードに関するドキュメント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

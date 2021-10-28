@@ -1,0 +1,40 @@
+---
+permalink: upgrade/upgrade-check-lifs-register-serial-number.html 
+sidebar: sidebar 
+keywords: lifs 
+summary: 交換用ノードを稼働状態に戻す前に、 LIF がホームポートにあることを確認し、 AutoSupport が有効な場合は交換用ノードのシリアル番号を登録して、自動ギブバックをリセットする必要があります。 
+---
+= LIF を確認してシリアル番号を登録
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+交換用ノードを稼働状態に戻す前に、 LIF がホームポートにあることを確認し、 AutoSupport が有効な場合は交換用ノードのシリアル番号を登録して、自動ギブバックをリセットする必要があります。
+
+. 論理インターフェイスがホームサーバとポートに報告されていることを確認します。「 network interface show -is-home false 」
++
+いずれかの LIF が false と表示されている場合は、ホームポートにリバートします。「 network interface revert *
+
+. システムのシリアル番号をネットアップサポートに登録します。
++
+[cols="1,2"]
+|===
+| 状況 | 作業 
+
+
+ a| 
+AutoSupport が有効になっている
+ a| 
+AutoSupport メッセージを送信してシリアル番号を登録します。
+
+
+
+ a| 
+AutoSupport が有効になっていません
+ a| 
+ネットアップサポートに連絡してシリアル番号を登録します。
+
+|===
+. 自動ギブバックを無効にした場合は、再度有効にします。「 storage failover modify -node local-auto-giveback true 」
+

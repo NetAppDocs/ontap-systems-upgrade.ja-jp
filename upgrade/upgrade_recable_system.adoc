@@ -1,0 +1,30 @@
+---
+permalink: upgrade/upgrade-recable-system.html 
+sidebar: sidebar 
+keywords: run, diagnostic, recable, controller, module, storage, network, connection, recable the system 
+summary: 診断の実行後、コントローラモジュールのストレージとネットワークを再度ケーブル接続する必要があります。 
+---
+= システムにケーブルを再接続
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+診断の実行後、コントローラモジュールのストレージとネットワークを再度ケーブル接続する必要があります。
+
+. システムにケーブルを再接続します。
+. Config Advisor を使用して、ケーブル接続が正しいことを確認します。
++
+.. ネットアップサポートサイトから Config Advisor をダウンロードしてインストールします。
++
+http://mysupport.netapp.com/["mysupport.netapp.com"]
+
+.. ターゲット・システムの情報を入力し '[* データ収集 ] をクリックします
+.. [*Cabling *] タブをクリックし ' 出力を確認します
++
+すべてのディスクシェルフが表示されていること、およびすべてのディスクが出力に表示されていることを確認し、ケーブル接続に関する問題が見つかった場合は修正します。
+
+.. 該当するタブをクリックして他のケーブル接続を確認し、 Config Advisor からの出力を確認します。
+
+
+

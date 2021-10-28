@@ -1,0 +1,29 @@
+= 
+
+
+.手順
+. 新しいコントローラを追加します。
++
+「 securitykey-manager setup -node <new_controller_name>` 」のように指定します
+
+. キー管理ツールを追加します。
++
+「 securitykey-manager-add <key_manager_server_ip_address >` 」
+
+. キー管理サーバが設定され、クラスタ内のすべてのノードで使用できることを確認します。
++
+「 securitykey-manager show -status 」
+
+. リンクされたすべてのキー管理サーバの認証キーを新しいノードにリストアします。
++
+「 securitykey-manager restore -node <new_controller_name>` 」のように指定します
+
+. すべての自己暗号化ディスクのキーを新しい認証キーに変更します。
++
+'storage encryption disk modify -disk * [-data-key-id nonMSID AK
+
+. 連邦情報処理標準（ FIPS ）を使用する場合は、すべての自己暗号化ディスクのキーを新しい認証キーに変更してください。
++
+「 storage encryption disk * modify -disk * [-fips-key-id nonAK 」」
+
+
