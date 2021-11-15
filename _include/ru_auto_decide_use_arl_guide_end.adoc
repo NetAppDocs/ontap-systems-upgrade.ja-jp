@@ -1,6 +1,6 @@
 = 
 
 
-コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、『 _Controller Hardware Upgrade Express Guide 』にリンクしてください。
+コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
 
 を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。

@@ -25,14 +25,14 @@ summary: 元のノードからボリュームを移動できるように、新�
  a| 
 ONTAP 9.0 以降
  a| 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-expand/home.html["ONTAP 9 クラスタ拡張エクスプレスガイド"]
+https://docs.netapp.com/us-en/ontap-sm-classic/expansion/index.html["クラスタ拡張管理"^]
 
 
 
  a| 
 ONTAP 9.0 より前のリリース
  a| 
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『クラスタの拡張エクスプレスガイド』を検索してください"]
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『クラスタの拡張エクスプレスガイド』を検索してください"^]
 
 |===
 

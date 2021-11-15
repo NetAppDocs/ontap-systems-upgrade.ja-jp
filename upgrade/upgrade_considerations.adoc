@@ -17,36 +17,30 @@ summary: アップグレードを計画するには、アップグレードに�
 * ストレージを移動してアップグレードする手順は停止を伴います。ボリューム移動によるアップグレードの手順は無停止で実行できます。
 * 新しいノードでは、元のノードと同じバージョンのソフトウェアがサポートされている必要があります。
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ug-rdg/home.html["ONTAP 9 アップグレードおよびリバート / ダウングレードガイド"]
-
-+
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『アップグレードおよびリバート / ダウングレードガイド』を検索してください"]
+link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP をアップグレードします"^]
 
 * クラスタの最大サイズを確認する必要があります。
 +
 ボリュームを移動することでアップグレードする場合、元のノードを削除する前に新しいノードをクラスタに追加します。手順でサポートされる最大クラスタサイズをクラスタ内のコントローラの数が超えないようにしてください。
 
 +
-https://hwu.netapp.com["NetApp Hardware Universe の略"]
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
 
 * クラスタ内に異なるコントローラプラットフォームモデルを混在させる場合は、ストレージプラットフォームの混在ルールに従う必要があります。
 +
-https://hwu.netapp.com["NetApp Hardware Universe の略"]
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
 
 * 新しいノードには、元のノードに関連付けられているストレージを格納するための十分なストレージが必要です。
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["ONTAP 9 ディスクとアグリゲートパワーガイド"]
-
-+
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『ストレージ管理ガイド』を検索してください"]
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI によるディスクおよびアグリゲートの管理"^]
 
 * ルートアグリゲートのサイズと新しいシステムでサポートされるディスク数は、元のシステムでサポートされているサイズ以上である必要があります。
 +
-ルートアグリゲートのサイズの要件については、を参照してください https://hwu.netapp.com["NetApp Hardware Universe の略"]
+ルートアグリゲートのサイズの要件については、を参照してください https://hwu.netapp.com["NetApp Hardware Universe の略"^]
 
 * HA ペアのコントローラは、 2 つの AFF モデルまたは 2 つの FAS モデルである必要があります。
 * ノードが同じクラスタ内にある場合は、ボリュームまたは物理ストレージを 1 つの FAS2xxx から新しい FAS2xxx に移動することでアップグレードできます。たとえば、ボリュームまたは物理ストレージを FAS2552 から FAS2750 に移動できます。
-* 2 ノード MetroCluster 構成をアップグレードする場合は、次の項を参照してください。 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["アップグレードまたは更新方法を選択します"]
+* 2 ノード MetroCluster 構成をアップグレードする場合は、次の項を参照してください。 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["アップグレードまたは更新方法を選択します"^]
 
 
 内蔵ストレージを搭載したシステム
@@ -54,7 +48,7 @@ http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30
 
 NOTE: 以下のシステムには内部ストレージがあります： FAS2220 、 FAS2240-2 、 FAS2240-4 、 FAS2520 、 FAS2552 、 FAS2554 、 FAS2620 、 FAS2650 、 FAS2720 、 FAS2750 、 AFF A200 、 AFF A220 、 AFF A700s 、 AFF A800 、 AFF A250 。
 
-* お使いのシステムが上記のリストにない場合は、を参照してください https://hwu.netapp.com["NetApp Hardware Universe の略"] 内蔵ドライブがあるかどうかを確認します。
+* お使いのシステムが上記のリストにない場合は、を参照してください https://hwu.netapp.com["NetApp Hardware Universe の略"^] 内蔵ドライブがあるかどうかを確認します。
 * 内蔵ストレージを搭載したシステムの場合は、ボリュームを移動してアップグレードすることを推奨します。
 * 内蔵ストレージを搭載したシステムの場合は、システムをドライブシェルフに変換して、同じクラスタ内の新しいノードに接続できます。FAS2220 と FAS2520 のコントローラをドライブシェルフに変換することはできません。
 +
@@ -70,19 +64,19 @@ FAS2240 または最大 5 台のシステムをドライブシェルフに変換
 
 * 新しいシステムのスロット数が元のシステムのスロット数より少ない場合、またはポートのタイプが異なる場合は、新しいシステムにアダプタを追加しなければならないことがあります。
 +
-https://hwu.netapp.com["NetApp Hardware Universe の略"]
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
 
 * 元のノードまたは新しいノードで FlexArray 仮想化ソフトウェアを使用している場合。
 +
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["ネットアップの技術情報アーティクル：「 What are the specific steps involved in FlexArray for NetApp controller upgrades and replacements"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["ネットアップの技術情報アーティクル：「 What are the specific steps involved in FlexArray for NetApp controller upgrades and replacements"^]
 
 * クラスタに SAN ホストがある場合は、 LUN シリアル番号の変更に関する問題を解決するための手順が必要になることがあります。
 +
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["ストレージコントローラマザーボードの交換時および iSCSI と FCP を使用したヘッドのアップグレード時の問題の解決方法"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["ストレージコントローラマザーボードの交換時および iSCSI と FCP を使用したヘッドのアップグレード時の問題の解決方法"^]
 
 * システムでアウトオブバンド ACP を使用している場合は、アウトオブバンド ACP からインバンド ACP への移行が必要になることがあります。
 +
-https://kb.netapp.com/app/answers/answer_view/a_id/1029778["ネットアップの技術情報アーティクル 1029778 ：「 In-Band ACP Setup and Support"]
+https://kb.netapp.com/app/answers/answer_view/a_id/1029778["ネットアップの技術情報アーティクル 1029778 ：「 In-Band ACP Setup and Support"^]
 
 
 

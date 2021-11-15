@@ -40,7 +40,7 @@ Local System ID: 101268854
 
 +
 --
-** パラメータ '_node1_sysid_' は ' で記録した値です link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["手順 5 ：元のノードをシャットダウンします"]。
+** パラメータ '_node1_sysid_' は ' 元のノードのシャットダウン _ で記録した値です link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["手順 5"]。
 ** 共有ディスクが存在する場合にのみ '--p partner_SysID_' パラメータを指定します
 
 

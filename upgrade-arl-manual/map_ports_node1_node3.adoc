@@ -234,7 +234,7 @@ network interface modify -failover-group failover-group-failover-policy failover
 network interface modify -vserver node3 -lif data1 failover-policy broadcast-domainwide -failover-group fg1
 ----
 +
-に進みます link:other_references.html["参考資料"] ONTAP 9 ネットワーク管理ガイドまたは ONTAP 9 コマンド：マニュアルページリファレンスにリンクする方法については、を参照してください。
+に進みます link:other_references.html["参考資料"] をクリックして、 _Network Management_ または _ONTAP 9 コマンド：マニュアルページリファレンスにリンクしてください。
 
 . ノード 3 で変更内容を確認します。
 +

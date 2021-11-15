@@ -1,7 +1,7 @@
 ---
 permalink: upgrade/upgrade-set-up-new-nodes.html 
 sidebar: sidebar 
-keywords: Controller Hardware Upgrade Express Guide 
+keywords: upgrade, nodes, moving, storage, port, original, new 
 summary: ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。 
 ---
 = 新しいノードをセットアップ
@@ -12,7 +12,7 @@ summary: ストレージを移動してアップグレードするプロセス�
 [role="lead"]
 ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。元のノードと新しいノードで、物理ポートのレイアウトが異なる場合があります。ポートと接続の適切なレイアウトを特定するには、元のノードと交換用ノードの間のポートのマッピングを行う必要があります。
 
-新しいノードで実行されている ONTAP のバージョンが元のノードのバージョンと異なる場合は、ネットアップサポートサイトから Web にアクセスできるディレクトリに正しい「 <ONTAP_version>_image.tgz 」ファイルをダウンロードしておく必要があります（を参照） link:upgrade-prepare-when-moving-storage.html["ストレージ移動時にアップグレードを準備する手順 5"]）。システムのネットブートを実行するには、「 <ONTAP_version>_image.tgz 」ファイルが必要です。
+新しいノードで実行されている ONTAP のバージョンが元のノードのバージョンと異なる場合は、ネットアップサポートサイトから Web にアクセスできるディレクトリに正しい「 <ONTAP_version>_image.tgz 」ファイルをダウンロードしておく必要があります（ storage_, を移動するときのアップグレードの準備を参照してください）。 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_5["手順 5."]）。システムのネットブートを実行するには、「 <ONTAP_version>_image.tgz 」ファイルが必要です。
 
 .手順
 . node3 の電源をオンにし、すぐにコンソール端末で Ctrl+C キーを押して LOADER プロンプトにアクセスします。
@@ -93,10 +93,7 @@ http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz`
 . ブートメニューから * （ 5 ） Maintenance mode boot * を選択して、メンテナンスモードにアクセスします。
 . 必要に応じて、ノードの FC ポートまたは CNA ポートへの変更を実施し、ノードをメンテナンスモードにリブートします。
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["『 ONTAP 9 SAN アドミニストレーションガイド』"]
-
-+
-https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『 SAN アドミニストレーションガイド』を検索してください"]
+link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI での SAN 管理"^]
 
 . コマンド出力に「 ha 」と表示されていることを確認する必要があります。
 +
@@ -111,12 +108,6 @@ https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=3
 
 +
 「 ha-config modify controller ha 」コマンドは、コントローラ設定の「 ha 」を設定します。「 ha-config modify chassis ha 」コマンドを実行すると、シャーシ設定に「 ha 」が設定されます。
-
-+
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["ONTAP 9 ハイアベイラビリティ構成ガイド"]
-
-+
-https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『ハイアベイラビリティ構成ガイド』を検索してください"]
 
 . メンテナンスモードを終了します。
 +

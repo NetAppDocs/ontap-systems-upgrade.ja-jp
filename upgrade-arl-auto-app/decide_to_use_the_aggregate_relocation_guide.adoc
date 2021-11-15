@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.html 
-keywords: deciding, aggregate, relocation, guide, storage, controllers, administrators, ontap, ha, high, availability 
-summary: このガイドでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードする方法について説明します。 
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
+summary: このコンテンツでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードする方法について説明します。 
 ---
-= アグリゲートの再配置ガイドを使用するかどうかを決定します
+= アグリゲートの再配置の内容を使用するかどうかを決定します
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -13,16 +13,16 @@ summary: このガイドでは、 HA ペアのストレージコントローラ�
 
 
 [role="lead"]
-このマニュアルでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードし、既存のデータとディスクはすべて維持する方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
+このコンテンツでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードし、既存のデータとディスクをすべて残す方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
 
-このマニュアルは、次のような状況で使用することを想定しています。
+このコンテンツは、次のような状況で使用する必要があります。
 
 * ONTAP 9.8 以降を実行している。
 * 新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。
 * ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。
 * MetroCluster 構成をアップグレードする場合は、 4 ノード以上の FC 構成になり、すべてのノードで ONTAP 9.8 以降が実行されている必要があります。
 +
-MetroCluster IP 構成のアップグレードについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび拡張ガイド _ へのリンク。
+MetroCluster IP 構成のアップグレードについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび Expansion コンテンツにリンクするには、次の手順を実行します。
 
 
 
@@ -63,6 +63,6 @@ NOTE: コントローラのアップグレードモデルの組み合わせが�
 * 一時的なクラスタポートを使用したコントローラのアップグレードが完了したら、クラスタ LIF を AFF A400 システムの e3a および e3b 、 100GbE ポート、 FAS8300 システムの e0c および e0d 、 100GbE ポートに無停止で移行できます。
 
 
-コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、『 _Controller Hardware Upgrade Express Guide 』にリンクしてください。
+コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
 
 を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。

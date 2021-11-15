@@ -2,17 +2,17 @@
 permalink: upgrade/upgrade-decide-to-use-this-guide.html 
 sidebar: sidebar 
 keywords:  
-summary: このガイドでは、ストレージまたはボリュームを移動することで、クラスタ内の AFF システムまたは FAS システムのコントローラハードウェアをアップグレードする方法について説明します。 
+summary: このコンテンツでは、ストレージまたはボリュームを移動することで、クラスタ内の AFF システムまたは FAS システムのコントローラハードウェアをアップグレードする方法について説明します。 
 ---
-= このガイドを使用するかどうかを決定します
+= ボリュームまたはストレージを移動してアップグレードするかどうかを決定します
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-このガイドでは、ストレージまたはボリュームを移動することで、クラスタ内の AFF システムまたは FAS システムのコントローラハードウェアをアップグレードする方法について説明します。
+このコンテンツでは、ストレージまたはボリュームを移動することで、クラスタ内の AFF システムまたは FAS システムのコントローラハードウェアをアップグレードする方法について説明します。
 
-このマニュアルは、次の状況でコントローラハードウェアをアップグレードする場合に使用します。
+この手順は、次の状況でコントローラハードウェアをアップグレードする場合に使用します。
 
 
 NOTE: ONTAP 9.8 では、自動ポート配置機能が導入され、ハードウェアのアップグレード手順が簡略化されています。
@@ -28,15 +28,9 @@ NOTE: ONTAP 9.8 では、自動ポート配置機能が導入され、ハード�
 * サポート対象モデルのノードをディスクシェルフに変換し、新しいノードに接続することを計画している。
 
 
-2 ノード MetroCluster 構成をアップグレードする場合は、の手順を使用する必要があります https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/index.html["MetroCluster ® アップグレードおよび拡張ガイド"]。
+2 ノード MetroCluster 構成をアップグレードする場合は、の手順を使用する必要があります https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/index.html["MetroCluster ® のアップグレードと拡張"^] 内容
 
-このガイドでは、アグリゲートの再配置を使用してコントローラハードウェアをアップグレードする方法については説明していません。これについては次のガイドで説明します。
-
-* https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"^]
-* https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html["「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを ONTAP 9.7 にアップグレードします"^]
-* https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアは、アグリゲートの再配置を使用して手動でアップグレードします"^]
-* https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["ONTAP 9.7 以前を実行しているコントローラハードウェアは、アグリゲートの再配置を使用して手動でアップグレードします"^]
-
+このコンテンツでは、 Aggregate Relocation （ ARL ；アグリゲートの再配置）を使用してコントローラハードウェアをアップグレードする方法については説明していません。詳細については、を参照してください link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl/index.html["ARL コントローラハードウェアのアップグレード"^] 内容
 
 個々のコンポーネントを交換する場合は、そのコンポーネントのフィールド交換可能ユニット（ FRU ）のリーフレットを参照してください。
 
@@ -44,7 +38,7 @@ NOTE: ONTAP 9.8 では、自動ポート配置機能が導入され、ハード�
 ====
 ストレージを移動してコントローラハードウェアをアップグレードする手順では、元のノードは node1 と node2 に、新しいノードは node3 と node4 と呼ばれます。説明されている手順では、 node1 は node3 に置き換えられ、 node2 は node4 に置き換えられます。
 
-image::../media/original_to_new_nodes.png[元のノードから新しいノード]
+image::../upgrade/media/original_to_new_nodes.png[元のノードから新しいノード]
 
 ====
 node1 、 node2 、 node3 、および node4 という用語は、元のノードと新しいノードを区別するためだけに使用されます。手順を使用するときは、元のノードと新しいノードの実際の名前を置き換える必要があります。ただし実際には、ノードの名前は変更されません。 node3 には node1 という名前が付けられ、 node4 にはコントローラハードウェアのアップグレード後に node2 という名前が付けられます。
@@ -55,6 +49,6 @@ xref:upgrade-considerations.adoc[コントローラハードウェアのアッ�
 
 xref:upgrade-methods.adoc[コントローラハードウェアをアップグレードする方法を選択します]
 
-https://library.netapp.com/ecm/ecm_download_file/ECMP1650547["MetroCluster サービスガイド"]
+https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster のメンテナンスタスクの手順の参照先"^]
 
-https://hwu.netapp.com["NetApp Hardware Universe の略"]
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]

@@ -12,7 +12,7 @@ summary: ストレージを移動してアップグレードする場合は、�
 [role="lead"]
 ストレージを移動してアップグレードする場合は、元のノードを準備し、新しいノードをセットアップします。一部のプラットフォームモデルでは、新しいノードへの内蔵ストレージの移動がサポートされています。新しいノードにディスクを再割り当てし、ルートボリュームの設定をリストアし、ネットワークポートを設定します。ストレージの移動によるアップグレードは、停止を伴う手順で実行されます。
 
-image::../media/workflow_for_upgrading_by_moving_storage.png[ストレージの移動によるコントローラハードウェアのアップグレードワークフロー]
+image::../upgrade/media/workflow_for_upgrading_by_moving_storage.png[ストレージの移動によるコントローラハードウェアのアップグレードワークフロー]
 
 .手順
 . xref:upgrade-prepare-when-moving-storage.adoc[ストレージ移動時にアップグレードを準備]

@@ -200,7 +200,7 @@ network interface show -fields home-node 、 home-port
 'network interface modify -vserver node4 -lif data1 failover-policy broadcast-domainwide -failover-group fg1
 
 +
-を参照してください link:other_references.html["参考資料"] ONTAP 9 ネットワーク管理ガイドまたは ONTAP 9 コマンド：マニュアルページリファレンスおよび「 LIF のフェイルオーバー設定」を参照してください。
+を参照してください link:other_references.html["参考資料"] ネットワーク管理 _ または _ ONTAP 9 コマンド：マニュアルページリファレンス _ および _ LIF でのフェイルオーバー設定の詳細については、 _ を参照してください。
 
 . ノード 4 で変更を確認します。
 +

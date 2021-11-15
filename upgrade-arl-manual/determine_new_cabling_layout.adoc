@@ -17,9 +17,9 @@ summary: 新しいコントローラモジュールと新しいディスクシ�
 
 このタスクは MetroCluster サイトごとに実行する必要があります。
 
-8 ノード MetroCluster 構成のポート用途に従って、スイッチタイプに対応したケーブルレイアウトを決定するには、 _ Fabric-attached MetroCluster Installation and Configuration Guide _ を使用します。リファレンス構成ファイル（ RCF ）を使用できるようにするために、 FC スイッチポートの用途がこのガイドに記載されている用途と同じである必要があります。
+8 ノード MetroCluster 構成のポート用途に従って、スイッチタイプに対応したケーブルレイアウトを決定するには、 _ Fabric-attached MetroCluster Installation and Configuration_content を使用します。リファレンス構成ファイル（ RCF ）を使用できるようにするために、 FC スイッチポートの用途がコンテンツに記載されている用途と同じである必要があります。
 
-に進みます link:other_references.html["参考資料"] ファブリック接続 MetroCluster インストールおよび設定ガイド _ へのリンク。
+に進みます link:other_references.html["参考資料"] ファブリック接続 MetroCluster インストールおよびコンフィギュレーションコンテンツにリンクするには、次の手順を実行します。
 
 
 NOTE: RCF を使用できるようにケーブル接続できない場合は、テクニカルサポートにお問い合わせください。RCF を使用できないケーブル接続の場合は、この手順を使用しないでください。

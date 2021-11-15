@@ -1,11 +1,12 @@
 ---
 section: upgrade-arl-auto
 title: "「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを 9.7 にアップグレードします"
-url: "/upgrade-arl-auto/index.html"
 entries:
+- title: 概要
+  url: "/upgrade-arl-auto/index.html"
 - title: コントローラのアップグレードプロセスを自動化する
   url: "/upgrade-arl-auto/automate_the_controller_upgrade_process.html"
-- title: アグリゲートの再配置ガイドを使用するかどうかを決定します
+- title: アグリゲートの再配置の内容を使用するかどうかを決定します
   url: "/upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 必要な工具とドキュメント
   url: "/upgrade-arl-auto/required_tools_and_documentation.html"

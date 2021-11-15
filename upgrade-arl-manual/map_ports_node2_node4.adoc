@@ -213,7 +213,7 @@ network interface modify -vserver vserver_name -lif lif_name – home-port port_
 「 network interface modify -vserver node4 -lif data1 failover-policy broadcast-domain-wide -failover-group fg1 」というメッセージが表示されます
 
 +
-詳細については、を参照してください link:other_references.html["参考資料"] ONTAP 9 ネットワーク管理ガイドまたは ONTAP 9 コマンド：マニュアルページリファレンスにリンクするには、 LIF_Configuring failover settings on a LIF_.
+詳細については、を参照してください link:other_references.html["参考資料"] ネットワーク管理 _ または _ ONTAP 9 コマンド：マニュアルページリファレンス _ にリンクするには、 _ LIF でのフェイルオーバーの設定 _ に進みます。
 
 . ノード 4 で変更を確認します。
 +

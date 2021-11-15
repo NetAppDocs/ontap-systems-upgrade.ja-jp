@@ -21,10 +21,10 @@ NOTE: 次のコマンド例では、「 node1 」と呼んでいます。この�
 
 .手順
 . ONTAP 9.8 を実行しているシステムの場合は、 * STOP * をクリックします。の手順を使用する必要があります xref:upgrade-map-network-ports-ontap-9-8.adoc[ONTAP 9.8 を使用してネットワークポートをマッピングします]。
-. で記録したノード 1 とノード 2 のポートと LIF の設定情報を確認します link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["ストレージ移動時にアップグレードを準備、手順 3"]。
-. で記録したポート、ブロードキャストドメイン、および IPspace の情報を確認します link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["ストレージ移動時にアップグレードを準備、手順 3"]。
+. storage_, の移動時のアップグレードの準備でメモしておいたノード 1 とノード 2 のポートと LIF の設定情報を確認します。 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["手順 3"]。
+. storage_ 、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["手順 3"]。
 +
-https://hwu.netapp.com["NetApp Hardware Universe の略"]
+https://hwu.netapp.com["NetApp Hardware Universe の略"^]
 
 . 次の変更を行います。
 +
@@ -65,7 +65,7 @@ cluster show -node node1 -fields health`
 +
 'network port delete -node node1 -port port_name '
 
-. [[map_9.7_7] ノード管理ブロードキャストドメインを調整し、必要に応じてノード管理 LIF とクラスタ管理 LIF を移行します。
+. [[map_97_7] ノード管理ブロードキャストドメインを調整し、必要に応じてノード管理 LIF とクラスタ管理 LIF を移行します。
 +
 .. LIF のホームポートを表示します。
 +
@@ -88,8 +88,8 @@ network interface modify -vserver vserver_name -lif lif_name – home-port port_
 
 
 
-. 必要に応じて、のコマンドを使用して、クラスタ間ブロードキャストドメインを調整し、クラスタ間 LIF を移行します <<map_9.7_7,手順 7>>。
-. 必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <<map_9.7_7,手順 7>>。
+. 必要に応じて、のコマンドを使用して、クラスタ間ブロードキャストドメインを調整し、クラスタ間 LIF を移行します <<map_97_7,手順 7>>。
+. 必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <<map_97_7,手順 7>>。
 . すべての LIF フェイルオーバーグループを調整します。
 +
 'network interface modify -failover-group <failover_group> -failover-policy <failover_policy>

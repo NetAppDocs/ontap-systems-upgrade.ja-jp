@@ -38,10 +38,10 @@ volume show
 
 . 現在のクラスタが 2 ノードのスイッチレス構成である場合は、希望するタイプのスイッチを使用する 2 ノードのスイッチクラスタに移行します。
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"^]
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"^]
 
 . 元の各ノードから AutoSupport メッセージを送信して、テクニカルサポートにアップグレードについて通知します。
 +

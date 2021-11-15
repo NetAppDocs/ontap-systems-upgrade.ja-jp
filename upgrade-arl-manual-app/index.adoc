@@ -29,7 +29,7 @@ NOTE: このドキュメントでは、元のノードの名前は _node1_AND _n
 * この MetroCluster ファブリック手順環境は、 MetroCluster 以外の構成に加えて、 ONTAP 9.8 以降を実行する 4 ノードおよび 8 ノード構成の Fabric Manager です。
 +
 ** ONTAP 9.7 以前を実行する MetroCluster 構成の場合は、に進みます link:other_references.html["参考資料"] ONTAP 9.7 以前を実行しているコントローラハードウェアを手動でアップグレードするには、アグリゲートの再配置を使用するには、をリンクしてください。
-** MetroCluster IP 構成および Fabric MetroCluster 構成のその他のアップグレードオプションについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび拡張ガイド _ へのリンク。
+** MetroCluster IP 構成および Fabric MetroCluster 構成のその他のアップグレードオプションについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび Expansion コンテンツにリンクするには、次の手順を実行します。
 
 
 

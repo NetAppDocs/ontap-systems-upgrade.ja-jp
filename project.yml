@@ -1,14 +1,18 @@
 ---
-settings: {}
+settings:
+  name: AFF and FAS Controller Upgrade
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: true
+    langs: ja-jp,us-en,zh-cn
 sidebar:
   entries:
   - title: AFF および FAS システムのアップグレードに関するドキュメント
     url: "/index.html"
   - section: upgrade
-  - section: upgrade-arl-auto-app
-  - section: upgrade-arl-manual-app
-  - section: upgrade-arl-auto
-  - section: upgrade-arl-manual
+  - section: upgrade-arl
 homepage:
   tiles:
   - title: はじめに
@@ -18,7 +22,7 @@ homepage:
   - title: ストレージまたはボリュームの移動によるアップグレード（ほとんどのシステム）
     links:
     - title: コントローラハードウェアをアップグレードします
-      url: "/upgrade/index.html"
+      url: "/upgrade/upgrade-decide-to-use-this-guide.html"
   - title: ONTAP 9.8 以降を実行しているシステムでアグリゲートを移動してアップグレードします
     links:
     - title: "「 system controller replace 」コマンドを使用（ほとんどのシステム）"

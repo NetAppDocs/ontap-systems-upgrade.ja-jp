@@ -1,36 +1,36 @@
-= リファレンスガイド
+= 参照コンテンツ
 
 
-このガイドに記載されている手順を実行する際には、リファレンスガイドを参照するか、参照用 Web サイトにアクセスする必要があります。
+このコンテンツの手順を実行するときは、参照コンテンツを参照するか、参照 Web サイトにアクセスする必要があります。
 
-* <<Reference guides>>
+* <<Reference content>>
 * <<Reference sites>>
 
 
 
 
-== リファレンスガイド
+== 参照コンテンツ
 
-このアップグレードに固有のドキュメントを次の表に示します。
+このアップグレードに固有のコンテンツを次の表に示します。
 
 [cols="40,60"]
 |===
-| 文書化 | 内容 
+| 内容 | 説明 
 
 
-| link:https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-upgrade-controller/home.html["『 Controller Hardware Upgrade Express Guide 』を参照してください"^] | ストレージまたはボリュームを移動してクラスタ内のコントローラハードウェアを簡単にアップグレードする方法について説明します。サポートされるモデルをディスクシェルフに変換する方法についても説明します。 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"^] | ストレージまたはボリュームを移動してクラスタ内のコントローラハードウェアを簡単にアップグレードする方法について説明します。サポートされるモデルをディスクシェルフに変換する方法についても説明します。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["『 Fabric-attached MetroCluster Installation and Configuration Guide 』"^] | ファブリック構成で MetroCluster のハードウェアコンポーネントとソフトウェアコンポーネントをインストールおよび設定する方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["ファブリック接続 MetroCluster のインストールと設定"^] | ファブリック構成で MetroCluster のハードウェアコンポーネントとソフトウェアコンポーネントをインストールおよび設定する方法について説明します。 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["FlexArray 仮想化インストール要件およびリファレンスガイド"^] | FlexArray 仮想化システムのケーブル接続手順とその他の情報について説明します 
+| link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 仮想化インストール要件およびリファレンスガイド"^] | FlexArray 仮想化システムのケーブル接続手順とその他の情報について説明します 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/index.html["『 MetroCluster 管理およびディザスタリカバリガイド』"^] | 計画的なメンテナンス時または災害発生時の両方のケースにおける、 MetroCluster のスイッチオーバーとスイッチバック処理の実行方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/index.html["MetroCluster の管理とディザスタリカバリ"^] | 計画的なメンテナンス時または災害発生時の両方のケースにおける、 MetroCluster のスイッチオーバーとスイッチバック処理の実行方法について説明します。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/index.html["MetroCluster アップグレードおよび拡張ガイド"^] | MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。 
+| link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/index.html["MetroCluster のアップグレードと拡張"^] | MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。 
 
 
 | link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-900%2Fhome.html["ONTAP 9.0 コマンド：マニュアルページリファレンス"^] | サポートされる ONTAP 9.0 コマンドの構文と使用法について説明します。 
@@ -60,34 +60,31 @@
 | link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-980/home.html["ONTAP 9.8 コマンド：マニュアルページリファレンス"^] | サポートされている ONTAP 9.8 コマンドの構文と使用法について説明します。 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html["ONTAP 9 ディスクとアグリゲートパワーガイド"^] | ONTAP 物理ストレージの管理方法、アグリゲートを作成、拡張、および管理する方法、 Flash Pool アグリゲートを使用する方法、ディスクを管理する方法、および RAID ポリシーを管理する方法について説明します 
+| link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI によるディスクおよびアグリゲートの管理"^] | CLI を使用して ONTAP 物理ストレージを管理する方法について説明します。アグリゲートを作成、拡張、管理する方法、 Flash Pool アグリゲートを使用する方法、ディスクを管理する方法、および RAID ポリシーを管理する方法を示します。 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["ONTAP 9 ハイアベイラビリティ構成ガイド"^] | ストレージフェイルオーバー、テイクオーバー / ギブバックなどのハイアベイラビリティクラスタ構成をインストールおよび管理する方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["高可用性管理"^] | ストレージフェイルオーバー、テイクオーバー / ギブバックなどのハイアベイラビリティクラスタ構成をインストールおよび管理する方法について説明します。 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["ONTAP 9 論理ストレージ管理ガイド"^] | ボリューム、 FlexClone ボリューム、ファイルと LUN 、 FlexCache ボリュームを使用して論理ストレージリソースを効率的に管理する方法について説明します。 重複排除、圧縮、 qtree 、およびクォータ 
+| link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI を使用した論理ストレージ管理"^] | ボリューム、 FlexClone ボリューム、ファイルと LUN 、 FlexCache ボリュームを使用して論理ストレージリソースを効率的に管理する方法について説明します。 重複排除、圧縮、 qtree 、およびクォータ 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["ONTAP 9 9.7 以前のネットワーク管理ガイド"^] | クラスタで物理 / 仮想ネットワークポート（ VLAN およびインターフェイスグループ）、 LIF 、ルーティング、およびホスト解決サービスを設定および管理する方法、ロードバランシングでネットワークトラフィックを最適化する方法、および SNMP を使用してクラスタを監視する方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap/network-management/index.html["Network Management の略"^] | クラスタで物理 / 仮想ネットワークポート（ VLAN およびインターフェイスグループ）、 LIF 、ルーティング、およびホスト解決サービスを設定および管理する方法、ロードバランシングでネットワークトラフィックを最適化する方法、および SNMP を使用してクラスタを監視する方法について説明します。 
 
 
-| link:https://docs.netapp.com/us-en/ontap/networking/index.html["ONTAP 9 ネットワーク管理ガイド"^] | クラスタで物理 / 仮想ネットワークポート（ VLAN およびインターフェイスグループ）、 LIF 、ルーティング、およびホスト解決サービスを設定および管理する方法、ロードバランシングでネットワークトラフィックを最適化する方法、および SNMP を使用してクラスタを監視する方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI での SAN 管理"^] | iSCSI および FC プロトコルを使用して LUN 、 igroup 、ターゲットを設定および管理する方法、 NVMe/FC プロトコルを使用してネームスペースとサブシステムを設定および管理する方法について説明します。 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["『 ONTAP 9 SAN アドミニストレーションガイド』"^] | SAN 環境向けに iSCSI プロトコルや FC プロトコルを設定および管理する方法について説明しています 
+| link:https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN 構成リファレンス"^] | FC と iSCSI のトポロジと配線方式について説明します 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanconf/home.html["ONTAP 9 SAN 構成ガイド"^] | FC と iSCSI のトポロジと配線方式について説明します 
+| link:https://docs.netapp.com/us-en/ontap/software_setup/concept_decide_whether_to_use_ontap_cli.html["クラスタセットアップで System Manager と ONTAP CLI のどちらを使用するかを決定します"^] | ONTAP をセットアップおよび設定する方法について説明します。 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html["ONTAP 9 ソフトウェアセットアップガイド"^] | ONTAP をセットアップおよび設定する方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["CLI での管理の概要"^] | ONTAP システムの管理方法、 CLI インターフェイスの使用方法、クラスタへのアクセス方法、ノードの管理方法などについて説明します 
 
 
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html["ONTAP 9 システムアドミニストレーションリファレンス"^] | ONTAP システムの管理方法、 CLI インターフェイスの使用方法、クラスタへのアクセス方法、ノードの管理方法などについて説明します 
-
-
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ug-rdg/home.html["ONTAP 9 アップグレードおよびリバート / ダウングレードガイド"^] | ONTAP のダウンロードとアップグレードの手順については、を参照してください 
+| link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP をアップグレードします"^] | ONTAP のダウンロードとアップグレードの手順については、を参照してください 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html["「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを ONTAP 9.7 にアップグレードします"^] | ONTAP 9.5 を実行するコントローラを ONTAP 9.7 に無停止でアップグレードする場合に、「 system controller replace 」コマンドを使用してアグリゲートの再配置手順を説明します。 
@@ -105,8 +102,8 @@
 
 == 参照サイト
 
-。 link:https://mysupport.netapp.com["ネットアップサポートサイト"^] サイトには、システムで使用可能なネットワークインターフェイスカード（ NIC ）やその他のハードウェアに関するドキュメントも含まれています。また、にも含まれています をクリックします。このコマンドは、新しいシステムでサポートされるハードウェアに関する情報を提供します。
+。 link:https://mysupport.netapp.com["ネットアップサポートサイト"^] また、システムで使用する可能性のあるネットワークインターフェイスカード（ NIC ）やその他のハードウェアに関するドキュメントも含まれています。また、にも含まれています をクリックします。このコマンドは、新しいシステムでサポートされるハードウェアに関する情報を提供します。
 
-を参照してください link:https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"^] ONTAP 9 製品ドキュメントにアクセスするには、以下の手順を実行
+にアクセスします https://docs.netapp.com/us-en/ontap/index.html["ONTAP 9 のドキュメント"^]。
 
-へのリンクについては、ネットアップサポートサイトのを参照してください link:https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"^] ツール。
+にアクセスします link:https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"^] ツール。

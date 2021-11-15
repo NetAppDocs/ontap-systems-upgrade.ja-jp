@@ -14,7 +14,7 @@ summary: 元のノードから移動するボリュームを格納するため�
 
 ボリュームを移動するには、データ保護ミラー関係を初期化しておく必要があります。
 
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["使用しているバージョンの Data ONTAP 8 に対する『データ保護ガイド』を検索してください"]
+https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["必要なデータ保護手順を探します"^]。
 
 .手順
 . 新しいノードごとに少なくとも 1 つのアグリゲートを作成します。

@@ -85,7 +85,7 @@ NOTE: node2 のすべてのアグリゲートが再配置されてノード 4 �
 
 
 
-storage aggregate relocation コマンドの詳細については、を参照してください link:other_references.html["参考資料"] ONTAP 9 ディスクとアグリゲートパワーガイドおよび ONTAP 9 コマンド：マニュアルページリファレンスにリンクするには、次の手順を実行します。
+storage aggregate relocation コマンドの詳細については、を参照してください link:other_references.html["参考資料"] CLI_ および ONTAP 9 コマンド：マニュアルページリファレンス _ を使用してディスクおよびアグリゲートの管理にリンクするには、次の手順を実行します。
 
 |===
 . [man_relocate_3_4_Step5] - ノード 2 のすべての非ルートアグリゲートがオンラインであり、ノード 4 の状態であることを確認します。
