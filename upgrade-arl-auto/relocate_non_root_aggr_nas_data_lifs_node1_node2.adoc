@@ -86,7 +86,7 @@ node2 上にオフラインのボリュームがある場合は、各ボリュ�
 
 . インターフェイスグループまたは VLAN が設定されている場合は、次の手順を実行します。
 +
-.. まだ保存していない場合は、 VLAN および ifgrp の情報を記録して、 node3 のブート後に VLAN と ifgrp を再作成できるようにします。
+.. まだ保存していない場合は、 VLAN および ifgrp の情報を記録して、ノード 3 のブート後に VLAN および ifgrp を作成し直すことができます。
 .. 次のコマンドを入力して、インターフェイスグループから VLAN を削除します。
 +
 「 network port vlan delete -node _nodename 」 -port_ifgrp --vlan-id_vlan_ID_`

@@ -77,7 +77,7 @@ network interface show -curr-node <node2> -role data
 
 . インターフェイスグループまたは VLAN が設定されている場合は、次の手順を実行します。
 +
-.. node3 の起動後に node3 で VLAN とインターフェイスグループを再作成できるように、 VLAN とインターフェイスグループの情報を記録します。
+.. node3 の起動後に node3 に VLAN とインターフェイスグループの情報を再作成できるように、 VLAN とインターフェイスグループの情報を記録します。
 .. インターフェイスグループから VLAN を削除します。
 +
 「 network port vlan delete -node <nodename> -port <ifgrp> -vlan-id <vlan_ID> 」のように指定します

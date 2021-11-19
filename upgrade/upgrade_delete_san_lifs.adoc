@@ -4,13 +4,13 @@ sidebar: sidebar
 keywords: cluster, san, environment, delete, lid, original, node, unjoin, original, delete san lifs from the original nodes 
 summary: クラスタが SAN 環境にある場合は、元のノードから SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。 
 ---
-= SAN LIF を元のノードから削除
+= SAN LIF が元のノードから不要になりました
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-クラスタが SAN 環境にある場合は、元のノードから SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。
+クラスタが SAN 環境にある場合は、元のノードから不要になった SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。
 
 .手順
 . iSCSI イニシエータを使用している場合は、次の手順を実行します。

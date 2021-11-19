@@ -19,7 +19,7 @@ image::../upgrade/media/workflow_for_upgrading_by_moving_volumes.gif[ボリュ�
 . xref:upgrade-install-and-join-new-nodes-move-vols.adoc[新しいノードを設置してクラスタに追加]
 . xref:upgrade-create-aggregate-move-volumes.adoc[アグリゲートを作成してボリュームを新しいノードに移動]
 . xref:upgrade-move-lifs-to-new-nodes.adoc[SAN 以外のデータ LIF とクラスタ管理 LIF を新しいノードに移動します]
-. xref:upgrade-delete-san-lifs.adoc[SAN LIF を元のノードから削除]
+. xref:upgrade_move_delete_recreate_san_lifs.adoc[SAN LIF を移動、削除、または作成する]
 . xref:upgrade-unjoin-original-nodes-move-volumes.adoc[クラスタから元のノードを分離]
 . xref:upgrade-complete-move-volumes.adoc[アップグレードを完了します]
 

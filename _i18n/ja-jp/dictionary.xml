@@ -1436,7 +1436,6 @@
   <block id="b003ff957beed57b873253f1e4cd0441" category="list-text">[[step5] - データ LIF をホストしているポートが新しいハードウェアに存在しない場合は、ブロードキャストドメインから削除します。</block>
   <block id="87766a1a73ec698f3b4753312d4d3b4f" category="paragraph">「 network interface modify -vserver &lt;vserver_name&gt; -lif &lt;lif_name&gt; -home-node &lt;nodename&gt; -status-admin up 」という形式で指定します</block>
   <block id="45560e4a070877091866d34d12016154" category="list-text">インターフェイスグループまたは VLAN が設定されている場合は、次の手順を実行します。</block>
-  <block id="e29d89694af185e80bbad8a8251e74a7" category="list-text">ポートおよびインターフェイスグループの情報をまだ保存していない場合は、 node3 のブート後にその VLAN とインターフェイスグループを作成し直すことができるように、それらの情報を記録しておきます。</block>
   <block id="8e2087071d353c6f56da3d27b7a84dfc" category="list-text">インターフェイスグループから VLAN を削除します。</block>
   <block id="973a9f75fd7ee6700a6f9b372ce8f863" category="paragraph">「 network port vlan delete -node &lt;nodename&gt; -port &lt;ifgrp&gt; -vlan-id &lt;vlan_ID&gt; 」のように指定します</block>
   <block id="3f3edadf07afca334ee7f44554a2b78f" category="admonition">対処方法に従って、 vlan delete コマンドで表示されるエラーを解決します。</block>
@@ -1448,7 +1447,6 @@
   <block id="c1e5c7576460bdde0a488bc293007a13" category="summary">ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動します</block>
   <block id="358f52f6680f0f2b534acb9ac77674d2" category="list-text">停止している LIF がある場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。</block>
   <block id="44d2fdf7ea40f3d7321cb94a4051b609" category="paragraph">「 network interface modify -vserver _Vserver_name -lif LIF_name `-home-node_nodename __ -status-admin up</block>
-  <block id="f478a95b9d2a45383e616b6de8791011" category="list-text">まだ保存していない場合は、 VLAN および ifgrp の情報を記録して、 node3 のブート後に VLAN と ifgrp を再作成できるようにします。</block>
   <block id="65dafd80488559eb25b9b16c7ae60e27" category="list-text">次のコマンドを入力して、インターフェイスグループから VLAN を削除します。</block>
   <block id="38c250e3cea10de8e69a05edc403fb4f" category="paragraph">「 network port vlan delete -node _nodename 」 -port_ifgrp --vlan-id_vlan_ID_`</block>
   <block id="11c404f7c79ae3005a460cd2d80c457a" category="paragraph">「 network port ifgrp show -node nodename 」 -ifgrp _ifgrp_name のように表示されます</block>
@@ -1536,7 +1534,6 @@
   <block id="197cf83159625e94e69b0fc1efa0e824" category="list-text">ノード 4 で変更を確認します。</block>
   <block id="37df1e4edda8a9bce8aa91096f265331" category="list-text">[[Step5] ] 次のコマンドを入力し、出力を調べて、 node2 にデータ LIF が残っていないことを確認します。</block>
   <block id="738cc83e33e6f068712b1528860c1691" category="paragraph">network interface show -curr-node &lt;node2&gt; -role data</block>
-  <block id="b8f8ddd66115feba2699f5f568baf106" category="list-text">node3 の起動後に node3 で VLAN とインターフェイスグループを再作成できるように、 VLAN とインターフェイスグループの情報を記録します。</block>
   <block id="c76c038ef9582123a69154e143b5e63f" category="list-text">次のコマンドを入力し、ノードに設定されているインターフェイスグループがないかどうかを確認します。</block>
   <block id="e0d9b9a8ceb38f16ee39f9732b0b1c59" category="paragraph">「 network port ifgrp show -node &lt;node2&gt; -ifgrp &lt;ifgrp_name&gt; -instance 」の形式で指定します</block>
   <block id="42610df90a5616a22b3f0c895971522b" category="summary">ノードがクォーラムに正常に参加していることを確認する必要があります。</block>
@@ -2011,8 +2008,6 @@
   <block id="c90fa15ea4f7f1e277e469d1d20e9188" category="list-text"><block ref="c90fa15ea4f7f1e277e469d1d20e9188" category="inline-xref-macro-rx"></block></block>
   <block id="5000633fe0b5f0aa09b151f9fed8c9f2" category="list-text"><block ref="5000633fe0b5f0aa09b151f9fed8c9f2" category="inline-xref-macro-rx"></block></block>
   <block id="8829820fd8a035233c013956f191d0e7" category="list-text"><block ref="8829820fd8a035233c013956f191d0e7" category="inline-xref-macro-rx"></block></block>
-  <block id="dcfddc91bf590dac8927fb640abf642a" category="inline-xref-macro">SAN LIF を元のノードから削除</block>
-  <block id="8e1e92b5404def89a2b22b05b862222a" category="list-text"><block ref="8e1e92b5404def89a2b22b05b862222a" category="inline-xref-macro-rx"></block></block>
   <block id="cf9dafa4aad7081e3241e5bc4acb350f" category="inline-xref-macro">クラスタから元のノードを分離</block>
   <block id="ce218642d156a102e02a50d62a3bf028" category="list-text"><block ref="ce218642d156a102e02a50d62a3bf028" category="inline-xref-macro-rx"></block></block>
   <block id="58c6b3bbc2bbb34b0e96a9731bc9133c" category="list-text"><block ref="58c6b3bbc2bbb34b0e96a9731bc9133c" category="inline-xref-macro-rx"></block></block>
@@ -3908,4 +3903,31 @@
   <block id="f205bf1a1b77ff86829c2c9003e57d32" category="paragraph">手動アップグレードを実行する場合は、次の表を参照してください。</block>
   <block id="6bc189e4bdf09236271772165ff4ca93" category="cell"><block ref="6bc189e4bdf09236271772165ff4ca93" category="inline-link-macro-rx"></block></block>
   <block id="ac9646c163734765195d079eb6d15091" category="cell"><block ref="ac9646c163734765195d079eb6d15091" category="inline-link-macro-rx"></block></block>
+  <block id="55b615d5a5d5462e3f46ce9376778ab0" category="list-text">node3 の起動後に node3 に VLAN とインターフェイスグループの情報を再作成できるように、 VLAN とインターフェイスグループの情報を記録します。</block>
+  <block id="a2e30cff23423051f81bd802a4867e92" category="list-text">ポートおよびインターフェイスグループの情報をまだ保存していない場合は、ノード 3 のブート後にそれらの VLAN とインターフェイスグループをノード 3 で再作成できるように、それらの情報を記録します。</block>
+  <block id="d5736566f3b38c38d89537f2b1d352ca" category="list-text">まだ保存していない場合は、 VLAN および ifgrp の情報を記録して、ノード 3 のブート後に VLAN および ifgrp を作成し直すことができます。</block>
+  <block id="1b4080c52526ea8390adef3facc6646f" category="doc">SAN LIF が元のノードから不要になりました</block>
+  <block id="94e9d0bee98aefbd97c04b1401f6c790" category="paragraph">クラスタが SAN 環境にある場合は、元のノードから不要になった SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。</block>
+  <block id="e756ac7d9a5fd3abb4a55029a22c0817" category="summary">クラスタの内容とクラスタ環境に応じて、 SAN LIF を移動、削除、または再作成する必要があります。</block>
+  <block id="2b3144340f2db340218f76914a6af256" category="doc">新しい SAN LIF を作成するか、削除した SAN LIF を再作成します</block>
+  <block id="051662f99e538a90d87104fddd664c40" category="inline-link">ネットワークインターフェイスが作成されます</block>
+  <block id="0b3461f9ff1cc0e9748c51914f12d1ac" category="paragraph">クラスタ環境の要件に応じて、この手順で削除した新しい SAN LIF を作成するか、または SAN LIF を再作成することができます。を使用して、 SAN LIF を作成または再作成できます<block ref="307c1988750a87c4014551385f0a3aa7" category="inline-link-rx"></block> OnCommand ® System Manager_documentation を使用したクラスタ管理の手順</block>
+  <block id="9755bcbb5a429349c5615c0f3ada05c7" category="summary">SAN LIF の移動が必要になるのは、クラスタの内容を変更する場合だけです。</block>
+  <block id="25f08d7b61860ee1109108f6e40dfa08" category="doc">SAN LIF の移動に関する考慮事項</block>
+  <block id="78e610b85ab6101167c6fa157b66555f" category="paragraph">クラスタにノードを追加したりクラスタからノードを削除するなど、クラスタの構成を変更する場合は、 SAN LIF を移動するだけで済みます。LIF を移動した場合、 FC ファブリックを再ゾーニングしたり、クラスタに接続されたホストとその新しいターゲットインターフェイスとの間に新しい iSCSI セッションを作成したりする必要はありません。</block>
+  <block id="cea2f29230da8c2fef3774a56b365b07" category="paragraph">SAN LIF を移動するには、「 network interface modify 」コマンドを使用します。SAN LIF を移動するには、 LIF をオフラインにし、別のホームノードやポートに移動してから、移動先の新しい場所で LIF をオンラインに戻す必要があります。Asymmetric Logical Unit Access （ ALUA ；非対称論理ユニットアクセス）は、任意の ONTAP 解決策の一部として冗長パスと自動選択を提供します。このため、移動時に LIF がオフラインになっても、 I/O の中断は生じません。ホストは再試行してから、 I/O を別の LIF に移動するだけです。</block>
+  <block id="5a7069a59566aed43a1807b999c67b98" category="paragraph">LIF の移動中は、システムを停止することなく次のタスクを実行できます。</block>
+  <block id="e30c2c276ce1db1c06a2b1d0b484ce01" category="list-text">クラスタの 1 つの HA ペアを、 LUN データにアクセスするホストにはまったく支障のない形で、アップグレードした HA ペアに置き換えます</block>
+  <block id="6122825da89f3a77f8980f730d12d268" category="list-text">ターゲットインターフェイスカードをアップグレードします</block>
+  <block id="995489fe191f249d97b2746413c8ce51" category="list-text">Storage Virtual Machine （ SVM ）のリソースをクラスタ内のノードセットから同じクラスタ内の別のノードセットに移行する</block>
+  <block id="56156496b19659e54135677ece56f2f7" category="list-text">ホストサーバがオンラインのときに、ホストサーバによる LUN データへのアクセスを中断することなく、 SAN LUN を新しい HA ペアに移動できます</block>
+  <block id="2dd82882bae57f157f720bee2e0f1c24" category="inline-link">SAN LIF の移動</block>
+  <block id="f6e1595cdf693f15c733ea3348445b77" category="paragraph">詳細については、を参照してください<block ref="52d99da56caea8d9bc5c4380abc20d71" category="inline-link-rx"></block> SAN ストレージ管理に関するドキュメントの手順</block>
+  <block id="b5d4cb67b7812ac1a600c8741c4e6c3e" category="summary">クラスタの内容とクラスタ環境に応じて、 SAN LIF を移動、削除、または作成するか、削除した SAN LIF を再作成する必要があります。</block>
+  <block id="8093d580d9cc0468991044c64c97b174" category="doc">SAN LIF を移動、削除、または作成する</block>
+  <block id="a0b6fb238d938d8b3632372a4084f575" category="inline-link-macro">SAN LIF の移動に関する考慮事項</block>
+  <block id="6c4c7e577e407c3d612b2254ba5aeaad" category="list-text"><block ref="6c4c7e577e407c3d612b2254ba5aeaad" category="inline-link-macro-rx"></block></block>
+  <block id="4a0fbf919570309e7272750b2374a969" category="list-text"><block ref="4a0fbf919570309e7272750b2374a969" category="inline-link-macro-rx"></block></block>
+  <block id="7411801636d93c5890addb910d57f9f3" category="list-text"><block ref="7411801636d93c5890addb910d57f9f3" category="inline-link-macro-rx"></block></block>
+  <block id="a0b4daa7e353d3d7dd1a62bec6a63421" category="list-text"><block ref="a0b4daa7e353d3d7dd1a62bec6a63421" category="inline-xref-macro-rx"></block></block>
 </blocks>
