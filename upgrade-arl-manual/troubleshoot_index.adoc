@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-manual-app/troubleshoot_index.html 
-keywrods: troubleshoot, failure, aggregate, relocate, lifs 
-summary: トラブルシューティング、トラブルシューティング、問題、エラー、障害 
+permalink: upgrade-arl-manual/troubleshoot_index.html 
+keywords: troubleshoot, troubleshooting, problem, error, failure 
+summary: ノードペアのアップグレード中に障害が発生する可能性があります。 
 ---
 = トラブルシューティングを行う
 :hardbreaks:

@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/stage_4_index.html 
+keywords: stage 4, node2, retire, information 
+summary: ステージ 4 で、 node2 の情報を記録し、 node2 を撤去します。 
+---
+= ステージ 4 ：ノード 2 の情報を記録し、 node2 を撤去
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ステージ 4 で、 node2 の情報を記録し、 node2 を撤去します。
+
+.手順
+. link:record_node2_information.html["ノード 2 の情報を記録します"]
+. link:retire_node2.html["ノード 2 を撤去"]
+

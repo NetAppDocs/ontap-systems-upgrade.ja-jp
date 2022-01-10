@@ -35,3 +35,51 @@ node3 の設定が異なる場合は、手順の後半でシステムが停止�
 
 . 交換したコントローラが MetroCluster 構成に対して正しく設定されていることを確認します。 MetroCluster 構成は正常な状態であり、スイッチオーバーモードではないことが必要です。を参照してください link:verify_health_of_metrocluster_config.html["MetroCluster 構成の健全性を確認"]。
 
+
+
+
+== ノード 3 に、 VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します
+
+node3 がクォーラムにあり、 node2 と通信できることを確認したら、ノード 3 にある node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成する必要があります。node3 のポートは、新しく作成したブロードキャストドメインにも追加する必要があります。
+
+VLAN 、インターフェイスグループ、およびブロードキャストドメインの作成と再作成の詳細については、を参照してください link:other_references.html["参考資料"] およびリンク先： _ ネットワーク管理 _ 。
+
+.手順
+. に記録された node1 情報を使用して、 node3 に VLAN を再作成します link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"] セクション。
++
+「 network port vlan create -node <node_name > -vlan <vlan-names> 」のように指定します
+
+. に記録されている node1 の情報を使用して、ノード 3 にインターフェイスグループを再作成します link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"] セクション。
++
+network port ifgrp create -node <node_name > -ifgrp <port_ifgrp_names> -distr-func
+
+. に記録されている node1 の情報を使用して、ノード 3 にブロードキャストドメインを再作成します link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"] セクション。
++
+「 network port broadcast-domain create -ipspace Default -broadcast-domain <broadcast_domain_names> -mtu <mtu_size> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+
+. node3 のポートを、新しく作成したブロードキャストドメインに追加します。
++
+「 network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_names> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+
+
+
+
+
+== ノード 3 でキー管理ツールの設定をリストアします
+
+NetApp Volume Encryption （ NVE ）を使用してアップグレードするシステムのボリュームを暗号化する場合は、暗号化設定を新しいノードに同期する必要があります。ノード 1 のアグリゲートの ARL がノード 2 からノード 3 に完了すると、暗号化されたボリュームがオフラインになります。
+
+.手順
+. オンボードキーマネージャの暗号化設定を同期するには、クラスタプロンプトで次のコマンドを実行します。
++
+|===
+| この ONTAP バージョンの場合 ... | 使用するコマンド 
+
+
+| ONTAP 9.6 または 9.7 | セキュリティキー管理ツールのオンボード同期 
+
+
+| ONTAP 9.5 | security key-manager setup -node <node_name > 
+|===
+. オンボードキーマネージャのクラスタ全体のパスフレーズを入力します。
+
