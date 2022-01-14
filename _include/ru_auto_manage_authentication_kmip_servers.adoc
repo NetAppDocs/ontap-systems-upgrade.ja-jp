@@ -24,6 +24,6 @@
 
 . 連邦情報処理標準（ FIPS ）を使用する場合は、すべての自己暗号化ディスクのキーを新しい認証キーに変更してください。
 +
-「 storage encryption disk * modify -disk * [-fips-key-id nonAK 」」
+storage encryption disk modify -disk * [-fips-key-id nonMSID AK
 
 

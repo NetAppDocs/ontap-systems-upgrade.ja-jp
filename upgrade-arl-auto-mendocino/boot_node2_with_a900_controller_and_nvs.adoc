@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-mendocino/boot_node2_with_a900_controller_and_nvs.html 
+keywords: boot, nvs, controller, module, node2, aff, a700, a900 
+summary: AFF A900 コントローラモジュールと NVS を使用して node2 をブートします。 
+---
+= AFF A900 コントローラモジュールと NVS を使用して node2 をブートします
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+AFF A900 コントローラモジュールと NVS を搭載した node2 がアップグレード可能です。コントローラモジュールと NVS をスワップして AFF A700 から AFF A900 にアップグレードするには、コンソール接続と管理接続だけを移動する必要があります。このセクションでは、 AFF A900 コントローラモジュールおよび NVS で node2 をブートするために必要な手順を説明します。
+
+.手順
+. [[boot_node2 _step1] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、ノード 2 の構成のロード後にブートループが発生しないように、「 setenv bootarg.storageencryption.support` コマンドを「 true 」に設定する必要があります。 kmip.init.maxwait` 変数は「 off 」に設定する必要があります。
++
+'etenv bootarg.storageencryption.support true
+
++
+'etenv kmip.init.maxwait off
+
+. ノードを「 boot_menu 」でブートします。
++
+「 boot_ontap menu
+
+. ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。AFF A700 node1 のディスクを AFF A900 node1 に再割り当てするには、プロンプトで node2 の実際のノード名を入力します。次の例を参考にしてください。
++
+[listing]
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+
+
+
+The boot device has changed. System configuration information could be lost. Use option (6) to restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+
+This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
+
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Changing sysid of node node1 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+
+System rebooting...
+
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
++
+[NOTE]
+====
+上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。
+
+上記の例に示すシステム ID は一例です。アップグレードするノードの実際のシステム ID は異なります。
+
+プロンプトでノード名を入力するかログインプロンプトを表示するまでに、ノードが 2 回リブートして環境変数をリストアし、システムのカードでファームウェアを更新し、他の ONTAP 更新を実行します。
+
+====
+

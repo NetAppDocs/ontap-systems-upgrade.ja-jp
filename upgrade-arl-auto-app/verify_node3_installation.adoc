@@ -109,7 +109,7 @@ network port show -node node3
 +
 「 broadcast-domain show 」
 
-. [step3] ノード 3 のすべてのポートのネットワークポートの到達可能性の一覧を表示します。
+. [[step3]] node3 のすべてのポートの到達可能性をリストします。
 +
 「 network port reachability show 」のように表示されます
 

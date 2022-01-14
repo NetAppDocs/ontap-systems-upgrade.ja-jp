@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-mendocino/automate_the_controller_upgrade_process.html 
+keywords: automating, controller, upgrade, network, port, aff, a700, a900 
+summary: 自動化された手順を使用して、 AFF A700 コントローラを AFF A900 コントローラに交換します。 
+---
+= コントローラのアップグレードプロセスを自動化する
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+このコントローラのアップグレード中に、 AFF A700 コントローラを AFF A900 コントローラに交換します。このコンテンツでは、自動手順の手順を紹介しています。自動化された では、ディスク割り当てとネットワークポートの到達可能性チェックを利用して、コントローラのアップグレードを簡易化しています。

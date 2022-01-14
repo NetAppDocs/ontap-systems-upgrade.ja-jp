@@ -26,6 +26,8 @@ homepage:
       url: "/upgrade/upgrade-decide-to-use-this-guide.html"
   - title: ONTAP 9.8 以降を実行しているシステムでアグリゲートを移動してアップグレードします
     links:
+    - title: "「 system controller replace 」コマンドを使用します（ AFF A700 から AFF A900 ）。"
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-mendocino/
     - title: "「 system controller replace 」コマンドを使用（ほとんどのシステム）"
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
     - title: 手動コマンドを使用する

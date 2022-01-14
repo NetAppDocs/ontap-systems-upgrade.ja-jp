@@ -1,6 +1,6 @@
 ---
 section: upgrade-arl-manual-app
-title: ONTAP 9.8 以降を実行しているコントローラハードウェアは、アグリゲートの再配置を使用して手動でアップグレードします
+title: ONTAP 9.8 以降を実行しているコントローラハードウェアを手動でアップグレードします
 entries:
 - title: 概要
   url: "/upgrade-arl-manual-app/index.html"

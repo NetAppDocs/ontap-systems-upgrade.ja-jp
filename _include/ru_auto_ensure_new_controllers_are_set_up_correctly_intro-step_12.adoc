@@ -55,7 +55,7 @@ volume show -node <node4 > -state offline`
 
 . オフラインになっているボリュームがある場合は、セクションで取得したオフラインボリュームのリストと比較します link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]必要に応じて、次のコマンドを使用して、ボリュームごとに 1 回、オフラインボリュームをオンラインにします。
 +
-'volume online -vserver <vserver-name> -volume <volume_name>`
+'volume online -vserver <vserver_name> -volume <volume_name>`
 
 . ノードごとに次のコマンドを使用して、新しいノードの新しいライセンスをインストールします。
 +
@@ -72,6 +72,7 @@ license-code パラメータには、アルファベットの文字キーをア�
 「 system license delete -serial -number <node-serial_number> -package <license_package> 」という 2 つのライセンスがあります
 
 +
+--
 ** 期限切れのライセンスをすべて削除します。
 +
 「システムライセンスのクリーンアップ - 期限切れ」
@@ -82,11 +83,14 @@ license-code パラメータには、アルファベットの文字キーをア�
 
 ** クラスタから特定のライセンスを削除するには、ノードで次のコマンドを使用します。
 +
-「 system license delete -serial-number <node1 serial number> -package * 」という名前になります
+system license delete -serial-number <node1 _serial_number>-package *`
 
 +
-「 system license delete -serial-number <node2 serial number> -package * 」のように表示されます
+system license delete -serial-number <node2 _ serial_number> -package *`
 
+
+
+--
 +
 次の出力が表示されます。
 
@@ -99,8 +103,6 @@ Do you want to continue? {y|n}: y
 +
 すべてのパッケージを削除するには 'y' を入力します
 
-
-
 . 次のコマンドを使用して出力を調べ、ライセンスが正しくインストールされていることを確認します。
 +
 「 system license show 」を参照してください
@@ -110,6 +112,6 @@ Do you want to continue? {y|n}: y
 
 . 構成に NetApp Storage Encryption （ NSE ）を使用していた場合は、「 setenvbootarg .bootarg.storageencryption.support 」コマンドを「 true 」に設定し、「 <kmip.init.maxwait>` variable 」を「 off 」に設定します（を参照） link:install_boot_node4.html#step27["Node4 をインストールしてブートします（手順 27 ）"]）を使用している場合は、変数をリセットする必要があります。
 +
-「 diag 」のコマンドは、 systemshell -node <nodename> command sudo kenv -u -p kmip.init.maxwait` です
+`set diag; systemshell -node <node_name > コ \'83\'7d ンド sudo kenv -u -p kmip.init.maxwait`
 
 

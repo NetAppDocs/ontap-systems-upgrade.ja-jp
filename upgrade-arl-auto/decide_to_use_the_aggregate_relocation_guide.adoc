@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html
 keywords: aggregate relocation, decide to use, upgrade, model, matrix, replacement, controller 
 summary: このコンテンツでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードし、既存のデータとディスクをすべて残す方法について説明します。 
 ---
-= アグリゲートの再配置の内容を使用するかどうかを決定します
+= アグリゲートの再配置手順を使用するかどうかを決定します
 :hardbreaks:
 :nofooter: 
 :icons: font

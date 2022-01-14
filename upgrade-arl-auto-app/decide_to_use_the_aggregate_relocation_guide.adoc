@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.htm
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
 summary: このコンテンツでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードする方法について説明します。 
 ---
-= アグリゲートの再配置の内容を使用するかどうかを決定します
+= アグリゲートの再配置手順を使用するかどうかを決定します
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -52,7 +52,7 @@ NOTE: この手順では、 NetApp Storage Encryption （ NSE ）および NetAp
 
 NOTE: コントローラのアップグレードモデルの組み合わせが上記の表にない場合は、テクニカルサポートにお問い合わせください。
 
-^1 A800 システムに必要な追加手順については、セクションの「 A800 」を参照する手順に進んでください link:set_fc_or_uta_uta2_config_on_node3.html#step23["ノード 3 の UTA / UTA2 ポートを確認して設定し、手順 23 を実行します"]または 。
+^1 AFF A800 システムに必要な追加手順については、セクションの「 A800 」を参照する手順に進んでください link:set_fc_or_uta_uta2_config_on_node3.html#step23["ノード 3 の UTA / UTA2 ポートを確認して設定し、手順 23 を実行します"]または 。
 
 ^2^ARL AFF A320 から AFF A400 システムへの自動アップグレードは、 ONTAP 9.9..1 からサポートされています。
 

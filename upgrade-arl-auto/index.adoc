@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/index.html
 keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
 summary: 交換用コントローラハードウェアを使用して元のコントローラハードウェアをアップグレードし、ルート以外のアグリゲートの所有権を切り替えます。 
 ---
-= 「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを ONTAP 9.7 にアップグレードします
+= 概要
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -13,6 +13,8 @@ summary: 交換用コントローラハードウェアを使用して元のコ�
 
 
 [role="lead"]
+* このアグリゲート再配置手順を使用して 'system controller replace' コマンドを使用してコントローラハードウェアをアップグレードできますONTAP 9.5 を実行しているこの手順環境コントローラハードウェアは ONTAP 9.7* に接続されています
+
 手順の実行中に、交換用コントローラハードウェアを使用して元のコントローラハードウェアをアップグレードし、ルート以外のアグリゲートの所有権を切り替えます。アグリゲートをノードからノードに複数回移行して、アップグレード手順全体を通じて少なくとも 1 つのノードがアグリゲートからデータを提供していることを確認します。また、処理を続行する前に、データ論理インターフェイス（ LIF ）を移行し、新しいコントローラのネットワークポートをインターフェイスグループに割り当てます。
 
 この情報では、元のノードの名前は「 node1 」と「 node2 」になり、新しいノードの名前は「 node3 」と「 node4 」になります。説明されている手順では、「 node1 」は「 node3 」に置き換えられ、「 node2 」は「 node4 」に置き換えられます。
