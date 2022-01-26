@@ -1,0 +1,210 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/verify_node1_installation.html 
+keywords: verifying, verify, node1, install, installation, aff, a900, nvs, controller 
+summary: AFF A900 コントローラモジュールと NVS を使用して、ノード 1 の設置を確認します。 
+---
+= ノード 1 のインストールを確認します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+AFF A900 コントローラモジュールと NVS を使用して、ノード 1 のインストールを確認する必要があります。物理ポートは変更されないため、 AFF A700 node1 から AFF A900 node1 に物理ポートをマッピングする必要はありません。
+
+AFF A900 コントローラモジュールで node1 をブートしたら、正しく設置されていることを確認する必要があります。ノード 1 がクォーラムに参加するのを待ってから、コントローラの交換処理を再開する必要があります。
+
+手順のこの時点で、コントローラのアップグレード処理はノード 1 がクォーラムへの自動参加を試みるため一時停止している必要があります。
+
+.手順
+. node1 がクォーラムに参加していることを確認します
++
+cluster show -node node1 -fields health`
+
++
+「 health 」フィールドの出力は「 true 」でなければなりません。
+
+. node1 が node2 と同じクラスタに含まれており、正常な状態であることを確認します。
++
+「 cluster show 」を参照してください
+
+. advanced 権限モードに切り替えます。
++
+「高度」
+
+. コントローラ交換処理のステータスを確認し、ノード 1 を停止する前と同じ状態で一時停止状態になっていることを確認して、新しいコントローラの設置とケーブルの移動の物理的なタスクを実行します。
++
+「 system controller replace show 」と表示されます
+
++
+「 system controller replace show-sdetails 」というエラーが表示されます
+
+. コントローラの交換処理を再開します。
++
+「システムコントローラの交換が再開」
+
+. コントローラの交換処理が一時停止し、次のメッセージが表示されます。
++
+[listing]
+----
+Cluster::*> system controller replace show
+Node          Status                       Error-Action
+------------  ------------------------     ------------------------------------
+Node1         Paused-for-intervention      Follow the instructions given in
+                                           Step Details
+Node2         None
+
+Step Details:
+--------------------------------------------
+To complete the Network Reachability task, the ONTAP network configuration must be manually adjusted to match the new physical network configuration of the hardware. This includes:
+
+
+1. Re-create the interface group, if needed, before restoring VLANs. For detailed commands and instructions, refer to the "Re-creating VLANs, ifgrps, and broadcast domains" section of the upgrade controller hardware guide for the ONTAP version running on the new controllers.
+2. Run the command "cluster controller-replacement network displaced-vlans show" to check if any VLAN is displaced.
+3. If any VLAN is displaced, run the command "cluster controller-replacement network displaced-vlans restore" to restore the VLAN on the desired port.
+2 entries were displayed.
+----
++
+
+NOTE: このガイドでは、 VLAN 、 ifgrp 、およびブロードキャストドメインの再作成について、ノード 1_Restore ネットワーク設定の名前が _ に変更されています。
+
+. コントローラの交換が一時停止状態になった状態で、に進みます <<Restore network configuration on node1>>。
+
+
+
+
+== ノード 1 でネットワーク設定をリストアします
+
+node1 がクォーラムにあり、 node2 と通信できることを確認したら、 node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインが node1 で認識されていることを確認します。また、ノード 1 のすべてのネットワークポートが正しいブロードキャストドメインに設定されていることを確認します。
+
+VLAN 、インターフェイスグループ、およびブロードキャストドメインの作成と再作成の詳細については、を参照してください link:other_references.html["参考資料"] をクリックして、 _Network Management_content にリンクします。
+
+.手順
+. アップグレードした node1 にあるすべての物理ポートの一覧を表示します。
++
+network port show -node node1
+
++
+ノードのすべての物理ネットワークポート、 VLAN ポート、およびインターフェイスグループポートが表示されます。この出力から、 ONTAP によって「 Cluster 」ブロードキャストドメインに移動された物理ポートを確認できます。この出力を使用して、インターフェイスグループメンバーポート、 VLAN ベースポート、または LIF をホストするスタンドアロンの物理ポートとして使用するポートを決定できます。
+
+. クラスタのブロードキャストドメインの一覧を表示します。
++
+「 broadcast-domain show 」
+
+. node1 のすべてのポートに到達できるネットワークポートを表示します。
++
+network port reachability show -node node1
+
++
+次の例のような出力が表示されます。
+
++
+[listing]
+----
+Cluster::> reachability show -node node1
+  (network port reachability show)
+Node      Port     Expected Reachability                Reachability Status
+--------- -------- ------------------------------------ ---------------------
+Node1
+          a0a      Default:Default                      ok
+          a0a-822  Default:822                          ok
+          a0a-823  Default:823                          ok
+          e0M      Default:Mgmt                         ok
+          e11a     -                                    no-reachability
+          e11b     -                                    no-reachability
+          e11c     -                                    no-reachability
+          e11d     -                                    no-reachability
+          e3a      -                                    no-reachability
+          e3b      -                                    no-reachability
+          e4a      Cluster:Cluster                      ok
+          e4e      Cluster:Cluster                      ok
+          e5a      -                                    no-reachability
+          e7a      -                                    no-reachability
+          e9a      Default:Default                      ok
+          e9a-822  Default:822                          ok
+          e9a-823  Default:823                          ok
+          e9b      Default:Default                      ok
+          e9b-822  Default:822                          ok
+          e9b-823  Default:823                          ok
+          e9c      Default:Default                      ok
+          e9d      Default:Default                      ok
+22 entries were displayed.
+----
++
+上記の例では、コントローラの交換後にノード 1 がブートします。物理的に接続されていないため、一部のポートに到達できません。「 OK 」以外の到達可能性ステータスのポートはすべて修復する必要があります。
+
++
+
+NOTE: AFF A700 から AFF A900 コントローラへのアップグレード中に、ネットワークポートとその接続を変更しないでください。すべてのポートを正しいブロードキャストドメインに配置し、ネットワークポートの到達可能性を変更しないでください。ただし、 LIF を node2 から node1 に戻す前に、ネットワークポートの到達可能性と健全性ステータスを確認する必要があります。
+
+. [[restore_node1_step4]] 次の順序で、次のコマンドを使用して、 node1 の各ポートの到達可能性ステータスを「 ok 」以外に修復します。
++
+'network port reachability repair-node <node_name > -port <port_name> ’
+
++
+--
+.. 物理ポート
+.. VLAN ポート
+
+
+--
++
+次の例のような出力が表示されます。
+
++
+[listing]
+----
+Cluster ::> reachability repair -node node1 -port e11b
+----
++
+[listing]
+----
+Warning: Repairing port "node1:e11b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
++
+上記の警告メッセージは、到達可能性ステータスのポートで、現在配置されているブロードキャストドメインの到達可能性ステータスとは異なる可能性がある場合に表示されます。ポートと回答 'y' または 'n' の接続を適宜確認します
+
++
+すべての物理ポートに想定される到達可能性があることを確認します。
+
++
+「 network port reachability show 」のように表示されます
+
++
+到達可能性の修復が実行されると、 ONTAP は正しいブロードキャストドメインにポートを配置しようとします。ただし、ポートの到達可能性を判別できず、既存のどのブロードキャストドメインにも属していない場合、 ONTAP はこれらのポート用に新しいブロードキャストドメインを作成します。
+
+. ポートの到達可能性を確認します
++
+「 network port reachability show 」のように表示されます
+
++
+すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的に接続されていないポートのステータスを「 no-reachability 」と報告する必要があります。この 2 つ以外のステータスが報告されたポートがある場合は、到達可能性修復を実行し、の手順に従ってブロードキャストドメインにポートを追加または削除します <<restore_node1_step4,手順 4>>。
+
+. すべてのポートがブロードキャストドメインに配置されたことを確認します。
++
+「 network port show 」のように表示されます
+
+. ブロードキャストドメインのすべてのポートで、正しい Maximum Transmission Unit （ MTU ；最大伝送ユニット）が設定されていることを確認します。
++
+「 network port broadcast-domain show 」
+
+. 次の手順に従って、リストアが必要な SVM および LIF のホームポートがある場合は、それらを指定して LIF のホームポートをリストアします。
++
+.. 移動された LIF を表示します。
++
+「 dispaced-interface show 」
+
+.. LIF のホームノードとホームポートをリストアします。
++
+「変位インターフェイス restore -home-node -node node_name -vserver vserver_name -lif -name lif_name 」のように指定します
+
+
+
+. すべての LIF にホームポートがあり、意図的に稼働状態になっていることを確認します。
++
+network interface show -fields home-port 、 status-admin
+
+

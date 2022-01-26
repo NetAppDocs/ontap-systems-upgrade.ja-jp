@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/required_tools_and_documentation.html 
+keywords: required, tools, documentation, install, worksheet, ontap 
+summary: アップグレードを実行するには特定のツールが必要です。また、アップグレードプロセス中に他のドキュメントを参照する必要があります。 
+---
+= 必要な工具とドキュメント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+アップグレードを実行するには接地ストラップが必要です。また、アップグレードプロセス中に他のマニュアルを参照する必要があります。
+
+にアクセスします link:other_references.html["参考資料"] セクションでは、このアップグレードに必要な参照ドキュメントと参照サイトのリストを参照できます。

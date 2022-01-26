@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/resume_snapmirror_operations.html 
+keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
+summary: アップグレード前に休止していた SnapMirror 転送を再開し、 SnapMirror 関係を再開します。 
+---
+= SnapMirror 処理を再開します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+アップグレード前に休止していた SnapMirror 転送を再開し、 SnapMirror 関係を再開できます。更新はアップグレードの完了後にスケジュールどおりに実行されます。
+
+.手順
+. デスティネーションで SnapMirror のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
+. SnapMirror 関係を再開します。
++
+「 snapmirror resume -destination – vserver <vserver_name>` 」のように指定します
+
+

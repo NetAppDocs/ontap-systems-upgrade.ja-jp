@@ -1,6 +1,18 @@
-= 参照コンテンツ
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/other_references.html 
+keywords: references, documentation, hardware universe, content, documentation center, information 
+summary: アップグレードのサポートに必要な参照コンテンツおよび Web サイトへのリンク。 
+---
+= 参考資料
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
+[role="lead"]
 このコンテンツの手順を実行するときは、参照コンテンツを参照するか、参照 Web サイトにアクセスする必要があります。
 
 * <<Reference content>>
