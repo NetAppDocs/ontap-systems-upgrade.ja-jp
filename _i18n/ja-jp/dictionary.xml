@@ -150,7 +150,6 @@
   <block id="3b70100fce1839004dba40191f90a2c9" category="list-text">処理を再開します。</block>
   <block id="21d67404cbc8811a82f375c6eb59ce82" category="paragraph">ノードは自動的に停止します。</block>
   <block id="ac616410952c35e808a3c7ce4ea5b4a7" category="inline-link-macro">古いシステムの運用を停止</block>
-  <block id="975ea661f5a70916862dd59a8818ebf7" category="paragraph">アップグレードの完了後に、 node2 の運用を停止できます。を参照してください <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block></block>
   <block id="b39850fa882a12596e03ef7779fcfebc" category="list-text"><block ref="5e1bb6d16e6bc7a1d750ae669f510747" category="inline-xref-macro-rx"></block></block>
   <block id="2061ab494eae73f1e7251b76a58b27d3" category="cell">ストレージまたはボリュームを移動してクラスタ内のコントローラハードウェアを簡単にアップグレードする方法について説明します。サポートされるモデルをディスクシェルフに変換する方法についても説明します。</block>
   <block id="5d1afe326f483a14ce8cd69456db1384" category="cell">ファブリック構成で MetroCluster のハードウェアコンポーネントとソフトウェアコンポーネントをインストールおよび設定する方法について説明します。</block>
@@ -3958,7 +3957,6 @@
   <block id="1e3871757d9d19ba71a4bda385282d88" category="paragraph">これらのチェックの実行後、システムによってルート以外のアグリゲートと NAS データ LIF が AFF A900 コントローラで実行されている node2 に再配置され、</block>
   <block id="b990f6960d7072e815b8e4d805f92035" category="paragraph">LIF が取り外された場合、ホームノードを node2 にリストアします。</block>
   <block id="57b35a4807158b0c84b33308cd272adc" category="summary">AFF A900 コントローラハードウェアを使用して AFF A700 コントローラハードウェアをアップグレードし、ルート以外のアグリゲートの所有権を切り替えます。</block>
-  <block id="293f3a0be892f917820c1418be436fe0" category="paragraph">* このアグリゲート再配置手順を使用すると、「 system controller replace 」コマンドを使用して AAF A700 を AAF A900 システムにアップグレードできます。ONTAP 9.10.1 RC2 以降を実行する手順環境 AFF A700 および AFF A900 システム。 *</block>
   <block id="4fe14399c7ba2d61fd08cb661eaee960" category="paragraph">コントローラモジュールと不揮発性ストレージモジュール（ NVS ）を交換することで、 AFF A700 ノードの HA ペアのコントローラハードウェアを AFF A900 システムに無停止でアップグレードできます。AFF A700 ノード間でルート以外のアグリゲートを移行してから、 HA ペア内の AFF A900 ノードに移行します。アップグレードするノードでホストされているデータには、アップグレード手順の実行中にアクセスできます。</block>
   <block id="b4487973401042be49d7ce291f0a7816" category="paragraph">このコントローラの手順をアップグレードする際には、 AFF A700 システムを AFF A900 システムにアップグレードします。</block>
   <block id="b506bf2d759395dc5e9a526b8a8a5085" category="admonition">AFF A700 システムの各ノードの 2 つのフィールド交換可能ユニット（ FRU ）を新しい FRU と交換する必要があります。I/O カード、データケーブル、ディスクシェルフ、およびディスクを移動、切断、再接続する必要はありません。</block>
@@ -4196,4 +4194,7 @@
   <block id="e58fe7640209496d4d7a887457b3a8c5" category="sidebar">ステージ 7 ：アップグレードを完了します</block>
   <block id="9bc5ca62c85c48a5608cc66a5119aff4" category="cell"><block ref="9bc5ca62c85c48a5608cc66a5119aff4" category="inline-link-macro-rx"></block></block>
   <block id="941f4b0595c8574b9f353fa86ce98d4e" category="cell"><block ref="941f4b0595c8574b9f353fa86ce98d4e" category="inline-link-macro-rx"></block></block>
+  <block id="815c0aa063df3c53b17744c860357708" category="paragraph">アップグレードの完了後に、 node2 の運用を停止できます。を参照してください <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
+  <block id="328d06d80ac652817a19edc359847e7a" category="paragraph">* このアグリゲート再配置手順を使用して 'system controller replace' コマンドを使用して AFF A700 を AFF A900 システムにアップグレードできますONTAP 9.10.1 RC2 以降を実行する手順環境 AFF A700 および AFF A900 システム。 *</block>
+  <block id="f886cde8cf41513338837f7a3aacf806" category="list-text">AFF A900 システムは、高電圧（ 200V ～ 240V ）のみをサポートします。AFF A700 システムをローライン電源（ 100V ～ 140V ）で実行している場合は、この手順を使用する前に AFF A700 の入力電源を変換する必要があります。</block>
 </blocks>
