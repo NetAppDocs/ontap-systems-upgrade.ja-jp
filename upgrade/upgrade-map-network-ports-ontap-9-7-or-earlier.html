@@ -2842,7 +2842,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 16:32:11 +0000">01/31/2022</time>
+    <time datetime="2022-02-03 21:52:22 +0000">02/03/2022</time>
     
   
 
@@ -2929,14 +2929,10 @@
 <div class="paragraph">
 <p>「 network interface migrate -vserver vserver_name -lif lif_name -source-node node1 -destination-node node1 -destination-port port_name 」の略</p>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>SAN データ LIF は、オフラインの場合にのみ移行できます。</p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
 <li>
 <p>クラスタ LIF のホームポートを変更します。</p>
 <div class="paragraph">
@@ -2955,7 +2951,42 @@
 <p>cluster show -node node1 -fields health`</p>
 </div>
 </li>
+<li>
+<p>クラスタ LIF がポート 7700 をリスンしていることを確認します。</p>
+<div class="paragraph">
+<p>`::&gt; network connections listening show -vserver Cluster `</p>
+</div>
+<div class="paragraph">
+<p>各クラスタ LIF がポート 7700 をリスンしている必要があります。</p>
+</div>
+<div class="paragraph">
+<p>次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Cluster::&gt; network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。</p>
+<div class="paragraph">
+<p>`::&gt; net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin down ； net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin up</p>
+</div>
+</li>
 </ol>
+</div>
+<div class="paragraph">
+<p>手順（ g ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</p>
 </div>
 </li>
 <li>

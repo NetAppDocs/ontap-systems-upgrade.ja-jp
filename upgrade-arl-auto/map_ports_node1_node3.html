@@ -2842,7 +2842,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 16:32:11 +0000">01/31/2022</time>
+    <time datetime="2022-02-03 21:52:22 +0000">02/03/2022</time>
     
   
 
@@ -2852,6 +2852,14 @@
           alt="netapp-pcarriga"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/77334475?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-martyh">
+    <img  class="avatar avatar-small"
+          alt="netapp-martyh"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/66496079?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3236,6 +3244,41 @@ cluster::&gt;</pre>
 <p>ノード 3 で変更内容を確認します。</p>
 <div class="paragraph">
 <p>network port show -node node3</p>
+</div>
+</li>
+<li>
+<p>クラスタ LIF がポート 7700 をリスンしていることを確認します。</p>
+<div class="paragraph">
+<p>`::&gt; network connections listening show -vserver Cluster `</p>
+</div>
+<div class="paragraph">
+<p>各クラスタ LIF がポート 7700 をリスンしている必要があります。</p>
+</div>
+<div class="paragraph">
+<p>次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Cluster::&gt; network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。</p>
+<div class="paragraph">
+<p>`::&gt; net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin down ； net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin up</p>
+</div>
+<div class="paragraph">
+<p>手順 11 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</p>
 </div>
 </li>
 </ol>

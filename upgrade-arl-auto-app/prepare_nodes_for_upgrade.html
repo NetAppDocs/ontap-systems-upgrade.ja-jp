@@ -2842,7 +2842,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 16:32:11 +0000">01/31/2022</time>
+    <time datetime="2022-02-03 21:52:22 +0000">02/03/2022</time>
     
   
 
@@ -3008,6 +3008,18 @@ Controller replacement operation has been paused for user intervention.</pre>
 </li>
 <li>
 <p>コントローラの交換処理が開始されて事前確認が完了すると、処理が一時停止するため、ノード 3 の設定時に必要になる可能性がある出力情報を収集できます。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems-upgrade/images/note.svg" alt="注記">
+</td>
+<td class="content">
+FAS8080 や AFF8080 など、ノードあたり 3 つ以上のクラスタポートを備えたシステムがある場合は、コントローラのアップグレードを開始する前に、ノードごとにクラスタ LIF を 2 つのクラスタポートに統合する必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>システムコンソールで、コントローラの交換用手順の指示に従って、次のコマンドセットを実行します。</p>

@@ -2842,7 +2842,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 16:32:11 +0000">01/31/2022</time>
+    <time datetime="2022-02-03 21:52:22 +0000">02/03/2022</time>
     
   
 
@@ -3020,7 +3020,12 @@ node2                 true    true
 <img src="/us-en/ontap-systems-upgrade/images/note.svg" alt="注記">
 </td>
 <td class="content">
-4 ノードクラスタの場合は、クラスタ内の別の HA ペアのノードにイプシロンが設定されていることがあります。
+<div class="paragraph">
+<p>4 ノードクラスタの場合は、クラスタ内の別の HA ペアのノードにイプシロンが設定されていることがあります。</p>
+</div>
+<div class="paragraph">
+<p>複数の HA ペアを含むクラスタの HA ペアをアップグレードする場合は、コントローラのアップグレードを実行していない HA ペアのノードにイプシロンを移動する必要があります。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。</p>
+</div>
 </td>
 </tr>
 </table>
