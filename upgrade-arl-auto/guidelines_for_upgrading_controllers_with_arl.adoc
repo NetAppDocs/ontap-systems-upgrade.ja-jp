@@ -31,6 +31,8 @@ NOTE: AFF システムのアップグレードを実行する前に、 ONTAP を
 
 NOTE: 内蔵ドライブをサポートするシステム（ FAS2700 または AFF A250 など）をアップグレードする場合でも内蔵ドライブがないときは、を参照してください link:other_references.html["参考資料"] および、 _ アグリゲートの再配置に含まれる手順を使用して、使用している ONTAP のバージョンに適したコントローラ Hardware_content を手動でアップグレードします。
 
+ONTAP 9.6P11 、 9.7P8 、またはそれ以降のリリースを使用している場合は、 Connectivity 、 live, and Availability Monitor （ CLAM ）のテイクオーバーを有効にして、特定のノード障害が発生したときにクラスタをクォーラムに戻すことを推奨します。「 kernel-service 」コマンドには、 advanced 権限レベルのアクセスが必要です。詳細については、を参照してください https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["ネットアップの技術情報アーティクル SU436 ：「 clam takeover default configuration changed"^]。
+
 ARL を使用したコントローラのアップグレードは、 SnapLock Enterprise ボリュームおよび SnapLock Compliance ボリュームが設定されたシステムでサポートされます。
 
 

@@ -58,9 +58,40 @@ network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000`
 +
 cluster show -node node1 -fields health`
 
+.. クラスタ LIF がポート 7700 をリスンしていることを確認します。
++
+`::> network connections listening show -vserver Cluster `
+
++
+各クラスタ LIF がポート 7700 をリスンしている必要があります。
+
++
+次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。
+
++
+[listing]
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+.. 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
++
+`::> net int modify -vserver Cluster -lif <cluster-lif> -status-admin down ； net int modify -vserver Cluster -lif <cluster-lif> -status-admin up
+
++
+手順（ g ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。
 
 
-. [[map_98_5] データ LIF をホストする物理ポートのブロードキャストドメインメンバーシップを変更します。これは、 ONTAP 9.7 以前を使用してネットワークポートを _Map に示すように、手動で実行できます。 link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_97_7["手順 7"]。推奨される方法は、 ONTAP 9.8 で導入された拡張ネットワーク到達可能性スキャンおよび修復手順を使用することです。次の手順 5 の手順（ a ）から（ g ）までを参照してください。
+
+. [[map_9.8_5] データ LIF をホストしている物理ポートのブロードキャストドメインメンバーシップを変更します。これは、に示すように、手動で実行できます link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_9.7_7["ONTAP 9.7 以前のバージョンを使用してネットワークポートをマッピングし、手順 7 を実行します"]。推奨される方法は、 ONTAP 9.8 で導入された拡張ネットワーク到達可能性スキャンおよび修復手順を使用することです。次の手順 5 の手順（ a ）から（ g ）までを参照してください。
 +
 .. すべてのポートの到達可能性ステータスを表示します。
 +

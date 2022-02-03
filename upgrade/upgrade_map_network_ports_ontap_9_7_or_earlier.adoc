@@ -58,6 +58,37 @@ SAN データ LIF は、オフラインの場合にのみ移行できます。
 +
 cluster show -node node1 -fields health`
 
+.. クラスタ LIF がポート 7700 をリスンしていることを確認します。
++
+`::> network connections listening show -vserver Cluster `
+
++
+各クラスタ LIF がポート 7700 をリスンしている必要があります。
+
++
+次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。
+
++
+[listing]
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+.. 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
++
+`::> net int modify -vserver Cluster -lif <cluster-lif> -status-admin down ； net int modify -vserver Cluster -lif <cluster-lif> -status-admin up
+
++
+手順（ g ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。
+
 
 
 . 新しいコントローラの物理ポート・レイアウトに合わせて、 VLAN および「 ifgrp config 」を変更します。
