@@ -4198,10 +4198,7 @@
   <block id="3691534aa0f6a7f528765fec893e0a93" category="doc">node2 のルート以外のアグリゲートを node3 から node4 に再配置します</block>
   <block id="a097e8e84a8d86baba412e5958e51b5a" category="inline-link">ネットアップの技術情報アーティクル SU436 ：「 clam takeover default configuration changed</block>
   <block id="2b628f1eeda50351f42204c06da24fe7" category="list-text">ONTAP 9.6P11 、 9.7P8 、またはそれ以降のリリースを使用している場合は、 Connectivity 、 live, and Availability Monitor （ CLAM ）のテイクオーバーを有効にして、特定のノード障害が発生したときにクラスタをクォーラムに戻すことを推奨します。「 kernel-service 」コマンドには、 advanced 権限レベルのアクセスが必要です。詳細については、を参照してください<block ref="7c246f3223ef6280d0a553bd56956f52" category="inline-link-rx"></block>。</block>
-  <block id="52d71aeaf29080fb98be2fbaca4c31f6" category="admonition">複数の HA ペアを含むクラスタの HA ペアをアップグレードする場合は、コントローラのアップグレードを実行していない HA ペアのノードにイプシロンを移動する必要があります。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。</block>
-  <block id="615cf80c94684d95339ce0b93e351fed" category="list-text">クラスタ LIF がポート 7700 をリスンしていることを確認します。</block>
   <block id="b8dabd137df5202c83400e4fde74838d" category="paragraph">`::&gt; network connections listening show -vserver Cluster `</block>
-  <block id="8375c8f66107d8ca7224d1360a8cbc68" category="paragraph">各クラスタ LIF がポート 7700 をリスンしている必要があります。</block>
   <block id="9c26c389cd17f0bf0da92eb4d2187822" category="paragraph">次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。</block>
   <block id="17a934761f44517e9bcc906e1eb8bfe9" category="list-text">必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。</block>
   <block id="4839ad4e20e071cacb55dad56989809b" category="paragraph">`::&gt; net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin down ； net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin up</block>
@@ -4210,8 +4207,10 @@
   <block id="ceb1502357ca7edd7dc13458f9f78895" category="paragraph">手順（ g ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
   <block id="9694fd9e35e64d8c445c0824b45a5dff" category="inline-link-macro">ONTAP 9.7 以前のバージョンを使用してネットワークポートをマッピングし、手順 7 を実行します</block>
   <block id="49df8ec8bead5c5a65249d6fe95ee476" category="list-text">[[map_9.8_5] データ LIF をホストしている物理ポートのブロードキャストドメインメンバーシップを変更します。これは、に示すように、手動で実行できます <block ref="5b39191cf693f735bfc52c1b3429857e" category="inline-link-macro-rx"></block>。推奨される方法は、 ONTAP 9.8 で導入された拡張ネットワーク到達可能性スキャンおよび修復手順を使用することです。次の手順 5 の手順（ a ）から（ g ）までを参照してください。</block>
-  <block id="d97de1db61a90711907bd6612b8fedef" category="list-text">ONTAP 9.6P11 、 9.7P8 、またはそれ以降のリリースを使用している場合は、 Connectivity 、 live, and Availability Monitor （ CLAM ）のテイクオーバーを有効にして、特定のノード障害が発生したときにクラスタをクォーラムに戻すことを推奨します。「 kernel-service 」コマンドには、 advanced 権限レベルのアクセスが必要です。詳細については、を参照してください<block ref="7c246f3223ef6280d0a553bd56956f52" category="inline-link-rx"></block>。ONTAP 以降では、デフォルトで「 KCS -enable-takeover 」パラメータが有効になっています。</block>
   <block id="0b0e9c9f561a00ec9391d55160c4baf0" category="paragraph">FAS8080 や AFF8080 など、ノードあたり 3 つ以上のクラスタポートを備えたシステムがある場合は、コントローラのアップグレードを開始する前に、ノードごとにクラスタ LIF を 2 つのクラスタポートに統合する必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。</block>
   <block id="b97fc198d08784bb72759208e4a261de" category="paragraph">手順（ f ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
   <block id="c4bb7f0d17cacb6fbdc03f40dfe338e7" category="paragraph">手順 3 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
+  <block id="a969e82eb7fd10796b9caae7a1d3632d" category="admonition">複数の HA ペアを含むクラスタの HA ペアをアップグレードする場合は、コントローラのアップグレードを実行していない HA ペアのノードにイプシロンを移動する必要があります。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。</block>
+  <block id="d86684c09dde7ea5d5d7306c6f674ea3" category="list-text">各クラスタ LIF がポート 7700 をリスンしている必要があります。クラスタ LIF がポート 7700 をリスンしていることを確認します。</block>
+  <block id="821f1cb96d20770eca957d1d83c78ef0" category="list-text">ONTAP 9.6P11 、 9.7P8 、またはそれ以降のリリースを使用している場合は、 Connectivity 、 live, and Availability Monitor （ CLAM ）のテイクオーバーを有効にして、特定のノード障害が発生したときにクラスタをクォーラムに戻すことを推奨します。「 kernel-service 」コマンドには、 advanced 権限レベルのアクセスが必要です。詳細については、を参照してください<block ref="7c246f3223ef6280d0a553bd56956f52" category="inline-link-rx"></block>。ONTAP 9.8 以降では、デフォルトで「 KCS -enable-takeover 」パラメータが有効になっています。</block>
 </blocks>

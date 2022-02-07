@@ -81,12 +81,9 @@ network port modify -node node2 -port e1b -ipspace Cluster -mtu 9000`
 +
 cluster show -node node2 -fields health`
 
-.. クラスタ LIF がポート 7700 をリスンしていることを確認します。
+.. 各クラスタ LIF がポート 7700 をリスンしている必要があります。クラスタ LIF がポート 7700 をリスンしていることを確認します。
 +
 `::> network connections listening show -vserver Cluster `
-
-+
-各クラスタ LIF がポート 7700 をリスンしている必要があります。
 
 +
 次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。
