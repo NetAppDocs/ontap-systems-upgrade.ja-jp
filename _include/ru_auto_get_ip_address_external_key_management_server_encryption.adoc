@@ -10,19 +10,19 @@
 
 . 各ノードで次のコマンドを使用して、すべてのノードでストレージ暗号化を設定します。
 +
-「セキュリティキーマネージャの設定」
+「 security key-manager external enable 」と入力します
 
 . 各キー管理サーバの IP アドレスを追加します。
 +
-「セキュリティキーマネージャの追加」
+「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
 
 . クラスタ内のすべてのノードで同じキー管理サーバが設定され使用可能になっていることを確認します。
 +
-「 securitykey-manager show -status 」
+「 security key-manager external show-status 」
 
 . クラスタ全体の新しい認証キーを作成します。
 +
-「 securitykey-manager create-key 」を選択します
+「 security key-manager key create 」をクリックします
 
 . 新しい認証キー ID をメモします。
 . すべての自己暗号化ドライブのキーを新しい認証キーに変更します。

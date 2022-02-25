@@ -114,7 +114,7 @@ Controller replacement operation has been paused for user intervention.
 ** storage array config show -switch <switch_name> のように表示されます
 ** system license show -owner <node_name >
 ** storage encryption disk show のコマンド
-** security key-manager backup show のコマンドは
+** security key-manager onboard show-backup をクリックします
 ** security key-manager external show のコマンド
 ** security key-manager external show-status のこと
 ** reachability show-detailability

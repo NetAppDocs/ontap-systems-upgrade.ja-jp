@@ -1,18 +1,6 @@
----
-sidebar: sidebar 
-permalink: upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html 
-keywords: set up, netapp volume encryption, controller, module, nve, node 
-summary: 交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption を使用している場合は、新しいコントローラモジュールを NVE 用に設定する必要があります。 
----
-= 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
-:hardbreaks:
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
+= 
 
 
-[role="lead"]
 交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption （ NVE ）を使用している場合は、新しいコントローラモジュールを NVE 用に設定する必要があります。
 
 この手順には、新しいコントローラモジュールで実行する手順が含まれています。コマンドは正しいノードで入力する必要があります。
@@ -60,7 +48,5 @@ summary: 交換したコントローラまたは新しいコントローラの H
 | オンボードキーマネージャ（ OKM ） | 「セキュリティキーマネージャオンボード同期」 
 |===
 
-
-認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します
 
 認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します

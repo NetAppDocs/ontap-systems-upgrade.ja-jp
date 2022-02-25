@@ -11,6 +11,6 @@ OKM は暗号キーを管理できます。OKM を使用する場合は、アッ
 . パスフレーズを安全な場所に保存します。
 . リカバリ用のバックアップを作成します。次のコマンドを実行して出力を保存します。
 +
-「 key-manager onboard show-backup 」を選択します
+「 securitykey manager onboard show-backup 」を参照してください
 
 

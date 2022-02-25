@@ -20,26 +20,18 @@ summary: 交換したコントローラまたは新しいコントローラの H
 .手順
 . キー管理サーバがまだ使用可能であり、ステータスと認証キー情報が正しいことを確認します。
 +
-[cols="30,70"]
-|===
-| ONTAP バージョン | 使用するコマンド 
+「 securitykey manager key query -node node 」を参照してください
 
-
-| ONTAP 9.6 以降 | 「 securitykey manager key query -node node 」を参照してください 
-
-
-| ONTAP 9.5 以前 | 「 securitykey -manager key show 」を参照してください 
-|===
 . 前の手順で確認したキー管理サーバを新しいコントローラのキー管理サーバリストに追加します。
 +
 .. キー管理サーバを追加します。
 +
-「 securitykey-manager-add <key_manager_server_ip_address >` 」
+「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
 
 .. リストされている各キー管理サーバについて、同じ手順を繰り返します。最大 4 台のキー管理サーバをリンクできます。
 .. キー管理サーバが正常に追加されたことを確認します。
 +
-「 securitykey -manager show 」を参照してください
+「 security key-manager external show 」と入力します
 
 
 
@@ -50,7 +42,7 @@ summary: 交換したコントローラまたは新しいコントローラの H
 +
 .. 新しいノードでキー管理サーバセットアップウィザードを起動します。
 +
-「 securitykey-manager setup -node <new_controller_name>` 」のように指定します
+「 security key-manager external enable 」と入力します
 
 .. ウィザードの手順に従って、キー管理サーバを設定します。
 

@@ -8,21 +8,21 @@
 .手順
 . キー管理サーバがまだ使用可能であり、ステータスと認証キー情報が正しいことを確認します。
 +
-「 securitykey-manager show -status 」
+「 security key-manager external show-status 」
 
 +
-「セキュリティキーマネージャクエリー」
+「 security key-manager onboard shoecw-backup 」と入力します
 
 . 前の手順で確認したキー管理サーバを、新しいコントローラのキー管理サーバのリストに追加します。
 +
 .. キー管理サーバを追加します。
 +
-「 securitykey-manager-add <key_manager_server_ip_address >` 」
+「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
 
 .. リストされている各キー管理サーバについて、同じ手順を繰り返します。最大 4 台のキー管理サーバをリンクできます。
 .. キー管理サーバが正常に追加されたことを確認します。
 +
-「 securitykey -manager show 」を参照してください
+「 security key-manager external show 」と入力します
 
 
 
@@ -33,13 +33,13 @@
 +
 .. 新しいノードでキー管理サーバセットアップウィザードを起動します。
 +
-「 securitykey-manager setup -node <new_controller_name>` 」のように指定します
+「 security key-manager external enable 」と入力します
 
 .. ウィザードの手順に従って、キー管理サーバを設定します。
 
 
 . リンクされたすべてのキー管理サーバから新しいノードに認証キーをリストアします。
 +
-「 securitykey-manager restore -node <new_controller_name>` 」のように指定します
+'security key-manager external restore -node new_controller_name'
 
 

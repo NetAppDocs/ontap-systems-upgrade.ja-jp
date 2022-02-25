@@ -261,7 +261,6 @@
   <block id="9a58231354c6d959f08b17d7fdb9350f" category="list-text">storage array config show -switch &lt;switch_name&gt; のように表示されます</block>
   <block id="760bdf3d6f89d3bd7422272872fc8ec1" category="list-text">system license show -owner &lt;node_name &gt;</block>
   <block id="46353f4e0bb2c136591c37c9eeedcf40" category="list-text">storage encryption disk show のコマンド</block>
-  <block id="6b6f6c1a8bc1fede794cda92ed140953" category="list-text">security key-manager backup show のコマンドは</block>
   <block id="001642cb897a8bebce3210207b7e81af" category="list-text">security key-manager external show のコマンド</block>
   <block id="6afea099b023b1bd5f51935ccb31ce0a" category="list-text">security key-manager external show-status のこと</block>
   <block id="27c32000aa45c9243e8b444a27636832" category="list-text">reachability show-detailability</block>
@@ -865,11 +864,8 @@
   <block id="685f08a5b99430f3e9a6b908131fd4c3" category="summary">交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption を使用している場合。</block>
   <block id="da7d6f53a5e074768e000aca830b3bfa" category="doc">新しいコントローラモジュールで NetApp Volume Encryption をセットアップします</block>
   <block id="0f36176e72d67a1afa95c79c3e1a12de" category="paragraph">交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption （ NVE ）を使用している場合は、新しいコントローラモジュールを NVE 用に設定する必要があります。</block>
-  <block id="1a59e73da663791d8cc1a4162cc79daa" category="cell">ONTAP バージョン</block>
   <block id="394247ac369fff4729d586172906244e" category="cell">使用するコマンド</block>
-  <block id="127cae73d2b4d7758b4c0a0e3f49ba5f" category="cell">ONTAP 9.6 以降</block>
   <block id="97d64be0988671e53d352ae4aa93eaf6" category="cell">「 securitykey manager key query -node node 」を参照してください</block>
-  <block id="85b2cc925922ee961d8156414096bb8d" category="cell">ONTAP 9.5 以前</block>
   <block id="afa9cce4f8e9d7e0dc9a3f8278517e40" category="cell">「 securitykey -manager key show 」を参照してください</block>
   <block id="01a72c63e79e1fcc9b3e0cac4fb2bf75" category="list-text">前の手順で確認したキー管理サーバを新しいコントローラのキー管理サーバリストに追加します。</block>
   <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">外部キー管理ツール</block>
@@ -3832,8 +3828,6 @@
   <block id="a0597ee31ba19b58e7dea556d59b7025" category="paragraph">上記の例に示すシステム ID は一例です。アップグレードするノードの実際のシステム ID は異なります。</block>
   <block id="e3a878334fd2b918ae58df67169ebb51" category="paragraph">プロンプトでノード名を入力するかログインプロンプトを表示するまでに、ノードが 2 回リブートして環境変数をリストアし、システムのカードでファームウェアを更新し、他の ONTAP 更新を実行します。</block>
   <block id="d8a5506f1c8c1c86158c9c0d1d4742fc" category="summary">交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption を使用している場合は、新しいコントローラモジュールを NVE 用に設定する必要があります。</block>
-  <block id="3a1b2c38a4df46a98276dff5f167cf5a" category="cell">用途</block>
-  <block id="ca1ca50323446209228f3f72af231354" category="cell">「 securitykey-manager external restore 」このコマンドには、 OKM のパスフレーズが必要です</block>
   <block id="7d658c9a89b8497c162f9111ae5111dc" category="list-text">事前確認を実行して、処理が実行可能であることを確認します</block>
   <block id="8e490bd535c0b48fe8a594afea8a5f73" category="list-text">事前確認が失敗した場合にアグリゲートの所有権を修正</block>
   <block id="eab10223a55d1eb3906a74203c54c3b1" category="list-text">クラスタベースライセンスキーを入力します</block>
@@ -4213,4 +4207,13 @@
   <block id="a969e82eb7fd10796b9caae7a1d3632d" category="admonition">複数の HA ペアを含むクラスタの HA ペアをアップグレードする場合は、コントローラのアップグレードを実行していない HA ペアのノードにイプシロンを移動する必要があります。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。</block>
   <block id="d86684c09dde7ea5d5d7306c6f674ea3" category="list-text">各クラスタ LIF がポート 7700 をリスンしている必要があります。クラスタ LIF がポート 7700 をリスンしていることを確認します。</block>
   <block id="821f1cb96d20770eca957d1d83c78ef0" category="list-text">ONTAP 9.6P11 、 9.7P8 、またはそれ以降のリリースを使用している場合は、 Connectivity 、 live, and Availability Monitor （ CLAM ）のテイクオーバーを有効にして、特定のノード障害が発生したときにクラスタをクォーラムに戻すことを推奨します。「 kernel-service 」コマンドには、 advanced 権限レベルのアクセスが必要です。詳細については、を参照してください<block ref="7c246f3223ef6280d0a553bd56956f52" category="inline-link-rx"></block>。ONTAP 9.8 以降では、デフォルトで「 KCS -enable-takeover 」パラメータが有効になっています。</block>
+  <block id="3a96acfd6567b2f5ad01ec7a0444dccd" category="paragraph">「 security key-manager external enable 」と入力します</block>
+  <block id="5c19461e593ee940fbb033dbf031381b" category="paragraph">「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します</block>
+  <block id="f448f5b6d3d32deaf11413ff5379c871" category="paragraph">「 security key-manager external show-status 」</block>
+  <block id="3daea017ac1d8d1efd008f41d160df66" category="paragraph">「 security key-manager key create 」をクリックします</block>
+  <block id="f96600cb1895b85fbd0be51cf5acc0fa" category="paragraph">「 security key-manager onboard shoecw-backup 」と入力します</block>
+  <block id="49bfbad696a2529ef03d859ad9b3f40a" category="paragraph">「 security key-manager external show 」と入力します</block>
+  <block id="1854c750c17094fc62d6ebafaa52bd86" category="paragraph">'security key-manager external restore -node new_controller_name'</block>
+  <block id="c497a6b930105164567b744840c21e94" category="paragraph">「 securitykey manager onboard show-backup 」を参照してください</block>
+  <block id="32ba7af89b7557f6e3e6d80a922080ce" category="list-text">security key-manager onboard show-backup をクリックします</block>
 </blocks>
