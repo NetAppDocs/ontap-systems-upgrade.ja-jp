@@ -2842,7 +2842,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-07 19:32:54 +0000">02/07/2022</time>
+    <time datetime="2022-02-25 18:52:57 +0000">02/25/2022</time>
     
   
 
@@ -2870,25 +2870,25 @@
 <li>
 <p>各ノードで次のコマンドを使用して、すべてのノードでストレージ暗号化を設定します。</p>
 <div class="paragraph">
-<p>「セキュリティキーマネージャの設定」</p>
+<p>「 security key-manager external enable 」と入力します</p>
 </div>
 </li>
 <li>
 <p>各キー管理サーバの IP アドレスを追加します。</p>
 <div class="paragraph">
-<p>「セキュリティキーマネージャの追加」</p>
+<p>「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します</p>
 </div>
 </li>
 <li>
 <p>クラスタ内のすべてのノードで同じキー管理サーバが設定され使用可能になっていることを確認します。</p>
 <div class="paragraph">
-<p>「 securitykey-manager show -status 」</p>
+<p>「 security key-manager external show-status 」</p>
 </div>
 </li>
 <li>
 <p>クラスタ全体の新しい認証キーを作成します。</p>
 <div class="paragraph">
-<p>「 securitykey-manager create-key 」を選択します</p>
+<p>「 security key-manager key create 」をクリックします</p>
 </div>
 </li>
 <li>
@@ -2916,25 +2916,25 @@
 <li>
 <p>新しいコントローラを追加します。</p>
 <div class="paragraph">
-<p>「 securitykey-manager setup -node &lt;new_controller_name&gt;` 」のように指定します</p>
+<p>「 security key-manager external enable 」と入力します</p>
 </div>
 </li>
 <li>
 <p>キー管理ツールを追加します。</p>
 <div class="paragraph">
-<p>「 securitykey-manager-add &lt;key_manager_server_ip_address &gt;` 」</p>
+<p>「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します</p>
 </div>
 </li>
 <li>
 <p>キー管理サーバが設定され、クラスタ内のすべてのノードで使用できることを確認します。</p>
 <div class="paragraph">
-<p>「 securitykey-manager show -status 」</p>
+<p>「 security key-manager external show-status 」</p>
 </div>
 </li>
 <li>
 <p>リンクされたすべてのキー管理サーバの認証キーを新しいノードにリストアします。</p>
 <div class="paragraph">
-<p>「 securitykey-manager restore -node &lt;new_controller_name&gt;` 」のように指定します</p>
+<p>'security key-manager external restore -node new_controller_name'</p>
 </div>
 </li>
 <li>
@@ -2968,7 +2968,7 @@
 <li>
 <p>リカバリ用のバックアップを作成します。次のコマンドを実行して出力を保存します。</p>
 <div class="paragraph">
-<p>「 key-manager onboard show-backup 」を選択します</p>
+<p>「 securitykey manager onboard show-backup 」を参照してください</p>
 </div>
 </li>
 </ol>

@@ -2842,7 +2842,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-07 19:32:54 +0000">02/07/2022</time>
+    <time datetime="2022-02-25 18:52:57 +0000">02/25/2022</time>
     
   
 
@@ -2883,7 +2883,7 @@
 <li>
 <p>キー管理サーバを追加します。</p>
 <div class="paragraph">
-<p>「 securitykey-manager-add &lt;key_manager_server_ip_address &gt;` 」</p>
+<p>「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します</p>
 </div>
 </li>
 <li>
@@ -2892,7 +2892,7 @@
 <li>
 <p>キー管理サーバが正常に追加されたことを確認します。</p>
 <div class="paragraph">
-<p>「 securitykey -manager show 」を参照してください</p>
+<p>「 security key-manager external show 」と入力します</p>
 </div>
 </li>
 </ol>
@@ -2908,7 +2908,7 @@
 <li>
 <p>新しいノードでキー管理サーバセットアップウィザードを起動します。</p>
 <div class="paragraph">
-<p>「 securitykey-manager setup -node &lt;new_controller_name&gt;` 」のように指定します</p>
+<p>「 security key-manager external enable 」と入力します</p>
 </div>
 </li>
 <li>
@@ -2932,7 +2932,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">外部キーマネージャ（ EKM ）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">外部キー管理ツール</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">「 securitykey-manager external restore 」このコマンドには、 OKM のパスフレーズが必要です</p></td>
 </tr>
 <tr>
@@ -2943,6 +2943,9 @@
 </table>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します</p>
 </div>
 <div class="paragraph">
 <p>認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します</p>
