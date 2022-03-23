@@ -9,14 +9,14 @@
   <meta property="og:title" content="ノードをアップグレードする準備をします" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html" />
-	<meta property="og:description" content="アップグレード前に、ノードの準備を完了しておく必要があります。" />
+	<meta property="og:description" content="ノードを準備して情報を収集し、 ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に、すべてのクラスタノードがクォーラムにあることを確認する。" />
   <meta property="og:image" content="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="アップグレード前に、ノードの準備を完了しておく必要があります。">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ノードを準備して情報を収集し、 ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に、すべてのクラスタノードがクォーラムにあることを確認する。">
   <meta name="keywords" content=" prepare, nodes, upgrade, missing disks, HA pair, san"><!-- Icons -->
   <link rel="icon" href="/ja-jp/ontap-systems-upgrade/images/favicon.ico" type="image/x-icon">
 
@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/ja-jp/ontap-systems-upgrade/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/ja-jp/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/ja-jp/ontap-systems-upgrade/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/ja-jp/ontap-systems-upgrade/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/ontap-systems-upgrade/js/na-search.js'></script><script src='/ja-jp/ontap-systems-upgrade/js/na-pagenav.js'></script><link rel='stylesheet' href='/ja-jp/ontap-systems-upgrade/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/ja-jp/ontap-systems-upgrade/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/ja-jp/ontap-systems-upgrade/js/version-dropdown.js'></script>
-  <script src='/ja-jp/ontap-systems-upgrade/js/product-family.js'></script>
   <script src='/ja-jp/ontap-systems-upgrade/js/FileSaver.min.js'></script>
   <script src='/ja-jp/ontap-systems-upgrade/js/jszip-utils.min.js'></script>
   <script src='/ja-jp/ontap-systems-upgrade/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[ノードをアップグレードする準備をします](https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-manual-app/prepare_nodes_for_upgrade.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -602,15 +620,13 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/__system_controller_replace__コマンドを使用して__ONTAP_9_10_1_RC2_以降を実行する_AFF_A700_を_AFF_A900_にアップグレードします.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/__system_controller_replace__コマンドを使用して__ONTAP_9_10_1_以降を実行する_AFF_A900_に_AFF_A700_をアップグレードします.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 RC2 以降を実行する AFF A700 を AFF A900 にアップグレードします
+            「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF A700 をアップグレードします
           </a>
           
-
-
 
 
 
@@ -687,11 +703,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_3__AFF_A900_コントローラモジュールと_NVS_を使用してノード_1_をブートします.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_3__AFF_A900_コントローラモジュールと_NVRAM_モジュールでノード_1_をブートします.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            ステージ 3 ：AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします
+            ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
           </a>
           
 
@@ -743,11 +759,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_5__AFF_A900_NVS_とコントローラモジュールを_node2_に取り付けます.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_5__AFF_A900_NVRAM_モジュールとコントローラモジュールを_node2_に取り付けます.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            ステージ 5 ：AFF A900 NVS とコントローラモジュールを node2 に取り付けます
+            ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
           </a>
           
 
@@ -769,11 +785,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_6__AFF_A900_コントローラモジュールと_NVS_を使用して_node2_をブートします.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_6__AFF_A900_コントローラモジュールと_NVRAM_モジュールで_node2_をブートします.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            ステージ 6 ：AFF A900 コントローラモジュールと NVS を使用して node2 をブートします
+            ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
           </a>
           
 
@@ -881,8 +897,6 @@
             ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します
           </a>
           
-
-
 
 
 
@@ -1147,8 +1161,6 @@
             ONTAP 9.8 以降を実行しているコントローラハードウェアを手動でアップグレードします
           </a>
           
-
-
 
 
 
@@ -1430,8 +1442,6 @@
             「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを 9.7 にアップグレードします
           </a>
           
-
-
 
 
 
@@ -1750,8 +1760,6 @@
     
 
   
-
-
 
 
 
@@ -2150,7 +2158,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl/index.html">
         概要
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 RC2 以降を実行する AFF A700 を AFF A900 にアップグレードします</div>
+        <div class="na-navbar-padding"> 「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF A700 をアップグレードします</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
         概要
@@ -2164,8 +2172,6 @@
         ARL を使用した AFF A700 から AFF A900 へのアップグレードに関するガイドライン
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
         ARL アップグレードの概要
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2187,10 +2193,10 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
         ネットブート node1
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> ステージ 3 ：AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします</div>
+        <div class="na-navbar-padding"> ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
-        AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします
+        AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
         ノード 1 のインストールを確認します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
@@ -2205,17 +2211,17 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
         ノード 2 を撤去
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> ステージ 5 ：AFF A900 NVS とコントローラモジュールを node2 に取り付けます</div>
+        <div class="na-navbar-padding"> ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
-        AFF A900 NVS とコントローラモジュールを node2 にインストールします
+        AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
         ネットブート node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> ステージ 6 ：AFF A900 コントローラモジュールと NVS を使用して node2 をブートします</div>
+        <div class="na-navbar-padding"> ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
-        AFF A900 コントローラモジュールと NVS を使用して node2 をブートします
+        AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
         node2 のインストールを確認します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
@@ -2271,8 +2277,6 @@
         スイッチオーバー、修復、スイッチバックを検証
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html">
         ARL アップグレードの概要
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-app/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2379,8 +2383,6 @@
         必要な工具とドキュメント
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html">
         ワークシート：コントローラのアップグレード前後に収集する情報
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2507,8 +2509,6 @@
         スイッチオーバー、修復、スイッチバックを検証
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/overview_of_the_arl_upgrade.html">
         ARL アップグレードの概要
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2640,9 +2640,7 @@
         スイッチを永続的に有効にします
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/verify_swtichover_healing_switchback.html">
         スイッチオーバー、修復、スイッチバックを検証
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/upgrade_node_pair.html">
-        ノードペアをアップグレードします
-      </a></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/stage_1_index.html">
@@ -2773,19 +2771,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">ホーム</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">ドキュメント</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/ja-jp/ontap-systems-upgrade/">AFF&nbsp;and&nbsp;FAS&nbsp;Controller&nbsp;Upgrade</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          ノードをアップグレードする準備をします
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -2814,27 +2809,15 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-08 14:29:46 +0000">03/08/2022</time>
+    <time datetime="2022-03-23 17:18:48 +0000">03/23/2022</time>
     
   
-
-<span>寄稿者
-  <a target="_blank" href="https://github.com/netapp-pcarriga">
-    <img  class="avatar avatar-small"
-          alt="netapp-pcarriga"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/77334475?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-</span>
 
 
 </p>
 
-
 <div class="paragraph lead">
-<p>元のノードを交換する前に、ノードが HA ペア構成になっていて、不足しているディスクや障害ディスクがないこと、相互のストレージにアクセスできること、およびクラスタ内の他のノードに割り当てられているデータ LIF を所有していないことを確認する必要があります。また、元のノードに関する情報を収集する必要があります。クラスタが SAN 環境にある場合は、クラスタ内のすべてのノードがクォーラムにあることを確認する必要があります。</p>
+<p>元のノードを交換する前に、ノードが HA ペア構成になっていて、不足しているディスクや障害ディスクがないこと、相互のストレージにアクセスできること、およびクラスタ内の他のノードに割り当てられているデータ LIF を所有していないことを確認する必要があります。また、元のノードに関する情報を収集し、クラスタが SAN 環境にある場合は、クラスタ内のすべてのノードがクォーラムにあることを確認する必要があります。</p>
 </div>
 <div class="olist arabic">
 <div class="title">手順</div>
@@ -3004,7 +2987,7 @@ RPC status:
 </div>
 </li>
 <li>
-<p>ノード 1 とノード 2 が HA ペアになっていることを確認し、ノードが相互に接続されていること、およびテイクオーバーが可能であることを確認します。</p>
+<p>ノード 1 とノード 2 が HA ペアになっていることを確認し、ノードが相互に接続されており、テイクオーバーが可能であることを確認します。</p>
 <div class="paragraph">
 <p>「 storage failover show 」をクリックします</p>
 </div>
@@ -3039,7 +3022,7 @@ node2          node1          true     Connected to node1</pre>
 </div>
 </li>
 <li>
-<p>[man_prepare-to-downgrade 9] ： node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）のアグリゲートを所有していないことを確認します。</p>
+<p>[man_prepare-to-downgrade 9] 現在の所有者（ホーム所有者ではない）であるアグリゲートを node1 と node2 のどちらも所有していないことを確認します。</p>
 <div class="paragraph">
 <p>「 storage aggregate show -node &lt;node_name &gt; -is-home false -fields owner-name 、 homename 、 state 」という文字列が含まれています</p>
 </div>
@@ -3256,6 +3239,12 @@ vs0
 </li>
 <li>
 <p>次の手順を実行して node1 と node2 に関する情報を収集し、各コマンドの出力を記録します。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>[+]</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3277,8 +3266,8 @@ vs0
 </tr>
 </table>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>両方のノードのモデル、システム ID 、シリアル番号を記録します。</p>
 <div class="paragraph">
@@ -3338,9 +3327,6 @@ vs0
 <div class="paragraph">
 <p>volume show -node &lt;node_name &gt; -state offline`</p>
 </div>
-</li>
-</ol>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3353,7 +3339,8 @@ vs0
 </tr>
 </table>
 </div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>次のコマンドを入力して、 node1 または node2 にインターフェイスグループまたは VLAN が設定されているかどうかを確認します。</p>
 <div class="paragraph">
@@ -3362,14 +3349,20 @@ vs0
 <div class="paragraph">
 <p>「 network port vlan show 」と表示されます</p>
 </div>
+</li>
+</ol>
+</div>
 <div class="paragraph">
 <p>インターフェイスグループまたは VLAN がノード 1 とノード 2 のどちらで設定されているかを確認します。手順の次の手順以降で、その情報を確認する必要があります。</p>
 </div>
-</li>
-<li>
-<p>ノード 1 とノード 2 の両方で次の手順を実行して、手順の後半で物理ポートを正しくマッピングできることを確認します。</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
+<li>
+<p>ノード 1 とノード 2 の両方で次の手順を実行して、手順 の後半で物理ポートを正しくマッピングできることを確認します。</p>
+</li>
+</ol>
+</div>
+</li>
 <li>
 <p>次のコマンドを入力して 'clusterwide 以外のノードにフェイルオーバー・グループがあるかどうかを確認します</p>
 <div class="paragraph">
@@ -3412,9 +3405,6 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 <div class="paragraph">
 <p>次の例に示すように、ノードに設定されている VLAN が表示されます。</p>
 </div>
-</li>
-</ol>
-</div>
 <div class="literalblock">
 <div class="content">
 <pre>cluster::&gt; network port vlan show
@@ -3425,14 +3415,11 @@ Node    VLAN Name Port    VLAN ID MAC Address
 node1   e1b-70    e1b     70      00:15:17:76:7b:69</pre>
 </div>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
 <li>
 <p>ノードに VLAN が設定されている場合は、各ネットワークポートと VLAN ID のペアをメモします。</p>
-</li>
-</ol>
-</div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>次のいずれかを実行します。</p>
 <table class="tableblock frame-all grid-all stretch">
@@ -3478,6 +3465,9 @@ There are no entries matching your query.</pre>
 <div class="paragraph">
 <p>SVM に iSCSI または FC が設定されている場合、次の例のようなメッセージが表示されます。</p>
 </div>
+</li>
+</ol>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>cluster::&gt; network interface show -vserver vs1 -data-protocol iscsi|fcp
@@ -3488,11 +3478,14 @@ Vserver  Interface  Admin/Oper Address/Mask       Node     Port    Home
 vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true</pre>
 </div>
 </div>
-</li>
-<li>
-<p>[man_prepare-to-downgrade 24]] 次の手順を実行して、クラスタ内のすべてのノードがクォーラムにあることを確認します。</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
+<li>
+<p>[man_prepare-to-downgrade 24]] 次の手順を実行して、クラスタ内のすべてのノードがクォーラムにあることを確認します。</p>
+</li>
+</ol>
+</div>
+</li>
 <li>
 <p>advanced 権限レベルに切り替えます。</p>
 <div class="paragraph">
@@ -3519,9 +3512,6 @@ Do you wish to continue? (y or n):</pre>
 <div class="paragraph">
 <p>次の例のようなメッセージが表示されます。</p>
 </div>
-</li>
-</ol>
-</div>
 <div class="literalblock">
 <div class="content">
 <pre>cluster::*&gt; cluster kernel-service show
@@ -3536,20 +3526,16 @@ node1         node1         in-quorum     true          operational
 </div>
 </div>
 <div class="paragraph">
-<p>+<br>
-過半数のノードが正常で相互に通信可能な場合に、クラスタ内のノードがクォーラムを構成している。詳細については、を参照してください <a href="other_references.html">"参考資料"</a> をクリックして、 <em>System Administration Reference</em>( システム管理リファレンス ) にリンクします。</p>
+<p>過半数のノードが正常で相互に通信可能な場合に、クラスタ内のノードがクォーラムを構成している。詳細については、を参照してください <a href="other_references.html">"参考資料"</a> をクリックして、 <em>System Administration Reference</em>( システム管理リファレンス ) にリンクします。</p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
 <li>
 <p>admin 権限レベルに戻ります。</p>
 <div class="paragraph">
 <p>「特権管理者」</p>
 </div>
-</li>
-</ol>
-</div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>次のいずれかを実行します。</p>
 <table class="tableblock frame-all grid-all stretch">
@@ -3646,6 +3632,9 @@ node2   0d      fc      initiator -       -         online
 <div class="paragraph">
 <p>次の例に示すようにトポロジ情報が表示されます。</p>
 </div>
+</li>
+</ol>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>cluster::&gt; storage array config show -switch
@@ -3665,11 +3654,14 @@ node2 0   50  I_1818FAStT_1
 7 entries were displayed.</pre>
 </div>
 </div>
-</li>
-<li>
-<p>[man_prepare-to-downgrade 29]] 次の手順を実行します。</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
+<li>
+<p>[man_prepare-to-downgrade 29]] 次の手順を実行します。</p>
+</li>
+</ol>
+</div>
+</li>
 <li>
 <p>元のいずれかのノードで次のコマンドを入力し、出力を記録します。</p>
 <div class="paragraph">
@@ -3680,20 +3672,18 @@ node2 0   50  I_1818FAStT_1
 </div>
 </li>
 <li>
-<p>SP のステータスが「オンライン」であることを確認します。</p>
+<p>SP のステータスがオンラインであることを確認します</p>
 </li>
 <li>
-<p>SP ネットワークが設定されていることを確認します。</p>
+<p>SP ネットワークが設定されていることを確認する。</p>
 </li>
 <li>
 <p>SP の IP アドレスやその他の情報を記録します。</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>リモート管理デバイスのネットワーク・パラメータ（この場合は SP ）を ' 新しいノードの SP の元のシステムから再利用することができますSP の詳細については ' を参照してください <a href="other_references.html">"参考資料"</a> 『 <em>System Administration Reference_and the ONTAP 9 Commands ： Manual Page Reference</em>』 にリンクするには、次の手順を実行します。</p>
 </div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>[man_prepare-to-downgrade 30]] 新しいノードに元のノードと同じライセンス機能を設定する場合は、次のコマンドを入力して元のシステムのクラスタライセンスを表示します。</p>
 <div class="paragraph">
@@ -3763,8 +3753,8 @@ node2            enable    Postmaster    -                 mailhost
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AutoSupport が有効になっています &#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
 <p>に進みます <a href="#man_prepare_nodes_step34">手順 34</a>。</p>
 </li>
@@ -3776,8 +3766,8 @@ node2            enable    Postmaster    -                 mailhost
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AutoSupport が有効になっていません &#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
 <p>AutoSupport を有効にするには、 <em>System Administration Reference</em>. の手順に従ってください。を参照してください <a href="other_references.html">"参考資料"</a> をクリックして、 <em>System Administration Reference</em>. にリンクします。）</p>
 <div class="ulist">
@@ -3829,6 +3819,9 @@ node2            enable    Postmaster    -                 mailhost
 <div class="paragraph">
 <p>「 system node AutoSupport show -node &lt;node1&gt; -instance 」のように表示されます</p>
 </div>
+</li>
+</ol>
+</div>
 <div class="paragraph">
 <p>「 Last Subject Sent ：」フィールドと「 Last Time Sent ：」フィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。</p>
 </div>
@@ -3840,25 +3833,6 @@ node2            enable    Postmaster    -                 mailhost
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[ノードをアップグレードする準備をします](https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-manual-app/prepare_nodes_for_upgrade.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">このページ</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>

@@ -9,14 +9,14 @@
   <meta property="og:title" content="ノード 4 で VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.html" />
-	<meta property="og:description" content="ノード 4 がクォーラムにあり、ノード 3 と通信できることを確認したら、ノード 2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインをノード 4 に再作成する必要があります。" />
+	<meta property="og:description" content="ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合 " ノード 2 の VLAN " インターフェイスグループ " およびブロードキャストドメインをノード 4 に再作成します" />
   <meta property="og:image" content="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ノード 4 がクォーラムにあり、ノード 3 と通信できることを確認したら、ノード 2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインをノード 4 に再作成する必要があります。">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合 " ノード 2 の VLAN " インターフェイスグループ " およびブロードキャストドメインをノード 4 に再作成します">
   <meta name="keywords" content=" node4, interface group, VLANs, broadcast domains, re-create"><!-- Icons -->
   <link rel="icon" href="/ja-jp/ontap-systems-upgrade/images/favicon.ico" type="image/x-icon">
 
@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/ja-jp/ontap-systems-upgrade/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/ja-jp/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/ja-jp/ontap-systems-upgrade/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/ja-jp/ontap-systems-upgrade/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/ontap-systems-upgrade/js/na-search.js'></script><script src='/ja-jp/ontap-systems-upgrade/js/na-pagenav.js'></script><link rel='stylesheet' href='/ja-jp/ontap-systems-upgrade/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/ja-jp/ontap-systems-upgrade/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/ja-jp/ontap-systems-upgrade/js/version-dropdown.js'></script>
-  <script src='/ja-jp/ontap-systems-upgrade/js/product-family.js'></script>
   <script src='/ja-jp/ontap-systems-upgrade/js/FileSaver.min.js'></script>
   <script src='/ja-jp/ontap-systems-upgrade/js/jszip-utils.min.js'></script>
   <script src='/ja-jp/ontap-systems-upgrade/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[ノード 4 で VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します](https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -602,15 +620,13 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/__system_controller_replace__コマンドを使用して__ONTAP_9_10_1_RC2_以降を実行する_AFF_A700_を_AFF_A900_にアップグレードします.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/__system_controller_replace__コマンドを使用して__ONTAP_9_10_1_以降を実行する_AFF_A900_に_AFF_A700_をアップグレードします.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 RC2 以降を実行する AFF A700 を AFF A900 にアップグレードします
+            「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF A700 をアップグレードします
           </a>
           
-
-
 
 
 
@@ -687,11 +703,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_3__AFF_A900_コントローラモジュールと_NVS_を使用してノード_1_をブートします.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_3__AFF_A900_コントローラモジュールと_NVRAM_モジュールでノード_1_をブートします.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            ステージ 3 ：AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします
+            ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
           </a>
           
 
@@ -743,11 +759,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_5__AFF_A900_NVS_とコントローラモジュールを_node2_に取り付けます.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_5__AFF_A900_NVRAM_モジュールとコントローラモジュールを_node2_に取り付けます.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            ステージ 5 ：AFF A900 NVS とコントローラモジュールを node2 に取り付けます
+            ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
           </a>
           
 
@@ -769,11 +785,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_6__AFF_A900_コントローラモジュールと_NVS_を使用して_node2_をブートします.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_6__AFF_A900_コントローラモジュールと_NVRAM_モジュールで_node2_をブートします.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            ステージ 6 ：AFF A900 コントローラモジュールと NVS を使用して node2 をブートします
+            ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
           </a>
           
 
@@ -881,8 +897,6 @@
             ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します
           </a>
           
-
-
 
 
 
@@ -1160,8 +1174,6 @@
 
 
 
-
-
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -1421,8 +1433,6 @@
             「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを 9.7 にアップグレードします
           </a>
           
-
-
 
 
 
@@ -1741,8 +1751,6 @@
     
 
   
-
-
 
 
 
@@ -2141,7 +2149,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl/index.html">
         概要
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 RC2 以降を実行する AFF A700 を AFF A900 にアップグレードします</div>
+        <div class="na-navbar-padding"> 「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF A700 をアップグレードします</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
         概要
@@ -2155,8 +2163,6 @@
         ARL を使用した AFF A700 から AFF A900 へのアップグレードに関するガイドライン
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
         ARL アップグレードの概要
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2178,10 +2184,10 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
         ネットブート node1
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> ステージ 3 ：AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします</div>
+        <div class="na-navbar-padding"> ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
-        AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします
+        AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
         ノード 1 のインストールを確認します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
@@ -2196,17 +2202,17 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
         ノード 2 を撤去
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> ステージ 5 ：AFF A900 NVS とコントローラモジュールを node2 に取り付けます</div>
+        <div class="na-navbar-padding"> ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
-        AFF A900 NVS とコントローラモジュールを node2 にインストールします
+        AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
         ネットブート node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> ステージ 6 ：AFF A900 コントローラモジュールと NVS を使用して node2 をブートします</div>
+        <div class="na-navbar-padding"> ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
-        AFF A900 コントローラモジュールと NVS を使用して node2 をブートします
+        AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
         node2 のインストールを確認します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
@@ -2262,8 +2268,6 @@
         スイッチオーバー、修復、スイッチバックを検証
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html">
         ARL アップグレードの概要
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-app/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2370,8 +2374,6 @@
         必要な工具とドキュメント
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html">
         ワークシート：コントローラのアップグレード前後に収集する情報
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2498,8 +2500,6 @@
         スイッチオーバー、修復、スイッチバックを検証
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/overview_of_the_arl_upgrade.html">
         ARL アップグレードの概要
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/upgrade_node_pair.html">
-        ノードペアをアップグレードします
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
@@ -2631,9 +2631,7 @@
         スイッチを永続的に有効にします
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/verify_swtichover_healing_switchback.html">
         スイッチオーバー、修復、スイッチバックを検証
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/upgrade_node_pair.html">
-        ノードペアをアップグレードします
-      </a></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> ステージ 1 ：アップグレードを準備</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/stage_1_index.html">
@@ -2764,19 +2762,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">ホーム</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">ドキュメント</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/ja-jp/ontap-systems-upgrade/">AFF&nbsp;and&nbsp;FAS&nbsp;Controller&nbsp;Upgrade</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          ノード 4 で VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -2805,24 +2800,12 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-08 14:29:46 +0000">03/08/2022</time>
+    <time datetime="2022-03-23 17:18:48 +0000">03/23/2022</time>
     
   
 
-<span>寄稿者
-  <a target="_blank" href="https://github.com/netapp-pcarriga">
-    <img  class="avatar avatar-small"
-          alt="netapp-pcarriga"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/77334475?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-</span>
-
 
 </p>
-
 
 <div class="paragraph lead">
 <p>ノード 4 がクォーラムにあり、ノード 3 と通信できることを確認したら、ノード 2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインをノード 4 に再作成する必要があります。node3 のポートは、新しく作成したブロードキャストドメインにも追加する必要があります。</p>
@@ -2864,25 +2847,6 @@
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[ノード 4 で VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します](https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">このページ</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
