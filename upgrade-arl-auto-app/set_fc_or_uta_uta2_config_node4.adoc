@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/set_fc_or_uta_uta2_config_node4.html 
 keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA/UTA2 card, node4, target, adapter, ports 
-summary: ノード 4 でオンボードの FC ポート、 UTA / UTA2 ポート、または UTA / UTA2 カードが使用されている場合は、残りの手順を実行する前に設定を行う必要があります。 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して "node4 のオンボード FC ポート "UTA/UTA2 ポート " または UTA/UTA2 カードを設定します' 
 ---
 = ノード 4 で FC または UTA / UTA2 設定を設定します
 :hardbreaks:
@@ -121,7 +121,7 @@ ucadmin modify -m fc -t initiator <adapter>`
 
 UTA / UTA2 ポートに対応する正しい SFP+ モジュールが必要です。
 
-UTA / UTA2 ポートは、ネイティブの FC モードまたは UTA / UT2A モードに設定できます。FC モードは FC イニシエータと FC ターゲットをサポートします。 UTA / UTA2 モードを使用すると、 NIC と FCoE の同時トラフィックで同じ 10GbE SFP+ インターフェイスを共有し、 FC ターゲットをサポートすることができます。
+UTA / UTA2 ポートは、ネイティブの FC モードまたは UTA / UT2A モードに設定できます。FC モードでは FC イニシエータと FC ターゲットがサポートされます。 UTA / UTA2 モードを使用すると、 NIC と FCoE の同時トラフィックで同じ 10GbE SFP+ インターフェイスを共有し、 FC ターゲットをサポートすることができます。
 
 
 NOTE: ネットアップのマーケティング資料では、 UTA2 という用語を CNA アダプタとポートという意味で使用している場合があります。ただし、 CLI では CNA という用語が使用されます。
@@ -211,7 +211,7 @@ f-a    0h       cna      target     -          -        online
 ucadmin modify -m fc | cna-t initiator | target <adapter_name> `
 
 +
-** 「 -m' 」はパーソナリティ・モードである FC または 10 GbE UTA です。
+** 「 -m 」はパーソナリティ・モード、 FC または 10GbE UTA です。
 ** `-t` は FC4 のタイプ、「 target 」または「 initiator 」です。
 +
 

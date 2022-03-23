@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/set_up_netapp_volume_encryption_new_module.html 
 keywords: set up, netapp volume encryption, controller, module, nve, node 
-summary: 交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption を使用している場合。 
+summary: ONTAP 9.8 以降を実行しているコントローラをアップグレードする場合は、必要に応じて、「 system controller replace 」コマンドを使用して、 NVE 用の新しいコントローラモジュールを設定します。 
 ---
 = 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 交換したコントローラまたは新しいコントローラの H
 
 
 [role="lead"]
-交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption （ NVE ）を使用している場合は、新しいコントローラモジュールを NVE 用に設定する必要があります。
+交換したコントローラまたは新しいコントローラのハイアベイラビリティ（ HA ）パートナーが NetApp Volume Encryption （ NVE ）を使用している場合は、新しいコントローラモジュールを NVE 用に設定する必要があります。
 
 この手順には、新しいコントローラモジュールで実行する手順が含まれています。コマンドは正しいノードで入力する必要があります。
 
@@ -54,11 +54,11 @@ summary: 交換したコントローラまたは新しいコントローラの H
 | 用途 | 使用するコマンド 
 
 
-| 外部キー管理ツール | 「 securitykey-manager external restore 」このコマンドには、 OKM のパスフレーズが必要です 
+| 外部キー管理（ EKM ） | 「 securitykey-manager external restore 」このコマンドには、 OKM のパスフレーズが必要です 
 
 
-| オンボードキーマネージャ（ OKM ） | 「セキュリティキーマネージャオンボード同期」 
+| オンボードキーマネージャ | 「セキュリティキーマネージャオンボード同期」 
 |===
 
 
-認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します
+認証キーを使用できなかったか、 EKM サーバに到達できなかったためにボリュームがオフラインになっていないか確認してください。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します

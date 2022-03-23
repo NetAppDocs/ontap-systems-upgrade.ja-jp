@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/relocate_node2_non_root_aggr_node3_node4.html 
 keywords: relocate, non-root, aggregates, node3, node4 
-summary: node2 のルート以外のアグリゲートを node3 に再配置したら、そのアグリゲートを node3 から node4 に再配置する必要があります。 
+summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする際に、 node2 のルート以外のアグリゲートを node3 から node4 に再配置します。 
 ---
 = node2 のルート以外のアグリゲートを node3 から node4 に再配置します
 :hardbreaks:

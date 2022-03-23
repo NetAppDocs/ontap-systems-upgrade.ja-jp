@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/map_ports_node2_node4.html 
 keywords: map, node2, node4, physical ports, cluster, network, connectivity 
-summary: node2 の物理ポートが node4 の物理ポートに正しくマッピングされていることを確認します。 
+summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、 node2 の物理ポートが node4 に正しくマッピングされていることを確認します。 
 ---
 = node2 のポートを node4 にマッピングします
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: node2 の物理ポートが node4 の物理ポートに正しくマッ�
 
 
 [role="lead"]
-node2 の物理ポートが node4 の物理ポートに正しくマッピングされている必要があります。これにより、 node4 はクラスタ内の他のノードおよびアップグレード後のネットワークと通信できるようになります。
+node2 の物理ポートが node4 の物理ポートに正しくマッピングされていることを確認する必要があります。そうすれば、 node4 はクラスタ内の他のノードおよびアップグレード後のネットワークと通信できるようになります。
 
 新しいノードのポートに関する情報を確認しておく必要があります。を参照してください link:other_references.html["参考資料"] Hardware Universe にリンクするには、次の手順を実行します。このセクションの後半の情報を使用します。
 
@@ -129,7 +129,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 Warning: Repairing port "node_name:port" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
-.. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair 」コマンドを実行してから約 1 分待ちます。
+.. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair repair repair repair repair repair repair 」コマンドを実行してから約 1 分待ちます。
 .. クラスタのすべてのブロードキャストドメインを一覧表示します。
 +
 「 broadcast-domain show 」

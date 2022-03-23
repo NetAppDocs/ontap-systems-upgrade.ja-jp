@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_failed_or_vetoed_aggr.html 
 keywords: relocate, failed, vetoed, aggregates, relocation, operation 
-summary: アグリゲートの再配置に失敗した場合や拒否された場合は、アグリゲートを手動で再配置するか、拒否またはデスティネーションのチェックを無視する必要があります。 
+summary: AFF A700 から AFF A900 へのアップグレード中に、障害が発生したアグリゲートの再配置または拒否されたアグリゲート。 
 ---
 = 障害が発生したアグリゲートを再配置するか
 :hardbreaks:

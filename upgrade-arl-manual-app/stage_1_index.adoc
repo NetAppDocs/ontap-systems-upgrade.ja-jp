@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/stage_1_index.html 
 keywords: stage 1, prepare, upgrade, steps 
-summary: ステージ 1 ：アップグレードの準備 
+summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードするための、第 1 段階のプロセスシーケンス。 
 ---
 = ステージ 1 ：アップグレードを準備
 :hardbreaks:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/prepare_for_netboot.html 
 keywords: preparing, netboot, ndac, ontap 
-summary: ノード 3 とノード 4 を手順の後半で物理的にラックに設置したあと、ネットブートが必要になることがあります。 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して "node3 と node4 をネットブートする準備をします' 
 ---
 = ネットブートを準備
 :hardbreaks:

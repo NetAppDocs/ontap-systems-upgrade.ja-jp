@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/troubleshoot_index.html 
-keywords: troubleshooting, node, aggregate, lif, migrate, failure 
-summary: ノードペアのアップグレード中に障害が発生する可能性があります。 
+keywords: troubleshooting, troubleshoot, node, aggregate, lif, migrate, failure 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに発生する可能性のある障害のトラブルシューティングには "system controller replace" コマンドを使用します' 
 ---
 = トラブルシューティングを行う
 :hardbreaks:

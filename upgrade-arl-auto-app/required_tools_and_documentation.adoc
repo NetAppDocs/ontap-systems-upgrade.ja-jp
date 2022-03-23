@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/required_tools_and_documentation.html 
 keywords: required, tools, documentation, install, worksheet, ontap 
-summary: 新しいハードウェアを設置するための特別なツールが必要です。また、アップグレードプロセス中に他のドキュメントを参照する必要があります。 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするには "system controller replace" コマンドを使用して " 特定のツールとマニュアルを用意する必要があります' 
 ---
 = 必要な工具とドキュメント
 :hardbreaks:

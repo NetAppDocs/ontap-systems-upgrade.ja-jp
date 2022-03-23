@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/relocate_non_root_aggr_nas_data_lifs_node1_node2.html 
-keywords: relocate, non-root, nonroot, aggregates, NAS, data, lif s, node1, node2 
-summary: ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動します 
+keywords: relocate, non-root, nonroot, aggregates, NAS, data, lifs, node1, node2 
+summary: 「 system controller replace 」コマンドを使用して ONTAP 9.5 を実行するコントローラを 9.7 にアップグレードするときに、ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動し、ノード 1 のリソースをノード 3 に移動します。 
 ---
 = ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
 :hardbreaks:

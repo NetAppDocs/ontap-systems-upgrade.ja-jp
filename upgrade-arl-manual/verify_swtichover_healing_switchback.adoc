@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/verify_swtichover_healing_switchback.html 
 keywords: verify,switchover, healing, switchback, negotiated, mcc, metrocluster 
-summary: スイッチオーバー、修復、スイッチバックの処理を検証します。 
+summary: ONTAP 9.7 以前を実行しているコントローラで、手動 ARL アップグレード時のスイッチオーバー、修復、スイッチバックの処理を確認します。 
 ---
 = スイッチオーバー、修復、スイッチバックを検証
 :hardbreaks:

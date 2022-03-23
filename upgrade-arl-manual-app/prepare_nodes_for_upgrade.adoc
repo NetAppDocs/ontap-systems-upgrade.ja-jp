@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/prepare_nodes_for_upgrade.html 
 keywords: prepare, nodes, upgrade, missing disks, HA pair, san 
-summary: アップグレード前に、ノードの準備を完了しておく必要があります。 
+summary: ノードを準備して情報を収集し、 ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に、すべてのクラスタノードがクォーラムにあることを確認する。 
 ---
 = ノードをアップグレードする準備をします
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: アップグレード前に、ノードの準備を完了しておく�
 
 
 [role="lead"]
-元のノードを交換する前に、ノードが HA ペア構成になっていて、不足しているディスクや障害ディスクがないこと、相互のストレージにアクセスできること、およびクラスタ内の他のノードに割り当てられているデータ LIF を所有していないことを確認する必要があります。また、元のノードに関する情報を収集する必要があります。クラスタが SAN 環境にある場合は、クラスタ内のすべてのノードがクォーラムにあることを確認する必要があります。
+元のノードを交換する前に、ノードが HA ペア構成になっていて、不足しているディスクや障害ディスクがないこと、相互のストレージにアクセスできること、およびクラスタ内の他のノードに割り当てられているデータ LIF を所有していないことを確認する必要があります。また、元のノードに関する情報を収集し、クラスタが SAN 環境にある場合は、クラスタ内のすべてのノードがクォーラムにあることを確認する必要があります。
 
 .手順
 . テイクオーバーモード時に両方のノードの負荷に対応できるだけの十分なリソースが元の各ノードにあることを確認します。
@@ -130,7 +130,7 @@ RPC status:
 
 
 
-. ノード 1 とノード 2 が HA ペアになっていることを確認し、ノードが相互に接続されていること、およびテイクオーバーが可能であることを確認します。
+. ノード 1 とノード 2 が HA ペアになっていることを確認し、ノードが相互に接続されており、テイクオーバーが可能であることを確認します。
 +
 「 storage failover show 」をクリックします
 
@@ -161,7 +161,7 @@ node2          node1          true     Connected to node1
 +
 いずれかのノードが部分的なギブバック状態にある場合は、「 storage failover giveback 」コマンドを使用してギブバックを実行し、「 storage failover show-giveback 」コマンドを使用して、ギブバックする必要がないことを確認します。コマンドの詳細については、を参照してください link:other_references.html["参考資料"] をクリックして、 _High Availability MANAGEMENT にリンクします。
 
-. [man_prepare-to-downgrade 9] ： node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）のアグリゲートを所有していないことを確認します。
+. [man_prepare-to-downgrade 9] 現在の所有者（ホーム所有者ではない）であるアグリゲートを node1 と node2 のどちらも所有していないことを確認します。
 +
 「 storage aggregate show -node <node_name > -is-home false -fields owner-name 、 homename 、 state 」という文字列が含まれています
 
@@ -334,16 +334,18 @@ network interface revert コマンドの詳細については、を参照して�
 いずれかのディスクで障害が発生した場合は、 CLI での _Disk およびアグリゲートの管理の手順に従ってディスクを取り外します。を参照してください link:other_references.html["参考資料"] CLI を使用してディスクおよびアグリゲートの管理にリンクするには、を参照してください）。
 
 . 次の手順を実行して node1 と node2 に関する情報を収集し、各コマンドの出力を記録します。
-+
+
+
+[+]
+
 [NOTE]
 ====
-** この情報は、手順の後半で使用します。
-** FAS8080 や AFF8080 など、ノードあたり 3 つ以上のクラスタポートを備えたシステムがある場合は、コントローラのアップグレードを開始する前に、ノードごとにクラスタ LIF を 2 つのクラスタポートに統合する必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。
+* この情報は、手順の後半で使用します。
+* FAS8080 や AFF8080 など、ノードあたり 3 つ以上のクラスタポートを備えたシステムがある場合は、コントローラのアップグレードを開始する前に、ノードごとにクラスタ LIF を 2 つのクラスタポートに統合する必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。
 
 
 ====
-+
-.. 両方のノードのモデル、システム ID 、シリアル番号を記録します。
+. 両方のノードのモデル、システム ID 、シリアル番号を記録します。
 +
 「 system node show -node <node1 、 node2 > -instance 」のように表示されます
 
@@ -351,7 +353,7 @@ network interface revert コマンドの詳細については、を参照して�
 
 NOTE: この情報を使用して、ディスクの再割り当てと元のノードの運用を停止します。
 
-.. ノード 1 とノード 2 の両方で次のコマンドを入力し、シェルフ、各シェルフ内のディスク数、フラッシュストレージの詳細、メモリ、 NVRAM 、ネットワークカードに関する情報を出力に記録します。
+. ノード 1 とノード 2 の両方で次のコマンドを入力し、シェルフ、各シェルフ内のディスク数、フラッシュストレージの詳細、メモリ、 NVRAM 、ネットワークカードに関する情報を出力に記録します。
 +
 'run-node <node_name >sysconfig `
 
@@ -359,7 +361,7 @@ NOTE: この情報を使用して、ディスクの再割り当てと元のノ�
 
 NOTE: この情報を使用して、 node3 または node4 に転送するパーツやアクセサリを特定できます。ノードが V シリーズシステムであるか、 FlexArray 仮想化ソフトウェアがインストールされているかがわからない場合は、の出力からも確認できます。
 
-.. ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオンラインになっているアグリゲートを記録します。
+. ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオンラインになっているアグリゲートを記録します。
 +
 「 storage aggregate show -node <node_name > -state online 」のように指定します
 
@@ -367,7 +369,7 @@ NOTE: この情報を使用して、 node3 または node4 に転送するパー
 
 NOTE: この情報と次の手順の情報を使用して、再配置時にオフラインになった短時間のアグリゲートとボリュームが手順全体でオンラインのままになっていることを確認できます。
 
-.. [[man_prepare_nodes_step19]] ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオフラインになっているボリュームを記録します。
+. [[man_prepare_nodes_step19]] ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオフラインになっているボリュームを記録します。
 +
 volume show -node <node_name > -state offline`
 
@@ -375,9 +377,8 @@ volume show -node <node_name > -state offline`
 
 NOTE: アップグレード後にもう一度コマンドを実行し、この手順の出力と比較して、他のボリュームがオフラインになったかどうかを確認します。
 
-
-
-. 次のコマンドを入力して、 node1 または node2 にインターフェイスグループまたは VLAN が設定されているかどうかを確認します。
++
+.. 次のコマンドを入力して、 node1 または node2 にインターフェイスグループまたは VLAN が設定されているかどうかを確認します。
 +
 「 network port ifgrp show 」のように表示されます
 
@@ -387,9 +388,10 @@ NOTE: アップグレード後にもう一度コマンドを実行し、この�
 +
 インターフェイスグループまたは VLAN がノード 1 とノード 2 のどちらで設定されているかを確認します。手順の次の手順以降で、その情報を確認する必要があります。
 
-. ノード 1 とノード 2 の両方で次の手順を実行して、手順の後半で物理ポートを正しくマッピングできることを確認します。
-+
-.. 次のコマンドを入力して 'clusterwide 以外のノードにフェイルオーバー・グループがあるかどうかを確認します
+.. ノード 1 とノード 2 の両方で次の手順を実行して、手順 の後半で物理ポートを正しくマッピングできることを確認します。
+
+
+. 次のコマンドを入力して 'clusterwide 以外のノードにフェイルオーバー・グループがあるかどうかを確認します
 +
 「 network interface failover-groups show 」と表示されます
 
@@ -414,8 +416,8 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 
 2 entries were displayed.
 ....
-.. clusterwide 以外のフェイルオーバー・グループがある場合は ' フェイルオーバー・グループ名と ' そのフェイルオーバー・グループに属するポートを記録します
-.. 次のコマンドを入力して、ノードに VLAN が設定されているかどうかを確認します。
+. clusterwide 以外のフェイルオーバー・グループがある場合は ' フェイルオーバー・グループ名と ' そのフェイルオーバー・グループに属するポートを記録します
+. 次のコマンドを入力して、ノードに VLAN が設定されているかどうかを確認します。
 +
 「 network port vlan show -node node_name 」
 
@@ -434,10 +436,9 @@ Node    VLAN Name Port    VLAN ID MAC Address
 ------  --------- ------- ------- ------------------
 node1   e1b-70    e1b     70      00:15:17:76:7b:69
 ....
-.. ノードに VLAN が設定されている場合は、各ネットワークポートと VLAN ID のペアをメモします。
-
-
-. 次のいずれかを実行します。
+. ノードに VLAN が設定されている場合は、各ネットワークポートと VLAN ID のペアをメモします。
++
+.. 次のいずれかを実行します。
 +
 [cols="35,65"]
 |===
@@ -449,7 +450,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 
 | ノード 1 とノード 2 ではありません | に進みます <<man_prepare_nodes_step24,手順 24>>。 
 |===
-. [[man_prepare_nodes_step23]] SAN 環境または SAN 以外の環境で node1 と node2 が存在するかどうかが不明な場合は、次のコマンドを入力して出力を確認します。
+.. [[man_prepare_nodes_step23]] SAN 環境または SAN 以外の環境で node1 と node2 が存在するかどうかが不明な場合は、次のコマンドを入力して出力を確認します。
 +
 network interface show -vserver <vserver_name> -data-protocol iscsi|fcp`
 
@@ -476,9 +477,10 @@ Vserver  Interface  Admin/Oper Address/Mask       Node     Port    Home
 -------- ---------- ---------- ------------------ -------- ------- ----
 vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true
 ....
-. [man_prepare-to-downgrade 24]] 次の手順を実行して、クラスタ内のすべてのノードがクォーラムにあることを確認します。
-+
-.. advanced 権限レベルに切り替えます。
+.. [man_prepare-to-downgrade 24]] 次の手順を実行して、クラスタ内のすべてのノードがクォーラムにあることを確認します。
+
+
+. advanced 権限レベルに切り替えます。
 +
 「 advanced 」の権限が必要です
 
@@ -490,8 +492,8 @@ vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true
 Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
 Do you wish to continue? (y or n):
 ....
-.. 「 y 」と入力します。
-.. カーネル内のクラスタサービスの状態をノードごとに 1 回確認します。
+. 「 y 」と入力します。
+. カーネル内のクラスタサービスの状態をノードごとに 1 回確認します。
 +
 「 cluster kernel-service show 」のように表示されます
 
@@ -513,13 +515,12 @@ node1         node1         in-quorum     true          operational
 +
 過半数のノードが正常で相互に通信可能な場合に、クラスタ内のノードがクォーラムを構成している。詳細については、を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。
 
-.. admin 権限レベルに戻ります。
+. admin 権限レベルに戻ります。
 +
 「特権管理者」
 
-
-
-. 次のいずれかを実行します。
++
+.. 次のいずれかを実行します。
 +
 [cols="35,65"]
 |===
@@ -531,7 +532,7 @@ node1         node1         in-quorum     true          operational
 
 | SAN が設定されていません | に進みます <<man_prepare_nodes_step29,手順 29>>。 
 |===
-. [man_prepare-to-downgrade 26]] 次のコマンドを入力して、 SAN iSCSI または FC サービスが有効になっている各 SVM で、ノード 1 とノード 2 に SAN LIF があることを確認します。
+.. [man_prepare-to-downgrade 26]] 次のコマンドを入力して、 SAN iSCSI または FC サービスが有効になっている各 SVM で、ノード 1 とノード 2 に SAN LIF があることを確認します。
 +
 network interface show -data-protocol iscsi|fcp-home-node node_name
 
@@ -561,7 +562,7 @@ c_vs_iscsi_fcp data1   up/up      20:0d:00:a0:98:19:9f:b0  node2     0c      tru
 +
 'network interface show -instance -data-protocol iscsi|fcp
 
-. 次のコマンドを入力してシステムの出力を記録し、元のノードの FC ポートのデフォルト設定を取得します。
+.. 次のコマンドを入力してシステムの出力を記録し、元のノードの FC ポートのデフォルト設定を取得します。
 +
 ucadmin show
 
@@ -588,7 +589,7 @@ node2   0d      fc      initiator -       -         online
 +
 アップグレード後の情報を使用して、新しいノードに FC ポートを設定できます。
 
-. V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされたシステムをアップグレードする場合は、次のコマンドを入力して出力を記録し、元のノードのトポロジに関する情報を取得します。
+.. V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされたシステムをアップグレードする場合は、次のコマンドを入力して出力を記録し、元のノードのトポロジに関する情報を取得します。
 +
 「 storage array config show -switch 」です
 
@@ -613,24 +614,24 @@ node2 0   50  I_1818FAStT_1
                             208600a0b84772da   vgbr6510b:5  vgbr6510s163:4  2a
 7 entries were displayed.
 ....
-. [man_prepare-to-downgrade 29]] 次の手順を実行します。
-+
-.. 元のいずれかのノードで次のコマンドを入力し、出力を記録します。
+.. [man_prepare-to-downgrade 29]] 次の手順を実行します。
+
+
+. 元のいずれかのノードで次のコマンドを入力し、出力を記録します。
 +
 「 service-processor show -node * -instance 」のように表示されます
 
 +
 両方のノードの SP に関する詳細情報が表示されます。
 
-.. SP のステータスが「オンライン」であることを確認します。
-.. SP ネットワークが設定されていることを確認します。
-.. SP の IP アドレスやその他の情報を記録します。
-
-
+. SP のステータスがオンラインであることを確認します
+. SP ネットワークが設定されていることを確認する。
+. SP の IP アドレスやその他の情報を記録します。
 +
 リモート管理デバイスのネットワーク・パラメータ（この場合は SP ）を ' 新しいノードの SP の元のシステムから再利用することができますSP の詳細については ' を参照してください link:other_references.html["参考資料"] 『 _System Administration Reference_and the ONTAP 9 Commands ： Manual Page Reference_』 にリンクするには、次の手順を実行します。
 
-. [man_prepare-to-downgrade 30]] 新しいノードに元のノードと同じライセンス機能を設定する場合は、次のコマンドを入力して元のシステムのクラスタライセンスを表示します。
++
+.. [man_prepare-to-downgrade 30]] 新しいノードに元のノードと同じライセンス機能を設定する場合は、次のコマンドを入力して元のシステムのクラスタライセンスを表示します。
 +
 「 system license show -owner * 」と表示されます
 
@@ -653,11 +654,11 @@ FlexClone         site    FlexClone License     -
 SnapVault         site    SnapVault License     -
 6 entries were displayed.
 ....
-. 新しいノードの新しいライセンスキーを the _NetApp Support Site_. に取得します。を参照してください link:other_references.html["参考資料"] からネットアップサポートサイトにリンクしてください。
+.. 新しいノードの新しいライセンスキーを the _NetApp Support Site_. に取得します。を参照してください link:other_references.html["参考資料"] からネットアップサポートサイトにリンクしてください。
 +
 必要なライセンスキーがサイトにない場合は、ネットアップの営業担当者にお問い合わせください。
 
-. 元のシステムで AutoSupport が有効になっているかどうかを確認するには、各ノードで次のコマンドを入力し、出力を調べます。
+.. 元のシステムで AutoSupport が有効になっているかどうかを確認するには、各ノードで次のコマンドを入力し、出力を調べます。
 +
 「 system node AutoSupport show -node node1 、 node2 」
 
@@ -675,7 +676,7 @@ node1            enable    Postmaster    admin@netapp.com  mailhost
 node2            enable    Postmaster    -                 mailhost
 2 entries were displayed.
 ....
-. 次のいずれかを実行します。
+.. 次のいずれかを実行します。
 +
 [cols="35,65"]
 |===
@@ -683,29 +684,29 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | AutoSupport が有効になっています ...  a| 
-.. に進みます <<man_prepare_nodes_step34,手順 34>>。
-.. セクションに移動します link:get_address_key_management_server_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]。
+... に進みます <<man_prepare_nodes_step34,手順 34>>。
+... セクションに移動します link:get_address_key_management_server_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]。
 
 
 
 
 | AutoSupport が有効になっていません ...  a| 
-.. AutoSupport を有効にするには、 _System Administration Reference_. の手順に従ってください。を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_. にリンクします。）
+... AutoSupport を有効にするには、 _System Administration Reference_. の手順に従ってください。を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_. にリンクします。）
 +
 * 注： AutoSupport は、ストレージ・システムを初めて設定したときに、デフォルトで有効になっています。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。
 
-.. にアクセスします link:get_address_key_management_server_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"] セクション。
+... にアクセスします link:get_address_key_management_server_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"] セクション。
 
 
 |===
-. [man_prepare_nodes _step34]] 元のノードの両方で次のコマンドを入力し、 AutoSupport が正しいメールホストの詳細および受信者の E メール ID で設定されていることを確認します。
+.. [man_prepare_nodes _step34]] 元のノードの両方で次のコマンドを入力し、 AutoSupport が正しいメールホストの詳細および受信者の E メール ID で設定されていることを確認します。
 +
 「 system node AutoSupport show -node node_name -instance 」の略
 
 +
 AutoSupport の詳細については、を参照してください link:other_references.html["参考資料"] 『 _System Administration Reference_and the ONTAP 9 Commands ： Manual Page Reference_』 にリンクするには、次の手順を実行します。
 
-. [[man_prepare-to-downgrade 35 、 Step 35]] 次のコマンドを入力して、 node1 のネットアップに AutoSupport メッセージを送信します。
+.. [[man_prepare-to-downgrade 35 、 Step 35]] 次のコマンドを入力して、 node1 のネットアップに AutoSupport メッセージを送信します。
 +
 「 system node AutoSupport invoke -node node1 -type all -message 」「 Upgrading node1 from platform_old to platform_new 」というメッセージが表示されます
 
@@ -713,11 +714,13 @@ AutoSupport の詳細については、を参照してください link:other_re
 
 NOTE: この時点では node2 の AutoSupport メッセージはネットアップに送信しないでください。これはあとで手順で送信します。
 
-. [man_prepare-to-downgrade 36 、 Step 36]] 次のコマンドを入力して、 AutoSupport メッセージが送信されたことを確認します。
+.. [man_prepare-to-downgrade 36 、 Step 36]] 次のコマンドを入力して、 AutoSupport メッセージが送信されたことを確認します。
 +
 「 system node AutoSupport show -node <node1> -instance 」のように表示されます
 
 +
 「 Last Subject Sent ：」フィールドと「 Last Time Sent ：」フィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。
+
+
 
 

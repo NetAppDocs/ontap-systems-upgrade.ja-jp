@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/map_ports_node1_node3.html 
 keywords: map, port, node1, node3, settings, restore, cluster 
-summary: node1 の物理ポートが、 node3 の物理ポートに正しくマッピングされていることを確認します 
+summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップグレードするときに "system controller replace" コマンドを使用して "node1 の物理ポートが node3 に正しくマッピングされていることを確認します' 
 ---
 = ポートを node1 から node3 にマッピングします
 :hardbreaks:
@@ -161,7 +161,7 @@ cluster show -node node3 -fields health`
 
 
 
-. [[auto_map_3_step5] クラスタ LIF とノード管理 / クラスタ管理 LIF をホストするブロードキャストドメインを調整します。各ブロードキャストドメインに正しいポートが含まれていることを確認してください。ポートをホストしているブロードキャストドメイン間や LIF のホームになっているブロードキャストドメイン間で移動することはできないため、 LIF を移行して変更する必要がある場合があります。
+. [[auto_map_3_step5] クラスタ LIF とノード管理 / クラスタ管理 LIF をホストするブロードキャストドメインを調整します。各ブロードキャストドメインに正しいポートが含まれていることを確認します。ポートをホストしているブロードキャストドメイン間や LIF のホームになっているブロードキャストドメイン間で移動することはできないため、 LIF を移行して変更する必要がある場合があります。
 +
 .. LIF のホームポートを表示します。
 +

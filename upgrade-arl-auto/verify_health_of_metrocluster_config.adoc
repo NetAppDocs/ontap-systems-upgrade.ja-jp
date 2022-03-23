@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/verify_health_of_metrocluster_config.html 
 keywords: health, metrocluster, alerts 
-summary: MetroCluster 構成の健全性をチェックして、正常に動作することを確認します。 
+summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップグレードするときに "system controller replace" コマンドを使用して MetroCluster 構成の正常性を確認し " 正常に動作することを確認します' 
 ---
 = MetroCluster 構成の健全性を確認
 :hardbreaks:

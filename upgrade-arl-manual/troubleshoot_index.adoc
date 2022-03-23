@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/troubleshoot_index.html 
 keywords: troubleshoot, troubleshooting, problem, error, failure 
-summary: ノードペアのアップグレード中に障害が発生する可能性があります。 
+summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に発生する可能性のある障害のトラブルシューティングを行います。 
 ---
 = トラブルシューティングを行う
 :hardbreaks:

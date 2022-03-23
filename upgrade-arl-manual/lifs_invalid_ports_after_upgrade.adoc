@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual/lifs_invalid_ports_after_upgrade.html 
-keywords: lifs, invalid, ports, error, mismatch, troublshoot, metrocluster 
-summary: アップグレード後も、 MetroCluster 構成を使用している場合は、 FC 論理インターフェイス（ LIF ）が誤ったポートに残ってしまう可能性があります。 
+keywords: lifs, invalid, ports, error, mismatch, troubleshoot, metrocluster 
+summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードしたあとに、 MetroCluster 構成の無効なポートにある LIF を再同期します。 
 ---
 = アップグレード後に LIF が無効なポートに接続されています
 :hardbreaks:

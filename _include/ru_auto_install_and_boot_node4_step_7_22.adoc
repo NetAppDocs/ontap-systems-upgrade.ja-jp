@@ -45,7 +45,7 @@ Do you want to restore the backup configuration now? {y|n}
 The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
 ....
 +
-コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データのリストアが必要なためです。
+コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データをリストアする必要があるためです。
 
 
 

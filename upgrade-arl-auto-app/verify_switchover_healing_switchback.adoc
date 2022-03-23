@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_switchover_healing_switchback.html 
 keywords: verifying, switchover, healing, switchback, metrocluster, management, disaster, recovery, mcc 
-summary: MetroCluster 構成のスイッチオーバー、修復、スイッチバックの処理を検証する必要があります。 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して MetroCluster 構成のスイッチオーバー " 修復 " およびスイッチバック操作を確認します' 
 ---
 = スイッチオーバー、修復、スイッチバックを検証
 :hardbreaks:

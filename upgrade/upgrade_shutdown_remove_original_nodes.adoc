@@ -89,7 +89,7 @@ Adapter Mode    Type      Mode    Type    Status
 0h      cna     target    -       -       online
 ...
 ----
-. メンテナンスモードで、 enode1 と node2 のメールボックスを破棄します： +
+. メンテナンスモードで、 node1 と node2 のメールボックスを削除します。 +
 +
 「マイボックス破壊ローカル」
 

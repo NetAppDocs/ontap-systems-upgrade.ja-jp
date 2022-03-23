@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/troubleshoot_index.html 
 keywords: troubleshooting, node, aggregate, lif, migrate, failure 
-summary: ノードペアのアップグレード時に発生する可能性がある障害のトラブルシューティングを行います。 
+summary: AFF A700 から AFF A900 へのアップグレード中に発生する可能性のある障害のトラブルシューティング。 
 ---
 = トラブルシューティングを行う
 :hardbreaks:

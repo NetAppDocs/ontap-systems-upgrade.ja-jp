@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/resume_snapmirror_ops.html 
 keywords: resume, snapmirror, transfers, relationships 
-summary: アップグレード前に休止していた SnapMirror 転送を再開し、 SnapMirror 関係を再開できます。 
+summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、 SnapMirror 転送と関係を再開します。 
 ---
 = SnapMirror 処理を再開します
 :hardbreaks:

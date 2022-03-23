@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/move_nas_lifs_node2_node3.html 
 keywords: move, nas, lif, node2, node3, san, nfs, cifs, ifgrp 
-summary: アグリゲートを node2 から node3 に再配置したら、 node2 によって所有されている NAS データ LIF を node3 に移動する必要があります。 
+summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする場合は、ノード 2 の NAS データ LIF をノード 3 に移動します。 
 ---
 = node2 によって所有されている NAS データ LIF を node3 に移動する
 :hardbreaks:

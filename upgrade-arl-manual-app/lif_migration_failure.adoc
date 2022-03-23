@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/lif_migration_failure.html 
 keywords: lif, migration, error, failure, troubleshoot 
-summary: LIF の移行が失敗しました 
+summary: ONTAP 9.8 以降を実行しているコントローラで、ステージ 2 、ステージ 3 、またはステージ 5 の ARL を手動でアップグレードしても LIF がオンラインにならない。 
 ---
 = LIF の移行が失敗しました
 :hardbreaks:

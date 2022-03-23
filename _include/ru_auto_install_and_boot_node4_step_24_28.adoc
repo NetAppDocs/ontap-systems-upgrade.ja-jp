@@ -10,7 +10,7 @@
 新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。
 
 . スイッチベースのゾーニングを使用している場合は、新しい WWPN 値が反映されるようにゾーニングを調整します。
-. [[step27]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、「 setenvarg.storageencryption.support 」コマンドは「 true 」に設定する必要があります。「 kmip.init.maxwait` 」変数は、 node2 構成のロード後にブートループが発生しないように「 off 」に設定する必要があります。
+. [[step27]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、「 setenv bootarg.storageencryption.support` コマンドは「 true 」に設定する必要があります。また、「 kmip.init.maxwait` 」変数は、 node2 構成のロード後にブートループが発生しないように「 off 」に設定する必要があります。
 +
 'etenv bootarg.storageencryption.support true
 

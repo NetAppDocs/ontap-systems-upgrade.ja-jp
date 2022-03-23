@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/set_up_storage_encryption_new_module.html 
 keywords: set up storage, encryption, controller, module, node 
-summary: 交換したコントローラまたは新しいコントローラの HA パートナーで Storage Encryption が使用されている場合。 
+summary: '必要に応じて "system controller replace" コマンドを使用して ONTAP 9.8 以降を実行するコントローラをアップグレードするときに " ストレージ暗号化を構成し "SSL 証明書をインストールし " キー管理サーバを設定します' 
 ---
 = 新しいコントローラモジュールで Storage Encryption をセットアップします
 :hardbreaks:

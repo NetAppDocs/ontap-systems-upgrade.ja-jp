@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html 
-keywords: relocating, non-root, aggregates, nas, data, lif, node1, node2, aff, a900, nvs, controller 
-summary: ノード 1 を AFF A900 コントローラモジュールおよび NVS に交換する前に、ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動する必要があります。 
+keywords: relocating, non-root, aggregates, nas, data, lif, node1, node2, aff, a900, NVRAM, controller 
+summary: ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動し、 AFF A700 から AFF A900 へのアップグレード時にノード 1 のリソースをリストアします。 
 ---
 = ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: ノード 1 を AFF A900 コントローラモジュールおよび NVS
 
 
 [role="lead"]
-ノード 1 を AFF A900 コントローラモジュールおよび NVS に交換する前に、ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動してから、 AFF A900 システムで実行されているノード 1 のリソースを最終的にリストアする必要があります。このプロセスはほとんど自動化されており、処理は一時停止してステータスを確認できます。
+ノード 1 を AFF A900 コントローラモジュールと NVRAM モジュールに交換する前に、ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動してから、 AFF A900 システムで実行されているノード 1 のリソースを最終的にリストアする必要があります。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。
 
 この処理は、タスクの開始時にすでに一時停止されている必要があります。手動で再開する必要があります。
 

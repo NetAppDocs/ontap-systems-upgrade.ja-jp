@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/resume_snapmirror_operations.html 
 keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
-summary: アップグレード前に休止していた SnapMirror 転送を再開し、 SnapMirror 関係を再開します。 
+summary: AFF A700 から AFF A900 へのアップグレード中に、 SnapMirror 転送と SnapMirror 関係を再開します。 
 ---
 = SnapMirror 処理を再開します
 :hardbreaks:

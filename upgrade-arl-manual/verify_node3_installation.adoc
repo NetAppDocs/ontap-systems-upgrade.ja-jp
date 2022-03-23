@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual/verify_node3_installation.html 
-keywords: verify, node3, install, installation 
-summary: node3 のインストールとブートが完了したら、正しくインストールされていること、クラスタの一部であること、および node2 と通信できることを確認する必要があります。 
+keywords: verify, node3, install, installation, node4 
+summary: ONTAP 9.7 以前を実行しているコントローラで、 ARL を手動でアップグレードする際に、 node3 のインストールと node2 との通信を確認します。 
 ---
 = ノード 3 のインストールを確認します
 :hardbreaks:

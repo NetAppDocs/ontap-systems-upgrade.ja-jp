@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_node4_installation.html 
 keywords: verify, node4, installation, physical ports, node2, node, LIF, MetroCluster 
-summary: ノード 4 のインストールを確認します 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して "node2 の物理ポートが node4 に正しくマッピングされていることを確認します' 
 ---
 = ノード 4 のインストールを確認します
 :hardbreaks:
@@ -256,7 +256,7 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 「 network port broadcast-domain add-port 」と入力します
 
 +
-到達不能または予期しないポートが存在しないことを確認します。次のコマンドを使用し、出力を調べて、すべての物理ポートの到達可能性ステータスを確認し、ステータスが「 OK 」であることを確認します。
+到達不能または予期しないポートが存在しないことを確認します。次のコマンドを使用してすべての物理ポートの到達可能性ステータスをチェックし、出力を調べてステータスが「 OK 」であることを確認します。
 
 +
 「 network port reachability show-detail` 」と表示されます

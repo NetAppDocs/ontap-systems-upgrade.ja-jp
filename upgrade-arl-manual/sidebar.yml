@@ -34,8 +34,6 @@ entries:
     url: "/upgrade-arl-manual/persist_enable_switches.html"
   - title: スイッチオーバー、修復、スイッチバックを検証
     url: "/upgrade-arl-manual/verify_swtichover_healing_switchback.html"
-- title: ノードペアをアップグレードします
-  url: "/upgrade-arl-manual/upgrade_node_pair.html"
 - title: ステージ 1 ：アップグレードを準備
   entries:
   - title: 概要

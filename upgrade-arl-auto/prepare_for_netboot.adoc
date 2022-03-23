@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/prepare_for_netboot.html 
 keywords: prepare, netboot, node3, node4, boot, ONTAP image, media device 
-summary: ノードを物理的にラックに設置したら、ネットブートが必要になることがあります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は " ノード 3 とノード 4 をネットブートする準備をします' 
 ---
 = ネットブートを準備
 :hardbreaks:

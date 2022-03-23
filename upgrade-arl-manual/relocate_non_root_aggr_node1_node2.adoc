@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/relocate_non_root_aggr_node1_node2.html 
 keywords: node1, node2, aggregate, relocation, storage 
-summary: ノード 1 のリソースをノード 3 に移動する前に、ルート以外のアグリゲートをノード 1 からノード 2 に移動します。 
+summary: ONTAP 9.7 以前を実行しているコントローラで、ルート以外のアグリゲートをノード 1 からノード 2 に移動し、 ARL を手動でアップグレードする際に再配置を確認します。 
 ---
 = ルート以外のアグリゲートを node1 から node2 に再配置します。
 :hardbreaks:

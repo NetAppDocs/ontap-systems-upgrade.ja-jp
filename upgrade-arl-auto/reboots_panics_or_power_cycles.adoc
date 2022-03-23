@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/reboots_panics_or_power_cycles.html 
 keywords: reboots, panics, power, cycles, node, crash 
-summary: システムがクラッシュする場合–リブート、パニック状態、または電源の再投入が行われます。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードすると " システムがクラッシュする（再起動 " パニック " または電源再投入）場合があります' 
 ---
 = リブート、パニック、電源再投入
 :hardbreaks:

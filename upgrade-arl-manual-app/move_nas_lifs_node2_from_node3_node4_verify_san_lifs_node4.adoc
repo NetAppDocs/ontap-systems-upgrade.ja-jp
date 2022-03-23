@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html 
 keywords: move, aggregates, nas, lif, node2, node3, node4 
-summary: node2 のアグリゲートを node3 から node4 に再配置する前に、 node3 の node2 に現在含まれている node2 に所有されている NAS データ LIF を node4 に移動し、 node4 にある SAN LIF を確認します。 
+summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする場合は、ノード 3 にあるノード 2 の NAS データ LIF をノード 4 に移動します。 
 ---
 = node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF を確認します
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: node2 のアグリゲートを node3 から node4 に再配置する前
 
 
 [role="lead"]
-ポートを node2 から node4 にマッピングしたあと、 node2 のアグリゲートを node3 から node4 に再配置する前に、 node3 の現在の node2 に所有されている NAS データ LIF を node4 に移動する必要があります。ノード 4 の SAN LIF も確認する必要があります。
+ポートを node2 から node4 にマッピングしたあと、 node2 のアグリゲートを node3 から node4 に再配置する前に、 node3 の現在の node2 に所有されている NAS データ LIF を node3 から node4 に移動する必要があります。ノード 4 の SAN LIF も確認する必要があります。
 
 アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 4 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認します。
 
@@ -135,7 +135,7 @@ node4
 
 
 
-. [man_lif_verify_4_Step10] ] 次の手順を実行して、ノード 4 の正しいポートに SAN LIF があることを確認します。
+. [[man_lif_verify_4_Step10] ] 次の手順を実行して、ノード 4 の正しいポートに SAN LIF があることを確認します。
 +
 .. 次のコマンドを入力します。
 +

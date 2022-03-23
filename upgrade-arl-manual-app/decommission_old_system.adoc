@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/decommission_old_system.html 
 keywords: decommission, system, metrocluster 
-summary: 古いシステムの運用を停止 
+summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードしたあと、古いシステムが動作しなくなったことをネットアップに知らせてください。 
 ---
 = 古いシステムの運用を停止
 :hardbreaks:
@@ -27,7 +27,7 @@ summary: 古いシステムの運用を停止
 ** 所在地のシリアル番号
 
 
-. [* 出発 ] をクリックします
+. 「 * Go ！ * 」を選択します
 +
 シリアル番号を含むクラスタ情報が表に表示されます。
 

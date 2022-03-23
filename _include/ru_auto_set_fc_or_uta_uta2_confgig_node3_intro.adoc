@@ -6,4 +6,4 @@
 セクションの完了が必要な場合があります <<Configure FC ports on node3>>、を参照してください <<Check and configure UTA/UTA2 ports on node3>>、または両方のセクション。
 
 
-NOTE: ネットアップのマーケティング資料では、 UTA2 という用語を CNA アダプタとポートという意味で使用している場合があります。ただし、 CLI では CNA という用語が使用されます。
+NOTE: ネットアップのマーケティング資料では、 Converged Network Adapter （ CNA ；統合ネットワークアダプタ）アダプタおよびポートを UTA2 と呼ぶ場合があります。ただし、 CLI では CNA という用語が使用されます。

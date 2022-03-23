@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/set_fc_or_uta_uta2_config_on_node3.html 
 keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports, FlexArray Virtualization 
-summary: 残りの手順を完了する前に、ポートとカードの設定を設定します。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は " オンボード FC ポート "UTA/UTA2 ポート " または UTA/UTA2 カードを node3 に設定します' 
 ---
 = ノード 3 で FC または UTA / UTA2 設定を設定します
 :hardbreaks:
@@ -18,7 +18,7 @@ summary: 残りの手順を完了する前に、ポートとカードの設定�
 セクションの完了が必要な場合があります <<Configure FC ports on node3>>、を参照してください <<Check and configure UTA/UTA2 ports on node3>>、または両方のセクション。
 
 
-NOTE: ネットアップのマーケティング資料では、 UTA2 という用語を CNA アダプタとポートという意味で使用している場合があります。ただし、 CLI では CNA という用語が使用されます。
+NOTE: ネットアップのマーケティング資料では、 Converged Network Adapter （ CNA ；統合ネットワークアダプタ）アダプタおよびポートを UTA2 と呼ぶ場合があります。ただし、 CLI では CNA という用語が使用されます。
 
 * ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクを搭載したシステムをアップグレードする場合は、に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"] セクション。
 * ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、で section_Install および boot node3_and resume に戻ります link:install_boot_node3.html#step23["手順 23"]。
@@ -411,7 +411,7 @@ ucadmin show
 +
 これで、ブート時に以前に割り当てられていたすべてのディスクをノードで検出できるようになり、想定どおりにブートできるようになります。
 
-. [[auto_check3_step23]] 外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（ AFF A800 システムなど）にアップグレードする場合は、 node1 アグリゲートをルートアグリゲートとして設定し、 node1 のルートアグリゲートからブートするようにします。ルート・アグリゲートを設定するには ' ブート・メニューからオプション 5 を選択して ' 保守モードに切り替えます
+. [[auto_check3_step23]] 外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（ AFF A800 システムなど）にアップグレードする場合は、 node1 アグリゲートをルートアグリゲートとして設定し、ノード 1 のルートアグリゲートからノード 3 がブートすることを確認します。ルート・アグリゲートを設定するには ' ブート・メニューからオプション 5 を選択して ' 保守モードに切り替えます
 +
 
 CAUTION: * ここに示す順序で以下の手順を実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。 *

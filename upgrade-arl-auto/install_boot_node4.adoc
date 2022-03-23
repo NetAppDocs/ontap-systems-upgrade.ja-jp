@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/install_boot_node4.html 
 keywords: install, boot, node4, install ONTAP 
-summary: ノード 4 をラックに設置し、ノード 2 の接続をノード 4 に転送し、ノード 4 をブートして、 ONTAP をインストールする必要があります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は "node4 をインストールし " ONTAP ソフトウェアをインストールします' 
 ---
 = ノード 4 をインストールしてブートします
 :hardbreaks:
@@ -140,7 +140,7 @@ Do you want to restore the backup configuration now? {y|n}
 The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
 ....
 +
-コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データのリストアが必要なためです。
+コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データをリストアする必要があるためです。
 
 
 
@@ -252,7 +252,7 @@ printenv partner-sysid
 新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。
 
 . スイッチベースのゾーニングを使用している場合は、新しい WWPN 値が反映されるようにゾーニングを調整します。
-. [[step27]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、「 setenvarg.storageencryption.support 」コマンドは「 true 」に設定する必要があります。「 kmip.init.maxwait` 」変数は、 node2 構成のロード後にブートループが発生しないように「 off 」に設定する必要があります。
+. [[step27]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、「 setenv bootarg.storageencryption.support` コマンドは「 true 」に設定する必要があります。また、「 kmip.init.maxwait` 」変数は、 node2 構成のロード後にブートループが発生しないように「 off 」に設定する必要があります。
 +
 'etenv bootarg.storageencryption.support true
 

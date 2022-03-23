@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/check_metrocluster_config_errors.html 
 keywords: Config Advisor, configuration, errors, validation, health, Active IQ 
-summary: Config Advisor ツールを使用して、一般的な構成エラーがないかどうかを確認します。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合 " Config Advisor ツールを使用して一般的な構成エラーをチェックします' 
 ---
 = MetroCluster 構成エラーがないかどうかを確認します
 :hardbreaks:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/verify_node4_installation.html 
 keywords: install, node4, node3, verify, communicate 
-summary: ノード 4 のインストールとブートが完了したら、ノード 4 が正しくインストールされていることを確認する必要があります 
+summary: ONTAP 9.7 以前を実行しているコントローラで、 ARL を手動でアップグレードする際に、ノード 4 のインストールとノード 3 との通信を確認します。 
 ---
 = ノード 4 のインストールを確認します
 :hardbreaks:

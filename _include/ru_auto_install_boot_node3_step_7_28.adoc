@@ -43,7 +43,7 @@ http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tg
 ' 新しくインストールしたソフトウェアの使用を開始するには ' ノードを再起動する必要があります今すぐリブートしますか？{y|n}`
 
 +
-コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データのリストアが必要なためです。
+コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データをリストアする必要があるためです。
 
 
 
@@ -153,7 +153,7 @@ printenv partner-sysid
 新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。
 
 . [[step26]] スイッチベースのゾーニングを使用する構成の場合は、ゾーニングを調整して新しい WWPN 値を反映します。
-. [[step27]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、「 setenvarg.storageencryption.support 」コマンドは「 true 」に設定する必要があります。「 kmip.init.maxwait` 」変数は、 node1 構成のロード後にブートループが発生しないように「 off 」に設定する必要があります。
+. [[step27]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、 'setenv bootarg.storageencryption.support` コマンドを 'true' に設定する必要があります。また、 node1 構成のロード後にブートループが発生しないように、「 kmip.init.maxwait` 」変数を「 off 」に設定する必要があります。
 +
 'etenv bootarg.storageencryption.support true
 

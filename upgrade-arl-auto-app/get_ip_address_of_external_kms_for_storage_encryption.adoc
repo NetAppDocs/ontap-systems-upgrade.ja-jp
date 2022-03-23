@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/get_ip_address_of_external_kms_for_storage_encryption.html 
 keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
-summary: アップグレード後は、すぐにストレージ暗号化を設定する必要があります。 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードする場合は "system controller replace" コマンドを使用して " ストレージ暗号化の構成と管理 " 認証キーの管理 " および SnapMirror 関係の休止を行います' 
 ---
 = ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
 :hardbreaks:

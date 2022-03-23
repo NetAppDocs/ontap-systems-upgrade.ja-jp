@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/manage_authentication_okm.html 
 keywords: manage, authentication, onboard key manager, okm, key, passphrase, fips 
-summary: オンボードキーマネージャを使用して、認証キーを管理できます。 
+summary: ONTAP 9.7 以前を実行しているコントローラでは、オンボードキーマネージャを使用して ARL を手動でアップグレードする際に認証キーを管理します。 
 ---
 = オンボードキーマネージャを使用して認証を管理
 :hardbreaks:

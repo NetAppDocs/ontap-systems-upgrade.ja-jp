@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/issues_in_multiple_stages_of_procedure.html 
 keywords: issues, arise, multiple, stages, procedure 
-summary: 手順のさまざまな段階で問題が発生する可能性があります。 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに発生する可能性のある問題については "system controller replace" コマンドを使用して説明します' 
 ---
 = 手順の複数の段階で発生する可能性のある問題
 :hardbreaks:

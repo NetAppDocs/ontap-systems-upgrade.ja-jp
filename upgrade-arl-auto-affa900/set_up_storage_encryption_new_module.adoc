@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/set_up_storage_encryption_new_module.html 
 keywords: set up storage, encryption, controller, module, node 
-summary: 交換したコントローラまたは新しいコントローラの HA パートナーで Storage Encryption が使用されている場合は、新しいコントローラモジュールを Storage Encryption に設定する必要があります。 
+summary: 必要に応じて、ストレージ暗号化を設定し、 SSL 証明書をインストールし、 AFF A700 から AFF A900 へのアップグレード時にキー管理サーバをセットアップします。 
 ---
 = 新しいコントローラモジュールで Storage Encryption をセットアップします
 :hardbreaks:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/determine_new_cabling_layout.html 
 keywords: cable, cabling, layout, disk shelf, fc switches 
-summary: 新しいコントローラモジュールと新しいディスクシェルフと既存の FC スイッチとのケーブル接続を決定します。 
+summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合の、新しいコントローラモジュールとディスクシェルフのケーブルレイアウトを決定します。 
 ---
 = 新しいケーブルレイアウトを決定します
 :hardbreaks:

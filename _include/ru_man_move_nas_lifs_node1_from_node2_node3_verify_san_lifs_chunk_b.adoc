@@ -9,7 +9,7 @@ network interface migrate -vserver vserver_name -lif lif_name -destination -node
 +
 network interface modify -vserver vserver_name -lif lif_name -home-node netport | ifgrp-home-node node3`
 
-. [man_lif_verify_3_step8] SAN LIF がノード 3 の正しいポートに配置されていることを確認します。
+. [man_lif_verify_3_step8] SAN LIF が node3 の正しいポートにあることを確認します。
 +
 .. 次のコマンドを入力し、出力を確認します。
 +

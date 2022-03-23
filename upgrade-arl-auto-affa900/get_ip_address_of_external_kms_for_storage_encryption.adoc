@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html 
 keywords: storage, encryption, authentication, key, manager, external 
-summary: ストレージ暗号化を設定し、クライアント認証キーを確立します。 
+summary: ストレージ暗号化の設定と管理、認証キーの管理、および AFF A700 から AFF A900 へのアップグレード時の SnapMirror 関係の休止 
 ---
 = ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
 :hardbreaks:
@@ -47,7 +47,7 @@ summary: ストレージ暗号化を設定し、クライアント認証キー�
 
 == KMIP サーバを使用して認証を管理します
 
-ONATP 9.10.1 以降では、 Key Management Interoperability Protocol （ KMIP ）サーバを使用して認証キーを管理できます。
+ONTAP 9.10.1 以降では、 Key Management Interoperability Protocol （ KMIP ）サーバを使用して認証キーを管理できます。
 
 .手順
 . 新しいコントローラを追加します。

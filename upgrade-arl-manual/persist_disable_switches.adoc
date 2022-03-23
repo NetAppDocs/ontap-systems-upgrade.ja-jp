@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/persist_disable_switches.html 
 keywords: disable, switches, fabric, persistent, modify, configuration, configure 
-summary: ファブリック内のスイッチの構成を変更できるように、スイッチを永続的に無効にします。 
+summary: ONTAP 9.7 以前を実行しているコントローラでは、ファブリック内の Brocade スイッチと Cisco スイッチを無効にし、 ARL を手動でアップグレードする際に構成を変更します。 
 ---
 = スイッチを永続的に無効にします
 :hardbreaks:

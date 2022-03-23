@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/verify_node4_installation.html 
-keywords: verify, node4, installation, MetroCluster 
-summary: ノード 4 が正しくインストールされていることを確認します。 
+keywords: verify, node4, installation, MetroCluster, restore, key, manager 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用してアップグレードするときに "node4 が定足数に参加し "node1 の VLAN " インタフェースグループ " ブロードキャストドメインを再作成し " キー管理ツールの構成を復元することを確認します' 
 ---
 = ノード 4 のインストールを確認します
 :hardbreaks:

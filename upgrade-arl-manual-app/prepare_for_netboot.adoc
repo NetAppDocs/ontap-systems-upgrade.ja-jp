@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/prepare_for_netboot.html 
 keywords: prepare, netboot, rack, node3, node4 
-summary: ノードを物理的にラックに設置したあとで、 node3 と node4 をネットブートする必要がある場合があります。 
+summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に、 node3 と node4 をネットブートする準備をします。 
 ---
 = ネットブートを準備
 :hardbreaks:

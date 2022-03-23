@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/restore_key-manager_config_node4.html 
 keywords: restore key-manager, configuration, node4, nve, arl, volume, encryption 
-summary: アップグレードするシステムで NVE を使用してボリュームを暗号化する場合は、暗号化設定を新しいノードに同期する必要があります。 
+summary: '必要に応じて "system controller replace" コマンドを使用して ONTAP 9.5 を実行しているコントローラを 9.7 にアップグレードするときに "node4 にある key-manager 設定を復元します' 
 ---
 = ノード 4 でキー管理ツールの設定をリストアします
 :hardbreaks:

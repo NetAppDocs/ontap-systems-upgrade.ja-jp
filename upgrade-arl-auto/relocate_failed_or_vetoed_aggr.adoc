@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/relocate_failed_or_vetoed_aggr.html 
 keywords: relocate, aggregates, fail, veto 
-summary: いずれかのアグリゲートに再配置の失敗や再配置が拒否された場合は、アグリゲートを手動で再配置する必要があります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードするときに " 失敗したアグリゲートまたは拒否されたアグリゲートを手動で再配置します' 
 ---
 = 障害が発生したアグリゲートを再配置するか
 :hardbreaks:

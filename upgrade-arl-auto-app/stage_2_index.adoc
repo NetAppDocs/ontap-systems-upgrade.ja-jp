@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/stage_2_index.html 
-keywords: relocating, retiring, node1, lif 
-summary: ノード 1 の移転および撤去 
+keywords: relocating, retiring, node1, lif, stage 2 
+summary: ONTAP 9.8 以降を実行しているコントローラ上で system controller replace コマンドを使用して、 ARL アップグレードのステージ 2 プロセスシーケンスを実行します。 
 ---
 = ステージ 2 ：移行してノード 1 を撤去
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: ノード 1 の移転および撤去
 
 
 [role="lead"]
-ステージ 2 で、ノード 1 のアグリゲートと LIF をノード 2 に再配置し、ノード 1 の情報を記録してから、ノード 1 を廃棄します。このプロセスはほとんど自動化されており、処理は一時停止してステータスを確認できます。この処理は手動で再開する必要があります。
+ステージ 2 で、ノード 1 のアグリゲートと LIF をノード 2 に再配置し、ノード 1 の情報を記録してから、ノード 1 を廃棄します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。
 
 .手順
 . link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"]

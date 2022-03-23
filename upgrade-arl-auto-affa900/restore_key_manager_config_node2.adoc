@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/restore_key_manager_config_node2.html 
 keywords: restore key-manager, configuration, node1, nve, arl, volume, encryption 
-summary: NetApp Volume Encryption （ NVE ）を使用してアップグレード後のシステムのボリュームを暗号化する場合は、暗号化設定を新しいノードに同期します。 
+summary: 必要に応じて、 AFF A700 から AFF A900 へのアップグレード時に、 node2 にキー管理ツールの設定をリストアします。 
 ---
 = キー管理ツールの設定を node2 にリストアします
 :hardbreaks:
@@ -18,7 +18,7 @@ NetApp Volume Encryption （ NVE ）を使用してアップグレードする�
 次の手順を実行して、暗号化設定を新しいノードに同期します。
 
 .手順
-. クラスタプロンプトで次のコマンドを使用して、 OKM の暗号化構成を同期します。
+. クラスタプロンプトで次のコマンドを使用して、オンボードキーマネージャ（ OKM ）の暗号化設定を同期します。
 +
 「セキュリティキーマネージャオンボード同期」
 

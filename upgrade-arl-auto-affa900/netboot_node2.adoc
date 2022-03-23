@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/netboot_node2.html 
 keywords: preparing, netboot, ontap, aff, a900, node2 
-summary: 対応する AFF A900 ノード 2 コントローラモジュールと NVS をスワップしたら、ネットブートが必要になることがあります。 
+summary: 対応する AFF A900 node2 コントローラモジュールと NVRAM モジュールをスワップしたら、ネットブートが必要になることがあります。 
 ---
 = ネットブート node2
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 対応する AFF A900 ノード 2 コントローラモジュールと 
 
 
 [role="lead"]
-対応する AFF A900 ノード 2 コントローラモジュールと NVS をスワップしたら、ネットブートが必要になることがあります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。
+対応する AFF A900 node2 コントローラモジュールと NVRAM をスワップしたら、モジュールでネットブートが必要になることがあります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。
 
 AFF A900 コントローラモジュールのブートメディアにインストールされている ONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900 ブートメディアの ONTAP バージョンは、アップグレード対象の AFF A700 システムで実行されている ONTAP バージョンと同じで、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。
 
@@ -61,7 +61,7 @@ netboot\http://web_server_ip/path_to_web_accessible_directory/netboot/kernel`
 
 NOTE: トランクを中断しないでください。
 
-. AFF A900 コントローラモジュールで node2 が実行されてブートするのを待ち、次のようにブートメニューオプションを表示します。
+. AFF A900 コントローラモジュールで node2 が実行されてブートするのを待ち、次の出力に示すようにブートメニューオプションを表示します。
 +
 [listing]
 ----
@@ -111,7 +111,7 @@ Do you want to restore the backup configuration now? {y|n}
 The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
 ----
 +
-コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データのリストアが必要なためです。
+コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データをリストアする必要があるためです。
 
 
 
@@ -199,8 +199,11 @@ setsetenv partner-sysid node1 _sysid
 
 
 
-. node2 の LOADER プロンプトで、「 partner-sysid 」を確認する必要があります。node2 の場合 'partner-sysid' は node1 のものである必要がありますnode1 の「 partner-sysid 」を確認します。
+. node2 の LOADER プロンプトで、 node1 の「 partner-sysid 」を確認します。
 +
 printenv partner-sysid
+
++
+node2 の場合 'partner-sysid' は node1 のものである必要があります
 
 

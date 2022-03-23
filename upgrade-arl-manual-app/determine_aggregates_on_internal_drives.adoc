@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/determine_aggregates_on_internal_drives.html 
 keywords: determine, aggregate, disk, drive, controller 
-summary: コントローラの内蔵ディスクドライブにアグリゲートがあるかどうかを確認します 
+summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする際に、内蔵ディスクドライブにルートアグリゲートまたはデータアグリゲートが含まれていないことを確認します。 
 ---
 = コントローラの内蔵ディスクドライブにアグリゲートがあるかどうかを確認します
 :hardbreaks:

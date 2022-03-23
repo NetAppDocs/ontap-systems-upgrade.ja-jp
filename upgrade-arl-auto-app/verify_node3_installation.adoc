@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_node3_installation.html 
 keywords: verifying, verify, node, install, installation 
-summary: ノード 3 のインストールの確認 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して " ノード 1 の物理ポートがノード 3 に正しくマッピングされ " ネットワーク構成がノード 3 にリストアされることを確認します' 
 ---
 = ノード 3 のインストールを確認します
 :hardbreaks:
@@ -131,7 +131,7 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 network port show -node node3
 
 +
-ノードのすべての物理ネットワークポート、 VLAN ポート、およびインターフェイスグループポートが表示されます。この出力から、 ONTAP によって「 Cluster 」ブロードキャストドメインに移動された物理ポートを確認できます。この出力を使用して、インターフェイスグループメンバーポート、 VLAN ベースポート、または LIF をホストするスタンドアロンの物理ポートとして使用するポートを決定できます。
+ノードのすべての物理ネットワークポート、 VLAN ポート、およびインターフェイスグループポートが表示されます。この出力から、 ONTAP によって「 Cluster 」ブロードキャストドメインに移動された物理ポートを確認できます。この出力を使用して、 LIF をホストするためにインターフェイスグループメンバーポート、 VLAN ベースポート、またはスタンドアロンの物理ポートとして使用するポートを決定できます。
 
 . [step2] クラスタ上のブロードキャストドメインの一覧を表示します。
 +
@@ -173,14 +173,14 @@ node1_node3
 18 entries were displayed.
 ----
 +
-上記の例では、 node1 _ node3 はコントローラの交換後にブートしたばかりです。一部のポートは想定されるブロードキャストドメインに到達できないため、修復が必要です。
+上記の例では、 node1 _node3 はコントローラの交換後にブートしたばかりです。一部のポートは想定されるブロードキャストドメインに到達できないため、修復が必要です。
 
 . [[auto_verify_3_step4]] 'node3 の各ポートの到達可能性を 'OK' 以外の到達可能性ステータスで修復します次のコマンドを最初に任意の物理ポートで実行し、次に任意の VLAN ポートで一度に 1 つずつ実行します。
 +
 'network port reachability repair-node <node_name > -port <port_name> ’
 
 +
-次のような出力が表示されます。
+次の例のような出力が表示されます。
 
 +
 [listing]
@@ -250,7 +250,7 @@ Warning: Repairing port "node1_node3: e0h" may cause it to move into a different
 「 network port broadcast-domain add-port 」と入力します
 
 +
-到達不能または予期しないポートが存在しないことを確認します。次のコマンドを使用し、出力を調べて、すべての物理ポートの到達可能性ステータスを確認し、ステータスが「 OK 」であることを確認します。
+到達不能または予期しないポートが存在しないことを確認します。次のコマンドを使用してすべての物理ポートの到達可能性ステータスをチェックし、出力を調べてステータスが「 OK 」であることを確認します。
 
 +
 「 network port reachability show-detail` 」と表示されます

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/aggregate_relocation_failures.html 
 keywords: aggregate, relocation, failures, arl, stage 2, stage 3, stage 5 
-summary: アグリゲートの再配置（ ARL ）がアップグレード中に別のポイントで失敗することがあります。 
+summary: AFF A700 から AFF A900 へのアップグレード時に発生する可能性があるアグリゲートの再配置エラーのトラブルシューティング 
 ---
 = アグリゲートの再配置に失敗しまし
 :hardbreaks:
@@ -53,7 +53,7 @@ summary: アグリゲートの再配置（ ARL ）がアップグレード中に
 +
 再配置する一部のアグリゲートのホームノードが node1 に含まれている。たとえば、このようなアグリゲートのことを aggr_node_A_1 と呼びます。ステージ 3 で aggr_node_A_1 の再配置が失敗し、強制的に再配置を実行できない場合は、アグリゲートは node2 で残ります。
 
-* ステージ 4 のあとで、 node2 を AFF A900 コントローラモジュールおよび NVS に交換します。
+* ステージ 4 のあとで、 node2 を AFF A900 コントローラモジュールおよび NVRAM モジュールに交換します。
 +
 node2 を交換すると、 aggr_node_A_1 は、 node2 ではなくノード 1 とホームノードとしてオンラインになります。
 

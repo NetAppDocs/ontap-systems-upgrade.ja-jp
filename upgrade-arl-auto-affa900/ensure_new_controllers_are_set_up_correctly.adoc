@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html 
 keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability 
-summary: HA ペアを有効にして正しいセットアップを確認し、ノード 1 とノード 2 がお互いのストレージにアクセスできることを確認します。 
+summary: HA ペアが有効になっていることを確認し、ノード 1 とノード 2 のストレージアクセスと LIF を確認し、 AFF A700 を AFF A900 にアップグレードしたあとにアグリゲートの所有権を確認します。 
 ---
 = 新しいコントローラが正しくセットアップされていることを確認します
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: HA ペアを有効にして正しいセットアップを確認し、�
 
 
 [role="lead"]
-正しいセットアップを行うには、 HA ペアが有効になっていることを確認する必要があります。さらに、 node1 と node2 が相互のストレージにアクセスできること、およびクラスタ上の他のノードに属するデータ LIF を所有していないことを確認する必要があります。また、すべてのデータアグリゲートが正しいホームノードにあり、両方のノードのボリュームがオンラインであることを確認する必要があります。新しいノードの 1 つにユニファイドターゲットアダプタがある場合は、ポート設定をすべてリストアする必要があり、場合によってはアダプタの使用方法の変更が必要になることがあります。
+正しいセットアップを確認するには、 HA ペアが有効になっていることを確認する必要があります。さらに、 node1 と node2 が相互のストレージにアクセスできること、およびクラスタ上の他のノードに属するデータ LIF を所有していないことを確認する必要があります。また、すべてのデータアグリゲートが正しいホームノードにあり、両方のノードのボリュームがオンラインであることを確認する必要があります。新しいノードの 1 つにユニファイドターゲットアダプタがある場合は、ポート設定をすべてリストアする必要があり、場合によってはアダプタの使用方法の変更が必要になることがあります。
 
 .手順
 . node2 のチェック後、 node2 クラスタのストレージフェイルオーバーとクラスタ HA ペアが有効になります。処理が完了すると、両方のノードに「 Completed 」と表示され、クリーンアップ処理が実行されます。
@@ -119,9 +119,9 @@ Do you want to continue? {y|n}: y
 「 system license show 」を参照してください
 
 +
-の出力と、でキャプチャした出力を比較することもできます link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] セクション。
+でキャプチャした出力と比較できます link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] セクション。
 
-. 構成に NetApp Storage Encryption （ NSE ）が使用されていた場合、「 setenv bootarg.storageencryption.support 」コマンドを「 kmip.init.maxwait` 」変数を「 true 」に設定します（ AFF A900 コントローラモジュールと NVS_, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["手順 1."]）を使用している場合は、変数をリセットする必要があります。
+. 構成で NetApp Storage Encryption （ NSE ）を使用していた場合、「 setenv bootarg.storageencryption.support 」コマンドを「 kmip.init.maxwait` 」変数を「 true 」に設定します（ AFF A900 コントローラモジュールと NVRAM モジュールを備えた in_bootnode2 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["手順 1."]）を使用している場合は、変数をリセットする必要があります
 +
 `set diag; systemshell -node <node_name > コ \'83\'7d ンド sudo kenv -u -p kmip.init.maxwait`
 

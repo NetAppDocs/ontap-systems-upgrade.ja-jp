@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/troubleshoot_index.html 
 keywrods: troubleshoot, failure, aggregate, relocate, lifs 
-summary: トラブルシューティング、トラブルシューティング、問題、エラー、障害 
+summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に発生する可能性のある問題のトラブルシューティングを行います。 
 ---
 = トラブルシューティングを行う
 :hardbreaks:

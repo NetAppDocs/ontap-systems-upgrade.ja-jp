@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/guidelines_for_upgrading_controllers_with_arl.html 
 keywords: upgrade, controllers, guidelines, ARL, aggregate relocation, supported upgrades, two-node, cluster, troubleshoot 
-summary: ONTAP 9.5 を実行しているコントローラペアを ONTAP 9.7 にアップグレードするには、プラットフォームと、元のコントローラと交換用コントローラの両方の構成が必要です。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードできるかどうかを理解します' 
 ---
 = ARL を使用したコントローラのアップグレードに関するガイドライン
 :hardbreaks:
@@ -63,4 +63,4 @@ ARL を使用したコントローラのアップグレードは、 SnapLock Ent
 
 コントローラのアップグレード中に問題が発生した場合は、を参照してください link:troubleshoot.html["トラブルシューティングを行う"] 詳細および解決策については、手順の末尾にあるセクションを参照してください。
 
-発生した問題に対する解決策が見つからない場合は、テクニカルサポートにお問い合わせください。
+発生した問題に対する解決策 が見つからない場合は、テクニカルサポートにお問い合わせください。

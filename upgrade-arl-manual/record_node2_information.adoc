@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/record_node2_information.html 
 keywords: record node2 information 
-summary: node2 をシャットダウンして撤去する前に、 node2 に関する情報を記録しておく必要があります。 
+summary: ONTAP 9.7 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、 node2 のクラスタネットワーク、管理、 FC ポート、および NVRAM システム ID に関する情報を記録します。 
 ---
 = ノード 2 の情報を記録します
 :hardbreaks:

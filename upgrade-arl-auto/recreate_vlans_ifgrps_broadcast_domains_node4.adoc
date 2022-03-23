@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.html 
 keywords: node4, interface group, VLANs, broadcast domains, re-create 
-summary: ノード 4 がクォーラムにあり、ノード 3 と通信できることを確認したら、ノード 2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインをノード 4 に再作成する必要があります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合 " ノード 2 の VLAN " インターフェイスグループ " およびブロードキャストドメインをノード 4 に再作成します' 
 ---
 = ノード 4 で VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します
 :hardbreaks:

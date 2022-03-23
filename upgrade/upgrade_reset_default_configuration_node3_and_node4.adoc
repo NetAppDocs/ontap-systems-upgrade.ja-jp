@@ -1,7 +1,7 @@
 ---
 permalink: upgrade/upgrade-reset-default-configuration-node3-and-node4.html 
 sidebar: sidebar 
-keywords: ensure, configuration, information, boot, media, interfere, controller, upgrade, reset, node3, node4, node, default, setting, reset default configuration on the new nodes 
+keywords: confirm, configuration, information, boot, media, interfere, controller, upgrade, reset, node3, node4, node, default, setting, reset default configuration on the new nodes 
 summary: ブートメディアの設定情報がコントローラのアップグレードの妨げにならないように、 node3 と node4 の設定をデフォルトの設定にリセットする必要があります。 
 ---
 = 新しいノードのデフォルト設定をリセットします
@@ -12,7 +12,7 @@ summary: ブートメディアの設定情報がコントローラのアップ�
 [role="lead"]
 ブートメディアの設定情報がコントローラのアップグレードの妨げにならないように、 node3 と node4 の設定をデフォルトの設定にリセットする必要があります。
 
-node3 と node4 で次の手順を実行する必要があります。この手順は各ノードで並行して実行できます。
+node3 と node4 には、次の手順を実行する必要があります。この手順は各ノードで並行して実行できます。
 
 . ノードをブートメニューでブートします。
 +

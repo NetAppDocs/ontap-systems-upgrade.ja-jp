@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/set_up_storage_encryption_new_controller.html 
 keywords: set up, setup, storage encryption, new, controller, module 
-summary: 交換したコントローラまたは新しいコントローラの HA パートナーで NetApp Volume Encryption を使用している場合は、新しいコントローラモジュールで NetApp Volume Encryption を設定する必要があります。 
+summary: 必要に応じて、 ONTAP 9.7 以前を実行しているコントローラでストレージ暗号化を設定し、 SSL 証明書をインストールし、 ARL を手動でアップグレードする際にキー管理サーバをセットアップします。 
 ---
 = 新しいコントローラモジュールで Storage Encryption をセットアップします
 :hardbreaks:

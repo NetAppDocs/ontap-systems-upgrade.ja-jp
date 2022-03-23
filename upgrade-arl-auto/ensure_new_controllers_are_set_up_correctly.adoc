@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/ensure_new_controllers_are_set_up_correctly.html 
-keywords: ensure, controllers, set up, ha, node3, node4, node2, lif, cluster, high, availability 
-summary: 正しく設定されるようにするには、 HA ペアを有効にする必要があります。 
+keywords: confirm, controllers, set up, ha, node3, node4, node2, lif, cluster, high, availability 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用してアップグレードした後 "HA ペアを有効にし " ノード 3 とノード 4 のストレージアクセスを確認し " アグリゲートの所有権を確認します' 
 ---
 = 新しいコントローラが正しくセットアップされていることを確認します
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 正しく設定されるようにするには、 HA ペアを有効に�
 
 
 [role="lead"]
-正しく設定されるようにするには、 HA ペアを有効にする必要があります。さらに、 node3 と node4 が相互のストレージにアクセスできること、およびクラスタ内の他のノードに属するデータ LIF を所有していないことを確認する必要があります。また、 node3 が node1 のアグリゲートを所有しており、 node4 が node2 のアグリゲートを所有していること、および両方のノードのボリュームがオンラインであることを確認する必要があります。
+正しいセットアップを確認するには、 HA ペアを有効にする必要があります。さらに、 node3 と node4 が相互のストレージにアクセスできること、およびクラスタ内の他のノードに属するデータ LIF を所有していないことを確認する必要があります。また、 node3 が node1 のアグリゲートを所有しており、 node4 が node2 のアグリゲートを所有していること、および両方のノードのボリュームがオンラインであることを確認する必要があります。
 
 .手順
 . node2 のチェック後、 node2 クラスタのストレージフェイルオーバーとクラスタ HA ペアが有効になります。処理が完了すると、両方のノードに「 Completed 」と表示され、クリーンアップ処理が実行されます。
@@ -120,7 +120,7 @@ Do you want to continue? {y|n}: y
 「 system license show 」を参照してください
 
 +
-出力を、セクションでキャプチャした出力と比較することもできます link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]。
+出力を、セクションでキャプチャした出力と比較できます link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]。
 
 . 構成に NetApp Storage Encryption （ NSE ）を使用していた場合は、「 setenvbootarg .bootarg.storageencryption.support 」コマンドを「 true 」に設定し、「 <kmip.init.maxwait>` variable 」を「 off 」に設定します（を参照） link:install_boot_node4.html#step27["Node4 をインストールしてブートします（手順 27 ）"]）を使用している場合は、変数をリセットする必要があります。
 +

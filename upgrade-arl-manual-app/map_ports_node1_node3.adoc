@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/map_ports_node1_node3.html 
 keywords: map, ports, node1, node3, cluster, home port, vlan ports, broadcast domain, connectivity 
-summary: ポートを node1 から node3 にマッピングします 
+summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする際に、 node1 の物理ポートが node3 に正しくマッピングされていることを確認します。 
 ---
 = ポートを node1 から node3 にマッピングします
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: ポートを node1 から node3 にマッピングします
 
 
 [role="lead"]
-ノード 1 の物理ポートがノード 3 の物理ポートに正しくマッピングされていることを確認する必要があります。ポート 3 を使用すると、クラスタ内の他のノードおよびアップグレード後にネットワークと通信できます。
+ノード 1 の物理ポートがノード 3 の物理ポートに正しくマッピングされていることを確認します。これにより、ノード 3 はクラスタ内の他のノードと通信し、アップグレード後にネットワークと通信できるようになります。
 
 新しいノードのポートに関する情報を Hardware Universe から取得しておく必要があります。に進みます link:other_references.html["参考資料"] をクリックして、 Hardware Universe にリンクします。この情報は、このセクションおよびの後半で使用します 。
 
@@ -131,7 +131,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 WARNING: Repairing port "node_name:port" might cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
-.. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair 」コマンドを実行してから約 1 分待ちます。
+.. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair repair repair repair repair repair repair 」コマンドを実行してから約 1 分待ちます。
 .. クラスタのすべてのブロードキャストドメインを一覧表示します。
 +
 「 broadcast-domain show 」

@@ -14,8 +14,6 @@ entries:
   url: "/upgrade-arl-manual-app/required_tools_documentation.html"
 - title: ワークシート：コントローラのアップグレード前後に収集する情報
   url: "/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html"
-- title: ノードペアをアップグレードします
-  url: "/upgrade-arl-manual-app/upgrade_node_pair.html"
 - title: ステージ 1 ：アップグレードを準備
   entries:
   - title: 概要

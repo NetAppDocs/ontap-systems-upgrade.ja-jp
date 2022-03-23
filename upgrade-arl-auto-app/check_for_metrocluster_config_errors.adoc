@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/check_for_metrocluster_config_errors.html 
 keywords: metrocluster, configuration, errors, config, advisor, netapp, support, site 
-summary: ネットアップサポートサイトから入手できる Config Advisor ツールを使用できます。 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して " 一般的な構成エラーがないかどうかを確認するには " Config Advisor ツールを使用します' 
 ---
 = MetroCluster 構成エラーがないかどうかを確認します
 :hardbreaks:

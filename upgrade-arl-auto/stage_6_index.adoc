@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/stage_6_index.html 
-keywords: complete upgrade, node, unified, target, storage, encryption, MetroCluster 
-summary: ステージ 6 で、新しいノードが正しくセットアップされていることを確認します。 
+keywords: complete upgrade, node, unified, target, storage, encryption, MetroCluster, stage 6 
+summary: ONTAP 9.5 から 9.7 までを実行しているコントローラでは、 system controller replace コマンドを使用して、 ARL アップグレードのステージ 6 プロセスシーケンスを実行します。 
 ---
 = ステージ 6 ：アップグレードを完了します
 :hardbreaks:

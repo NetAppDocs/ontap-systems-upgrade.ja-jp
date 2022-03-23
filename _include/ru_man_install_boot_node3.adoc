@@ -1,7 +1,7 @@
 = 
 
 
-ノード 3 をラックに設置し、ノード 1 の接続をノード 3 に転送し、ノード 3 をブートして、 ONTAP をインストールする必要があります。そのあとで、ノード 1 のスペアディスク、ルートボリュームに属するディスク、およびルート以外のアグリゲートを node2 に再割り当てする必要があります。
+ノード 3 をラックに設置し、ノード 1 の接続をノード 3 に転送し、ノード 3 をブートして、 ONTAP をインストールする必要があります。また、ノード 1 のスペアディスク、ルートボリュームに属するディスク、およびルート以外のアグリゲートのうち、ノード 2 に再配置されていないディスクも再割り当てする必要があります。
 
 ノード 1 にインストールされている ONTAP 9 のバージョンが異なる場合は、ノード 3 をネットブートする必要があります。node3 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、以降のシステムブートで使用するブートメディアデバイスに正しいファイルをダウンロードできます。を参照してください link:prepare_for_netboot.html["ネットブートを準備"]。
 
@@ -203,7 +203,7 @@ NOTE: ネットブート接続として管理ポートおよび IP を使用す�
 | その他すべてのシステム | netboot\http://web_server_ip/path_to_webaccessible_directory/ontap_version_image.tgz` 
 |===
 +
-「 path_to_the_web-accessible_directory 」は、「 ONTAP_version_image.tgz 」をダウンロードした場所を指します link:prepare_for_netboot.html#man_netboot_Step1["手順 1."] の項で、 netboot_ の準備を参照してください。
+「 path_to_the_web-accessible_directory 」は、の「 ONTAP_version_image.tgz 」をダウンロードした場所を指します link:prepare_for_netboot.html#man_netboot_Step1["手順 1."] の項で、 netboot_ の準備を参照してください。
 
 +
 
@@ -339,7 +339,7 @@ Disk ownership will be updated on all disks previously belonging to Filer with s
 Do you want to continue (y/n)?
 ----
 . [man_install3_step31]] 「 y 」と入力します。
-. [[man_install3_step32]] 外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（ AFF A800 システムなど）にアップグレードする場合は、 node1 アグリゲートを root として設定して、 node1 のルートアグリゲートからブートするようにします。
+. [[man_install3_step32]] 外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（ AFF A800 システムなど）にアップグレードする場合は、 node1 アグリゲートを root として設定し、 node3 が node1 のルートアグリゲートからブートすることを確認します。
 +
 
 WARNING: * 警告 * ：次の手順を記載された順序で実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。
@@ -407,7 +407,7 @@ NOTE: 前の手順を実行しないと、原因 node3 を内部ルートアグ�
     Controller HA configuration: ha
 ----
 +
-システムは、 HA ペア構成かスタンドアロン構成かを PROM に記録します。状態は、スタンドアロンシステムまたは HA ペア内のすべてのコンポーネントで同じである必要があります。
+システムは、 HA ペア構成かスタンドアロン構成かにかかわらず、プログラム可能 ROM （ PROM ）に記録されます。状態は、スタンドアロンシステムまたは HA ペア内のすべてのコンポーネントで同じである必要があります。
 
 +
 コントローラとシャーシが「 HA 」として構成されていない場合は、次のコマンドを使用して構成を修正します。

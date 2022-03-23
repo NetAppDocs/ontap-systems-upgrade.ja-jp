@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html 
 keywords: move, aggregates, nas, lif, node2, node3, node4 
-summary: node2 のアグリゲートを node3 から node4 に再配置する前に、 node3 の node2 に現在含まれている node2 に所有されている NAS データ LIF を node4 に移動し、 node4 にある SAN LIF を確認します。 
+summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、ノード 3 の NAS データ LIF を node3 から node4 に移動します。 
 ---
 = node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF を確認します
 :hardbreaks:
@@ -135,7 +135,7 @@ node4
 
 
 
-. [man_lif_verify_4_Step10] ] 次の手順を実行して、ノード 4 の正しいポートに SAN LIF があることを確認します。
+. [[man_lif_verify_4_Step10] ] 次の手順を実行して、ノード 4 の正しいポートに SAN LIF があることを確認します。
 +
 .. 次のコマンドを入力します。
 +

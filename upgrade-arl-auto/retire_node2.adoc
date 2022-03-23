@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/retire_node2.html 
 keywords: retire, node2 
-summary: ノード 2 を撤去するには、ノード 2 を適切にシャットダウンし、ラックまたはシャーシから取り外す必要があります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は "node2 をシャットダウンしてラックまたはシャーシから取り外します' 
 ---
 = ノード 2 を撤去
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: ノード 2 を撤去するには、ノード 2 を適切にシャッ�
 
 
 [role="lead"]
-node2 を撤去するには、 node2 を正しくシャットダウンしてラックまたはシャーシから取り外す必要があります。
+ノード 2 を撤去するには、ノード 2 を正しくシャットダウンし、ラックまたはシャーシから取り外す必要があります。
 
 .手順
 . 処理を再開します。

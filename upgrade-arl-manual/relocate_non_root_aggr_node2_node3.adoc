@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html 
 keywords: node2, node3, node2, aggregates, autosupport 
-summary: node2 に AutoSupport メッセージを送信し、 node2 によって所有されているルート以外のアグリゲートを node3 に再配置します。 
+summary: node2 の AutoSupport メッセージを送信し、 ONTAP 9.7 以前を実行しているコントローラで node2 の非ルートアグリゲートを手動で ARL アップグレード時にノード 2 に再配置します。 
 ---
 = ルート以外のアグリゲートを node2 から node3 に再配置します。
 :hardbreaks:

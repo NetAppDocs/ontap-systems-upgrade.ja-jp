@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/prepare_nodes_for_upgrade.html 
 keywords: prepare, nodes, upgrade, controller, replacement, license 
-summary: ノードをアップグレードする準備を行う必要があります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は " ノードを準備し " 一連の事前チェックを実行します' 
 ---
 = ノードをアップグレードする準備をします
 :hardbreaks:
@@ -100,33 +100,33 @@ Controller replacement operation has been paused for user intervention.
 
 | ノードアフィニティジョブチェック | ノードアフィニティジョブが実行されているかどうかを確認します。ノードアフィニティジョブが実行中の場合、チェックは失敗します。 
 |===
-. コントローラの交換処理が開始されて事前確認が完了すると、処理が一時停止するため、ノード 3 の設定時に必要になる可能性がある出力情報を収集できます。
+. コントローラの交換処理が開始されて事前確認が完了すると、処理が一時停止するため、ノード 3 の設定時にあとで必要になる可能性がある出力情報を収集できます。
 . システムコンソールで、コントローラの交換用手順の指示に従って、次のコマンドセットを実行します。
 +
 次のコマンドの出力を個別に実行して保存する必要があります。
 
 +
 ** vserver services name-service dns show
-** network interface show -curr-node <nodename> -role cluster 、 intercluster 、 node-mgmt 、 clustermgmt 、 data
-** network port show -node <nodename> -type physical です
-** service-processor show -node * -instance の各コマンドを実行します
-** network fcp adapter show -node <node_name >
-** network port ifgrp show の設定
-** network port vlan show の略
-** system node show -instance -node <nodename>
-** run -node <node_name >sysconfig
-** storage aggregate show -node <nodename>
-** volume show -node <node_name >
-** network interface failover-groups show
-** storage array config show -switch <switch_name> のように表示されます
-** system license show -owner <node_name >
-** storage encryption disk show のコマンド
+** network interface show -curr-node nodename -role cluster 、 intercluster 、 node-mgmt 、 clustermgmt 、 data
+** network port show -node nodename -type physical
+** 「 service-processor show -node * -instance 」のように表示されます
+** 「 network fcp adapter show -node node_name 」
+** 「 network port ifgrp show 」のように表示されます
+** 「 network port vlan show 」と表示されます
+** system node show -instance -node nodename
+** 'run-node <node_name >sysconfig `
+** storage aggregate show -node nodename
+** volume show -node node_name
+** 「 network interface failover-groups show 」と表示されます
+** storage array config show -switch switch_name
+** 'system license show -owner node_name
+** 「 storage encryption disk show 」のように表示されます
 
 
 
 
 
-NOTE: オンボードキーマネージャを使用した NetApp Volume Encryption を使用している場合は、キー管理ツールのパスフレーズを準備しておき、あとで手順でキー管理ツールの再同期を完了します。
+NOTE: オンボードキーマネージャを使用した NetApp Volume Encryption を使用している場合は、キー管理ツールのパスフレーズを準備しておき、あとで手順 でキー管理ツールの再同期を完了します。
 
 
 

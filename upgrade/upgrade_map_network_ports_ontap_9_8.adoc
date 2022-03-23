@@ -10,7 +10,7 @@ summary: node3 と node4 がアップグレード後にクラスタ内および�
 
 
 [role="lead"]
-node3 と node4 がアップグレード後にクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。
+アップグレード後に node3 と node4 がクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。
 
 これらの手順は ONTAP 9.8 を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[ONTAP 9.7 以前を使用してネットワークポートをマッピングします]。
 
@@ -108,7 +108,7 @@ Warning: Repairing port "node_name:port" may cause it to move into a
 different broadcast domain, which can cause LIFs to be re-homed away
 from the port. Are you sure you want to continue? {y|n}:
 ----
-.. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair 」コマンドを実行してから約 1 分待ちます。
+.. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair repair repair repair repair repair repair 」コマンドを実行してから約 1 分待ちます。
 .. クラスタのすべてのブロードキャストドメインを一覧表示します。
 +
 「 broadcast-domain show 」
@@ -177,10 +177,10 @@ NOTE: アップグレードするシステムのネットワーク構成の複�
 +
 「 dispaced-interface show 」
 
-
-
 +
 すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、 network port reachability show コマンドで、接続されているすべてのポートのプレゼンスステータスが OK と報告され、物理的な接続がないポートのステータスは no-reachability と報告される必要があります。これら 2 つ以外のステータスを報告しているポートがある場合は、に記載されているように、到達可能性を修復します <<map_98_5,手順 5>>。
+
+
 
 . 正しいブロードキャストドメインに属するポート上ですべての LIF が意図的に稼働していることを確認します。
 +

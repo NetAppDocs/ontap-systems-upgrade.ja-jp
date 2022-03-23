@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/reboots_panics_or_power_cycles.html 
 keywords: reboots, panics, power, cycles, node, crash 
-summary: システムがクラッシュする場合–リブート、パニック状態、または電源の再投入が行われます。 
+summary: AFF A700 を AFF A900 にアップグレードする際、システムがクラッシュする（リブート、パニック状態、電源再投入のいずれか）場合があります。 
 ---
 = リブート、パニック、電源再投入
 :hardbreaks:

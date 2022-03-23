@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/troubleshoot_index.html 
 keywords: node, failure, upgrading, crash, relocate, solution 
-summary: ノードペアのアップグレード中に障害が発生する可能性があります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードすると発生する可能性のある障害のトラブルシューティングを行います' 
 ---
 = トラブルシューティングを行う
 :hardbreaks:

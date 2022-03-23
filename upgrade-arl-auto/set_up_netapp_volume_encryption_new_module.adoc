@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/set_up_netapp_volume_encryption_new_module.html 
 keywords: set up, netapp volume encryption, controller, module, nve, node 
-summary: 新しいコントローラモジュールで NVE を設定します。 
+summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップグレードする場合は、必要に応じて、「 system controller replace` コマンド」を使用して、 NVE 用の新しいコントローラモジュールを設定します。' 
 ---
 = 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
 :hardbreaks:

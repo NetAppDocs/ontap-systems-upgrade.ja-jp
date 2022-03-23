@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html 
-keywords: relocate, non-root, aggregates, nas, lif, node2, node1. aff, a900, nvs, controller 
-summary: node2 を AFF A900 コントローラモジュールと NVS に交換する前に、 node2 に所有されているルート以外のアグリゲートを node1 に再配置する必要があります。 
+keywords: relocate, non-root, aggregates, nas, lif, node2, node1. aff, a900, NVRAM, controller 
+summary: AFF A700 から AFF A900 へのアップグレード中に、ノード 2 のルート以外のアグリゲートをノード 1 に再配置します。 
 ---
 = ルート以外のアグリゲートと NAS データ LIF を node2 から node1 に再配置します
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: node2 を AFF A900 コントローラモジュールと NVS に交換�
 
 
 [role="lead"]
-node2 を AFF A900 コントローラモジュールと NVS に交換する前に、 node2 に所有されているルート以外のアグリゲートを node1 に再配置する必要があります。
+node2 を AFF A900 コントローラモジュールおよび NVRAM モジュールと交換する前に、 node2 に所有されているルート以外のアグリゲートを node1 に再配置する必要があります。
 
 前の段階で確認したあとに、 node2 のリソースリリースが自動的に開始されます。ルート以外のアグリゲートと SAN 以外のデータ LIF が node2 から新しい node1 に移行されます。
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/decide_to_use_arl_guide.html 
 keywords: decision, decision, what to use, upgrade, HA pair, metrocluster, storage encryption, volume encryption, NSE, NVE 
-summary: このコンテンツを使用するかどうか。 
+summary: 手動 ARL 手順 を使用して、 ONTAP 9.7 以前を実行している新しいコントローラを含む HA ペアのストレージコントローラをアップグレードするかどうかを決定します。 
 ---
 = アグリゲートの再配置手順を使用するかどうかを決定します
 :hardbreaks:
@@ -15,7 +15,7 @@ summary: このコンテンツを使用するかどうか。
 [role="lead"]
 このコンテンツでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードし、既存のデータとディスクをすべて残す方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
 
-このコンテンツは、次のような状況で使用する必要があります。
+このコンテンツは、次の状況で使用します。
 
 * 新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。
 * ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。

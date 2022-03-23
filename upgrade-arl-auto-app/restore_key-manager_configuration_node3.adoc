@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/restore_key-manager_configuration_node3.html 
 keywords: restoring, key-manager, configuration, node3, nve, arl, encryption, netapp, volume 
-summary: NetApp Volume Encryption （ NVE ）を使用してアップグレードするシステム上のボリュームを暗号化する場合。 
+summary: '必要に応じて "system controller replace" コマンドを使用して ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに " キー管理ツールの構成をノード 3 にリストアします' 
 ---
 = ノード 3 でキー管理ツールの設定をリストアします
 :hardbreaks:
@@ -18,7 +18,7 @@ NetApp Volume Encryption （ NVE ）を使用してアップグレードする�
 次の手順を実行して、暗号化設定を新しいノードに同期します。
 
 .手順
-. クラスタプロンプトで次のコマンドを使用して、 OKM の暗号化構成を同期します。
+. クラスタプロンプトで次のコマンドを使用して、オンボードキーマネージャ（ OKM ）の暗号化設定を同期します。
 +
 「セキュリティキーマネージャオンボード同期」
 

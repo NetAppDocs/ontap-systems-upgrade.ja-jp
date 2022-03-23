@@ -1,7 +1,7 @@
 ---
 section: upgrade-arl-auto-affa900
-title: "「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 RC2 以降を実行する AFF A700
-  を AFF A900 にアップグレードします"
+title: "「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF
+  A700 をアップグレードします"
 entries:
 - title: 概要
   url: "/upgrade-arl-auto-affa900/index.html"
@@ -15,8 +15,6 @@ entries:
   url: "/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html"
 - title: ARL アップグレードの概要
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
-- title: ノードペアをアップグレードします
-  url: "/upgrade-arl-auto-affa900/upgrade_node_pair.html"
 - title: ステージ 1 ：アップグレードを準備
   entries:
   - title: アップグレードハードウェアを確認します
@@ -35,9 +33,9 @@ entries:
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: ネットブート node1
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
-- title: ステージ 3 ：AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします
+- title: ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
   entries:
-  - title: AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします
+  - title: AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: ノード 1 のインストールを確認します
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
@@ -51,15 +49,15 @@ entries:
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: ノード 2 を撤去
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
-- title: ステージ 5 ：AFF A900 NVS とコントローラモジュールを node2 に取り付けます
+- title: ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
   entries:
-  - title: AFF A900 NVS とコントローラモジュールを node2 にインストールします
+  - title: AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
     url: "/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html"
   - title: ネットブート node2
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
-- title: ステージ 6 ：AFF A900 コントローラモジュールと NVS を使用して node2 をブートします
+- title: ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
   entries:
-  - title: AFF A900 コントローラモジュールと NVS を使用して node2 をブートします
+  - title: AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: node2 のインストールを確認します
     url: "/upgrade-arl-auto-affa900/verify_node2_installation.html"

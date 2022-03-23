@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html 
 keywords: aggregate relocation, lifs, node3, node1, node2, NAS 
-summary: ノード 3 のインストールを確認し、 node2 から node3 にアグリゲートを再配置する前に、 NAS データ LIF を移動する必要があります。 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードするときに "node2 の node1 の NAS データ LIF を node2 から node3 に移動します' 
 ---
 = ノード 1 で所有されているルート以外のアグリゲートと NAS データ LIF を、ノード 2 からノード 3 に移動します
 :hardbreaks:
@@ -123,7 +123,7 @@ network interface modify ｛ -home-node <port_on_node1> -role data ｝ -home-nod
 
 +
 
-NOTE: SAN LIF は、元のポートとリンク速度が同じポートに移動する必要があります。
+NOTE: SAN LIF を、元のポートとリンク速度が同じポートに移動したことを確認する必要があります。
 
 
 

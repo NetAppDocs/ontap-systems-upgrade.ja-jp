@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html 
 keywords: preparing, nodes, upgrade, stage 1, prechecks 
-summary: ステージ 1 では、アップグレードのためのノードを準備し、一連の事前確認を実行する必要があります。 
+summary: AFF A700 から AFF A900 へのアップグレード時に、ノードを準備して一連の事前確認を実行します。 
 ---
 = ノードをアップグレードする準備をします
 :hardbreaks:
@@ -39,7 +39,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 
 Do you want to continue? {y|n}: y
 ....
-. 「 y 」を選択すると、次の出力が表示されます。
+. 「 y 」を選択します。次の出力が表示されます。
 +
 ....
 Controller replacement operation: Prechecks in progress.
@@ -84,7 +84,7 @@ Controller replacement operation has been paused for user intervention.
 | クラスタ LIF ステータス | 両方のノードでクラスタ LIF が動作しているかどうかを確認します。クラスタ LIF が停止している場合は、タスクは失敗します。 
 
 
-| ASUP ステータスチェック | ASUP 通知が設定されていないと、タスクは失敗します。コントローラの交換用手順を開始する前に ASUP を有効にする必要があります。 
+| ASUP ステータスチェック | AutoSupport 通知が設定されていないと、タスクは失敗します。コントローラの交換用手順 を開始する前に、 AutoSupport を有効にする必要があります。 
 
 
 | CPU 利用率チェック | 交換するノードの CPU 利用率が 50% を超えていないかどうかを確認します。CPU 使用率がかなりの時間にわたって 50% を超えると、タスクは失敗します。 
@@ -95,7 +95,7 @@ Controller replacement operation has been paused for user intervention.
 
 | ノードアフィニティジョブチェック | ノードアフィニティジョブが実行されているかどうかを確認します。ノードアフィニティジョブが実行中の場合、チェックは失敗します。 
 |===
-. コントローラの交換処理が開始されて事前確認が完了すると、処理が一時停止するため、コントローラのアップグレードプロセスの後半で必要になる可能性がある出力情報を収集できます。
+. コントローラの交換処理が開始されて事前確認が完了すると、処理が一時停止し、コントローラのアップグレードプロセスの後半で必要になる可能性がある出力情報を収集できます。
 . システムコンソールで、コントローラの交換用手順の指示に従って、次のコマンドセットを実行します。
 +
 次のコマンドの出力を個別に実行して保存する必要があります。
@@ -123,7 +123,7 @@ Controller replacement operation has been paused for user intervention.
 
 
 
-NOTE: オンボードキーマネージャ（ OKM ）を使用する NetApp Volume Encryption を使用している場合、キー管理ツールのパスフレーズを使用して、あとで手順でキー管理ツールの再同期を完了してください。
+NOTE: オンボードキーマネージャを使用した NetApp Volume Encryption を使用している場合は、キー管理ツールのパスフレーズを準備しておき、あとで手順 でキー管理ツールの再同期を完了します。
 
 
 

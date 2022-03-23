@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html 
-keywords: boot, nvs, controller, module, node1, aff, a700, a900 
-summary: AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします。 
+keywords: boot, NVRAM, controller, module, node1, aff, a700, a900 
+summary: AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします。 
 ---
-= AFF A900 コントローラモジュールと NVS を使用してノード 1 をブートします
+= AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -13,10 +13,10 @@ summary: AFF A900 コントローラモジュールと NVS を使用してノー
 
 
 [role="lead"]
-これで、 AFF A900 コントローラモジュールを搭載したノード 1 と、 NVS をブートする準備ができました。コントローラモジュールと NVS をスワップして AFF A700 から AFF A900 にアップグレードするには、コンソール接続と管理接続だけを移動する必要があります。このセクションでは、 AFF A900 コントローラモジュールおよび NVS でノード 1 をブートするために必要な手順を説明します。
+AFF A900 コントローラモジュールと NVRAM モジュールを搭載したノード 1 がブート可能な状態になります。コントローラモジュールと NVRAM モジュールをスワップして AFF A700 から AFF A900 にアップグレードするには、コンソール接続と管理接続だけを移動する必要があります。このセクションでは、 AFF A900 コントローラモジュールおよび NVRAM モジュールで node1 をブートするために必要な手順を説明します。
 
 .手順
-. この構成で NetApp Storage Encryption （ NSE ）を使用している場合、ノード 1 の構成のロード後にブートループが発生しないようにするには、「 bootargen.storageencryption.support 」コマンドを「 true 」に設定し、「 kmip.init.maxwait` 」変数を「 off 」に設定する必要があります。
+. この構成で NetApp Storage Encryption （ NSE ）を使用している場合、 'setenv bootarg.storageencryption.support' コマンドを 'true' に設定し、 node1 構成のロード後にブートループが発生しないように、 kmip.init.maxwait` 変数を 'off' に設定する必要があります。
 +
 'etenv bootarg.storageencryption.support true
 
@@ -157,9 +157,9 @@ Login:
 ====
 上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。
 
-上記の例に示すシステム ID は一例です。アップグレードするノードの実際のシステム ID は異なります。
+上記の例のシステム ID は一例です。アップグレードするノードの実際のシステム ID は異なります。
 
-プロンプトでノード名を入力するかログインプロンプトを表示するまでに、ノードが 2 回リブートして環境変数をリストアし、システムのカードでファームウェアを更新し、他の ONTAP 更新を実行します。
+プロンプトでノード名を入力するかログインプロンプトを表示するまで、ノードが数回リブートして環境変数をリストアし、システムのカードでファームウェアを更新し、他の ONTAP 更新を実行します。
 
 ====
 

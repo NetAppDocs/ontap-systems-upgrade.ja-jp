@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/verify_node3_installation.html 
-keywords: install, boot, node3, join quorum 
-summary: node3 のインストールとブートが完了したら、正しくインストールされていることを確認する必要があります。 
+keywords: install, boot, node3, join quorum, restore, key, manager 
+summary: 'system controller replace" コマンドを使用して ONTAP 9.5 を実行しているコントローラを 9.7 にアップグレードする場合 " ノード 3 がクォーラムに参加していることを確認し " ノード 1 の VLAN " インタフェースグループ " ブロードキャストドメインを再作成し " キー管理ツールの設定をリストアします' 
 ---
 = ノード 3 のインストールを確認します
 :hardbreaks:
