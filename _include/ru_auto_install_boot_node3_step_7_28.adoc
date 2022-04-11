@@ -165,6 +165,6 @@ printenv partner-sysid
 「 boot_ontap menu
 
 +
-FC または UTA / UTA2 設定がない場合は、を実行します link:set_fc_or_uta_uta2_config_on_node3.html#auto9597_check_node3_step15["ノード 3 の手順 15 で UTA / UTA2 ポートを確認して設定します"] ノード 3 がノード 1 のディスクを認識できるようにします。
+FC または UTA / UTA2 設定がない場合は、を実行します link:set_fc_or_uta_uta2_config_on_node3.html#auto9597_check_node3_step15["ノード 3 の UTA / UTA2 ポートの確認と設定、手順 15"] ノード 3 がノード 1 のディスクを認識できるようにします。
 
 

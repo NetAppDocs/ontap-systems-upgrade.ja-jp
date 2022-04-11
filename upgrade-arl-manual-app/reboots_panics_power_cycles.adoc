@@ -118,7 +118,7 @@ node2 の一部またはすべてのアグリゲートが node3 に再配置さ�
 
 .手順
 . node2 を起動します。
-. 残りのアグリゲートの再配置は完了して実行します link:relocate_non_root_aggr_node2_node3.html#step1["手順 1."] から  セクションの _root 以外のアグリゲートを node2 から node3 _ に移動する
+. 残りのアグリゲートの再配置は完了して実行します link:relocate_non_root_aggr_node2_node3.html#step1["手順 1."] から link:relocate_non_root_aggr_node2_node3.html#step3["手順 3"] セクションの _root 以外のアグリゲートを node2 から node3 _ に移動する
 . ノードペアのアップグレード用手順に進みます。
 
 
@@ -198,7 +198,7 @@ node3 が再度ブートするまでは、残りのアグリゲートが停止�
 
 .手順
 . ノード 3 を起動します。
-. node2 に属していた残りのアグリゲートを再配置します link:relocate_node2_non_root_aggr_node3_node4.html#Step1["手順 1."] から  セクションの _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置する例を次に示します。
+. node2 に属していた残りのアグリゲートを再配置します link:relocate_node2_non_root_aggr_node3_node4.html#Step1["手順 1."] から link:relocate_node2_non_root_aggr_node3_node4.html#step3["手順 3"] セクションの _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置する例を次に示します。
 . ノードペアのアップグレード用手順に進みます。
 
 
@@ -212,6 +212,6 @@ node3 が再度ブートするまでは、残りのアグリゲートが停止�
 
 .手順
 . ノード 4 を起動します。
-. 再度完了して、 node2 に属していた残りのアグリゲートを再配置します link:relocate_node2_non_root_aggr_node3_node4.html#Step1["手順 1."] から  In _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置します。
+. 再度完了して、 node2 に属していた残りのアグリゲートを再配置します link:relocate_node2_non_root_aggr_node3_node4.html#Step1["手順 1."] から link:relocate_node2_non_root_aggr_node3_node4.html#step3["手順 3"] In _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置します。
 . ノードペアのアップグレード用手順に進みます。
 

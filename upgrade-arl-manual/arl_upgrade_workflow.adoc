@@ -84,7 +84,7 @@ image:arl_upgrade_manual_image1.PNG["ARL 手順の各ステージを示す図"]
 . ノード 3 で UTA / UTA2 設定を設定します。
 . ポートを node1 から node3 にマッピングします
 . ノード 3 のインストールを確認します
-. ノード 1 が所有する SAN 以外のデータ LIF を node2 から node3 に移動し、 node3 の SNA LIF を確認します。
+. node1 で所有されている SAN 以外のデータ LIF を node2 から node3 に移動し、 node3 の SNA LIF を確認します。
 . ルート以外のアグリゲートを node2 から node3 に再配置します。
 . node2 によって所有されている SAN 以外のデータ LIF を node3 に移動します。
 

@@ -1,0 +1,58 @@
+= 
+
+
+SAN LIF を node2 から node3 に移動したあとに正しく設定されているかどうかを確認するには、次のワークシートを使用して、各 LIF の「 adapter 」と「 switch-port 」の情報を記録します。
+
+network interface show -data-protocol fc * コマンド出力の LIF 「 adapter 」情報と、 node2 に対する fcp adapter show -fields switch-port 、 fc-wwpn コマンド出力の「 switch-port 」情報を記録します。
+
+node3 への移行が完了したら、 node3 の LIF の「 adapter 」と「 switch-port 」の情報を記録し、各 LIF が同じ「 switch-port 」に接続されていることを確認します。
+
+[cols="6*"]
+|===
+3+| ノード 2 3+| ノード 3 
+
+
+| LIF | 「アダプタ」 | 「 switch-port 」と入力します | LIF | 「アダプタ」 | 「 switch-port 」と入力します 
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+|===

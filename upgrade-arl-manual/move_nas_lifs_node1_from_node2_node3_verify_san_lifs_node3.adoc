@@ -22,17 +22,83 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 +
 network interface show -role data -curr-node node2 -is-home false -home-node node3`
 
-. [[step2]] 次のいずれかの操作を実行します。
+. [[worksheet _step2] クラスタが SAN LIF 用に構成されている場合は、 SAN LIF 「 adapter 」および「 switch-port 」の構成情報をこのに記録します link:worksheet_information_before_moving_san_lifs_node3.html["ワークシート"] 手順 の後半で使用します。
++
+.. node2 の SAN LIF を一覧表示し、出力を確認します。
++
+「 network interface show -data-protocol fc * 」を参照してください
+
++
+次の例のような出力が返されます。
+
++
+[listing]
+----
+cluster1::> net int show -data-protocol fc*
+  (network interface show)
+             Logical     Status     Network            Current        Current Is
+Vserver      Interface   Admin/Oper Address/Mask       Node           Port    Home
+-----------  ----------  ---------- ------------------ -------------  ------- ----
+svm2_cluster1
+             lif_svm2_cluster1_340
+                         up/up      20:02:00:50:56:b0:39:99
+                                                       cluster1-01    1b      true
+             lif_svm2_cluster1_398
+                         up/up      20:03:00:50:56:b0:39:99
+                                                       cluster1-02    1a      true
+             lif_svm2_cluster1_691
+                         up/up      20:01:00:50:56:b0:39:99
+                                                       cluster1-01    1a      true
+             lif_svm2_cluster1_925
+                         up/up      20:04:00:50:56:b0:39:99
+                                                       cluster1-02    1b      true
+4 entries were displayed.
+----
+.. 既存の設定を表示し、出力を確認します。
++
+「 fcp adapter show -fields switch-port 、 fc-wwpn 」と入力します
+
++
+次の例のような出力が返されます。
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node         adapter  fc-wwpn                  switch-port
+-----------  -------  -----------------------  -------------
+cluster1-01  0a       50:0a:09:82:9c:13:38:00  ACME Switch:0
+cluster1-01  0b       50:0a:09:82:9c:13:38:01  ACME Switch:1
+cluster1-01  0c       50:0a:09:82:9c:13:38:02  ACME Switch:2
+cluster1-01  0d       50:0a:09:82:9c:13:38:03  ACME Switch:3
+cluster1-01  0e       50:0a:09:82:9c:13:38:04  ACME Switch:4
+cluster1-01  0f       50:0a:09:82:9c:13:38:05  ACME Switch:5
+cluster1-01  1a       50:0a:09:82:9c:13:38:06  ACME Switch:6
+cluster1-01  1b       50:0a:09:82:9c:13:38:07  ACME Switch:7
+cluster1-02  0a       50:0a:09:82:9c:6c:36:00  ACME Switch:0
+cluster1-02  0b       50:0a:09:82:9c:6c:36:01  ACME Switch:1
+cluster1-02  0c       50:0a:09:82:9c:6c:36:02  ACME Switch:2
+cluster1-02  0d       50:0a:09:82:9c:6c:36:03  ACME Switch:3
+cluster1-02  0e       50:0a:09:82:9c:6c:36:04  ACME Switch:4
+cluster1-02  0f       50:0a:09:82:9c:6c:36:05  ACME Switch:5
+cluster1-02  1a       50:0a:09:82:9c:6c:36:06  ACME Switch:6
+cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
+16 entries were displayed
+----
+
+
+. [[step3]] 次のいずれかの操作を実行します。
 +
 [cols="35,65"]
 |===
 | ノード 1 の状況 | 作業 
 
 
-| インターフェイスグループまたは VLAN が設定されている | に進みます <<man_lif_verify_3_step3,手順 3>>。 
+| インターフェイスグループまたは VLAN が設定されている | に進みます <<man_lif_verify_3_step3,手順 4>>。 
 
 
-| インターフェイスグループまたは VLAN が設定されていません | 手順 3 を省略して、に進みます <<man_lif_verify_3_step4,手順 4>>。 
+| インターフェイスグループまたは VLAN が設定されていません | 手順 4 を省略して、に進みます <<man_lif_verify_3_step4,手順 5>>。 
 |===
 . [[man_lif_verify_3_step3]] 次の手順を実行して、インターフェイスグループおよび VLAN でホストされていた NAS データ LIF を、ノード 2 からノード 3 に移行します。
 +
@@ -61,7 +127,7 @@ network interface modify -vserver vserver_name -lif lif_name -home-node node3-ho
 | クラスタの設定対象 | 作業 
 
 
-| NAS | - 完了しました <<man_lif_verify_3_step5,手順 5>> および <<man_lif_verify_3_step6,手順 6>>をクリックして、手順 7 をスキップして完了します <<man_lif_verify_3_step8,手順 8>> から <<man_lif_verify_3_step11,手順 11>>。 
+| NAS | - 完了しました <<man_lif_verify_3_step5,手順 6>> および <<man_lif_verify_3_step6,手順 7>>をクリックして、手順 8 をスキップして完了します <<man_lif_verify_3_step8,手順 9>> から <<man_lif_verify_3_step11,手順 12>>。 
 
 
 | SAN | ノード上のすべての SAN LIF を無効にしてアップグレード用にダウンにします。 network interface modify -vserver vserver_name -lif lif_name -home-node node_name -home-port netport | ifgrp-status-admin down 
@@ -111,6 +177,45 @@ cluster::> net int show -data-protocol iscsi|fcp -home-node node3
               lif1        up/up       172.17.176.120/24   node3          e0c      true
               lif2        up/up       172.17.176.121/24   node3          e1a      true
 ----
+.. 「 fcp adapter show 」コマンドの出力と、のワークシートに記録した設定情報を比較して、新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認します <<worksheet_step2,手順 2>>。
++
+ノード 3 に新しい SAN LIF の設定を表示します。
+
++
+「 fcp adapter show -fields switch-port 、 fc-wwpn 」と入力します
+
++
+次の例のような出力が返されます。
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node        adapter fc-wwpn                 switch-port
+----------- ------- ----------------------- -------------
+cluster1-01 0a      50:0a:09:82:9c:13:38:00 ACME Switch:0
+cluster1-01 0b      50:0a:09:82:9c:13:38:01 ACME Switch:1
+cluster1-01 0c      50:0a:09:82:9c:13:38:02 ACME Switch:2
+cluster1-01 0d      50:0a:09:82:9c:13:38:03 ACME Switch:3
+cluster1-01 0e      50:0a:09:82:9c:13:38:04 ACME Switch:4
+cluster1-01 0f      50:0a:09:82:9c:13:38:05 ACME Switch:5
+cluster1-01 1a      50:0a:09:82:9c:13:38:06 ACME Switch:6
+cluster1-01 1b      50:0a:09:82:9c:13:38:07 ACME Switch:7
+cluster1-02 0a      50:0a:09:82:9c:6c:36:00 ACME Switch:0
+cluster1-02 0b      50:0a:09:82:9c:6c:36:01 ACME Switch:1
+cluster1-02 0c      50:0a:09:82:9c:6c:36:02 ACME Switch:2
+cluster1-02 0d      50:0a:09:82:9c:6c:36:03 ACME Switch:3
+cluster1-02 0e      50:0a:09:82:9c:6c:36:04 ACME Switch:4
+cluster1-02 0f      50:0a:09:82:9c:6c:36:05 ACME Switch:5
+cluster1-02 1a      50:0a:09:82:9c:6c:36:06 ACME Switch:6
+cluster1-02 1b      50:0a:09:82:9c:6c:36:07 ACME Switch:7
+16 entries were displayed
+----
++
+
+NOTE: 新しい構成の SAN LIF が同じ「 switch-port 」に接続されたアダプタ上にない場合、ノードをリブートすると原因 がシステム停止状態になる可能性があります。
+
 .. ノード 3 に、ノード 1 に存在しないポート上にある SAN LIF または SAN LIF のグループがある場合、または別のポートにマッピングする必要がある場合は、次の手順を実行して、ノード 3 の該当するポートにそれらの SAN LIF またはグループを移動します。
 +
 ... LIF のステータスを「 down 」に設定します。

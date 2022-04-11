@@ -551,8 +551,6 @@
   <block id="3ba1b014c973048d41b40e37b1cfeb69" category="list-text">[[step25]] ストレージアレイ上のアレイ LUN に関連付けられたホストまたはボリュームグループで、 World Wide Port Name （ WWPN ）値を変更します。</block>
   <block id="be6df649a349785ed8ec2a552e7c8903" category="list-text">[[step26]] スイッチベースのゾーニングを使用する構成の場合は、ゾーニングを調整して新しい WWPN 値を反映します。</block>
   <block id="dc19b23ad13df9e69f052ca959f75ad8" category="list-text">[[step28]] ブートメニューからノードを起動します。</block>
-  <block id="d5a2736750f555e1b93002d11e192b77" category="inline-link-macro">ノード 3 の手順 15 で UTA / UTA2 ポートを確認して設定します</block>
-  <block id="8105e4198590e4ba2b52ef420719d8f6" category="paragraph">FC または UTA / UTA2 設定がない場合は、を実行します <block ref="197bcdf5306898ec17e6022b26568f43" category="inline-link-macro-rx"></block> ノード 3 がノード 1 のディスクを認識できるようにします。</block>
   <block id="bc26b5e5559721e19875fb91dce22cec" category="inline-link-macro">ノード 3 で FC または UTA / UTA2 設定を設定します</block>
   <block id="8ba547e72776f098f3b70a6614639f73" category="list-text">[step29] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムについて、ノードに接続されているディスクを検出するために、ノード 3 の FC ポートまたは UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください <block ref="c73225f56714e22dffa9ff7369895ce1" category="inline-link-macro-rx"></block>。</block>
   <block id="1a4d3feb333aa03c1008e54bae47d8e9" category="doc">新しいコントローラが正しくセットアップされていることを確認します</block>
@@ -813,8 +811,6 @@
   <block id="f52de228b93a6f965c1879aa97b007d6" category="paragraph">認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します</block>
   <block id="7bd5452d2f3a1c07fc54d3a08cc82d64" category="paragraph">ノード 3 にオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードがある場合は、残りの手順を完了する前に設定を行う必要があります。</block>
   <block id="d897564a1ca4a58b7f422ba34b232ab7" category="paragraph">セクションの完了が必要な場合があります <block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>、を参照してください <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
-  <block id="61a70f63b15f41db325598863adb0177" category="inline-link-macro">ノード 3 のインストールを確認</block>
-  <block id="9ddd1c356c6ec43f630dd03fa71725d5" category="list-text">ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクを搭載したシステムをアップグレードする場合は、に進みます <block ref="d402045f7964b6e0cf4fcac8fa4d9846" category="inline-link-macro-rx"></block> セクション。</block>
   <block id="be6b715addf3303698d174b13e915620" category="list-text">ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載したストレージアレイを使用するシステムがある場合に、ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA ポート、または UTA / UTA2 カードがない場合は、の項に戻って node3 を起動し、の項を再開します <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>。</block>
   <block id="a1a2d377f686ce4835b9ee342fd6089b" category="list-text"><block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block></block>
   <block id="3088a544c36eafa56a0950901fa93b6a" category="list-text"><block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block></block>
@@ -1021,12 +1017,10 @@
   <block id="b9dd5a9a2b21507e0342ef620ec6824d" category="list-text">UTA / UTA2 ポートを確認して設定してください。</block>
   <block id="8de9e3207ca31bee139241ad4fc0650f" category="list-text">ノード 3 が正常にインストールされていることを確認</block>
   <block id="e60e41c512cd3f2ad332e91763d4d2a5" category="list-text">ノード 3 のネットワーク設定をリストアします。</block>
-  <block id="6b01c45aa39022f8fcfff3f90434c89c" category="list-text">ノード 1 で所有している SAN 以外のデータ LIF をノード 2 からノード 3 に移動します。</block>
   <block id="fd37436f77e7bb0f803c1afad985d422" category="list-text">node1 で所有されているルート以外のアグリゲートを node2 から node3 に再配置します。</block>
   <block id="ff8f4c5aae9f0216fa1c088e4c636ab0" category="paragraph">ステージ 3 終了時のアグリゲートの所有権：</block>
   <block id="d58c33bf48643b15350ce1c80bb474d8" category="list-text">node3 は、 node1 アグリゲートのホームの所有者であること、および現在の所有者であること。</block>
   <block id="04bf2293479cb8cadbf0c59e985f585e" category="list-text">ルート以外のアグリゲートを node2 から node3 に再配置します。</block>
-  <block id="6ab2fb4ca5571833687af9b24c03405b" category="list-text">node2 に所有されている SAN 以外のデータ LIF をノード 3 に再配置します。</block>
   <block id="8f4919c4d65b1afa5ab9c7d7757a53af" category="list-text">ノード 2 を撤去</block>
   <block id="d517ee6c427837d3874a695e344df510" category="paragraph">ステージ 4 終了時のアグリゲートの所有権：</block>
   <block id="312d1c4e0e8f2ca55c86dd955ac42bff" category="list-text">node3 は、 node1 に属していたアグリゲートのホーム所有者および現在の所有者です。</block>
@@ -1254,7 +1248,6 @@
   <block id="e13ef1734f457a6634d02e817f76fb23" category="paragraph">ARL を使用したコントローラのアップグレードは、 SnapLock Enterprise ボリュームおよび SnapLock Compliance ボリュームが設定されたシステムでサポートされます。</block>
   <block id="7e4c3807e46f1f800d0e720965a7fe3a" category="paragraph">「 storage aggregate relocation start 」、「 override-vetoes 」、および「 override-vetoes destination-checks 」オプションの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ONTAP 9 コマンド：マニュアルページリファレンスにリンクするには、次の手順を実行します。</block>
   <block id="38cf27caef6776abd0225a54be1e9972" category="list-text">[[auto9597_istall3_step6] 次のいずれかの操作を選択して、ネットブート接続を設定します。</block>
-  <block id="1e1bab3dc1010e23c8cb467fc3006ae4" category="list-text">[[auto9597_istall3_step29]] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムの場合は、に進みます <block ref="197bcdf5306898ec17e6022b26568f43" category="inline-link-macro-rx"></block>。</block>
   <block id="2dc628959227b30796539097566ced4e" category="list-text">[[Step13]] 両方のノードで次のコマンドを使用して、 SP を設定します。</block>
   <block id="cffe1635d7e645065b5457e425a54cdd" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> SP および _SP ONTAP 9 コマンドの詳細については ' システム管理リファレンスにリンクするには ' マニュアルページリファレンスを参照してください system の service-processor network modify コマンドの詳細については ' を参照してください</block>
   <block id="17acc08dd9b9cc179eb2c71ee42f1438" category="paragraph">この情報では、元のノードの名前は「 node1 」と「 node2 」になり、新しいノードの名前は「 node3 」と「 node4 」になります。説明されている手順では、「 node1 」は「 node3 」に置き換えられ、「 node2 」は「 node4 」に置き換えられます。</block>
@@ -1397,7 +1390,6 @@
   <block id="bc8f48f93dda6e3952b34dfbe1025b15" category="list-text">FC または CNA の設定を行います。</block>
   <block id="3f5c1bacca95dbafb20a5f179a1942a1" category="list-text">ポートを node1 から node3 にマッピングします</block>
   <block id="54a39699f4ada20f9a2f7d43ba99505c" category="list-text">node1 で所有されている SAN 以外のデータ LIF を node2 から node3 に移動します。</block>
-  <block id="91e22d907fccb4bca308f7b5eda21afe" category="list-text">node2 で所有されている SAN 以外のデータ LIF をノード 3 に移動します。</block>
   <block id="3fdf70ee47a45b22517705d18baeebc9" category="list-text">node2 のポートを node4 にマッピングします</block>
   <block id="d27f63bee356811b88d04e4d588f22db" category="list-text">ノード 4 のインストールを確認します</block>
   <block id="0895162788980393fe5dfd2240f70f94" category="list-text">必要に応じて SnapMirror 処理を再開</block>
@@ -2102,7 +2094,6 @@
   <block id="34c13ce480fd28c643a03477e436ea69" category="cell">ステージ 3 ：ノード 3 をインストールしてブートします</block>
   <block id="9831ac08d1511b2493ac2b60bb2c8719" category="list-text">ノード 3 で UTA / UTA2 設定を設定します。</block>
   <block id="0ecfaa523b3b44d06f14bc6b97a490f1" category="list-text">ノード 3 のインストールを確認します</block>
-  <block id="d6836a12958b1cab97098bd6a3acd9e1" category="list-text">ノード 1 が所有する SAN 以外のデータ LIF を node2 から node3 に移動し、 node3 の SNA LIF を確認します。</block>
   <block id="eb20f04ed8fd91952c34e1e4620e246e" category="list-text">node2 によって所有されている SAN 以外のデータ LIF を node3 に移動します。</block>
   <block id="6bcc99fe1628db9ec14216040c21696b" category="list-text">node2 は node2 アグリゲートのホーム所有者ですが、現在の所有者ではありません。</block>
   <block id="96823812e251fed8294451535c6f95b0" category="list-text">node3 は、 node1 にもともと属していたアグリゲートのホーム所有者および現在の所有者です。</block>
@@ -2254,7 +2245,6 @@
   <block id="65e4801fe9cb3563a071b657463a3c1c" category="cell">に進みます <block ref="610cb2d6e87c5e838ceef8f48f57b082" category="inline-link-macro-rx"></block>。</block>
   <block id="30183fbd349bcd94fdabd371e0fdc8d9" category="cell">NVRAM システムの ID 番号をに記録しませんでした <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block></block>
   <block id="b31b744fd8c5cbe34c282a8e3311866b" category="cell">- 完了しました <block ref="3ef612fafd35c4ea98dad97a133c5f3f" category="inline-xref-macro-rx"></block> および <block ref="a3461a8cfeac3856b6bf21e7388f2534" category="inline-xref-macro-rx"></block> 次に、次のセクションに進みます。 <block ref="610cb2d6e87c5e838ceef8f48f57b082" category="inline-link-macro-rx"></block>。</block>
-  <block id="435d35070ba8894d910a50e35db1d4e2" category="list-text">[man_record_2_step9] ノード 2 の属性を表示します。</block>
   <block id="5d34eef64c7b53994a7dde374d44b94b" category="paragraph">「 system node show -instance -node node2 」</block>
   <block id="bc110b3ccc057d2275d5e8ae87f525b0" category="list-text">[man_record_2_step10] セクションで使用する NVRAM システム ID を記録します <block ref="f326c815b47f4f2909494bae5cd735d5" category="inline-link-macro-rx"></block>。</block>
   <block id="7314fe3b616597bb78463e3503d3cdea" category="paragraph">アグリゲートの再配置（ ARL ）を使用して ONTAP 9.0 を実行するコントローラのペアをアップグレードできるかどうかは、プラットフォームおよび元のコントローラと交換用コントローラの両方の構成によって異なります。</block>
@@ -2303,7 +2293,6 @@
   <block id="051d9c31ffa2621a5e49ba9e6d76c916" category="list-text">node3 と node4 にある ONTAP のバージョンを確認します。</block>
   <block id="53e359796554176ecef5639c8ed3ed05" category="paragraph">node3 と node4 にある ONTAP のバージョンに関する情報は、梱包箱に含める必要があります。ONTAP のバージョンは、ノードがブートするとき、またはノードを保守モードでブートしてコマンドを実行するときに表示されます。</block>
   <block id="7877022c956918624cc0373ff564cad4" category="paragraph">「バージョン」</block>
-  <block id="232ac82576b399b9dcdc3a264bb0c6ec" category="list-text">ノード 1 とノード 2 にクラスタ LIF が 2 つまたは 4 つあるかどうかを確認します。</block>
   <block id="a2d27af8ce0592e36b8a208c0cb93d3e" category="paragraph">「 network interface show -role cluster 」のように表示されます</block>
   <block id="97946b80ce2a390dfbe694abb89b8da6" category="paragraph">次の例に示すように、すべてのクラスタ LIF が表示されます。</block>
   <block id="b6f048f47d754b1245e072cf13364151" category="list-text">ノード 1 またはノード 2 にクラスタ LIF が 2 つまたは 4 つある場合は、次の手順を実行して、使用可能なすべてのパスで両方のクラスタ LIF に ping を送信できることを確認します。</block>
@@ -2560,9 +2549,7 @@
   <block id="44bbe343e421273c157c5d1c833a433b" category="list-text">[[step1] ノードごとに次のコマンドを入力し、出力をキャプチャして、 node2 が所有していないすべての NAS データ LIF を一覧表示します。</block>
   <block id="690cd6839e2f529e9d1be34efa6f9791" category="paragraph">network interface show -role data -curr-node node2 -is-home false -home-node node3`</block>
   <block id="4273a0997ee0d6df35945422d9f57ec6" category="cell">インターフェイスグループまたは VLAN が設定されている</block>
-  <block id="05aa25da736018fa33e8cc8667b1e0f1" category="cell">に進みます <block ref="fa7afcf3541ce640333b443234c694da" category="inline-xref-macro-rx"></block>。</block>
   <block id="31a8cab14d1d7febef6f8053dcd9552d" category="cell">インターフェイスグループまたは VLAN が設定されていません</block>
-  <block id="09b00a0d82c468f9038424665ba3a692" category="cell">手順 3 を省略して、に進みます <block ref="a5ee73999909412ce73c7e745a3cb5c2" category="inline-xref-macro-rx"></block>。</block>
   <block id="8c5ada6be3ca66f32616fd020694ec45" category="list-text">[[man_lif_verify_3_step3]] 次の手順を実行して、インターフェイスグループおよび VLAN でホストされていた NAS データ LIF を、ノード 2 からノード 3 に移行します。</block>
   <block id="fd8bd88e1dcef54d04236465f2b87693" category="list-text">[[man_lif_verify_3_substpa]] インターフェイスグループ上の node1 に属していた node2 でホストされているデータ LIF を、同じネットワーク上の LIF をホストできる node3 のポートに移行するには、各 LIF に対して 1 回、次のコマンドを入力します。</block>
   <block id="494973c7f1f28c90b456a3998b09b84a" category="paragraph">network interface migrate -vserver vserver_name -lif lif_name -destination -node node3 – destination-port netport | ifgrp`</block>
@@ -2571,7 +2558,6 @@
   <block id="569a27e0dcf14d4091837fcac510315b" category="list-text">[man_lif_verify_3_substpc ]] VLAN ポートでノード 1 に属していた node2 でホストされているすべてのデータ LIF を、同じネットワーク上の LIF をホストできるポート node3 に移行するには、各 LIF に対して 1 回、次のコマンドを入力します。</block>
   <block id="acdda21dc8c7ea3a875f05cfa2d42fb8" category="list-text">LIF のホームポートとホームノードを変更します <block ref="0ba0c3832c194a002bde244af82cc6e8" category="inline-xref-macro-rx"></block> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。</block>
   <block id="f0de8680ab31eb7304741a5d6c335bce" category="list-text">[man_lif_verify_3_step4] 次のいずれかの操作を実行します</block>
-  <block id="a8737f289941aae34c7bdcaf30a6f49c" category="cell">- 完了しました <block ref="5bf3f4cb83f848c38272cdda13b03424" category="inline-xref-macro-rx"></block> および <block ref="5afb3629d2897001a44bd62c86195932" category="inline-xref-macro-rx"></block>をクリックして、手順 7 をスキップして完了します <block ref="6f2b0e2c7df1e7ce442716f4a9ac5045" category="inline-xref-macro-rx"></block> から <block ref="d664f7f06c19c1d6c4e1d7d9cba27620" category="inline-xref-macro-rx"></block>。</block>
   <block id="e7bc8e4a360dbc42e9759f708ed40f33" category="cell">ノード上のすべての SAN LIF を無効にしてアップグレード用にダウンにします。 network interface modify -vserver vserver_name -lif lif_name -home-node node_name -home-port netport | ifgrp-status-admin down</block>
   <block id="99025819fe651e3a15c4cafd9ba07587" category="list-text">[man_lif_verify_3_step5] プラットフォームで同じでないデータポートがある場合は、ブロードキャストドメインにポートを追加します。</block>
   <block id="76b84f6ac9c180bd922bf1f7f126e4f3" category="list-text">[man_lif_verify_3_step6] それぞれの LIF に対して次のコマンドを 1 回入力して、各 NAS データ LIF を node3 に移行します。</block>
@@ -2912,8 +2898,6 @@
   <block id="8d20a51d0c0718e7e116461f15d49fb3" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 4 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認します。</block>
   <block id="12720c14368020238cd7150824f980eb" category="list-text">node3 が所有していないすべての NAS データ LIF を表示するには、いずれかのノードで次のコマンドを入力し、出力をキャプチャします。</block>
   <block id="9482a7fa27802a7ab7e05f7ded4a42bd" category="paragraph">network interface show -role data -curr-node node3 -is-home false</block>
-  <block id="f4f6617b632a0c1c2dc3fa9db1c234c1" category="cell">に進みます <block ref="81b5453f8cd7e29a23486e4650786cf5" category="inline-xref-macro-rx"></block>。</block>
-  <block id="2a0ce78ac6ca1adeedbcfa1fd0a257cc" category="cell">手順 3 を省略して、に進みます <block ref="945e0dec7328bd39afca611c47b45c97" category="inline-xref-macro-rx"></block>。</block>
   <block id="dac6519e0e0abeb2d86af52963ff687b" category="list-text">[man_lif_verify_4_Step3] インターフェイスグループおよび VLAN でホストされている NAS データ LIF をノード 3 からノード 4 にすべて移行するには、次の手順を実行します。</block>
   <block id="bea582814d8029e4e79ed1f1f67178fa" category="list-text">[[man_lif_verify_4_substpa]] インターフェイスグループ上の node2 に属していた node3 でホストされている LIF を、同じネットワーク上の LIF をホストできる node4 のポートに移行するには、それぞれの LIF に対して 1 回、次のコマンドを入力します。</block>
   <block id="d78b67076b08536aa74614da580aa8e7" category="paragraph">network interface migrate -vserver vserver_name -lif lif_name -destination -node node4 – destination-port netport | ifgrp`</block>
@@ -2924,9 +2908,6 @@
   <block id="b9698583aeb95570efa407aaaba06094" category="list-text">LIF のホームポートとホームノードを変更します <block ref="239198568c8cd082441ca4901dc23f34" category="inline-xref-macro-rx"></block> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。</block>
   <block id="9b464868d559a5e4c0a4b39f6f928522" category="paragraph">network interface modify -vserver vserver_name -lif datalif_name -home-node node4 home-port netport | ifgrp`</block>
   <block id="1ba9f89e7307ad05e44ad05bb958ca27" category="list-text">[[man_lif_verify_4_Step4]] 次のいずれかの操作を行います。</block>
-  <block id="583ceb80a05614853a17d060bdc9978d" category="cell">- 完了しました <block ref="24ba20dfe80c75ddf74b686c1f78edbe" category="inline-xref-macro-rx"></block> から <block ref="464cefb825ec041ae0f8085658a0717b" category="inline-xref-macro-rx"></block>をクリックして、手順 9 をスキップして完了します <block ref="487182da65d4a8fd64dac32686f96826" category="inline-xref-macro-rx"></block> から <block ref="6d60445fd0a028ec8dafc7e8858e9dac" category="inline-xref-macro-rx"></block>。</block>
-  <block id="407fbf8918b07e23f7ad6bd07a5d9cd9" category="cell">手順 5 から 8 までをスキップして完了します <block ref="95473255aa630f367ac347162090735e" category="inline-xref-macro-rx"></block> から <block ref="6d60445fd0a028ec8dafc7e8858e9dac" category="inline-xref-macro-rx"></block>。</block>
-  <block id="b7cf099ecc920b7356c7938e36ead518" category="cell">- 完了しました <block ref="24ba20dfe80c75ddf74b686c1f78edbe" category="inline-xref-macro-rx"></block> から <block ref="6d60445fd0a028ec8dafc7e8858e9dac" category="inline-xref-macro-rx"></block>。</block>
   <block id="486afcecd3768de955874ac9b04d982d" category="list-text">[man_lif_verify_4_Step5] プラットフォームで同じでないデータポートがある場合は、次のコマンドを入力してブロードキャストドメインにポートを追加します。</block>
   <block id="0d0d30231651c6bea6f3a8ab9bef8b41" category="paragraph">「 network port broadcast-domain add-ports -ipspace IPspace_name -broadcast-domain mgmt ports node ： port 」のように指定します</block>
   <block id="59770005b7a829dfa2de1246fe18d7ed" category="paragraph">次の例は、 IPspace デフォルトで、ノード「 6280 」のポート「 e0a 」とノード「 8060-1 」のポート「 e0i 」をブロードキャストドメイン管理に追加します。</block>
@@ -3018,8 +2999,6 @@
   <block id="24738875225e89a3fe6b531d598a45f9" category="paragraph">この情報を取得する手順については、「ノード 2 情報の記録」を参照してください。</block>
   <block id="7974b2ee243c61270cbc49955821fd33" category="list-text">の同じ手順を使用して、ノード 4 、ポート、ブロードキャストドメイン、および IPspace のすべてのケーブル接続情報を前の表に記録します <block ref="bf281b48b35a7cc176890f2be65ca906" category="inline-link-macro-rx"></block> この情報の入手方法については、を参照してください。</block>
   <block id="4a4552a72df2a500f815fd3a0166db9c" category="list-text">ノード 4 をクォーラムに追加するには、次の手順を実行します。</block>
-  <block id="3117fde9d13ce2738e8565c02388235e" category="inline-link-macro">ノード 4 をインストールしてブートします</block>
-  <block id="6a3f0aa15ae6d8d1023d18e294158b6d" category="list-text">ノード 4 をブートします。を参照してください <block ref="2f432fc28ce55bdf3f9384f7801ca745" category="inline-link-macro-rx"></block> ノードをブートします（まだブートしていない場合）。</block>
   <block id="8a624db640009bfcd8e57f0c71e33d5a" category="paragraph">「 network port show -node node -port port -fields broadcast-domain 」次の例は、ポート「 e0a 」が node4 のクラスタドメインにあることを示しています。</block>
   <block id="8ce18e9d769ff67698580bd546d1e73d" category="admonition">MetroCluster 構成の場合、ポートのブロードキャストドメインを変更できないことがあります。これは、同期先 SVM の LIF をホストしているポートに関連付けられており、次のようなエラーが表示されますが、制限はありません。</block>
   <block id="1e73d25bc38bc6b9d12b63ae78620236" category="paragraph">「 MetroCluster vserver resync -vserver vserver_name 」です</block>
@@ -3327,7 +3306,6 @@
   <block id="f86f16f11e093ddd1a9acafc8ee58e6f" category="sidebar">SAN 以外のデータ LIF とクラスタ管理 LIF を移動する</block>
   <block id="cf3329822cb6acbd3f59abba0514d804" category="sidebar">SAN LIF を削除</block>
   <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">元のノードを分離</block>
-  <block id="ede813b2f7c6a203c236d7726f79da2c" category="sidebar">ワークシート：コントローラのアップグレード前後に収集する情報</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">ノード 4 で FC または UTA / UTA2 設定を設定します</block>
   <block id="2e546c2ae4e7d18e3a62352f7899f8ad" category="paragraph">各ノード 4 のプラットフォームについて、『 Installation and Setup Instructions 』または『 FlexArray Virtualization Installation Requirements and Reference_for the node4 』、該当するディスクシェルフのドキュメント、および _High Availability management _ の手順に従って、次の接続をケーブル接続します。</block>
   <block id="96fc3790ed0f779b648493fc7e4b2e7c" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> FlexArray 仮想化インストール要件およびリファレンスとハイアベイラビリティ管理へのリンク。</block>
@@ -3342,9 +3320,7 @@
   <block id="a3b8dcbb945865e5ef0e1c83b68c8824" category="cell"><block ref="a3b8dcbb945865e5ef0e1c83b68c8824" category="inline-link-macro-rx"></block></block>
   <block id="2894d35f6fa87d4eee09a10919737e2f" category="cell"><block ref="2894d35f6fa87d4eee09a10919737e2f" category="inline-link-macro-rx"></block></block>
   <block id="07ae19817dfc58c8d1b72b612a233da3" category="inline-link-macro">MetroCluster の管理とディザスタリカバリ</block>
-  <block id="2e78b745dc7527d7e142f60838ac795c" category="cell"><block ref="2e78b745dc7527d7e142f60838ac795c" category="inline-link-macro-rx"></block></block>
   <block id="c750cfcf9c6045b6e0b4b0d6de2212f3" category="inline-link-macro">MetroCluster のアップグレードと拡張</block>
-  <block id="61999f6fa7ffc8c1f676441d457e3d86" category="cell"><block ref="61999f6fa7ffc8c1f676441d457e3d86" category="inline-link-macro-rx"></block></block>
   <block id="d1b75581244e03161b57c29a9ac4bb22" category="inline-link-macro">CLI によるディスクおよびアグリゲートの管理</block>
   <block id="c3aed88c9ee3a48f5d62930613f5710f" category="cell"><block ref="c3aed88c9ee3a48f5d62930613f5710f" category="inline-link-macro-rx"></block></block>
   <block id="083222857448e1fa46a20ea7d228c4a3" category="cell">CLI を使用して ONTAP 物理ストレージを管理する方法について説明します。アグリゲートを作成、拡張、管理する方法、 Flash Pool アグリゲートを使用する方法、ディスクを管理する方法、および RAID ポリシーを管理する方法を示します。</block>
@@ -3434,7 +3410,6 @@
   <block id="2c6770803baeb326c3573c2c99ff387a" category="summary">このコンテンツでは、ストレージまたはボリュームを移動することで、クラスタ内の AFF システムまたは FAS システムのコントローラハードウェアをアップグレードする方法について説明します。</block>
   <block id="10ce071fec41e8ee934d0d2c7ef28c46" category="doc">ボリュームまたはストレージを移動してアップグレードするかどうかを決定します</block>
   <block id="ec9ed7bffd77d0096865ed2f7cdcc6cb" category="inline-link">MetroCluster ® のアップグレードと拡張</block>
-  <block id="b57acc6aae5b9384209bb66a6c83f8e9" category="paragraph">2 ノード MetroCluster 構成をアップグレードする場合は、の手順を使用する必要があります<block ref="8f8223d27ded43641f85508576e6eb9a" category="inline-link-rx"></block> 内容</block>
   <block id="ee50784c4307d33a05ee2e7ea5146e6b" category="inline-link-macro">ARL コントローラハードウェアのアップグレード</block>
   <block id="a96bbb56bf9f254d0e2034d1d7d6da26" category="paragraph">このコンテンツでは、 Aggregate Relocation （ ARL ；アグリゲートの再配置）を使用してコントローラハードウェアをアップグレードする方法については説明していません。詳細については、を参照してください <block ref="f1bb1f12e9cbaac696243166fca7cc1f" category="inline-link-macro-rx"></block> 内容</block>
   <block id="4888a1163bab7e13f5a9de829f599dba" category="inline-link">MetroCluster のメンテナンスタスクの手順の参照先</block>
@@ -4397,4 +4372,53 @@
   <block id="a1e942c10f3ef940af9560fa7f9b1bcf" category="sidebar">ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします</block>
   <block id="1eec8458b505239680f521752a8c01ec" category="sidebar">ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます</block>
   <block id="994245d9c168d8ec5856e8519cf95566" category="sidebar">ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします</block>
+  <block id="46d710808513caa456c59b3efa90d166" category="list-text">ノード 1 とノード 2 に 2 つまたは 4 つのクラスタ LIF があるかどうかを確認します。</block>
+  <block id="cae5b224d557c99a0eebcc5cacc40bf4" category="inline-link-macro">ノード 3 の UTA / UTA2 ポートの確認と設定、手順 15</block>
+  <block id="a298d19803fc12a7c7efaba3c5bf6f9c" category="paragraph">FC または UTA / UTA2 設定がない場合は、を実行します <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block> ノード 3 がノード 1 のディスクを認識できるようにします。</block>
+  <block id="7fb38727f894ed52a58d4bcc31b06aaf" category="list-text">[man_record_2_step9] ： node2 の属性を表示します</block>
+  <block id="532b323cb941c2d695f99125c68410df" category="cell"><block ref="532b323cb941c2d695f99125c68410df" category="inline-link-macro-rx"></block></block>
+  <block id="b4fe4daa97eb40900235ae04f1cd5873" category="cell"><block ref="b4fe4daa97eb40900235ae04f1cd5873" category="inline-link-macro-rx"></block></block>
+  <block id="91b0db424a5fefe25b3d6fccaca1b289" category="inline-link-macro">ワークシート</block>
+  <block id="7d059b3dc572790c32264682daa9e3a8" category="list-text">[[worksheet _step2_node2]] クラスタが SAN LIF 用に構成されている場合は、 SAN LIF と既存の構成情報をこのに記録します <block ref="ed0401b9f31c3a01c0ae9e44a18d8569" category="inline-link-macro-rx"></block> 手順 の後半で使用します。</block>
+  <block id="13fe413dcdf6cd4af5dc15452c261c5d" category="list-text">ノード 3 の SAN LIF を一覧表示し、出力を確認します。</block>
+  <block id="c81ec76e9b8604cac0a0b80f119ad7ca" category="paragraph">「 network interface show -data-protocol fc * 」を参照してください</block>
+  <block id="fefd289d498d5d5326f83433241db103" category="list-text">既存の設定を表示し、出力を確認します。</block>
+  <block id="2b8adeabb17e2a28fffec9935d24095e" category="paragraph">「 fcp adapter show -fields switch-port 、 fc-wwpn 」と入力します</block>
+  <block id="0570a87f66b52b8f17fb5de7ee7bc50e" category="cell">に進みます <block ref="1feafd371df4188baa75107ccc365ce6" category="inline-xref-macro-rx"></block>。</block>
+  <block id="a0c840707955fb428322cd9929f8594f" category="cell">手順 4 を省略して、に進みます <block ref="fed6d849a1c6887a0026c6afdf0be295" category="inline-xref-macro-rx"></block>。</block>
+  <block id="81822d00068323377a946aa7bf001d37" category="inline-xref">手順 14</block>
+  <block id="203c350886e723f8907aa98829856dea" category="cell">- 完了しました <block ref="9b6384c6e14a01b359b3ceca503dc7e8" category="inline-xref-macro-rx"></block> から <block ref="0384eb2d62c044428afa7420fa66b7f3" category="inline-xref-macro-rx"></block>をクリックして、手順 10 をスキップして完了します <block ref="e8b56490494689060c7f97c7205b356e" category="inline-xref-macro-rx"></block> から <block ref="ec14a10fceb4bd2f9e1f7036303b7f20" category="inline-xref-macro-rx"></block>。</block>
+  <block id="d7e12627113c3a73f5a80bf4274e8846" category="cell">手順 6~9 をスキップして完了します <block ref="5ec476e5dfed929f240a4e732b5ca6eb" category="inline-xref-macro-rx"></block> から <block ref="ec14a10fceb4bd2f9e1f7036303b7f20" category="inline-xref-macro-rx"></block>。</block>
+  <block id="6944af912471eeed2e022cefd73bd566" category="cell">- 完了しました <block ref="9b6384c6e14a01b359b3ceca503dc7e8" category="inline-xref-macro-rx"></block> から <block ref="ec14a10fceb4bd2f9e1f7036303b7f20" category="inline-xref-macro-rx"></block>。</block>
+  <block id="24fe95a95d6e3a63f99e4a3c5ef9f89a" category="list-text">新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認するには、「 fcp adapter show 」コマンドの出力と、のワークシートに記録した新しい設定情報を比較します <block ref="126eae74e75ac7b320d7d5918436b8fc" category="inline-xref-macro-rx"></block>。</block>
+  <block id="a9b96c57877203a59f39e6cc79d93f2c" category="paragraph">ノード 4 の新しい SAN LIF の設定を表示します。</block>
+  <block id="b2d67401d96e568ee0cf85d65ef2b19b" category="admonition">新しい構成の SAN LIF が同じ「 switch-port 」に接続されたアダプタ上にない場合、ノードをリブートすると原因 がシステム停止状態になる可能性があります。</block>
+  <block id="82b42c933396be79780fabd5e97f3c55" category="list-text">「 fcp adapter show 」コマンドの出力と、のワークシートに記録した設定情報を比較して、新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認します <block ref="0cc92f396d72c25a12260a5b674f18bb" category="inline-xref-macro-rx"></block>。</block>
+  <block id="c60cff9ca9befe11cdfbe93fdcc641c4" category="paragraph">ノード 3 に新しい SAN LIF の設定を表示します。</block>
+  <block id="51dffedbaa43215c9eb261627011dc71" category="list-text">[[worksheet _step2] クラスタが SAN LIF 用に構成されている場合は、 SAN LIF 「 adapter 」および「 switch-port 」の構成情報をこのに記録します <block ref="df642b24162f163cd69ded792f71f977" category="inline-link-macro-rx"></block> 手順 の後半で使用します。</block>
+  <block id="82bc4d9ae00b977a00f8b2b3183a9785" category="list-text">node2 の SAN LIF を一覧表示し、出力を確認します。</block>
+  <block id="018c22c5b30c017d8feb43ab61d41950" category="cell">に進みます <block ref="8695dd713093cfe118008b3f87c0754f" category="inline-xref-macro-rx"></block>。</block>
+  <block id="2b11e293cb7289a197df3561593aeffa" category="cell">手順 4 を省略して、に進みます <block ref="a890970ca155ddb2f966787cdb699906" category="inline-xref-macro-rx"></block>。</block>
+  <block id="584e8d9cc5ee8c735cfb3dd7222c5f97" category="cell">- 完了しました <block ref="ad851a431673e6dae9d14b296383f37c" category="inline-xref-macro-rx"></block> および <block ref="1d64360fb04a1f29d7e0234ee858d9f1" category="inline-xref-macro-rx"></block>をクリックして、手順 8 をスキップして完了します <block ref="9da2a3cb41411f3d8e4509b7d9f419c9" category="inline-xref-macro-rx"></block> から <block ref="268954e5efe55fe9bc0459f35479f2f6" category="inline-xref-macro-rx"></block>。</block>
+  <block id="b9c0ca8a434a5002becc00cfe521a241" category="paragraph">SAN LIF を node3 から node4 に移動したあとの設定が正しいことを確認できるように、次のワークシートを使用して、各 LIF の「 adapter 」と「 switch-port 」の情報を記録します。</block>
+  <block id="53148cc93c14512428f6220d831a49bc" category="paragraph">network interface show -data-protocol fc * コマンドの出力に記載されている LIF 「 adapter 」の情報と、 node3 に対する fcp adapter show -fields switch-port 、 fc-wwpn コマンドの出力に記載されている「 switch-port 」の情報を記録します。</block>
+  <block id="4609868b369b1b30d3b39e9d3f09f22f" category="paragraph">ノード 4 への移行が完了したら、ノード 4 の LIF の「 adapter 」と「 switch-port 」の情報を記録し、各 LIF が同じ「 switch-port 」に接続されていることを確認します。</block>
+  <block id="bbb747b1516b5225f1ec1c65887b39fc" category="cell">ノード 3</block>
+  <block id="9d976e7c6f1c5d3d7ceae80a4e6a8146" category="cell">ノード 4</block>
+  <block id="b3625fe2fca73900be4e5cc7287b2712" category="cell">「アダプタ」</block>
+  <block id="ea345f47a717359f0fdba3d2e4713ef4" category="cell">「 switch-port 」と入力します</block>
+  <block id="c05bee806c6f915cf5ff2806f39a07ed" category="paragraph">SAN LIF を node2 から node3 に移動したあとに正しく設定されているかどうかを確認するには、次のワークシートを使用して、各 LIF の「 adapter 」と「 switch-port 」の情報を記録します。</block>
+  <block id="9112b6be69a2001742ac0ee10829bee2" category="paragraph">network interface show -data-protocol fc * コマンド出力の LIF 「 adapter 」情報と、 node2 に対する fcp adapter show -fields switch-port 、 fc-wwpn コマンド出力の「 switch-port 」情報を記録します。</block>
+  <block id="22b2fefa28a06ec3cc06d7ec099d5c74" category="paragraph">node3 への移行が完了したら、 node3 の LIF の「 adapter 」と「 switch-port 」の情報を記録し、各 LIF が同じ「 switch-port 」に接続されていることを確認します。</block>
+  <block id="f5f366263dcc357e2720042f33286f8f" category="cell">ノード 2</block>
+  <block id="b343f23906663addd5a74e2a7ef1081c" category="paragraph">2 ノード MetroCluster 構成をアップグレードする場合は、の手順を使用する必要があります<block ref="1c2430d337b01f5c69e59f26ce11e5ee" category="inline-link-rx"></block> 内容</block>
+  <block id="79376a6dcb786ca7697c041779a511ed" category="list-text">node1 で所有されている SAN 以外のデータ LIF を node2 から node3 に移動し、 node3 の SNA LIF を確認します。</block>
+  <block id="9563ae143e5fe7208056b0b71e25b465" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、ノード 2 の NAS データ LIF 設定情報を記録します。</block>
+  <block id="f2c792d165cf5982bc257f272cf61213" category="doc">ワークシート： NAS データ LIF を node4 に移動する前に記録する情報</block>
+  <block id="3845d8de38880910997f948c4173a5ae" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、 NAS データ LIF の構成情報を 1 つ記録します。</block>
+  <block id="3a9b491c3933919f7944d284e7bdf2a9" category="doc">ワークシート： NAS データ LIF をノード 3 に移動する前に記録する情報</block>
+  <block id="1702aae1f318978efc37a136675dc355" category="list-text">ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクを搭載したシステムをアップグレードする場合は、に進みます <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block> セクション。</block>
+  <block id="97b4b76caf0d5b4cd013ca71056a29df" category="list-text">node2 によって所有されている SAN 以外のデータ LIF を node3 に再配置します。</block>
+  <block id="79ba45215eeed9692f00f54cd98176eb" category="list-text">[[auto9597_istall3_step29]] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムの場合は、に進みます <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block>。</block>
+  <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">ワークシート：コントローラのアップグレード前後に収集する情報</block>
 </blocks>

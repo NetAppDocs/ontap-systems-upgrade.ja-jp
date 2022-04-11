@@ -8,6 +8,72 @@
 +
 network interface show -role data -curr-node node3 -is-home false
 
+. [[worksheet _step2_node2]] クラスタが SAN LIF 用に構成されている場合は、 SAN LIF と既存の構成情報をこのに記録します link:worksheet_information_before_moving_san_lifs_node4.html["ワークシート"] 手順 の後半で使用します。
++
+.. ノード 3 の SAN LIF を一覧表示し、出力を確認します。
++
+「 network interface show -data-protocol fc * 」を参照してください
+
++
+次の例のような出力が返されます。
+
++
+[listing]
+----
+cluster1::> net int show -data-protocol fc*
+  (network interface show)
+             Logical     Status     Network            Current        Current Is
+Vserver      Interface   Admin/Oper Address/Mask       Node           Port    Home
+-----------  ----------  ---------- ------------------ -------------  ------- ----
+svm2_cluster1
+             lif_svm2_cluster1_340
+                         up/up      20:02:00:50:56:b0:39:99
+                                                       cluster1-01    1b      true
+             lif_svm2_cluster1_398
+                         up/up      20:03:00:50:56:b0:39:99
+                                                       cluster1-02    1a      true
+             lif_svm2_cluster1_691
+                         up/up      20:01:00:50:56:b0:39:99
+                                                       cluster1-01    1a      true
+             lif_svm2_cluster1_925
+                         up/up      20:04:00:50:56:b0:39:99
+                                                       cluster1-02    1b      true
+4 entries were displayed.
+----
+.. 既存の設定を表示し、出力を確認します。
++
+「 fcp adapter show -fields switch-port 、 fc-wwpn 」と入力します
+
++
+次の例のような出力が返されます。
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node         adapter  fc-wwpn                  switch-port
+-----------  -------  -----------------------  -------------
+cluster1-01  0a       50:0a:09:82:9c:13:38:00  ACME Switch:0
+cluster1-01  0b       50:0a:09:82:9c:13:38:01  ACME Switch:1
+cluster1-01  0c       50:0a:09:82:9c:13:38:02  ACME Switch:2
+cluster1-01  0d       50:0a:09:82:9c:13:38:03  ACME Switch:3
+cluster1-01  0e       50:0a:09:82:9c:13:38:04  ACME Switch:4
+cluster1-01  0f       50:0a:09:82:9c:13:38:05  ACME Switch:5
+cluster1-01  1a       50:0a:09:82:9c:13:38:06  ACME Switch:6
+cluster1-01  1b       50:0a:09:82:9c:13:38:07  ACME Switch:7
+cluster1-02  0a       50:0a:09:82:9c:6c:36:00  ACME Switch:0
+cluster1-02  0b       50:0a:09:82:9c:6c:36:01  ACME Switch:1
+cluster1-02  0c       50:0a:09:82:9c:6c:36:02  ACME Switch:2
+cluster1-02  0d       50:0a:09:82:9c:6c:36:03  ACME Switch:3
+cluster1-02  0e       50:0a:09:82:9c:6c:36:04  ACME Switch:4
+cluster1-02  0f       50:0a:09:82:9c:6c:36:05  ACME Switch:5
+cluster1-02  1a       50:0a:09:82:9c:6c:36:06  ACME Switch:6
+cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
+16 entries were displayed
+----
+
+
 . 次のいずれかを実行します。
 +
 [cols="35,65"]
@@ -15,10 +81,10 @@ network interface show -role data -curr-node node3 -is-home false
 | ノード 2 の条件 | 説明 
 
 
-| インターフェイスグループまたは VLAN が設定されている | に進みます <<man_lif_verify_4_Step3,手順 3>>。 
+| インターフェイスグループまたは VLAN が設定されている | に進みます <<man_lif_verify_4_Step3,手順 4>>。 
 
 
-| インターフェイスグループまたは VLAN が設定されていません | 手順 3 を省略して、に進みます <<man_lif_verify_4_Step4,手順 4>>。 
+| インターフェイスグループまたは VLAN が設定されていません | 手順 4 を省略して、に進みます <<man_lif_verify_4_Step4,手順 5>>。 
 |===
 . [man_lif_verify_4_Step3] インターフェイスグループおよび VLAN でホストされている NAS データ LIF をノード 3 からノード 4 にすべて移行するには、次の手順を実行します。
 +
@@ -47,13 +113,13 @@ network interface modify -vserver vserver_name -lif datalif_name -home-node node
 | クラスタの設定対象 | 作業 
 
 
-| NAS | - 完了しました <<man_lif_verify_4_Step5,手順 5>> から <<man_lif_verify_4_Step8,手順 8>>をクリックして、手順 9 をスキップして完了します <<man_lif_verify_4_Step10,手順 10>> から <<man_lif_verify_4_Step13,手順 13>>。 
+| NAS | - 完了しました <<man_lif_verify_4_Step5,手順 6>> から <<man_lif_verify_4_Step8,手順 9>>をクリックして、手順 10 をスキップして完了します <<man_lif_verify_4_Step10,手順 11>> から <<man_lif_verify_4_Step13,手順 14>>。 
 
 
-| SAN | 手順 5 から 8 までをスキップして完了します <<man_lif_verify_4_Step9,手順 9>> から <<man_lif_verify_4_Step13,手順 13>>。 
+| SAN | 手順 6~9 をスキップして完了します <<man_lif_verify_4_Step9,手順 10>> から <<man_lif_verify_4_Step13,手順 14>>。 
 
 
-| NAS と SAN の両方 | - 完了しました <<man_lif_verify_4_Step5,手順 5>> から <<man_lif_verify_4_Step13,手順 13>>。 
+| NAS と SAN の両方 | - 完了しました <<man_lif_verify_4_Step5,手順 6>> から <<man_lif_verify_4_Step13,手順 14>>。 
 |===
 . [man_lif_verify_4_Step5] プラットフォームで同じでないデータポートがある場合は、次のコマンドを入力してブロードキャストドメインにポートを追加します。
 +
@@ -123,7 +189,7 @@ node4
 
 . [[man_lif_verify_4_Step10] ] 次の手順を実行して、ノード 4 の正しいポートに SAN LIF があることを確認します。
 +
-.. 次のコマンドを入力します。
+.. 次のコマンドを入力し、出力を確認します。
 +
 'network interface show -data-protocol iscsi|fcp-home-node node4
 
@@ -138,14 +204,53 @@ cluster::> network interface show -data-protocol iscsi|fcp -home-node node4
 Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
 ----------- ---------- ---------- ------------------ ------------- ------- ----
 vs0
-            a0a          up/down  10.63.0.53/24      node3         a0a     true
-            data1        up/up    10.63.0.50/18      node3         e0c     true
-            rads1        up/up    10.63.0.51/18      node3         e1a     true
-            rads2        up/down  10.63.0.52/24      node3         e1b     true
+            a0a          up/down  10.63.0.53/24      node4         a0a     true
+            data1        up/up    10.63.0.50/18      node4         e0c     true
+            rads1        up/up    10.63.0.51/18      node4         e1a     true
+            rads2        up/down  10.63.0.52/24      node4         e1b     true
 vs1
-            lif1         up/up    172.17.176.120/24  node3         e0c     true
-            lif2         up/up    172.17.176.121/24  node3
+            lif1         up/up    172.17.176.120/24  node4         e0c     true
+            lif2         up/up    172.17.176.121/24  node4
 ----
+.. 新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認するには、「 fcp adapter show 」コマンドの出力と、のワークシートに記録した新しい設定情報を比較します <<worksheet_step2_node2,手順 2>>。
++
+ノード 4 の新しい SAN LIF の設定を表示します。
+
++
+「 fcp adapter show -fields switch-port 、 fc-wwpn 」と入力します
+
++
+次の例のような出力が返されます。
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node         adapter  fc-wwpn                  switch-port
+-----------  -------  -----------------------  -------------
+cluster1-01  0a       50:0a:09:82:9c:13:38:00  ACME Switch:0
+cluster1-01  0b       50:0a:09:82:9c:13:38:01  ACME Switch:1
+cluster1-01  0c       50:0a:09:82:9c:13:38:02  ACME Switch:2
+cluster1-01  0d       50:0a:09:82:9c:13:38:03  ACME Switch:3
+cluster1-01  0e       50:0a:09:82:9c:13:38:04  ACME Switch:4
+cluster1-01  0f       50:0a:09:82:9c:13:38:05  ACME Switch:5
+cluster1-01  1a       50:0a:09:82:9c:13:38:06  ACME Switch:6
+cluster1-01  1b       50:0a:09:82:9c:13:38:07  ACME Switch:7
+cluster1-02  0a       50:0a:09:82:9c:6c:36:00  ACME Switch:0
+cluster1-02  0b       50:0a:09:82:9c:6c:36:01  ACME Switch:1
+cluster1-02  0c       50:0a:09:82:9c:6c:36:02  ACME Switch:2
+cluster1-02  0d       50:0a:09:82:9c:6c:36:03  ACME Switch:3
+cluster1-02  0e       50:0a:09:82:9c:6c:36:04  ACME Switch:4
+cluster1-02  0f       50:0a:09:82:9c:6c:36:05  ACME Switch:5
+cluster1-02  1a       50:0a:09:82:9c:6c:36:06  ACME Switch:6
+cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
+16 entries were displayed
+----
++
+
+NOTE: 新しい構成の SAN LIF が同じ「 switch-port 」に接続されたアダプタ上にない場合、ノードをリブートすると原因 がシステム停止状態になる可能性があります。
+
 .. ノード 4 に、ノード 2 に存在しないポート上に SAN LIF または SAN LIF のグループがある場合は、次のいずれかのコマンドを入力して、ノード 4 の適切なポートにそれらの LIF またはグループを移動します。
 +
 ... LIF のステータスを down に設定します。

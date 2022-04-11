@@ -18,7 +18,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 の実行が必要な場合があります <<Configure FC ports on node4>> セクション、 <<Check and configure UTA/UTA2 ports on node4>>、または両方のセクション。
 
 
-NOTE: ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクが搭載されたシステムをアップグレードする場合は、に進みます link:verify_node4_installation.html["ノード 4 のインストールを確認します"]。ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合に、ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、 UTA / UTA2 カードがないときは、 section_Install and boot node4 セクションに戻って再開する必要があります 。ノード 4 に十分なラックスペースがあることを確認してください。node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場所に node4 を配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。
+NOTE: ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクが搭載されたシステムをアップグレードする場合は、に進みます link:verify_node4_installation.html["ノード 4 のインストールを確認します"]。ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合に、ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、 UTA / UTA2 カードがないときは、 section_Install and boot node4 セクションに戻って再開する必要があります link:install_boot_node4.html#step22["手順 22"]。ノード 4 に十分なラックスペースがあることを確認してください。node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場所に node4 を配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。
 
 .選択肢
 * <<Configure FC ports on node4>>

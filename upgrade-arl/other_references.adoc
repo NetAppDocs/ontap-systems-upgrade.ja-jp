@@ -51,10 +51,10 @@ summary: このトピックでは、他の参照コンテンツや Web サイト
 | link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI を使用した論理ストレージ管理"^] | ボリューム、 FlexClone ボリューム、ファイル、 LUN を使用して論理ストレージリソースを効率的に管理する方法について説明します。 FlexCache 、重複排除、圧縮、 qtree 、およびクォータ 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/index.html["MetroCluster の管理とディザスタリカバリ"^] | 計画的なメンテナンス時または災害発生時の両方のケースにおける、 MetroCluster のスイッチオーバーとスイッチバック処理の実行方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_dr_workflow.html["MetroCluster の管理とディザスタリカバリ"^] | 計画的なメンテナンス時または災害発生時の両方のケースにおける、 MetroCluster のスイッチオーバーとスイッチバック処理の実行方法について説明します。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/index.html["MetroCluster のアップグレードと拡張"^] | MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。 
+| link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster のアップグレードと拡張"^] | MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。 
 
 
 | link:https://docs.netapp.com/us-en/ontap/network-management/index.html["Network Management の略"^] | クラスタで物理 / 仮想ネットワークポート（ VLAN およびインターフェイスグループ）、 LIF 、ルーティング、およびホスト解決サービスを設定および管理する方法、ロードバランシングでネットワークトラフィックを最適化する方法、および SNMP を使用してクラスタを監視する方法について説明します。 
@@ -123,7 +123,7 @@ summary: このトピックでは、他の参照コンテンツや Web サイト
 
 == 参照サイト
 
-。 link:https://mysupport.netapp.com["ネットアップサポートサイト"^] また、システムで使用する可能性のあるネットワークインターフェイスカード（ NIC ）やその他のハードウェアに関するドキュメントも含まれています。また、にも含まれています をクリックします。このコマンドは、新しいシステムでサポートされるハードウェアに関する情報を提供します。
+。 link:https://mysupport.netapp.com["ネットアップサポートサイト"^] また、システムで使用する可能性のあるネットワークインターフェイスカード（ NIC ）やその他のハードウェアに関するドキュメントも含まれています。また、にも含まれています link:https://hwu.netapp.com["Hardware Universe"^]をクリックします。このコマンドは、新しいシステムでサポートされるハードウェアに関する情報を提供します。
 
 にアクセスします https://docs.netapp.com/us-en/ontap/index.html["ONTAP 9 のドキュメント"^]。
 
