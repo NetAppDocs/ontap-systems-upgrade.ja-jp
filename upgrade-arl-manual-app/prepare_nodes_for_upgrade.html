@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -3005,7 +3005,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-11 19:50:18 +0000">04/11/2022</time>
+    <time datetime="2022-04-26 18:47:44 +0000">04/26/2022</time>
     
   
 
@@ -3438,9 +3438,6 @@ vs0
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>[+]</p>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3454,7 +3451,7 @@ vs0
 <p>この情報は、手順の後半で使用します。</p>
 </li>
 <li>
-<p>FAS8080 や AFF8080 など、ノードあたり 3 つ以上のクラスタポートを備えたシステムがある場合は、コントローラのアップグレードを開始する前に、ノードごとにクラスタ LIF を 2 つのクラスタポートに統合する必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。</p>
+<p>FAS8080 や AFF8080 システムなど、ノードあたり 3 つ以上のクラスタポートを備えたシステムは、アップグレードを開始する前に、ノードあたり 2 つのクラスタポートにクラスタ LIF を移行してホームに戻す必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。</p>
 </li>
 </ul>
 </div>
