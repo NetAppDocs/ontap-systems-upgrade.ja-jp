@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 SAN LIF を node3 から node4 に移動したあとの設定が正しいことを確認できるように、次のワークシートを使用して、各 LIF の「 adapter 」と「 switch-port 」の情報を記録します。

@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 ---
 = ノード 4 で FC または UTA / UTA2 設定を設定します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

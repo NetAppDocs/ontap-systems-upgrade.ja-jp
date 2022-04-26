@@ -5,6 +5,7 @@ keywords: confirm, configuration, information, boot, media, interfere, controlle
 summary: ブートメディアの設定情報がコントローラのアップグレードの妨げにならないように、 node3 と node4 の設定をデフォルトの設定にリセットする必要があります。 
 ---
 = 新しいノードのデフォルト設定をリセットします
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

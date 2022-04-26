@@ -6,6 +6,7 @@ summary: AFF A700 から AFF A900 へのアップグレード時に、ノード 
 ---
 = ルート以外のアグリゲートと NAS データ LIF を node2 に戻します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 ---
 = トラブルシューティングを行う
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

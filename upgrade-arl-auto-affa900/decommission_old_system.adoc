@@ -6,6 +6,7 @@ summary: AFF A900 にアップグレードしたあと、古いシステムが�
 ---
 = 古いシステムの運用を停止
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

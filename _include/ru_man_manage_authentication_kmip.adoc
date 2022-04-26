@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 ONTAP 9.5 以降では、 Key Management Interoperability Protocol （ KMIP ）サーバを使用して認証キーを管理できます。

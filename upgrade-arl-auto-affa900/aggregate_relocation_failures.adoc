@@ -6,6 +6,7 @@ summary: AFF A700 から AFF A900 へのアップグレード時に発生する�
 ---
 = アグリゲートの再配置に失敗しまし
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

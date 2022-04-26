@@ -5,6 +5,7 @@ keywords: cluster, san, environment, delete, lif, re-create, move san lifs
 summary: クラスタの内容とクラスタ環境に応じて、 SAN LIF を移動、削除、または再作成する必要があります。 
 ---
 = 新しい SAN LIF を作成するか、削除した SAN LIF を再作成します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: AFF A900 コントローラモジュールと NVRAM モジュールを�
 ---
 = node2 のインストールを確認します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

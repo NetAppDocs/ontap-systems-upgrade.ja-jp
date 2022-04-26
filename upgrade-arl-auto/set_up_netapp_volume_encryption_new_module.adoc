@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップ�
 ---
 = 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

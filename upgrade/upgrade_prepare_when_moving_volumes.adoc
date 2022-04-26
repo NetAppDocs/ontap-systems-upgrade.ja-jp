@@ -5,6 +5,7 @@ keywords: perform, preparation, upgrading, upgrade, controller, hardware, moving
 summary: ボリュームを移動してコントローラハードウェアをアップグレードする前に、いくつかの準備手順を実行する必要があります。 
 ---
 = ボリューム移動時にアップグレードを準備
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 ネットアップサポートサイトで入手できる Active IQ Config Advisor ツールを使用して、代表的な構成エラーがないかどうかを確認できます。

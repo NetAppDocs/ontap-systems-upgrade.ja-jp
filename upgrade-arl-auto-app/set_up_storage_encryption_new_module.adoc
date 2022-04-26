@@ -6,6 +6,7 @@ summary: '必要に応じて "system controller replace" コマンドを使用�
 ---
 = 新しいコントローラモジュールで Storage Encryption をセットアップします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

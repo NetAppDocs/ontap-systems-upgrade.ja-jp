@@ -5,6 +5,7 @@ keywords: node, support, model, upgrading, upgrade, moving, move, storage, inter
 summary: 元のノードがサポート対象のモデルである場合、ストレージを移動してアップグレードする処理中に、ノードの内蔵 SATA ドライブまたは SSD を、同じクラスタ内の新しいノードに接続されているドライブシェルフに移動できます。新しいノードに接続されたドライブシェルフには SAS ドライブを転送できません。 
 ---
 = 内蔵ドライブを元のノードから移動します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

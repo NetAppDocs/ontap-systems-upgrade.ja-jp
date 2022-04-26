@@ -6,6 +6,7 @@ summary: AFF A700 から AFF A900 へのアップグレードを実行するに�
 ---
 = 必要な工具とドキュメント
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

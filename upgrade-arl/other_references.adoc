@@ -6,6 +6,7 @@ summary: このトピックでは、他の参照コンテンツや Web サイト
 ---
 = 参考資料
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

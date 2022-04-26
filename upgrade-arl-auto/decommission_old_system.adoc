@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 ---
 = 古いシステムの運用を停止
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

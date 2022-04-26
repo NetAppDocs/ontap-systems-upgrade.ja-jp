@@ -5,6 +5,7 @@ keywords: node, support, model, internal, sata, drive, ssd, moving, move, upgrad
 summary: 元のノードがサポート対象のモデルである場合、ストレージを移動してアップグレードする処理中に、ノードの内蔵 SATA ドライブまたは SSD を、新しいノードに接続されているドライブシェルフに移動できます。また、システムをドライブシェルフに変換して、新しいノードに接続することもできます。 
 ---
 = オプション：内蔵ストレージを移動するか、システムをドライブシェルフに変換します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

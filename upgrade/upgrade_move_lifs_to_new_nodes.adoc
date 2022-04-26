@@ -5,6 +5,7 @@ keywords: move, volume, original, node, migrate, non-san, lif, cluster-managemen
 summary: 元のノードからボリュームを移動したら、 SAN 以外のデータ LIF とクラスタ管理 LIF を元のノードから新しいノードに移行する必要があります。 
 ---
 = SAN 以外のデータ LIF とクラスタ管理 LIF を新しいノードに移動します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

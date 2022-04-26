@@ -5,6 +5,7 @@ keywords: upgrade, nodes, moving, storage, port, original, new
 summary: ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。 
 ---
 = 新しいノードをセットアップ
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: Controller Hardware Upgrade Express Guide
 summary: ルートボリュームからブートデバイスに構成情報をリストアする必要があります。 
 ---
 = ルートボリューム構成をリストア
+:allow-uri-read: 
 
 
 [role="lead"]

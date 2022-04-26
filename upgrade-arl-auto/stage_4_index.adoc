@@ -6,6 +6,7 @@ summary: ONTAP 9.5 から 9.7 までのコントローラでは、 system contro
 ---
 = ステージ 4 ：ノード 2 の移動と撤去
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 2 ノードクラスタの場合はノード 1 の NAS データ LIF �
 ---
 = node1 で所有されている NAS データ LIF を node2 に移動します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

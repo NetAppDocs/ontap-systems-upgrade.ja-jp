@@ -3770,7 +3770,6 @@
   <block id="ceb1502357ca7edd7dc13458f9f78895" category="paragraph">手順（ g ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
   <block id="9694fd9e35e64d8c445c0824b45a5dff" category="inline-link-macro">ONTAP 9.7 以前のバージョンを使用してネットワークポートをマッピングし、手順 7 を実行します</block>
   <block id="49df8ec8bead5c5a65249d6fe95ee476" category="list-text">[[map_9.8_5] データ LIF をホストしている物理ポートのブロードキャストドメインメンバーシップを変更します。これは、に示すように、手動で実行できます <block ref="5b39191cf693f735bfc52c1b3429857e" category="inline-link-macro-rx"></block>。推奨される方法は、 ONTAP 9.8 で導入された拡張ネットワーク到達可能性スキャンおよび修復手順を使用することです。次の手順 5 の手順（ a ）から（ g ）までを参照してください。</block>
-  <block id="0b0e9c9f561a00ec9391d55160c4baf0" category="paragraph">FAS8080 や AFF8080 など、ノードあたり 3 つ以上のクラスタポートを備えたシステムがある場合は、コントローラのアップグレードを開始する前に、ノードごとにクラスタ LIF を 2 つのクラスタポートに統合する必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。</block>
   <block id="b97fc198d08784bb72759208e4a261de" category="paragraph">手順（ f ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
   <block id="c4bb7f0d17cacb6fbdc03f40dfe338e7" category="paragraph">手順 3 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
   <block id="d86684c09dde7ea5d5d7306c6f674ea3" category="list-text">各クラスタ LIF がポート 7700 をリスンしている必要があります。クラスタ LIF がポート 7700 をリスンしていることを確認します。</block>
@@ -4016,7 +4015,6 @@
   <block id="5d49caed50d255b668dbd7e784fc3b12" category="summary">ONTAP 9.8 以降を実行する新しいコントローラを手順 使用して HA ペアのストレージコントローラを手動でアップグレードするかどうかを決定します。</block>
   <block id="867625d8a162da584d5c7633adccb4ae" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に発生する可能性のある問題に関する情報。</block>
   <block id="ad475825ae83ecbd372fe679f99f127d" category="summary">ノードを準備して情報を収集し、 ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に、すべてのクラスタノードがクォーラムにあることを確認する。</block>
-  <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">[+]</block>
   <block id="afe5b70a93730d0b136c0f9de3376f9e" category="summary">ONTAP 9.8 以降を実行しているコントローラでの手動 ARL アップグレード時に、 node2 のクラスタネットワーク、管理、 FC ポート、および NVRAM システム ID に関する情報を記録します。</block>
   <block id="ad7dc11f39fb32e1f4ba6e7e9644fdd2" category="summary">手動の ARL アップグレード手順 を使用して、 ONTAP 9.8 以降を実行するコントローラハードウェアをアップグレードし、ルート以外のアグリゲートの所有権を切り替えます。</block>
   <block id="a18ad921f7c87b8c08b808c84ff5bfe6" category="cell">ARL を使用した手動アップグレード</block>
@@ -4421,4 +4419,5 @@
   <block id="97b4b76caf0d5b4cd013ca71056a29df" category="list-text">node2 によって所有されている SAN 以外のデータ LIF を node3 に再配置します。</block>
   <block id="79ba45215eeed9692f00f54cd98176eb" category="list-text">[[auto9597_istall3_step29]] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムの場合は、に進みます <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block>。</block>
   <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">ワークシート：コントローラのアップグレード前後に収集する情報</block>
+  <block id="17f9514d7bcdbd086bef311b63567524" category="admonition">FAS8080 や AFF8080 システムなど、ノードあたり 3 つ以上のクラスタポートを備えたシステムは、アップグレードを開始する前に、ノードあたり 2 つのクラスタポートにクラスタ LIF を移行してホームに戻す必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。</block>
 </blocks>

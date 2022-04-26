@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、 ARL �
 ---
 = node3 をインストールしてブートします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

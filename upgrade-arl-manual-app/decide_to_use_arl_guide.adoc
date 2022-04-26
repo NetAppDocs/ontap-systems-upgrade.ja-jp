@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行する新しいコントローラを手順 使
 ---
 = アグリゲートの再配置手順を使用するかどうかを決定します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

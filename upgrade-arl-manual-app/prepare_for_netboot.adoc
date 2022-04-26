@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手�
 ---
 = ネットブートを準備
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

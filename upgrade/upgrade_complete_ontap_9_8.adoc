@@ -5,6 +5,7 @@ keywords: complete, upgrade, ontap, complete the upgrade in ontap 9.8
 summary: ONTAP 9.8 でアップグレードを完了するには、次の手順を実行します。 
 ---
 = ONTAP 9.8 でアップグレードを完了します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

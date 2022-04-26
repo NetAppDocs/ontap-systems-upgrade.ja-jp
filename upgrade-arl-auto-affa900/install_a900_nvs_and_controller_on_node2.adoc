@@ -6,6 +6,7 @@ summary: ARL コントローラ手順 のアップグレード時の AFF A900 NV
 ---
 = AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

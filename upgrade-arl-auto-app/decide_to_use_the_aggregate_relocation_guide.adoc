@@ -6,6 +6,7 @@ summary: 'ONTAP 9.8 以降を実行するコントローラをアップグレー
 ---
 = アグリゲートの再配置手順を使用するかどうかを決定します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

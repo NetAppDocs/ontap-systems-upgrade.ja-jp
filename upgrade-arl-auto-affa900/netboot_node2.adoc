@@ -6,6 +6,7 @@ summary: 対応する AFF A900 node2 コントローラモジュールと NVRAM 
 ---
 = ネットブート node2
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

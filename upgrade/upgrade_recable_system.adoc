@@ -5,6 +5,7 @@ keywords: run, diagnostic, recable, controller, module, storage, network, connec
 summary: 診断の実行後、コントローラモジュールのストレージとネットワークを再度ケーブル接続する必要があります。 
 ---
 = システムにケーブルを再接続
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

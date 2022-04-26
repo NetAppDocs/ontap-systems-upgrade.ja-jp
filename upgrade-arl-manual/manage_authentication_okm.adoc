@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、オン�
 ---
 = オンボードキーマネージャを使用して認証を管理
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

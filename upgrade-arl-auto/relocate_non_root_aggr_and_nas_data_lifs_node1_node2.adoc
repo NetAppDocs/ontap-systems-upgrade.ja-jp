@@ -6,6 +6,7 @@ summary: ONTAP 9.5 を実行しているコントローラを 9.7 にアップ�
 ---
 = ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

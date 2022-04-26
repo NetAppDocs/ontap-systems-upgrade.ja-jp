@@ -6,6 +6,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 ---
 = node2 によって所有されているルート以外のアグリゲートと NAS データ LIF を、 node3 から node4 に移動します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

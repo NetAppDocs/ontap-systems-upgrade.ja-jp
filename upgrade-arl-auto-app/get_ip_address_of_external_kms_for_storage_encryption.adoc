@@ -6,6 +6,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 ---
 = ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

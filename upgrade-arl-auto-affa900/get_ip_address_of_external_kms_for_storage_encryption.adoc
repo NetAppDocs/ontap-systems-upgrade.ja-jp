@@ -6,6 +6,7 @@ summary: ストレージ暗号化の設定と管理、認証キーの管理、�
 ---
 = ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

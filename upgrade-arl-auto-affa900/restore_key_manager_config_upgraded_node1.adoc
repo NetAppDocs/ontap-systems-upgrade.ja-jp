@@ -6,6 +6,7 @@ summary: 必要に応じて、 AFF A700 から AFF A900 へのアップグレー
 ---
 = アップグレードした node1 でキー管理ツールの設定をリストアします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

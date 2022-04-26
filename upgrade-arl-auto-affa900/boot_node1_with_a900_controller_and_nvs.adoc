@@ -6,6 +6,7 @@ summary: AFF A900 コントローラモジュールと NVRAM モジュールで�
 ---
 = AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

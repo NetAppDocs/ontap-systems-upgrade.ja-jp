@@ -6,6 +6,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 ---
 = アグリゲートの再配置に失敗しまし
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

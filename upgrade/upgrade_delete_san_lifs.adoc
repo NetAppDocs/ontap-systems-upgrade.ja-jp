@@ -5,6 +5,7 @@ keywords: cluster, san, environment, delete, lid, original, node, unjoin, origin
 summary: クラスタが SAN 環境にある場合は、元のノードから SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。 
 ---
 = SAN LIF が元のノードから不要になりました
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

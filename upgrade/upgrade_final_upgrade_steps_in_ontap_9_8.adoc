@@ -5,6 +5,7 @@ keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete
 summary: ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。 
 ---
 = ONTAP 9.8 で最後のアップグレード手順を実行します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

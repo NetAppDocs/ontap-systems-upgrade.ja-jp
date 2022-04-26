@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでの手動 ARL
 ---
 = ノード 3 で FC または UTA / UTA2 設定を設定します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

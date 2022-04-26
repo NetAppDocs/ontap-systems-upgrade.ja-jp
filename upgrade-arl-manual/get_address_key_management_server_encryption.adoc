@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、 ARL �
 ---
 = ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

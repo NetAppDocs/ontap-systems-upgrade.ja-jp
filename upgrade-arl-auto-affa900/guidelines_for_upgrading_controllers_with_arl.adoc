@@ -6,6 +6,7 @@ summary: ARL を使用して AFF A700 を AFF A900 にアップグレードで�
 ---
 = ARL を使用した AFF A700 から AFF A900 へのアップグレードに関するガイドライン
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

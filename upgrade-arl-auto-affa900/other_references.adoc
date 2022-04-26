@@ -6,6 +6,7 @@ summary: AFF A700 から AFF A900 へのコントローラアップグレード�
 ---
 = 参考資料
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

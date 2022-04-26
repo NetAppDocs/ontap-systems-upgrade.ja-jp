@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 ---
 = 手順の複数の段階で発生する可能性のある問題
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

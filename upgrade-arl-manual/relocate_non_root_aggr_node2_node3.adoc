@@ -6,6 +6,7 @@ summary: node2 の AutoSupport メッセージを送信し、 ONTAP 9.7 以前�
 ---
 = ルート以外のアグリゲートを node2 から node3 に再配置します。
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

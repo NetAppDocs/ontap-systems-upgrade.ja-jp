@@ -6,6 +6,7 @@ summary: 必要に応じて、 AFF A700 から AFF A900 へのアップグレー
 ---
 = 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

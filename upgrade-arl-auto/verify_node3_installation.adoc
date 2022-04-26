@@ -6,6 +6,7 @@ summary: 'system controller replace" コマンドを使用して ONTAP 9.5 を�
 ---
 = ノード 3 のインストールを確認します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

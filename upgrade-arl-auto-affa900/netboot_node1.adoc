@@ -6,6 +6,7 @@ summary: 対応する AFF A900 ノード 1 のコントローラモジュール�
 ---
 = ネットブート node1
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

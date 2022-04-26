@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 ---
 = node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF を確認します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

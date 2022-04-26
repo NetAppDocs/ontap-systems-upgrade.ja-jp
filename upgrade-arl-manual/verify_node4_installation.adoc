@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで、 ARL を�
 ---
 = ノード 4 のインストールを確認します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

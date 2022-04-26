@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手�
 ---
 = node2 のポートを node4 にマッピングします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

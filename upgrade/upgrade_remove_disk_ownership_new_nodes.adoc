@@ -5,6 +5,7 @@ keywords: node, internal, disk, add-on, shelves, attach, system, interfere, cont
 summary: 新しいノードに内蔵ディスクまたはアドオンシェルフがシステムに接続されている場合は、コントローラのアップグレードが妨げられる可能性があります。node3 / node4 に付属した新しいディスクの所有権を削除するには、次の手順を実行します。 
 ---
 = 新しいノードに接続されているディスクの所有権を削除します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

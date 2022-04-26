@@ -5,6 +5,7 @@ keywords: lifs
 summary: 交換用ノードを稼働状態に戻す前に、 LIF がホームポートにあることを確認し、 AutoSupport が有効な場合は交換用ノードのシリアル番号を登録して、自動ギブバックをリセットする必要があります。 
 ---
 = LIF を確認してシリアル番号を登録
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

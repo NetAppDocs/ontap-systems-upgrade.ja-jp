@@ -1,4 +1,5 @@
 = 使用許諾
+:allow-uri-read: 
 
 
 

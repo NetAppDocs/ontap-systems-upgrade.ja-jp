@@ -6,6 +6,7 @@ summary: node2 で HA ペアを無効にし、 AFF A700 から AFF A900 への�
 ---
 = ノード 1 を撤去
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

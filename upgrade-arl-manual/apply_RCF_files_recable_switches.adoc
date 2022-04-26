@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 ---
 = RCF ファイルを適用し、スイッチを再接続します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

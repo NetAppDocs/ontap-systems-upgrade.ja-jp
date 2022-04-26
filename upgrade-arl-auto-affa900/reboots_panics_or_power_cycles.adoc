@@ -6,6 +6,7 @@ summary: AFF A700 を AFF A900 にアップグレードする際、システム�
 ---
 = リブート、パニック、電源再投入
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

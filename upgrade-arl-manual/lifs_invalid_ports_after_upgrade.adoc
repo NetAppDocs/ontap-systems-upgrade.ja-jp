@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 ---
 = アップグレード後に LIF が無効なポートに接続されています
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

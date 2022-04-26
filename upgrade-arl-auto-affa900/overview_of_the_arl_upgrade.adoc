@@ -6,6 +6,7 @@ summary: AFF A700 から AFF A900 ARL コントローラへの手順 のアッ�
 ---
 = ARL アップグレードの概要
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

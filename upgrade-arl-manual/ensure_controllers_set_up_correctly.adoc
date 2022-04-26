@@ -6,6 +6,7 @@ summary: HA ペアを有効にし、 node3 と node4 にあるストレージア
 ---
 = 新しいコントローラが正しくセットアップされていることを確認します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

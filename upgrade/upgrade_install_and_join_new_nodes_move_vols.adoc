@@ -5,6 +5,7 @@ keywords: install, node, join, cluster, volume, original, node, install the new 
 summary: 元のノードからボリュームを移動できるように、新しいノードを設置してクラスタに追加する必要があります。 
 ---
 = 新しいノードを設置してクラスタに追加
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: AFF A700 から AFF A900 へのアップグレード時に、 node2 を
 ---
 = ノード 2 を撤去
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

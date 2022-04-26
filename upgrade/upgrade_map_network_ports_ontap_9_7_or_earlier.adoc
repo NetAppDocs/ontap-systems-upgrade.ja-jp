@@ -5,6 +5,7 @@ keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, ph
 summary: アップグレード後に node3 と node4 がクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。 
 ---
 = ONTAP 9.7 以前を使用してネットワークポートをマッピングします
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

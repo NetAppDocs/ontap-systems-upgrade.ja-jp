@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 . MetroCluster チェックの実行操作が完了したら ' 結果を表示します

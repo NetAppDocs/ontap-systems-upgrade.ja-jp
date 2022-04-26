@@ -6,6 +6,7 @@ summary: '必要に応じて "system controller replace" コマンドを使用�
 ---
 = ノード 3 でキー管理ツールの設定をリストアします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

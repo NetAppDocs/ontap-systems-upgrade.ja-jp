@@ -6,6 +6,7 @@ summary: システムをネットブートする前に、 ONTAP 9.8 以降を実
 ---
 = SnapMirror 関係を休止します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

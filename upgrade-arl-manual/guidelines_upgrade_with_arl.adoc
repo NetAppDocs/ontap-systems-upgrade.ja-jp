@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行するコントローラのペアに手動 ARL
 ---
 = ARL を使用したコントローラのアップグレードに関するガイドライン
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

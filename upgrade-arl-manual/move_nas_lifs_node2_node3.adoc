@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで、 node2 の
 ---
 = node2 によって所有されている NAS データ LIF を node3 に移動する
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

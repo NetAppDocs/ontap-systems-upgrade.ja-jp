@@ -6,6 +6,7 @@ summary: 元のノードと新しいノードでタスクを実行して、ア�
 ---
 = ノードペアをアップグレードします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

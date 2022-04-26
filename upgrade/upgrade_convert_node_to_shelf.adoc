@@ -5,6 +5,7 @@ keywords: node, support, model, process, upgrading, upgrade, moving, move, conve
 summary: 元のノードがサポート対象のモデルである場合、ストレージを移動してアップグレードする処理中に、ノードをドライブシェルフに変換し、同じクラスタ内の新しいノードに接続できます。 
 ---
 = 元のノードをドライブシェルフに変換します
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

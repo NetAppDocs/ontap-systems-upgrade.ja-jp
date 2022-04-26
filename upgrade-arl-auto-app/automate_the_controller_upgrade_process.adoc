@@ -6,6 +6,7 @@ summary: 部分的に自動化された ARL 手順 を使用して、 ONTAP 9.8 
 ---
 = コントローラのアップグレードプロセスを自動化する
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

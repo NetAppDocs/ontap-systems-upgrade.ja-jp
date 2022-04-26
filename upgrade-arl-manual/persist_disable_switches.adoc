@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、ファ�
 ---
 = スイッチを永続的に無効にします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

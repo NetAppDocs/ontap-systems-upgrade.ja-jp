@@ -5,6 +5,7 @@ keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, me
 summary: 'ONTAP 9.8 以降を実行しているコントローラ・ハードウェアをアップグレードするには "system controller replace コマンドを使用して " ルート以外のアグリゲートの所有権を切り替えます' 
 ---
 = 概要
+:allow-uri-read: 
 
 
 [role="lead lead"]

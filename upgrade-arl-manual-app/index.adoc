@@ -6,6 +6,7 @@ summary: 手動の ARL アップグレード手順 を使用して、 ONTAP 9.8 
 ---
 = 概要
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

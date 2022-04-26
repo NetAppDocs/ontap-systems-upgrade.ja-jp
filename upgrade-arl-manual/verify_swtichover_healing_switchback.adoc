@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで、手動 ARL
 ---
 = スイッチオーバー、修復、スイッチバックを検証
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

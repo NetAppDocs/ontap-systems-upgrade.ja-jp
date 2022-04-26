@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手�
 ---
 = ステージ 3 ：node3 をインストールしてブートします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

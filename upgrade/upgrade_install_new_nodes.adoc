@@ -5,6 +5,7 @@ keywords: upgrade, moving, move, storage, install, node3, node4, attach, power, 
 summary: ストレージを移動してアップグレードするときは、まず node3 と node4 を設置し、新しいノードへの電源、コンソール、およびネットワーク接続を接続します。 
 ---
 = 新しいノードをインストール
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

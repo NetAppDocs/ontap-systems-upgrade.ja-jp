@@ -5,6 +5,7 @@ keywords: create, aggregate, node, store, volume, original, node, identify, aggr
 summary: 元のノードから移動するボリュームを格納するために、新しい各ノードに少なくとも 1 つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。 
 ---
 = アグリゲートを作成してボリュームを新しいノードに移動
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

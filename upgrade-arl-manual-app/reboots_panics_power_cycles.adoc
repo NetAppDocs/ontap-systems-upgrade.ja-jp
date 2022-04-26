@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手�
 ---
 = リブート、パニック、電源再投入
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

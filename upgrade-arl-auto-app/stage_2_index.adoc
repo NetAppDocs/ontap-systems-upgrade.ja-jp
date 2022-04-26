@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラ上で system co
 ---
 = ステージ 2 ：移行してノード 1 を撤去
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで、手動 ARL
 ---
 = スイッチを永続的に有効にします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

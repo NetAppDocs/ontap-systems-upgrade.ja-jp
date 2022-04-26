@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラペアの ARL �
 ---
 = ARL のアップグレードワークフロー
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

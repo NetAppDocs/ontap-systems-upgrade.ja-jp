@@ -6,6 +6,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラをアップグ�
 ---
 = 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

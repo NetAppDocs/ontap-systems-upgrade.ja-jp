@@ -5,6 +5,7 @@ keywords: reassign, disk, belong, node1, node2, node3, node4, node, attach, stor
 summary: ノード 1 とノード 2 に属していたディスクを、それぞれノード 3 とノード 4 に再割り当てする必要があります。 
 ---
 = ストレージシェルフを接続し、ディスク所有権を再割り当てします
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

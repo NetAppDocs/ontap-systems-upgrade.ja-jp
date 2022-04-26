@@ -5,6 +5,7 @@ keywords:
 summary: 元のノードをシャットダウンして削除するときは、アップグレードについての AutoSupport メッセージを送信し、メールボックスを削除し、ノードの電源をオフにして、シャーシを取り外す必要があります。 
 ---
 = 元のノードをシャットダウンします
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: AFF A700 のコントローラハードウェアを AFF A900 にアッ�
 ---
 = 概要
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

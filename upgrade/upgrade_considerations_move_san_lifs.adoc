@@ -5,6 +5,7 @@ keywords: cluster, san, environment, lif, original, node, unjoin, original, move
 summary: SAN LIF の移動が必要になるのは、クラスタの内容を変更する場合だけです。 
 ---
 = SAN LIF の移動に関する考慮事項
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

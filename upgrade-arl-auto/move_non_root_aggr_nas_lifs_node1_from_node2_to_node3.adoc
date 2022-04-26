@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 ---
 = ノード 1 で所有されているルート以外のアグリゲートと NAS データ LIF を、ノード 2 からノード 3 に移動します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

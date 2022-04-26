@@ -6,6 +6,7 @@ summary: 必要に応じて、ストレージ暗号化を設定し、 SSL 証明
 ---
 = 新しいコントローラモジュールで Storage Encryption をセットアップします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

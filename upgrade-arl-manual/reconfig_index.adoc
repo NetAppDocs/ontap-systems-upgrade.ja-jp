@@ -6,6 +6,7 @@ summary: ONTAP 9.1 以降の場合は、ポートレイアウトを再設定し�
 ---
 = ONTAP 9.1 以降の FC スイッチレイアウトを再設定します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

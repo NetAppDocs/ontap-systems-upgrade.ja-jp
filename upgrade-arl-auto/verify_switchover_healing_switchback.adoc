@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップ�
 ---
 = スイッチオーバー、修復、スイッチバックを検証
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

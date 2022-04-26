@@ -5,6 +5,7 @@ keywords: plan, upgrade, consideration, contact, technical, support, recommendat
 summary: アップグレードを計画するには、アップグレードに関する一般的な考慮事項を理解しておく必要があります。必要に応じて、テクニカルサポートに連絡して、クラスタの構成に固有の推奨事項とガイダンスを確認してください。 
 ---
 = コントローラハードウェアのアップグレードに関する考慮事項
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
