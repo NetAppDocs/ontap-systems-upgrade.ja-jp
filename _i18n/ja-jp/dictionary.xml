@@ -4420,4 +4420,7 @@
   <block id="79ba45215eeed9692f00f54cd98176eb" category="list-text">[[auto9597_istall3_step29]] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムの場合は、に進みます <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block>。</block>
   <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">ワークシート：コントローラのアップグレード前後に収集する情報</block>
   <block id="17f9514d7bcdbd086bef311b63567524" category="admonition">FAS8080 や AFF8080 システムなど、ノードあたり 3 つ以上のクラスタポートを備えたシステムは、アップグレードを開始する前に、ノードあたり 2 つのクラスタポートにクラスタ LIF を移行してホームに戻す必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。</block>
+  <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
+  <block id="4c6ae5d985a0142843ba3f6f8875cf0b" category="cell">AFF A900^4^</block>
+  <block id="44b12a5fbf6c87a940ab615ec2102604" category="paragraph">^4^ONATP 9.10.1以降、ONTAP 9.8以降を実行するAFF8080システムから9.10.1以降を実行するAFF A900システムへのARL自動アップグレードがサポートされます。</block>
 </blocks>
