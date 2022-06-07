@@ -1,7 +1,6 @@
 ---
 section: upgrade-arl-auto-affa900
-title: "「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF
-  A700 をアップグレードします"
+title: "「system controller replace」コマンドを使用して、AFF A700をAFF A900またはFAS9000からFAS9500にアップグレードします"
 entries:
 - title: 概要
   url: "/upgrade-arl-auto-affa900/index.html"
@@ -11,7 +10,7 @@ entries:
   url: "/upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 必要な工具とドキュメント
   url: "/upgrade-arl-auto-affa900/required_tools_and_documentation.html"
-- title: ARL を使用した AFF A700 から AFF A900 へのアップグレードに関するガイドライン
+- title: コントローラのアップグレードに関するガイドラインを参照してください
   url: "/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html"
 - title: ARL アップグレードの概要
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
@@ -23,7 +22,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html"
   - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
     url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
-- title: ステージ 2 ：リソースを再配置し、 AFF A700 node1 を撤去
+- title: ステージ 2 ：リソースを再配置し、AFF A700またはFAS9000 node1を撤去します
   entries:
   - title: ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
@@ -33,9 +32,9 @@ entries:
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: ネットブート node1
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
-- title: ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
+- title: ステージ 3 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします
   entries:
-  - title: AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
+  - title: AFF A900コントローラおよびNVRAMモジュールでノード1をブートします
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: ノード 1 のインストールを確認します
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
@@ -49,15 +48,15 @@ entries:
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: ノード 2 を撤去
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
-- title: ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
+- title: ステージ 5 ：AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします
   entries:
-  - title: AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
+  - title: AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします
     url: "/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html"
   - title: ネットブート node2
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
-- title: ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
+- title: ステージ 6 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします
   entries:
-  - title: AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
+  - title: AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: node2 のインストールを確認します
     url: "/upgrade-arl-auto-affa900/verify_node2_installation.html"

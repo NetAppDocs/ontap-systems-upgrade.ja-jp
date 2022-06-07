@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html
 keywords: boot, NVRAM, controller, module, node2, aff, a700, a900 
 summary: AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします。 
 ---
-= AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
+= AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: AFF A900 コントローラモジュールと NVRAM モジュールで 
 
 
 [role="lead"]
-AFF A900 コントローラモジュールと NVRAM モジュールを搭載した node2 がアップグレード可能な状態になりました。コントローラモジュールと NVRAM モジュールをスワップして AFF A700 から AFF A900 にアップグレードするには、コンソール接続と管理接続だけを移動する必要があります。このセクションでは、 AFF A900 コントローラモジュールおよび NVRAM モジュールで node2 をブートするために必要な手順を説明します。
+AFF A900またはFAS9500コントローラとNVRAMモジュールで構成されたnode2が、アップグレード可能な状態になりました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールをスワップすると、コンソール接続と管理接続のみが移動します。ここでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートするために必要な手順を示します。
 
 .手順
 . [[boot_node2 _step1] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、ノード 2 の構成のロード後にブートループが発生しないように、「 setenv bootarg.storageencryption.support` コマンドを「 true 」に設定し、「 kmip.init.maxwait` 」変数を「 off 」に設定する必要があります。
@@ -28,7 +28,7 @@ AFF A900 コントローラモジュールと NVRAM モジュールを搭載し�
 +
 「 boot_ontap menu
 
-. ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。AFF A700 node1 のディスクを AFF A900 node1 に再割り当てするには、プロンプトで node2 の実際のノード名を入力します。次の例を参考にしてください。
+. ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。AFF A700またはFAS9000 node1のディスクをAFF A900またはFAS9500 node1に再割り当てするには、プロンプトでnode2の実際のノード名を入力します。次の例を参考にしてください。
 +
 [listing]
 ----

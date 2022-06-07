@@ -772,16 +772,11 @@
   <block id="96e7c50f9e1d1f9b66d5ab1dbe5d047a" category="cell">AFF8020 、 AFF8040 、 AFF8060 、 AFF8080</block>
   <block id="c1a19380507e7e6ae4f9e86f2f492cf1" category="cell">AFF A300 、 AFF A400 、 AFF A700 、 AFF A800^1</block>
   <block id="c37feb3492d999b3f216448183986be2" category="cell">FAS8200</block>
-  <block id="7f627dd33a5bf840f270330c41badb8d" category="cell">FAS8700 、 FAS9000 、 FAS8300 ^3^</block>
   <block id="c78a423f3132ee2ac4f4f4c1fa5d4859" category="cell">AFF A300</block>
-  <block id="09c446ae2255191f73eeab607258baaa" category="cell">AFF A700 、 AFF A800^1 ^ 、 AFF A400 ^3^</block>
   <block id="73ab298c8e00d66d28156892903a39ce" category="cell">AFF A320</block>
-  <block id="ce519c4631a5597216245426b360453b" category="cell">AFF A400 ^2^</block>
   <block id="4852954d031f57b417813707e91dd5bd" category="admonition">コントローラのアップグレードモデルの組み合わせが上記の表にない場合は、テクニカルサポートにお問い合わせください。</block>
   <block id="f02eccb3076760465f52e896d2649983" category="inline-link-macro">ノード 3 の UTA / UTA2 ポートを確認して設定し、手順 23 を実行します</block>
   <block id="51de0f52809b4037608dba4b84c411b1" category="inline-link-macro">ノード 4 の UTA / UTA2 ポートの確認と設定、手順 23</block>
-  <block id="55b7ad7b49f6385bd9a88c160fc047a1" category="paragraph">^2^ARL AFF A320 から AFF A400 システムへの自動アップグレードは、 ONTAP 9.9..1 からサポートされています。</block>
-  <block id="d94152152b104cd141cb46a6decafc34" category="paragraph">^3^ AFF A300 から AFF A400 または FAS8200 を 2 ノードスイッチレスクラスタ構成で FAS8300 システムにアップグレードする場合は、コントローラのアップグレード用の一時的なクラスタポートを選択する必要があります。AFF A400 および FAS8300 システムは、イーサネットバンドルとして、メザニンカードポートはイーサネットタイプ、 FC タイプの FC バンドルとして、 2 種類の構成で提供されます。</block>
   <block id="3ea026f4657fa31414c8a7e80af567b7" category="list-text">AFF A400 または FAS8300 では、イーサネットタイプの構成の場合、 2 つのメザニンポートのいずれかを一時的なクラスタポートとして使用できます。</block>
   <block id="68f44553add308b567f9f6bbfc94913d" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。</block>
   <block id="12a1856797218081c363d4151a746a51" category="paragraph">アップグレード後は、ネットアップサポートサイトから古いシステムの運用を停止できます。システムの運用を停止すると、そのシステムは動作していないことがネットアップに通知され、サポートデータベースから削除されます。</block>
@@ -861,7 +856,6 @@
   <block id="56b97cceb683f15e6179871d3991edcc" category="list-text">[[auto_check3_step13]] メンテナンスモードを終了します。</block>
   <block id="0e0a51d5d131ec116dbea50118d432b6" category="list-text">[[step14]] ブートメニューへのノードのブート時に 'boot_ontap menu' を実行しますA800 にアップグレードする場合は、に進みます <block ref="8de8415e5ddf050c51dc9df1ad54385b" category="inline-xref-macro-rx"></block>。</block>
   <block id="8818e56033c79a7d315b502b9d66c4b0" category="list-text">[auto9597_check_node3 _step15]] ノード 3 で、ブートメニューに移動し、 22-7 を使用して、非表示オプション「 boot_after_controller_replacement 」を選択します。プロンプトで、 node1 のディスクを node3 に再割り当てするには、次の例のように入力します。</block>
-  <block id="78c17ca9081fa3b223c0d18eaf556df4" category="list-text">[[step16]] システムが「 no disks found 」というメッセージでリブートループに入ると、システムが FC または UTA/UTA2 ポートをターゲットモードにリセットしたためにディスクを認識できないことを示します。この問題を解決するには、に進みます <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 終了： <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block>をクリックするか、セクションに移動します <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
   <block id="014925696b96cf52282301c416016c05" category="list-text">[[auto_check3_step17]] autoboot 中に Ctrl + C を押して 'loader&gt;` プロンプトでノードを停止します</block>
   <block id="46f0d1accd1916f786a903c85ad13b0f" category="list-text">[[step18]] LOADER プロンプトで、メンテナンスモードに切り替えます。</block>
   <block id="8e26679b9fca64c8419387ed5ddbd066" category="list-text">[[step19]] メンテナンスモードで、現在ターゲットモードになっている以前に設定されたすべてのイニシエータポートを表示します。</block>
@@ -1314,7 +1308,6 @@
   <block id="a69c4b39f212e41199201fde407c6c9e" category="cell">に進みます <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block></block>
   <block id="5bb1d2d89905f521825083d671817bcb" category="cell">は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています</block>
   <block id="06ebdeec742f5f261b968dabee7ce4bc" category="cell">_Install に戻り、 node3 をブートして、のセクションを再開します <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>。</block>
-  <block id="98df3e165a2b52781e38f636917b8597" category="list-text">[[step16]] システムが「 no disks found 」というメッセージで再起動ループに入る場合、これはポートがターゲットモードにリセットされたために、ディスクを認識できないためです。に進みます <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 終了： <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block> これを解決します。</block>
   <block id="224e96d1485db2dffbe7521db5e3b8db" category="paragraph">関連するノードに対してこの手順を使用できます。node3 は、次のサンプル全体で使用されます。</block>
   <block id="fb2ae3407dbb65ffe5f8f2ab09ba07d0" category="list-text">次のコマンドを入力し、出力を確認して、新しいクラスタポートがクラスタブロードキャストドメインにあることを確認します。</block>
   <block id="3cb8659a043650dc7ac58ea24d685632" category="paragraph">「 network port show -node node -port port -fields broadcast-domain 」</block>
@@ -2431,7 +2424,6 @@
   <block id="04bc530160a0c8cfe78397922bf1025e" category="list-text">ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、 _Install に戻り、 node3 を再度起動して再開します <block ref="8334b800bcf351711ec77ec1fb7390b3" category="inline-link-macro-rx"></block>。</block>
   <block id="218c1c22487e3cea0e94aedcabb843e2" category="paragraph">に保存した FC ポート設定の値を node1 で確認しておく必要があります <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
   <block id="53d8e9a89e7df0f2e9d3d1647aa47fa3" category="admonition">* 重要 * ：ご使用のシステムにストレージ・ディスクがある場合は、クラスタ・プロンプトでこのセクションにコマンドを入力してください。V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合は、このセクションに示すコマンドを保守モードで入力します。</block>
-  <block id="9dc09e5212ac728648450db66b8f3668" category="list-text">[[step1]] 次のいずれかの操作を実行します。</block>
   <block id="fb0e67401f3473ee656312bb98935878" category="cell">に進みます <block ref="4e8d6367d01e7a88b5b6b591ecf5d6db" category="inline-xref-macro-rx"></block></block>
   <block id="32781b45218385923d91bc21b08c6b68" category="cell">に進みます <block ref="79ba4e2202506d0f17b14ab90d196879" category="inline-xref-macro-rx"></block></block>
   <block id="838b228ad3b40461ad1dc100f5671807" category="list-text">[[man_config_3_step2] ノード 3 をブートし、メンテナンスモードにアクセスします。</block>
@@ -2465,7 +2457,6 @@
   <block id="306e854e226a650b7acec40ba5a0e249" category="list-text">ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、この手順を省略してください <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> にアクセスします <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
   <block id="6c804c4adac8740743dd6f41da471795" category="list-text">node3 にカードポートまたはオンボードポートがある場合は、に進みます <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>。</block>
   <block id="49844625e7eb80b095f9d3c525f8cba6" category="list-text">node3 にカードポートまたはオンボードポートがない場合は、を省略します <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>をクリックし、 _Install に戻り、 node3 をブートして、で再開します <block ref="a4103675c41ea57f7287e0804dd0c9dd" category="inline-link-macro-rx"></block>。</block>
-  <block id="d430acf9b1fab77a9b9905bbf1423c57" category="list-text">[[step1] ポートが現在どのように設定されているかを確認します。ノード 3 で次のコマンドを入力します。</block>
   <block id="1f81aa18292065e5242ce30775d96e2c" category="paragraph">次の例のような出力が表示されます。</block>
   <block id="581e0d52eede5c7a9002197a5955188f" category="list-text">[[step3]] 「 system node hardware unified-connect show 」コマンドまたは「 ucadmin show 」コマンドの出力を調べて、 UTA / UTA2 ポートに希望するパーソナリティがあるかどうかを確認します。</block>
   <block id="39e1a687c8a1a3bb49c730ad7b98a3d5" category="cell">に進みます <block ref="2fc3b3e515184c116c95342a9ca8cb9f" category="inline-xref-macro-rx"></block>。</block>
@@ -3512,19 +3503,16 @@
   <block id="9732e7498adc911676ddbf1eb96c90f1" category="inline-link-macro">ONTAP 9.7 以前を実行しているコントローラハードウェアを手動でアップグレードします</block>
   <block id="c96cad4c802036afa3176e87bcda336b" category="cell"><block ref="c96cad4c802036afa3176e87bcda336b" category="inline-link-macro-rx"></block></block>
   <block id="22d219ca4c61aa27b2616b43ecd9678a" category="list-text">ノードを「 boot_menu 」でブートします。</block>
-  <block id="2bbe578e5c09f7900dc7f227b86c3682" category="list-text">ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。AFF A700 node1 のディスクを AFF A900 node1 に再割り当てするには、プロンプトで node2 の実際のノード名を入力します。次の例を参考にしてください。</block>
   <block id="8e490bd535c0b48fe8a594afea8a5f73" category="list-text">事前確認が失敗した場合にアグリゲートの所有権を修正</block>
   <block id="10623903188f292ff7edcdd04a4bde0a" category="list-text">ストレージ暗号化の IP アドレスを取得します</block>
   <block id="5967cd2dd5257e032e2c1568e265b057" category="list-text">node1 は、 node1 アグリゲートのホーム所有者と現在の所有者です</block>
   <block id="a324d0a89d17fcc011978fff16b784da" category="list-text">node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します</block>
-  <block id="2752e749ec326bfcd5d2b1c8a96e0eec" category="cell">ステージ 2 ：ノード 1 からリソースを再配置し、 AFF A700 node1 を撤去</block>
   <block id="70bfac3efc816446939b969cb549c8b8" category="list-text">node2 には、 node1 アグリゲートの現在の所有者を指定します</block>
   <block id="ec258c431af242bb93ebbf0d82a4afd2" category="list-text">node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します</block>
   <block id="c355563dc6e37024ffcd7f18d583279e" category="list-text">node1 が正常にインストールされたことを確認します</block>
   <block id="8bc1591998d3254a215a1fea9cd0e4be" category="list-text">ノード 1 のネットワーク設定をリストアします</block>
   <block id="0ac66da022e888300d8ec43f47b716d6" category="list-text">アップグレードした node1 でキー管理ツールの設定をリストアします</block>
   <block id="e1275af58e555e9cc3d59dc17d1d1ab1" category="list-text">ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF を node2 からアップグレードした node1 に移動します</block>
-  <block id="78f9df4f95654214c6e34228379e988b" category="list-text">アップグレード後の AFF A900 node1 は、ノード 1 アグリゲートのホーム所有者および現在の所有者です</block>
   <block id="fff8cb6f4bd9c58d6037356a96d73247" category="cell">ステージ 4 ：リソースを node2 から再配置し、 node2 を撤去</block>
   <block id="487b7a723d50ceb8e8e166efb4cef927" category="list-text">ルート以外のアグリゲートと NAS データ LIF を node2 から node1 に再配置します</block>
   <block id="be74d1508b2732e00219890be181ffa6" category="list-text">アップグレードした node1 は、元は node1 に属していたアグリゲートのホーム所有者および現在の所有者です</block>
@@ -3568,7 +3556,6 @@
   <block id="1b8060cb5ae9dd21090d2ec07cc376b2" category="paragraph">アップグレードを実行するには接地ストラップが必要です。また、アップグレードプロセス中に他のマニュアルを参照する必要があります。</block>
   <block id="0c28f03f85d0a7cc4b82f95fce4d86da" category="doc">アップグレードハードウェアを確認します</block>
   <block id="af9d3f15b5098b02572b4a5b4c346c3d" category="doc">ノード 1 のインストールを確認します</block>
-  <block id="050ee0f77aff38c6ec36f73da8a54e1c" category="paragraph">AFF A900 コントローラモジュールで node1 をブートしたら、正しく設置されていることを確認する必要があります。ノード 1 がクォーラムに参加するのを待ってから、コントローラの交換処理を再開する必要があります。</block>
   <block id="c6fd244601cc323697fc7e6249268acd" category="paragraph">手順のこの時点で、コントローラのアップグレード処理はノード 1 がクォーラムへの自動参加を試みるため一時停止している必要があります。</block>
   <block id="ff5725f7647773e4bb6ba48f86580a14" category="list-text">node1 がクォーラムに参加していることを確認します</block>
   <block id="73dac86302530c6371ee49f4ae0c3157" category="paragraph">cluster show -node node1 -fields health`</block>
@@ -3582,7 +3569,6 @@
   <block id="85aa04fa5dfb58230ad2b2fb89c2b86d" category="paragraph">ノードのすべての物理ネットワークポート、 VLAN ポート、およびインターフェイスグループポートが表示されます。この出力から、 ONTAP によって「 Cluster 」ブロードキャストドメインに移動された物理ポートを確認できます。この出力を使用して、インターフェイスグループメンバーポート、 VLAN ベースポート、または LIF をホストするスタンドアロンの物理ポートとして使用するポートを決定できます。</block>
   <block id="97a140c436b20824a78c55187d8f3252" category="list-text">node1 のすべてのポートに到達できるネットワークポートを表示します。</block>
   <block id="cceb77422957d2a7588c1df43f5eacd8" category="paragraph">network port reachability show -node node1</block>
-  <block id="9eff901780752a19a1be28a5abb8114f" category="admonition">AFF A700 から AFF A900 コントローラへのアップグレード中に、ネットワークポートとその接続を変更しないでください。すべてのポートを正しいブロードキャストドメインに配置し、ネットワークポートの到達可能性を変更しないでください。ただし、 LIF を node2 から node1 に戻す前に、ネットワークポートの到達可能性と健全性ステータスを確認する必要があります。</block>
   <block id="a5fb308a92e4604c009062c3de7b2789" category="list-text">[[restore_node1_step4]] 次の順序で、次のコマンドを使用して、 node1 の各ポートの到達可能性ステータスを「 ok 」以外に修復します。</block>
   <block id="2c7aa9454c1ca6be9ef48b69c5b8cab5" category="list-text">VLAN ポート</block>
   <block id="cf45ec2f4095abbc4f4afca15dbaa0f3" category="paragraph">すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的に接続されていないポートのステータスを「 no-reachability 」と報告する必要があります。この 2 つ以外のステータスが報告されたポートがある場合は、到達可能性修復を実行し、の手順に従ってブロードキャストドメインにポートを追加または削除します <block ref="b6d8caf83cd967ca96a109c1173cf68b" category="inline-xref-macro-rx"></block>。</block>
@@ -3602,15 +3588,8 @@
   <block id="701fa495284f4a753f53b83d9db59d99" category="paragraph">ノード 2 のネットワーク設定を確認し、アグリゲートをノード 1 からノード 2 に再配置する前に、ノード 1 に現在あるノード 2 に属する NAS データ LIF がノード 1 からノード 2 に再配置されたことを確認する必要があります。また、 SAN LIF が node2 に存在することも確認する必要があります。</block>
   <block id="ee2ce060961db1c7ec1f363acef87d91" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。node2 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認する必要があります。</block>
   <block id="b990f6960d7072e815b8e4d805f92035" category="paragraph">LIF が取り外された場合、ホームノードを node2 にリストアします。</block>
-  <block id="b4487973401042be49d7ce291f0a7816" category="paragraph">このコントローラの手順をアップグレードする際には、 AFF A700 システムを AFF A900 システムにアップグレードします。</block>
-  <block id="b506bf2d759395dc5e9a526b8a8a5085" category="admonition">AFF A700 システムの各ノードの 2 つのフィールド交換可能ユニット（ FRU ）を新しい FRU と交換する必要があります。I/O カード、データケーブル、ディスクシェルフ、およびディスクを移動、切断、再接続する必要はありません。</block>
   <block id="61d5cfba7704fb82d2cf6a1ebdf016a2" category="admonition">このドキュメントでは、ノード名の参照としてのみ * node1 * と * node2 * という用語が使用されています。手順のあとにノードの実際の名前を置き換える必要があります。</block>
-  <block id="09ae20b09a8c19ed0bbb39e5bb05e664" category="inline-link-macro">ARL を使用した AFF A700 から AFF A900 へのアップグレードに関するガイドライン</block>
-  <block id="32898fc8f4a5029e42e4dec90f47aacf" category="list-text">この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、を読んで理解する必要があります <block ref="b49755eb65062586cd5b4474d108ae63" category="inline-link-macro-rx"></block> および <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> アップグレード開始前のセクション。</block>
   <block id="51108f40a613018fdc6b3ad89f42122e" category="list-text">この手順は、交換用コントローラハードウェアが新しく購入されていて、他のシステムで使用されていないことを前提としています。使用済みのコントローラを「 wipeconfig 」コマンドで準備するために必要な手順は、この手順には含まれていません。交換用コントローラハードウェアが以前に別の ONTAP クラスタまたはスタンドアロンのシングルノードシステムとして使用されていた場合は、テクニカルサポートにお問い合わせください。</block>
-  <block id="032e383323d25667eb1cf2fd98d90920" category="list-text">この手順は、 AFF A700 システムにのみ適用されます。AFF A900 システムへのアップグレードが必要なその他すべてのコントローラモデルについては、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 「 system controller replace 」コマンドを使用して、 ONTAP 9.8 以降を実行するコントローラハードウェアと、 ONTAP 9.8 以降を実行するコントローラハードウェアを手動でアップグレードするには、「 _Using Aggregate Relocation 」コマンドを使用します。</block>
-  <block id="3ad849030cc8cbffe73ee39692333dfd" category="list-text">ダウンタイムを発生させずに AFF A700 システムからアップグレードする場合は、ストレージを移動するか、テクニカルサポートにお問い合わせください。を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。</block>
-  <block id="907aff731fdff77dd937f103d185946f" category="paragraph">このコンテンツでは、 AFF A700 HA ペアのストレージコントローラを新しい AFF A900 コントローラにアップグレードし、同時に既存のデータとディスクをすべて残す方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。</block>
   <block id="71a227e766879a981c6aa0fd0ee08687" category="paragraph">ステージ 1 では、アップグレードのためのノードを準備し、一連の事前確認を実行する必要があります。また、新しいコントローラをネットブートする準備を行う必要があります。</block>
   <block id="5077f34346404c6e6b1972588ad2c047" category="list-text">ONTAP コマンドラインの advanced 権限モードで次のコマンドを入力して、コントローラの交換プロセスを開始します。</block>
   <block id="78bcaff6352913ee1a07493a6be91635" category="paragraph">次のような出力が表示されます。</block>
@@ -3618,8 +3597,6 @@
   <block id="f51ac25569c065e7813718ef345e9ddc" category="cell">交換するノードにローカル以外のデータ LIF があるかどうかを確認します。ホーム所有者でないデータ LIF がノードに含まれないようにしてください。ローカル以外のデータ LIF がいずれかのノードに含まれている場合、タスクは失敗します。</block>
   <block id="704a15d7928e671b1f24dd0bcbc6463a" category="list-text">network interface show -curr-node nodename -role cluster 、 intercluster 、 node-mgmt 、 cluster-mgmt 、 data</block>
   <block id="c293ce688a142a8943b3fa428c09e414" category="paragraph">ノード 1 が完全に停止したら、 node1 の LOADER プロンプトが表示されている必要があります。LOADER プロンプトを表示するには、 node1 のシリアルコンソールに接続します。</block>
-  <block id="7772cd0198105a3d1385b2e8a38dfd13" category="section-title">AFF A700 コントローラモジュールを取り外します</block>
-  <block id="aa7985a89f1c2f960f222e4a5876a369" category="paragraph">次の手順を使用して、 AFF A700 コントローラモジュールを取り外します。</block>
   <block id="21ae48aa7bbdbaeb1a967d5328b891b6" category="list-text">ノード 1 からコントローラモジュールを取り外す前に、コンソールケーブル（ある場合）と管理ケーブルをノード 1 のコントローラモジュールから外します。</block>
   <block id="16597a9dd20f2d5db13339b0bf3ad60c" category="admonition">ノード 1 で作業しているときは、コンソールケーブルと e0M ケーブルのみをノード 1 から取り外します。このプロセスの実行中は、 node1 または node2 の他のケーブルや接続を取り外したり変更したりしないでください。</block>
   <block id="4f15dffc58c8598c508fa46cd5335ebb" category="list-text">コントローラモジュール A のロックを解除してシャーシから取り外します。</block>
@@ -3636,8 +3613,6 @@
   <block id="805f241c9acf04968d6f84157a96e0c1" category="list-text">カムラッチを下に回転させて水平にします。</block>
   <block id="c6e52defde912721ad3ec5315c5d9664" category="cell">文字と数字が記載された I/O カムラッチ</block>
   <block id="0e50691d6ac3e9df529fa546f2486bd7" category="cell">ロックが完全に解除された I/O ラッチ</block>
-  <block id="65aec26ee881486d9f784225cd0751c8" category="section-title">AFF A900 コントローラモジュールを node1 に取り付けます。</block>
-  <block id="3624eaadadde076eadac129a6945d35a" category="paragraph">次の手順を使用して、 AFF A900 コントローラモジュールを node1 にインストールします。</block>
   <block id="85b0e5132d3bec02fcda8eb6f24b6062" category="list-text">管理ポートとコンソールポートを node1 コントローラモジュールにケーブル接続します。</block>
   <block id="9ce6fd0a8d01a2b4341b85fdb23f1ba5" category="list-text">コントローラモジュールをシャーシに挿入し、ミッドプレーンまでしっかりと押し込んで完全に装着します。</block>
   <block id="9d3d5ccff9d9d7f336c5f4adfb3eea08" category="paragraph">コントローラモジュールが完全に装着されると、ロックラッチが上がります。</block>
@@ -3677,7 +3652,6 @@
   <block id="1e23f3f1f1ff4c1174660749785a3e47" category="admonition">インターフェイスによっては、その他のパラメータが必要になる場合もあります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。</block>
   <block id="2e9296c7316d4c4c76380224c1db72b2" category="list-text">node1 でネットブートを実行します。</block>
   <block id="99002edb0db3876428b0f60105beedae" category="paragraph">netboot\http://web_server_ip/path_to_web_accessible_directory/netboot/kernel`</block>
-  <block id="7158cb602a75d71a43fc88a8cc225d1e" category="list-text">AFF A900 コントローラモジュールでノード 1 が起動するまで待ち、次のようにブートメニューオプションを表示します。</block>
   <block id="b0cf2f9b05191bd2a4d5a0a854fe9fee" category="paragraph">次のメッセージは無視してください 'This 手順 is not supported for Non-Disruptive Upgrade on an HA pair'環境の無停止の ONTAP ソフトウェアアップグレード。コントローラのアップグレードは含まれません。</block>
   <block id="5401a55d9c4318be587707f2931a86b0" category="paragraph">新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールすると、正しいイメージがインストールされない場合があります。この問題環境 All ONTAP リリース</block>
   <block id="a303e403af842ae1a3aee97050fd5dcf" category="list-text">手順を続行するかどうかを確認するメッセージが表示されたら 'y' と入力し ' パッケージの入力を求められたら 'URL:\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` と入力します</block>
@@ -3714,12 +3688,9 @@
   <block id="93b0552d846cadbf1761e192e1b974a8" category="list-text">必要に応じて、 node2 にパートナーシステム ID を設定します。</block>
   <block id="3baeda84b3e5fe7c80a71e2bb18f15ed" category="admonition">AFF A900 にアップグレードするノード 1 のシステム ID です。</block>
   <block id="08b43247e14b9d72a58205ddb14b21ab" category="paragraph">setsetenv partner-sysid node1 _sysid</block>
-  <block id="206a1a8dfd426c156b48ab46846acc00" category="section-title">AFF A900 コントローラモジュールを node2 に取り付けます。</block>
-  <block id="5290116daec6e79a183cfb76bc74414e" category="paragraph">次の手順を使用して、 AFF A900 コントローラモジュールを node2 に取り付けます。</block>
   <block id="9242c558140d9a52d10f2e6b57f75893" category="list-text">コントローラモジュールの端をシャーシのベイ B に合わせ、コントローラモジュールをシステムに半分までそっと押し込みます。</block>
   <block id="1ba57f7982d64e52fcc3eb0235996968" category="admonition">ベイラベルは、シャーシのコントローラモジュールのすぐ上にあります。</block>
   <block id="2cd913fdf7e7f2f1c4a048df3be22534" category="list-text">管理ポートとコンソールポートを node2 コントローラモジュールにケーブル接続します。</block>
-  <block id="35275fabaa2468d01cfdfe24836fec99" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時に、クラスタまたはサービスの健常性のために SAN LIF を移動する必要はありません。ノード 1 を AFF A900 としてオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認する必要があります。</block>
   <block id="da2b45cbcbfabc951a211d4aed4ae9d5" category="doc">キー管理ツールの設定を node2 にリストアします</block>
   <block id="c33d1193fa61b53992488cb1598a346b" category="list-text">node2 のチェック後、 node2 クラスタのストレージフェイルオーバーとクラスタ HA ペアが有効になります。処理が完了すると、両方のノードに「 Completed 」と表示され、クリーンアップ処理が実行されます。</block>
   <block id="9eabbc872717665c9d6cf452e2e948ce" category="list-text">次のコマンドを使用して出力を調べ、 node1 と node2 が同じクラスタに属していることを確認します。</block>
@@ -3732,9 +3703,7 @@
   <block id="8f3c31fbc98a55b30d3c8c6b6ba60ad1" category="list-text">次のコマンドを使用して出力を調べ、ライセンスが正しくインストールされていることを確認します。</block>
   <block id="83384f48b367d39b20d627f5230807a9" category="list-text">両方のノードで次のコマンドを使用して SP を設定します。</block>
   <block id="09e9f7abfe1cdfbd7b4465d4dbc6bd0c" category="paragraph">ノード 1 とノード 2 でストレージ暗号化が有効になっている場合は、セクションを完了します <block ref="18c90c300c0b71334b8b427eaf4f38a3" category="inline-link-macro-rx"></block>。それ以外の場合は、の項を実行します <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
-  <block id="e1d4223a486d75812a7653769a14285b" category="list-text">ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。AFF A700 node1 のディスクを AFF A900 node1 に再割り当てするには、プロンプトで node1 の実際のノード名を入力します。次の例を参考にしてください。</block>
   <block id="ab8666705fb8255d0f27c0919160c1e4" category="doc">node2 のインストールを確認します</block>
-  <block id="c82f2298e8b3c76974b76a8ddcdc4261" category="paragraph">AFF A900 コントローラモジュールで node1 をブートしたら、正しく設置されていることを確認する必要があります。node2 がクォーラムに参加するまで待ってから、コントローラの交換処理を再開する必要があります。</block>
   <block id="ba7d8f5ebb18592d91d949241848dfe6" category="paragraph">手順のこの時点で、 node2 がクォーラムに参加する間、処理が一時停止します。</block>
   <block id="c32050bd0152940e859c61963c8eac2b" category="list-text">node2 がクォーラムに参加していることを確認します</block>
   <block id="4944974c6eb515b06e75893287e18f10" category="list-text">node2 がノード 1 と同じクラスタに含まれており、正常な状態であることを確認します。</block>
@@ -3753,7 +3722,6 @@
   <block id="5e997021ee0d4607339bb16384449e18" category="list-text">[[step3]] node3 のすべてのポートの到達可能性をリストします。</block>
   <block id="9d84cc48ac59ed03e236e199b8e72aa8" category="paragraph">^1 AFF A800 システムに必要な追加手順については、セクションの「 A800 」を参照する手順に進んでください <block ref="46e0d635bf9a753e435b3e56ea555b72" category="inline-link-macro-rx"></block>または <block ref="916a396aec2ea8c5191dac1b7e554adf" category="inline-link-macro-rx"></block>。</block>
   <block id="9bded937f001956ffed1ee6ccceb37db" category="sidebar">「 system controller replace 」コマンドを使用します（ AFF A700 から AFF A900 ）。</block>
-  <block id="2500b2e21dbe74e889f94334876e761f" category="sidebar">ステージ 2 ：リソースを再配置し、 AFF A700 node1 を撤去</block>
   <block id="7f34c3c52d70c0425b1f8f450d9011fa" category="sidebar">ステージ 4 ：リソースを node2 から再配置し、 node2 を撤去</block>
   <block id="e58fe7640209496d4d7a887457b3a8c5" category="sidebar">ステージ 7 ：アップグレードを完了します</block>
   <block id="815c0aa063df3c53b17744c860357708" category="paragraph">アップグレードの完了後に、 node2 の運用を停止できます。を参照してください <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
@@ -3859,8 +3827,6 @@
   <block id="2c57b3816ff5f5700ca371be22f428e1" category="cell">ボリューム、 FlexClone ボリューム、ファイル、 LUN を使用して論理ストレージリソースを効率的に管理する方法について説明します。 FlexCache 、重複排除、圧縮、 qtree 、およびクォータ</block>
   <block id="97100ba8af68fa3886b472eaf454f74b" category="cell">計画的なメンテナンス時または災害発生時の両方のケースにおける、 MetroCluster のスイッチオーバーとスイッチバック処理の実行方法について説明します。</block>
   <block id="29f0de2b0e55e07da57cbc094ee90f18" category="inline-link-macro">「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF A700 をアップグレードします</block>
-  <block id="0a34d6af6eb5dc44a124da38508c4782" category="cell"><block ref="0a34d6af6eb5dc44a124da38508c4782" category="inline-link-macro-rx"></block></block>
-  <block id="878733e1c0833b1e42dc0c78c85de530" category="cell">「 system controller replace 」コマンドを使用して、 ONTAP 9.10.1 以降を実行する AFF A900 に AFF A700 を無停止でアップグレードするために必要なアグリゲートの再配置手順について説明します。</block>
   <block id="9207f0d2f15feec52f0acba2d7786a53" category="paragraph">ノード 1 の物理ポートがノード 3 の物理ポートに正しくマッピングされていることを確認します。これにより、ノード 3 はクラスタ内の他のノードと通信し、アップグレード後にネットワークと通信できるようになります。</block>
   <block id="33f0e8a0f6ded5a1669e805f22005635" category="paragraph">元のノードまたは新しいノードでストレージ暗号化が有効になっている場合があります。その場合は、この手順 で追加の手順を実行して、ストレージ暗号化が正しく設定されていることを確認する必要があります。</block>
   <block id="604021e164c6285018b6c1a32742b633" category="list-text">[[man_lif_verify_4_Step10] ] 次の手順を実行して、ノード 4 の正しいポートに SAN LIF があることを確認します。</block>
@@ -4074,15 +4040,11 @@
   <block id="14173ffe47c7c7e4971c06932a3084e2" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、 KMIP サーバを使用して認証キーを管理します。</block>
   <block id="78bd6f667bd547c51374b0e978e9d001" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合に必要な参照コンテンツと Web サイト。</block>
   <block id="635d2c71cec041685e4ff0c76bb3a669" category="summary">AFF A700 から AFF A900 へのアップグレード時に発生する可能性があるアグリゲートの再配置エラーのトラブルシューティング</block>
-  <block id="542aa4590c9b5c399bd6afe6d9019eab" category="list-text">ステージ 4 のあとで、 node2 を AFF A900 コントローラモジュールおよび NVRAM モジュールに交換します。</block>
   <block id="2fd90d60a25deece3a4d5127856e8967" category="summary">ARL 手順 を使用して AFF A700 を AFF A900 にアップグレードするかどうかを決定します。</block>
   <block id="c08f0b6d71108219929095cbd90d111d" category="paragraph">この手順 は、次の状況で使用します。</block>
-  <block id="57f36738e6329d2ffcb04a05c9df66ce" category="list-text">ネットアップの営業担当者に、 AFF A900 コントローラモジュールと NVRAM モジュール、およびアップグレードに必要な部品を受け取っていることを確認しておきます。</block>
-  <block id="cb5c20f460544e3511cfa78abbc0bee7" category="list-text">ONTAP 9.10.1 以降を実行している必要があります。</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。</block>
   <block id="9cc6fc2f026195efe30da793b04e5bd0" category="paragraph">Do * not * この手順 は、次の状況で使用します。</block>
-  <block id="c97b09e63b29c1434e101e879c019813" category="list-text">AFF A700 システムで FlexArray 仮想化ソフトウェアを使用している。</block>
   <block id="d94e9d7914bbd98510d8cb9e0a6d08b1" category="list-text">クラスタインターコネクトストレージとイーサネット接続ストレージに共有スイッチを使用している。</block>
   <block id="c79acf75c7bb6af7f11f0d260b4152eb" category="paragraph">Fabric MetroCluster または MetroCluster IP 設定のアップグレードについては、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster アップグレードおよび Expansion コンテンツにリンクするには、次の手順を実行します。</block>
   <block id="4aa5a5226abeed57a9e86a4cdbd74335" category="summary">必要に応じて、ストレージ暗号化を設定し、 SSL 証明書をインストールし、 AFF A700 から AFF A900 へのアップグレード時にキー管理サーバをセットアップします。</block>
@@ -4090,10 +4052,7 @@
   <block id="af18adb321560258c2b9a80d2757792a" category="paragraph">アップグレードの各段階で、システムがクラッシュする（リブート、パニック状態、または電源の再投入）場合があります。</block>
   <block id="c7fc4caaca02af86d84b04f258dfd7e6" category="paragraph">node2 はテイクオーバーしませんが、ルート以外のすべてのアグリゲートから引き続きデータを提供しています。</block>
   <block id="aceac87ad181071fb431ae2fdb715377" category="summary">AFF A700 から AFF A900 へのアップグレード中に、ノード 2 のルート以外のアグリゲートをノード 1 に再配置します。</block>
-  <block id="45bd8fa49096f851be07068b30dcaed0" category="paragraph">node2 を AFF A900 コントローラモジュールおよび NVRAM モジュールと交換する前に、 node2 に所有されているルート以外のアグリゲートを node1 に再配置する必要があります。</block>
   <block id="295aeb05b88224ae18df0d9c12e9931d" category="summary">対応する AFF A900 ノード 1 のコントローラモジュールと NVRAM モジュールをスワップしたら、ノード 1 をネットブートする必要があります。</block>
-  <block id="55235259d45464d098b17f2b9f398779" category="paragraph">対応する AFF A900 ノード 1 のコントローラモジュールと NVRAM モジュールをスワップしたら、ノード 1 をネットブートする必要があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを追加する必要があります。</block>
-  <block id="22aba2c38dfd5be04ccecae539161f04" category="paragraph">AFF A900 コントローラモジュールのブートメディアにインストールされている ONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900 ブートメディアの ONTAP バージョンは、アップグレード対象の AFF A700 システムで実行されている ONTAP バージョンと同じで、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。</block>
   <block id="7e3345ca183a02251269d1034b280331" category="list-text">node1 の LOADER プロンプトで、 node1 の「 partner-sysid 」を確認します。</block>
   <block id="99b7f5e29fdd81a190e77a072da58a66" category="paragraph">node1 の場合 'partner-sysid' は node2 のものである必要があります</block>
   <block id="042fc0ffc4af15d2e8abcf37fd293475" category="summary">AFF A700 から AFF A900 へのアップグレード時に、ノードを準備して一連の事前確認を実行します。</block>
@@ -4110,50 +4069,26 @@
   <block id="07eb54c9387ce200e255440dfcbf0685" category="list-text">クラスタベースライセンスキーを入力します</block>
   <block id="d3a8c7c3bb961faba9a8a3172ae28089" category="list-text">Key Management Operability Protocol （ KMIP ）サーバを使用して認証を管理します</block>
   <block id="bafdb6036f860959892761c8ddf5ada2" category="list-text">オンボードキーマネージャ（ OKM ）を使用してストレージ暗号化を管理</block>
-  <block id="cb4c4746969288d0369714b8d83599db" category="cell"><block ref="cb4c4746969288d0369714b8d83599db" category="inline-link-macro-rx"></block></block>
-  <block id="a9e87ca1b1784ceb7feece392847957a" category="list-text">AFF A700 コントローラモジュールと NVRAM モジュールを取り外します</block>
-  <block id="b4403b18071e2ca5e05f326eba5b4948" category="list-text">AFF A900 NVRAM モジュールとコントローラモジュールを node1 に取り付けます</block>
-  <block id="28903874eab25751407a78548a11a0d4" category="inline-link-macro">ステージ 3 ： AFF A900 コントローラモジュールでノード 1 をブートします</block>
-  <block id="dce08c9234f984510fc2b564a40b2ed3" category="cell"><block ref="dce08c9234f984510fc2b564a40b2ed3" category="inline-link-macro-rx"></block></block>
-  <block id="a08cb1ebd9789c8231c6f7fe95ac600b" category="list-text">AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします</block>
   <block id="3047a160705f1dd8a555e5c6e774b38e" category="cell"><block ref="3047a160705f1dd8a555e5c6e774b38e" category="inline-link-macro-rx"></block></block>
-  <block id="077a06e13ba85be7400a3c7082518a65" category="inline-link-macro">ステージ 5 ： AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます</block>
-  <block id="81f79958723f464ea2cc913e92d5fcd1" category="cell"><block ref="81f79958723f464ea2cc913e92d5fcd1" category="inline-link-macro-rx"></block></block>
-  <block id="acefe8f63b4f12e9f8f9caa7855c6b2b" category="list-text">AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます</block>
-  <block id="637841b17ce301de3888791fb5dc3a05" category="inline-link-macro">ステージ 6 ： AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします</block>
-  <block id="18cd7454da0542e1edda356cabdf1e68" category="cell"><block ref="18cd7454da0542e1edda356cabdf1e68" category="inline-link-macro-rx"></block></block>
-  <block id="d2d55edd96c212fea9e5b9140695c621" category="list-text">AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします</block>
   <block id="ee12784e23093c2fd279b5ec0540e621" category="cell"><block ref="ee12784e23093c2fd279b5ec0540e621" category="inline-link-macro-rx"></block></block>
   <block id="8e588b362fa6e77faa0431bb51b2e5d6" category="summary">部分的に自動化された ARL 手順 を使用して、 AFF A700 を AFF A900 にアップグレードします。</block>
-  <block id="11fcc21387b876b11afb701ee44e39fc" category="paragraph">このコントローラのアップグレード中に、 AFF A700 コントローラを AFF A900 コントローラに交換します。このコンテンツでは、自動手順 の手順を紹介しています。自動化されたでは、ディスク割り当てとネットワークポートの到達可能性チェックを使用して、コントローラのアップグレードを簡易化します。</block>
   <block id="5d0e6c628fa55718654de0f71041a32a" category="summary">AFF A700 のコントローラハードウェアを AFF A900 にアップグレードするには、コントローラモジュールと NVS を交換します。</block>
-  <block id="04f31d48e56d090943746f00faca6286" category="paragraph">この手順 では、次のシステム構成で Aggregate Relocation （ ARL ；アグリゲートの再配置）を使用してコントローラハードウェアをアップグレードする方法について説明します。</block>
-  <block id="6b2b3132949d5e5963ea62440851e1da" category="cell">9.10 以降</block>
   <block id="1c962f08f92ca556b5f958f512421f7b" category="cell">AFF A700 から AFF A900 へ</block>
-  <block id="0a991b6a26e16629e37325e8ec12b617" category="cell">同じシャーシを保持することで、 AFF A700 を AFF A900 に変換します</block>
-  <block id="d23f5051b54ef3a223ccfdaa74506f86" category="paragraph">AFF A700 ノードのハイアベイラビリティ（ HA ）ペアのコントローラハードウェアを AFF A900 システムに無停止でアップグレードするには、コントローラモジュールと NVRAM モジュールを交換します。ルート以外のアグリゲートを AFF A700 ノード間で移行します。インストールが完了したら、ルート以外のアグリゲートを AFF A700 ノードから AFF A900 ノードに移行します。アップグレードするノードでホストされているデータには、アップグレード手順の実行中にアクセスできます。</block>
   <block id="1d257551bf86ffe550883c2efe77b8d8" category="paragraph">手順の実行中に、交換用コントローラハードウェアを使用して元のコントローラハードウェアをアップグレードし、ルート以外のアグリゲートの所有権を切り替えます。アグリゲートをノードからノードに複数回移行して、アップグレード手順全体を通じて少なくとも 1 つのノードがアグリゲートからデータを提供していることを確認します。処理を続行する前に、クラスタ内のノード間でデータ LIF を移行することもできます。</block>
   <block id="addb9e70976c2f94b8ccfc3736a31888" category="list-title">重要な情報</block>
-  <block id="feddf6629be3f6a618ac78bf3ed4030d" category="list-text">AFF A900 システムは、高電圧（ 200V ～ 240V ）のみをサポートします。AFF A700 システムをローライン電源（ 100~120V ）で実行している場合は、この手順 を使用する前に AFF A700 の入力電源を変換する必要があります。</block>
   <block id="06e8f251b536b4b0a7af95aa92a37415" category="summary">AFF A900 コントローラモジュールと NVRAM モジュールを使用して、 node2 のインストールを確認します。</block>
-  <block id="01a35799697d769b0c640182d9a4b59b" category="paragraph">AFF A900 コントローラモジュールと NVRAM モジュールを使用して、 node2 のインストールを確認する必要があります。物理ポートは変更されないため、 AFF A700 node2 の物理ポートを AFF A900 node2 にマッピングする必要はありません。</block>
   <block id="1ed68b1a1c4717bcf9913f481374e7de" category="admonition">この手順 では、 VLAN 、 ifgrp 、およびブロードキャストドメインのセクションの再作成が、 node2 で _ ネットワーク設定の名前が _Restore に変更されています。</block>
   <block id="550d4b66b2a123c0592e264de6261a21" category="paragraph">上記の例では、コントローラの交換後に node2 がブートし、クォーラムに参加しています。到達可能性のない複数のポートがあり、到達可能性スキャンを保留しています。</block>
   <block id="b09281cc619dc5d9e8148aef71038fcd" category="paragraph">上記の例に示すように、ポートの到達可能性ステータスが、現在配置されているブロードキャストドメインの到達可能性ステータスと異なる場合があることを示す警告メッセージが表示されます。ポートと回答 'y' または 'n' の接続を適宜確認します</block>
   <block id="5267f49248b15741904ddac0a8c8a79a" category="list-text">次の手順に従って、リストアが必要な SVM および LIF のホームポートがある場合は、それらを指定して LIF のホームポートをリストアします。</block>
   <block id="e57d7ba8fb9b97ff4cc0b7b8c4a0b876" category="summary">AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします。</block>
-  <block id="617a5d16b196505acad38817e41e4c81" category="paragraph">AFF A900 コントローラモジュールと NVRAM モジュールを搭載した node2 がアップグレード可能な状態になりました。コントローラモジュールと NVRAM モジュールをスワップして AFF A700 から AFF A900 にアップグレードするには、コンソール接続と管理接続だけを移動する必要があります。このセクションでは、 AFF A900 コントローラモジュールおよび NVRAM モジュールで node2 をブートするために必要な手順を説明します。</block>
   <block id="3891297e49eacc493b7b08dbb7fa3f93" category="list-text">[[boot_node2 _step1] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、ノード 2 の構成のロード後にブートループが発生しないように、「 setenv bootarg.storageencryption.support` コマンドを「 true 」に設定し、「 kmip.init.maxwait` 」変数を「 off 」に設定する必要があります。</block>
   <block id="9b043fdaedad96364338df4b458e563e" category="paragraph">上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。</block>
   <block id="939b677a0e4df037cd999a739cd94317" category="paragraph">上記の例のシステム ID は一例です。アップグレードするノードの実際のシステム ID は異なります。</block>
   <block id="5952acedcc143d30a19364d245887b58" category="paragraph">プロンプトでノード名を入力するかログインプロンプトを表示するまで、ノードが数回リブートして環境変数をリストアし、システムのカードでファームウェアを更新し、他の ONTAP 更新を実行します。</block>
   <block id="4cc41ac3ff89b0e0d88cacedf58eb50d" category="summary">AFF A900 にアップグレードしたあと、古いシステムが動作しなくなったことをネットアップに知らせてください。</block>
   <block id="8a0b39942bdb20d83fc11a2c0940f45d" category="summary">ARL コントローラ手順 のアップグレード時の AFF A900 NVRAM モジュールとコントローラモジュールのインストール手順</block>
-  <block id="310669d893d588644d176995ed9dad99" category="doc">AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます</block>
-  <block id="0dc0def10482ec13946f7a807b4a2cc0" category="paragraph">アップグレード用に受け取った AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付ける必要があります。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
   <block id="a7b5ccf02bd0f6b23fc889ebb5354dbc" category="paragraph">接地対策がまだの場合は、自身で適切に実施します。</block>
-  <block id="6a41e779d849620d9eab27b1ac05d62c" category="section-title">AFF A900 NVRAM モジュールを取り付けます</block>
-  <block id="2ae4d49dac7c53580706a81482ea9eb9" category="paragraph">次の手順 を使用して、 AFF A900 NVRAM モジュールを node2 のスロット 6 に取り付けます。</block>
   <block id="3d6ee5006b58007aa6b243ac902837ac" category="list-text">NVRAM モジュールをスロット 6 のシャーシ開口部の端に合わせます。</block>
   <block id="a8ad32b9b5381f0e3f1c5897679ae7eb" category="list-text">NVRAM モジュールをスロットにそっと挿入し、文字と数字が記載された I/O カムラッチを上に押して NVRAM モジュールを所定の位置にロックします。</block>
   <block id="254d1495a725edffc2f7c4eb5441615a" category="admonition">あとで手順 で指示があるまで、コントローラモジュールをシャーシに完全に挿入しないでください。</block>
@@ -4163,7 +4098,6 @@
   <block id="1b829ba4059a871e329472e665878ce0" category="summary">AFF A700 から AFF A900 へのアップグレード中に、 SnapMirror 転送と SnapMirror 関係を再開します。</block>
   <block id="aa3db39c0cd2973ce4d1a41590b797bd" category="summary">必要に応じて、 AFF A700 から AFF A900 へのアップグレード時に、 NVE 用に新しいコントローラモジュールを設定します。」</block>
   <block id="0a3b7a3d7928584d593ce11f1af70bda" category="summary">AFF A700 から AFF A900 へのアップグレード時に、ノード 1 上のノード 2 の NAS データ LIF がノード 1 からノード 2 に再配置されたことを確認します。</block>
-  <block id="d6ff025120180dbbbc759b37191b4628" category="paragraph">これらのチェックの実行後、システムによってルート以外のアグリゲートと NAS データ LIF が node2 に再配置され、 AFF A900 コントローラで実行されるようになります。</block>
   <block id="8ab86d38fbb9b5285e479977ebd1e54a" category="summary">AFF A700 から AFF A900 へのアップグレード時に、ステージ 2 、ステージ 3 、またはステージ 5 で LIF がオンラインにならない。</block>
   <block id="dcee0f9120fab3d583542a733afb5a2b" category="summary">必要に応じて、 AFF A700 から AFF A900 へのアップグレード時に、アップグレードした node1 でキー管理ツールの設定をリストアします。</block>
   <block id="44890d8a50a99cc721d8e6b9108090d8" category="summary">AFF A700 から AFF A900 へのアップグレード中に発生する可能性がある問題に関する情報。</block>
@@ -4175,26 +4109,17 @@
   <block id="b8083dfb29da686812e3bafb3a73f823" category="summary">AFF A700 から AFF A900 へのアップグレード時に、 node2 をシャットダウンしてラックまたはシャーシから取り外します。</block>
   <block id="edb3af1551b6e96be7f9b204f3cec480" category="summary">AFF A700 から AFF A900 へのアップグレード中に、障害が発生したアグリゲートの再配置または拒否されたアグリゲート。</block>
   <block id="d1f8c09926e8e53bc0799e4043d1af79" category="summary">AFF A900 コントローラモジュールと NVRAM モジュールを使用して、ノード 1 の設置を確認します。</block>
-  <block id="fd09d973fc5068ff0886f9b666934f60" category="paragraph">AFF A900 コントローラモジュールと NVRAM モジュールを使用して、ノード 1 の設置を確認する必要があります。物理ポートは変更されないため、 AFF A700 node1 から AFF A900 node1 に物理ポートをマッピングする必要はありません。</block>
   <block id="e373d02f1761d14eafc408b260c8b7da" category="admonition">この手順 では、 VLAN 、 ifgrp 、およびブロードキャストドメインのセクション _ が、 node1 で _ ネットワーク設定のリストア _ という名前に変更されています。</block>
   <block id="d51b3938c62e269961f6447fa716fc1f" category="paragraph">上記の例では、コントローラの交換後にノード 1 がブートしています。物理的に接続されていないため、一部のポートに到達できません。「 OK 」以外の到達可能性ステータスのポートはすべて修復する必要があります。</block>
   <block id="5e6358f28b34aeff7c31a849cd71090e" category="summary">AFF A700 から AFF A900 へのアップグレードを実行するには、特定のツールとドキュメントが必要です。</block>
   <block id="d72e37445f435123c47c01a1bd03271c" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> このアップグレードに必要な参照ドキュメントおよび参照サイトのリストにアクセスするには、次の手順を実行します。</block>
   <block id="b2d1e6982a7161543252f06b3304ae95" category="summary">アップグレードを開始する前に、 AFF A700 から AFF A900 へのアップグレードに適したハードウェアがあることを確認します。</block>
-  <block id="1176c0fcba3cf6f058a29800ebea5d8a" category="paragraph">アップグレードを開始する前に、 AFF A700 システムを AFF A900 システムにアップグレードするための正しいハードウェアがあることを確認する必要があります。アップグレードする HA ペアごとに、システムコントローラモジュールを 2 つと NVRAM モジュールを 2 つずつ用意する必要があります。足りないパーツがある場合は、テクニカルサポートに問い合わせるか、ネットアップの営業担当者にお問い合わせください。</block>
   <block id="b17a59560ebfb087ad44c6322178e9e4" category="summary">node2 で HA ペアを無効にし、 AFF A700 から AFF A900 へのアップグレード中にノード 1 をシャットダウンします。</block>
-  <block id="d833cdd8c2a2d78a9e958f2ad1aa027a" category="paragraph">ノード 1 を撤去するには、自動処理を再開して、ノード 2 と HA ペアを無効にし、ノード 1 を正しくシャットダウンします。あとで、 AFF A700 コントローラモジュールと NVRAM モジュールをノード 1 シャーシから取り外し、 AFF A900 NVRAM モジュールとコントローラモジュールをノード 1 に取り付ける必要があります。</block>
   <block id="eedd3589e87e21a342b71fbe4c46b471" category="paragraph">この段階で、 node1 は停止し、すべてのデータが node2 によって提供されます。ノード 1 とノード 2 は同じシャーシに搭載されており、同じ電源装置のセットから電力が供給されているため、シャーシの電源をオフにしないでください。node1 コントローラモジュールと node1 NVRAM モジュールのみを削除するように注意する必要があります。通常、 node1 はコントローラ A で、システム背面からコントローラを見るときにシャーシの左側に配置されます。コントローララベルは、シャーシのコントローラモジュールのすぐ上にあります。</block>
-  <block id="60add02e6f855fc403608c4428daa060" category="section-title">AFF A700 NVRAM モジュールを取り外します</block>
-  <block id="be1a493bb2bbb64bcab3e438e79773b3" category="paragraph">次の手順 を使用して、 AFF A700 NVRAM モジュールを取り外します。</block>
-  <block id="906fd0158ff703237eed6f1ded5f66d9" category="admonition">AFF A700 NVRAM モジュールはスロット 6 にあり、システム内の他のモジュールの 2 倍の高さです。</block>
   <block id="0857dbdec564e89c1ed34a571bb8af41" category="list-text">NVRAM モジュールのロックを解除して、 node1 のスロット 6 から取り外します。</block>
   <block id="646ac9208401ea9c6c2afc14b196cad5" category="paragraph">NVRAM モジュールがシャーシから外れ、数インチ移動します。</block>
   <block id="ca401bca71da68589a6c9f6ae6d2abdf" category="list-text">NVRAM モジュール前面の両側にあるプルタブを引いてモジュールをシャーシから取り外します。</block>
   <block id="1ade29bb16a89d6eb1ac0378b26d08cc" category="image-alt">NVRAM モジュールを取り外します</block>
-  <block id="a0f5247271e7048116aa586dafd443b7" category="list-text">AFF A700 NVRAM モジュールのコアダンプデバイスとしてアドオンモジュールを使用している場合は、それらを AFF A900 NVRAM モジュールに転送しないでください。</block>
-  <block id="f7ad80f76c353ca20776e333fbf2c24d" category="paragraph">アップグレード用に受け取った AFF A900 NVRAM モジュールとコントローラモジュールを node1 に取り付ける必要があります。コアダンプデバイスを AFF A700 NVRAM モジュールから AFF A900 NVRAM モジュールに移動しないでください。</block>
-  <block id="56ae35a8a7c9aea560074a59dd85953e" category="paragraph">次の手順 を使用して、 AFF A900 NVRAM モジュールをノード 1 のスロット 6 に取り付けます。</block>
   <block id="5d555500d4c58002388a7088e1c8f510" category="image-alt">NVRAM モジュールを取り付けます</block>
   <block id="a93447d104277da61e99f98be3016581" category="list-text">コントローラモジュールの端をシャーシの開口部に合わせ、コントローラモジュールをシステムに半分までそっと押し込みます。</block>
   <block id="8c3e973bd184c686de74d4c99763571c" category="admonition">手順 の後半で指示があるまでコントローラモジュールをシャーシに完全に挿入しないでください。</block>
@@ -4202,25 +4127,17 @@
   <block id="a7b2214a170507e43e239d129ff056bd" category="image-alt">コントローラモジュールを取り付けます</block>
   <block id="79ba196960d086bc934b5c973394f991" category="list-text">自動ブートを中断すると、 node1 で LOADER プロンプトが停止します。ブートを中断せずに node1 でブートが開始された場合は、プロンプトが表示されるまで待ち、 * Ctrl+C * を押してブートメニューに進みます。ノードがブートメニューで停止したら、オプション「 8 」を使用してノードをリブートし、リブート中に自動ブートを中断します。</block>
   <block id="5c29a1b28ae2f684e62d4c2276e7e8e6" category="summary">対応する AFF A900 node2 コントローラモジュールと NVRAM モジュールをスワップしたら、ネットブートが必要になることがあります。</block>
-  <block id="703f447483d766269b52a3d26e221a3d" category="paragraph">対応する AFF A900 node2 コントローラモジュールと NVRAM をスワップしたら、モジュールでネットブートが必要になることがあります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。</block>
-  <block id="ef9602c57cf8182f8c7c4634f476ea25" category="list-text">AFF A900 コントローラモジュールで node2 が実行されてブートするのを待ち、次の出力に示すようにブートメニューオプションを表示します。</block>
   <block id="1cc02a52af13d4259858a0ef41cd105b" category="list-text">node2 の LOADER プロンプトで、 node1 の「 partner-sysid 」を確認します。</block>
   <block id="1861716b0cfdb0620c0ad2a51976da67" category="paragraph">node2 の場合 'partner-sysid' は node1 のものである必要があります</block>
   <block id="de9f7d5e1d4c04a6ec4f1097d1a1a241" category="summary">ARL を使用して AFF A700 を AFF A900 にアップグレードできるかどうかを確認します。</block>
-  <block id="6244645d8886d0af5e5f9f789a1363cd" category="paragraph">ARL を使用して、 ONTAP 9.10.1 以降を実行する AFF A700 コントローラのペアを AFF A900 システムにアップグレードするには、システムと、元のコントローラと交換用コントローラの両方の構成が必要です。</block>
-  <block id="ab7cae63aadb61d757d1e31be5a5dfa4" category="paragraph">ARL を使用して AFF A900 にアップグレードし、コントローラモジュールと NVRAM モジュールのみを交換する方法は、 ARL でサポートされる組み合わせです。 AFF新しいシャーシを含む、完全なシステムとして新しい AFF A900 システムを購入した場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ONTAP 9.8 以降の _content を実行しているコントローラハードウェアをアップグレードするには、 "system controller replace" コマンドを使用してください。</block>
-  <block id="211e5683572c7d90b708c5a8728647a2" category="admonition">この手順 は、環境 ONTAP 9.10.1 以降を実行している AFF A900 への AFF A700 のアップグレードに限定して提供されます。他のシステムの組み合わせのアップグレードには、この手順 を使用しないでください。</block>
   <block id="253fd57a6c2965ca518ebbfc6bf1e7cc" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、を参照してください <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 詳細および解決策については、手順の末尾にあるセクションを参照してください。</block>
   <block id="62685a7763bc1abddb93a736f4149d3a" category="summary">HA ペアが有効になっていることを確認し、ノード 1 とノード 2 のストレージアクセスと LIF を確認し、 AFF A700 を AFF A900 にアップグレードしたあとにアグリゲートの所有権を確認します。</block>
   <block id="30dfb9ed789b89ce66132f0084fdfe74" category="paragraph">正しいセットアップを確認するには、 HA ペアが有効になっていることを確認する必要があります。さらに、 node1 と node2 が相互のストレージにアクセスできること、およびクラスタ上の他のノードに属するデータ LIF を所有していないことを確認する必要があります。また、すべてのデータアグリゲートが正しいホームノードにあり、両方のノードのボリュームがオンラインであることを確認する必要があります。新しいノードの 1 つにユニファイドターゲットアダプタがある場合は、ポート設定をすべてリストアする必要があり、場合によってはアダプタの使用方法の変更が必要になることがあります。</block>
   <block id="6e7e19ae8357eafafb5df9d5e403d692" category="paragraph">でキャプチャした出力と比較できます <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> セクション。</block>
-  <block id="2104ce46042122ef5e6074d53e8e5b96" category="list-text">構成で NetApp Storage Encryption （ NSE ）を使用していた場合、「 setenv bootarg.storageencryption.support 」コマンドを「 kmip.init.maxwait` 」変数を「 true 」に設定します（ AFF A900 コントローラモジュールと NVRAM モジュールを備えた in_bootnode2 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）を使用している場合は、変数をリセットする必要があります</block>
   <block id="7bd08b5c3a9e3849e82a1fef790d117b" category="summary">AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします。</block>
-  <block id="7d30e2f4deef3993c9053b53b1e98242" category="paragraph">AFF A900 コントローラモジュールと NVRAM モジュールを搭載したノード 1 がブート可能な状態になります。コントローラモジュールと NVRAM モジュールをスワップして AFF A700 から AFF A900 にアップグレードするには、コンソール接続と管理接続だけを移動する必要があります。このセクションでは、 AFF A900 コントローラモジュールおよび NVRAM モジュールで node1 をブートするために必要な手順を説明します。</block>
   <block id="a9e10fdb71bd2ac495122a9187fd9483" category="list-text">この構成で NetApp Storage Encryption （ NSE ）を使用している場合、 'setenv bootarg.storageencryption.support' コマンドを 'true' に設定し、 node1 構成のロード後にブートループが発生しないように、 kmip.init.maxwait` 変数を 'off' に設定する必要があります。</block>
   <block id="1da419b6d2e60d5ecd7df833a2ba8f52" category="summary">AFF A700 から AFF A900 へのアップグレード時に、 node2 上の node1 の NAS データ LIF が node2 から node1 に再配置されていることを確認します。</block>
   <block id="74d87258605a34730c51b53265d130eb" category="summary">ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動し、 AFF A700 から AFF A900 へのアップグレード時にノード 1 のリソースをリストアします。</block>
-  <block id="532e1c77f15a540d9366e10e815b985e" category="paragraph">ノード 1 を AFF A900 コントローラモジュールと NVRAM モジュールに交換する前に、ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動してから、 AFF A900 システムで実行されているノード 1 のリソースを最終的にリストアする必要があります。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。</block>
   <block id="fa5b7598ff79398479188d836810f48d" category="summary">AFF A700 から AFF A900 へのコントローラアップグレードをサポートするために必要な参考資料や Web サイト。</block>
   <block id="395efc410823d3328f70ddb736016f0b" category="summary">ONTAP 9.5 を実行しているコントローラを 'system controller replace' コマンドを使用してアップグレードするときに 'node4 が定足数に参加し 'node1 の VLAN ' インタフェースグループ ' ブロードキャストドメインを再作成し ' キー管理ツールの構成を復元することを確認します</block>
   <block id="3a042ad216541ed5571bc523ce7be6e9" category="summary">ONTAP 9.5 を実行しているコントローラを 'system controller replace' コマンドを使用して 9.7 にアップグレードすると発生する可能性がある ' アグリゲートの再配置の失敗をトラブルシューティングします</block>
@@ -4367,9 +4284,6 @@
   <block id="ce9a79ebc7c19f98472942ce9de695aa" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に、 node3 と node4 をネットブートする準備をします。</block>
   <block id="c9e368205ce643c1e4f03ece9279d673" category="summary">ONTAP 9.7 以前を実行しているコントローラでは、 ARL を手動でアップグレードする際に認証キーを管理するには、 KMIP サーバを使用します。</block>
   <block id="ed576374c6e7857fa007ac7fd9061164" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、参照コンテンツと Web サイトが必要です。</block>
-  <block id="a1e942c10f3ef940af9560fa7f9b1bcf" category="sidebar">ステージ 3 ：AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします</block>
-  <block id="1eec8458b505239680f521752a8c01ec" category="sidebar">ステージ 5 ：AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます</block>
-  <block id="994245d9c168d8ec5856e8519cf95566" category="sidebar">ステージ 6 ：AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします</block>
   <block id="46d710808513caa456c59b3efa90d166" category="list-text">ノード 1 とノード 2 に 2 つまたは 4 つのクラスタ LIF があるかどうかを確認します。</block>
   <block id="cae5b224d557c99a0eebcc5cacc40bf4" category="inline-link-macro">ノード 3 の UTA / UTA2 ポートの確認と設定、手順 15</block>
   <block id="a298d19803fc12a7c7efaba3c5bf6f9c" category="paragraph">FC または UTA / UTA2 設定がない場合は、を実行します <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block> ノード 3 がノード 1 のディスクを認識できるようにします。</block>
@@ -4421,6 +4335,118 @@
   <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">ワークシート：コントローラのアップグレード前後に収集する情報</block>
   <block id="17f9514d7bcdbd086bef311b63567524" category="admonition">FAS8080 や AFF8080 システムなど、ノードあたり 3 つ以上のクラスタポートを備えたシステムは、アップグレードを開始する前に、ノードあたり 2 つのクラスタポートにクラスタ LIF を移行してホームに戻す必要があります。ノードごとに 3 つ以上のクラスタポートを使用してコントローラのアップグレードを実行すると、アップグレード後に新しいコントローラのクラスタ LIF がなくなる可能性があります。</block>
   <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
-  <block id="4c6ae5d985a0142843ba3f6f8875cf0b" category="cell">AFF A900^4^</block>
-  <block id="44b12a5fbf6c87a940ab615ec2102604" category="paragraph">^4^ONATP 9.10.1以降、ONTAP 9.8以降を実行するAFF8080システムから9.10.1以降を実行するAFF A900システムへのARL自動アップグレードがサポートされます。</block>
+  <block id="ae201a8621d5678d9f7db2f1543be658" category="inline-link-macro">「system controller replace」コマンドを使用して、AFF A700からAFF A900またはFAS9000に、ONTAP 9.10.1以降を実行するFAS9500にアップグレードします</block>
+  <block id="df69e9ae0d9f7ac20a24f0c796c5fd93" category="cell"><block ref="df69e9ae0d9f7ac20a24f0c796c5fd93" category="inline-link-macro-rx"></block></block>
+  <block id="88b12ac6a25fc9dcdeff5648aa2d9e8f" category="cell">ONTAP 9.10.1以降を実行するFAS9500システムにAFF A700を無停止でアップグレードし、system controller replaceコマンドを使用してAFF A900システムまたはFAS9000にアップグレードする場合に必要なアグリゲートの再配置手順について説明します。</block>
+  <block id="562fafbbb89476d10c038539c7edc691" category="list-text">システムが再起動ループに入って「ディスクが見つかりません」というメッセージが表示された場合は、ポートがターゲットモードにリセットされ、ディスクを認識できないためです。に進みます <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 終了： <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block> これを解決します。</block>
+  <block id="f2c15df21143edf73966939dd59ca6fb" category="list-text">「 no disks found 」というメッセージが表示されてシステムがリブートループに入ると、システムが FC ポートまたは UTA/UTA2 ポートをターゲットモードにリセットしたため、ディスクが認識されないことを示します。この問題を解決するには、に進みます <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 終了： <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block>をクリックするか、セクションに移動します <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
+  <block id="a21bb6fd42ff6eb59f1b181296f7c703" category="cell">FAS8020 ^3^、FAS8040 ^3^、FAS8060、FAS8080</block>
+  <block id="34a273586a26b9c6b133c4ff92d23f7c" category="cell">FAS8060 ^4^、FAS8080 ^4^</block>
+  <block id="756d409209ace98589705774b5011aa0" category="cell">FAS9500</block>
+  <block id="8245966310b85f53855742d8e5ba304d" category="cell">AFF8020^3^、AFF8040^3^、AFF8060、AFF8080を参照してください</block>
+  <block id="15669f56a9080989e0dd31ca6ec7de95" category="cell">AFF8060 ^4^、AFF8080 ^4^</block>
+  <block id="ec5e81cea4c5ee83d635778e86350e80" category="cell">AFF A900 の略</block>
+  <block id="83881871feba8f42c547551eb77311c5" category="cell">FAS8300 ^2^、FAS8700、FAS9000、FAS9500</block>
+  <block id="b2eb0585a7b45bf3f01cacfcc45b17f6" category="cell">FAS8300、FAS8700、FAS9000</block>
+  <block id="5b7a8b52e3325206af4bfbcf07693215" category="cell">AFF A400 ^2^、AFF A700、AFF A800^1 ^、AFF A900</block>
+  <block id="e02a538b8ab4faf6c7d890fa1fcfa7a7" category="cell">AFF A320 ^4^</block>
+  <block id="540dacfeb5577ce4282c41e9c7518680" category="cell">AFF A400</block>
+  <block id="3987c2b3042faa1f0f41d1ec08f2ed7e" category="cell">AFF A400 、 AFF A700</block>
+  <block id="41c1636eb5024bf8b152d1ca09286521" category="paragraph">^2^ AFF A300からAFF A400またはFAS8200を2ノードスイッチレスクラスタ構成でFAS8300システムにアップグレードする場合は、コントローラのアップグレード用の一時的なクラスタポートを選択する必要があります。AFF A400 および FAS8300 システムは、イーサネットバンドルとして、メザニンカードポートはイーサネットタイプ、 FC タイプの FC バンドルとして、 2 種類の構成で提供されます。</block>
+  <block id="e9dc6fafb0f1f8ce64537ec567468d16" category="paragraph">^3FAS8020、FAS8040、AFF8020、およびAFF8040のシステムを上記の表のターゲット交換コントローラにアップグレードする場合、交換用コントローラが古いコントローラと同じONTAP バージョンを実行している必要があります。FAS8020、FAS8040、AFF8020、およびAFF8040のシステムは、ONTAP 9.8以降のONTAP バージョンをサポートしていません。</block>
+  <block id="58639a55064ac1eb8afcb76dee256457" category="paragraph">^4^コントローラのアップグレードでサポートされているONTAP のバージョンを確認します。</block>
+  <block id="a45da96d0bf6575970f2d27af22be28a" category="cell">システム</block>
+  <block id="d85bd4eac4ae2ba50be5c03b292af8f8" category="cell">9.9.1以降</block>
+  <block id="94869c0e3d68936a54ce1ef1d7459f3e" category="cell">AFF8060の場合</block>
+  <block id="a07a923eb6b740023890d052b6fb6e9a" category="cell">9.8P13以降のパッチ</block>
+  <block id="728152178b0535e4c7e93f53223fbfff" category="cell">9.8P10以降のパッチ</block>
+  <block id="edbeb952c4054f67ce1836afbda00903" category="cell">FAS8060</block>
+  <block id="eb30343e3b73c36d3224c319d83cc2e6" category="cell">9.10.1P3以降</block>
+  <block id="8ed24dd5fb292ecefe76fe92a5fc3988" category="cell">FAS8080</block>
+  <block id="e2060bf680bf4facfccf3befec69ef04" category="cell">9.8P12以降のパッチ</block>
+  <block id="c7f409d27e38c597f7352e5c3444f367" category="list-text">node3で次のコマンドを入力し、現在ポートがどのように設定されているかを確認します。</block>
+  <block id="d6c2e2d86e9dabadec600438d0eb1471" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールを使用して、node1のインストールを確認する必要があります。物理ポートは変更されないため、古いnode1の物理ポートを交換用node1にマッピングする必要はありません。</block>
+  <block id="bec9a7c0c4bfaaeb806f9f4ddb681c8c" category="paragraph">AFF A900またはFAS9500コントローラモジュールでnode1をブートしたあと、正しくインストールされていることを確認する必要があります。ノード 1 がクォーラムに参加するのを待ってから、コントローラの交換処理を再開する必要があります。</block>
+  <block id="8f34775699af0e65cbc1a35c0cb8b84b" category="admonition">AFF A700からAFF A900またはFAS9000からFAS9500コントローラへのアップグレード時、ネットワークポートとその接続は変更されません。すべてのポートを正しいブロードキャストドメインに配置し、ネットワークポートの到達可能性を変更しないでください。ただし、 LIF を node2 から node1 に戻す前に、ネットワークポートの到達可能性と健全性ステータスを確認する必要があります。</block>
+  <block id="6b31a3b30b01ea09ca78efcb226343b9" category="paragraph">node2をAFF A900またはFAS9500コントローラモジュールとNVRAMモジュールに交換する前に、node2に所有されているルート以外のアグリゲートをnode1に再配置する必要があります。</block>
+  <block id="ec034682ed62501de72881ae5f23afb0" category="paragraph">対応するAFF A900またはFAS9500 node2のコントローラモジュールとNVRAMを交換したあと、モジュールでネットブートが必要になることがあります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。</block>
+  <block id="7d4491ed84bf03aef84c9714a80e7635" category="paragraph">AFF A900またはFAS9500コントローラモジュールのブートメディアにインストールされているONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900またはFAS9500ブートメディア上のONTAP バージョンは、アップグレードするAFF A700またはFAS9000システム上で実行されているONTAP バージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。</block>
+  <block id="a841a9a6470f2ced16c0b663704b5dfe" category="list-text">次の出力に示すように、AFF A900またはFAS9500コントローラモジュールで実行されているnode2がブートするまで待ち、ブートメニューのオプションを表示します。</block>
+  <block id="162c8b4a39fcb111690cbc082fa26537" category="paragraph">ノード 1 を撤去するには、自動処理を再開して、ノード 2 と HA ペアを無効にし、ノード 1 を正しくシャットダウンします。あとで、AFF A700またはFAS9000コントローラとNVRAMモジュールをノード1のシャーシから取り外し、AFF A900またはFAS9500コントローラとNVRAMモジュールをノード1にインストールする必要があります。</block>
+  <block id="f22136c41db26c6022caf6417275b450" category="section-title">AFF A700またはFAS9000コントローラとNVRAMモジュールを取り外します</block>
+  <block id="ba579f865c148542656e741f915bc210" category="section-title">AFF A700またはFAS9000コントローラモジュールを取り外します</block>
+  <block id="208671d931da81374958ab0bdeb8d0f0" category="paragraph">次の手順 を使用して、AFF A700またはFAS9000コントローラモジュールを取り外します。</block>
+  <block id="831816e1924f3edb2d170ec4c291d0f3" category="section-title">AFF A700またはFAS9000 NVRAMモジュールを取り外します</block>
+  <block id="fceff39b493e10b2b789e99ad15cc406" category="paragraph">次の手順 を使用して、AFF A700またはFAS9000 NVRAMモジュールを取り外します。</block>
+  <block id="3d748e41fa426d2025ff3eb80b369ede" category="admonition">AFF A700またはFAS9000 NVRAMモジュールはスロット6にあり、システム内の他のモジュールの2倍の高さです。</block>
+  <block id="1f15728c77802915b0186fe3b48a5405" category="section-title">AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode1にインストールします</block>
+  <block id="44188a216db4c50ab80d8d6376079f11" category="paragraph">アップグレード用に受け取ったAFF A900またはFAS9500 NVRAMとコントローラモジュールをnode1にインストールする必要があります。</block>
+  <block id="32820fb65b578170b0fc242eb57ba80e" category="list-text">コアダンプデバイスをAFF A700 NVRAMモジュールからAFF A900 NVRAMモジュールに移動しないでください。</block>
+  <block id="d0106eeb656b11c6a07a8e45dcf1b214" category="list-text">FAS9000 NVRAMモジュールに取り付けられているすべてのフラッシュキャッシュモジュールをFAS9500 NVRAMモジュールに移動します。</block>
+  <block id="c7fecf95820e09d00c74bf86805bc991" category="section-title">AFF A900またはFAS9500 NVRAMモジュールを取り付けます</block>
+  <block id="1a841cb7f620c7f0684b56a8a034fb65" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500 NVRAMモジュールをnode1のスロット6に取り付けます。</block>
+  <block id="830a042377d7fdbd36c48ece8669e61c" category="section-title">AFF A900またはFAS9500コントローラモジュールをnode1にインストールします。</block>
+  <block id="bb0ced2b785386259d517f7ae7bd88d1" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500コントローラモジュールをnode1にインストールします。</block>
+  <block id="a8785e7ad1cb0d71507bbcb99df9c1f7" category="cell">AFF A700システムをAFF A900システムに変換し、A700シャーシを保管します</block>
+  <block id="e1b003e7f655a9b7177c226f66898500" category="cell">9.10.1 P3以降</block>
+  <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000からFAS9500へ</block>
+  <block id="92edbfe3ededa1bb85b931ec295f360d" category="cell">FAS9000システムをFAS9500システムに変換して、FAS9000シャーシを維持します。</block>
+  <block id="a5ce3ab443f38c92fc244c3533db25fd" category="paragraph">ハイアベイラビリティ（HA）ペアのコントローラハードウェアは、コントローラとNVRAMモジュールを交換することで、無停止でアップグレードできます。最初に、ルート以外のアグリゲートを古いコントローラノード間で移行します。インストールが完了したら、ルート以外のアグリゲートを古いコントローラノードから交換用コントローラノードに移行します。アップグレードするノードでホストされているデータには、アップグレード手順の実行中にアクセスできます。</block>
+  <block id="3f8470255fba84fd3f339ba171093986" category="paragraph">このコントローラのアップグレード手順 時に、AFF A700またはFAS9000システムの各ノードの2つのフィールド交換可能ユニット（FRU）を新しいFRUと交換する必要があります。</block>
+  <block id="c9df35145886ac45d1457faee2b9dd89" category="admonition">I/O カード、データケーブル、ディスクシェルフ、およびディスクを移動、切断、再接続する必要はありません。</block>
+  <block id="4ed758f1326f5379f7dc30fe674ce726" category="inline-link-macro">コントローラのアップグレードに関するガイドラインを参照してください</block>
+  <block id="61bb0e064fd915427168b2e72e080eff" category="list-text">この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、を読んで理解する必要があります <block ref="937d04c1dac5501bcacf105e8700fe45" category="inline-link-macro-rx"></block> および <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> アップグレード開始前のセクション。</block>
+  <block id="15bb782d54e5e11e2e8ab3b723e7ec55" category="list-text">この手順 は、AFF A700システムとFAS9000システムにのみ適用されます。AFF A900またはFAS9500システムへのアップグレードが必要な他のすべてのコントローラモデルについては、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 「 system controller replace 」コマンドを使用して、 ONTAP 9.8 以降を実行するコントローラハードウェアと、 ONTAP 9.8 以降を実行するコントローラハードウェアを手動でアップグレードするには、「 _Using Aggregate Relocation 」コマンドを使用します。</block>
+  <block id="f57bde3eaa64080d17b3c49dfac5f25f" category="list-text">AFF A900およびFAS9500システムでは、高電圧（200~240V）のみがサポートされます。AFF A700またはFAS9000システムをローライン電源（100~120V）で実行している場合、この手順 を使用する前に、AFF A700またはFAS9000の入力電源を変換する必要があります。</block>
+  <block id="a34fce485aa189385b6d78cd230756d8" category="list-text">ダウンタイムを発生させずにAFF A700またはFAS9000システムからアップグレードする場合、ストレージを移動するか、テクニカルサポートにお問い合わせください。を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。</block>
+  <block id="3e6b0398ec9c232118e2d2bc538ec645" category="inline-link-macro">ステージ2：リソースをノード1から再配置し、AFF A700またはFAS9000 node1から撤去します</block>
+  <block id="234aad7efddedee52ac80d1129d0fddf" category="cell"><block ref="234aad7efddedee52ac80d1129d0fddf" category="inline-link-macro-rx"></block></block>
+  <block id="f8268b4f2949c257f7e5044e9ac05880" category="inline-link-macro">ステージ3：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします</block>
+  <block id="14c73342ec8c7cda4bcc16e81c01222e" category="cell"><block ref="14c73342ec8c7cda4bcc16e81c01222e" category="inline-link-macro-rx"></block></block>
+  <block id="4440b548c1cae9d923561d0a7fe3a103" category="list-text">AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします</block>
+  <block id="3e2a6a2edac30411bac1b47c4ba20774" category="list-text">アップグレード後のAFF A900またはFAS9500 node1は、node1個のアグリゲートのホーム所有者と現在の所有者です</block>
+  <block id="88429116c298b552cf5a2fd1dfd8ac94" category="inline-link-macro">ステージ5：AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします</block>
+  <block id="610628fd4123449e9b763fe935601b98" category="cell"><block ref="610628fd4123449e9b763fe935601b98" category="inline-link-macro-rx"></block></block>
+  <block id="dbc99796dd5482cbc7660b57b686c30f" category="list-text">AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします</block>
+  <block id="25beb58d3a670fb2c16081f902a5bff2" category="inline-link-macro">ステージ6：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします</block>
+  <block id="82fe66fed743ab06100b56ff7cede89d" category="cell"><block ref="82fe66fed743ab06100b56ff7cede89d" category="inline-link-macro-rx"></block></block>
+  <block id="d066afecd32f577c431df88c1a421ca4" category="list-text">AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします</block>
+  <block id="3d34e56cf21c4a138ab823660c2b5555" category="paragraph">ARLを使用して、次のシステム構成のコントローラのペアをアップグレードします。</block>
+  <block id="2a0a9f74d7fd41063ed18276c24550d5" category="list-text">ONTAP 9.10.1以降を実行しているAFF A900システムにAFF A700コントローラのペアをアップグレードします</block>
+  <block id="546138e0b7501a286c581953c65b874d" category="list-text">ONTAP 9.10.1P3以降を実行しているFAS9500システムにFAS9000コントローラのペアをアップグレードします</block>
+  <block id="8c3db477300524bd7d8bcf2bba005da2" category="paragraph">AFF A700からAFF A900へのコントローラのアップグレード、またはARLを使用したFAS9000からFAS9500へのコントローラのアップグレードでは、NVRAMモジュールがサポートされています。新しいシャーシを含む完全なシステムとしてAFF A900またはFAS9500システムが新規に購入された場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ONTAP 9.8 以降の _content を実行しているコントローラハードウェアをアップグレードするには、 "system controller replace" コマンドを使用してください。</block>
+  <block id="89270eb0a4789198b9486a5396fb9846" category="admonition">この手順 は、厳密に環境 ONTAP 9.10.1以降を実行するAFF A700からAFF A900へのアップグレード、および9.10.1P3以降を実行するFAS9000からFAS9500へのアップグレードです。他のシステムの組み合わせのアップグレードには、この手順 を使用しないでください。</block>
+  <block id="cf7bed4e96113c76fe71493d087876b9" category="paragraph">アップグレード用に受け取ったAFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールする必要があります。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
+  <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500 NVRAMモジュールをnode2のスロット6に取り付けます。</block>
+  <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">AFF A900またはFAS9500コントローラモジュールをnode2にインストールします</block>
+  <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500コントローラモジュールをnode2にインストールします。</block>
+  <block id="7226eae03ab7f26a2dd297f61cf08736" category="paragraph">これらのチェックを実行すると、システムによってルート以外のアグリゲートとNASデータLIFがnode2に再配置され、AFF A900またはFAS9500コントローラで実行されています。</block>
+  <block id="1e5f9f2daefe506ea2b48caff7fcf4ae" category="paragraph">ノード1をAFF A900またはFAS9500コントローラとNVRAMモジュールに交換する前に、ルート以外のアグリゲートとNASデータLIFをノード1からノード2に移動してから、AFF A900またはFAS9500システムで実行されているノード1でノード1のリソースを最終的にリストアする必要があります。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。</block>
+  <block id="3cf8297a666eb50587e23b50dcba8b11" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時に、クラスタまたはサービスの健常性のために SAN LIF を移動する必要はありません。AFF A900またはFAS9500システムでノード1をオンラインにしたあと、LIFが正常で適切なポートに配置されていることを確認する必要があります。</block>
+  <block id="8a2c86b63701889cf10547896e555b82" category="list-text">ステージ4のあとで、node2をAFF A900またはFAS9500コントローラとNVRAMモジュールに交換します。</block>
+  <block id="c0bf6385dfa15c204a13d5abb6770653" category="paragraph">このコントローラのアップグレード中に、AFF A700コントローラをAFF A900コントローラまたはFAS9000コントローラとFAS9500コントローラと交換します。このコンテンツでは、自動手順 の手順を紹介しています。自動化されたでは、ディスク割り当てとネットワークポートの到達可能性チェックを使用して、コントローラのアップグレードを簡易化します。</block>
+  <block id="2a2d4d28b7b0848fbdd189061adaff52" category="paragraph">このコンテンツでは、AFF A700 HAペアのストレージコントローラを、新しいAFF A900コントローラまたはFAS9000 HAペアのコントローラと新しいFAS9500コントローラとの間でアップグレードする方法について説明します。既存のデータとディスクはすべて維持されます。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。</block>
+  <block id="3d58d6338cfd5f06b224201846bd6759" category="list-text">AFF A900またはFAS9500コントローラ、NVRAMモジュール、およびアップグレードに必要な部品を受け取ったことを、ネットアップの営業担当者に確認しておきます。</block>
+  <block id="58fd942a7ba8a430b491bba397e88d17" category="list-text">AFF A900コントローラでONTAP 9.10.1以降を実行している。</block>
+  <block id="7addcb2495004d218f3791cfcb74d41e" category="list-text">FAS9500コントローラでONTAP 9.10.1P3以降が実行されています。</block>
+  <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">AFF A700またはFAS9000システムでFlexArray 仮想化ソフトウェアを使用している。</block>
+  <block id="c72ac68ecc63380b07ba76bc038edf2e" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールで、node2のインストールを確認する必要があります。物理ポートは変更されないため、古いnode2の物理ポートを交換するnode2にマッピングする必要はありません。</block>
+  <block id="fbb88f36cd542fa5f9d7d9b7989c4fa9" category="paragraph">AFF A900またはFAS9500コントローラモジュールでnode1をブートしたあと、正しくインストールされていることを確認する必要があります。node2 がクォーラムに参加するまで待ってから、コントローラの交換処理を再開する必要があります。</block>
+  <block id="2547b168178c27dad563f660708cda35" category="list-text">構成にNetApp Storage Encryption（NSE）を使用していた場合、「setenv bootarg.storageencryption.support」コマンドを「kmip.init.maxwait`」変数を「true」に設定します（AFF A900またはFAS9500コントローラとNVRAMモジュールを搭載したin_bootnode2）。 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）を使用している場合は、変数をリセットする必要があります</block>
+  <block id="0b67bd45e44a6983f2e329371f92a85c" category="paragraph">対応するAFF A900またはFAS9500 node1のコントローラモジュールとNVRAMモジュールを交換したら、ノード1をネットブートする必要があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを追加する必要があります。</block>
+  <block id="6bc5a701ba593a754b9fc417aacb558c" category="paragraph">AFF A900またはFAS9500コントローラモジュールのブートメディアにインストールされているONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900またはFAS9500ブートメディア上のONTAP バージョンは、アップグレードするAFF A700またはFAS9000システムで実行されているONTAP バージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。</block>
+  <block id="fed5188660beab0c1ca98ade1cf9e488" category="list-text">AFF A900またはFAS9500コントローラモジュールで実行されているnode1がブートするまで待ち、次のようにブートメニューオプションを表示します。</block>
+  <block id="2fef7d8ad2c6da5a6bfc7b0d1cb4d82f" category="doc">AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします</block>
+  <block id="85a900d149967784a6d6e1061792097f" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールで構成されたnode2が、アップグレード可能な状態になりました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールをスワップすると、コンソール接続と管理接続のみが移動します。ここでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートするために必要な手順を示します。</block>
+  <block id="29af000d792467e009d5e082d6fb2b1e" category="list-text">ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。AFF A700またはFAS9000 node1のディスクをAFF A900またはFAS9500 node1に再割り当てするには、プロンプトでnode2の実際のノード名を入力します。次の例を参考にしてください。</block>
+  <block id="5e1956d6adc0bdab37f993d5b46e373b" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールを搭載したノード1で、ブートの準備が完了しました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールを交換すると、コンソール接続と管理接続のみが移動します。このセクションでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートするために必要な手順について説明します。</block>
+  <block id="def24406017cbdd73b740bba1a1e6765" category="list-text">ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。node1ディスクをAFF A700からAFF A900に、またはFAS9000からFAS9500に再割り当てするには、プロンプトでnode1の実際のノード名を入力します。次の例を参考にしてください。</block>
+  <block id="5fa38b455ca95ac213888d230b770ee7" category="paragraph">アップグレードを開始する前に、AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードに適したハードウェアがあることを確認する必要があります。アップグレードする HA ペアごとに、システムコントローラモジュールを 2 つと NVRAM モジュールを 2 つずつ用意する必要があります。足りないパーツがある場合は、テクニカルサポートに問い合わせるか、ネットアップの営業担当者にお問い合わせください。</block>
+  <block id="ba5bb93bf3745b7b90abb302dc84dab9" category="sidebar">「system controller replace」コマンドを使用して、AFF A700をAFF A900またはFAS9000からFAS9500にアップグレードします</block>
+  <block id="cec0ad56d161fd372b8f511ac2258e91" category="sidebar">ステージ 2 ：リソースを再配置し、AFF A700またはFAS9000 node1を撤去します</block>
+  <block id="3e7ed5dc4e5c354a7d48cc37baefc4ad" category="sidebar">ステージ 3 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします</block>
+  <block id="f8963d11fe6453d2060dd15fbe008dd0" category="sidebar">AFF A900コントローラおよびNVRAMモジュールでノード1をブートします</block>
+  <block id="1ed45ea6838f5dd96a4433ce598c8050" category="sidebar">ステージ 5 ：AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします</block>
+  <block id="6c86470db96f676f214aa83001c5a57f" category="sidebar">AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします</block>
+  <block id="ae89e936215d96a55c04a947db881581" category="sidebar">ステージ 6 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします</block>
 </blocks>

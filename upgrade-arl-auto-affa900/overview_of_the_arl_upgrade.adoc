@@ -56,12 +56,12 @@ ARL を使用してノードをアップグレードする前に、手順の動�
 
 
 
-| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ステージ 2 ：ノード 1 からリソースを再配置し、 AFF A700 node1 を撤去"]  a| 
+| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ステージ2：リソースをノード1から再配置し、AFF A700またはFAS9000 node1から撤去します"]  a| 
 . ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
 . 障害が発生したアグリゲートを再配置するか
 . ノード 1 を撤去
-. AFF A700 コントローラモジュールと NVRAM モジュールを取り外します
-. AFF A900 NVRAM モジュールとコントローラモジュールを node1 に取り付けます
+. AFF A700またはFAS9000コントローラとNVRAMモジュールを取り外します
+. AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode1にインストールします
 . ネットブート node1
 
 
@@ -73,8 +73,8 @@ ARL を使用してノードをアップグレードする前に、手順の動�
 
 
 
-| link:boot_node1_with_a900_controller_and_nvs.html["ステージ 3 ： AFF A900 コントローラモジュールでノード 1 をブートします"]  a| 
-. AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします
+| link:boot_node1_with_a900_controller_and_nvs.html["ステージ3：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします"]  a| 
+. AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします
 . node1 が正常にインストールされたことを確認します
 . ノード 1 のネットワーク設定をリストアします
 . アップグレードした node1 でキー管理ツールの設定をリストアします
@@ -83,7 +83,7 @@ ARL を使用してノードをアップグレードする前に、手順の動�
 
 ステージ 3 終了時のアグリゲートの所有権：
 
-* アップグレード後の AFF A900 node1 は、ノード 1 アグリゲートのホーム所有者および現在の所有者です
+* アップグレード後のAFF A900またはFAS9500 node1は、node1個のアグリゲートのホーム所有者と現在の所有者です
 * node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します
 
 
@@ -103,8 +103,8 @@ ARL を使用してノードをアップグレードする前に、手順の動�
 
 
 
-| link:install_a900_nvs_and_controller_on_node2.html["ステージ 5 ： AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます"]  a| 
-. AFF A900 NVRAM モジュールとコントローラモジュールを node2 に取り付けます
+| link:install_a900_nvs_and_controller_on_node2.html["ステージ5：AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします"]  a| 
+. AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします
 . ネットブート node2
 
 
@@ -116,8 +116,8 @@ ARL を使用してノードをアップグレードする前に、手順の動�
 
 
 
-| link:boot_node2_with_a900_controller_and_nvs.html["ステージ 6 ： AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします"]  a| 
-. AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします
+| link:boot_node2_with_a900_controller_and_nvs.html["ステージ6：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします"]  a| 
+. AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします
 . node2 が正しくインストールされていることを確認します
 . node2 のネットワーク設定をリストアします
 . ルート以外のアグリゲートと NAS データ LIF を node2 に戻します
