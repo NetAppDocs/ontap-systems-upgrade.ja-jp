@@ -22,7 +22,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 . イベント管理システム（ EMS ）のログで、アグリゲートの再配置に失敗した理由や拒否された理由を確認します。
 . 障害が発生したアグリゲートまたは拒否されたアグリゲートを
 +
-「 storage aggregate relocation start -node <node1> -destination <node2> aggregate-list <aggr_name> -nd-controller-upgrade true 」の形式で指定します
+「storage aggregate relocation start -node1_-destination_node2」-aggregate-list_aggr_name --nd-controller-upgrade true」を指定します
 
 . プロンプトが表示されたら、「 y 」と入力します。
 . 再配置は、次のいずれかの方法で強制的に実行できます。
@@ -33,8 +33,8 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 | オプション | 説明 
 
 
-| 拒否チェックの無視 | 次のコマンドを使用します。「 storage aggregate relocation start -node node1 -destination node2 -aggregate-list <aggr_list> -nd-controller-upgrade true -override-vetoes true 」 
+| 拒否チェックの無視 | 次のコマンドを使用します。storage aggregate relocation start -node node1 -destination node2 -aggregate-list_aggr_list --nd-controller-upgrade true -override-vetoes true 
 
 
-| デスティネーションチェックの無効化 | 次のコマンドを使用します。「 storage aggregate relocation start -node node1 -destination node2 -aggregate-list <aggr_list> -nd-controller-upgrade true -override-vetoes true -override-destination-checks true 」 
+| デスティネーションチェックの無効化 | 次のコマンドを使用します。storage aggregate relocation start -node node1 -destination node2 -aggregate-list_aggr_list --nd-controller-upgrade true -override-vetoes true -override-vetoes true -override-vetoes destination-checks true 
 |===

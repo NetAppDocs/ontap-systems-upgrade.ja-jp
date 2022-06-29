@@ -49,7 +49,7 @@ vserver services name-service dns show
 ----
 . [man_record_node1_step3] どちらかのコントローラで次のコマンドを入力して、ノード管理ポートとクラスタネットワークを特定します。
 +
-network interface show -curr-node <node1> -role cluster 、 intercluster 、 node-mgmt 、 cluster-mgmt
+network interface show -curr-node node1 __ role cluster、intercluster、node-mgmt、cluster-mgmt-mgmt
 
 +
 次の例に示すように、クラスタ内のノードについて、クラスタ LIF 、クラスタ間 LIF 、ノード管理 LIF 、およびクラスタ管理 LIF が表示されます。
@@ -82,7 +82,7 @@ NOTE: システムにクラスタ間 LIF がない可能性があります。
 
 . node1 で次のコマンドを入力します。
 +
-network port show -node <node1> -type physical`
+'network port show -node1_-type physical’
 
 +
 次の例に示すように、ノードの物理ポートが表示されます。
@@ -115,7 +115,7 @@ network port show -node <node1> -type physical`
 
 . node1 で次のコマンドを入力します。
 +
-「 network fcp adapter show -node node1 」のように表示されます
+network fcp adapter show -node-node1_`
 
 +
 次の例に示すように、ノードの FC ポートが表示されます。
@@ -165,7 +165,7 @@ network port show -node <node1> -type physical`
 |===
 . [[man_record_node1_step11]] どちらかのコントローラで次のコマンドを入力します。
 +
-「 system node show -instance -node node1 」のように表示されます
+system node show -instance -node _node1_`
 
 +
 次の例に示すように、 node1 に関する情報が表示されます。

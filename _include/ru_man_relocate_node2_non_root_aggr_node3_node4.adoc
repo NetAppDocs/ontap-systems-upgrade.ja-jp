@@ -7,7 +7,7 @@ node2 のルート以外のアグリゲートを node3 に再配置したら、�
 .手順
 . [[man_relocate_3_4_Step1] いずれかのコントローラで次のコマンドを入力し、出力を調べて再配置するルート以外のアグリゲートを特定します。
 +
-「 storage aggregate show-owner-name node3 -home-id node2 _system_id`
+storage aggregate show-owner-name_node3_-home-id_node2 _system_id_`
 
 . 次の手順を実行して、アグリゲートを再配置します。
 +
@@ -17,7 +17,7 @@ node2 のルート以外のアグリゲートを node3 に再配置したら、�
 
 .. 次のコマンドを入力します。
 +
-「 storage aggregate relocation start -node node3 -destination node4 -aggregate-list aggr_name1 、 aggr_name2 ……」 -nd-controller-upgrade true
+「storage aggregate relocation start -node3_node3_destination-node4」-aggregate-list_aggr_name1、aggr_name2..._nd-controller-upgrade true」のように指定します
 
 +
 アグリゲートリストは、で取得したノード 4 が所有するアグリゲートのリストです <<man_relocate_3_4_Step1,手順 1.>>。
@@ -34,7 +34,7 @@ node2 のルート以外のアグリゲートを node3 に再配置したら、�
 
 . [[step3]] 再配置のステータスを確認します。
 +
-「 storage aggregate relocation show -node node3 」を参照してください
+storage aggregate relocation show -node_node3_`
 
 +
 アグリゲートが再配置されると、そのアグリゲートに対しては「 1 」と表示されます。
@@ -62,7 +62,7 @@ NOTE: node2 のすべてのアグリゲートが再配置されてノード 4 �
 
 .. 障害が発生したアグリゲートまたは拒否されたアグリゲートを
 +
-「 storage aggregate relocation start -node node3 destination node4 aggregate-list aggr_name1 、 aggr_name2 …… nd-controller-upgrade true
+「storage aggregate relocation start -node3_destination_node4」-aggregate-list_aggr_name1、aggr_name2..._nd-controller-upgrade true」のように指定します
 
 +
 アグリゲートリストには、障害が発生したアグリゲートまたは拒否されたアグリゲートが表示されます
@@ -91,25 +91,25 @@ storage aggregate relocation コマンドの詳細については、を参照し
 |===
 . [man_relocate_3_4_Step5] - ノード 2 のすべての非ルートアグリゲートがオンラインであり、ノード 4 の状態であることを確認します。
 +
-「 storage aggregate show -node <node4 > -state offline-root false 」のように表示されます
+storage aggregate show -node _node4 --state offline-root false
 
 +
 node2 アグリゲートがのコマンドの出力に表示されています <<man_relocate_3_4_Step1,手順 1.>>。
 
 . オフラインになったアグリゲートや外部になったアグリゲートがある場合は、各アグリゲートに対して次のコマンドを使用してオンラインにします。
 +
-「 storage aggregate online -aggregate <aggr_name>` 」という名前になります
+storage aggregate online -aggregate _aggr_name_`
 
 . ノード 2 のアグリゲート内のすべてのボリュームがノード 4 でオンラインになっていることを確認します。
 +
-volume show -node <node4 > -state offline`
+volume show -node-node4 --state offline`
 
 . ノード 4 でオフラインになっているボリュームがある場合は、オンラインにします。
 +
-'volume online -vserver <vserver-name> -volume <volume_name>`
+'volume online -vserver_name_-volume_name_`
 
 . ノード 4 のアップグレード後の AutoSupport メッセージをネットアップに送信します。
 +
-「 system node AutoSupport invoke -node node4 -type all -message 」 node2 が platform_old から platform_new にアップグレードされました
+system node AutoSupport invoke -node _node4に-type all -message "_node2 _successfully upgraded from _platform_old_to _platform_new_"
 
 

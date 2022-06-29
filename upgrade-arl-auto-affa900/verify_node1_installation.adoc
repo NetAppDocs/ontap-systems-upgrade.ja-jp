@@ -143,7 +143,7 @@ NOTE: AFF A700からAFF A900またはFAS9000からFAS9500コントローラへ�
 
 . [[restore_node1_step4]] 次の順序で、次のコマンドを使用して、 node1 の各ポートの到達可能性ステータスを「 ok 」以外に修復します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 +
 --
@@ -200,7 +200,7 @@ Warning: Repairing port "node1:e11b" may cause it to move into a different broad
 
 .. LIF のホームノードとホームポートをリストアします。
 +
-「変位インターフェイス restore -home-node -node node_name -vserver vserver_name -lif -name lif_name 」のように指定します
+「変位インターフェイスのリストア-home-node-node-node_node_name _- vserver_vserver_name _-lif - name_lif_name_name_」のように指定します
 
 
 

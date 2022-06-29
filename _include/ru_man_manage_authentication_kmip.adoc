@@ -7,11 +7,11 @@ ONTAP 9.5 以降では、 Key Management Interoperability Protocol （ KMIP ）�
 .手順
 . 新しいコントローラを追加します。
 +
-「 securitykey-manager setup -node <new_controller_name>` 」のように指定します
+security key-manager setup -node _new_controller_name_`
 
 . キー管理ツールを追加します。
 +
-「 securitykey-manager-add <key_manager_server_ip_address >` 」
+「security key-manager -add_key_manager_server_ip_address_`」
 
 . キー管理サーバが設定され、クラスタ内のすべてのノードで使用できることを確認します。
 +
@@ -19,7 +19,7 @@ ONTAP 9.5 以降では、 Key Management Interoperability Protocol （ KMIP ）�
 
 . リンクされたすべてのキー管理サーバの認証キーを新しいノードにリストアします。
 +
-「 securitykey-manager restore -node <new_controller_name>` 」のように指定します
+security key-manager restore -node _new_controller_name_`
 
 . すべての自己暗号化ディスクのキーを新しい認証キーに変更します。
 +

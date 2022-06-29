@@ -22,7 +22,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 . EMS ログで、アグリゲートの再配置に失敗した理由や拒否された理由を確認します。
 . 障害が発生したアグリゲートまたは拒否されたアグリゲートを
 +
-「 storage aggregate relocation start -node <node1> -destination <node2> aggregate-list * -ndocontroller -upgrade true
+storage aggregate relocation start -Node_node1_-destination_node2 _aggregate-list *-ndocontroller -upgrade true
 
 . プロンプトが表示されたら、「 y 」と入力します。
 . 再配置は、次のいずれかの方法で強制的に実行できます。

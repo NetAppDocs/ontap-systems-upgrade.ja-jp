@@ -28,6 +28,6 @@
 . 新しい認証キー ID をメモします。
 . すべての自己暗号化ドライブのキーを新しい認証キーに変更します。
 +
-「 storage encryption disk modify -disk * -data-key-id <authentication_key_id>` 」
+storage encryption disk modify -disk *-data-key-id authentication_key_id_`
 
 

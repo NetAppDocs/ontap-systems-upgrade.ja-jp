@@ -38,11 +38,11 @@ cluster ha modify -configured false
 .. ストレージフェイルオーバーを無効にします。
 
 
-「 storage failover modify -node <node1> -enabled false 」という名前になります
+storage failover modify -node _node1_-enabled false
 
 
 
-| 3 つ以上のノードで構成されるクラスタ | ストレージフェイルオーバーを無効にします。「 storage failover modify -node <node1> -enabled false 」 
+| 3 つ以上のノードで構成されるクラスタ | ストレージ・フェイルオーバーを無効にします：storage failover modify -node _node1 _-enabled false 
 |===
 . ストレージフェイルオーバーが無効になっていることを確認します。
 +
@@ -70,7 +70,7 @@ cluster ha modify -configured false
 ----
 . データ LIF のステータスを確認します。
 +
-network interface show -role data -curr-node node2 -home-node node1 -home-node node1'
+network interface show -role data -curr-node 2_node2 -home-node1_home_`
 
 +
 「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。停止している LIF がある場合は、を参照してください link:troubleshoot.html["不具合のすす"] セクション。
@@ -136,11 +136,11 @@ High Availability Configured: false
 ----
 . node1 にイプシロンが設定されている場合は、 node2 に転送できるように、イプシロンを false に設定します。
 +
-cluster modify -node <node1> -epsilon false
+cluster modify -node1_-epsilon false
 
 . node2 のイプシロンを true に設定して ' イプシロンを node2 に転送します
 +
-cluster modify -node <node2 > -epsilon true
+cluster modify -node _node2 _-epsilon true
 
 . node2 に対する変更が発生したことを確認します。
 +
@@ -178,7 +178,7 @@ network options switchless-cluster show
 
 . node1 プロンプトから node1 を停止します。
 +
-「システムノード停止 - ノード node1 」
+system node halt -node _node1_`
 
 +
 

@@ -99,7 +99,7 @@ NOTE: ネットブート接続として管理ポートおよび IP を使用す�
 | 実行中です | ブート環境プロンプトで次のコマンドを使用して、自動的に接続を設定します。 ifconfig e0M -auto 
 
 
-| 実行されていません | ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。 ifconfig e0M -addr= <filer_addr> -mask= <netmask> -gw= <gateway> -dns= <dns_addr> domain= <dns_domain> `<filer_addr>`<netmask>` はストレージシステムのネットワークマスクです。「 <gateway>` 」は、ストレージシステムのゲートウェイです。「 <dns_addr> 」は、ネットワーク上のネームサーバの IP アドレスです。このパラメータはオプションです。「 <dns_domain> 」は、 Domain Name Service （ DNS ；ドメインネームサービス）ドメイン名です。このパラメータはオプションです。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
+| 実行されていません | ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。ifconfig e0M -addr=_filer_addr_-mask=_netmask_-gw=_gateway_-dns=_dns _domain =_dns_domain_`_filer_addr_`は、ストレージシステムのIPアドレスです。`_netmask_`はストレージ・システムのネットワーク・マスクです`_gateway_`はストレージ・システムのゲートウェイです`_dNS_addr_`は'ネットワーク上のネーム・サーバのIPアドレスですこのパラメータはオプションです。`_dNS_domain_`はDomain Name Service (DNS)ドメイン名ですこのパラメータはオプションです。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
 |===
 . [[step7] node3 でネットブートを実行します。
 +
@@ -197,7 +197,7 @@ MetroCluster 構成の場合は、次のコマンドを使用してコントロ�
 
 . [[step17]] 必要に応じて、 node3 の日付を設定します。
 +
-'Set date <mm/dd/yyyy>`
+'set date_mm/dd/yyyy_`
 
 . [step18]] on node3 で、ブート環境のプロンプトで次のコマンドを使用して時間を確認します。
 +
@@ -205,11 +205,11 @@ MetroCluster 構成の場合は、次のコマンドを使用してコントロ�
 
 . [[step19]] 必要に応じて、ノード 3 の時刻を設定します。
 +
-時刻を設定します
+'set time_hh:mm:ss_`
 
 . [[step20]] 必要に応じて、 node3 にパートナーシステム ID を設定します。
 +
-'setenv partner-sysid <node2 _sysid>`
+setsetenv partner-sysid_node2 _sysid_`
 
 +
 .. 設定を保存します。

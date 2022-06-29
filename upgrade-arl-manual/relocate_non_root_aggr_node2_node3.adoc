@@ -19,11 +19,11 @@ node2 を node4 に置き換える前に、 node2 の AutoSupport メッセー�
 .手順
 . [[step1] node2 に関する AutoSupport メッセージをネットアップに送信します。
 +
-「 system node AutoSupport invoke -node node2 -type all -message 」「 Upgrading node2 from platform_old to platform_new 」というメッセージが表示されます
+「system node AutoSupport invoke -node _node2 _-type all -message」「Upgrading _node2 _from_platform_old_to _platform_new_new_」というメッセージが表示されます
 
 . AutoSupport メッセージが送信されたことを確認します。
 +
-「 system node AutoSupport show -node <node2> -instance 」のように表示されます
+system node AutoSupport show -node _node2 _-instanceです
 
 +
 「 Last Subject Sent ：」および「 Last Time Sent ：」のフィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。
@@ -36,11 +36,11 @@ node2 を node4 に置き換える前に、 node2 の AutoSupport メッセー�
 
 .. node2 が所有するアグリゲートを表示します。
 +
-「 storage aggregate show-owner-name node2 」
+storage aggregate show-owner-name_node2_`
 
 .. アグリゲートの再配置を開始する：
 +
-「 storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -nd-controller-upgrade true
+storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd-controller-upgrade trueを指定します
 
 +
 
@@ -58,7 +58,7 @@ NOTE: コマンドは、ルート以外のアグリゲートのみを特定し�
 
 . node2 の再配置のステータスを確認します。
 +
-「 storage aggregate relocation show -node node2 」を参照してください
+storage aggregate relocation show -node-node2 _`
 
 +
 アグリゲートを再配置すると、そのアグリゲートの出力に「 Done 」と表示されます。
@@ -86,7 +86,8 @@ NOTE: node2 に所有されているすべてのアグリゲートが node3 に�
 EMS ログで必要な対処方法を確認することもできます。
 
 +
-* 注意 *:event log show コマンドは、発生したエラーを一覧表示します。
+
+NOTE: event log showコマンドを実行すると'発生したエラーが表示されます
 
 .. 対処方法を実行します。
 .. 権限レベルを advanced に設定します。
@@ -95,7 +96,7 @@ EMS ログで必要な対処方法を確認することもできます。
 
 .. 障害が発生したアグリゲートまたは拒否されたアグリゲートを
 +
-「 storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -nd-controllerupgrade true 」という形式で指定します
+storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd-controllerupgrade true」を実行します
 
 .. プロンプトが表示されたら、「 y 」と入力します。
 .. admin 権限レベルに戻ります。
@@ -121,27 +122,27 @@ storage aggregate relocation コマンドの詳細については、を参照し
 |===
 . [man_relocate_2_3_step6] ルート以外のアグリゲートがすべてノード 3 でオンラインになっていることを確認します。
 +
-「 storage aggregate show -node <node3 > -state offline-root false 」という 2 つのコマンドを実行します
+storage aggregate show -node _node3 --state offline-root false
 
 +
 オフラインになったアグリゲートや外部になったアグリゲートがある場合は、各アグリゲートを 1 つずつオンラインにする必要があります。
 
 +
-「 storage aggregate online -aggregate <aggr_name>` 」という名前になります
+storage aggregate online -aggregate _aggr_name_`
 
 . ノード 3 ですべてのボリュームがオンラインになっていることを確認します。
 +
-volume show -node <node3 > -state offline`
+volume show -node _node3 --state offline`
 
 +
 ノード 3 でオフラインになっているボリュームがある場合は、各ボリュームについて 1 回、オンラインにする必要があります。
 
 +
-volume online -vserver Vserver -name -volume volume-name
+'volume online -vserver_Vserver -name_volume_volume-name _`
 
 . node2 にオンラインのルート以外のアグリゲートがないことを確認します。
 +
-「 storage aggregate show-owner-name <node2> -ha-policy sfo-state online 」のように表示されます
+「storage aggregate show-owner-name_node2」-ha -policy sfo-state online」と表示されます
 
 +
 ルート以外のオンラインアグリゲートがすべて node3 にすでに再配置されているため、コマンドの出力にルート以外のオンラインアグリゲートが表示されないようにする必要があります。

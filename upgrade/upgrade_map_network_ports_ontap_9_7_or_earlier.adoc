@@ -32,7 +32,7 @@ https://hwu.netapp.com["NetApp Hardware Universe の略"^]
 .. node3 と node4 をクラスタプロンプトでブートしていない場合は、それらをブートします。
 .. 「 Cluster 」ブロードキャストドメインに正しいポートを追加します。
 +
-network port modify -node node_name -port port_name -mtu 9000 -ipspace Cluster `
+「network port modify -node _node_name --port_port_name_-mtu 9000 -ipspace Cluster」
 
 +
 次の例では 'Cluster ポート e1b を node1 に追加します
@@ -42,22 +42,22 @@ network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000`
 
 .. LIF を 1 つずつ新しいポートに移行します。
 +
-「 network interface migrate -vserver vserver_name -lif lif_name -source-node node1 -destination-node node1 -destination-port port_name 」の略
+「network interface migrate -vserver_vserver_name __ lif_lif_name_-source-node node1 -destination-node node1 -destination-port_name_`
 
 +
 SAN データ LIF は、オフラインの場合にのみ移行できます。
 
 .. クラスタ LIF のホームポートを変更します。
 +
-「 network interface modify -vserver Cluster -lif <lif_name> – home-port <port_name> 」という形式になります
+「network interface modify -vserver Cluster -lif LIF_name–home-port_port_name_`」です
 
 .. クラスタブロードキャストドメインから古いポートを削除します。
 +
-「 network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cluster -port node1 ： port 」のようになります
+「network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cluster -ports_node1：port_」のようになります
 
 .. node3 と node4 の健全性状態を表示します。
 +
-cluster show -node node1 -fields health`
+'cluster show -node-node1_-fields health`
 
 .. 各クラスタ LIF がポート 7700 をリスンしている必要があります。クラスタ LIF がポート 7700 をリスンしていることを確認します。
 +
@@ -82,7 +82,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 .. 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
 +
-`::> net int modify -vserver Cluster -lif <cluster-lif> -status-admin down ； net int modify -vserver Cluster -lif <cluster-lif> -status-admin up
+`::> net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up
 
 +
 手順（ g ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。
@@ -92,7 +92,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 . 新しいコントローラの物理ポート・レイアウトに合わせて、 VLAN および「 ifgrp config 」を変更します。
 . node3 と node4 に存在しなくなった node1 ポートと node2 ポートを削除します（ advanced 権限レベル）。
 +
-'network port delete -node node1 -port port_name '
+'network port delete -node1_-port_port_name_`
 
 . [[map_97_7] ノード管理ブロードキャストドメインを調整し、必要に応じてノード管理 LIF とクラスタ管理 LIF を移行します。
 +
@@ -102,7 +102,7 @@ network interface show -fields home-node 、 home-port
 
 .. ポートを含むブロードキャストドメインを表示します。
 +
-「 network port broadcast-domain show -port <node_name ： port_name> 」の形式で指定します
+「network port broadcast-domain show -ports_node_name：port_name_`
 
 .. 必要に応じて、ブロードキャストドメインにポートを追加またはドメインから削除します。
 +
@@ -113,7 +113,7 @@ network interface show -fields home-node 、 home-port
 
 .. 必要に応じて LIF のホームポートを変更します。
 +
-network interface modify -vserver vserver_name -lif lif_name – home-port port_name
+「network interface modify -vserver _vserver_name __ lif_lif_name_–home-port_port_name_`
 
 
 
@@ -121,7 +121,7 @@ network interface modify -vserver vserver_name -lif lif_name – home-port port_
 . 必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <<map_97_7,手順 7>>。
 . すべての LIF フェイルオーバーグループを調整します。
 +
-'network interface modify -failover-group <failover_group> -failover-policy <failover_policy>
+'network interface modify -failover-group_failover_group'-failover-policy_failover_policy_`
 
 +
 次のコマンドは、フェイルオーバーポリシーを broadcast-domain-wide に設定し、フェイルオーバーグループ「 fg1 」のポートを「 node1 」の LIF 「 data1 」のフェイルオーバーターゲットとして使用します。

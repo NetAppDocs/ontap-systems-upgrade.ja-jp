@@ -152,7 +152,7 @@ node2          node1          true     Connected to node1
 
 . [man_prepare-to-downgrade 9] 現在の所有者（ホーム所有者ではない）であるアグリゲートを node1 と node2 のどちらも所有していないことを確認します。
 +
-「 storage aggregate show -node <node_name > -is-home false -fields owner-name 、 homename 、 state 」という文字列が含まれています
+storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
 node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していない場合、次の例のようなメッセージが返されます。
@@ -195,11 +195,11 @@ aggr4         node1        node2        online
 +
 .. パートナーノードが現在所有しているアグリゲートをホーム所有者ノードに戻します。
 +
-「 storage failover giveback -ofnode home_node_name
+storage failover giveback -ofnode home_node_name
 
 .. node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していないことを確認します。
 +
-「 storage aggregate show -nodes <node_name > -is-home false -fields owner-name 、 home-name 、 state
+storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
 次の例は、アグリゲートの現在の所有者とホーム所有者の両方がノードにある場合のコマンドの出力例を示しています。
@@ -261,7 +261,7 @@ node2                 true    true
 
 . [man_prepare-to-downgrade 15]] ノード 1 とノード 2 で同じ ONTAP リリースが実行されていることを確認します。
 +
-「 system node image show -node <node1 、 node2 > -iscurrent true 」
+system node image show -node-node1、node2 _-iscurrent true’
 
 +
 次の例は、コマンドの出力例を示しています。
@@ -282,7 +282,7 @@ node2
 ....
 . ノード 1 とノード 2 のどちらもクラスタ内の他のノードに属するデータ LIF を所有していないことを確認し、出力の「 Current Node 」列と「 Is Home 」列をチェックします。
 +
-network interface show -role data -is-home false -curr-node node_name
+network interface show -role data -is-home false -curr-node node_name _`
 
 +
 次の例は、 node1 に、ホーム所有の LIF がクラスタ内の他のノードにない場合の出力を示しています。
@@ -317,7 +317,7 @@ network interface revert コマンドの詳細については、を参照して�
 
 . ノード 1 とノード 2 で障害ディスクが所有されているかどうかを確認します。
 +
-'storage disk show -nodelist <node1 、 node2 > -boled
+storage disk show -nodelist_node1、node2 _-broken
 
 +
 いずれかのディスクで障害が発生した場合は、 CLI での _Disk およびアグリゲートの管理の手順に従ってディスクを取り外します。を参照してください link:other_references.html["参考資料"] CLI を使用してディスクおよびアグリゲートの管理にリンクするには、を参照してください）。

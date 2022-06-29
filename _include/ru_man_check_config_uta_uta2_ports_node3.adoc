@@ -138,14 +138,14 @@ Adapter  Mode     Type       Mode     Type     Status
 |===
 . [[man_check_3_step7] アダプタがイニシエータモードの場合、 UTA / UTA2 ポートがオンラインの場合は、 UTA / UTA2 ポートをオフラインにします。
 +
-「 storage disable adapter <adapter_name> 」
+storage disable adapter_adapter_adapter_adapter_name_`
 
 +
 ターゲットモードのアダプタは、メンテナンスモードで自動的にオフラインになります。
 
 . [man_check_3_step8] 現在の設定が目的の用途に一致しない場合は、必要に応じて設定を変更します。
 +
-ucadmin modify -m fc | cna-t initiator | target <adapter_name> `
+ucadmin modify -m fc | cna-t initiator | target_adapter_name_`
 
 +
 ** 「 -m 」はパーソナリティ・モードで、「 fc 」または「 cna 」です。
@@ -235,10 +235,10 @@ Adapter  Mode     Type       Mode     Type       Status
 | システムの状態 | 作業 
 
 
-| ストレージディスクがあります | 「 network fcp adapter modify -node <node_name > -adapter <adapter_name> -state up 」の形式で指定します 
+| ストレージディスクがあります | 「network fcp adapter modify -node node_name --adapter_adapter_adapter_adapter_name_-state up」の形式で指定します 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 'fcp config <adapter_name> up' 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 'fcp config_adapter_name_up' 
 |===
 . [[man_check_3_step13]] ポートをケーブル接続します。
 . [[step14]] 次のいずれかの操作を実行します。

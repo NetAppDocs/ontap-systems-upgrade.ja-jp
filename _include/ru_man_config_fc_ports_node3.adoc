@@ -70,15 +70,15 @@ NOTE: * 重要 * ：ご使用のシステムにストレージ・ディスクが
 | ストレージディスクがあります  a| 
 次のいずれかのコマンドを入力して、必要に応じて node3 の FC ポートを変更します。
 
-** ターゲットポートをプログラムする場合：「 system node hardware unified-connect modify -type | -t target-adapter port_name
-** イニシエータポートをプログラミングする場合：「 system node hardware unified-connect modify -type | -t initiator -adapter port_name
+** ターゲット・ポートをプログラムするには：system node hardware unified-connect modify -type |-t target-adapter_port_name_`
+** イニシエータ・ポートをプログラムするには' system node hardware unified-connect modify -type |-t initiator -adapter_port_name_`を使用します
 
 
 `-t` は FC4 のタイプで ' ターゲットまたはイニシエータです
 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 必要に応じて、次のコマンドを入力して、 node3 の FC ポートを変更します。 ucadmin modify -m fc -t initiator -f adapter_port_name`-t` is the FC4 type 、 target 、 or initiator* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 必要に応じて、次のコマンドを入力して、node3のFCポートを変更します。ucadmin modify -m fc -t initiator -f _adapter_port_name_t`t`は、FC4タイプ、ターゲット、またはイニシエータです。* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
 |===
 . [[step7]] 次のいずれかの操作を実行します。
 +

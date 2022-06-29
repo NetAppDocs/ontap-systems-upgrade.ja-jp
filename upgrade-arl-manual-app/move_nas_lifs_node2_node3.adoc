@@ -21,7 +21,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を�
 .手順
 . [[step1] ノードごとに次のコマンドを入力し、出力をキャプチャして、 node2 が所有するすべての NAS データ LIF を一覧表示します。
 +
-network interface show -data-protocol nfs|cifs -home-node node2`
+「network interface show -data-protocol nfs|cifs -home-node _node2 _」を参照してください
 
 +
 次の例は、 node2 のコマンドの出力を示しています。
@@ -58,19 +58,19 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 .. [[man_move_lif_2_3_substpa]] ノード 2 のインターフェイスグループでホストされているすべてのデータ LIF を、同じネットワーク上の LIF をホストできるノード 3 のポートに移行するには、各 LIF に対して 1 回、次のコマンドを入力します。
 +
-network interface migrate -vserver Vserver_name -lif LIF_name -destination-node node3 – destination-port netport | ifgrp`
+「network interface migrate -vserver _Vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
 .. LIF のホームポートとホームノードを変更します <<man_move_lif_2_3_substepa,手順 a>> 各ノードについて次のコマンドを 1 回入力して、 LIF を現在ホストしているポートとノードに接続します。
 +
-network interface modify -vserver Vserver_name -lif LIF_name -home-node node3-homeport netport | ifgrp`
+「network interface modify -vserver _Vserver_name -lif_lif_name_-home-node3_-homeport_netport | ifgrp_`」
 
 .. [man_move_lif_2_3_substpc ]] node2 上の VLAN でホストされている LIF を、 node2 上のポートにノード 3 上のポートに移行します。その際、各 LIF に対して 1 回、次のコマンドを入力して、 VLAN と同じネットワーク上の LIF をホストできます。
 +
-network interface migrate -vserver Vserver_name -lif LIF_name -destination-node node3 – destination-port netport | ifgrp`
+「network interface migrate -vserver _Vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
 .. LIF のホームポートとホームノードを変更します <<man_move_lif_2_3_substepc,サブステップ c>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
-network interface modify -vserver Vserver_name -lif LIF_name -home-node node3-homeport netport | ifgrp`
+「network interface modify -vserver _Vserver_name -lif_lif_name_-home-node3_-homeport_netport | ifgrp_`」
 
 
 
@@ -91,7 +91,7 @@ network interface modify -vserver Vserver_name -lif LIF_name -home-node node3-ho
 |===
 . [[man_move_lif_2_3_step5] プラットフォームで同じでないデータポートがある場合は、ブロードキャストドメインにポートを追加します。
 +
-「 network port broadcast-domain add-ports -ipspace IPspace_name -broadcast-domain mgmt -ports node ： port 」のように指定します
+「network port broadcast-domain add -ports -ipspace_name_-broadcast-domain mgmt -ports_node：port_`
 
 +
 次の例は、ノード「 6280 」のポート「 e0a 」とノード「 8060-1 」のポート「 e0i 」を IPspace 「 Default 」のブロードキャストドメイン「 mgmt 」に追加します。
@@ -104,25 +104,25 @@ cluster::> network port broadcast-domain add-ports -ipspace Default
 ----
 . [[step6] それぞれの LIF に対して次のコマンドを 1 回入力して、各 NAS データ LIF を node3 に移行します。
 +
-network interface migrate -vserver Vserver_name -lif LIF_name -destination-node node3 -destination-port netport | ifgrp`
+「network interface migrate -vserver _Vserver_name -lif_lif_name_-destination -node _node3 __ destination-port_netport | ifgrp_`」の形式で指定します
 
 . [[step7] 両方のノードで次のコマンドを入力し、 NAS LIF が正しいポートに移動されていること、および LIF のステータスが up になっていることを確認します。
 +
-network interface show -curr-node <node3 > -data-protocol cifs | nfs ’
+'network interface show -curr-node node3：-data-protocol CIFS|NFS
 
 . [[man_move_lif_2_3_step8] いずれかの LIF が停止している場合は、各 LIF に対して 1 回次のコマンドを入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
-「 network interface modify -vserver <Vserver_name> -lif <LIF_NAME> -status-admin up 」という形式になります
+「network interface modify -vserver _Vserver_name --lif_lif_name_-status-admin up」という名前になります
 
 . [man_move_lif_2_3_step9] インターフェイスグループまたは VLAN が設定されている場合は、次の手順を実行します。
 +
 .. インターフェイスグループから VLAN を削除します。
 +
-「 network port vlan delete -node node_name -port ifgrp -vlan-id vlan_ID` 」の形式で指定します
+「network port vlan delete -node node_name」-port_ifgrp -- vlan-id_vlan_ID_`
 
 .. 次のコマンドを入力し、その出力を調べて、ノードにインターフェイスグループが設定されているかどうかを確認します。
 +
-「 network port ifgrp show -node <node_name > -ifgrp <ifgrp_name> -instance 」の形式で指定します
+「network port ifgrp show -node node_name」-ifgrp _ifgrp_name __ instance
 
 +
 次の例に示すように、ノードのインターフェイスグループ情報が表示されます。
@@ -143,7 +143,7 @@ Distribution Function: ip
 ----
 .. ノードにインターフェイスグループが設定されている場合は、インターフェイスグループの名前とグループに割り当てられているポートを記録し、各ポートについて次のコマンドを 1 回入力してポートを削除します。
 +
-「 network port ifgrp remove-port -node node_name -ifgrp ifgrp_name -port port_name - port port_name 」のように設定します
+「network port ifgrp remove-port -node_node_name」-ifgrp_ifgrp_name -port_port_name_`」という形式で指定します
 
 
 

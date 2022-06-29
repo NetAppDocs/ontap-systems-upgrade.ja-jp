@@ -91,19 +91,19 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 .. [[man_lif_verify_4_substpa]] インターフェイスグループ上の node2 に属していた node3 でホストされている LIF を、同じネットワーク上の LIF をホストできる node4 のポートに移行するには、それぞれの LIF に対して 1 回、次のコマンドを入力します。
 +
-network interface migrate -vserver vserver_name -lif lif_name -destination -node node4 – destination-port netport | ifgrp`
+「network interface migrate -vserver vserver_name -lif_lif_name_destination-node node4–destination-port_netport | ifgrp_`
 
 .. LIF のホームポートとホームノードを変更します <<man_lif_verify_4_substepa,手順 a>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
-network interface modify -vserver vserver_name -lif datalif_name -home-node node4 home-port netport | ifgrp`
+`network interface modify -vserver _vserver_name --lif_datalif_name __-home-node node4 home-port_netport | ifgrp_`
 
 .. [man_lif_verify_4_substpc ]] VLAN ポート上の node2 に属していた node3 でホストされている LIF を、同じネットワーク上の LIF をホストできる node4 のポートに移行するには、それぞれの LIF に対して 1 回、次のコマンドを入力します。
 +
-network interface migrate -vserver vserver_name -lif datalif_name -destination-node node4 – destination-port netport | ifgrp`
+「network interface migrate -vserver_name_-lif_datalif_name __ destination-node node4–destination-port_netport | ifgrp_`
 
 .. LIF のホームポートとホームノードを変更します <<man_lif_verify_4_substepc,サブステップ c>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
-network interface modify -vserver vserver_name -lif datalif_name -home-node node4 home-port netport | ifgrp`
+「network interface modify -vserver _vserver_name --lif_datalif_name __-home-node _node4 _home-port_netport | ifgrp_`」
 
 
 
@@ -124,7 +124,7 @@ network interface modify -vserver vserver_name -lif datalif_name -home-node node
 |===
 . [man_lif_verify_4_Step5] プラットフォームで同じでないデータポートがある場合は、次のコマンドを入力してブロードキャストドメインにポートを追加します。
 +
-「 network port broadcast-domain add-ports -ipspace IPspace_name -broadcast-domain mgmt ports node ： port 」のように指定します
+「network port broadcast-domain add -ports -ipspace_name_-broadcast-domain mgmt ports_node：port_`
 
 +
 次の例は、 IPspace デフォルトで、ノード「 6280 」のポート「 e0a 」とノード「 8060-1 」のポート「 e0i 」をブロードキャストドメイン管理に追加します。
@@ -136,11 +136,11 @@ cluster::> network port broadcast-domain add-ports -ipspace Default  -broadcast-
 ----
 . 各 NAS データ LIF について次のコマンドを 1 回入力して、各 NAS データ LIF を node4 に移行します。
 +
-network interface migrate -vserver vserver-name -lif datalif -name-destination-node node4 -destination-port netport | ifgrp-home-node node4 ’
+「network interface migrate -vserver_name-lif_datalif -name_destination-node-node4 __ destination-port_netport | ifgrp-home-node-node4
 
 . データ移行が永続的であることを確認します。
 +
-network interface modify -vserver vserver_name -lif datalif_name -home-port netport | ifgrp`
+「network interface modify -vserver _vserver_name __ lif_datalif_name __-home-node port_netport | ifgrp_`」のようになります
 
 . [man_lif_verify_4_Step8] 次のコマンドを入力して ' すべてのリンクのステータスを up で確認し ' すべてのネットワーク・ポートの一覧を表示し ' その出力を調べます
 +
@@ -180,7 +180,7 @@ node4
 
 .. 古いネットワークポートごとに次のコマンドを 1 回入力します。
 +
-'network port delete -node <node_name > -port <port_name> ’
+'network port delete -node_node_name -- port_port_port_name_`
 
 .. 次のコマンドを入力して、 admin レベルに戻ります。
 +
@@ -256,25 +256,25 @@ NOTE: 新しい構成の SAN LIF が同じ「 switch-port 」に接続された�
 +
 ... LIF のステータスを down に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <LIF_NAME> -status-admin down 」という形式で指定します
+「network interface modify -vserver _vserver_name __-lif lif_name --status-admin down」を参照してください
 
 ... ポートセットから LIF を削除します。
 +
-`portset remove -vserver <vserver_name> -portset <portset_name> -port-name <port_name> の形式で指定します
+`portset remove -vserver_name_-portset_portset_name__-port-name _port_name_`
 
 ... 次のいずれかのコマンドを入力します。
 +
 **** 1 つの LIF を移動します。
 +
-「 network interface modify -lif lif_name -home-node new_home_port 」です
+「network interface modify -lif LIF_name -home-node _new_home_port_`
 
 **** 存在しない、または間違ったポート上のすべての LIF を新しいポートに移動します。
 +
-「 network interface modify ｛ -home-node port_on_node2 -home-node node2 -home-node node2 -role data ｝ -home-port new_home_port_on_node4 」というコマンドを使用します
+「network interface modify｛-home-node port_port_on_node2 _-home-node2_-role data｝-home-node _new_home_port_on_node4」となります
 
 **** LIF をポートセットに再度追加します。
 +
-`portset add -vserver <vserver_name> -portset <portset_name> -port-name <port_name> の形式で指定します
+`portset add -vserver_name_-portset_portset_name__-port-name _port_name_`
 
 
 
@@ -288,14 +288,14 @@ NOTE: SAN LIF は、元のポートとリンク速度が同じポートに移動
 
 . 次のコマンドを入力して、すべての LIF のステータスを「 up 」に変更し、ノード上のトラフィックを LIF が受け入れて送信できるようにします。
 +
-network interface modify -vserver vserver_name -home-port port_name -home-node node4 lif lif_name -status-admin up です
+「network interface modify -vserver _vserver_name __ home-port_name_-home-node _node4 _lif_lif_name__-status-admin up
 
 . いずれかのノードで次のコマンドを入力し、出力を調べて、すべての SAN LIF が正しいポートに移動されていること、および LIF のステータスが「 up 」になっていることを確認します。
 +
-'network interface show -home-node <node4 > -role data
+'network interface show -home-node _node4 --role data
 
 . [[man_lif_verify_4_Step13]] LIF が 1 つでも停止している場合は、各 LIF に対して次のコマンドを 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up 」の形式で指定します
+「network interface modify -vserver vserver_name __-lif LIF_name -status-admin up
 
 

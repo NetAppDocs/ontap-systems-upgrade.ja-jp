@@ -43,11 +43,11 @@
 
 ** ターゲットポートをプログラムする場合：
 +
-ucadmin modify -m fc -t target <adapter>`
+ucadmin modify -m fc -t target_adapter_`
 
 ** イニシエータポートをプログラミングする場合：
 +
-ucadmin modify -m fc -t initiator <adapter>`
+ucadmin modify -m fc -t initiator_adapter_`
 
 
 
@@ -55,7 +55,7 @@ ucadmin modify -m fc -t initiator <adapter>`
 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 必要に応じて、 node4 の FC ポートを変更します。 ucadmin modify -m fc -t initiator -f <adapter_port_name> `-t` は、 FC4 タイプ、ターゲット、イニシエータです。* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 必要に応じて、node4のFCポートを変更します。ucadmin modify -m fc -t initiator -f _adapter_port_name_t`-tは、FC4タイプ、ターゲット、イニシエータです。* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
 |===
 . メンテナンスモードを終了します。
 +

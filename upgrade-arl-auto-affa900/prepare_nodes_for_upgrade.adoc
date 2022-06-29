@@ -22,7 +22,7 @@ summary: AFF A700 から AFF A900 へのアップグレード時に、ノード�
 「 advanced 」の権限が必要です
 
 +
-「 system controller replace start-nodes <Node_name> 」のように入力します
+'system controller replace start-nodes_node_name _`
 
 +
 次のような出力が表示されます。
@@ -103,22 +103,22 @@ Controller replacement operation has been paused for user intervention.
 
 +
 ** vserver services name-service dns show
-** network interface show -curr-node nodename -role cluster 、 intercluster 、 node-mgmt 、 cluster-mgmt 、 data
-** network port show -node <node_name > -type physical
-** service-processor show -node * -instance の各コマンドを実行します
-** network fcp adapter show -node <node_name >
-** network port ifgrp show の設定
-** system node show -instance -node <node_name >
-** run -node <node_name >sysconfig
-** storage aggregate show -node <node_name >
-** volume show -node <node_name >
-** storage array config show -switch <switch_name> のように表示されます
-** system license show -owner <node_name >
-** storage encryption disk show のコマンド
-** security key-manager onboard show-backup をクリックします
-** security key-manager external show のコマンド
-** security key-manager external show-status のこと
-** reachability show-detailability
+** network interface show -curr-node nodename __ role cluster、intercluster、node-mgmt、cluster-mgmt、data
+** 'network port show -node-node_name --物理タイプ
+** 「 service-processor show -node * -instance 」のように表示されます
+** 「 network fcp adapter show -node-node_name _ 」のように指定します
+** 「 network port ifgrp show 」のように表示されます
+** 'system node show-instance -node _node_name _`
+** 'run-node_node_name sysconfig '
+** storage aggregate show -node _node_name _`
+** volume show -node node_name _`
+** storage array config show -switch_switch_name_`
+** 'system license show -owner_node_name
+** 「 storage encryption disk show 」のように表示されます
+** 「 securitykey manager onboard show-backup 」を参照してください
+** 「 security key-manager external show 」と入力します
+** 「 security key-manager external show-status 」
+** 「 reachability show-detail` 」
 
 
 
@@ -135,11 +135,11 @@ NOTE: オンボードキーマネージャを使用した NetApp Volume Encrypti
 .手順
 . パートナーノードが現在所有しているアグリゲートをホーム所有者ノードに戻します。
 +
-「 storage aggregate relocation start -node <source_node> -destination <destination-node> -aggregate -list * 」のように表示されます
+storage aggregate relocation start -node-source_node__ destination_destination-node-aggregate-list *
 
 . node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していないことを確認します。
 +
-「 storage aggregate show -nodes <node_name > -is-home false -fields owner-name 、 home-name 、 state
+storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
 次の例は、アグリゲートの現在の所有者とホーム所有者の両方がノードにある場合のコマンドの出力例を示しています。
@@ -165,7 +165,7 @@ aggr4       node1      node1       online
 
 コントローラの交換プロセスを再開する必要があります。
 
-「 system controller replace start-nodes <Node_name> 」のように入力します
+'system controller replace start-nodes_node_name _`
 
 
 

@@ -27,7 +27,7 @@ summary: 必要に応じて、 AFF A700 から AFF A900 へのアップグレー
 +
 .. キー管理サーバを追加します。
 +
-「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
 
 .. リストされている各キー管理サーバについて、同じ手順を繰り返します。最大 4 台のキー管理サーバをリンクできます。
 .. キー管理サーバが正常に追加されたことを確認します。

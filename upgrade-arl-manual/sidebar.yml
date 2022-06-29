@@ -35,6 +35,7 @@ entries:
   - title: スイッチオーバー、修復、スイッチバックを検証
     url: "/upgrade-arl-manual/verify_swtichover_healing_switchback.html"
 - title: ステージ 1 ：アップグレードを準備
+  pdf-filename: ステージ 1 ：アップグレードを準備（ONTAP 9.7以前での手動アップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-manual/stage_1_index.html"
@@ -53,6 +54,7 @@ entries:
   - title: ネットブートを準備
     url: "/upgrade-arl-manual/prepare_for_netboot.html"
 - title: ステージ 2 ：移行してノード 1 を撤去
+  pdf-filename: ステージ 2 ：ノード1の再配置と撤去（ONTAP 9.7以前の手動アップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-manual/stage_2_index.html"
@@ -65,6 +67,7 @@ entries:
   - title: ノード 1 を撤去
     url: "/upgrade-arl-manual/retire_node1.html"
 - title: ステージ 3 ：node3 をインストールしてブートします
+  pdf-filename: ステージ 3 ：node3のインストールとブート（ONTAP 9.7以前での手動アップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-manual/stage_3_index.html"
@@ -85,6 +88,7 @@ entries:
   - title: node2 によって所有されている NAS データ LIF を node3 に移動する
     url: "/upgrade-arl-manual/move_nas_lifs_node2_node3.html"
 - title: ステージ 4 ：情報を記録し、 node2 を撤去
+  pdf-filename: ステージ 4 ：情報を記録してnode2を撤去（ONTAP 9.7以前での手動アップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-manual/stage_4_index.html"
@@ -93,6 +97,7 @@ entries:
   - title: ノード 2 を撤去
     url: "/upgrade-arl-manual/retire_node2.html"
 - title: ステージ 5 ：ノード 4 をインストールしてブートします
+  pdf-filename: ステージ 5 ：node4のインストールとブート（ONTAP 9.7以前での手動アップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-manual/stage_5_index.html"
@@ -112,6 +117,7 @@ entries:
   - title: ノード 2 のルート以外のアグリゲートをノード 3 からノード 4 に再配置します
     url: "/upgrade-arl-manual/relocate_node2_non_root_aggr_node3_node4.html"
 - title: ステージ 6 ：アップグレードを完了します
+  pdf-filename: ステージ 6 ：アップグレードの完了（ONTAP 9.7以前での手動アップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-manual/stage_6_index.html"
@@ -126,6 +132,7 @@ entries:
   - title: SnapMirror 処理を再開します
     url: "/upgrade-arl-manual/resume_snapmirror_ops.html"
 - title: トラブルシューティングを行う
+  pdf-filename: トラブルシューティング（ONTAP 9.7以前での手動アップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-manual/troubleshoot_index.html"

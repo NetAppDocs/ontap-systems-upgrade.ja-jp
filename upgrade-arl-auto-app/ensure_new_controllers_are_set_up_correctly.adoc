@@ -40,7 +40,7 @@ node4    node3    true       Connected to node3
 
 . 次のコマンドを使用して、 node3 と node4 が相互のストレージにアクセスできることを確認します。出力を確認します。
 +
-「 storage failover show -fields local-missing-disks 、 partner-missing-disks 」というメッセージが表示されます
+「storage failover show -fields local-missing-disks、partner-missing-disks」
 
 . 次のコマンドを使用して、 node3 と node4 がクラスタ内の他のノードによってホーム所有されているデータ LIF を所有していないことを確認します。
 +
@@ -54,25 +54,25 @@ node3 と node4 がクラスタ内の他のノードによってホーム所有�
 
 . ノード 3 がノード 1 のアグリゲートを所有していること、およびノード 4 がノード 2 のアグリゲートを所有していることを確認します。
 +
-'storage aggregate show-owner-name<node3 >`
+storage aggregate show-owner-name_node3_`
 
 +
-「 storage aggregate show-owner-name <node4 > 」という形式で指定します
+storage aggregate show-owner-name_node4
 
 . オフラインになっているボリュームがないかを確認します。
 +
-volume show -node <node3 > -state offline`
+volume show -node _node3 --state offline`
 
 +
-volume show -node <node4 > -state offline`
+volume show -node-node4 --state offline`
 
 . オフラインになっているボリュームがある場合は、セクションで取得したオフラインボリュームのリストと比較します link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]必要に応じて、次のコマンドを使用して、ボリュームごとに 1 回、オフラインボリュームをオンラインにします。
 +
-'volume online -vserver <vserver_name> -volume <volume_name>`
+'volume online -vserver_name_-volume_name_`
 
 . ノードごとに次のコマンドを使用して、新しいノードの新しいライセンスをインストールします。
 +
-'system license add - license-code <license_code, license_code, license_code...>`
+'system license add -license-code_license_code'license_code'license_code..._`
 
 +
 license-code パラメータには、アルファベットの文字キーをアルファベットの大文字 28 個まで入力できます。ライセンスは一度に 1 つずつ追加することも、複数追加することもできます。各ライセンスキーをカンマで区切って指定することもできます。
@@ -82,7 +82,7 @@ license-code パラメータには、アルファベットの文字キーをア�
 「システムライセンスのクリーンアップ - 未使用 - 期限切れ」
 
 +
-「 system license delete -serial -number <node-serial_number> -package <license_package> 」という 2 つのライセンスがあります
+'system license delete -serial-number_node_name --package_license_package_`
 
 +
 --
@@ -96,10 +96,10 @@ license-code パラメータには、アルファベットの文字キーをア�
 
 ** クラスタから特定のライセンスを削除するには、ノードで次のコマンドを使用します。
 +
-system license delete -serial-number <node1 _serial_number>-package *`
+'system license delete -serial-number_node1_serial_number'-package *
 
 +
-system license delete -serial-number <node2 _ serial_number> -package *`
+'system license delete -serial-number_node2 _serial_number'-package *
 
 
 
@@ -123,15 +123,15 @@ Do you want to continue? {y|n}: y
 +
 出力を、セクションでキャプチャした出力と比較できます link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]。
 
-. 構成に NetApp Storage Encryption （ NSE ）を使用していた場合は、「 setenvbootarg .bootarg.storageencryption.support 」コマンドを「 true 」に設定し、「 <kmip.init.maxwait>` variable 」を「 off 」に設定します（を参照） link:install_boot_node4.html#step27["Node4 をインストールしてブートします（手順 27 ）"]）を使用している場合は、変数をリセットする必要があります。
+. NetApp Storage Encryption（NSE）が構成で使用されていた場合、「setenv bootarg.storageencryption.support」コマンドを「_kmip.init.maxwait_` variable」off」（の）で「true」に設定します link:install_boot_node4.html#step27["Node4 をインストールしてブートします（手順 27 ）"]）を使用している場合は、変数をリセットする必要があります。
 +
-`set diag; systemshell -node <node_name > コ \'83\'7d ンド sudo kenv -u -p kmip.init.maxwait`
+`set diag; systemshell -node-node_name --コマンドsudo kenv -u -p kmip.init.maxwait`
 
 
 
 . [[Step13]] 両方のノードで次のコマンドを使用して、 SP を設定します。
 +
-「 system service-processor network modify -node <node_name > 」のように指定します
+system service-processor network modify -node _node_name _`
 
 +
 を参照してください link:other_references.html["参考資料"] SP および _SP ONTAP 9.8 コマンドの詳細については ' システム管理リファレンスにリンクするには ' マニュアルページリファレンスを参照してください system の service-processor network modify コマンドの詳細については ' を参照してください
@@ -144,7 +144,7 @@ Do you want to continue? {y|n}: y
 
 .. 次のコマンドを入力します。
 +
-「 storage failover modify -node <node_name > -CIFS-NDO -duration default | medium | low 」
+storage failover modify -node _node_name --CIFS-NDO -duration _default | medium | low_`
 
 +
 *** システムのワークロードが 50% ～ 75% の場合は、「 m edium 」と入力します。

@@ -21,7 +21,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 .手順
 . [[step1] ノードごとに次のコマンドを入力し、出力をキャプチャして、 node2 が所有していないすべての NAS データ LIF を一覧表示します。
 +
-network interface show -role data -curr-node node2 -is-home false -home-node node3`
+'network interface show -role data -curr-node _node2 __-is-home false -home-node node3_node3_’
 
 . [[worksheet _step2] クラスタが SAN LIF 用に構成されている場合は、 SAN LIF 「 adapter 」および「 switch-port 」の構成情報をこのに記録します link:worksheet_information_before_moving_san_lifs_node3.html["ワークシート"] 手順 の後半で使用します。
 +
@@ -105,19 +105,19 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 .. [[man_lif_verify_3_substpa]] インターフェイスグループ上の node1 に属していた node2 でホストされているデータ LIF を、同じネットワーク上の LIF をホストできる node3 のポートに移行するには、各 LIF に対して 1 回、次のコマンドを入力します。
 +
-network interface migrate -vserver vserver_name -lif lif_name -destination -node node3 – destination-port netport | ifgrp`
+「network interface migrate -vserver vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
 .. LIF のホームポートとホームノードを変更します <<man_lif_verify_3_substepa,手順 a>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
-network interface modify -vserver vserver_name -lif lif_name -home-node node3-home-port netport | ifgrp`
+「network interface modify -vserver _vserver_name __ lif_lif_name__-home-node _node3」-home-port_netport | ifgrp_`
 
 .. [man_lif_verify_3_substpc ]] VLAN ポートでノード 1 に属していた node2 でホストされているすべてのデータ LIF を、同じネットワーク上の LIF をホストできるポート node3 に移行するには、各 LIF に対して 1 回、次のコマンドを入力します。
 +
-network interface migrate -vserver vserver_name -lif lif_name -destination -node node3 – destination-port netport | ifgrp`
+「network interface migrate -vserver vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
 .. LIF のホームポートとホームノードを変更します <<man_lif_verify_3_substepc,サブステップ c>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
-network interface modify -vserver vserver_name -lif lif_name -home-node node3-home-port netport | ifgrp`
+「network interface modify -vserver _vserver_name __ lif_lif_name__-home-node _node3」-home-port_netport | ifgrp_`
 
 
 
@@ -131,11 +131,11 @@ network interface modify -vserver vserver_name -lif lif_name -home-node node3-ho
 | NAS | - 完了しました <<man_lif_verify_3_step5,手順 6>> および <<man_lif_verify_3_step6,手順 7>>をクリックして、手順 8 をスキップして完了します <<man_lif_verify_3_step8,手順 9>> から <<man_lif_verify_3_step11,手順 12>>。 
 
 
-| SAN | ノード上のすべての SAN LIF を無効にしてアップグレード用にダウンにします。 network interface modify -vserver vserver_name -lif lif_name -home-node node_name -home-port netport | ifgrp-status-admin down 
+| SAN | ノード上のすべてのSAN LIFを無効にしてアップグレード用にダウンにします。「network interface modify -vserver _vserver_name -lif_lif_name__-home-node _port_to _upgrade_-home-port port | ifgrp-status-admin down 
 |===
 . [man_lif_verify_3_step5] プラットフォームで同じでないデータポートがある場合は、ブロードキャストドメインにポートを追加します。
 +
-「 network port broadcast-domain add-ports -ipspace IPspace_name -broadcast-domain mgmt -ports node ： port 」のように指定します
+「network port broadcast-domain add -ports -ipspace_name_-broadcast-domain mgmt -ports_node：port_`
 
 +
 次の例は、ノード「 6280 」のポート「 e0a 」とノード「 8060-1 」のポート「 e0i 」を IPspace 「 Default 」のブロードキャストドメイン「 mgmt 」に追加します。
@@ -147,17 +147,17 @@ cluster::> network port broadcast-domain add-ports -ipspace Default -broadcast-d
 ----
 . [man_lif_verify_3_step6] それぞれの LIF に対して次のコマンドを 1 回入力して、各 NAS データ LIF を node3 に移行します。
 +
-network interface migrate -vserver vserver_name -lif lif_name -destination -node node3 -destination-port netport | ifgrp`
+「network interface migrate -vserver vserver_name -lif_lif_name_-destination -node _node3 __ destination-port_netport | ifgrp_`」の形式で指定します
 
 . [man_lif_verify_3_step7] データ移行が永続的であることを確認します。
 +
-network interface modify -vserver vserver_name -lif lif_name -home-node netport | ifgrp-home-node node3`
+「network interface modify -vserver _vserver_name __ lif_lif_name_-home-port_netport | ifgrp _-home-node _node3 _
 
 . [man_lif_verify_3_step8] SAN LIF が node3 の正しいポートにあることを確認します。
 +
 .. 次のコマンドを入力し、出力を確認します。
 +
-network interface show -data-protocol iscsi|fcp-home-node node3
+network interface show -data-protocol iscsi|fcp-home-node3_`
 
 +
 次の例のような出力が返されます。
@@ -221,25 +221,25 @@ NOTE: 新しい構成の SAN LIF が同じ「 switch-port 」に接続された�
 +
 ... LIF のステータスを「 down 」に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <LIF_NAME> -status-admin down 」という形式で指定します
+「 network interface modify -vserver _vserver_name __ -lif lif_name --status-admin down 」を参照してください
 
 ... ポートセットから LIF を削除します。
 +
-`portset remove -vserver <vserver_name> -portset <portset_name> -port-name <port_name> の形式で指定します
+`portset remove -vserver_name_-portset_portset_name__-port-name _port_name_`
 
 ... 次のいずれかのコマンドを入力します。
 +
 **** 1 つの LIF を移動します。
 +
-「 network interface modify -vserver vserver_name -lif lif_name -home-node new_home_port 」です
+「network interface modify -vserver _vserver_name __ lif_lif_name_-home-port_'」を指定します
 
 **** 存在しない、または間違ったポート上のすべての LIF を新しいポートに移動します。
 +
-network interface modify ｛ -home-node <port_on_node1> -role data ｝ -home-node <node1> -role data ｝ -home-port <new_home_port_on_node1> ’ 3 を参照してください
+'network interface modify｛-home-node port_port_on_node1_-role data｝-home-node _new_home_port_on_node3 _`
 
 **** LIF をポートセットに再度追加します。
 +
-`portset add -vserver <vserver_name> -portset <portset_name> -port-name <port_name> の形式で指定します
+`portset add -vserver_name_-portset_portset_name__-port-name _port_name_`
 
 +
 
@@ -253,18 +253,18 @@ NOTE: SAN LIF は、元のポートとリンク速度が同じポートに移動
 
 . ノードでトラフィックを許可して送信できるように、すべての LIF のステータスを「 up 」に変更します。
 +
-「 network interface modify -home-node <port_name> -home-port <port_name> -home-port data -status-admin up 」を参照してください
+network interface modify -home-node port_name_--home-node3_life-status-admin upです
 
 . いずれかのノードで次のコマンドを入力し、その出力を調べて、 LIF が正しいポートに移動されていること、およびいずれかのノードで次のコマンドを入力して LIF のステータスが「 up 」になっていることを確認します。
 +
-network interface show -home-node <node3 > -role data
+'network interface show -home-node node_node3 -- role data `
 
 . [[man_lif_verify_3_step11]] いずれかの LIF が停止している場合は、次のコマンドを 1 回入力して、各 LIF について LIF の管理ステータスを「 up 」に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up 」の形式で指定します
+「 network interface modify -vserver vserver_name __ -lif LIF_name -status-admin up
 
 . アップグレード後に行う AutoSupport メッセージを node1 のネットアップに送信します。
 +
-「 system node AutoSupport invoke -node node3 -type all -message 」 node1 successfully upgraded from platform_old to platform_new" 」というメッセージが表示されます
+'system node AutoSupport invoke -node _node3_type all -message "node1 successfully upgraded from _platform_old_to _platform_new_"
 
 

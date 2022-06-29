@@ -48,11 +48,11 @@ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
 ----
 . 次のコマンドを使用して、 LIF ごとに 1 回、クラスタ LIF を新しいポートに移行します。
 +
-network interface migrate -vserver Cluster -lif <lif_name> -source-node node3 destination-node node3 -destination-port <port_name>`
+「network interface migrate -vserver Cluster -lif LIF_name -source-node node3 destination-node node3 -destination-port_name_`
 
 . クラスタ LIF のホームポートを次のように変更します。
 +
-「 network interface modify -vserver Cluster -lif <lif_name> – home-port <port_name> 」という形式になります
+「network interface modify -vserver Cluster -lif LIF_name–home-port_port_name_`」です
 
 . クラスタポートが Cluster broadcast-domain にない場合は、次のコマンドを使用して追加します。
 +
@@ -74,7 +74,7 @@ network interface show -fields home-node 、 home-port
 
 .. このポートを含むブロードキャストドメインを表示します。
 +
-「 network port broadcast-domain show -port <node_name ： port_name> 」の形式で指定します
+「network port broadcast-domain show -ports_node_name：port_name_`
 
 .. ブロードキャストドメインのポートを追加または削除します。
 +
@@ -82,7 +82,7 @@ network interface show -fields home-node 、 home-port
 
 .. LIF のホームポートを変更します。
 +
-「 network interface modify -vserver <vserver-name> -lif <lif_name> – home-port <port_name> 」という形式になります
+「network interface modify -vserver vserver_name -lif_lif_name_–home-port_port_name_`
 
 +
 必要に応じて、クラスタ間ブロードキャストドメインを調整してクラスタ間 LIF を移行します。データ LIF は変更されません。

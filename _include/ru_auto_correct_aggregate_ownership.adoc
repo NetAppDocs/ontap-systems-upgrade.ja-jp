@@ -11,11 +11,11 @@
 .手順
 . パートナーノードが現在所有しているアグリゲートをホーム所有者ノードに戻します。
 +
-「 storage aggregate relocation start -node <source_node> -destination <destination-node> -aggregate -list * 」のように表示されます
+storage aggregate relocation start -node-source_node__ destination_destination-node-aggregate-list *
 
 . node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していないことを確認します。
 +
-「 storage aggregate show -nodes <node_name > -is-home false -fields owner-name 、 home-name 、 state
+storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
 次の例は、アグリゲートの現在の所有者とホーム所有者の両方がノードにある場合のコマンドの出力例を示しています。
@@ -41,4 +41,4 @@ aggr4       node1      node1       online
 
 コントローラの交換プロセスを再開する必要があります。
 
-「 system controller replace start-nodes <Node_name> 」のように入力します
+'system controller replace start-nodes_node_name _`

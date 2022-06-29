@@ -59,7 +59,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 .手順
 . 次のコマンドを入力して、アグリゲートのリストを表示します。
 +
-「 storage aggregate show -nodes <node4 > -is-home true 」という 2 つの意味があります
+storage aggregate show -nodes_node4 --is-home true
 
 +
 正しく再配置されていないアグリゲートを特定するには、セクションで取得した node1 のホーム所有者を含むアグリゲートのリストを参照してください link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] コマンドの出力と比較してください。
@@ -67,17 +67,17 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 . 手順 1 の出力と、セクションで確認した node1 用の出力を比較します link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] 再配置されていないアグリゲートがあることを確認します。
 . [[auto_aggr_relocate_fail_Step3] ノード 4 の背後にあるアグリゲートの再配置：
 +
-「 storage aggregate relocation start -node <node4 > -aggr <aggr_node_A_1 > -destination <node3 >"
+「storage aggregate relocation start -NODE_node4」-aggr_aggr_node_A_1 -destination_node3 _」を入力します
 
 +
 この再配置中は '-nd-controller-upgrade パラメータを使用しないでください
 
 . node3 がアグリゲートのホームの所有者になったことを確認します。
 +
-「 storage aggregate show -aggregate <aggr1 、 aggr2 、 aggr3...> -fields home-name 」のように指定します
+storage aggregate show -aggregate aggr1、aggr2、aggr3_-fields home-name
 
 +
-「 <aggr1 、 aggr2 、 aggr3_> 」は、 node1 が元のホーム所有者であるアグリゲートのリストです。
+「_aggr1、aggr2、aggr3__」は、node1が元のホーム所有者であるアグリゲートのリストです。
 
 +
 ノード 3 をホーム所有者としないアグリゲートは、の同じ再配置コマンドを使用してノード 3 に再配置できます <<auto_aggr_relocate_fail_Step3,手順 3>>。

@@ -21,6 +21,7 @@ entries:
 - title: ARL アップグレードの概要
   url: "/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html"
 - title: ステージ 1 ：アップグレードを準備
+  pdf-filename: ステージ 1 ：アップグレードの準備（ONTAP 9.8以降では「システムコントローラの交換」でアップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-app/stage_1_index.html"
@@ -29,6 +30,7 @@ entries:
   - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
     url: "/upgrade-arl-auto-app/get_ip_address_of_external_kms_for_storage_encryption.html"
 - title: ステージ 2 ：移行してノード 1 を撤去
+  pdf-filename: ステージ 2 ：ノード1の移動と撤去（ONTAP 9.8以降では「システムコントローラの交換」にアップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-app/stage_2_index.html"
@@ -41,6 +43,7 @@ entries:
   - title: ネットブートを準備
     url: "/upgrade-arl-auto-app/prepare_for_netboot.html"
 - title: ステージ 3 ：node3 をインストールしてブートします
+  pdf-filename: ステージ 3 ：node3のインストールと起動（ONTAP 9.8以降では「システムコントローラの交換」にアップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-app/stage_3_index.html"
@@ -63,6 +66,7 @@ entries:
   - title: ノード 2 を撤去
     url: "/upgrade-arl-auto-app/retire_node2.html"
 - title: ステージ 5 ：ノード 4 をインストールしてブートします
+  pdf-filename: ステージ 5 ：ノード4をインストールしてブートします（ONTAP 9.8以降では「システムコントローラの交換」にアップグレードしてください）。
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-app/stage_5_index.html"
@@ -77,6 +81,7 @@ entries:
   - title: node2 によって所有されているルート以外のアグリゲートと NAS データ LIF を、 node3 から node4 に移動します
     url: "/upgrade-arl-auto-app/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html"
 - title: ステージ 6 ：アップグレードを完了します
+  pdf-filename: ステージ 6 ：アップグレードの完了（ONTAP 9.8以降では「システムコントローラの交換」でアップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-app/stage_6_index.html"
@@ -91,6 +96,7 @@ entries:
   - title: SnapMirror 処理を再開します
     url: "/upgrade-arl-auto-app/resume_snapmirror_operations.html"
 - title: トラブルシューティングを行う
+  pdf-filename: トラブルシューティング（ONTAP 9.8以降の「システムコントローラの交換」にアップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-app/troubleshoot_index.html"

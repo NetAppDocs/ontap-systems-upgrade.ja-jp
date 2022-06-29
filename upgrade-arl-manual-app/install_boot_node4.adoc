@@ -192,7 +192,7 @@ NOTE: ネットブート接続として管理ポートおよび IP アドレス�
 | 実行中です | ブート環境プロンプトで「 ifconfig e0M -auto 」コマンドを入力すると、接続が自動的に設定されます 
 
 
-| 実行されていません | ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。 ifconfig e0M -addr= filer_addr mask= netmask -gw= gateway dns_addr domain= dns_domain`filer_addr' は、ストレージシステムの IP アドレスです。「 netmask 」は、ストレージ・システムのネットワーク・マスクです。「 gateway 」はストレージ・システムのゲートウェイです。「 dns_addr 」は、ネットワーク上のネームサーバの IP アドレスです。「 dns_domain 」はドメインネームサービス（ DNS ）ドメイン名です。このオプションパラメータを使用する場合は、ネットブートサーバの URL に完全修飾ドメイン名を指定する必要はなく、サーバのホスト名だけを指定します。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
+| 実行されていません | ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。ifconfig e0M -addr=_filer_addr_mask=_netmask_-gw=_gateway_dns =_dns_addr_domain=_dns_domain_`_filer_addr_`は、ストレージシステムのIPアドレスです。`_netmask_`はストレージ・システムのネットワーク・マスクです`_gateway_`はストレージ・システムのゲートウェイです`_dNS_addr_`は'ネットワーク上のネーム・サーバのIPアドレスです`_dNS_domain_`はDomain Name Service (DNS)ドメイン名ですこのオプションパラメータを使用する場合は、ネットブートサーバの URL に完全修飾ドメイン名を指定する必要はなく、サーバのホスト名だけを指定します。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
 |===
 . ノード 4 でネットブートを実行します。
 +
@@ -279,20 +279,20 @@ DISK         OWNER                       POOL   SERIAL NUMBER   HOME
 | ディスクタイプ | 実行するコマンド 
 
 
-| 共有ディスクの場合 | 「ディスク再割り当て -s `node2 _sysid -d node4 sysid -p node3 sysid 」 
+| 共有ディスクの場合 | `disk reassign -s `_node2 _sysid_-d _node4 _sysid_-p _node3 _sysid_` 
 
 
-| 共有なし | 「ディスクの再割り当て」 -s 「 node2 」 sysid -d node4 sysid 」と入力します 
+| 共有なし | disk disk reassign -s `_node2 _sysid_-d_node4 _sysid_` 
 |===
 +
-'node2 _sysid' 値には ' で取得した情報を使用します link:record_node2_information.html#man_node2_info_step10["手順 10"] をクリックします。'node4 sysid' の場合は ' で取得した情報を使用します <<man_install4_step23,手順 23>>。
+'node2 _sysid' 値には ' で取得した情報を使用します link:record_node2_information.html#man_node2_info_step10["手順 10"] をクリックします。`_node4 sysid_`の場合は'で取得した情報を使用します <<man_install4_step23,手順 23>>。
 
 +
 
 NOTE: -p オプションは ' 共有ディスクが存在する場合にのみ保守モードで必要です
 
 +
-「 disk reassign 」コマンドを使用すると、「 node2 」が現在の所有者であるディスクだけが再割り当てされます。
+disk reassignコマンドは'_node2 _sysid_'が現在の所有者であるディスクだけを再割り当てします
 
 +
 次のメッセージが表示されます。
@@ -350,15 +350,15 @@ WARNING: * 警告：次の手順を記載された順序で実行する必要が
 
 .. 必要に応じて、 node2 アグリゲートをオンラインにします。
 +
-'aggr_online root_aggr_from_<node2>] を選択します
+「aggr_online root_aggr_from__」に設定します
 
 .. ノード 4 が元のルートアグリゲートからブートしないようにします。
 +
-'aggr offline <root_aggr_on_node4 >`
+'aggr offline_root_aggr_on_node4
 
 .. node2 のルートアグリゲートを node4 の新しいルートアグリゲートとして設定します。
 +
-「 aggr options aggr_from_<node2> root 」のように指定します
+'aggr options aggr_from__ node2 _root
 
 
 
@@ -418,7 +418,7 @@ MetroCluster 構成を使用している場合は、次のコマンドを使用�
 
 . 必要に応じて、 node4 に日付を設定します。
 +
-'Set date <mm/dd/yyyy>`
+'set date_mm/dd/yyyy_`
 
 . ノード 4 で、ブート環境プロンプトの時刻を確認します。
 +
@@ -426,7 +426,7 @@ MetroCluster 構成を使用している場合は、次のコマンドを使用�
 
 . 必要に応じて、 node4 に時間を設定します。
 +
-時刻を設定します
+'set time_hh:mm:ss_`
 
 . パートナーシステム ID が、に示すように正しく設定されていることを確認します <<man_install4_Step26,手順 26>> オプション（ Option ）の下。
 +
@@ -434,7 +434,7 @@ printenv partner-sysid
 
 . 必要に応じて、 node4 にパートナーシステム ID を設定します。
 +
-'setenv partner-sysid node3 _sysid
+setsetenv partner-sysid_node3 _sysid_`
 
 +
 .. 設定を保存します。

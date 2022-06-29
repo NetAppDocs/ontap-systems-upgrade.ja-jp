@@ -61,7 +61,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
 +
-`::> net int modify -vserver Cluster -lif <cluster-lif> -status-admin down ； net int modify -vserver Cluster -lif <cluster-lif> -status-admin up
+`::> net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up
 
 +
 手順 3 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。
@@ -178,7 +178,7 @@ node1_node3
 
 . [[auto_verify_3_step4]] 'node3 の各ポートの到達可能性を 'OK' 以外の到達可能性ステータスで修復します次のコマンドを最初に任意の物理ポートで実行し、次に任意の VLAN ポートで一度に 1 つずつ実行します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 +
 次の例のような出力が表示されます。
@@ -209,22 +209,22 @@ Warning: Repairing port "node1_node3: e0h" may cause it to move into a different
 +
 .. 最初に、インターフェイスグループのメンバーポートにする物理ポートを、それぞれのブロードキャストドメインメンバーシップから削除する必要があります。これを行うには、次のコマンドを使用します。
 +
-「 network port broadcast-domain remove-ports -broadcast-domain <broadcast-domain_name> -ports <node_name ： port_name> 」という形式で指定します
+「network port broadcast-domain remove-ports -broadcast-domain broadcast_domain_name」-ports_node_name -ports_node_name：port_name
 
 .. インターフェイスグループにメンバーポートを追加します。
 +
-「 network port ifgrp add -port <node_name > -ifgrp <ifgrp> -port <port_name> 」の形式で指定します
+「network port ifgrp add -port -node node_name」-ifgrp_-port_port_port_name_`
 
 .. インターフェイスグループは、最初のメンバーポートが追加されてから約 1 分後にブロードキャストドメインに自動的に追加されます。
 .. インターフェイスグループが適切なブロードキャストドメインに追加されたことを確認します。
 +
-「 network port reachability show -node <node_name > -port <ifgrp> 」の形式で指定します
+「network port reachability show -node node_name --port_ifgrp_`」という形式で表示されます
 
 +
 インターフェイスグループの到達可能性ステータスが「 OK 」でない場合は、適切なブロードキャストドメインに割り当てます。
 
 +
-「 network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_name> -ports <node:port>` 」の形式で指定します
+「network port broadcast-domain add-ports -broadcast-domain broadcast_domain_name」-ports_node：port_
 
 
 
@@ -236,13 +236,13 @@ Warning: Repairing port "node1_node3: e0h" may cause it to move into a different
 
 .. 到達可能性ステータスが「 OK 」でない場合は、「 Cluster 」ブロードキャストドメインに到達可能なすべてのポートを修復します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 
 
 . [[step7] 次のいずれかのコマンドを使用して、残りの物理ポートを正しいブロードキャストドメインに移動します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 +
 「 network port broadcast-domain remove-port 」のようになります
@@ -260,7 +260,7 @@ Warning: Repairing port "node1_node3: e0h" may cause it to move into a different
 +
 .. 取り外された VLAN のリスト：
 +
-「 displaced-vlans show 」を参照してください
+「cluster controller -replacement network変位- VLANs show」と表示されます
 
 +
 次のような出力が表示されます。
@@ -279,7 +279,7 @@ Node1       a0a       822, 823
 ----
 .. 以前のベースポートから取り外された VLAN を復元します。
 +
-「 dispaced-vlans restore 」を参照してください
+クラスタ・コントローラ交換ネットワークが取り外されましたVLANがリストアされました
 
 +
 次に、インターフェイスグループ a0a から削除された VLAN を同じインターフェイスグループにリストアする例を示します。
@@ -303,12 +303,12 @@ VLAN の復元が成功すると、指定された宛先ポートに、取り外
 +
 新しくリストアした VLAN が適切なブロードキャストドメインに配置されるまで約 1 分待ちます。
 
-.. 必要に応じて、「 dispaced-vlans show 」出力に含まれていないが、他の物理ポートに設定する必要がある VLAN ポート用に、新しい VLAN ポートを作成します。
+.. 必要に応じて'クラスタコントローラ交換ネットワークではないVLANポート用に新しいVLANポートを作成しますが'VLANは出力を示しますが'他の物理ポート上で構成する必要があります
 
 
 . [[step9] すべてのポート修復が完了したら、空のブロードキャストドメインを削除します。
 +
-'broadcast-domain delete -broadcast-domain <broadcast_domain_name>`
+「broadcast-domain delete -broadcast-domain broadcast_domain_name _」の形式で指定します
 
 . [[step10] ] ポートの到達可能性を確認します。
 +
@@ -333,12 +333,12 @@ VLAN の復元が成功すると、指定された宛先ポートに、取り外
 
 .. LIF のホームノードとホームポートをリストアします。
 +
-「配置されたインターフェイス restore -home-node <node_name > -vserver <vserver_name> -lif -name <lif_name>` 」のようになりました
+「cluster controller -replacement network変位-interface restore-home-node-node_node_name _-vserver_vserver_name _-lif - name_lif_name_`
 
 
 
 . すべての LIF にホームポートがあり、意図的に稼働状態になっていることを確認します。
 +
-network interface show -fields home-port 、 status-admin
+network interface show -fields home-port、status-admin
 
 

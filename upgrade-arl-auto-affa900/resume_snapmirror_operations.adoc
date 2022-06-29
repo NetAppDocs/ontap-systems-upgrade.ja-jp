@@ -23,6 +23,6 @@ summary: AFF A700 から AFF A900 へのアップグレード中に、 SnapMirro
 
 . SnapMirror 関係を再開します。
 +
-「 snapmirror resume -destination – vserver <vserver_name>` 」のように指定します
+snapmirror resume -destination–vserver_vserver_name _`
 
 

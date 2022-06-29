@@ -35,7 +35,7 @@ summary: 必要に応じて、 ONTAP 9.7 以前を実行しているコントロ
 +
 .. 次のコマンドを使用して、キー管理サーバを追加します。
 +
-「 securitykey-manager-add <key_manager_server_ip_address >` 」
+「security key-manager -add_key_manager_server_ip_address_`」
 
 .. リストされている各キー管理サーバについて、同じ手順を繰り返します。最大 4 台のキー管理サーバをリンクできます。
 .. 次のコマンドを使用して、キー管理サーバが正常に追加されたことを確認します。
@@ -51,7 +51,7 @@ summary: 必要に応じて、 ONTAP 9.7 以前を実行しているコントロ
 +
 .. 次のコマンドを使用して、新しいノードでキー管理サーバセットアップウィザードを起動します。
 +
-「 securitykey-manager setup -node <new_controller_name>` 」のように指定します
+security key-manager setup -node _new_controller_name_`
 
 .. ウィザードの手順に従って、キー管理サーバを設定します。
 
@@ -75,7 +75,7 @@ summary: 必要に応じて、 ONTAP 9.7 以前を実行しているコントロ
 | その他すべての ONTAP バージョン | 「セキュリティキーマネージャオンボード同期」 
 
 
-| ONTAP 9.5 | 「 securitykey-manager setup -node <node_name >` 」のように指定します 
+| ONTAP 9.5 | 'security key-manager setup -node _node_name _` 
 |===
 
 

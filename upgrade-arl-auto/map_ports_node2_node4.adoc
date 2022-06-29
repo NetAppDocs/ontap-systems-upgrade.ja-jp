@@ -101,7 +101,7 @@ cluster::>
 .. ノード 4 をブートします。を参照してください link:install_boot_node4.html["ノード 4 をインストールしてブートします"] ノードをブートします（まだブートしていない場合）。
 .. 新しいクラスタポートが Cluster ブロードキャストドメインにあることを確認します。
 +
-「 network port show -node <node> -port <port> -fields broadcast-domain 」
+「network port show -node _-port_port_-fields broadcast-domain」を指定します
 
 +
 次の例は、ポート「 e0a 」が node4 にあるクラスタドメイン内にあることを示しています。
@@ -116,7 +116,7 @@ node4      e0a  Cluster
 ----
 .. クラスタポートが Cluster broadcast-domain にない場合は、次のコマンドを使用して追加します。
 +
-'broadcast-domain add-ports -ipspace Cluster-broadcast-domain Cluster -ports <node:port>`
+'broadcast-domain add-ports -ipspace Cluster-broadcast-domain Cluster-ports_node: port_`
 
 .. クラスタブロードキャストドメインに適切なポートを追加します。
 +
@@ -130,11 +130,11 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000`
 
 .. LIF を 1 つずつ新しいポートに移行します。
 +
-「 network interface migrate -vserver Cluster -lif <lif_name> -source-node node4 destination-node node4 destination-port <port_name> 」の形式で指定します
+「network interface migrate -vserver Cluster -lif LIF_name -source-node node4 destination -node node4 -destination-port_name_`
 
 .. クラスタ LIF のホームポートを変更します。
 +
-「 network interface modify -vserver Cluster -lif <lif_name> – home-port <port_name> 」という形式になります
+「network interface modify -vserver Cluster -lif LIF_name–home-port_port_name_`」です
 
 .. クラスタブロードキャストドメインから古いポートを削除します。
 +
@@ -160,7 +160,7 @@ network interface show -fields home-node 、 home-port
 
 .. このポートを含むブロードキャストドメインを表示します。
 +
-「 network port broadcast-domain show -port <node_name ： port_name> 」の形式で指定します
+「network port broadcast-domain show -ports_node_name：port_name_`
 
 .. ブロードキャストドメインのポートを追加または削除します。
 +
@@ -168,7 +168,7 @@ network interface show -fields home-node 、 home-port
 
 .. LIF のホームポートを変更します。
 +
-「 network interface modify -vserver <vserver> -lif <lif_name> – home-port <port_name> 」の形式になります
+「network interface modify -vserver _vserver_-lif lif_name _–home-port_port_name_`」です
 
 
 
@@ -182,7 +182,7 @@ network interface show -fields home-node 、 home-port
 
 .. ポートを削除します。
 +
-'network port delete -node <node_name > -port <port_name> ’
+'network port delete -node_node_name -- port_port_port_name_`
 
 .. admin レベルに戻ります。
 +
@@ -192,7 +192,7 @@ network interface show -fields home-node 、 home-port
 
 . すべての LIF フェイルオーバーグループを調整します。
 +
-'network interface modify -failover-group <failover_group> -failover-policy <failover_policy>
+'network interface modify -failover-group_failover_group'-failover-policy_failover_policy_`
 
 +
 次のコマンドは ' フェイルオーバー・ポリシーを broadcast-domain-wide に設定し ' フェイルオーバー・グループ fg1 のポートを 'node4 の LIF のフェイルオーバー・ターゲットとして使用します
@@ -230,7 +230,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
 +
-`::> net int modify -vserver Cluster -lif <cluster-lif> -status-admin down ； net int modify -vserver Cluster -lif <cluster-lif> -status-admin up
+`::> net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up
 
 +
 手順 11 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。

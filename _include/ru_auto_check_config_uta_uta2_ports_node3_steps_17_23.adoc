@@ -15,7 +15,7 @@ ucadmin show
 ポートをイニシエータモードに戻します。
 
 +
-ucadmin modify -m fc -t initiator -f <adapter name> `
+ucadmin modify -m fc -t initiator -f adapter name_`
 
 . [[step20]] ポートがイニシエータモードに変更されていることを確認します。
 +
@@ -25,7 +25,15 @@ ucadmin show
 +
 「 halt 」
 
-. [auto_check3_step22]] LOADER プロンプトのブートアップ：
++
+[NOTE]
+====
+外付けディスクをサポートするシステムから、外付けディスクもサポートするシステムにアップグレードする場合は、に進みます <<auto_check3_step22,手順 22>>。
+
+外付けディスクをサポートするシステムから、AFF A800システムなどの内蔵ディスクと外付けディスクの両方をサポートするシステムにアップグレードする場合は、に進みます <<auto_check3_step23,手順 23>>。
+
+====
+. [[auto_check3_step22]] LOADERプロンプトで、次を起動します。
 +
 「 boot_ontap 」
 
@@ -55,15 +63,15 @@ CAUTION: * ここに示す順序で以下の手順を実行する必要があり
 
 .. 必要に応じて、 node1 アグリゲートをオンラインにします。
 +
-'aggr_online root_aggr_from_<node1>
+「aggr_online root_aggr_from__」を参照してください
 
 .. node3 を元のルートアグリゲートからブートできないようにします。
 +
-aggr offline <root_aggr_on_node3>`
+「aggr offline_root_aggr_on_node3」を参照してください
 
 .. node1 ルートアグリゲートを、 node3 の新しいルートアグリゲートとして設定します。
 +
-「 aggr options aggr_from_<node1> root 」のように指定します
+'aggr options aggr_from__ node1 __ root
 
 .. ノード 3 のルートアグリゲートがオフラインになっていること、およびノード 1 からテイクオーバーされたディスクのルートアグリゲートがオンラインになっていて root に設定されていることを確認します。
 +

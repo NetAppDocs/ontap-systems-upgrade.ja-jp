@@ -98,7 +98,7 @@ MetroCluster 構成の場合は、次のコマンドを使用してコントロ�
 
 . [[step17]] 必要に応じて、 node3 の日付を設定します。
 +
-'Set date <mm/dd/yyyy>`
+'set date_mm/dd/yyyy_`
 
 . [step18]] on node3 で、ブート環境のプロンプトで次のコマンドを使用して時間を確認します。
 +
@@ -106,11 +106,11 @@ MetroCluster 構成の場合は、次のコマンドを使用してコントロ�
 
 . [[step19]] 必要に応じて、ノード 3 の時刻を設定します。
 +
-時刻を設定します
+'set time_hh:mm:ss_`
 
 . [[step20]] 必要に応じて、 node3 にパートナーシステム ID を設定します。
 +
-'setenv partner-sysid <node2 _sysid>`
+setsetenv partner-sysid_node2 _sysid_`
 
 +
 .. 設定を保存します。

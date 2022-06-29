@@ -9,10 +9,10 @@
 | この ONTAP バージョンの場合 ... | 使用するコマンド 
 
 
-| ONTAP 9.6 または 9.7 | セキュリティキー管理ツールのオンボード同期 
+| ONTAP 9.6 または 9.7 | 「セキュリティキーマネージャオンボード同期」 
 
 
-| ONTAP 9.5 | security key-manager setup -node <node_name > 
+| ONTAP 9.5 | 'security key-manager setup -node _node_name _` 
 |===
 . オンボードキーマネージャのクラスタ全体のパスフレーズを入力します。
 

@@ -10,7 +10,7 @@
 
 .. 次のコマンドを入力します。
 +
-「 storage failover modify -node <node_name > -CIFS-NDO -duration default | medium | low 」
+storage failover modify -node _node_name --CIFS-NDO -duration _default | medium | low_`
 
 +
 *** システムのワークロードが 50% ～ 75% の場合は、「 m edium 」と入力します。

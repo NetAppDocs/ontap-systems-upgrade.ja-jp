@@ -27,7 +27,7 @@ summary: ストレージ暗号化の設定と管理、認証キーの管理、�
 
 . 各キー管理サーバの IP アドレスを追加します。
 +
-「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
 
 . クラスタ内のすべてのノードで同じキー管理サーバが設定され使用可能になっていることを確認します。
 +
@@ -40,7 +40,7 @@ summary: ストレージ暗号化の設定と管理、認証キーの管理、�
 . 新しい認証キー ID をメモします。
 . すべての自己暗号化ドライブのキーを新しい認証キーに変更します。
 +
-「 storage encryption disk modify -disk * -data-key-id <authentication_key_id>` 」
+storage encryption disk modify -disk *-data-key-id authentication_key_id_`
 
 
 
@@ -57,7 +57,7 @@ ONTAP 9.10.1 以降では、 Key Management Interoperability Protocol （ KMIP �
 
 . キー管理ツールを追加します。
 +
-「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
 
 . キー管理サーバが設定され、クラスタ内のすべてのノードで使用できることを確認します。
 +
@@ -65,7 +65,7 @@ ONTAP 9.10.1 以降では、 Key Management Interoperability Protocol （ KMIP �
 
 . リンクされたすべてのキー管理サーバの認証キーを新しいノードにリストアします。
 +
-'security key-manager external restore -node new_controller_name'
+'security key-manager external restore -node _new_controller_name_`
 
 . すべての自己暗号化ディスクのキーを新しい認証キーに変更します。
 +
@@ -105,7 +105,7 @@ OKM は暗号キーを管理できます。OKM を使用する場合は、アッ
 +
 [NOTE]
 ====
-このステータスが「 Transferring 」の場合は、転送を中止する必要があります。 snapmirror abort -destination-path vserver <vserver_name>`
+このステータスが「Transferring」の場合は、転送を中止する必要があります。snapmirror abort -destination -vserver _vserver_name _`
 
 ====
 +
@@ -113,6 +113,6 @@ SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は�
 
 . クラスタ間のすべての関係を休止します。
 +
-snapmirror quiesce -destination-path vserver <vserver_name>`
+snapmirror quiesce -destination-pathコマンドを使用して'次のコマンドを実行します
 
 

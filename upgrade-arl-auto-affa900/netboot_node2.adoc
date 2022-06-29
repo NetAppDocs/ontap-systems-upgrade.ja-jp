@@ -48,7 +48,7 @@ NOTE: ネットブート接続として管理ポートおよび IP を使用す�
 
 
 | 実行されていません  a| 
-ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。 ifconfig e0M -addr= filer_addr -mask= netmask -gw= gateway -dns= dns_addr domain= dns_domain`filer_addr' は、ストレージシステムの IP アドレスです。「 netmask 」は、ストレージ・システムのネットワーク・マスクです。「 gateway 」はストレージ・システムのゲートウェイです。「 dns_addr 」は、ネットワーク上のネームサーバの IP アドレスです。このパラメータはオプションです。「 dns_domain 」はドメインネームサービス（ DNS ）ドメイン名です。このパラメータはオプションです。
+ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。ifconfig e0M -addr=_filer_addr_-mask=_netmask_-gw=_gateway_-dns=_dns _domain =_dns_domain_`_filer_addr_`は、ストレージシステムのIPアドレスです。`_netmask_`はストレージ・システムのネットワーク・マスクです`_gateway_`はストレージ・システムのゲートウェイです`_dNS_addr_`は'ネットワーク上のネーム・サーバのIPアドレスですこのパラメータはオプションです。`_dNS_domain_`はDomain Name Service (DNS)ドメイン名ですこのパラメータはオプションです。
 
 
 NOTE: インターフェイスによっては、その他のパラメータが必要になる場合もあります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。
@@ -167,7 +167,7 @@ node2 で LOADER プロンプトが停止します。
 
 . 必要に応じて、 node2 で日付を設定します。
 +
-'Set date <mm/dd/yyyy>`
+'set date_mm/dd/yyyy_`
 
 +
 
@@ -179,7 +179,7 @@ NOTE: node2 で対応する UTC 日付を設定します。
 
 . 必要に応じて、 node2 で時刻を設定します。
 +
-時刻を設定します
+'set time_hh:mm:ss_`
 
 +
 
@@ -191,7 +191,7 @@ NOTE: node2 で対応する UTC 時間を設定します。
 NOTE: AFF A900 にアップグレードするノード 1 のシステム ID です。
 
 +
-setsetenv partner-sysid node1 _sysid
+setENV partner-sysid_node1_sysid_`
 
 +
 .. 設定を保存します。

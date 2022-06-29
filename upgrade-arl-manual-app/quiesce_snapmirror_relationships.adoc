@@ -23,13 +23,13 @@ summary: システムをネットブートする前に、 ONTAP 9.8 以降を実
 
 +
 
-NOTE: ステータスが「 Transferring 」の場合は、転送を中止する必要があります。「 snapmirror abort -destination-path vserver name
+NOTE: ステータスが「Transferring」の場合は、転送を中止する必要があります。snapmirror abort -destination-pathは、vserver_vserver name_`です
 
 +
 SnapMirror 関係が Transferring 状態でない場合は、中止は失敗します。
 
 . クラスタ間のすべての関係を休止します。
 +
-「 snapmirror quiesce -destination-path vserver vserver-name
+snapmirror quiesce -destination-pathコマンドを使用して'vserver_vserver_name_`を実行します
 
 

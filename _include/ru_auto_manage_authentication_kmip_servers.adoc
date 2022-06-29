@@ -9,7 +9,7 @@
 
 . キー管理ツールを追加します。
 +
-「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
 
 . キー管理サーバが設定され、クラスタ内のすべてのノードで使用できることを確認します。
 +
@@ -17,7 +17,7 @@
 
 . リンクされたすべてのキー管理サーバの認証キーを新しいノードにリストアします。
 +
-'security key-manager external restore -node new_controller_name'
+'security key-manager external restore -node _new_controller_name_`
 
 . すべての自己暗号化ディスクのキーを新しい認証キーに変更します。
 +

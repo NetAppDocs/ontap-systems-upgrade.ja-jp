@@ -23,6 +23,6 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 
 . SnapMirror 関係を再開します。
 +
-「 snapmirror resume -destination – vserver <vserver_name>` 」のように指定します
+snapmirror resume -destination–vserver_vserver_name _`
 
 

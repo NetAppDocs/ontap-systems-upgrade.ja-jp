@@ -7,6 +7,6 @@
 .ステップ
 . MetroCluster を正しいポートに再割り当てするには、「 cifs vserver resync 」コマンドを入力します。
 +
-「 MetroCluster vserver resync -vserver vserver_name fcp-mc.headupgrade.test.vs` 」です
+「MetroCluster vserver resync -vserver _vserver_name _fcp-mc.headupgrade.test.vs`
 
 

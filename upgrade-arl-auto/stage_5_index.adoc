@@ -22,6 +22,5 @@ summary: ONTAP 9.5 から 9.7 までのコントローラでは、 system contro
 . link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]
 . link:join_quorum_node_has_different_ports_stage5.html["ノードのネットワークポートセットが異なる場合は、クォーラムを追加します"]
 . link:verify_node4_installation.html["ノード 4 のインストールを確認します"]
-. link:restore_key-manager_config_node4.html["ノード 4 でキー管理ツールの設定をリストアします"]
 . link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html["node2 によって所有されているルート以外のアグリゲートと NAS データ LIF を、 node3 から node4 に移動します"]
 

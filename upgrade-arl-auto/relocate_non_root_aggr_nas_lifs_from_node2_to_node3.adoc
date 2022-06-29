@@ -28,7 +28,7 @@ NOTE: アグリゲートおよび LIF のホーム所有者は変更されませ
 .手順
 . ルート以外のすべてのアグリゲートがオンラインで、ノード 3 でそれらの状態になっていることを確認します。
 +
-「 storage aggregate show -node node3 -state online -root false 」という 2 つのコマンドを実行します
+storage aggregate show -node _node3 --state online -root false
 
 +
 次の例は、 node2 のルート以外のアグリゲートがオンラインになっていることを示しています。
@@ -47,24 +47,24 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 アグリゲートがオフラインになった場合、または node3 で外部になった場合は、各アグリゲートに対して次のコマンドを実行してそれらのアグリゲートをオンラインにします。
 
 +
-「 storage aggregate online -aggregate <aggr_name>` 」という名前になります
+storage aggregate online -aggregate _aggr_name_`
 
 . node3 で次のコマンドを実行し、出力を調べて、すべてのボリュームがノード 3 でオンラインになっていることを確認します。
 +
-volume show -node <node3 > -state offline`
+volume show -node _node3 --state offline`
 
 +
 node3 にオフラインのボリュームがある場合は、各ボリュームに対して次のコマンドを実行してそれらのボリュームをオンラインにします。
 
 +
-'volume online -vserver <vserver_name> -volume <volume_name>`
+'volume online -vserver_name_-volume_name_`
 
 +
-このコマンドで使用する '<vserver_name>` は ' 前の volume show コマンドの出力にあります
+このコマンドで使用する'_vserver_name_'は'前のvolume showコマンドの出力にあります
 
 . LIF が正しいポートに移動され、ステータスが「 up 」になっていることを確認します。LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <node_name > -status-admin up 」の形式で指定します
+「network interface modify -vserver _vserver_name -- lif_lif_name_-home-node_name__-status-admin up
 
 . データ LIF を現在ホストしているポートが新しいハードウェアに存在しない場合は、ブロードキャストドメインから削除します。
 +
@@ -74,18 +74,18 @@ node3 にオフラインのボリュームがある場合は、各ボリュー�
 
 . [[Step5] ] 次のコマンドを入力し、出力を調べて、 node2 にデータ LIF が残っていないことを確認します。
 +
-network interface show -curr-node <node2> -role data
+network interface show -curr-node _node2 -role data
 
 . インターフェイスグループまたは VLAN が設定されている場合は、次の手順を実行します。
 +
 .. node3 の起動後に node3 に VLAN とインターフェイスグループの情報を再作成できるように、 VLAN とインターフェイスグループの情報を記録します。
 .. インターフェイスグループから VLAN を削除します。
 +
-「 network port vlan delete -node <nodename> -port <ifgrp> -vlan-id <vlan_ID> 」のように指定します
+「 network port vlan delete -node _nodename 」 -port_ifgrp --vlan-id_vlan_ID_`
 
 .. 次のコマンドを入力し、ノードに設定されているインターフェイスグループがないかどうかを確認します。
 +
-「 network port ifgrp show -node <node2> -ifgrp <ifgrp_name> -instance 」の形式で指定します
+「network port ifgrp show -node _node2」-ifgrp _ifgrp_nameのように表示されます
 
 +
 次の例に示すように、ノードのインターフェイスグループ情報が表示されます。
@@ -106,7 +106,7 @@ Distribution Function: ip
 ----
 .. ノードにインターフェイスグループが設定されている場合は、それらのグループの名前とグループに割り当てられているポートを記録し、ポートごとに次のコマンドを 1 回入力してポートを削除します。
 +
-「 network port ifgrp remove-port -node <nodename> -ifgrp <ifgrp_name> -port <netport> 」のようになります
+「 network port ifgrp remove-port -node_nodename 」 -ifgrp _ifgrp_name -port_netport_ 」のようになります
 
 
 

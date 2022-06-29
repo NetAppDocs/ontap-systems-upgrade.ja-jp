@@ -21,18 +21,18 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 .手順
 . に記録された node1 情報を使用して、 node3 に VLAN を再作成します link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"] セクション。
 +
-「 network port vlan create -node <node_name > -vlan <vlan-names> 」のように指定します
+'network port vlan create -node_node_name -- vlan_vlan-names_
 
 . に記録されている node1 の情報を使用して、ノード 3 にインターフェイスグループを再作成します link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"] セクション。
 +
-network port ifgrp create -node <node_name > -ifgrp <port_ifgrp_names> -distr-func
+「network port ifgrp create -node _node_name」-ifgrp _port_ifgrp_names_-distr-func」という形式で指定します
 
 . に記録されている node1 の情報を使用して、ノード 3 にブロードキャストドメインを再作成します link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"] セクション。
 +
-「 network port broadcast-domain create -ipspace Default -broadcast-domain <broadcast_domain_names> -mtu <mtu_size> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+「network port broadcast-domain create -ipspace Default -broadcast-domain _broadcast_domain_names _-mtu_mtu_size_-ports_node_name：port_name、node_name：port_name、node_name：port_name
 
 . node3 のポートを、新しく作成したブロードキャストドメインに追加します。
 +
-「 network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_names> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+「network port broadcast-domain add-ports -broadcast-domain broadcast_domain_names」-ports_node_name：port_name、node_name：port_name、node_name：port_name
 
 

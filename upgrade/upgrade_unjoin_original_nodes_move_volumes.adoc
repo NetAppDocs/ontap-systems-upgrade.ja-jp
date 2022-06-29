@@ -14,7 +14,7 @@ summary: ボリュームを新しいノードに移動したら、クラスタ�
 ボリュームを新しいノードに移動したら、クラスタから元のノードを削除します。ノードを削除すると、ノードの設定が消去され、すべてのディスクが初期化されます。
 
 .手順
-. 元のノードでハイアベイラビリティ構成を無効にします。「 storage failover modify -node original_node_name -enabled false
+. 元のノードでハイアベイラビリティ構成を無効にします：「storage failover modify -node _original_node_name __ enabled false
 . advanced 権限レベルに切り替えます。
 +
 「 advanced 」の権限が必要です
@@ -39,13 +39,13 @@ node3                true    true         false
 ----
 . 元のノードのいずれかにイプシロンが設定されている場合は、別のノードにイプシロンを移動します。
 +
-.. 元のノードからイプシロンを削除します。 +`cluster modify -node original_node_name -epsilon false
-.. 別のノードにイプシロンを割り当てます。 +`cluster modify -node new_node_name -epsilon true
+.. 元のノードからイプシロンを削除します。+`cluster modify -node _original_node_name __-epsilon false
+.. 別のノードにイプシロンを割り当てます。+`cluster modify -node _new_node_name __-epsilon true
 
 
 . クラスタに残すノードから、元の各ノードをクラスタから削除します（ advanced 権限レベル）。
 +
-cluster unjoin -node original_node_name
+'cluster unjoin -NODE_ORIGNED_NODE_NAME_`
 
 +
 次のようなメッセージが表示されます。

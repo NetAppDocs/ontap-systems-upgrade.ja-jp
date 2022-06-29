@@ -189,7 +189,7 @@ NOTE: ネットブート接続として管理ポートおよび IP を使用す�
 | 実行中です | ブート環境プロンプトで「 ifconfig e0M -auto 」コマンドを入力すると、接続が自動的に設定されます 
 
 
-| 実行されていません | ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。 ifconfig e0M -addr= filer_addr -mask= netmask -gw= gateway -dns= dns_addr domain= dns_domain`filer_addr' は、ストレージシステムの IP アドレスです。「 netmask 」は、ストレージ・システムのネットワーク・マスクです。「 gateway 」はストレージ・システムのゲートウェイです。「 dns_addr 」は、ネットワーク上のネームサーバの IP アドレスです。「 dns_domain 」はドメインネームサービス（ DNS ）ドメイン名です。このオプションパラメータを使用する場合は、ネットブートサーバの URL に完全修飾ドメイン名を指定する必要はなく、サーバのホスト名だけを指定します。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
+| 実行されていません | ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。ifconfig e0M -addr=_filer_addr_-mask=_netmask_-gw=_gateway_-dns=_dns _domain =_dns_domain_`_filer_addr_`は、ストレージシステムのIPアドレスです。`_netmask_`はストレージ・システムのネットワーク・マスクです`_gateway_`はストレージ・システムのゲートウェイです`_dNS_addr_`は'ネットワーク上のネーム・サーバのIPアドレスです`_dNS_domain_`はDomain Name Service (DNS)ドメイン名ですこのオプションパラメータを使用する場合は、ネットブートサーバの URL に完全修飾ドメイン名を指定する必要はなく、サーバのホスト名だけを指定します。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
 |===
 . [[man_install3_step21] ノード 3 でネットブートを実行します。
 +
@@ -294,20 +294,20 @@ NOTE: コマンドを入力すると、「ディスクはありません」と�
 | ディスクタイプ | 実行するコマンド 
 
 
-| 共有ディスクの場合 | 「ディスクの再割り当て -s node1_sysid -d node3_sysid -p node2 _sysid 」 
+| 共有ディスクの場合 | 'disk reassign -s _node1 _sysid_-d_node3 _sysid_-p _node2 _sysid_` 
 
 
-| ディスクを共有しない | 「ディスクの再割り当て -s node1_sysid -d node3_sysid 」 
+| ディスクを共有しない | 'disk reassign -s _node1 _sysid_-d_node3 _sysid_` 
 |===
 +
-'node1 _sysid' の値には ' で取得した情報を使用します link:record_node1_information.html["ノード 1 の情報を記録します"]。'node3_sysid' の値を取得するには 'ysconfig' コマンドを使用します
+`_node1_sysid_`の値には'で取得した情報を使用します link:record_node1_information.html["ノード 1 の情報を記録します"]。`_node3_sysid_`の値を取得するには'sysconfigコマンドを使用します
 
 +
 
 NOTE: -p オプションは ' 共有ディスクが存在する場合にのみ保守モードで必要です
 
 +
-「 disk reassign 」コマンドは、「 node1 _ sysid 」が現在の所有者であるディスクだけを再割り当てします。
+disk reassignコマンドは'_node1_sysid_'が現在の所有者であるディスクのみを再割り当てします
 
 +
 次のメッセージが表示されます。
@@ -359,12 +359,12 @@ WARNING: * 警告 * ：次の手順を記載された順序で実行する必要
 
 .. 必要に応じて、 node1 アグリゲートをオンラインにします。
 +
-'aggr_online root_aggr_from_node1'
+'aggr_online _root_aggr_from_node1_`
 
-.. ノード 3 が元のルートアグリゲートからブートしないようにします。「 aggr offline root_aggr_on_node3 」
+.. node3が元のルートアグリゲートからブートしないようにします。「aggr offline_root_aggr_on_node3」を参照してください
 .. node1 ルートアグリゲートを、 node3 の新しいルートアグリゲートとして設定します。
 +
-「 aggr options <aggr_from_node1> root 」のように指定します
+「aggr options _aggr_from_node1_root」と入力します
 
 .. ノード 3 のルートアグリゲートがオフラインになっていること、およびノード 1 からテイクオーバーされたディスクのルートアグリゲートがオンラインになっていて root に設定されていることを確認します。
 +
@@ -458,7 +458,7 @@ Destroying mailboxes forces a node to create new empty mailboxes, which clears a
 
 . [[man_install3_step39]] 必要に応じて、 node3 の日付を設定します。
 +
-'Set date <mm/dd/yyyy>`
+'set date_mm/dd/yyyy_`
 
 . [man_install3_step40]] ノード 3 で、ブート環境のプロンプトで時刻を確認します。
 +
@@ -466,7 +466,7 @@ Destroying mailboxes forces a node to create new empty mailboxes, which clears a
 
 . [[man_install3_step41] 必要に応じて、 node3 に時間を設定します。
 +
-時刻を設定します
+'set time_hh:mm:ss_`
 
 . [[man_install3_step42]] パートナーシステム ID がで説明したとおりに正しく設定されていることを確認します <<man_install3_step28,手順 28>> アン下の -p スイッチ：
 +
@@ -474,7 +474,7 @@ printenv partner-sysid
 
 . [[man_install3_step43] 必要に応じて、 node3 にパートナーシステム ID を設定します。
 +
-'setenv partner-sysid <node2 _sysid>`
+setsetenv partner-sysid_node2 _sysid_`
 
 +
 設定を保存します。

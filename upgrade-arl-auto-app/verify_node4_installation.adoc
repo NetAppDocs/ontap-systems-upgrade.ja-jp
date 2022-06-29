@@ -183,7 +183,7 @@ node2_node4
 
 . [[auto_restore_4_Step4]] ノード 4 の各ポートの到達可能性を 'OK' 以外の到達可能性ステータスで修復します次のコマンドを最初に任意の物理ポートで実行し、次に任意の VLAN ポートで一度に 1 つずつ実行します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 +
 次のような出力が表示されます。
@@ -215,22 +215,22 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 +
 .. 最初に、インターフェイスグループのメンバーポートにする物理ポートを、それぞれのブロードキャストドメインメンバーシップから削除する必要があります。これを行うには、次のコマンドを使用します。
 +
-「 network port broadcast-domain remove-ports -broadcast-domain <broadcast_domain_name> -ports <node_name ： port_name> 」の形式で指定します
+「network port broadcast-domain remove-ports -broadcast-domain broadcast_domain_name」-ports_node_name -ports_node_name：port_name」
 
 .. インターフェイスグループにメンバーポートを追加します。
 +
-「 network port ifgrp add -port <node_name > -ifgrp <ifgrp> -port <port_name> 」の形式で指定します
+「network port ifgrp add -port -node node_name」-ifgrp_-port_port_port_name_`
 
 .. インターフェイスグループは、最初のメンバーポートが追加されてから約 1 分後にブロードキャストドメインに自動的に追加されます。
 .. インターフェイスグループが適切なブロードキャストドメインに追加されたことを確認します。
 +
-「 network port reachability show -node <node_name > -port <ifgrp> 」の形式で指定します
+「network port reachability show -node node_name --port_ifgrp_`」という形式で表示されます
 
 +
 インターフェイスグループの到達可能性ステータスが「 OK 」でない場合は、適切なブロードキャストドメインに割り当てます。
 
 +
-「 network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_name> -ports <node:port>` 」の形式で指定します
+「network port broadcast-domain add-ports -broadcast-domain broadcast_domain_name」-ports_node：port_
 
 
 
@@ -242,13 +242,13 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 
 .. 到達可能性ステータスが「 OK 」でない場合は、「 Cluster 」ブロードキャストドメインに到達可能なすべてのポートを修復します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 
 
 . 次のいずれかのコマンドを使用して、残りの物理ポートを正しいブロードキャストドメインに移動します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 +
 「 network port broadcast-domain remove-port 」のようになります
@@ -310,7 +310,7 @@ VLAN の復元が成功すると、指定された宛先ポートに、取り外
 
 . ポートの修復がすべて完了したら、空のブロードキャストドメインを削除します。
 +
-'broadcast-domain delete -broadcast-domain <broadcast_domain_name>`
+「broadcast-domain delete -broadcast-domain broadcast_domain_name _」の形式で指定します
 
 . ポートの到達可能性を確認します
 +
@@ -335,12 +335,12 @@ VLAN の復元が成功すると、指定された宛先ポートに、取り外
 
 .. LIF のホームポートをリストアします。
 +
-「配置されたインターフェイス restore -home-node <node_name > -vserver <vserver_name> -lif -name <lif_name>` 」のようになりました
+「変位インターフェイスのリストア-home-node-node-node_node_name _- vserver_vserver_name _-lif - name_lif_name_name_」のように指定します
 
 
 
 . すべての LIF にホームポートがあり、意図的に稼働状態になっていることを確認します。
 +
-network interface show -fields home-port 、 status-admin
+network interface show -fields home-port、status-admin
 
 

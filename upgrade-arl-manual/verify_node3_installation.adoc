@@ -23,7 +23,7 @@ node3 のインストールとブートが完了したら、正しくインス�
 
 . [step2] node3 が node2 と通信できること、およびすべての LIF が動作していることを確認します。
 +
-network interface show -curr-node node3
+network interface show -curr-node node3 _`
 
 . [[step3]] 次のいずれかの操作を実行します。
 +

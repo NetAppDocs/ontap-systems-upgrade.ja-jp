@@ -164,7 +164,7 @@ node2          node1          true     Connected to node1
 
 . [man_prepare-to-downgrade 9] 現在の所有者（ホーム所有者ではない）であるアグリゲートを node1 と node2 のどちらも所有していないことを確認します。
 +
-「 storage aggregate show -node <node_name > -is-home false -fields owner-name 、 homename 、 state 」という文字列が含まれています
+storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
 node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していない場合、次の例のようなメッセージが返されます。
@@ -207,11 +207,11 @@ aggr4         node1        node2        online
 +
 .. パートナーノードが現在所有しているアグリゲートをホーム所有者ノードに戻します。
 +
-「 storage failover giveback -ofnode home_node_name
+storage failover giveback -ofnode home_node_name
 
 .. node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していないことを確認します。
 +
-「 storage aggregate show -nodes <node_name > -is-home false -fields owner-name 、 home-name 、 state
+storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
 次の例は、アグリゲートの現在の所有者とホーム所有者の両方がノードにある場合のコマンドの出力例を示しています。
@@ -273,7 +273,7 @@ node2                 true    true
 
 . [man_prepare-to-downgrade 15]] ノード 1 とノード 2 で同じ ONTAP リリースが実行されていることを確認します。
 +
-「 system node image show -node <node1 、 node2 > -iscurrent true 」
+system node image show -node-node1、node2 _-iscurrent true’
 
 +
 次の例は、コマンドの出力例を示しています。
@@ -294,7 +294,7 @@ node2
 ....
 . ノード 1 とノード 2 のどちらもクラスタ内の他のノードに属するデータ LIF を所有していないことを確認し、出力の「 Current Node 」列と「 Is Home 」列をチェックします。
 +
-network interface show -role data -is-home false -curr-node node_name
+network interface show -role data -is-home false -curr-node node_name _`
 
 +
 次の例は、 node1 に、ホーム所有の LIF がクラスタ内の他のノードにない場合の出力を示しています。
@@ -329,7 +329,7 @@ network interface revert コマンドの詳細については、を参照して�
 
 . ノード 1 とノード 2 で障害ディスクが所有されているかどうかを確認します。
 +
-'storage disk show -nodelist <node1 、 node2 > -boled
+storage disk show -nodelist_node1、node2 _-broken
 
 +
 いずれかのディスクで障害が発生した場合は、 CLI での _Disk およびアグリゲートの管理の手順に従ってディスクを取り外します。を参照してください link:other_references.html["参考資料"] CLI を使用してディスクおよびアグリゲートの管理にリンクするには、を参照してください）。
@@ -341,7 +341,7 @@ network interface revert コマンドの詳細については、を参照して�
 
 . 両方のノードのモデル、システム ID 、シリアル番号を記録します。
 +
-「 system node show -node <node1 、 node2 > -instance 」のように表示されます
+system node show -node-node1、node2 _-instanceです
 
 +
 
@@ -349,7 +349,7 @@ NOTE: この情報を使用して、ディスクの再割り当てと元のノ�
 
 . ノード 1 とノード 2 の両方で次のコマンドを入力し、シェルフ、各シェルフ内のディスク数、フラッシュストレージの詳細、メモリ、 NVRAM 、ネットワークカードに関する情報を出力に記録します。
 +
-'run-node <node_name >sysconfig `
+'run-node_node_name sysconfig '
 
 +
 
@@ -357,7 +357,7 @@ NOTE: この情報を使用して、 node3 または node4 に転送するパー
 
 . ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオンラインになっているアグリゲートを記録します。
 +
-「 storage aggregate show -node <node_name > -state online 」のように指定します
+storage aggregate show -node _node_name --state online `
 
 +
 
@@ -365,7 +365,7 @@ NOTE: この情報と次の手順の情報を使用して、再配置時にオ�
 
 . [[man_prepare_nodes_step19]] ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオフラインになっているボリュームを記録します。
 +
-volume show -node <node_name > -state offline`
+volume show -node node_name --state offline`
 
 +
 
@@ -413,7 +413,7 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 . clusterwide 以外のフェイルオーバー・グループがある場合は ' フェイルオーバー・グループ名と ' そのフェイルオーバー・グループに属するポートを記録します
 . 次のコマンドを入力して、ノードに VLAN が設定されているかどうかを確認します。
 +
-「 network port vlan show -node node_name 」
+「network port vlan show -node _node_name _」のように入力します
 
 +
 VLAN は物理ポートを介して設定されます。物理ポートが変わった場合は、あとで手順で VLAN を再作成する必要があります。
@@ -446,7 +446,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 |===
 .. [[man_prepare_nodes_step23]] SAN 環境または SAN 以外の環境で node1 と node2 が存在するかどうかが不明な場合は、次のコマンドを入力して出力を確認します。
 +
-network interface show -vserver <vserver_name> -data-protocol iscsi|fcp`
+「network interface show -vserver _vserver_name --data-protocol iscsi | fcp」というメッセージが表示されます
 
 +
 SVM に iSCSI も FC も設定されていない場合、次の例のようなメッセージが表示されます。
@@ -528,7 +528,7 @@ node1         node1         in-quorum     true          operational
 |===
 .. [man_prepare-to-downgrade 26]] 次のコマンドを入力して、 SAN iSCSI または FC サービスが有効になっている各 SVM で、ノード 1 とノード 2 に SAN LIF があることを確認します。
 +
-network interface show -data-protocol iscsi|fcp-home-node node_name
+network interface show -data-protocol iscsi|fcp-home-node_node_name _
 
 +
 コマンドは、ノード 1 とノード 2 の SAN LIF 情報を表示します。次の例は、 Status Admin/Oper 列に up/up と表示されているステータスを示しています。これは、 SAN iSCSI サービスと FC サービスが有効になっていることを示しています。
@@ -654,7 +654,7 @@ SnapVault         site    SnapVault License     -
 
 .. 元のシステムで AutoSupport が有効になっているかどうかを確認するには、各ノードで次のコマンドを入力し、出力を調べます。
 +
-「 system node AutoSupport show -node node1 、 node2 」
+system node AutoSupport show -node-node1、node2 _
 
 +
 次の例に示すように、コマンド出力には AutoSupport が有効になっているかどうかが表示されます。
@@ -710,7 +710,7 @@ NOTE: この時点では node2 の AutoSupport メッセージはネットアッ
 
 .. [man_prepare-to-downgrade 36 、 Step 36]] 次のコマンドを入力して、 AutoSupport メッセージが送信されたことを確認します。
 +
-「 system node AutoSupport show -node <node1> -instance 」のように表示されます
+'system node AutoSupport show -node1_-instance `
 
 +
 「 Last Subject Sent ：」フィールドと「 Last Time Sent ：」フィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。

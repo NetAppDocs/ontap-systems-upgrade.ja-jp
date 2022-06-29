@@ -24,13 +24,13 @@ summary: '必要に応じて "system controller replace" コマンドを使用�
 「 security key-manager external show-status 」
 
 +
-「 security key-manager onboard shoecw-backup 」と入力します
+「 securitykey manager onboard show-backup 」を参照してください
 
 . 前の手順で確認したキー管理サーバを、新しいコントローラのキー管理サーバのリストに追加します。
 +
 .. キー管理サーバを追加します。
 +
-「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
 
 .. リストされている各キー管理サーバについて、同じ手順を繰り返します。最大 4 台のキー管理サーバをリンクできます。
 .. キー管理サーバが正常に追加されたことを確認します。
@@ -53,6 +53,6 @@ summary: '必要に応じて "system controller replace" コマンドを使用�
 
 . リンクされたすべてのキー管理サーバから新しいノードに認証キーをリストアします。
 +
-'security key-manager external restore -node new_controller_name'
+'security key-manager external restore -node _new_controller_name_`
 
 

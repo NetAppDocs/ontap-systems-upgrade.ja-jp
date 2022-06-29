@@ -40,7 +40,7 @@ NOTE: アグリゲートおよび LIF のホーム所有者は変更されませ
 
 . 処理が一時停止したまま、ルート以外のすべてのアグリゲートが node2 でそれぞれの状態でオンラインになっていることを確認します。
 +
-「 storage aggregate show -node <node2> -state online -root false 」のように表示されます
+storage aggregate show -node _node2 --state online -root false
 
 +
 次の例は、 node2 のルート以外のアグリゲートがオンラインになっていることを示しています。
@@ -60,25 +60,25 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 アグリゲートがオフラインになった場合、または node2 で外部になった場合は、各アグリゲートに対して 1 回、 node2 で次のコマンドを使用してアグリゲートをオンラインにします。
 
 +
-「 storage aggregate online -aggregate <aggr_name>` 」という名前になります
+storage aggregate online -aggregate _aggr_name_`
 
 . node2 で次のコマンドを使用し、出力を調べて、すべてのボリュームがオンラインであることを確認します。
 +
-volume show -node <node2> -state offline`
+volume show -node-node2 --状態オフライン
 
 +
 node2 上にオフラインのボリュームがある場合は、各ボリュームに対して 1 回、 node2 で次のコマンドを使用してオンラインにします。
 
 +
-'volume online -vserver <vserver_name> -volume <volume_name>`
+'volume online -vserver_name_-volume_name_`
 
 +
-このコマンドで使用する '<vserver_name>` は ' 前の volume show コマンドの出力にあります
+このコマンドで使用する'_vserver_name_'は'前のvolume showコマンドの出力にあります
 
 
 
 . [[step5] いずれかの LIF が停止している場合は、次のコマンドを使用して、各 LIF に対して 1 回ずつ LIF の管理ステータスを「 up 」に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <nodename> -status-admin up 」という形式で指定します
+「network interface modify -vserver _vserver_name __ lif_lif_name_-home-nodename_-status-admin up
 
 

@@ -18,7 +18,7 @@ VMware vStorage APIs for Array Integration （ VAAI ）でコピーオフロー�
 .手順
 . クラスタ LIF がホストされているノードから、 SAN 以外のデータ LIF のホームポートを元のノードから新しいノードに変更します。
 +
-network interface modify -vserver vserver_name -lif lif_name -home-node new_node_name -home-port ｛ netport | ifgrp ｝ ’
+「network interface modify -vserver vserver_name -lif_lif_lif_name」-home-node_new_node_nameに-home-port｛<netport | ifgrp>｝」を指定します
 
 . 次のいずれかを実行します。
 +
@@ -30,14 +30,14 @@ network interface modify -vserver vserver_name -lif lif_name -home-node new_node
  a| 
 特定の LIF
  a| 
-「 network interface migrate -vserver vserver_name -lif lif_name -source -node source_node_name -destination -node dest_node_name -destination -port dest_port_name デスティネーション -port dest_port_name
+「network interface migrate -vserver vserver_name -lif_lif_name_-source-node-source_node_name __-destination-node-dest_node_name -destination-port_dest_port_name_destination-port_dest_port_name_`
 
 
 
  a| 
 SAN 以外のすべてのデータ LIF とクラスタ管理 LIF
  a| 
-「 network interface migrate-all -node node_name 」という形式で指定します
+'network interface migrate-all -node _node_name _`
 
 |===
 +
@@ -61,11 +61,11 @@ cluster::> network interface migrate-all -node local
 +
 .. クラスタ管理 LIF のホームノードを新しいノードの 1 つに切り替えます。
 +
-network interface modify -vserver cluster_name -lif cluster_mgmt -home-node new_node_name -home-port ｛ netport | ifgrp ｝ ’
+「network interface modify -vserver _cluster_name _-lif cluster_mgmt -home-node _new_node_nameの-home-port｛<netport | ifgrp>｝」のように指定します
 
 .. クラスタ管理 LIF を新しいノードの 1 つに移行します。
 +
-「 network interface migrate -vserver vserver_name -lif cluster-mgmt-destination -node new_node_name -destination -port ｛ netport | ifgrp ｝ 」という形式で指定します
+「network interface migrate -vserver _vserver_name _-lif cluster -mgmt-destination-node-new_node_name -destination-port｛<netport | ifgrp>｝
 
 
 

@@ -100,7 +100,7 @@ cluster::>
 .. ノード 3 をブートします。を参照してください link:install_boot_node3.html["node3 をインストールしてブートします"] ノードをブートします（まだブートしていない場合）。
 .. 新しいクラスタポートが Cluster ブロードキャストドメインにあることを確認します。
 +
-「 network port show -node <node> -port <port> -fields broadcast-domain 」
+「network port show -node _-port_port_-fields broadcast-domain」を指定します
 
 +
 次の例は、ポート「 e0a 」が node3 のクラスタドメインにあることを示しています。
@@ -108,7 +108,7 @@ cluster::>
 +
 [listing]
 ----
- cluster::> network port show -node <node3> -port e0a -fields broadcast-domain
+ cluster::> network port show -node _node3_ -port e0a -fields broadcast-domain
 
  node       port broadcast-domain
  ---------- ---- ----------------
@@ -116,7 +116,7 @@ cluster::>
 ----
 .. クラスタポートが Cluster broadcast-domain にない場合は、次のコマンドを使用して追加します。
 +
-'broadcast-domain add-ports -ipspace Cluster-broadcast-domain Cluster -ports <node:port>`
+'broadcast-domain add-ports -ipspace Cluster-broadcast-domain Cluster-ports_node: port_`
 
 +
 次の例は、ノード 3 にクラスタポート「 e1b 」を追加します。
@@ -140,11 +140,11 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 ----
 .. LIF を 1 つずつ新しいポートに移行します。
 +
-` network interface migrate -vserver Cluster -lif <lif_name> -source-node <node3 > -destination-node <node3 > -destination-port <port_name> 」の形式で指定します
+「network interface migrate -vserver Cluster -lif LIF_name -source-node _node3_node3_destination-node-node3 _ destination-port_port_name_`
 
 .. クラスタ LIF のホームポートを変更します。
 +
-「 network interface modify -vserver Cluster -lif <lif_name> – home-port <port_name> 」という形式になります
+「network interface modify -vserver Cluster -lif LIF_name–home-port_port_name_`」です
 
 .. クラスタブロードキャストドメインから古いポートを削除します。
 +
@@ -170,7 +170,7 @@ network interface show -fields home-node 、 home-port
 
 .. このポートを含むブロードキャストドメインを表示します。
 +
-「 network port broadcast-domain show -port <node_name ： port_name> 」の形式で指定します
+「network port broadcast-domain show -ports_node_name：port_name_`
 
 .. ブロードキャストドメインのポートを追加または削除します。
 +
@@ -181,7 +181,7 @@ network interface show -fields home-node 、 home-port
 
 .. LIF のホームポートを変更します。
 +
-「 network interface modify -vserver vserver -lif <lif_name> – home-port <port_name> 」という形式になります
+「network interface modify -vserver vserver-lif lif_name _–home-port_port_name_`」になります
 
 
 
@@ -195,7 +195,7 @@ network interface show -fields home-node 、 home-port
 
 .. ポートを削除します。
 +
-'network port delete -node <node_name > -port <port_name> ’
+'network port delete -node_node_name -- port_port_port_name_`
 
 .. admin レベルに戻ります。
 +
@@ -205,7 +205,7 @@ network interface show -fields home-node 、 home-port
 
 . すべての LIF フェイルオーバーグループを調整します。
 +
-'network interface modify -failover-group <failover_group> -failover-policy <failover_policy>
+'network interface modify -failover-group_failover_group'-failover-policy_failover_policy_`
 
 +
 次のコマンドは、フェイルオーバーポリシーを「 broadcast-domain-wide 」に設定し、ノード 3 の LIF 「 data1 」のフェイルオーバーターゲットとして、フェイルオーバーグループ「 fg1 」のポートを使用します。

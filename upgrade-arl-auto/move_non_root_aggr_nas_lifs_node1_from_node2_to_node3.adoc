@@ -76,7 +76,7 @@ completed? [y/n]
 +
 .. 次のコマンドを入力し、出力を確認します。
 +
-network interface show -data-protocol iscsi|fcp-home-node <node3 >`
+'network interface show -data-protocol _iscsi|fcp_-home-node _node3 _`
 
 +
 次の例のような出力が返されます。
@@ -102,25 +102,25 @@ vs1
 +
 ... LIF のステータスを down に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <LIF_NAME> -status-admin down 」という形式で指定します
+「network interface modify -vserver _Vserver_name --lif_lif_name_-status-admin down」を指定します
 
 ... ポートセットから LIF を削除します。
 +
-`portset remove -vserver <vserver_name> -portset <portset_name> -port-name <port_name> の形式で指定します
+`portset remove -vserver _Vserver_name -portset_portset_name__-port-name _port_name_`
 
 ... 次のいずれかのコマンドを入力します。
 +
 **** 1 つの LIF を移動します。
 +
-「 network interface modify -vserver <vserver_name> -lif <lif_name> -home-port <new_home_port>` 」の形式で指定します
+「network interface modify -vserver _Vserver_name -lif_lif_name_-home-port_`
 
 **** 存在しない、または間違ったポート上のすべての LIF を新しいポートに移動します。
 +
-network interface modify ｛ -home-node <port_on_node1> -role data ｝ -home-node <node1> -role data ｝ -home-port <new_home_port_on_node1> ’ 3 を参照してください
+'network interface modify｛-home-node port_port_on_node1_-role data｝-home-node _new_home_port_on_node3 _`
 
 **** LIF をポートセットに再度追加します。
 +
-`portset add -vserver <vserver_name> -portset <portset_name> -port-name <port_name> の形式で指定します
+`portset add -vserver _Vserver_name -portset_portset_name__-port-name _port_name_`
 
 +
 
@@ -132,15 +132,15 @@ NOTE: SAN LIF を、元のポートとリンク速度が同じポートに移動
 
 .. ノードでトラフィックを許可して送信できるように、すべての LIF のステータスを「 up 」に変更します。
 +
-「 network interface modify -home-node <port_name> -home-port <port_name> -home-port data -status-admin up 」を参照してください
+'network interface modify -home-node port_name_--home-node3_lif data-status admin up
 
 .. いずれかのノードで次のコマンドを入力し、その出力を調べて、 LIF が正しいポートに移動されていること、および LIF のステータスが「 up 」になっていることを確認します。
 +
-network interface show -home-node <node3 > -role data
+'network interface show -home-node node_node3 -- role data `
 
 .. LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
-「 network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up 」の形式で指定します
+「network interface modify -vserver vserver_name __-lif LIF_name -status-admin up
 
 
 

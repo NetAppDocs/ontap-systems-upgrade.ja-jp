@@ -65,7 +65,7 @@ node2 を交換すると、 aggr_node_A_1 は、 node2 ではなくノード 1 �
 .手順
 . アグリゲートのリストを取得します。
 +
-storage aggregate show -nodes 2 -is-home true
+storage aggregate show -nodes_node2 __-is-home true
 
 +
 正しく再配置されていないアグリゲートを特定するには、セクションで取得した node1 のホーム所有者を含むアグリゲートのリストを参照してください link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] コマンドの出力と比較してください。
@@ -73,17 +73,17 @@ storage aggregate show -nodes 2 -is-home true
 . 手順 1 の出力と、セクションで確認した node1 用の出力を比較します link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] 再配置されていないアグリゲートがあることを確認します。
 . node2 の残りのアグリゲートを再配置します。
 +
-「 storage aggregate relocation start -node node2 -aggr aggr_node_A_1 -destination node1
+storage aggregate relocation start -node2_-aggr_aggr_node_A_1 -destination_node1_`
 
 +
 この再配置の実行時は、 -nd-controller-upgrade パラメータを使用しないでください。
 
 . node1 がアグリゲートのホーム所有者になったことを確認します。
 +
-「 storage aggregate show -aggregate <aggr1 、 aggr2 、 aggr3...> -fields home-name 」のように指定します
+storage aggregate show -aggregate aggr1、aggr2、aggr3_-fields home-name
 
 +
-「 <aggr1 、 aggr2 、 aggr3_> 」は、 node1 が元のホーム所有者であるアグリゲートのリストです。
+「_aggr1、aggr2、aggr3__」は、node1が元のホーム所有者であるアグリゲートのリストです。
 
 +
 ホーム所有者としてノード 1 を持たないアグリゲートは、手順 3 で同じ再配置コマンドを使用してノード 1 に再配置できます。

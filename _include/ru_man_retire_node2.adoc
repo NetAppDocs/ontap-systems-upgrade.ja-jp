@@ -59,11 +59,11 @@ NOTE: 複数の HA ペアを含むクラスタの HA ペアをアップグレー
 
 . node2 にイプシロンが設定されている場合は、ノードにイプシロンを「 false 」として設定して、ノードを node3 に転送できるようにします。
 +
-cluster modify -node <node2 > -epsilon false
+cluster modify -node-node2 -- epsilon false
 
 . node3 の epsilon true とマークを付けて、イプシロンを node3 に移動します。
 +
-cluster modify -node <node3 > -epsilon true
+cluster modify -node _node3 _-epsilon true
 
 . セットアップが 2 ノードスイッチレスクラスタかどうかを確認します。
 +
@@ -95,6 +95,6 @@ Enable Switchless Cluster: false/true
 +
 「特権管理者」
 
-. いずれかのコントローラで次のコマンドを入力して、 node2 を停止します。「 system node halt -node node2 」
+. どちらかのコントローラで次のコマンドを入力してnode2を停止します。system node halt -node _node2 _`
 . ノード 2 が完全にシャットダウンしたら、シャーシまたはラックからノードを取り外します。アップグレードの完了後に、 node2 の運用を停止できます。を参照してください link:decommission_old_system.html["古いシステムの運用を停止"]。
 

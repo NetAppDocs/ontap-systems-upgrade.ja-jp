@@ -38,7 +38,7 @@
 node1 の状態が「 waiting for giveback 」になると、 node2 はノード 1 のルート以外のすべてのアグリゲートをギブバックします。
 
 .手順
-. ノード 1 がブートすると、ノード 1 のルート以外のすべてのアグリゲートがノード 1 に戻されます。アグリゲートの手動での再配置を node1 から node2 に実行する必要があります。「 storage aggregate relocation start -node node1 -destination node2 -aggregate-list * -ndocontroller -upgrade true
+. ノード 1 がブートすると、ノード 1 のルート以外のすべてのアグリゲートがノード 1 に戻されます。アグリゲートの手動での再配置を、node1からnode2に実行する必要があります。storage aggregate relocation start -node node1 -destination node2 -aggregate-list *-ndocontroller -upgrade true
 . ノードペアのアップグレード用手順に進みます。
 
 

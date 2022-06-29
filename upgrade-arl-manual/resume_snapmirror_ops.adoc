@@ -23,6 +23,6 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 
 . SnapMirror 関係を再開します。
 +
-「 snapmirror resume -destination – vserver <vserver_name>` 」のように指定します
+snapmirror resume -destination–vserver_vserver_name _`
 
 

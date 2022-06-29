@@ -28,18 +28,18 @@ node3 にオンボードまたは FC アダプタの FC ポートがある場合
 ** ターゲットポートをプログラムする場合：
 
 
-ucadmin modify -m fc -t target <adapter>`
+ucadmin modify -m fc -t target_adapter_`
 
 ** イニシエータポートをプログラミングする場合：
 
 
-ucadmin modify -m fc -t initiator <adapter>`
+ucadmin modify -m fc -t initiator_adapter_`
 
 `-t` は FC4 のタイプで ' ターゲットまたはイニシエータです
 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 保守モード（ブートメニューのオプション 5 ）で、必要に応じて node3 の FC ポートを変更します。 ucadmin modify -m fc -t initiator -f <adapter_port_name> `-t` は、 fc4 タイプ、ターゲット、またはイニシエータです。* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 保守モード（ブートメニューのオプション5）で、必要に応じてnode3のFCポートを変更します。ucadmin modify -m fc -t initiator -f _adapter_port_name_t`-tは、FC4タイプ、ターゲット、またはイニシエータです。* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
 |===
 . [[step3]] 次のいずれかの操作を実行します。
 +

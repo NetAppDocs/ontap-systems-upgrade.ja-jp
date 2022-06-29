@@ -129,7 +129,7 @@ Node2
 
 . [[restore_node2 _step4] 次のコマンドを使用して、 node2 の各ポートの到達可能性を「 ok 」以外の到達可能性ステータスで修復します。
 +
-'network port reachability repair-node <node_name > -port <port_name> ’
+'network port reachability repair-Node_node_name -- port_port_port_name_`
 
 +
 --
@@ -186,7 +186,7 @@ Warning: Repairing port "node2:e9d" may cause it to move into a different broadc
 
 .. LIF のホームノードとホームポートをリストアします。
 +
-「変位インターフェイス restore -home-node -node node_name -vserver vserver_name -lif -name lif_name 」のように指定します
+「変位インターフェイスのリストア-home-node-node-node_node_name _- vserver_vserver_name _-lif - name_lif_name_name_」のように指定します
 
 
 

@@ -16,7 +16,7 @@ summary: 元のノードをシャットダウンして削除するときは、�
 .手順
 . node1 と node2 から AutoSupport メッセージを送信し、テクニカルサポートにアップグレードについて通知します。
 +
-「 system node AutoSupport invoke -node node_name -type all -message 」 MAINT=2h platform_original から platform_new への node_name のアップグレード
+「system node AutoSupport invoke -node _node_name」-type all -message " MAINT=2h Upgrading _node_name _from_platform_original_to _platform_new_new_"」というメッセージが表示されます
 
 . ノード 1 とノード 2 でハイアベイラビリティまたはストレージフェイルオーバーを無効にします。
 +
@@ -29,7 +29,7 @@ summary: 元のノードをシャットダウンして削除するときは、�
 2 ノードクラスタ
  a| 
 .. cluster ha modify -configured false
-.. 「 storage failover modify -node node_name -enabled false 」という名前になります
+.. storage failover modify -node node_name -enabled false
 
 
 
@@ -37,12 +37,12 @@ summary: 元のノードをシャットダウンして削除するときは、�
  a| 
 3 ノード以上のクラスタ
  a| 
-「 storage failover modify -node node_name -enabled false 」という名前になります
+storage failover modify -node node_name -enabled false
 
 |===
 . ノードを停止します。
 +
-「 system node halt -node node_name 」
+system node halt -node _node_name _`
 
 +
 リブート・プロセス中に定足数チェックを抑制するには '-ignore-quorum -warnings オプションを使用します

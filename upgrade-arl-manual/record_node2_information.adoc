@@ -19,7 +19,7 @@ summary: ONTAP 9.7 以降を実行しているコントローラで ARL を手�
 .手順
 . ノード 2 のクラスタネットワークポート、ノード管理ポート、クラスタ間ポート、およびクラスタ管理ポートを特定します。
 +
-network interface show -curr-node <node_name > -role cluster 、 intercluster 、 nodemmgmt 、 cluster-mgmt
+network interface show -curr-node node_name --ロールクラスタ、intercluster、nodemmgmt、cluster-mgmt
 
 +
 次の例に示すように、クラスタ内のそのノードと他のノードの LIF が表示されます。
@@ -49,10 +49,10 @@ NOTE: システムにクラスタ間 LIF がない可能性があります。ク
 
 . node2 の物理ポートを特定します。
 +
-network port show -node <node_name > -type physical ` +
+'network port show -node node_name -- type physical `+
 
 +
-`node_name は ' 移行するノードです
+`_node_nameは'移行するノードです
 
 +
 次の例に示すように、 node2 の物理ポートが表示されます。

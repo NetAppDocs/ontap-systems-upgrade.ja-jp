@@ -52,19 +52,19 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 .手順
 . で記録した node2 の情報を使用して、 node4 に VLAN を再作成します link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"] セクション。
 +
-「 network port vlan create -node <node4 > -vlan <vlan-names> 」のように指定します
+「network port vlan create -node_node4」-vlan_vlan-names_
 
 . で記録した node2 の情報を使用して、 node4 にインターフェイスグループを再作成します link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"] セクション。
 +
-「 network port ifgrp create -node <node4 > -ifgrp <port_ifgrp_names> -distr-func 」のように指定します
+「network port ifgrp create -node _node4」-ifgrp_port_ifgrp_name -distr-func
 
 . で記録した node2 の情報を使用して、 node4 にブロードキャストドメインを再作成します link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"] セクション。
 +
-「 network port broadcast-domain create -ipspace Default -broadcast-domain <broadcast_domain_names> -mtu <mtu_size> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+「network port broadcast-domain create -ipspace Default -broadcast-domain _broadcast_domain_names _-mtu_mtu_size_-ports_node_name：port_name、node_name：port_name、node_name：port_name
 
 . 新たに作成したブロードキャストドメインにノード 4 のポートを追加します。
 +
-「 network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_names> -ports <node_name ： port_name 、 node_name ： port_name ： port_name 」
+「network port broadcast-domain add-ports -broadcast-domain broadcast_domain_names」-ports_node_name：port_name、node_name：port_name、node_name：port_name
 
 
 
@@ -72,7 +72,7 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 
 == ノード 4 でキー管理ツールの設定をリストアします
 
-NetApp Volume Encryption （ NVE ）を使用してアップグレードするシステムのボリュームを暗号化する場合は、暗号化設定を新しいノードに同期する必要があります。ノード 1 のアグリゲートの ARL がノード 2 からノード 4 に完了すると、暗号化されたボリュームがオフラインになります。
+NetApp Volume Encryption （ NVE ）を使用してアップグレードするシステムのボリュームを暗号化する場合は、暗号化設定を新しいノードに同期する必要があります。key-managerをリストアしない場合は、ARLを使用してnode2のアグリゲートをnode3からnode4に再配置すると、暗号化されたボリュームがオフラインになります。
 
 .手順
 . オンボードキーマネージャの暗号化設定を同期するには、クラスタプロンプトで次のコマンドを実行します。
@@ -81,10 +81,10 @@ NetApp Volume Encryption （ NVE ）を使用してアップグレードする�
 | この ONTAP バージョンの場合 ... | 使用するコマンド 
 
 
-| ONTAP 9.6 または 9.7 | セキュリティキー管理ツールのオンボード同期 
+| ONTAP 9.6 または 9.7 | 「セキュリティキーマネージャオンボード同期」 
 
 
-| ONTAP 9.5 | security key-manager setup -node <node_name > 
+| ONTAP 9.5 | 'security key-manager setup -node _node_name _` 
 |===
 . オンボードキーマネージャのクラスタ全体のパスフレーズを入力します。
 

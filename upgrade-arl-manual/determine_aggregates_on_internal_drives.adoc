@@ -21,7 +21,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、 ARL �
 .手順
 . 元のノードごとに 1 回、ノードシェルを入力します。
 +
-「 system node run -node node_name 」のように指定します
+'system node run -node _node_name _`
 
 . 内蔵ドライブを表示します。
 +

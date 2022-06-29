@@ -30,7 +30,7 @@ summary: '必要に応じて "system controller replace" コマンドを使用�
 +
 .. キー管理サーバを追加します。
 +
-「 securitykey-manager-add <key_manager_server_ip_address >` 」
+「security key-manager -add_key_manager_server_ip_address_`」
 
 .. リストされている各キー管理サーバについて、同じ手順を繰り返します。最大 4 台のキー管理サーバをリンクできます。
 .. キー管理サーバが正常に追加されたことを確認します。
@@ -46,13 +46,13 @@ summary: '必要に応じて "system controller replace" コマンドを使用�
 +
 .. 新しいノードでキー管理サーバセットアップウィザードを起動します。
 +
-「 securitykey-manager setup -node <new_controller_name>` 」のように指定します
+security key-manager setup -node _new_controller_name_`
 
 .. ウィザードの手順に従って、キー管理サーバを設定します。
 
 
 . リンクされたすべてのキー管理サーバから新しいノードに認証キーをリストアします。
 +
-「 securitykey-manager restore -node <new_controller_name>` 」のように指定します
+security key-manager restore -node _new_controller_name_`
 
 

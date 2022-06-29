@@ -15,7 +15,7 @@
 
 . 各キー管理サーバの IP アドレスを追加します。
 +
-「 security key-manager external add-servers -key-servers key_management_server_ip_address 」のように設定します
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
 
 . クラスタ内のすべてのノードで同じキー管理サーバが設定され使用可能になっていることを確認します。
 +
@@ -28,6 +28,6 @@
 . 新しい認証キー ID をメモします。
 . すべての自己暗号化ドライブのキーを新しい認証キーに変更します。
 +
-「 storage encryption disk modify -disk * -data-key-id <authentication_key_id>` 」
+storage encryption disk modify -disk *-data-key-id authentication_key_id_`
 
 

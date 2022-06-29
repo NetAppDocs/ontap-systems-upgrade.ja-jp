@@ -25,7 +25,7 @@ summary: ルート以外のアグリゲートをノード 1 からノード 2 �
 
 .. 次のコマンドを入力します。
 +
-「 storage aggregate relocation start -node <node1> -destination <node2> -aggregate-list * -nd-controller-upgrade true
+storage aggregate relocation start -node1_-destination_node2 _-aggregate-list *-nd-controller-upgrade true」を入力します
 
 .. プロンプトが表示されたら、「 y 」と入力します。
 +
@@ -39,7 +39,7 @@ summary: ルート以外のアグリゲートをノード 1 からノード 2 �
 
 . ノード 1 で次のコマンドを入力して、再配置ステータスを確認します。
 +
-「 storage aggregate relocation show -node node1 」を参照してください
+storage aggregate relocation show -Node_node1_`
 
 +
 アグリゲートが再配置されると、そのアグリゲートに対しては「 1 」と表示されます。
@@ -61,7 +61,7 @@ NOTE: ノード 1 に所有されているルート以外のアグリゲート�
 | いずれかのアグリゲートに障害が発生するか、または拒否されます  a| 
 .. EMS ログで対処方法を確認します。
 .. 対処方法を実行します。
-.. 障害が発生したアグリゲートまたは拒否したアグリゲートを再配置します。「 storage aggregate relocation start -node <node1> -destination <node2> -aggregate-list * -nd-controller-upgrade true 」
+.. 障害が発生したアグリゲートまたは拒否したアグリゲートを再配置します。storage aggregate relocation start -node1_destination_node2 _aggregate-list *-nd-controller-upgrade true
 .. プロンプトが表示されたら、「 y 」と入力します。
 .. admin レベルに戻ります。必要に応じて、次のいずれかの方法で強制的に再配置を実行できます。
 +
@@ -76,7 +76,7 @@ NOTE: ノード 1 に所有されているルート以外のアグリゲート�
 |===
 . [man_relocate_1_2_step4] ルート以外のすべてのアグリゲートがオンラインであり、 node2 にあるそれらの状態を確認します。
 +
-「 storage aggregate show -node <node2> -state online -root false 」のように表示されます
+storage aggregate show -node _node2 --state online -root false
 
 +
 次の例は、 node2 のルート以外のアグリゲートがオンラインになっていることを示しています。
@@ -98,24 +98,24 @@ aggr_2     825.0GB 825.0GB      0% online       1 node2            raid_dp,
 アグリゲートがオフラインになった場合、または node2 で外部になった場合は、各アグリゲートに対して 1 回、 node2 で次のコマンドを使用してアグリゲートをオンラインにします。
 
 +
-「 storage aggregate online -aggregate <aggr_name>` 」という名前になります
+storage aggregate online -aggregate _aggr_name_`
 
 . node2 で次のコマンドを入力し、出力を調べて、すべてのボリュームがオンラインであることを確認します。
 +
-volume show -node <node2> -state offline`
+volume show -node-node2 --状態オフライン
 
 +
 node2 上にオフラインのボリュームがある場合は、各ボリュームに対して 1 回、 node2 で次のコマンドを使用してオンラインにします。
 
 +
-'volume online -vserver <vserver-name> -volume <volume-name>`
+'volume online -vserver_name_-volume_volume-name _`
 
 +
 このコマンドで使用する「 vserver -name 」は、前の「 volume show 」コマンドの出力にあります。
 
 . node2 で次のコマンドを入力します。
 +
-「 storage failover show -node node2 」
+storage failover show -node _node2 _
 
 +
 出力に次のメッセージが表示されます。
@@ -127,7 +127,7 @@ Node owns partner's aggregates as part of the nondisruptive controller upgrade p
 ----
 . node1 のルート以外のアグリゲートがオンラインになっていないことを確認します。
 +
-「 storage aggregate show-owner-name <node1> -ha-policy sfo-state online 」のように表示されます
+「storage aggregate show-owner-name_node1_-ha -policy sfo-state online」のように表示されます
 
 +
 出力には、すでに node2 に再配置されているオンラインのルート以外のアグリゲートは表示されません。

@@ -15,7 +15,7 @@ ucadmin show
 ポートをイニシエータモードに戻します。
 
 +
-ucadmin modify -m fc -t initiator -f <adapter name> `
+ucadmin modify -m fc -t initiator -f adapter name_`
 
 . ポートがイニシエータモードに変更されたことを確認します。
 +
@@ -25,7 +25,15 @@ ucadmin show
 +
 「 halt 」
 
-. [[auto_check_4_step22]] LOADER プロンプトのブートアップ：
++
+[NOTE]
+====
+外付けディスクをサポートするシステムから、外付けディスクもサポートするシステムにアップグレードする場合は、に進みます <<auto_check_4_step22,手順 22>>。
+
+外付けディスクを使用するシステムから、AFF A800システムなどの内蔵ディスクと外付けディスクの両方をサポートするシステムにアップグレードする場合は、に進みます <<auto_check_4_step23,手順 23>>。
+
+====
+. [[auto_check_4_step22]] LOADERプロンプトで、次を起動します。
 +
 「 boot_ontap 」
 

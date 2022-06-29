@@ -56,18 +56,18 @@ node3 にオンボードまたは FC アダプタの FC ポートがある場合
 ** ターゲットポートをプログラムする場合：
 
 
-ucadmin modify -m fc -t target <adapter>`
+ucadmin modify -m fc -t target_adapter_`
 
 ** イニシエータポートをプログラミングする場合：
 
 
-ucadmin modify -m fc -t initiator <adapter>`
+ucadmin modify -m fc -t initiator_adapter_`
 
 `-t` は FC4 のタイプで ' ターゲットまたはイニシエータです
 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 保守モード（ブートメニューのオプション 5 ）で、必要に応じて node3 の FC ポートを変更します。 ucadmin modify -m fc -t initiator -f <adapter_port_name> `-t` は、 fc4 タイプ、ターゲット、またはイニシエータです。* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 保守モード（ブートメニューのオプション5）で、必要に応じてnode3のFCポートを変更します。ucadmin modify -m fc -t initiator -f _adapter_port_name_t`-tは、FC4タイプ、ターゲット、またはイニシエータです。* 注： FC ポートはイニシエータとしてプログラムする必要があります。 
 |===
 . [[step3]] 次のいずれかの操作を実行します。
 +
@@ -218,14 +218,14 @@ Adapter  Mode     Type        Mode      Type       Status
 |===
 . [[step6] アダプタがイニシエータモードの場合、および UTA / UTA2 ポートがオンラインの場合は、 UTA / UTA2 ポートをオフラインにします。
 +
-「 storage disable adapter <adapter_name> 」
+storage disable adapter_adapter_adapter_adapter_name_`
 
 +
 ターゲットモードのアダプタは、メンテナンスモードで自動的にオフラインになります。
 
 . [[auto_check3_step7] 現在の構成が目的の用途に一致しない場合は、必要に応じて構成を変更します。
 +
-ucadmin modify -m fc | cna-t initiator | target <adapter_name> `
+ucadmin modify -m fc | cna-t initiator | target_adapter_name_`
 
 +
 ** 「 -m 」はパーソナリティ・モードで、「 fc 」または「 cna 」です。
@@ -274,10 +274,10 @@ Adapter  Mode       Type        Mode     Type        Status
 | システムの状態 | 次に、 
 
 
-| ストレージディスクがあります | 「 network fcp adapter modify -node <node_name > -adapter <adapter_name> -state up 」の形式で指定します 
+| ストレージディスクがあります | 「network fcp adapter modify -node node_name --adapter_adapter_adapter_adapter_name_-state up」の形式で指定します 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 'fcp config <adapter_name> up' 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 'fcp config_adapter_name_up' 
 |===
 . [[step11]] ポートをケーブル接続します。
 
@@ -415,7 +415,7 @@ ucadmin show
 ポートをイニシエータモードに戻します。
 
 +
-ucadmin modify -m fc -t initiator -f <adapter name> `
+ucadmin modify -m fc -t initiator -f adapter name_`
 
 . [[step20]] ポートがイニシエータモードに変更されていることを確認します。
 +
@@ -425,7 +425,15 @@ ucadmin show
 +
 「 halt 」
 
-. [auto_check3_step22]] LOADER プロンプトのブートアップ：
++
+[NOTE]
+====
+外付けディスクをサポートするシステムから、外付けディスクもサポートするシステムにアップグレードする場合は、に進みます <<auto_check3_step22,手順 22>>。
+
+外付けディスクをサポートするシステムから、AFF A800システムなどの内蔵ディスクと外付けディスクの両方をサポートするシステムにアップグレードする場合は、に進みます <<auto_check3_step23,手順 23>>。
+
+====
+. [[auto_check3_step22]] LOADERプロンプトで、次を起動します。
 +
 「 boot_ontap 」
 
@@ -455,15 +463,15 @@ CAUTION: * ここに示す順序で以下の手順を実行する必要があり
 
 .. 必要に応じて、 node1 アグリゲートをオンラインにします。
 +
-'aggr_online root_aggr_from_<node1>
+「aggr_online root_aggr_from__」を参照してください
 
 .. node3 を元のルートアグリゲートからブートできないようにします。
 +
-aggr offline <root_aggr_on_node3>`
+「aggr offline_root_aggr_on_node3」を参照してください
 
 .. node1 ルートアグリゲートを、 node3 の新しいルートアグリゲートとして設定します。
 +
-「 aggr options aggr_from_<node1> root 」のように指定します
+'aggr options aggr_from__ node1 __ root
 
 .. ノード 3 のルートアグリゲートがオフラインになっていること、およびノード 1 からテイクオーバーされたディスクのルートアグリゲートがオンラインになっていて root に設定されていることを確認します。
 +

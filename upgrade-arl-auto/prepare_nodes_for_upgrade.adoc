@@ -19,7 +19,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 .手順
 . ONTAP コマンドラインで次のコマンドを入力して、コントローラの交換プロセスを開始します。
 +
-「 system controller replace start-nodes <Node_name> 」のように入力します
+'system controller replace start-nodes_node_name _`
 
 +
 
@@ -108,19 +108,19 @@ Controller replacement operation has been paused for user intervention.
 
 +
 ** vserver services name-service dns show
-** network interface show -curr-node nodename -role cluster 、 intercluster 、 node-mgmt 、 clustermgmt 、 data
-** network port show -node nodename -type physical
+** network interface show -curr-node nodename __ role cluster、intercluster、node-mgmt、clustermgmt、data
+** 'network port show -nodename_type physical`
 ** 「 service-processor show -node * -instance 」のように表示されます
-** 「 network fcp adapter show -node node_name 」
+** 「 network fcp adapter show -node-node_name _ 」のように指定します
 ** 「 network port ifgrp show 」のように表示されます
 ** 「 network port vlan show 」と表示されます
-** system node show -instance -node nodename
-** 'run-node <node_name >sysconfig `
-** storage aggregate show -node nodename
-** volume show -node node_name
+** system node show -instance -node _nodename _`
+** 'run-node_node_name sysconfig '
+** storage aggregate show -node _nodename _`
+** volume show -node node_name _`
 ** 「 network interface failover-groups show 」と表示されます
-** storage array config show -switch switch_name
-** 'system license show -owner node_name
+** storage array config show -switch_switch_name_`
+** 'system license show -owner_node_name
 ** 「 storage encryption disk show 」のように表示されます
 
 
@@ -138,11 +138,11 @@ NOTE: オンボードキーマネージャを使用した NetApp Volume Encrypti
 .手順
 . パートナーノードが現在所有しているアグリゲートをホーム所有者ノードに戻します。
 +
-「 storage aggregate relocation start -node <source_node> -destination <destination-node> -aggregate -list * 」のように表示されます
+storage aggregate relocation start -node-source_node__ destination_destination-node-aggregate-list *
 
 . node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していないことを確認します。
 +
-「 storage aggregate show -nodes <node_name > -is-home false -fields owner-name 、 home-name 、 state
+storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
 次の例は、アグリゲートの現在の所有者とホーム所有者の両方がノードにある場合のコマンドの出力例を示しています。
@@ -168,7 +168,7 @@ aggr4       node1      node1       online
 
 コントローラの交換プロセスを再開する必要があります。
 
-「 system controller replace start-nodes <Node_name> 」のように入力します
+'system controller replace start-nodes_node_name _`
 
 
 

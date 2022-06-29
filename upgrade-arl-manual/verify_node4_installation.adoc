@@ -24,7 +24,7 @@ node4 のインストールとブートの完了後、正しくインストー�
 
 . ノード 4 がノード 3 と通信できること、およびすべての LIF が動作していることを確認します。
 +
-network interface show -curr-node node4 ’
+'network interface show -curr-node 4：
 
 . 次のいずれかを実行します。
 +

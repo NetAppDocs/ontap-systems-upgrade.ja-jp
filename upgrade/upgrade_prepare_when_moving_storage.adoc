@@ -40,7 +40,7 @@ summary: ストレージを移動してアップグレードする前に、元�
  a| 
 シェルフ、各シェルフ内のディスク数、フラッシュストレージの詳細、メモリ、 NVRAM 、ネットワークカード
  a| 
-「 system node run -node node_name sysconfig 」のように入力します
+'system node run -node _node_name sysconfig `
 
 
 
@@ -54,14 +54,14 @@ summary: ストレージを移動してアップグレードする前に、元�
  a| 
 物理ポート
  a| 
-network port show -node node_name -type physical
+'network port show -node-node_name --物理タイプ
 
 
 
  a| 
 フェイルオーバーグループ
  a| 
-network interface failover-groups show -vserver vserver_name
+network interface failover-groups show -vserver_vserver_name _`
 
 clusterwide 以外のフェイルオーバーグループの名前とポートを記録します。
 
@@ -70,7 +70,7 @@ clusterwide 以外のフェイルオーバーグループの名前とポート�
  a| 
 VLAN の設定
  a| 
-「 network port vlan show -node node_name 」
+「network port vlan show -node _node_name _」のように入力します
 
 各ネットワークポートと VLAN ID のペアを記録します。
 
@@ -79,7 +79,7 @@ VLAN の設定
  a| 
 インターフェイスグループの設定
  a| 
-「 network port ifgrp show -node node_name -instance 」のように指定します
+「 network port ifgrp show -node node_name 」 - instance 」を指定します
 
 インターフェイスグループの名前と割り当てられているポートを記録します。
 
