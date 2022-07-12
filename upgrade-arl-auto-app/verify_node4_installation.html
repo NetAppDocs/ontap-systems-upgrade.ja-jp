@@ -258,11 +258,13 @@
           <div id="react-search" 
           data-search-html="/ja-jp/ontap-systems-upgrade/search.html"
           data-type="widget" 
-          data-placeholder="ドキュメントを検索" 
-          data-no-results-found="{query}に該当する結果はありません" 
-          data-did-you-mean="{suggestion} を検索" 
-          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
-          data-results-found="{hitCount} 件見つかりました"  
+          data-placeholder="ドキュメントを検索"
+          data-no-results-found="{query}に該当する結果はありません"
+          data-did-you-mean="{suggestion} を検索"
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?"
+          data-results-found="{hitCount} 件見つかりました"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -1062,7 +1064,7 @@
           
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_4__ノード_2_の移動と撤去.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_4__node2の移動と撤去_ONTAP_9_8以降では_システムコントローラの交換_にアップグレード_.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" alt="" width="16" height="16"/>
@@ -1622,11 +1624,11 @@
           
           <a target="_blank" 
             
-              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_4__ノードの再配置と撤去.pdf" 
+              href="/ja-jp/ontap-systems-upgrade/pdfs/sidebar/ステージ_4__node2の再配置と撤去_ONTAP_9_5から9_7への_システムコントローラの交換_にアップグレード_.pdf" 
             
           >
             <img src="/ja-jp/ontap-systems-upgrade/images/pdf.png" alt="" width="16" height="16"/>
-            ステージ 4 ：ノードの再配置と撤去
+            ステージ 4 ：ノード 2 の移動と撤去
           </a>
           
 
@@ -2622,7 +2624,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html">
         ノード 1 で所有されているルート以外のアグリゲートと NAS データ LIF を、ノード 2 からノード 3 に移動します
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> ステージ 4 ：ノードの再配置と撤去</div>
+        <div class="na-navbar-padding"> ステージ 4 ：ノード 2 の移動と撤去</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/ontap-systems-upgrade/upgrade-arl-auto/stage_4_index.html">
         概要
@@ -2887,7 +2889,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-29 18:40:44 +0000">06/29/2022</time>
+    <time datetime="2022-07-12 17:41:18 +0000">07/12/2022</time>
     
   
 
@@ -2958,7 +2960,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 <li>
 <p>必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。</p>
 <div class="paragraph">
-<p>`::&gt; net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin down ； net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin up</p>
+<p>`::&gt; net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up</p>
 </div>
 <div class="paragraph">
 <p>手順 3 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</p>
@@ -3224,7 +3226,7 @@ node2_node4
 <li>
 <p>取り外された VLAN のリスト：</p>
 <div class="paragraph">
-<p>「 displaced-vlans show 」を参照してください</p>
+<p>「cluster controller -replacement network変位- VLANs show」と表示されます</p>
 </div>
 <div class="paragraph">
 <p>次のような出力が表示されます。</p>
@@ -3244,7 +3246,7 @@ Node1       a0a           822, 823
 <li>
 <p>以前のベースポートから取り外された VLAN を復元します。</p>
 <div class="paragraph">
-<p>「 dispaced-vlans restore 」を参照してください</p>
+<p>クラスタ・コントローラ交換ネットワークが取り外されましたVLANがリストアされました</p>
 </div>
 <div class="paragraph">
 <p>次に、インターフェイスグループ a0a から削除された VLAN を同じインターフェイスグループにリストアする例を示します。</p>
@@ -3274,7 +3276,7 @@ Node1       a0a           822, 823
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>必要に応じて、「 dispaced-vlans show 」出力に含まれていないが、他の物理ポートに設定する必要がある VLAN ポート用に、新しい VLAN ポートを作成します。</p>
+<p>必要に応じて&#8217;クラスタコントローラ交換ネットワークではないVLANポート用に新しいVLANポートを作成しますが&#8217;VLANは出力を示しますが&#8217;他の物理ポート上で構成する必要があります</p>
 </li>
 </ol>
 </div>
