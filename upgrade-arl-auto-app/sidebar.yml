@@ -58,6 +58,7 @@ entries:
   - title: ノード 1 で所有されているルート以外のアグリゲートと NAS データ LIF を、ノード 2 からノード 3 に移動します
     url: "/upgrade-arl-auto-app/move_non-root_aggr_and_nas_data_lifs_node1_from_node2_to_node3.html"
 - title: ステージ 4 ：ノード 2 の移動と撤去
+  pdf-filename: ステージ 4 ：node2の移動と撤去（ONTAP 9.8以降では「システムコントローラの交換」にアップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-app/stage_4_index.html"

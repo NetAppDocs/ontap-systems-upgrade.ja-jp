@@ -174,7 +174,7 @@ NOTE: アップグレードするシステムのネットワーク構成の複�
 +
 .. 取り外された VLAN を表示します。
 +
-「 displaced-vlans show 」を参照してください
+「cluster controller -replacement network変位- VLANs show」と表示されます
 
 .. 取り外した VLAN を目的の宛先ポートに復元します。
 +
@@ -182,7 +182,7 @@ NOTE: アップグレードするシステムのネットワーク構成の複�
 
 .. すべての取り外された VLAN が復元されたことを確認します。
 +
-「 displaced-vlans show 」を参照してください
+「cluster controller -replacement network変位- VLANs show」と表示されます
 
 .. VLAN は、作成後約 1 分後に適切なブロードキャストドメインに自動的に配置されます。リストアした VLAN が適切なブロードキャストドメインに配置されていることを確認します。
 +

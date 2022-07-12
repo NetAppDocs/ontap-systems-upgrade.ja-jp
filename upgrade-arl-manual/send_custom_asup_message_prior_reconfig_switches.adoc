@@ -22,7 +22,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、 ARL �
 . クラスタにログインします。
 . メンテナンスの開始を通知する AutoSupport メッセージを起動します。
 +
-「 system node AutoSupport invoke -node * -type all -message MAINT= maintenance-window-in-hours 」というメッセージが表示されます
+'system node AutoSupport invoke -node * -type all -message MAINT=_maintenance-window-in-hours_`
 
 +
 「 maintenance-window-in-hours 」の値は、メンテナンス時間の長さを指定します。最大値は 72 時間です。この時間が経過する前にメンテナンスが完了した場合は、メンテナンス期間が終了したことを通知する AutoSupport メッセージを起動できます。

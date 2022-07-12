@@ -413,7 +413,6 @@
   <block id="d5457a285ea7fce244bde8387644b062" category="list-text">内蔵ドライブを搭載したエントリレベルのコントローラ。たとえば、 FAS 2500 などです。</block>
   <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">トラブルシューティング</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="inline-link-macro">トラブルシューティングを行う</block>
-  <block id="bc11cb73d84dd1ca35d5b999ca9afb54" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、を参照してください <block ref="5b03d19ea0e9e656b77e7538c0164f96" category="inline-link-macro-rx"></block> 詳細および解決策については、手順の末尾にあるセクションを参照してください。</block>
   <block id="d5dcbeb79cc6a2aa334dc821840400c2" category="summary">アグリゲートの再配置（ ARL ）がアップグレード中に別のポイントで失敗することがあります。</block>
   <block id="b02aac451baf6d7b36d981f898537961" category="doc">アグリゲートの再配置に失敗しまし</block>
   <block id="bdbf296139657929f989f110dccebbd3" category="section-title">アグリゲートの再配置に失敗していないかどうか</block>
@@ -623,15 +622,12 @@
   <block id="add7de11dea94372ab92280144dd2eae" category="paragraph">「 network port reachability show-detail` 」と表示されます</block>
   <block id="67d13fe1d5e641d73d6e558118a0902a" category="list-text">次の手順を実行して、取り外された可能性のある VLAN を復元します。</block>
   <block id="cb91f704c28ecf5de2f29274ef6bf62e" category="list-text">取り外された VLAN のリスト：</block>
-  <block id="81a71f7b68d86411acd35a0832051632" category="paragraph">「 displaced-vlans show 」を参照してください</block>
   <block id="551f04031696758c1c256f1c90e57b39" category="paragraph">次のような出力が表示されます。</block>
   <block id="a806d4909353769619f495a130cabdbd" category="list-text">以前のベースポートから取り外された VLAN を復元します。</block>
-  <block id="7e13cce614ffd7f318255684f22d3da9" category="paragraph">「 dispaced-vlans restore 」を参照してください</block>
   <block id="e08a0549a69b4bf0d4b807833ac0b586" category="paragraph">次に、インターフェイスグループ a0a から削除された VLAN を同じインターフェイスグループにリストアする例を示します。</block>
   <block id="5382f5bbbe74b198aaaf36efb0dd9ef3" category="paragraph">次に、ポート「 e0e 」上の取り外された VLAN を「 E0h 」にリストアする例を示します。</block>
   <block id="2a31dfadfe9a33da55e9d278be8596a4" category="paragraph">VLAN の復元が成功すると、指定された宛先ポートに、取り外された VLAN が作成されます。デスティネーションポートがインターフェイスグループのメンバーである場合、またはデスティネーションポートがダウンしている場合、 VLAN のリストアは失敗します。</block>
   <block id="aad2ee0340b449143fc7eaa87d78ba8b" category="paragraph">新しくリストアした VLAN が適切なブロードキャストドメインに配置されるまで約 1 分待ちます。</block>
-  <block id="3dd496dea37dae38c9dc7eb802d64409" category="list-text">必要に応じて、「 dispaced-vlans show 」出力に含まれていないが、他の物理ポートに設定する必要がある VLAN ポート用に、新しい VLAN ポートを作成します。</block>
   <block id="9ba5961a2332be610ae3121c25c32aeb" category="list-text">ポートの修復がすべて完了したら、空のブロードキャストドメインを削除します。</block>
   <block id="6fbbdf7318a95fb2400613497f103b75" category="list-text">ポートの到達可能性を確認します</block>
   <block id="e3d6faf783eff413421d5abeaf1dad48" category="paragraph">すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的に接続されていないポートのステータスを「 no-reachability 」と報告する必要があります。この 2 つ以外のステータスが報告されるポートがある場合は、到達可能性修復を実行し、の手順に従ってブロードキャストドメインにポートを追加または削除します <block ref="4f595e600f8320b4ad2d574fa1a9fe37" category="inline-xref-macro-rx"></block>。</block>
@@ -683,7 +679,6 @@
   <block id="761df4f887d66569090abb51e2ec705f" category="paragraph">アグリゲートがオフラインになった場合、または node2 で外部になった場合は、各アグリゲートに対して 1 回、 node2 で次のコマンドを使用してアグリゲートをオンラインにします。</block>
   <block id="f999b6b276f2c64e10bfb3630f92f94c" category="list-text">node2 で次のコマンドを使用し、出力を調べて、すべてのボリュームがオンラインであることを確認します。</block>
   <block id="074f2db71729d7f84803e85e33520125" category="paragraph">node2 上にオフラインのボリュームがある場合は、各ボリュームに対して 1 回、 node2 で次のコマンドを使用してオンラインにします。</block>
-  <block id="a3b6690b513bd53e12723fa3f48d8134" category="paragraph">このコマンドで使用する '&lt;vserver-name&gt; は ' 前の volume show コマンドの出力にあります</block>
   <block id="fa39e98dea804607ace91ae82c9543d7" category="list-text">[[step5] いずれかの LIF が停止している場合は、次のコマンドを使用して、各 LIF に対して 1 回ずつ LIF の管理ステータスを「 up 」に設定します。</block>
   <block id="fdf5cd6af4cb356df1504c2897e0d9f2" category="list-text">ONTAP 9.8 以降を実行している。</block>
   <block id="5d07aebfbe36ac522f2e416e3efcad81" category="list-text">新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。</block>
@@ -2632,7 +2627,6 @@
   <block id="2adf18e995507a97d0d1e8af8c85e4f0" category="paragraph">次の例は、ノードでストレージフェイルオーバーが無効になっている場合の「 storage failover show 」コマンドの出力を示しています。</block>
   <block id="c4b530495164ce1eeaab4b08e9534859" category="list-text">データ LIF のステータスを確認します。</block>
   <block id="5fbed693cb6b31f11a703890fc87d45f" category="inline-link-macro">不具合のすす</block>
-  <block id="1337205e844f111a9850e68ab7fe85fb" category="paragraph">「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。停止している LIF がある場合は、を参照してください <block ref="f37de8559f00b8ef58b12c6857d24513" category="inline-link-macro-rx"></block> セクション。</block>
   <block id="8405f8a611485472bfa1ab420a9a9a02" category="cell">に進みます <block ref="caeb7d58e7293f2d87a762ba5d4df397" category="inline-xref-macro-rx"></block>。</block>
   <block id="a4749d514e1548558e90fda0a15746ff" category="cell">に進みます <block ref="242f372e62d4ec9b0208b2bd3cc69817" category="inline-xref-macro-rx"></block>。</block>
   <block id="9cd28d632d37554bc6b8bc94ae2073e5" category="list-text">[[man_denter_1_step6] どちらかのノードの advanced 権限レベルにアクセスします。</block>
@@ -2837,7 +2831,6 @@
   <block id="68e6b44b3a749a5a92b3130b283a8d5c" category="paragraph">このタスクは MetroCluster サイトごとに実行する必要があります。</block>
   <block id="2582e010e97c2f1b4ef7a684672e4598" category="list-text">クラスタにログインします。</block>
   <block id="ee4b431a595989bb32df666099e34bf8" category="list-text">メンテナンスの開始を通知する AutoSupport メッセージを起動します。</block>
-  <block id="000be743e2bbedc544736fd887cacf7b" category="paragraph">「 system node AutoSupport invoke -node * -type all -message MAINT= maintenance-window-in-hours 」というメッセージが表示されます</block>
   <block id="8b8313711f50dddf1be23555c3e398af" category="paragraph">「 maintenance-window-in-hours 」の値は、メンテナンス時間の長さを指定します。最大値は 72 時間です。この時間が経過する前にメンテナンスが完了した場合は、メンテナンス期間が終了したことを通知する AutoSupport メッセージを起動できます。</block>
   <block id="538f577c4284d097aef57681a2acf728" category="paragraph">「 system node AutoSupport invoke -node * -type all -message MAINT= end 」というメッセージが表示されます</block>
   <block id="047c004f2f53364ce170133f533be47f" category="list-text">同じ手順をパートナーサイトでも実行します。</block>
@@ -3132,7 +3125,6 @@
   <block id="511701430e4fbf5079759a7c3b7c28ff" category="doc">ステージ 4 ：ノード 2 の情報を記録し、 node2 を撤去</block>
   <block id="d21a0858f74e1b40b984bb621122ad41" category="doc">Stage5.ノード 4 をインストールしてブートします</block>
   <block id="0df71f161bb7f6f4a1dd4c0ceefcb245" category="sidebar">ステージ 4 ：情報を記録し、 node2 を撤去</block>
-  <block id="a0f8aeff2834e59d628ba56c42b411bc" category="sidebar">ステージ 4 ：ノードの再配置と撤去</block>
   <block id="69dd6fe430ae07730e1c32b2939c278c" category="inline-link-macro">ONTAP 9.9.1 コマンド：マニュアルページリファレンス</block>
   <block id="9d844ecf2e54ad978b96146975590298" category="cell"><block ref="9d844ecf2e54ad978b96146975590298" category="inline-link-macro-rx"></block></block>
   <block id="aaf9449e1999e9c9362cfeac571fbaee" category="cell">ONTAP 9.9.1 でサポートされるコマンドの構文と使用法について説明します。</block>
@@ -3371,7 +3363,6 @@
   <block id="b8dabd137df5202c83400e4fde74838d" category="paragraph">`::&gt; network connections listening show -vserver Cluster `</block>
   <block id="9c26c389cd17f0bf0da92eb4d2187822" category="paragraph">次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。</block>
   <block id="17a934761f44517e9bcc906e1eb8bfe9" category="list-text">必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。</block>
-  <block id="4839ad4e20e071cacb55dad56989809b" category="paragraph">`::&gt; net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin down ； net int modify -vserver Cluster -lif &lt;cluster-lif&gt; -status-admin up</block>
   <block id="8f6f15e3cd3793ad38c3214c75a0a348" category="paragraph">手順 11 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
   <block id="d1a7512eb8f4b6dc2ebea16def830204" category="paragraph">手順 11 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
   <block id="ceb1502357ca7edd7dc13458f9f78895" category="paragraph">手順（ g ）を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。</block>
@@ -4113,7 +4104,6 @@
   <block id="e031a855de8a6709ad76ee26da7e1409" category="paragraph">「network interface modify -vserver _vserver_name __ lif_lif_name_–home-port_port_name_`</block>
   <block id="b81db1e95a382ce3628dd1e8a693ba94" category="paragraph">'network interface modify -failover-group_failover_group'-failover-policy_failover_policy_`</block>
   <block id="91b0b9d75ab5100fdef2cc4b9abcbf78" category="paragraph">「network interface migrate -vserver _Vserver_name -lif_lif_name_-source-node-node1_destination-node-node1 __ destination-port_port_name_`</block>
-  <block id="7026ec6e9e64d0cd954f925dea928b75" category="paragraph">'vlan create -node_node_name -- vlan-name _vlan_port_`</block>
   <block id="bd804b237ebb8835d7e3b85da5d2132b" category="paragraph">「変位インターフェイスrestore -vserver _Vserver_name -lif-name_lif_name_`」のように指定します</block>
   <block id="aad098d45c08b648ea491886918a7403" category="paragraph">「network interface show -vserver _Vserver_name --status -admin down」を参照してください</block>
   <block id="0c50d3945bcacd6caf3b39ff87c93171" category="paragraph">「network interface show -vserver_Vserver_name --status-oper down」を参照してください</block>
@@ -4354,7 +4344,6 @@
   <block id="7f88c1930a909f734d7a128aa7ac5c0d" category="paragraph">NetApp Volume Encryption （ NVE ）を使用してアップグレードするシステムのボリュームを暗号化する場合は、暗号化設定を新しいノードに同期する必要があります。key-managerをリストアしない場合は、ARLを使用してnode2のアグリゲートをnode3からnode4に再配置すると、暗号化されたボリュームがオフラインになります。</block>
   <block id="11f09c937d4460ab0e473a33da9b1ab8" category="paragraph">network interface show -curr-node _node2 -role data</block>
   <block id="5dad8f32e66b8ee8eadc502efd8b13f1" category="paragraph">「network port ifgrp show -node _node2」-ifgrp _ifgrp_nameのように表示されます</block>
-  <block id="977f3dd1a310456c777f225b9b32f0ba" category="paragraph">'aggr offline_root_aggr_on_node4</block>
   <block id="9b7d57d0483912f37373984d2377cd38" category="paragraph">「network interface modify -vserver _vserver_name __ lif_lif_name_-home-nodename_-status-admin up</block>
   <block id="be169d5dec3b5782fc54ffe06db0f01d" category="paragraph">'network interface show -data-protocol _iscsi|fcp_-home-node _node3 _`</block>
   <block id="de16a1a2e971f09625e82410defe17a1" category="paragraph">「network interface modify -vserver _Vserver_name --lif_lif_name_-status-admin down」を指定します</block>
@@ -4451,4 +4440,10 @@
   <block id="c7f6c7edba62aeb0070664af2982188f" category="sidebar">ステージ 5 ：ノード4をインストールしてブートします（ONTAP 9.8以降では「システムコントローラの交換」にアップグレードしてください）。</block>
   <block id="a7bb4f4bc15b3845dcbe4dd85398882a" category="sidebar">ステージ 6 ：アップグレードの完了（ONTAP 9.8以降では「システムコントローラの交換」でアップグレード）</block>
   <block id="ad783963276a8d71cfdce2a0884ea6fe" category="sidebar">トラブルシューティング（ONTAP 9.8以降の「システムコントローラの交換」にアップグレード）</block>
+  <block id="8ec9dcb34f09496bfb877249e8b20474" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、を参照してください <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 詳細および解決策については、手順の末尾にあるセクションを参照してください。</block>
+  <block id="06f03bd659c1d709e9f3635dd299f179" category="paragraph">「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。停止している LIF がある場合は、を参照してください <block ref="ee9e7ed4648f930256981fc705ceec06" category="inline-link-macro-rx"></block> セクション。</block>
+  <block id="9513edce58e5f4ee5ec2d01f6e5957ea" category="paragraph">'system node AutoSupport invoke -node * -type all -message MAINT=_maintenance-window-in-hours_`</block>
+  <block id="8ae18c4ca2d925d74bcd4990d28f04f0" category="paragraph">このコマンドで使用する'_vserver-name_'は'前のvolume showコマンドの出力にあります</block>
+  <block id="deb8c459cd0f080a7a777d2ba3e57215" category="sidebar">ステージ 4 ：node2の移動と撤去（ONTAP 9.8以降では「システムコントローラの交換」にアップグレード）</block>
+  <block id="d0a53cd31cb7e1982b0b4b4350530c07" category="sidebar">ステージ 4 ：node2の再配置と撤去（ONTAP 9.5から9.7への「システムコントローラの交換」にアップグレード）</block>
 </blocks>

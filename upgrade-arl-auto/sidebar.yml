@@ -59,7 +59,8 @@ entries:
     url: "/upgrade-arl-auto/verify_node3_installation.html"
   - title: ノード 1 で所有されているルート以外のアグリゲートと NAS データ LIF を、ノード 2 からノード 3 に移動します
     url: "/upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html"
-- title: ステージ 4 ：ノードの再配置と撤去
+- title: ステージ 4 ：ノード 2 の移動と撤去
+  pdf-filename: ステージ 4 ：node2の再配置と撤去（ONTAP 9.5から9.7への「システムコントローラの交換」にアップグレード）
   entries:
   - title: 概要
     url: "/upgrade-arl-auto/stage_4_index.html"

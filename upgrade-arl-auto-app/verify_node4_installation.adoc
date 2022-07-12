@@ -61,7 +61,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
 +
-`::> net int modify -vserver Cluster -lif <cluster-lif> -status-admin down ； net int modify -vserver Cluster -lif <cluster-lif> -status-admin up
+`::> net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up
 
 +
 手順 3 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。
@@ -266,7 +266,7 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 +
 .. 取り外された VLAN のリスト：
 +
-「 displaced-vlans show 」を参照してください
+「cluster controller -replacement network変位- VLANs show」と表示されます
 
 +
 次のような出力が表示されます。
@@ -283,7 +283,7 @@ Node1       a0a           822, 823
 ....
 .. 以前のベースポートから取り外された VLAN を復元します。
 +
-「 dispaced-vlans restore 」を参照してください
+クラスタ・コントローラ交換ネットワークが取り外されましたVLANがリストアされました
 
 +
 次に、インターフェイスグループ a0a から削除された VLAN を同じインターフェイスグループにリストアする例を示します。
@@ -305,7 +305,7 @@ VLAN の復元が成功すると、指定された宛先ポートに、取り外
 +
 新しくリストアした VLAN が適切なブロードキャストドメインに配置されるまで約 1 分待ちます。
 
-.. 必要に応じて、「 dispaced-vlans show 」出力に含まれていないが、他の物理ポートに設定する必要がある VLAN ポート用に、新しい VLAN ポートを作成します。
+.. 必要に応じて'クラスタコントローラ交換ネットワークではないVLANポート用に新しいVLANポートを作成しますが'VLANは出力を示しますが'他の物理ポート上で構成する必要があります
 
 
 . ポートの修復がすべて完了したら、空のブロードキャストドメインを削除します。

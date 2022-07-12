@@ -85,7 +85,7 @@ storage failover modify -node _node1_-enabled false
 network interface show -role data -curr-node 2_node2 -home-node1_home_`
 
 +
-「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。停止している LIF がある場合は、を参照してください link:troubleshoot.html["不具合のすす"] セクション。
+「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。停止している LIF がある場合は、を参照してください link:troubleshoot_index.html["不具合のすす"] セクション。
 
 . 次のいずれかを実行します。
 +
