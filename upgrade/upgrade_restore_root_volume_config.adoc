@@ -6,10 +6,15 @@ summary: ルートボリュームからブートデバイスに構成情報を�
 ---
 = ルートボリューム構成をリストア
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]
 ルートボリュームからブートデバイスに構成情報をリストアする必要があります。
+
+
+NOTE: FAS8300、AFF A400、FAS8700のように、ポート「e0a」と「e0b」をハイアベイラビリティ（HA）インターコネクトポートとして使用するシステムにコントローラをインプレースアップグレードする場合、 を確認します xref:upgrade-prepare-when-moving-storage.html#assign_lifs[管理LIFまたはクラスタ間LIFを再割り当てしました] アップグレード手順 を開始する前に、元のシステムのポート「e0a」と「e0b」で設定します。
 
 これらの手順は、 node3 と node4 で実行する必要があります。まず一方のノードでそれぞれの手順を完了してから、次の手順に進みます。
 
@@ -50,3 +55,5 @@ Override system id? {y|n} [n] y
 起動シーケンスは正常に実行されます。
 
 
+
+コントローラのアップグレードに失敗し、「rlib_port_ipspace _assign」というエラーメッセージが表示された場合は、交換用システムでHAポートとして使用されている元のシステムのネットワークポートのLIFをリバートして削除する必要があります。詳細については、を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/PANIC_%3A_rlib_port_ipspace_assign%3A_port_e0a_could_not_be_moved_to_HA_ipspace["こちらの技術情報アーティクル"^]。

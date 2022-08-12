@@ -384,7 +384,6 @@
   <block id="54279af53279de10320508d0526f332e" category="paragraph">OKM は暗号キーを管理できます。OKM を使用する場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。</block>
   <block id="259c8a53b900b4102babb5d05e113f67" category="list-text">パスフレーズを安全な場所に保存します。</block>
   <block id="19077cc2690337623f542cbef7fae627" category="list-text">リカバリ用のバックアップを作成します。次のコマンドを実行して出力を保存します。</block>
-  <block id="d1599347e2c1e8206cd8017da7de3ee0" category="paragraph">「 key-manager onboard show-backup 」を選択します</block>
   <block id="bad82f8550ff52390ef854218320ca8e" category="list-text">デスティネーションクラスタの SnapMirror 関係のステータスを確認します。</block>
   <block id="5bab70a374b8d81dfb1cf1f910800c2a" category="paragraph">「 Snapmirror show 」のように表示されます</block>
   <block id="4240e52a9ba444973cab2a23381467d2" category="paragraph">SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は失敗します。</block>
@@ -1120,7 +1119,6 @@
   <block id="48d957729e77cbd1ec1cf772f951270a" category="list-text">この手順は、交換用コントローラハードウェアが新しく購入され、使用されていないことを前提としています。使用済みのコントローラを「 wipeconfig 」コマンドで準備するために必要な手順は、この手順には含まれていません。交換用コントローラハードウェアを以前に使用していた場合は、テクニカルサポートに問い合わせる必要があります。特に、コントローラが Data ONTAP 7-Mode を実行していた場合は、テクニカルサポートにお問い合わせください。</block>
   <block id="e5e0e33438e3e93b68faec10a86b2f1c" category="list-text">この手順を使用して、ノードが 3 つ以上あるクラスタのコントローラハードウェアをアップグレードできますが、クラスタ内の HA ペアごとに手順を個別に実行する必要があります。</block>
   <block id="8aa258d7d2576cff89b65debb971736d" category="list-text">この FlexArray システム、 V シリーズシステム、 AFF システム、および手順環境 FAS 仮想化ソフトウェアを搭載したシステムです。必要なライセンスがインストールされていれば、 ONTAP 9.5 以降にリリースされた FAS システムをストレージアレイに接続できます。既存の V シリーズシステムは、 ONTAP 9.5 でサポートされます。ストレージアレイと V シリーズのモデルの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe にリンクして、 V シリーズサポートマトリックスにアクセスしてください。</block>
-  <block id="01cc348d995c86d2845e5e78e5e9c63a" category="list-text">ONTAP 9.6 以降では、この手順環境システムで 4 ノード MetroCluster 構成以上を実行しています。MetroCluster 構成サイトは物理的に異なる場所に設置できるため、 HA ペアの場合は各 MetroCluster サイトでコントローラの自動アップグレードを個別に実行する必要があります。</block>
   <block id="aeeef62c5133714906c67f69ce2b1ace" category="paragraph">ステージ 3 で、ノード 3 をインストールしてブートし、クラスタポートとノード管理ポートを node1 から node3 にマッピングし、ノード 3 のインストールを確認します。SAN 以外のデータ LIF と、ノード 1 に属するルート以外のアグリゲートは、ノード 2 からノード 3 に移動されます。</block>
   <block id="3b6c063a8efbc88c969c7838f0611434" category="list-text"><block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block></block>
   <block id="2bef9a25a25f8408b93c008177e86cf5" category="inline-link-macro">ノードのネットワークポートのセットが異なる場合のクォーラムの追加</block>
@@ -1264,10 +1262,6 @@
   <block id="8f2f5cebfa6b4e869a159dbf3cedb773" category="inline-link">使用しているバージョンの Data ONTAP 8 に対する『クラスタの拡張エクスプレスガイド』を検索してください</block>
   <block id="2f22c527d871517945ac34102d2f6931" category="summary">ストレージを移動することでアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。</block>
   <block id="5112ce36807c8e031c9ab063bc28ce71" category="doc">ONTAP 9.7 以前で最終アップグレード手順を実行します</block>
-  <block id="6afad8777741cb158249cdcde37c14fe" category="inline-xref-macro">ONTAP 9.8 で最後のアップグレード手順を実行します</block>
-  <block id="253783c6125a504d15d61a091415d8d8" category="paragraph">以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8 を実行している場合は、の手順を使用する必要があります <block ref="b47981dbddf657334d68e85ddce9d886" category="inline-xref-macro-rx"></block>。</block>
-  <block id="38e9bf55ae23722d14604ba35ee5bcd1" category="inline-xref-macro">ONTAP 9.8 で最後のアップグレード手順を実行します</block>
-  <block id="50aee2f4fc79ea5e0b4ababa4a4889b1" category="list-text">ONTAP 9.8 を実行しているシステムの場合は、 * STOP * をクリックします。の手順を使用する必要があります <block ref="362f5b69398efdd58c711f175ac3611b" category="inline-xref-macro-rx"></block>。</block>
   <block id="83e8f1a7c1a2c10d90059989f69becc7" category="list-text">ストレージシステムのプロンプトで、 LIF に関する情報を表示します。</block>
   <block id="de11c3d9da699c5b0528297ad39e25cb" category="list-text">新しいノードから未使用のポートを削除します（ advanced 権限レベル）。</block>
   <block id="1edc30c9cec2665a01f0a9cc7910d9fc" category="paragraph">「 network port delete 」のように表示されます</block>
@@ -1355,12 +1349,7 @@
   <block id="faadc653b9d5250917700d625763b5cc" category="paragraph">ボリュームの移動処理を強制的に終了させると、移動しているボリュームへのクライアントアクセスが中断される可能性があります。</block>
   <block id="c127e808b121ddcc589e1612e8629e3d" category="list-text">ボリュームが指定した SVM に正常に移動され、正しいアグリゲートに配置されていることを確認します。</block>
   <block id="9366aa36db246276006f86c846f493d4" category="paragraph">volume show -vserver svm_name です</block>
-  <block id="308dc930942875f893b863a55b973e8a" category="summary">ONTAP 9.8 でアップグレードを完了するには、次の手順を実行します。</block>
-  <block id="f2190862dcb9dfdb205bb24e6c66cace" category="doc">ONTAP 9.8 でアップグレードを完了します</block>
-  <block id="f88d69698129a6371fe8a552c1380b8a" category="paragraph">ONTAP 9.8 でアップグレードを完了するには、次の手順を実行します。</block>
   <block id="88b8cfb0eb0372af5622adb072f8536f" category="inline-link-macro">ONTAP 9.8 を使用してネットワークポートをマッピングします</block>
-  <block id="3ffb7b6a90c761ac843e42b770d3b80c" category="list-text"><block ref="3ffb7b6a90c761ac843e42b770d3b80c" category="inline-link-macro-rx"></block></block>
-  <block id="9f17fc6c1046f4722f2d0dff8c12c850" category="list-text"><block ref="9f17fc6c1046f4722f2d0dff8c12c850" category="inline-link-macro-rx"></block></block>
   <block id="1c83ee60998c00cf537e241e2bd00614" category="summary">元のノードがサポート対象のモデルである場合、ストレージを移動してアップグレードする処理中に、ノードの内蔵 SATA ドライブまたは SSD を、新しいノードに接続されているドライブシェルフに移動できます。また、システムをドライブシェルフに変換して、新しいノードに接続することもできます。</block>
   <block id="0f25f34bbc6624def56436f34d66a8ca" category="doc">オプション：内蔵ストレージを移動するか、システムをドライブシェルフに変換します</block>
   <block id="dd49867a2bdd430ef0f1501edf2afc71" category="paragraph">ドライブまたはドライブシェルフを移動できるのは、同じクラスタ内のみです。</block>
@@ -1518,7 +1507,6 @@
   <block id="4d3a4f006fa6b11c769a39a41cac5793" category="summary">ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。</block>
   <block id="de87a7c00dcfcf1112ca50efd583f924" category="paragraph">ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ（ SP ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。</block>
   <block id="0bde8f7cae6f7006cf8059b9d923c0a4" category="inline-xref-macro">ONTAP 9.7 以前で最終アップグレード手順を実行します</block>
-  <block id="3891cdc6868c6f151d43254aeaf389d9" category="paragraph">これらの手順は ONTAP 9.8 を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>。</block>
   <block id="a1aef6bc19056065e0e5c87b39d71b96" category="list-text">ONTAP 9.7 以前を実行しているシステムの場合は、 * stop * と入力します。の手順を使用する必要があります <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>。</block>
   <block id="602dfb74c3c65622a6e81f6da6da5716" category="paragraph">高可用性を再度有効にします : 「 cluster ha modify -configured true</block>
   <block id="68e75079cb8b3e7a53d47ecb9c69a59e" category="paragraph">ストレージフェイルオーバーを再度有効にします。「 storage failover modify -node node_name -enabled true 」</block>
@@ -1583,7 +1571,6 @@
   <block id="e322e9be3fd030740b4239a7bfbeed70" category="paragraph">すべてのディスクシェルフが表示されていること、およびすべてのディスクが出力に表示されていることを確認し、ケーブル接続に関する問題が見つかった場合は修正します。</block>
   <block id="2d46bc00fe1306e504816e238db01e8e" category="list-text">該当するタブをクリックして他のケーブル接続を確認し、 Config Advisor からの出力を確認します。</block>
   <block id="28b82aeb57b341ad6d877342a1ec8842" category="summary">node3 と node4 がアップグレード後にクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。</block>
-  <block id="acf19a04295768ba1ad8e06c738b60d8" category="paragraph">これらの手順は ONTAP 9.8 を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>。</block>
   <block id="1e9be7aa46166eca7db0fc1c4e7a887b" category="paragraph">これらの手順は、 node3 と node4 で実行する必要があります。</block>
   <block id="7f0307060728fe46960f5901c576848b" category="admonition">次のコマンド例では、「 node1 」と呼んでいます。この段階で手順の交換用ノード「 node3 」と「 node4 」の名前は実際には「 node1 」と「 node2 」です。</block>
   <block id="49b95b3a1c8fd0bd354de5fc2ec2b96e" category="list-text">ONTAP 9.7 以前を実行しているシステムの場合は、 * stop * と入力します。の手順を使用する必要があります <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>。</block>
@@ -1619,7 +1606,6 @@
   <block id="0f5308f3f4f3c464e7f648069ec71c80" category="admonition">iSCSI LIF の場合、ホームポートを変更するには LIF が管理上停止している必要があります。</block>
   <block id="7960433234d5162e1055d53630a352f5" category="list-text">ホームでない LIF をそれぞれのホームポートにリバートします。</block>
   <block id="50314d4f124e0153ee89d1686a2bc452" category="paragraph">「 network interface revert * 」の略</block>
-  <block id="e5d91a7fa665e8fe97e2979e274c9883" category="paragraph">これで物理ポートのマッピングが完了しました。アップグレードを完了するには、に進みます <block ref="362f5b69398efdd58c711f175ac3611b" category="inline-xref-macro-rx"></block>。</block>
   <block id="029d23f0db183aa13dd611784328ec8c" category="admonition">ONTAP 9.8 では、自動ポート配置機能が導入され、ハードウェアのアップグレード手順が簡略化されています。</block>
   <block id="797fc5bb1530b93a4d119b95138dc85d" category="list-text">元のノードと新しいノードに互換性があり、サポートされている。</block>
   <block id="e047dcc5ff8dd437e2b3a8e513bf32f3" category="list-text">ONTAP 9.0 以降を実行しているノードのペアを、同じリリースを実行している新しいノードのペアにアップグレードする。</block>
@@ -1642,10 +1628,7 @@
   <block id="cf9dafa4aad7081e3241e5bc4acb350f" category="inline-xref-macro">クラスタから元のノードを分離</block>
   <block id="ce218642d156a102e02a50d62a3bf028" category="list-text"><block ref="ce218642d156a102e02a50d62a3bf028" category="inline-xref-macro-rx"></block></block>
   <block id="58c6b3bbc2bbb34b0e96a9731bc9133c" category="list-text"><block ref="58c6b3bbc2bbb34b0e96a9731bc9133c" category="inline-xref-macro-rx"></block></block>
-  <block id="bb0c96213a94c4304b5c450772cc0659" category="summary">ONTAP 9.8 以前、または ONTAP 9.7 以前でアップグレードを完了します。</block>
   <block id="f5b49dd631a7fa0c45fc2aea8bcfa384" category="paragraph">使用している ONTAP のバージョンに対応した手順を使用する必要があります。</block>
-  <block id="e2be5a85f52a3a5f613d4aadf4e57e2f" category="list-text">ONTAP 9.8 でアップグレードを完了するには、に進みます <block ref="92fec23dfa4ff2645c1b7d56969a9e86" category="inline-xref-macro-rx"></block>。</block>
-  <block id="188912cb793d3e0c2cd2b15edb10057a" category="list-text">ONTAP 9.7 以前でのアップグレードを完了するには、に進みます <block ref="a6085d08f51c0f7b45dd12344b481637" category="inline-xref-macro-rx"></block>。</block>
   <block id="51bea01f527b8a0a7714408789058c6b" category="summary">元のノードをシャットダウンして削除するときは、アップグレードについての AutoSupport メッセージを送信し、メールボックスを削除し、ノードの電源をオフにして、シャーシを取り外す必要があります。</block>
   <block id="0b5874c3f69c1393f6461a11d78dfa9c" category="list-text">node1 と node2 から AutoSupport メッセージを送信し、テクニカルサポートにアップグレードについて通知します。</block>
   <block id="3173ac672a7cdfb43fd506ad10daef11" category="list-text">ノード 1 とノード 2 でハイアベイラビリティまたはストレージフェイルオーバーを無効にします。</block>
@@ -1664,8 +1647,6 @@
   <block id="250a399ca40ceae22935ccb2c65facb5" category="list-text">ノード 1 とノード 2 からすべてのケーブルにラベルを付けて取り外します。</block>
   <block id="ee6adde8f8004d94fe449a931d889e98" category="list-text">ノード 1 とノード 2 を含むシャーシを取り外します。</block>
   <block id="112d12268c7f4b3d566746465f42201d" category="summary">アップグレード後に node3 と node4 がクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。</block>
-  <block id="7e00c0ffb3f4f8002976d8431b57d3f0" category="paragraph">以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8 を実行している場合は、の手順を使用する必要があります <block ref="7523ee9f03a6fb590a93b67219c26179" category="inline-xref-macro-rx"></block>。</block>
-  <block id="348d1bc957542f25e2e2871b40cfd26f" category="list-text">ONTAP 9.8 を実行しているシステムの場合は、 * STOP * をクリックします。の手順を使用する必要があります <block ref="7523ee9f03a6fb590a93b67219c26179" category="inline-xref-macro-rx"></block>。</block>
   <block id="1a8639e4c8ee9656522efd4a2b9f58d0" category="list-text">node3 と node4 をクラスタプロンプトでブートしていない場合は、それらをブートします。</block>
   <block id="4a95a6730ba2310bfeb433fbf30d8aab" category="list-text">「 Cluster 」ブロードキャストドメインに正しいポートを追加します。</block>
   <block id="48965dff18dc1b1a8625e27956a0c97b" category="paragraph">次の例では 'Cluster ポート e1b を node1 に追加します</block>
@@ -2863,7 +2844,6 @@
   <block id="4f8ff7a721c81a3185d356f1a33fae2d" category="paragraph">インターフェイスグループポートにメンバーポートを追加します。</block>
   <block id="615e12bd105ff14dbfe4918eedb06e9c" category="admonition">アップグレードするシステムのネットワーク構成の複雑さによっては、すべてのポートが必要な場所に正しく配置されるまで手順（ a ）から（ g ）を繰り返してください。</block>
   <block id="f885f903824205e3ac8b26efa5254e8d" category="list-text">[[step4]] システムに VLAN が設定されていない場合は、に進みます <block ref="4c0abef6869b6cad04a71c175246f8ab" category="inline-xref-macro-rx"></block>。VLAN が設定されている場合は、すでに存在しないポートまたは別のブロードキャストドメインに移動されたポートで設定されていたポート上で、取り外された VLAN を復元します。</block>
-  <block id="5b16c41785a8844c7ae2d2b5c45588ec" category="list-text">[man_map_1_step5] ONTAP 9.8 以降 ONTAP 、手順では、ネットワークポートの到達可能性の修復時にブロードキャストドメイン間でポートが移動された場合に、 LIF のホームポートが自動的に変更されます。LIF のホームポートが別のノードに移動された場合や割り当てが解除された場合、その LIF は移動された LIF として表示されます。ホームポートがなくなった、または別のノードに再配置された、取り外した LIF のホームポートをリストアします。</block>
   <block id="aaa2b516ee5f7ea24e6108032acc280f" category="paragraph">すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的な接続がないポートのステータスを「 no-reachability 」と報告する必要があります。これら 2 つ以外のステータスを報告しているポートがある場合は、に記載されているように、到達可能性を修復します <block ref="908f101af36ad2335dd086df5698bdbf" category="inline-xref-macro-rx"></block>。</block>
   <block id="c2e8f597299baf99355b3fa78126f551" category="list-text">[[man_map_1_step6] すべての LIF が、正しいブロードキャストドメインに属するポートで管理上の理由で稼働していることを確認します。</block>
   <block id="294217f067c6d528ded0650ae8192e3f" category="list-text">動作状態が down になっている LIF がないか確認します。</block>
@@ -2896,7 +2876,6 @@
   <block id="6897b79e7e86c3bf656b3cf8bb05bc85" category="list-text">[man_map_2_Step3] データ LIF をホストする物理ポートのブロードキャストドメインメンバーシップを変更します。</block>
   <block id="322b25940728d29a26180978d33a75a7" category="paragraph">次のような警告が表示されます。y または n を確認し、必要に応じて入力します。</block>
   <block id="28ffee9aa7a190ca41675de91fb9710b" category="list-text">システムに VLAN が設定されていない場合は、に進みます <block ref="f0f83db123b2b495e546349e9d3200d8" category="inline-xref-macro-rx"></block>。VLAN が設定されている場合は、すでに存在しないポートまたは別のブロードキャストドメインに移動されたポートで設定されていたポート上で、取り外された VLAN を復元します。</block>
-  <block id="88979d326c7ea690819e5ebc2c65edb9" category="list-text">[man_map_2_Step5] ONTAP 9.8 以降手順では、ネットワークポートの到達可能性が修復されたときにブロードキャストドメイン間でポートが移動された場合、 ONTAP によって LIF のホームポートが自動的に変更されます。LIF のホームポートが別のノードに移動された場合や割り当てが解除された場合、その LIF は移動された LIF として表示されます。ホームポートがなくなった、または別のノードに再配置された、取り外した LIF のホームポートをリストアします。</block>
   <block id="c5c3d54cdf6631e2e290953a91dcd842" category="paragraph">すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的に接続されていないポートのステータスを「 no-reachability 」と報告する必要があります。これら 2 つ以外のステータスを報告しているポートがある場合は、に記載されているように、到達可能性を修復します <block ref="42e2bf4f4ef15f603bcc30bc206d35c3" category="inline-xref-macro-rx"></block>。</block>
   <block id="fd6616fb43f706cbccb578942fa320ab" category="paragraph">ONTAP 9 を実行しているノードペアで、ルート以外のアグリゲートを元のノードから同じクラスタ内の新しいノードに移行することにより、コントローラハードウェアを無停止でアップグレードできます。アップグレード中は、アップグレード対象のノードでホストされているデータにアクセスできます。</block>
   <block id="60b36970c08352c3c476769f29561cf4" category="paragraph">この手順では、 Aggregate Relocation （ ARL ；アグリゲートの再配置）と呼ばれる方法を使用します。 ARL を使用すると、 HA 構成を活用して、ルート以外のアグリゲートの所有権をノード間で移動できます（ルートが同じクラスタ内のストレージを共有している場合）。</block>
@@ -3050,7 +3029,6 @@
   <block id="3098dc1e81196ed0a5c7526536b21dc6" category="list-text">storage_, の移動時のアップグレードの準備でメモしておいたノード 1 とノード 2 のポートと LIF の設定情報を確認します。 <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>。</block>
   <block id="785fd52ca2c4957e9caba4406db084c0" category="list-text">storage_ 、 <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>。</block>
   <block id="b27e1f5014645cf6a835fb2e11524da4" category="list-text">システムに VLAN が設定されていない場合は、に進みます <block ref="44c817ee9110592f40577b67e8940aff" category="inline-xref-macro-rx"></block>。VLAN が設定されている場合は、すでに存在しないポートまたは別のブロードキャストドメインに移動されたポートで設定されていたポート上で、取り外された VLAN を復元します。</block>
-  <block id="ebabbc1ebee66becea669b0e9c3afadc" category="list-text">[[map_98_7] ONTAP 9.8 以降では、ネットワークポートの到達可能性が修復手順の際にブロードキャストドメイン間でポートが移動されると、 ONTAP によって LIF のホームポートが自動的に変更されます。LIF のホームポートが別のノードに移動された場合や割り当てが解除された場合、その LIF は移動された LIF として表示されます。ホームポートがなくなった、または別のノードに再配置された、取り外した LIF のホームポートをリストアします。</block>
   <block id="72a19323d192a6a70bcf03b98d5355ae" category="paragraph">すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、 network port reachability show コマンドで、接続されているすべてのポートのプレゼンスステータスが OK と報告され、物理的な接続がないポートのステータスは no-reachability と報告される必要があります。これら 2 つ以外のステータスを報告しているポートがある場合は、に記載されているように、到達可能性を修復します <block ref="84a764803e273063ea87749716b7c654" category="inline-xref-macro-rx"></block>。</block>
   <block id="2c6770803baeb326c3573c2c99ff387a" category="summary">このコンテンツでは、ストレージまたはボリュームを移動することで、クラスタ内の AFF システムまたは FAS システムのコントローラハードウェアをアップグレードする方法について説明します。</block>
   <block id="10ce071fec41e8ee934d0d2c7ef28c46" category="doc">ボリュームまたはストレージを移動してアップグレードするかどうかを決定します</block>
@@ -3145,7 +3123,6 @@
   <block id="4a5512afba1f93dd83104eaac4237453" category="cell"><block ref="4a5512afba1f93dd83104eaac4237453" category="inline-link-macro-rx"></block></block>
   <block id="9732e7498adc911676ddbf1eb96c90f1" category="inline-link-macro">ONTAP 9.7 以前を実行しているコントローラハードウェアを手動でアップグレードします</block>
   <block id="c96cad4c802036afa3176e87bcda336b" category="cell"><block ref="c96cad4c802036afa3176e87bcda336b" category="inline-link-macro-rx"></block></block>
-  <block id="22d219ca4c61aa27b2616b43ecd9678a" category="list-text">ノードを「 boot_menu 」でブートします。</block>
   <block id="8e490bd535c0b48fe8a594afea8a5f73" category="list-text">事前確認が失敗した場合にアグリゲートの所有権を修正</block>
   <block id="10623903188f292ff7edcdd04a4bde0a" category="list-text">ストレージ暗号化の IP アドレスを取得します</block>
   <block id="5967cd2dd5257e032e2c1568e265b057" category="list-text">node1 は、 node1 アグリゲートのホーム所有者と現在の所有者です</block>
@@ -3701,8 +3678,6 @@
   <block id="b09281cc619dc5d9e8148aef71038fcd" category="paragraph">上記の例に示すように、ポートの到達可能性ステータスが、現在配置されているブロードキャストドメインの到達可能性ステータスと異なる場合があることを示す警告メッセージが表示されます。ポートと回答 'y' または 'n' の接続を適宜確認します</block>
   <block id="5267f49248b15741904ddac0a8c8a79a" category="list-text">次の手順に従って、リストアが必要な SVM および LIF のホームポートがある場合は、それらを指定して LIF のホームポートをリストアします。</block>
   <block id="e57d7ba8fb9b97ff4cc0b7b8c4a0b876" category="summary">AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします。</block>
-  <block id="3891297e49eacc493b7b08dbb7fa3f93" category="list-text">[[boot_node2 _step1] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、ノード 2 の構成のロード後にブートループが発生しないように、「 setenv bootarg.storageencryption.support` コマンドを「 true 」に設定し、「 kmip.init.maxwait` 」変数を「 off 」に設定する必要があります。</block>
-  <block id="9b043fdaedad96364338df4b458e563e" category="paragraph">上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。</block>
   <block id="939b677a0e4df037cd999a739cd94317" category="paragraph">上記の例のシステム ID は一例です。アップグレードするノードの実際のシステム ID は異なります。</block>
   <block id="5952acedcc143d30a19364d245887b58" category="paragraph">プロンプトでノード名を入力するかログインプロンプトを表示するまで、ノードが数回リブートして環境変数をリストアし、システムのカードでファームウェアを更新し、他の ONTAP 更新を実行します。</block>
   <block id="4cc41ac3ff89b0e0d88cacedf58eb50d" category="summary">AFF A900 にアップグレードしたあと、古いシステムが動作しなくなったことをネットアップに知らせてください。</block>
@@ -3753,7 +3728,6 @@
   <block id="30dfb9ed789b89ce66132f0084fdfe74" category="paragraph">正しいセットアップを確認するには、 HA ペアが有効になっていることを確認する必要があります。さらに、 node1 と node2 が相互のストレージにアクセスできること、およびクラスタ上の他のノードに属するデータ LIF を所有していないことを確認する必要があります。また、すべてのデータアグリゲートが正しいホームノードにあり、両方のノードのボリュームがオンラインであることを確認する必要があります。新しいノードの 1 つにユニファイドターゲットアダプタがある場合は、ポート設定をすべてリストアする必要があり、場合によってはアダプタの使用方法の変更が必要になることがあります。</block>
   <block id="6e7e19ae8357eafafb5df9d5e403d692" category="paragraph">でキャプチャした出力と比較できます <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> セクション。</block>
   <block id="7bd08b5c3a9e3849e82a1fef790d117b" category="summary">AFF A900 コントローラモジュールと NVRAM モジュールでノード 1 をブートします。</block>
-  <block id="a9e10fdb71bd2ac495122a9187fd9483" category="list-text">この構成で NetApp Storage Encryption （ NSE ）を使用している場合、 'setenv bootarg.storageencryption.support' コマンドを 'true' に設定し、 node1 構成のロード後にブートループが発生しないように、 kmip.init.maxwait` 変数を 'off' に設定する必要があります。</block>
   <block id="1da419b6d2e60d5ecd7df833a2ba8f52" category="summary">AFF A700 から AFF A900 へのアップグレード時に、 node2 上の node1 の NAS データ LIF が node2 から node1 に再配置されていることを確認します。</block>
   <block id="74d87258605a34730c51b53265d130eb" category="summary">ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動し、 AFF A700 から AFF A900 へのアップグレード時にノード 1 のリソースをリストアします。</block>
   <block id="fa5b7598ff79398479188d836810f48d" category="summary">AFF A700 から AFF A900 へのコントローラアップグレードをサポートするために必要な参考資料や Web サイト。</block>
@@ -4044,15 +4018,12 @@
   <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">AFF A700またはFAS9000システムでFlexArray 仮想化ソフトウェアを使用している。</block>
   <block id="c72ac68ecc63380b07ba76bc038edf2e" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールで、node2のインストールを確認する必要があります。物理ポートは変更されないため、古いnode2の物理ポートを交換するnode2にマッピングする必要はありません。</block>
   <block id="fbb88f36cd542fa5f9d7d9b7989c4fa9" category="paragraph">AFF A900またはFAS9500コントローラモジュールでnode1をブートしたあと、正しくインストールされていることを確認する必要があります。node2 がクォーラムに参加するまで待ってから、コントローラの交換処理を再開する必要があります。</block>
-  <block id="2547b168178c27dad563f660708cda35" category="list-text">構成にNetApp Storage Encryption（NSE）を使用していた場合、「setenv bootarg.storageencryption.support」コマンドを「kmip.init.maxwait`」変数を「true」に設定します（AFF A900またはFAS9500コントローラとNVRAMモジュールを搭載したin_bootnode2）。 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）を使用している場合は、変数をリセットする必要があります</block>
   <block id="0b67bd45e44a6983f2e329371f92a85c" category="paragraph">対応するAFF A900またはFAS9500 node1のコントローラモジュールとNVRAMモジュールを交換したら、ノード1をネットブートする必要があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを追加する必要があります。</block>
   <block id="6bc5a701ba593a754b9fc417aacb558c" category="paragraph">AFF A900またはFAS9500コントローラモジュールのブートメディアにインストールされているONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900またはFAS9500ブートメディア上のONTAP バージョンは、アップグレードするAFF A700またはFAS9000システムで実行されているONTAP バージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。</block>
   <block id="fed5188660beab0c1ca98ade1cf9e488" category="list-text">AFF A900またはFAS9500コントローラモジュールで実行されているnode1がブートするまで待ち、次のようにブートメニューオプションを表示します。</block>
   <block id="2fef7d8ad2c6da5a6bfc7b0d1cb4d82f" category="doc">AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします</block>
   <block id="85a900d149967784a6d6e1061792097f" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールで構成されたnode2が、アップグレード可能な状態になりました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールをスワップすると、コンソール接続と管理接続のみが移動します。ここでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートするために必要な手順を示します。</block>
-  <block id="29af000d792467e009d5e082d6fb2b1e" category="list-text">ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。AFF A700またはFAS9000 node1のディスクをAFF A900またはFAS9500 node1に再割り当てするには、プロンプトでnode2の実際のノード名を入力します。次の例を参考にしてください。</block>
   <block id="5e1956d6adc0bdab37f993d5b46e373b" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールを搭載したノード1で、ブートの準備が完了しました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールを交換すると、コンソール接続と管理接続のみが移動します。このセクションでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートするために必要な手順について説明します。</block>
-  <block id="def24406017cbdd73b740bba1a1e6765" category="list-text">ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。node1ディスクをAFF A700からAFF A900に、またはFAS9000からFAS9500に再割り当てするには、プロンプトでnode1の実際のノード名を入力します。次の例を参考にしてください。</block>
   <block id="5fa38b455ca95ac213888d230b770ee7" category="paragraph">アップグレードを開始する前に、AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードに適したハードウェアがあることを確認する必要があります。アップグレードする HA ペアごとに、システムコントローラモジュールを 2 つと NVRAM モジュールを 2 つずつ用意する必要があります。足りないパーツがある場合は、テクニカルサポートに問い合わせるか、ネットアップの営業担当者にお問い合わせください。</block>
   <block id="ba5bb93bf3745b7b90abb302dc84dab9" category="sidebar">「system controller replace」コマンドを使用して、AFF A700をAFF A900またはFAS9000からFAS9500にアップグレードします</block>
   <block id="cec0ad56d161fd372b8f511ac2258e91" category="sidebar">ステージ 2 ：リソースを再配置し、AFF A700またはFAS9000 node1を撤去します</block>
@@ -4446,4 +4417,55 @@
   <block id="8ae18c4ca2d925d74bcd4990d28f04f0" category="paragraph">このコマンドで使用する'_vserver-name_'は'前のvolume showコマンドの出力にあります</block>
   <block id="deb8c459cd0f080a7a777d2ba3e57215" category="sidebar">ステージ 4 ：node2の移動と撤去（ONTAP 9.8以降では「システムコントローラの交換」にアップグレード）</block>
   <block id="d0a53cd31cb7e1982b0b4b4350530c07" category="sidebar">ステージ 4 ：node2の再配置と撤去（ONTAP 9.5から9.7への「システムコントローラの交換」にアップグレード）</block>
+  <block id="2052b0cdd036221aef35041d554abfe3" category="example-title">コンソールの出力例を展開します</block>
+  <block id="9bcbfad54c93824c94a6b85331bed53e" category="list-text">ONTAP 9.6以降では、この 手順 環境 システムで4ノードMetroCluster 構成以上を実行しています。MetroCluster 構成サイトは物理的に異なる場所に設置できるため、 HA ペアの場合は各 MetroCluster サイトでコントローラの自動アップグレードを個別に実行する必要があります。</block>
+  <block id="b4e995bdd78b40e4a973dab2bcf9ed16" category="list-text">[man_map_1_step5] ONTAP 9.8以降手順 、ONTAP では、ネットワークポートの到達可能性の修復時にブロードキャストドメイン間でポートが移動された場合に、LIFのホームポートが自動的に変更されます。LIF のホームポートが別のノードに移動された場合や割り当てが解除された場合、その LIF は移動された LIF として表示されます。ホームポートがなくなった、または別のノードに再配置された、取り外した LIF のホームポートをリストアします。</block>
+  <block id="17c47d164b7fe13ac454c776902ff45f" category="list-text">[man_map_2_Step5] ONTAP 9.8以降手順 では、ネットワークポートの到達可能性が修復されたときにブロードキャストドメイン間でポートが移動された場合、ONTAP によってLIFのホームポートが自動的に変更されます。LIF のホームポートが別のノードに移動された場合や割り当てが解除された場合、その LIF は移動された LIF として表示されます。ホームポートがなくなった、または別のノードに再配置された、取り外した LIF のホームポートをリストアします。</block>
+  <block id="ee4259e7fa1dc73036cc58b6216ac26d" category="list-text">[[assign_LIFs ]] FAS8300、AFF A400、FAS8700システムなど、特定のシステム ポート「e0a」と「e0b」をハイアベイラビリティ（HA）インターコネクトポートとして使用します。FAS8200やAFF A300などのシステムから、ポート「e0a」と「e0b」をHAインターコネクトポートとして使用するシステムにアップグレードする場合、 元のシステムのこれらのポートに設定されている管理LIFとクラスタ間LIFを、交換用システムの別のポートに再割り当てする必要があります。</block>
+  <block id="bb90459e9b4aa7c112f4569c2ec19b97" category="admonition">交換用システムでポート「e0a」と「e0b」がHAインターコネクトポートとして使用されている場合、これらのポートで設定された管理LIFまたはクラスタ間LIFがあると、HA構成でポート「e0a」と「e0b」を使用して交換用システムがブートできなくなるため、アップグレードが失敗する可能性があります。</block>
+  <block id="6e739de8c1925a6779ee076df8d4a525" category="list-text">交換用システムがポート「e0a」と「e0b」をHAポートとして使用しているかどうかを確認します。<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block></block>
+  <block id="894aba2fe8eca246912b5f6b167c23c7" category="list-text">必要に応じて、元のシステムのポート「e0a」と「e0b」に設定されている管理LIFまたはクラスタ間LIFを特定します。</block>
+  <block id="2852e76cc043363d809f6bf5b5528cc8" category="paragraph">'network interface show -home-node port_name_`</block>
+  <block id="d76cdfb6e1e829cf1a8b29cf0365bb25" category="list-text">必要に応じて、交換用システムでHAポートとして使用していないネットワークポートに、影響を受けた管理LIFまたはクラスタ間LIFを再割り当てします。</block>
+  <block id="868d1b2090ba0cdd2fdfac75d3678175" category="paragraph">「network interface modify -vserver _vserver_name __ lif_lif_name_-home-port_port_name_`」を指定します</block>
+  <block id="8764c983c6cbb2a9680fb3a948850423" category="paragraph">「network interface revert -vserver _vserver_name -- lif_lif_name_`</block>
+  <block id="e413e03d3c6a379c74dbb9834ed46b76" category="paragraph">次の例では、ネットワークポート「e0a」と「e0b」の管理LIFとクラスタ間LIFをネットワークポート「e1a」および「e1b」に再割り当てします。使用するネットワークポートはシステムによって異なるため、ノードによって異なるネットワークポートが使用されている場合があります。</block>
+  <block id="82d8cfa6b0eabc1385f0c7a740d05580" category="image-alt">交換用システムのネットワークポートへのLIFの再割り当て</block>
+  <block id="c8ff2d709da7bd973a342d6eb7c6952c" category="doc">ONTAP 9.8以降で最終アップグレード手順を実行します</block>
+  <block id="209c912a443f069511053cb5ed7c8175" category="paragraph">これらの手順は、ONTAP 9.8以降を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>。</block>
+  <block id="be1c64568381eb09df4f452433b584eb" category="doc">ONTAP 9.8以降を使用してネットワークポートをマッピングします</block>
+  <block id="6502ece9e464ee9b76872ac1891890b1" category="paragraph">これらの手順は、ONTAP 9.8以降を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>。</block>
+  <block id="7893bfa78df90b820f889d3721889827" category="list-text">[[map_98_7] ONTAP 9.8以降では、ネットワークポートの到達可能性が修復手順 の際にブロードキャストドメイン間でポートが移動されると、ONTAP によってLIFのホームポートが自動的に変更されます。LIF のホームポートが別のノードに移動された場合や割り当てが解除された場合、その LIF は移動された LIF として表示されます。ホームポートがなくなった、または別のノードに再配置された、取り外した LIF のホームポートをリストアします。</block>
+  <block id="4a78c0c542d23d6fb37a4fe36a2eadfa" category="paragraph">これで物理ポートのマッピングが完了しました。アップグレードを完了するには、に進みます <block ref="9755845ab3f2cc4f5f51d0cd1be3153b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cef52224881fd5dedd26a040c1359ee9" category="inline-xref-macro">ONTAP 9.8以降で最終アップグレード手順を実行します</block>
+  <block id="c2acf33141c1e1d2087c7bc181c42bb7" category="paragraph">以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8以降を実行している場合は、の手順 を使用する必要があります <block ref="3b2ec221cc352b28fa15c204e2ae21f2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="8369511a77d2231fe0dc2666b1eb7bc3" category="list-text">ONTAP 9.8以降を実行しているシステムの場合は、* STOP *をクリックします。の手順を使用する必要があります <block ref="9755845ab3f2cc4f5f51d0cd1be3153b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="1e6def9e9dd4f1f64f3de8b0a57f2778" category="paragraph">以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8以降を実行している場合は、の手順 を使用する必要があります <block ref="ccd35a957ce7354dac1b2737d83bc4f4" category="inline-xref-macro-rx"></block>。</block>
+  <block id="2fdb8263a29ca795ef82322d81fda239" category="list-text">ONTAP 9.8以降を実行しているシステムの場合は、* STOP *をクリックします。の手順を使用する必要があります <block ref="ccd35a957ce7354dac1b2737d83bc4f4" category="inline-xref-macro-rx"></block>。</block>
+  <block id="ef29cfe4123c7b4d36dffdb01aac77fc" category="summary">ONTAP 9.8以降またはONTAP 9.7以前でアップグレードを完了します。</block>
+  <block id="7b416fb3b0ecbf485baebef5aa26f421" category="inline-xref-macro">ONTAP 9.8以降でアップグレードを完了します</block>
+  <block id="a728e0150a3319c807decfef9fd8b00c" category="list-text"><block ref="a728e0150a3319c807decfef9fd8b00c" category="inline-xref-macro-rx"></block></block>
+  <block id="a6085d08f51c0f7b45dd12344b481637" category="list-text"><block ref="a6085d08f51c0f7b45dd12344b481637" category="inline-xref-macro-rx"></block></block>
+  <block id="8b793a703e41666db1139bfcac16c982" category="inline-xref-macro">管理LIFまたはクラスタ間LIFを再割り当てしました</block>
+  <block id="619d3ee4d9d03f1c8e85902faacf818d" category="admonition">FAS8300、AFF A400、FAS8700のように、ポート「e0a」と「e0b」をハイアベイラビリティ（HA）インターコネクトポートとして使用するシステムにコントローラをインプレースアップグレードする場合、 を確認します <block ref="5b2064061510a35b81a212ddd1a165e7" category="inline-xref-macro-rx"></block> アップグレード手順 を開始する前に、元のシステムのポート「e0a」と「e0b」で設定します。</block>
+  <block id="7389b01d5fe0e17f5523a7fb85295f91" category="inline-link-macro">こちらの技術情報アーティクル</block>
+  <block id="2ee5a2dd85f4cccb6dbb3701b2a263ba" category="paragraph">コントローラのアップグレードに失敗し、「rlib_port_ipspace _assign」というエラーメッセージが表示された場合は、交換用システムでHAポートとして使用されている元のシステムのネットワークポートのLIFをリバートして削除する必要があります。詳細については、を参照してください <block ref="48beba1570dcc6cd04554aaa6118327f" category="inline-link-macro-rx"></block>。</block>
+  <block id="81115b2b20b22282416f6d252f1227a9" category="summary">ONTAP 9.8以降でアップグレードを完了するには、次の手順を実行します。</block>
+  <block id="7a67102068269b1046a62f34688d751f" category="paragraph">ONTAP 9.8以降でアップグレードを完了するには、次の手順を実行します。</block>
+  <block id="910c99c10b2b8f326ca77c1b3e34eb83" category="list-text"><block ref="910c99c10b2b8f326ca77c1b3e34eb83" category="inline-link-macro-rx"></block></block>
+  <block id="479694184a7596b8d654b4519a939fb4" category="list-text"><block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block></block>
+  <block id="e532a21bf2c2e3d3ecd97106f9267054" category="list-text">[[A900_boot_node1] NetApp Storage Encryption（NSE）がこの構成で使用されている場合、node1構成のロード後にブートループが発生しないように、「setenv bootarg.storageencryption.support`コマンドは「true」に設定する必要があります。kmip.init.maxwait`変数は「off」に設定する必要があります。</block>
+  <block id="b20fa92767a639ebf6c7b69aac21e88f" category="list-text">ノードをブートメニューでブートします。</block>
+  <block id="50a538d5879b1b2e51ce2921f4a4ee75" category="list-text">ノードがブートメニューで停止したら、「22/7」と入力し、非表示オプション「boot_after_controller_replacement」を選択して、AFF A700 node1のディスクをAFF A900 node1に再割り当てします。</block>
+  <block id="c1ff3d9c3e793a92f67d6a17048a954d" category="paragraph">少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。</block>
+  <block id="01b22e2b8dff1191395f34f0d45cdd7e" category="paragraph">これらのプロンプトは、コンソールメッセージに埋もれている可能性があります。ノード名を入力しなかった場合や間違った名前を入力した場合は、名前をもう一度入力するように求められます。</block>
+  <block id="bca73eff7b855bcc19e7f22f49e2b8a3" category="paragraph">「[localhost:disk.encryptNoSupport:alert]: FIPS認定暗号化ドライブと」、または「[localhost:diskown.errorDuringIO: error]: Error」がディスクエラーで発生した場合は、次の手順を実行します。</block>
+  <block id="36c8627224211217ec34fd42fe9d5435" category="list-text">LOADERプロンプトでノードを停止します。</block>
+  <block id="4881f451a26b5944c6775b5342df3dbd" category="list-text">に記載されているストレージ暗号化のbootargsをチェックしてリセットします <block ref="370a03845d272602c838e3924a658003" category="inline-xref-macro-rx"></block>。</block>
+  <block id="6e44d165d43069030cd99e370aeb5107" category="list-text">LOADERプロンプトで、ブートします。</block>
+  <block id="5dd3fadb015da65e82238831e11341c9" category="paragraph">次の例を参考にしてください。</block>
+  <block id="45fbb19b9a72a9e5e763d0da5d76ebf4" category="list-text">[[A900_boot_node2]] NetApp Storage Encryption（NSE）がこの構成で使用されている場合、ノード2の構成のロード後にブートループが発生しないように、「setenv bootarg.storageencryption.support`コマンドを「true」に設定し、「kmip.init.maxwait`」変数を「off」に設定する必要があります。</block>
+  <block id="b76a3b855e625194513f3473a25582fd" category="list-text">ブートメニューでノードが停止したら、「22/7」と入力し、非表示オプション「boot_after_controller_replacement」を選択して、AFF A700 node2ディスクをAFF A900 node2に再割り当てします。</block>
+  <block id="3dbb60dab5c1891455791640814da2b9" category="list-text">に記載されているストレージ暗号化のbootargsをチェックしてリセットします <block ref="025202ee75dff38076e126e76d5042ed" category="inline-xref-macro-rx"></block>。</block>
+  <block id="9fba1587cf9ecb10691d38652754afe6" category="list-text">構成にNetApp Storage Encryption（NSE）を使用していた場合、「setenv bootarg.storageencryption.support」コマンドを「kmip.init.maxwait`」変数を「true」に設定します（AFF A900またはFAS9500コントローラとNVRAMモジュールを搭載したin_bootnode2）。 <block ref="78c38799df1e07e5f585fe434be2c744" category="inline-link-macro-rx"></block>）を使用している場合は、変数をリセットする必要があります</block>
 </blocks>

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, unused, port, lif, re-enable, failover, availability, service, processor, sp, autosupport, volume, encryption, fc, cna, perform final upgrade steps in ontap 9.8 
 summary: ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。 
 ---
-= ONTAP 9.8 で最後のアップグレード手順を実行します
+= ONTAP 9.8以降で最終アップグレード手順を実行します
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: ストレージを移動してアップグレードの手順を完了�
 [role="lead"]
 ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ（ SP ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。
 
-これらの手順は ONTAP 9.8 を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 以前で最終アップグレード手順を実行します]。
+これらの手順は、ONTAP 9.8以降を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 以前で最終アップグレード手順を実行します]。
 
 .手順
 . ONTAP 9.7 以前を実行しているシステムの場合は、 * stop * と入力します。の手順を使用する必要があります xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 以前で最終アップグレード手順を実行します]。

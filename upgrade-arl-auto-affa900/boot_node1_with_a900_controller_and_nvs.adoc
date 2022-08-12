@@ -17,19 +17,44 @@ summary: AFF A900 コントローラモジュールと NVRAM モジュールで�
 AFF A900またはFAS9500コントローラとNVRAMモジュールを搭載したノード1で、ブートの準備が完了しました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールを交換すると、コンソール接続と管理接続のみが移動します。このセクションでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートするために必要な手順について説明します。
 
 .手順
-. この構成で NetApp Storage Encryption （ NSE ）を使用している場合、 'setenv bootarg.storageencryption.support' コマンドを 'true' に設定し、 node1 構成のロード後にブートループが発生しないように、 kmip.init.maxwait` 変数を 'off' に設定する必要があります。
+. [[A900_boot_node1] NetApp Storage Encryption（NSE）がこの構成で使用されている場合、node1構成のロード後にブートループが発生しないように、「setenv bootarg.storageencryption.support`コマンドは「true」に設定する必要があります。kmip.init.maxwait`変数は「off」に設定する必要があります。
 +
 'etenv bootarg.storageencryption.support true
 
 +
 'etenv kmip.init.maxwait off
 
-. ノードを「 boot_menu 」でブートします。
+. ノードをブートメニューでブートします。
 +
 「 boot_ontap menu
 
-. ノードはブートメニューで停止します。「 22/7 」と入力し、非表示オプション「 boot_after_controller_replacement 」を選択します。node1ディスクをAFF A700からAFF A900に、またはFAS9000からFAS9500に再割り当てするには、プロンプトでnode1の実際のノード名を入力します。次の例を参考にしてください。
+. ノードがブートメニューで停止したら、「22/7」と入力し、非表示オプション「boot_after_controller_replacement」を選択して、AFF A700 node1のディスクをAFF A900 node1に再割り当てします。
 +
+少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。
+
++
+これらのプロンプトは、コンソールメッセージに埋もれている可能性があります。ノード名を入力しなかった場合や間違った名前を入力した場合は、名前をもう一度入力するように求められます。
+
++
+[NOTE]
+====
+「[localhost:disk.encryptNoSupport:alert]: FIPS認定暗号化ドライブと」、または「[localhost:diskown.errorDuringIO: error]: Error」がディスクエラーで発生した場合は、次の手順を実行します。
+
+.. LOADERプロンプトでノードを停止します。
+.. に記載されているストレージ暗号化のbootargsをチェックしてリセットします <<A900_boot_node1,手順 1.>>。
+.. LOADERプロンプトで、ブートします。
++
+「 boot_ontap 」
+
+
+
+====
++
+次の例を参考にしてください。
+
++
+.コンソールの出力例を展開します
+====
 [listing]
 ----
 LOADER-A> boot_ontap menu
@@ -153,11 +178,10 @@ Override system ID? {y|n} y
 .
 Login:
 ----
+====
 +
 [NOTE]
 ====
-上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。
-
 上記の例のシステム ID は一例です。アップグレードするノードの実際のシステム ID は異なります。
 
 プロンプトでノード名を入力するかログインプロンプトを表示するまで、ノードが数回リブートして環境変数をリストアし、システムのカードでファームウェアを更新し、他の ONTAP 更新を実行します。

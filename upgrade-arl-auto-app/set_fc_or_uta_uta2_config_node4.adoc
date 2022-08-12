@@ -291,6 +291,8 @@ A800 にアップグレードする場合は、に進みます <<auto_check_4_st
 
 . [[auto_check_4_step15]] ノード 4 で、ブートメニューに移動し、 22/7 を使用して、非表示オプション「 boot_after_controller_replacement 」を選択します。プロンプトで node2 と入力し、次の例のように node2 のディスクを node4 に再割り当てします。
 +
+.コンソールの出力例を展開します
+====
 [listing]
 ----
 LOADER-A> boot_ontap menu
@@ -408,6 +410,7 @@ Override system ID? {y|n} y
 .
 Login:
 ----
+====
 +
 
 NOTE: 上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。

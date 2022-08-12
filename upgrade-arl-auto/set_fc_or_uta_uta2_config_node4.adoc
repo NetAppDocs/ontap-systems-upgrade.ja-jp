@@ -291,6 +291,8 @@ A800 にアップグレードする場合は、に進みます <<auto_check_4_st
 
 . [[auto_check_4_step15]] ノード 4 で、ブートメニューに移動し、 22/7 を使用して、非表示オプション「 boot_after_controller_replacement 」を選択します。プロンプトで node2 と入力し、次の例のように node2 のディスクを node4 に再割り当てします。
 +
+.コンソールの出力例を展開します
+====
 [listing]
 ----
 LOADER-A> boot_ontap menu ...
@@ -366,6 +368,7 @@ WARNING: System ID mismatch. This usually occurs when replacing a boot device or
 Override system ID? {y|n} y
 Login: ...
 ----
+====
 . システムが再起動ループに入って「ディスクが見つかりません」というメッセージが表示された場合は、ポートがターゲットモードにリセットされ、ディスクを認識できないためです。に進みます <<auto_check_4_step17,手順 17>> から <<auto_check_4_step22,手順 22>> これを解決します。
 . [[auto_check_4_step17]] autoboot 中に Ctrl キーを押しながら C キーを押して 'loader>` プロンプトでノードを停止します
 . LOADER プロンプトで、メンテナンスモードに切り替えます。
