@@ -82,10 +82,10 @@ network interface show -role data -curr-node 2_node2 -home-node1_home_`
 | クラスタの種類 | 作業 
 
 
-| 2 ノードクラスタ | に進みます <<man_retire_1_step6,手順 6>>。 
+| 2 ノードクラスタ | に進みます ,手順 6。 
 
 
-| 3 つ以上のノードで構成されるクラスタ | に進みます <<man_retire_1_step8,手順 8>>。 
+| 3 つ以上のノードで構成されるクラスタ | に進みます ,手順 8。 
 |===
 . [[man_denter_1_step6] どちらかのノードの advanced 権限レベルにアクセスします。
 +
@@ -104,7 +104,7 @@ cluster ha show
 High Availability Configured: false
 ----
 +
-クラスタ HA が無効になっていない場合は、この手順を繰り返します <<man_retire_1_step2,手順 2>>。
+クラスタ HA が無効になっていない場合は、この手順を繰り返します ,手順 2。
 
 . [[man_リタイヤ _1_step8] 現在 node1 にイプシロンが設定されているかどうかを確認します。
 +

@@ -16,8 +16,8 @@ summary: AFF A700 から AFF A900 へのコントローラアップグレード�
 [role="lead"]
 このコンテンツの手順を実行するときは、参照コンテンツを参照するか、参照 Web サイトにアクセスする必要があります。
 
-* <<Reference content>>
-* <<Reference sites>>
+*  content
+*  sites
 
 
 

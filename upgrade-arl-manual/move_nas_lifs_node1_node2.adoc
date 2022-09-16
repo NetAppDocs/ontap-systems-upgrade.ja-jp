@@ -50,10 +50,10 @@ summary: 2 ノードクラスタの場合はノード 1 の NAS データ LIF �
 | ノード 1 の状況 | 作業 
 
 
-| VLAN のインターフェイスグループが設定されている | に進みます <<man_move_lif_1_2_step3,手順 3>>。 
+| VLAN のインターフェイスグループが設定されている | に進みます ,手順 3。 
 
 
-| インターフェイスグループまたは VLAN が設定されていない | 手順 3 を省略して、に進みます <<man_move_lif_1_2_step4,手順 4>>。 
+| インターフェイスグループまたは VLAN が設定されていない | 手順 3 を省略して、に進みます ,手順 4。 
 |===
 +
 「 network port vlan show 」コマンドを使用して、 VLAN に接続されたネットワークポートに関する情報を表示し、「 network port ifgrp show 」コマンドを使用してポートインターフェイスグループに関する情報を表示します。
@@ -64,7 +64,7 @@ summary: 2 ノードクラスタの場合はノード 1 の NAS データ LIF �
 +
 「network interface migrate -vserver _Vserver_name -lif_lif_name_-destination-node-node2 _–destination-port_netport | ifgrp_`
 
-.. で、 LIF および VLAN のホームポートとホームノードを変更します <<man_move_lif_1_2_substepa,手順 a>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
+.. で、 LIF および VLAN のホームポートとホームノードを変更します ,手順 a LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
 「network interface modify -vserver _Vserver_name -lif_lif_name_-home-node2_-home-node _port_netport | ifgrp_`」
 
@@ -77,7 +77,7 @@ summary: 2 ノードクラスタの場合はノード 1 の NAS データ LIF �
 | クラスタの設定対象 | 作業 
 
 
-| NAS | - 完了しました <<man_move_lif_1_2_step5,手順 5>> から <<man_move_lif_1_2_step8,手順 8>>。 
+| NAS | - 完了しました ,手順 5 から ,手順 8。 
 
 
 | SAN | ノード上のすべてのSAN LIFを無効にしてアップグレード用に停止します。「network interface modify -vserver _Vserver -name _-lif LIF_name -home-node _node_name _to _upgrade _-home-port port | ifgrp-status-admin down 
@@ -94,7 +94,7 @@ summary: 2 ノードクラスタの場合はノード 1 の NAS データ LIF �
 +
 「network interface modify -vserver _Vserver -name _-lif_lif_name_-home-node2_-home-node _port_name_`
 
-. [man_move_lif_1_2_step8] LIF がホームまたは現在のポートとして使用しているかどうかを確認しますポートがホームでない場合や現在のポートでない場合は、に進みます <<man_move_lif_1_2_step9,手順 9>>：
+. [man_move_lif_1_2_step8] LIF がホームまたは現在のポートとして使用しているかどうかを確認しますポートがホームでない場合や現在のポートでない場合は、に進みます ,手順 9：
 +
 「network interface show -home-node _node2」-home-port_port_name_`
 

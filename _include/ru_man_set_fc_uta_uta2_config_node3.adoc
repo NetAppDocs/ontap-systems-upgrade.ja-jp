@@ -4,7 +4,7 @@
 
 ノード 3 にオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードがある場合は、残りの手順を完了する前に設定を行う必要があります。
 
-完了する必要がある場合があります <<Configure FC ports on node3>>または <<Check and configure UTA/UTA2 ports on node3>>、または両方のセクション。
+完了する必要がある場合があります  FC ports on node3または  and configure UTA/UTA2 ports on node3、または両方のセクション。
 
 
 NOTE: ネットアップのマーケティング資料では、 UTA2 という用語を CNA アダプタとポートという意味で使用している場合があります。ただし、 CLI では「 cna 」という用語を使用しています。
@@ -14,6 +14,6 @@ NOTE: ネットアップのマーケティング資料では、 UTA2 という�
 
 
 .選択肢：
-* <<Configure FC ports on node3>>
-* <<Check and configure UTA/UTA2 ports on node3>>
+*  FC ports on node3
+*  and configure UTA/UTA2 ports on node3
 

@@ -41,7 +41,7 @@ AFF A900またはFAS9500コントローラとNVRAMモジュールで構成され
 「[localhost:disk.encryptNoSupport:alert]: FIPS認定暗号化ドライブと」、または「[localhost:diskown.errorDuringIO: error]: Error」がディスクエラーで発生した場合は、次の手順を実行します。
 
 .. LOADERプロンプトでノードを停止します。
-.. に記載されているストレージ暗号化のbootargsをチェックしてリセットします <<A900_boot_node2,手順 1.>>。
+.. に記載されているストレージ暗号化のbootargsをチェックしてリセットします ,手順 1.。
 .. LOADERプロンプトで、ブートします。
 +
 「 boot_ontap 」

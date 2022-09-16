@@ -117,8 +117,8 @@ network interface show -fields home-node 、 home-port
 
 
 
-. 必要に応じて、のコマンドを使用して、クラスタ間ブロードキャストドメインを調整し、クラスタ間 LIF を移行します <<map_97_7,手順 7>>。
-. 必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <<map_97_7,手順 7>>。
+. 必要に応じて、のコマンドを使用して、クラスタ間ブロードキャストドメインを調整し、クラスタ間 LIF を移行します ,手順 7。
+. 必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します ,手順 7。
 . すべての LIF フェイルオーバーグループを調整します。
 +
 'network interface modify -failover-group_failover_group'-failover-policy_failover_policy_`

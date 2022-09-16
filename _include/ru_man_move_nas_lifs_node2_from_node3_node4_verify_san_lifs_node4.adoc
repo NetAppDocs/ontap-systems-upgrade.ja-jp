@@ -82,10 +82,10 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | ノード 2 の条件 | 説明 
 
 
-| インターフェイスグループまたは VLAN が設定されている | に進みます <<man_lif_verify_4_Step3,手順 4>>。 
+| インターフェイスグループまたは VLAN が設定されている | に進みます ,手順 4。 
 
 
-| インターフェイスグループまたは VLAN が設定されていません | 手順 4 を省略して、に進みます <<man_lif_verify_4_Step4,手順 5>>。 
+| インターフェイスグループまたは VLAN が設定されていません | 手順 4 を省略して、に進みます ,手順 5。 
 |===
 . [man_lif_verify_4_Step3] インターフェイスグループおよび VLAN でホストされている NAS データ LIF をノード 3 からノード 4 にすべて移行するには、次の手順を実行します。
 +
@@ -93,7 +93,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「network interface migrate -vserver vserver_name -lif_lif_name_destination-node node4–destination-port_netport | ifgrp_`
 
-.. LIF のホームポートとホームノードを変更します <<man_lif_verify_4_substepa,手順 a>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
+.. LIF のホームポートとホームノードを変更します ,手順 a LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
 `network interface modify -vserver _vserver_name --lif_datalif_name __-home-node node4 home-port_netport | ifgrp_`
 
@@ -101,7 +101,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「network interface migrate -vserver_name_-lif_datalif_name __ destination-node node4–destination-port_netport | ifgrp_`
 
-.. LIF のホームポートとホームノードを変更します <<man_lif_verify_4_substepc,サブステップ c>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
+.. LIF のホームポートとホームノードを変更します ,サブステップ c LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
 「network interface modify -vserver _vserver_name --lif_datalif_name __-home-node _node4 _home-port_netport | ifgrp_`」
 
@@ -114,13 +114,13 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | クラスタの設定対象 | 作業 
 
 
-| NAS | - 完了しました <<man_lif_verify_4_Step5,手順 6>> から <<man_lif_verify_4_Step8,手順 9>>をクリックして、手順 10 をスキップして完了します <<man_lif_verify_4_Step10,手順 11>> から <<man_lif_verify_4_Step13,手順 14>>。 
+| NAS | - 完了しました ,手順 6 から ,手順 9をクリックして、手順 10 をスキップして完了します ,手順 11 から ,手順 14。 
 
 
-| SAN | 手順 6~9 をスキップして完了します <<man_lif_verify_4_Step9,手順 10>> から <<man_lif_verify_4_Step13,手順 14>>。 
+| SAN | 手順 6~9 をスキップして完了します ,手順 10 から ,手順 14。 
 
 
-| NAS と SAN の両方 | - 完了しました <<man_lif_verify_4_Step5,手順 6>> から <<man_lif_verify_4_Step13,手順 14>>。 
+| NAS と SAN の両方 | - 完了しました ,手順 6 から ,手順 14。 
 |===
 . [man_lif_verify_4_Step5] プラットフォームで同じでないデータポートがある場合は、次のコマンドを入力してブロードキャストドメインにポートを追加します。
 +
@@ -213,7 +213,7 @@ vs1
             lif1         up/up    172.17.176.120/24  node4         e0c     true
             lif2         up/up    172.17.176.121/24  node4
 ----
-.. 新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認するには、「 fcp adapter show 」コマンドの出力と、のワークシートに記録した新しい設定情報を比較します <<worksheet_step2_node2,手順 2>>。
+.. 新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認するには、「 fcp adapter show 」コマンドの出力と、のワークシートに記録した新しい設定情報を比較します ,手順 2。
 +
 ノード 4 の新しい SAN LIF の設定を表示します。
 

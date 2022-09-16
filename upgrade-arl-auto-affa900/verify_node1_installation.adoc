@@ -72,7 +72,7 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 
 NOTE: この手順 では、 VLAN 、 ifgrp 、およびブロードキャストドメインのセクション _ が、 node1 で _ ネットワーク設定のリストア _ という名前に変更されています。
 
-. コントローラの交換が一時停止状態になった状態で、に進みます <<Restore network configuration on node1>>。
+. コントローラの交換が一時停止状態になった状態で、に進みます  network configuration on node1。
 
 
 
@@ -182,7 +182,7 @@ Warning: Repairing port "node1:e11b" may cause it to move into a different broad
 「 network port reachability show 」のように表示されます
 
 +
-すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的に接続されていないポートのステータスを「 no-reachability 」と報告する必要があります。この 2 つ以外のステータスが報告されたポートがある場合は、到達可能性修復を実行し、の手順に従ってブロードキャストドメインにポートを追加または削除します <<restore_node1_step4,手順 4>>。
+すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的に接続されていないポートのステータスを「 no-reachability 」と報告する必要があります。この 2 つ以外のステータスが報告されたポートがある場合は、到達可能性修復を実行し、の手順に従ってブロードキャストドメインにポートを追加または削除します ,手順 4。
 
 . すべてのポートがブロードキャストドメインに配置されたことを確認します。
 +

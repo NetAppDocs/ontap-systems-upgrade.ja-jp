@@ -80,6 +80,6 @@ storage aggregate show -aggregate aggr1、aggr2、aggr3_-fields home-name
 「_aggr1、aggr2、aggr3__」は、node1が元のホーム所有者であるアグリゲートのリストです。
 
 +
-ノード 3 をホーム所有者としないアグリゲートは、の同じ再配置コマンドを使用してノード 3 に再配置できます <<auto_aggr_relocate_fail_Step3,手順 3>>。
+ノード 3 をホーム所有者としないアグリゲートは、の同じ再配置コマンドを使用してノード 3 に再配置できます ,手順 3。
 
 

@@ -47,7 +47,7 @@ node4          node3          true     Connected to node3
 | 2 ノードクラスタ | どちらかのノードで cluster ha modify -configured true コマンドを入力して ' クラスタの高可用性を有効にします 
 
 
-| 3 ノード以上のクラスタ | に進みます <<man_ensure_setup_Step4,手順 4>>。 
+| 3 ノード以上のクラスタ | に進みます ,手順 4。 
 |===
 . [[man_ver_setup_Step4]] 次のコマンドを入力して、 node3 と node4 が同じクラスタに属していることを確認します。
 +

@@ -96,10 +96,10 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | ノード 1 の状況 | 作業 
 
 
-| インターフェイスグループまたは VLAN が設定されている | に進みます <<man_lif_verify_3_step3,手順 4>>。 
+| インターフェイスグループまたは VLAN が設定されている | に進みます ,手順 4。 
 
 
-| インターフェイスグループまたは VLAN が設定されていません | 手順 4 を省略して、に進みます <<man_lif_verify_3_step4,手順 5>>。 
+| インターフェイスグループまたは VLAN が設定されていません | 手順 4 を省略して、に進みます ,手順 5。 
 |===
 . [[man_lif_verify_3_step3]] 次の手順を実行して、インターフェイスグループおよび VLAN でホストされていた NAS データ LIF を、ノード 2 からノード 3 に移行します。
 +
@@ -107,7 +107,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「network interface migrate -vserver vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
-.. LIF のホームポートとホームノードを変更します <<man_lif_verify_3_substepa,手順 a>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
+.. LIF のホームポートとホームノードを変更します ,手順 a LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
 「network interface modify -vserver _vserver_name __ lif_lif_name__-home-node _node3」-home-port_netport | ifgrp_`
 
@@ -115,7 +115,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「network interface migrate -vserver vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
-.. LIF のホームポートとホームノードを変更します <<man_lif_verify_3_substepc,サブステップ c>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
+.. LIF のホームポートとホームノードを変更します ,サブステップ c LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
 「network interface modify -vserver _vserver_name __ lif_lif_name__-home-node _node3」-home-port_netport | ifgrp_`
 
@@ -128,7 +128,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | クラスタの設定対象 | 作業 
 
 
-| NAS | - 完了しました <<man_lif_verify_3_step5,手順 6>> および <<man_lif_verify_3_step6,手順 7>>をクリックして、手順 8 をスキップして完了します <<man_lif_verify_3_step8,手順 9>> から <<man_lif_verify_3_step11,手順 12>>。 
+| NAS | - 完了しました ,手順 6 および ,手順 7をクリックして、手順 8 をスキップして完了します ,手順 9 から ,手順 12。 
 
 
 | SAN | ノード上のすべてのSAN LIFを無効にしてアップグレード用にダウンにします。「network interface modify -vserver _vserver_name -lif_lif_name__-home-node _port_to _upgrade_-home-port port | ifgrp-status-admin down 
@@ -178,7 +178,7 @@ cluster::> net int show -data-protocol iscsi|fcp -home-node node3
               lif1        up/up       172.17.176.120/24   node3          e0c      true
               lif2        up/up       172.17.176.121/24   node3          e1a      true
 ----
-.. 「 fcp adapter show 」コマンドの出力と、のワークシートに記録した設定情報を比較して、新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認します <<worksheet_step2,手順 2>>。
+.. 「 fcp adapter show 」コマンドの出力と、のワークシートに記録した設定情報を比較して、新しい「 adapter 」および「 switch-port 」の設定が正しいことを確認します ,手順 2。
 +
 ノード 3 に新しい SAN LIF の設定を表示します。
 

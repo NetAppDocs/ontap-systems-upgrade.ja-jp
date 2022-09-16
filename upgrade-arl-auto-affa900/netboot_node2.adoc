@@ -95,7 +95,7 @@ Selection (1-11)?
 ====
 . 手順を続行するかどうかを確認するメッセージが表示されたら 'y' と入力し ' パッケージの入力を求められたら 'URL:\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` と入力します
 +
-「 path_to_the_web-accessible_directory 」は、「 ONTAP_version_image.tgz 」をダウンロードした場所を指します <<netboot_node2_step2,手順 2>>。
+「 path_to_the_web-accessible_directory 」は、「 ONTAP_version_image.tgz 」をダウンロードした場所を指します ,手順 2。
 
 . 次の手順を実行してコントローラモジュールをリブートします。
 +

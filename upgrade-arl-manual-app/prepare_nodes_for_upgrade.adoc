@@ -195,13 +195,13 @@ aggr4         node1        node2        online
 +
 [cols="35,65"]
 |===
-| のコマンドの場合は <<man_prepare_nodes_step9,手順 9>>... | 作業 
+| のコマンドの場合は ,手順 9... | 作業 
 
 
-| 空の出力がありました | 手順 11 を省略して、に進みます <<man_prepare_nodes_step12,手順 12>>。 
+| 空の出力がありました | 手順 11 を省略して、に進みます ,手順 12。 
 
 
-| 出力あり | に進みます <<man_prepare_nodes_step11,手順 11>>。 
+| 出力あり | に進みます ,手順 11。 
 |===
 . [man_prepare-to-downgrade 11]] ノード 1 またはノード 2 が現在の所有者であり、ホーム所有者ではないアグリゲートを所有している場合は、次の手順を実行します。
 +
@@ -320,7 +320,7 @@ vs0
 
 2 entries were displayed.
 ....
-. の出力の場合は <<man_prepare_nodes_step15,手順 15>> ノード 1 とノード 2 のどちらかがクラスタ内の他のノードでホーム所有されているデータ LIF を所有しており、データ LIF をノード 1 とノード 2 のどちらからも移行することを示します。
+. の出力の場合は ,手順 15 ノード 1 とノード 2 のどちらかがクラスタ内の他のノードでホーム所有されているデータ LIF を所有しており、データ LIF をノード 1 とノード 2 のどちらからも移行することを示します。
 +
 network interface revert -vserver * -lif *
 
@@ -444,10 +444,10 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 | インターフェイスグループまたは VLAN の状態 | 作業 
 
 
-| ノード 1 またはノード 2 | - 完了しました <<man_prepare_nodes_step23,手順 23>> および <<man_prepare_nodes_step24,手順 24>>。 
+| ノード 1 またはノード 2 | - 完了しました ,手順 23 および ,手順 24。 
 
 
-| ノード 1 とノード 2 ではありません | に進みます <<man_prepare_nodes_step24,手順 24>>。 
+| ノード 1 とノード 2 ではありません | に進みます ,手順 24。 
 |===
 .. [[man_prepare_nodes_step23]] SAN 環境または SAN 以外の環境で node1 と node2 が存在するかどうかが不明な場合は、次のコマンドを入力して出力を確認します。
 +
@@ -526,10 +526,10 @@ node1         node1         in-quorum     true          operational
 | クラスタの状況 | 作業 
 
 
-| SAN が設定されている | に進みます <<man_prepare_nodes_step26,手順 26>>。 
+| SAN が設定されている | に進みます ,手順 26。 
 
 
-| SAN が設定されていません | に進みます <<man_prepare_nodes_step29,手順 29>>。 
+| SAN が設定されていません | に進みます ,手順 29。 
 |===
 .. [man_prepare-to-downgrade 26]] 次のコマンドを入力して、 SAN iSCSI または FC サービスが有効になっている各 SVM で、ノード 1 とノード 2 に SAN LIF があることを確認します。
 +
@@ -683,7 +683,7 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | AutoSupport が有効になっています ...  a| 
-... に進みます <<man_prepare_nodes_step34,手順 34>>。
+... に進みます ,手順 34。
 ... セクションに移動します link:get_address_key_management_server_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]。
 
 

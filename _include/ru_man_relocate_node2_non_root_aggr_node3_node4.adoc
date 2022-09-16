@@ -20,7 +20,7 @@ storage aggregate show-owner-name_node3_-home-id_node2 _system_id_`
 「storage aggregate relocation start -node3_node3_destination-node4」-aggregate-list_aggr_name1、aggr_name2..._nd-controller-upgrade true」のように指定します
 
 +
-アグリゲートリストは、で取得したノード 4 が所有するアグリゲートのリストです <<man_relocate_3_4_Step1,手順 1.>>。
+アグリゲートリストは、で取得したノード 4 が所有するアグリゲートのリストです ,手順 1.。
 
 .. プロンプトが表示されたら、「 y 」と入力します。
 +
@@ -50,7 +50,7 @@ NOTE: node2 のすべてのアグリゲートが再配置されてノード 4 �
 | 再配置する対象 | 作業 
 
 
-| すべてのアグリゲートが完了しました | に進みます <<man_relocate_3_4_Step5,手順 5>>。 
+| すべてのアグリゲートが完了しました | に進みます ,手順 5。 
 
 
 | アグリゲートに障害が発生したか、拒否された  a| 
@@ -94,7 +94,7 @@ storage aggregate relocation コマンドの詳細については、を参照し
 storage aggregate show -node _node4 --state offline-root false
 
 +
-node2 アグリゲートがのコマンドの出力に表示されています <<man_relocate_3_4_Step1,手順 1.>>。
+node2 アグリゲートがのコマンドの出力に表示されています ,手順 1.。
 
 . オフラインになったアグリゲートや外部になったアグリゲートがある場合は、各アグリゲートに対して次のコマンドを使用してオンラインにします。
 +
