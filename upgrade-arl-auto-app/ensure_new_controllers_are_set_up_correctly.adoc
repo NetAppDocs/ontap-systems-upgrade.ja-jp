@@ -136,26 +136,6 @@ system service-processor network modify -node _node_name _`
 +
 を参照してください link:other_references.html["参考資料"] SP および _SP ONTAP 9.8 コマンドの詳細については ' システム管理リファレンスにリンクするには ' マニュアルページリファレンスを参照してください system の service-processor network modify コマンドの詳細については ' を参照してください
 
-. 新しいノードの 1 つで次の操作を実行します。
-+
-.. advanced 権限レベルに切り替えます。
-+
-「 advanced 」の権限が必要です
-
-.. 次のコマンドを入力します。
-+
-storage failover modify -node _node_name --CIFS-NDO -duration _default | medium | low_`
-
-+
-*** システムのワークロードが 50% ～ 75% の場合は、「 m edium 」と入力します。
-*** システムのワークロードが 75% ～ 100% の場合は 'low' と入力します
-
-
-.. admin レベルに戻ります。
-+
-「特権管理者」
-
-.. システムをリブートして、変更が有効になっていることを確認します。
 
 
 . 新しいノードにスイッチレスクラスタをセットアップする場合は、を参照してください link:other_references.html["参考資料"] ネットアップサポートサイトへのリンクを設定するには、 _ 2 ノードスイッチレスクラスタへの移行の手順に従ってください。
