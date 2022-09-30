@@ -118,8 +118,6 @@ system service-processor network modify -node _node_name _`
 +
 に進みます link:other_references.html["参考資料"] SP の詳細については ' システム管理リファレンスにリンクし '_System ONTAP 9 コマンド：マニュアルページリファレンスにリンクし 'system service-processor network modify コマンドの詳細については ' を参照してください
 
-
-
 . 新しいノードにスイッチレスクラスタをセットアップする場合は、に進みます link:other_references.html["参考資料"] ネットワークサポートサイトへのリンクをクリックし、 2 ノードスイッチレスクラスタへの移行の手順に従ってください。
 
 

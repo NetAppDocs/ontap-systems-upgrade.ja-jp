@@ -35,7 +35,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
 - title: ステージ 3 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします
   entries:
-  - title: AFF A900コントローラおよびNVRAMモジュールでノード1をブートします
+  - title: AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: ノード 1 のインストールを確認します
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"

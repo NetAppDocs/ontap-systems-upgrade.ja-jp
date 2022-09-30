@@ -136,8 +136,6 @@ system service-processor network modify -node _node_name _`
 +
 を参照してください link:other_references.html["参考資料"] SP および _SP ONTAP 9.8 コマンドの詳細については ' システム管理リファレンスにリンクするには ' マニュアルページリファレンスを参照してください system の service-processor network modify コマンドの詳細については ' を参照してください
 
-
-
 . 新しいノードにスイッチレスクラスタをセットアップする場合は、を参照してください link:other_references.html["参考資料"] ネットアップサポートサイトへのリンクを設定するには、 _ 2 ノードスイッチレスクラスタへの移行の手順に従ってください。
 
 
