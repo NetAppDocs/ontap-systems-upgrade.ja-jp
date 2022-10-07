@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, upgrade, ontap, complete the upgrade in ontap 9.7 or earlier 
 summary: ONTAP 9.7 以前でアップグレードを完了するには、次の手順を実行します。 
 ---
-= ONTAP 9.7 以前でアップグレードを完了します
+= 概要
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

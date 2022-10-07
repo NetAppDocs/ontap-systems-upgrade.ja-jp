@@ -26,7 +26,7 @@ entries:
     url: "/upgrade/upgrade-set-up-new-nodes.html"
   - title: オプション - 内蔵ストレージを移動するか、ドライブシェルフに変換します
     entries:
-    - title: 選択肢
+    - title: 概要
       url: "/upgrade/upgrade-optional-move-internal-storage.html"
     - title: 内蔵ドライブを移動します
       url: "/upgrade/upgrade-move-internal-drives.html"
@@ -40,23 +40,22 @@ entries:
     entries:
     - title: 概要
       url: "/upgrade/upgrade-complete.html"
+    - title: ONTAP 9.8以降で完了します
       entries:
-      - title: ONTAP 9.8 で完了します
-        entries:
-        - title: 概要
-          url: "/upgrade/upgrade-complete-ontap-9-8.html"
-        - title: ONTAP 9.8 を使用してネットワークポートをマッピングします
-          url: "/upgrade/upgrade-map-network-ports-ontap-9-8.html"
-        - title: ONTAP 9.8 で最後の手順を実行します
-          url: "/upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html"
-      - title: ONTAP 9.7 以前で完了します
-        entries:
-        - title: 概要
-          url: "/upgrade/upgrade-complete-ontap-9-7-or-earlier.html"
-        - title: ONTAP 9.7 以前を使用してネットワークポートをマッピングします
-          url: "/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html"
-        - title: ONTAP 9.7 以前で最終手順を実行します
-          url: "/upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html"
+      - title: 概要
+        url: "/upgrade/upgrade-complete-ontap-9-8.html"
+      - title: ONTAP 9.8 を使用してネットワークポートをマッピングします
+        url: "/upgrade/upgrade-map-network-ports-ontap-9-8.html"
+      - title: ONTAP 9.8 で最後の手順を実行します
+        url: "/upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html"
+    - title: ONTAP 9.7 以前で完了します
+      entries:
+      - title: 概要
+        url: "/upgrade/upgrade-complete-ontap-9-7-or-earlier.html"
+      - title: ONTAP 9.7 以前を使用してネットワークポートをマッピングします
+        url: "/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html"
+      - title: ONTAP 9.7 以前で最終手順を実行します
+        url: "/upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html"
 - title: ボリュームを移動してアップグレード
   entries:
   - title: ワークフロー

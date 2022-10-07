@@ -4,7 +4,7 @@ permalink: upgrade-arl/index.html
 keywords: aggregate, relocation, moving, manual, upgrade, relocate, hardware 
 summary: アグリゲートの再配置を使用してコントローラハードウェアをアップグレードする 
 ---
-= アグリゲートの再配置を使用してコントローラハードウェアをアップグレードする
+= 概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
