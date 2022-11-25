@@ -3918,14 +3918,12 @@
   <block id="3987c2b3042faa1f0f41d1ec08f2ed7e" category="cell">AFF A400 、 AFF A700</block>
   <block id="41c1636eb5024bf8b152d1ca09286521" category="paragraph">^2^ AFF A300からAFF A400またはFAS8200を2ノードスイッチレスクラスタ構成でFAS8300システムにアップグレードする場合は、コントローラのアップグレード用の一時的なクラスタポートを選択する必要があります。AFF A400 および FAS8300 システムは、イーサネットバンドルとして、メザニンカードポートはイーサネットタイプ、 FC タイプの FC バンドルとして、 2 種類の構成で提供されます。</block>
   <block id="e9dc6fafb0f1f8ce64537ec567468d16" category="paragraph">^3FAS8020、FAS8040、AFF8020、およびAFF8040のシステムを上記の表のターゲット交換コントローラにアップグレードする場合、交換用コントローラが古いコントローラと同じONTAP バージョンを実行している必要があります。FAS8020、FAS8040、AFF8020、およびAFF8040のシステムは、ONTAP 9.8以降のONTAP バージョンをサポートしていません。</block>
-  <block id="58639a55064ac1eb8afcb76dee256457" category="paragraph">^4^コントローラのアップグレードでサポートされているONTAP のバージョンを確認します。</block>
   <block id="a45da96d0bf6575970f2d27af22be28a" category="cell">システム</block>
   <block id="d85bd4eac4ae2ba50be5c03b292af8f8" category="cell">9.9.1以降</block>
   <block id="94869c0e3d68936a54ce1ef1d7459f3e" category="cell">AFF8060の場合</block>
   <block id="a07a923eb6b740023890d052b6fb6e9a" category="cell">9.8P13以降のパッチ</block>
   <block id="728152178b0535e4c7e93f53223fbfff" category="cell">9.8P10以降のパッチ</block>
   <block id="edbeb952c4054f67ce1836afbda00903" category="cell">FAS8060</block>
-  <block id="eb30343e3b73c36d3224c319d83cc2e6" category="cell">9.10.1P3以降</block>
   <block id="8ed24dd5fb292ecefe76fe92a5fc3988" category="cell">FAS8080</block>
   <block id="e2060bf680bf4facfccf3befec69ef04" category="cell">9.8P12以降のパッチ</block>
   <block id="c7f409d27e38c597f7352e5c3444f367" category="list-text">node3で次のコマンドを入力し、現在ポートがどのように設定されているかを確認します。</block>
@@ -4456,4 +4454,11 @@
   <block id="e992617332e56bffc7c73bb184146d40" category="summary">元のノードがサポート対象のモデルである場合、ストレージを移動してアップグレードする処理中に、ノードの内蔵SATAドライブ、SSD、またはSASドライブを、新しいノードに接続されたドライブシェルフに移動することができます。また、システムをドライブシェルフに変換して、新しいノードに接続することもできます。</block>
   <block id="0d19f6d9c6616aec6c0d6fa998fcdc06" category="paragraph">ストレージを移動してコントローラハードウェアをアップグレードする場合は、元のノードを準備し、新しいノードをセットアップします。一部のプラットフォームモデルでは、新しいノードへの内蔵ストレージの移動がサポートされています。新しいノードにディスクを再割り当てし、ルートボリュームの設定をリストアし、ネットワークポートを設定します。ストレージの移動によるアップグレードは、停止を伴う手順で実行されます。</block>
   <block id="22e05b02f02d6d6148cff29e1b86d6eb" category="sidebar">ONTAP 9.8以降で完了します</block>
+  <block id="e48a139c95341faecb199d5908a54e2e" category="paragraph">^4^次の表に、これらのコントローラアップグレードの組み合わせでサポートされる最小ONTAP バージョンとそれ以降のバージョンを示します。</block>
+  <block id="b8e707d2be1c734648eb91b029352369" category="cell">9.10.1から9.12.1</block>
+  <block id="4f0b48e1f65ca4ae15a6720f28d58824" category="cell">9.10.1P3～9.12.1</block>
+  <block id="04d01679d16bbccad3f9da82789a187b" category="paragraph">上記の表にあるアップグレードの組み合わせについては、次の点に注意してください。</block>
+  <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">既存のコントローラと交換用コントローラで同じバージョンのONTAP を使用する必要はありません。ONTAP ソフトウェアのアップグレードは、コントローラのアップグレード時に実行されます。</block>
+  <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">アップグレードするときは、サポートされているONTAP バージョンとパッチレベルで交換用コントローラを取り付ける必要があります。</block>
+  <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">手順 を起動して最初のノードをアップグレードしたあとに、コントローラのアップグレードをキャンセルまたは取り消すことはできません。</block>
 </blocks>
