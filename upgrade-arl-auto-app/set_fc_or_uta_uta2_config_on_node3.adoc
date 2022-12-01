@@ -303,6 +303,7 @@ Adapter  Mode       Type        Mode     Type        Status
 . [auto9597_check_node3 _step15]] ノード 3 で、ブートメニューに移動し、 22-7 を使用して、非表示オプション「 boot_after_controller_replacement 」を選択します。プロンプトで、 node1 のディスクを node3 に再割り当てするには、次の例のように入力します。
 +
 .コンソールの出力例を展開します
+[%collapsible]
 ====
 ....
 LOADER-A> boot_ontap menu

@@ -292,6 +292,7 @@ A800 にアップグレードする場合は、に進みます ,手順 23
 . [[auto_check_4_step15]] ノード 4 で、ブートメニューに移動し、 22/7 を使用して、非表示オプション「 boot_after_controller_replacement 」を選択します。プロンプトで node2 と入力し、次の例のように node2 のディスクを node4 に再割り当てします。
 +
 .コンソールの出力例を展開します
+[%collapsible]
 ====
 [listing]
 ----
