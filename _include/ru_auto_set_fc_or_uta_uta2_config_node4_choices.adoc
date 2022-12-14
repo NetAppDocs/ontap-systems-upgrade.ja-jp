@@ -3,6 +3,6 @@
 
 
 .選択肢
-*  FC ports on node4
-*  and configure UTA/UTA2 ports on node4
+* <<ノード 4 の FC ポートを設定します>>
+* <<ノード 4 の UTA / UTA2 ポートを確認して設定してください>>
 

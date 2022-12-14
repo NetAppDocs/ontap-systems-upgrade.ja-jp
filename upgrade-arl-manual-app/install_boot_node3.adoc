@@ -16,12 +16,13 @@ summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を�
 [role="lead"]
 ノード 3 をラックに設置し、ノード 1 の接続をノード 3 に転送し、ノード 3 をブートして、 ONTAP をインストールする必要があります。また、ノード 1 のスペアディスク、ルートボリュームに属するディスク、およびルート以外のアグリゲートのうち、ノード 2 に再配置されていないディスクも再割り当てする必要があります。
 
+.このタスクについて
 ノード 1 にインストールされている ONTAP 9 のバージョンが異なる場合は、ノード 3 をネットブートする必要があります。node3 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、以降のシステムブートで使用するブートメディアデバイスに正しいファイルをダウンロードできます。を参照してください link:prepare_for_netboot.html["ネットブートを準備"]。
 
 ただし、ノード 1 にインストールされている ONTAP 9 のバージョンが同じかそれ以降である場合は、ノード 3 をネットブートする必要はありません。
 
 
-NOTE: * 重要：ストレージアレイに接続された V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、この作業を完了する必要があります ,手順 1. から ,手順 5をクリックします ,手順 6 およびの手順に従ってください link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります ,手順 7。ただし、ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を実行し、に進みます link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタ・プロンプトでコマンドを入力します。
+NOTE: * 重要：ストレージアレイに接続された V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、この作業を完了する必要があります <<man_install3_step1,手順 1.>> から <<man_install3_step5,手順 5>>をクリックします <<man_install3_step6,手順 6>> およびの手順に従ってください link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<man_install3_step7,手順 7>>。ただし、ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を実行し、に進みます link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタ・プロンプトでコマンドを入力します。
 
 .手順
 . [[man_install3_step1] ノード 3 のラックスペースがあることを確認します。
@@ -74,7 +75,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 When the battery is ready, the boot process will complete and services will be engaged.
 To override this delay, press 'c' followed by 'Enter'
 ----
-. [[man_install3_step5]] で警告メッセージが表示される場合 ,手順 4を使用して、次の操作を実行します。
+. [[man_install3_step5]] で警告メッセージが表示される場合 <<man_install3_step4,手順 4>>を使用して、次の操作を実行します。
 +
 .. NVRAM バッテリ低下以外の問題を示すコンソールメッセージがないか確認し、必要に応じて対処します。
 .. バッテリの充電と起動プロセスが完了するまで待ちます。
@@ -91,12 +92,12 @@ NOTE: * 注意 * ：遅延は無視しないでください。バッテリーの
 | システムの状態 | 作業 
 
 
-| ディスクがあり、バックエンドストレージがない | 手順 7 から 12 を省略して、に進みます ,手順 13。 
+| ディスクがあり、バックエンドストレージがない | 手順 7 から 12 を省略して、に進みます <<man_install3_step13,手順 13>>。 
 
 
 | は、 V シリーズシステム、または FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムです  a| 
 .. に進みます link:set_fc_uta_uta2_config_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"] をクリックし、サブセクションを完了します link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]必要に応じて、システムに適用されます。
-.. このセクションに戻って、から始めて残りの手順を実行します ,手順 7。
+.. このセクションに戻って、から始めて残りの手順を実行します <<man_install3_step7,手順 7>>。
 
 
 * 重要 * ： V シリーズまたは FlexArray 仮想化ソフトウェアで ONTAP をブートする前に、オンボード FC ポート、 CNA オンボードポート、 CNA カードを再設定する必要があります。
@@ -137,7 +138,7 @@ NOTE: * 注意 * ：遅延は無視しないでください。バッテリーの
 | アップグレード後のシステムの構成 | 作業 
 
 
-| デュアルシャーシ構成（コントローラが別々のシャーシに搭載されている場合） | に進みます ,手順 15。 
+| デュアルシャーシ構成（コントローラが別々のシャーシに搭載されている場合） | に進みます <<man_install3_step15,手順 15>>。 
 
 
 | シングルシャーシ構成（コントローラが同じシャーシに搭載されている場合）  a| 
@@ -149,9 +150,9 @@ NOTE: * 注意 * ：遅延は無視しないでください。バッテリーの
 +
 * 注： node4 はブート環境のプロンプトのままにします。その場合はの node4 に戻ります link:install_boot_node4.html["ノード 4 をインストールしてブートします"]。
 
-.. に警告メッセージが表示される場合は ,手順 4の手順に従ってください ,手順 5
+.. に警告メッセージが表示される場合は <<man_install3_step4,手順 4>>の手順に従ってください <<man_install3_step5,手順 5>>
 .. コンソールケーブルを node4 から node3 に戻します。
-.. に進みます ,手順 15。
+.. に進みます <<man_install3_step15,手順 15>>。
 
 
 |===
@@ -182,10 +183,10 @@ WARNING: * 警告 * ：この新しいノードが他のクラスタまたは HA
 | アップグレードするシステム | 作業 
 
 
-| Does _ not_ have the correct or current ONTAP version on node3 （ノード 3 に正しい バージョンまたは現在の バージョンがありません | に進みます ,手順 20。 
+| Does _ not_ have the correct or current ONTAP version on node3 （ノード 3 に正しい バージョンまたは現在の バージョンがありません | に進みます <<man_install3_step20,手順 20>>。 
 
 
-| ノード 3 に正しいバージョンまたは最新バージョンの ONTAP があること | に進みます ,手順 25。 
+| ノード 3 に正しいバージョンまたは最新バージョンの ONTAP があること | に進みます <<man_install3_step25,手順 25>>。 
 |===
 . [[man_install3_step20]] 次のいずれかの操作を実行して、ネットブート接続を設定します。
 +
@@ -480,7 +481,7 @@ Destroying mailboxes forces a node to create new empty mailboxes, which clears a
 +
 'set time_hh:mm:ss_`
 
-. [[man_install3_step42]] パートナーシステム ID がで説明したとおりに正しく設定されていることを確認します ,手順 28 アン下の -p スイッチ：
+. [[man_install3_step42]] パートナーシステム ID がで説明したとおりに正しく設定されていることを確認します <<man_install3_step28,手順 28>> アン下の -p スイッチ：
 +
 printenv partner-sysid
 

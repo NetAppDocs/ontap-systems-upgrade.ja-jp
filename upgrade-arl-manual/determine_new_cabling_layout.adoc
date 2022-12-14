@@ -16,8 +16,10 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 [role="lead"]
 新しいコントローラモジュールおよび新しいディスクシェルフと既存の FC スイッチとのケーブル接続を決定する必要があります。
 
+.このタスクについて
 このタスクは MetroCluster サイトごとに実行する必要があります。
 
+.ステップ
 8 ノード MetroCluster 構成のポート用途に従って、スイッチタイプに対応したケーブルレイアウトを決定するには、 _ Fabric-attached MetroCluster Installation and Configuration_content を使用します。リファレンス構成ファイル（ RCF ）を使用できるようにするために、 FC スイッチポートの用途がコンテンツに記載されている用途と同じである必要があります。
 
 に進みます link:other_references.html["参考資料"] ファブリック接続 MetroCluster インストールおよびコンフィギュレーションコンテンツにリンクするには、次の手順を実行します。

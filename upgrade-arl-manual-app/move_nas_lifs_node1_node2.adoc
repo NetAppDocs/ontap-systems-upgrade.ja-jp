@@ -16,6 +16,7 @@ summary: 2 ノードクラスタの場合はノード 2 に、 ONTAP 9.8 以降�
 [role="lead"]
 ノード 1 をノード 3 に交換する前に、 2 ノードクラスタの場合はノード 1 で所有されている NAS データ LIF をノード 2 に、クラスタに 3 つ以上のノードがある場合はノード 3 に移動する必要があります。使用する方法は、クラスタが NAS 用に設定されているか SAN 用に設定されているかによって異なります。
 
+.このタスクについて
 アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。ノード 3 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認する必要があります。
 
 .手順
@@ -50,7 +51,7 @@ summary: 2 ノードクラスタの場合はノード 2 に、 ONTAP 9.8 以降�
 +
 「network interface migrate -vserver _Vserver_name -lif_lif_name_-destination-node-node2 _–destination-port_netport | ifgrp_`
 
-.. で、 LIF および VLAN のホームポートとホームノードを変更します ,手順 a LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
+.. で、 LIF および VLAN のホームポートとホームノードを変更します <<substepa,手順 a>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
 「network interface modify -vserver _Vserver_name -lif_lif_name_-home-node2_-home-node _port_netport | ifgrp_`」
 
@@ -63,7 +64,7 @@ summary: 2 ノードクラスタの場合はノード 2 に、 ONTAP 9.8 以降�
 | クラスタの設定対象 | 作業 
 
 
-| NAS | - 完了しました ,手順 5 から ,手順 8。 
+| NAS | - 完了しました <<man_lif_1_2_step5,手順 5>> から <<man_lif_1_2_step8,手順 8>>。 
 
 
 | SAN | ノード上のすべてのSAN LIFを無効にしてアップグレード用に停止します。「network interface modify -vserver _Vserver -name _-lif LIF_name -home-node _node_name _to _upgrade _-home-port port | ifgrp-status-admin down 
@@ -80,7 +81,7 @@ summary: 2 ノードクラスタの場合はノード 2 に、 ONTAP 9.8 以降�
 +
 「network interface modify -vserver _Vserver -name _-lif_lif_name_-home-node2_-home-node _port_name_`
 
-. [man_lif_1_2_step8] LIF がホームまたは現在のポートとして使用しているかどうかを確認しますポートがホームでない場合や現在のポートでない場合は、に進みます ,手順 9：
+. [man_lif_1_2_step8] LIF がホームまたは現在のポートとして使用しているかどうかを確認しますポートがホームでない場合や現在のポートでない場合は、に進みます <<man_lif_1_2_step9,手順 9>>：
 +
 「network interface show -home-node _node2」-home-port_port_name_`
 

@@ -139,4 +139,5 @@ system service-processor network modify -node _node_name _`
 . 新しいノードにスイッチレスクラスタをセットアップする場合は、を参照してください link:other_references.html["参考資料"] ネットアップサポートサイトへのリンクを設定するには、 _ 2 ノードスイッチレスクラスタへの移行の手順に従ってください。
 
 
+.完了後
 ノード 3 とノード 4 でストレージ暗号化が有効になっている場合は、セクションを完了します link:set_up_storage_encryption_new_module.html["新しいコントローラモジュールで Storage Encryption をセットアップします"]。それ以外の場合は、の項を実行します link:decommission_old_system.html["古いシステムの運用を停止"]。

@@ -4,6 +4,7 @@
 
 アグリゲートを node2 から node3 に再配置したら、 node2 によって所有されている NAS データ LIF を node3 に移動する必要があります。
 
+.このタスクについて
 アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 3 からノード 4 に LIF を移動し、ノード 4 がオンラインになったあとで、 LIF が正常に機能しており、適切なポートに配置されていることを確認する必要があります。
 
 .手順
@@ -37,10 +38,10 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 | ノード 2 の条件 | 作業 
 
 
-| インターフェイスグループまたは VLAN が設定されている | に進みます ,手順 3。 
+| インターフェイスグループまたは VLAN が設定されている | に進みます <<man_move_lif_2_3_step3,手順 3>>。 
 
 
-| インターフェイスグループまたは VLAN が設定されていない | 手順 3 を省略して、に進みます ,手順 4。 
+| インターフェイスグループまたは VLAN が設定されていない | 手順 3 を省略して、に進みます <<man_move_lif_2_3_step4,手順 4>>。 
 |===
 . [man_move_lif_2_3_step3] 次の手順を実行して、 node2 のインターフェイスグループおよび VLAN でホストされている NAS データ LIF を移行します。
 +
@@ -48,7 +49,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 「network interface migrate -vserver _Vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
-.. LIF のホームポートとホームノードを変更します ,手順 a 各ノードについて次のコマンドを 1 回入力して、 LIF を現在ホストしているポートとノードに接続します。
+.. LIF のホームポートとホームノードを変更します <<man_move_lif_2_3_substepa,手順 a>> 各ノードについて次のコマンドを 1 回入力して、 LIF を現在ホストしているポートとノードに接続します。
 +
 「network interface modify -vserver _Vserver_name -lif_lif_name_-home-node3_-homeport_netport | ifgrp_`」
 
@@ -56,7 +57,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 「network interface migrate -vserver _Vserver_name -lif_lif_name_-destination -node _node3 _–destination-port_netport | ifgrp_`」の形式で指定します
 
-.. LIF のホームポートとホームノードを変更します ,サブステップ c LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
+.. LIF のホームポートとホームノードを変更します <<man_move_lif_2_3_substepc,サブステップ c>> LIF をホストしているポートとノードに対して次のコマンドを 1 回入力します。
 +
 「network interface modify -vserver _Vserver_name -lif_lif_name_-home-node3_-homeport_netport | ifgrp_`」
 
@@ -69,13 +70,13 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 | クラスタの設定対象 | 作業 
 
 
-| NAS | - 完了しました ,手順 5 から ,手順 8。 
+| NAS | - 完了しました <<man_move_lif_2_3_step5,手順 5>> から <<man_move_lif_2_3_step8,手順 8>>。 
 
 
-| SAN | 手順 5 から 8 をスキップし、完了します ,手順 9。 
+| SAN | 手順 5 から 8 をスキップし、完了します <<man_move_lif_2_3_step9,手順 9>>。 
 
 
-| NAS と SAN の両方 | - 完了しました ,手順 5 から ,手順 9。 
+| NAS と SAN の両方 | - 完了しました <<man_move_lif_2_3_step5,手順 5>> から <<man_move_lif_2_3_step9,手順 9>>。 
 |===
 . [[man_move_lif_2_3_step5] プラットフォームで同じでないデータポートがある場合は、ブロードキャストドメインにポートを追加します。
 +

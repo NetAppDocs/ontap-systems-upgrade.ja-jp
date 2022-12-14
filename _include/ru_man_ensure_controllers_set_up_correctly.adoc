@@ -35,7 +35,7 @@ node4          node3          true     Connected to node3
 | 2 ノードクラスタ | どちらかのノードで cluster ha modify -configured true コマンドを入力して ' クラスタの高可用性を有効にします 
 
 
-| 3 ノード以上のクラスタ | に進みます ,手順 4。 
+| 3 ノード以上のクラスタ | に進みます <<man_ensure_setup_Step4,手順 4>>。 
 |===
 . [[man_ver_setup_Step4]] 次のコマンドを入力して、 node3 と node4 が同じクラスタに属していることを確認します。
 +
@@ -121,4 +121,5 @@ system service-processor network modify -node _node_name _`
 . 新しいノードにスイッチレスクラスタをセットアップする場合は、に進みます link:other_references.html["参考資料"] ネットワークサポートサイトへのリンクをクリックし、 2 ノードスイッチレスクラスタへの移行の手順に従ってください。
 
 
+.完了後
 ノード 3 とノード 4 でストレージ暗号化が有効になっている場合は、の手順を実行します link:set_up_storage_encryption_new_controller.html["新しいコントローラモジュールで Storage Encryption をセットアップします"]。それ以外の場合は、の手順を実行します link:decommission_old_system.html["古いシステムの運用を停止"]。

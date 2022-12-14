@@ -27,4 +27,5 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 
 
 
+.完了後
 アップグレードが完了したら、 node1 の運用を停止できます。を参照してください link:decommission_old_system.html["古いシステムの運用を停止"]。

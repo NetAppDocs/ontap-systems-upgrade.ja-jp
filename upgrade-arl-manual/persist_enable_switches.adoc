@@ -16,6 +16,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで、手動 ARL
 [role="lead"]
 ファブリック内のスイッチを永続的に有効にする必要があります。
 
+.ステップ
 スイッチを永続的に有効にします。
 
 * Brocade スイッチの場合は、「 witchCfgPersistentenable 」コマンドを使用します。

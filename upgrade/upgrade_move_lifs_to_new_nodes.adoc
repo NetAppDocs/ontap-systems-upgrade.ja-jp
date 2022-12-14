@@ -13,6 +13,7 @@ summary: 元のノードからボリュームを移動したら、 SAN 以外の
 [role="lead"]
 元のノードからボリュームを移動したら、 SAN 以外のデータ LIF とクラスタ管理 LIF を元のノードから新しいノードに移行する必要があります。
 
+.このタスクについて
 VMware vStorage APIs for Array Integration （ VAAI ）でコピーオフロード処理に使用されている LIF を移行することはできません。
 
 .手順

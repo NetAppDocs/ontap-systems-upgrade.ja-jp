@@ -76,7 +76,7 @@ network interface show -curr-node node1 __ role cluster、intercluster、node-mg
 
 NOTE: システムにクラスタ間 LIF がない可能性があります。
 
-. のコマンドの出力に情報を記録します ,手順 3 をクリックしてください link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]。
+. のコマンドの出力に情報を記録します <<man_record_node1_step3,手順 3>> をクリックしてください link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]。
 +
 出力情報は、新しいコントローラポートを古いコントローラポートにマッピングするために必要です。
 
@@ -161,7 +161,7 @@ network fcp adapter show -node-node1_`
 | セクションに NVRAM システム ID 番号を記録しました link:prepare_nodes_for_upgrade.html["アップグレードのためのノードを準備"]。 | 次のセクションに進みます。 link:retire_node1.html["ノード 1 を撤去"]。 
 
 
-| セクションに NVRAM システム ID 番号が記録されていませんでした link:prepare_nodes_for_upgrade.html["アップグレードのためのノードを準備"] | - 完了しました ,手順 11 および ,手順 12 に進みます link:retire_node1.html["ノード 1 を撤去"]。 
+| セクションに NVRAM システム ID 番号が記録されていませんでした link:prepare_nodes_for_upgrade.html["アップグレードのためのノードを準備"] | - 完了しました <<man_record_node1_step11,手順 11>> および <<man_record_node1_step12,手順 12>> に進みます link:retire_node1.html["ノード 1 を撤去"]。 
 |===
 . [[man_record_node1_step11]] どちらかのコントローラで次のコマンドを入力します。
 +

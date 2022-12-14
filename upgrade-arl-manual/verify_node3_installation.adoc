@@ -32,7 +32,7 @@ network interface show -curr-node node3 _`
 | クラスタの種類 | 作業 
 
 
-| SAN 環境の場合 | - 完了しました ,手順 4 セクションに移動します link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["ノード 1 で所有されている NAS データ LIF をノード 2 からノード 3 に移動し、ノード 3 の SAN LIF を確認します"]。 
+| SAN 環境の場合 | - 完了しました <<step4,手順 4>> セクションに移動します link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["ノード 1 で所有されている NAS データ LIF をノード 2 からノード 3 に移動し、ノード 3 の SAN LIF を確認します"]。 
 
 
 | SAN 環境では使用できません | 手順 4 を省略して、に進みます link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["ノード 1 で所有されている NAS データ LIF をノード 2 からノード 3 に移動し、ノード 3 の SAN LIF を確認します"]。 

@@ -125,7 +125,7 @@ ifgrp show`
 | に記録された NVRAM システム ID 番号 link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] | に進みます link:retire_node2.html["ノード 2 を撤去"]。 
 
 
-| NVRAM システムの ID 番号をに記録しませんでした link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] | - 完了しました ,手順 9 および ,手順 10 次に、次のセクションに進みます。 link:retire_node2.html["ノード 2 を撤去"]。 
+| NVRAM システムの ID 番号をに記録しませんでした link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] | - 完了しました <<man_record_2_step9,手順 9>> および <<man_record_2_step10,手順 10>> 次に、次のセクションに進みます。 link:retire_node2.html["ノード 2 を撤去"]。 
 |===
 . [man_record_2_step9] ： node2 の属性を表示します
 +

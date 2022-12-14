@@ -16,6 +16,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、 ARL �
 [role="lead"]
 スイッチを再設定する前に、問題 an AutoSupport message to notify NetApp technical support that maintenance is maintenance.システム停止が発生したとみなしてテクニカルサポートがケースをオープンしないように、メンテナンスが進行中であることを通知する必要があります。
 
+.このタスクについて
 このタスクは MetroCluster サイトごとに実行する必要があります。
 
 .手順
