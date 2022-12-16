@@ -160,20 +160,46 @@ NOTE: * 注意 * ：遅延は無視しないでください。バッテリーの
 +
 「デフォルト設定」
 
-. [man_install3_step16]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、「 setenv bootarg.storageencryption.support 」コマンドは「 true 」に設定する必要があります。また、 node1 構成のロード後にブートループが発生しないように、「 kmip.init.maxwait` variable needs to be 'off' 」に設定する必要があります。
+. [[man_install3_step16]]を設定します `bootarg.storageencryption.support` および `kmip.init.maxwait` ノード1の構成のロード後にブートループが発生しないようにする変数。
 +
-'etenv bootarg.storageencryption.support true
+手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
 
 +
-'etenv kmip.init.maxwait off
+[cols="35,65"]
+|===
+| 次のドライブが使用中の場合 | 次に、 
 
+
+| FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ  a| 
+** `setenv bootarg.storageencryption.support *true*`
+** 'etenv kmip.init.maxwait off
+
+
+
+
+| ネットアップの非FIPS SED  a| 
+** `setenv bootarg.storageencryption.support *false*`
+** 'etenv kmip.init.maxwait off
+
+
+|===
++
+[NOTE]
+====
+** FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
+** SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+** を設定したあとに停電が発生した場合は `kmip.init.maxwait` 変数をに設定します `off`を参照し、データ損失の可能性を回避するための支援をテクニカルサポートに依頼してください。
+** HAペアのコントローラのアップグレードが完了したら、の設定を解除する必要があります `kmip.init.maxwait` 変数（Variable）：を参照してください link:ensure_controllers_set_up_correctly.html["新しいコントローラが正しくセットアップされていることを確認します"]。
+
+
+====
 . [[man_install3_step17]] node3 にインストールされている ONTAP のバージョンが、 node1 にインストールされている ONTAP 9 のバージョンと同じかそれ以降である場合は、ディスクをリストして新しい node3 に再割り当てします。
 +
 「 boot_ontap 」
 
 +
 
-WARNING: * 警告 * ：この新しいノードが他のクラスタまたは HA ペアで使用されたことがある場合は、次に進む前に「 wipeconfig 」を実行する必要があります。これを行わないと、サービスの停止やデータの損失が発生する可能性があります。交換用コントローラを以前に使用したことがある場合、特にコントローラが ONTAP 7-Mode を実行していた場合は、テクニカルサポートにお問い合わせください。
+WARNING: 他のクラスタまたはHAペアでこの新しいノードを使用したことがある場合は、を実行する必要があります `wipeconfig` 次に進む前に、これを行わないと、サービスの停止やデータの損失が発生する可能性があります。交換用コントローラを以前に使用したことがある場合、特にコントローラが ONTAP 7-Mode を実行していた場合は、テクニカルサポートにお問い合わせください。
 
 . [[man_install3_step18]] CTRL-C を押してブートメニューを表示します。
 . [[man_install3_step19]] 次のいずれかの操作を実行します
@@ -300,6 +326,10 @@ NOTE: コマンドを入力すると、「ディスクはありません」と�
 . [man_install3_step28] 再割り当てするノードのスペア、ルートに属するディスク、およびでノード 2 に再配置されなかったルート以外のアグリゲート link:relocate_non_root_aggr_node1_node2.html["ルート以外のアグリゲートを node1 から node2 に再配置します。"]。
 +
 システムに共有ディスクがあるかどうかに応じて、適切な形式の「 disk reassign 」コマンドを入力します。
+
++
+
+NOTE: システムに共有ディスク、ハイブリッドアグリゲート、またはその両方がある場合は、適切なを使用する必要があります `disk reassign` コマンドを次の表に示します。
 
 +
 [cols="35,65"]

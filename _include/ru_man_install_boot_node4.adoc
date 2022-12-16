@@ -144,13 +144,39 @@ WARNING: * 警告 : 遅延を上書きしないでください。バッテリー
 +
 「デフォルト設定」
 
-. この構成で FDE を使用する場合 '`setenv.storageencryption.support` 変数は 'true' に設定する必要がありますまた 'node2 構成のロード後にブートループが発生しないように 'kmip.init.maxwait` 変数は 'off' に設定する必要があります
+. を設定します `bootarg.storageencryption.support` および `kmip.init.maxwait` node2構成のロード後にブートループが発生しないようにするための変数。
 +
-'etenv bootarg.storageencryption.support true
+手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
 
 +
-'etenv kmip.init.maxwait off
+[cols="35,65"]
+|===
+| 次のドライブが使用中の場合 | 次に、 
 
+
+| FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ  a| 
+** `setenv bootarg.storageencryption.support *true*`
+** 'etenv kmip.init.maxwait off
+
+
+
+
+| ネットアップの非FIPS SED  a| 
+** `setenv bootarg.storageencryption.support *false*`
+** 'etenv kmip.init.maxwait off
+
+
+|===
++
+[NOTE]
+====
+** FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
+** SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+** を設定したあとに停電が発生した場合は `kmip.init.maxwait` 変数をに設定します `off`を参照し、データ損失の可能性を回避するための支援をテクニカルサポートに依頼してください。
+** HAペアのコントローラのアップグレードが完了したら、の設定を解除する必要があります `kmip.init.maxwait` 変数（Variable）：を参照してください link:ensure_controllers_set_up_correctly.html["新しいコントローラが正しくセットアップされていることを確認します"]。
+
+
+====
 . ノード 4 にインストールされている ONTAP のバージョンが node2 にインストールされている ONTAP 9 と同じかそれ以降の場合は、次のコマンドを入力します。
 +
 「 boot_ontap menu
@@ -262,6 +288,10 @@ DISK         OWNER                       POOL   SERIAL NUMBER   HOME
 ......
 ----
 . ノード 2 のスペア、ルートに属するディスク、および前のセクションでノード 3 に再配置されなかったルート以外のアグリゲートを再割り当てします link:relocate_non_root_aggr_node2_node3.html["ルート以外のアグリゲートを node2 から node3 に再配置します。"]：
++
+
+NOTE: システムに共有ディスク、ハイブリッドアグリゲート、またはその両方がある場合は、適切なを使用する必要があります `disk reassign` コマンドを次の表に示します。
+
 +
 [cols="35,65"]
 |===

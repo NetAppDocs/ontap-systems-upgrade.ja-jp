@@ -378,6 +378,23 @@ NOTE: この時点では node2 の AutoSupport メッセージはネットアッ
 +
 「 Last Subject Sent ：」フィールドと「 Last Time Sent ：」フィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。
 
+.. システムで自己暗号化ドライブを使用している場合は、Knowledge Baseの文書を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] アップグレード対象のHAペアで使用されている自己暗号化ドライブのタイプを確認する。ONTAP ソフトウェアは、次の2種類の自己暗号化ドライブをサポートしています。
++
+--
+*** FIPS認定のNetApp Storage Encryption（NSE）SASドライブまたはNVMeドライブ
+*** FIPS非対応の自己暗号化NVMeドライブ（SED）
+
+
+[NOTE]
+====
+*** FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
+*** SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+
+
+====
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["サポートされている自己暗号化ドライブの詳細を確認できます"^]。
+
+--
 
 
 

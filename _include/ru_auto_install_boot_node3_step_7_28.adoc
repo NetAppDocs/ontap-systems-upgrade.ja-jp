@@ -154,13 +154,39 @@ printenv partner-sysid
 新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。
 
 . [[step26]] スイッチベースのゾーニングを使用する構成の場合は、ゾーニングを調整して新しい WWPN 値を反映します。
-. [[step27]] NetApp Storage Encryption （ NSE ）がこの構成で使用されている場合、 'setenv bootarg.storageencryption.support` コマンドを 'true' に設定する必要があります。また、 node1 構成のロード後にブートループが発生しないように、「 kmip.init.maxwait` 」変数を「 off 」に設定する必要があります。
+. [[step27]]を設定します `bootarg.storageencryption.support` および `kmip.init.maxwait` ノード1の構成のロード後にブートループが発生しないようにする変数。
 +
-'etenv bootarg.storageencryption.support true
+手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
 
 +
-'etenv kmip.init.maxwait off
+[cols="35,65"]
+|===
+| 次のドライブが使用中の場合 | 次に、 
 
+
+| FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ  a| 
+** `setenv bootarg.storageencryption.support *true*`
+** 'etenv kmip.init.maxwait off
+
+
+
+
+| ネットアップの非FIPS SED  a| 
+** `setenv bootarg.storageencryption.support *false*`
+** 'etenv kmip.init.maxwait off
+
+
+|===
++
+[NOTE]
+====
+** FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
+** SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+** を設定したあとに停電が発生した場合は `kmip.init.maxwait` 変数をに設定します `off`を参照し、データ損失の可能性を回避するための支援をテクニカルサポートに依頼してください。
+** HAペアのコントローラのアップグレードが完了したら、の設定を解除する必要があります `kmip.init.maxwait` 変数（Variable）：を参照してください link:ensure_new_controllers_are_set_up_correctly.html["新しいコントローラが正しくセットアップされていることを確認します"]。
+
+
+====
 . [[step28]] ブートメニューからノードを起動します。
 +
 「 boot_ontap menu

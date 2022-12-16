@@ -44,6 +44,10 @@ storage failover modify -node _node1_-enabled false
 
 | 3 つ以上のノードで構成されるクラスタ | ストレージ・フェイルオーバーを無効にします：storage failover modify -node _node1 _-enabled false 
 |===
++
+
+WARNING: ストレージフェイルオーバーを無効にしないと、コントローラのアップグレードに失敗してデータアクセスが中断され、データが失われる可能性があります。
+
 . ストレージフェイルオーバーが無効になっていることを確認します。
 +
 「 storage failover show 」をクリックします

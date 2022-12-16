@@ -19,7 +19,7 @@ summary: 対応する AFF A900 ノード 1 のコントローラモジュール�
 AFF A900またはFAS9500コントローラモジュールのブートメディアにインストールされているONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900またはFAS9500ブートメディア上のONTAP バージョンは、アップグレードするAFF A700またはFAS9000システムで実行されているONTAP バージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。
 
 
-NOTE: また、 USB ブートオプションを使用してネットブートを実行することもできます。を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["ネットアップの技術情報アーティクル：「 How to use the boot_recovery loader command for installing ONTAP for initial setup of a system."^]。
+NOTE: また、 USB ブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["システムの初期セットアップのためにONTAP をインストールするためにboot_recovery loaderコマンドを使用する方法"^]。
 
 .作業を開始する前に
 * システムから HTTP サーバにアクセスできることを確認します。
