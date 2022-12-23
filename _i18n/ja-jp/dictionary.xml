@@ -3787,7 +3787,6 @@
   <block id="2c1932b86516656567d157f72eaf9746" category="summary">ONTAP 9.1 以降の場合は、ポートレイアウトを再設定し、 ONTAP 9.7 以前を実行しているコントローラで ARL を手動アップグレードする際に最新の RCF を適用します。</block>
   <block id="69824f6377ec4443972cf9847e831247" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に発生する可能性がある問題に関する情報。</block>
   <block id="de58ee53439e59b040872d736eb4746a" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、ノードを準備して情報を収集し、すべてのクラスタノードがクォーラムにあることを確認します。</block>
-  <block id="930e54e1be27588126529911ee1a66bb" category="paragraph">+ 注：この情報は、手順 の後半で使用します。</block>
   <block id="528395f19572aa91b1963f0ea7b6ed6b" category="summary">ONTAP 9.7 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、 node2 のクラスタネットワーク、管理、 FC ポート、および NVRAM システム ID に関する情報を記録します。</block>
   <block id="45e4301bce74949fdb13b7b2b487a728" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に、 RCF ファイルをインストールして Cisco スイッチと Brocade スイッチを再設定します。</block>
   <block id="6d2acf13fe57f3aa46b46db44d2c7e40" category="summary">ONTAP 9.7 以前を実行しているコントローラでは、 ARL を手動でアップグレードする際にメンテナンスが進行中であることを、ネットアップテクニカルサポートに通知します。</block>
@@ -3941,7 +3940,6 @@
   <block id="830a042377d7fdbd36c48ece8669e61c" category="section-title">AFF A900またはFAS9500コントローラモジュールをnode1にインストールします。</block>
   <block id="bb0ced2b785386259d517f7ae7bd88d1" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500コントローラモジュールをnode1にインストールします。</block>
   <block id="a8785e7ad1cb0d71507bbcb99df9c1f7" category="cell">AFF A700システムをAFF A900システムに変換し、A700シャーシを保管します</block>
-  <block id="e1b003e7f655a9b7177c226f66898500" category="cell">9.10.1 P3以降</block>
   <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000からFAS9500へ</block>
   <block id="92edbfe3ededa1bb85b931ec295f360d" category="cell">FAS9000システムをFAS9500システムに変換して、FAS9000シャーシを維持します。</block>
   <block id="a5ce3ab443f38c92fc244c3533db25fd" category="paragraph">ハイアベイラビリティ（HA）ペアのコントローラハードウェアは、コントローラとNVRAMモジュールを交換することで、無停止でアップグレードできます。最初に、ルート以外のアグリゲートを古いコントローラノード間で移行します。インストールが完了したら、ルート以外のアグリゲートを古いコントローラノードから交換用コントローラノードに移行します。アップグレードするノードでホストされているデータには、アップグレード手順の実行中にアクセスできます。</block>
@@ -4485,4 +4483,6 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">構成に自己暗号化ドライブが使用されている場合は、を設定しておきます<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （たとえば、AFF A900またはFAS9500コントローラとNVRAMモジュールでのIn_Boot node2など）、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）を使用している場合は、次のように変数を設定解除</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2 _stp1]を設定します<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> および<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> node2構成のロード後にブートループが発生しないようにするための変数。</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">システムにハイブリッドアグリゲートがある。</block>
+  <block id="5c8ce8c10b94248d147cb23bb490fd9d" category="cell">を使用します<block ref="0cdc21b7c964923f382c6248332e0a1d" prefix=" " category="inline-code"></block> コマンド</block>
+  <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1P6または9.10.1P10（2023年2月を目標）</block>
 </blocks>
