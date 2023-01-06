@@ -3962,11 +3962,7 @@
   <block id="25beb58d3a670fb2c16081f902a5bff2" category="inline-link-macro">ステージ6：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします</block>
   <block id="82fe66fed743ab06100b56ff7cede89d" category="cell"><block ref="82fe66fed743ab06100b56ff7cede89d" category="inline-link-macro-rx"></block></block>
   <block id="d066afecd32f577c431df88c1a421ca4" category="list-text">AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします</block>
-  <block id="3d34e56cf21c4a138ab823660c2b5555" category="paragraph">ARLを使用して、次のシステム構成のコントローラのペアをアップグレードします。</block>
-  <block id="2a0a9f74d7fd41063ed18276c24550d5" category="list-text">ONTAP 9.10.1以降を実行しているAFF A900システムにAFF A700コントローラのペアをアップグレードします</block>
-  <block id="546138e0b7501a286c581953c65b874d" category="list-text">ONTAP 9.10.1P3以降を実行しているFAS9500システムにFAS9000コントローラのペアをアップグレードします</block>
   <block id="8c3db477300524bd7d8bcf2bba005da2" category="paragraph">AFF A700からAFF A900へのコントローラのアップグレード、またはARLを使用したFAS9000からFAS9500へのコントローラのアップグレードでは、NVRAMモジュールがサポートされています。新しいシャーシを含む完全なシステムとしてAFF A900またはFAS9500システムが新規に購入された場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ONTAP 9.8 以降の _content を実行しているコントローラハードウェアをアップグレードするには、 "system controller replace" コマンドを使用してください。</block>
-  <block id="89270eb0a4789198b9486a5396fb9846" category="admonition">この手順 は、厳密に環境 ONTAP 9.10.1以降を実行するAFF A700からAFF A900へのアップグレード、および9.10.1P3以降を実行するFAS9000からFAS9500へのアップグレードです。他のシステムの組み合わせのアップグレードには、この手順 を使用しないでください。</block>
   <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500 NVRAMモジュールをnode2のスロット6に取り付けます。</block>
   <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">AFF A900またはFAS9500コントローラモジュールをnode2にインストールします</block>
   <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500コントローラモジュールをnode2にインストールします。</block>
@@ -3977,8 +3973,6 @@
   <block id="c0bf6385dfa15c204a13d5abb6770653" category="paragraph">このコントローラのアップグレード中に、AFF A700コントローラをAFF A900コントローラまたはFAS9000コントローラとFAS9500コントローラと交換します。このコンテンツでは、自動手順 の手順を紹介しています。自動化されたでは、ディスク割り当てとネットワークポートの到達可能性チェックを使用して、コントローラのアップグレードを簡易化します。</block>
   <block id="2a2d4d28b7b0848fbdd189061adaff52" category="paragraph">このコンテンツでは、AFF A700 HAペアのストレージコントローラを、新しいAFF A900コントローラまたはFAS9000 HAペアのコントローラと新しいFAS9500コントローラとの間でアップグレードする方法について説明します。既存のデータとディスクはすべて維持されます。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。</block>
   <block id="3d58d6338cfd5f06b224201846bd6759" category="list-text">AFF A900またはFAS9500コントローラ、NVRAMモジュール、およびアップグレードに必要な部品を受け取ったことを、ネットアップの営業担当者に確認しておきます。</block>
-  <block id="58fd942a7ba8a430b491bba397e88d17" category="list-text">AFF A900コントローラでONTAP 9.10.1以降を実行している。</block>
-  <block id="7addcb2495004d218f3791cfcb74d41e" category="list-text">FAS9500コントローラでONTAP 9.10.1P3以降が実行されています。</block>
   <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">AFF A700またはFAS9000システムでFlexArray 仮想化ソフトウェアを使用している。</block>
   <block id="c72ac68ecc63380b07ba76bc038edf2e" category="paragraph">AFF A900またはFAS9500コントローラとNVRAMモジュールで、node2のインストールを確認する必要があります。物理ポートは変更されないため、古いnode2の物理ポートを交換するnode2にマッピングする必要はありません。</block>
   <block id="fbb88f36cd542fa5f9d7d9b7989c4fa9" category="paragraph">AFF A900またはFAS9500コントローラモジュールでnode1をブートしたあと、正しくインストールされていることを確認する必要があります。node2 がクォーラムに参加するまで待ってから、コントローラの交換処理を再開する必要があります。</block>
@@ -4483,6 +4477,10 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">構成に自己暗号化ドライブが使用されている場合は、を設定しておきます<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （たとえば、AFF A900またはFAS9500コントローラとNVRAMモジュールでのIn_Boot node2など）、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）を使用している場合は、次のように変数を設定解除</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2 _stp1]を設定します<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> および<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> node2構成のロード後にブートループが発生しないようにするための変数。</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">システムにハイブリッドアグリゲートがある。</block>
-  <block id="5c8ce8c10b94248d147cb23bb490fd9d" category="cell">を使用します<block ref="0cdc21b7c964923f382c6248332e0a1d" prefix=" " category="inline-code"></block> コマンド</block>
   <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1P6または9.10.1P10（2023年2月を目標）</block>
+  <block id="53f4933654122c2732aaf29d750ecb9c" category="list-text">ONTAP 9.11.1P6または9.10.1P10（2月2023日を対象）を実行している。</block>
+  <block id="34fe5db3348c8cff3877298c8c064752" category="paragraph">ARLを使用して、次のシステム構成のONTAP 9.11.1P6または9.10.1P10（2月2023日を対象）を実行するコントローラのペアをアップグレードします。</block>
+  <block id="b99f39b13055b86a7e0146684c21e326" category="list-text">AFF A700コントローラからAFF A900システムへの接続</block>
+  <block id="9733b2ec9e26adc1936d94dc2a3bb0dd" category="list-text">FAS9000コントローラからFAS9500システムへの移行</block>
+  <block id="6425a395e3062e0f480ffee2bc19d2f7" category="admonition">この手順 は、ONTAP 9.11.1P6または9.10.1P10を実行しているAFF A700からAFF A900、またはFAS9000からFAS9500へのアップグレードで厳密に環境 したものです（2月2023日を対象）。他のシステムの組み合わせのアップグレードには、この手順 を使用しないでください。</block>
 </blocks>

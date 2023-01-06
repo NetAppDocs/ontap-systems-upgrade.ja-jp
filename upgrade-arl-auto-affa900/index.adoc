@@ -21,7 +21,7 @@ summary: AFF A700 のコントローラハードウェアを AFF A900 にアッ�
 | メソッド | ONTAP バージョン | サポートされるシステム | 説明 
 
 
-| を使用します `system contlroller replace` コマンド | 9.11.1P6または9.10.1P10（2023年2月を目標） | AFF A700 から AFF A900 へ | AFF A700システムをAFF A900システムに変換し、A700シャーシを保管します 
+| 「 system controller replace 」コマンドを使用します | 9.11.1P6または9.10.1P10（2023年2月を目標） | AFF A700 から AFF A900 へ | AFF A700システムをAFF A900システムに変換し、A700シャーシを保管します 
 
 
 | 「 system controller replace 」コマンドを使用します | 9.11.1P6または9.10.1P10（2023年2月を目標） | FAS9000からFAS9500へ | FAS9000システムをFAS9500システムに変換して、FAS9000シャーシを維持します。 
