@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/set_up_netapp_encryption_on_new_controller.html 
 keywords: set up, netapp volume encryption, encryption, controller, module 
-summary: 必要に応じて、 ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に、 NVE 用の新しいコントローラモジュールを設定します。 
+summary: 必要に応じて、ONTAP 9.8以降を実行しているコントローラで、NVEまたはNAE用に新しいコントローラモジュールを手動でアップグレードする際に設定します。 
 ---
-= 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
+= 新しいコントローラモジュールでNetApp VolumeまたはAggregte Encryptionをセットアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 必要に応じて、 ONTAP 9.8 以降を実行しているコントロ
 
 
 [role="lead"]
-交換したコントローラまたは新しいコントローラの HA パートナーが NetApp Volume Encryption （ NVE ）を使用している場合は、新しいコントローラモジュールを NVE 用に設定する必要があります。
+交換したコントローラまたは新しいコントローラのハイアベイラビリティ（HA）パートナーがNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用する場合は、NVEまたはNAE用に新しいコントローラモジュールを設定する必要があります。
 
 .このタスクについて
 この手順には、新しいコントローラモジュールで実行する手順が含まれています。コマンドは正しいノードで入力する必要があります。

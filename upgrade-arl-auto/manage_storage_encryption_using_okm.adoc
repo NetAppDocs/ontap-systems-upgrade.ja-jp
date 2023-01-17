@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/manage_storage_encryption_using_okm.html 
+keywords: IP address, external, key management, server, storage encryption, kmip, onboard key management 
+summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップグレードする場合は "system controller replace" コマンドを使用して " ストレージ暗号化の構成と管理 " 認証キーの管理 " および SnapMirror 関係の休止を行います' 
+---
+= オンボードキーマネージャを使用してストレージ暗号化を管理します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+OKM は暗号キーを管理できます。OKM を使用する場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。
+
+.手順
+. パスフレーズを安全な場所に保存します。
+. リカバリ用のバックアップを作成します。次のコマンドを実行して出力を保存します。
++
+「 securitykey manager onboard show-backup 」を参照してください
+
+
+
+
+
+== SnapMirror 関係を休止します（オプション）。
+
+手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。
+
+.手順
+. デスティネーションクラスタの SnapMirror 関係のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
++
+[NOTE]
+====
+このステータスが「Transferring」の場合は、転送を中止する必要があります。snapmirror abort -destination -vserver _vserver_name _`
+
+====
++
+SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は失敗します。
+
+. クラスタ間のすべての関係を休止します。
++
+`snapmirror quiesce -destination-vserver *`
+
+

@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/stage_4_index.html 
+keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
+summary: ONTAP 9.8 以降を実行しているコントローラで system controller replace コマンドを使用して、 ARL アップグレードのステージ 1 プロセスシーケンスを実行します。 
+---
+= ステージ 4 ：リソースを node2 から再配置し、 node2 を撤去
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ステージ4で、ルート以外のアグリゲートとNASデータLIFをノード2からアップグレード後のノード1に再配置し、ノード2を撤去します。
+
+.手順
+. link:relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node1 に再配置します"]
+. link:retire_node2.html["ノード 2 を撤去"]
+

@@ -13,11 +13,13 @@
 +
 .. 診断ユーザアカウントのロックが解除されていることを確認します。
 +
-* 重要 * ：診断ユーザアカウントは、低レベルの診断のみを目的としており、テクニカルサポートからの指示があった場合にのみ使用してください。
+[IMPORTANT]
+====
+診断ユーザアカウントは、簡単な診断だけを目的としています。テクニカルサポートから指示があった場合にのみ使用してください。
 
-+
-* 重要 * ：ユーザーアカウントのロック解除については、を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。
+ユーザアカウントのロック解除については、を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。
 
+====
 .. を参照してください link:other_references.html["参考資料"] ネットアップサポートサイトへのリンクには、 Performance and Statistics Collector （ Perfstat Converged ）をダウンロードしてください。
 +
 Perfstat Converged ツールを使用すると、アップグレード後に比較するためのパフォーマンスのベースラインを設定できます。

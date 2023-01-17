@@ -27,8 +27,8 @@ entries:
     url: "/upgrade-arl-auto/stage_1_index.html"
   - title: ノードをアップグレードする準備をします
     url: "/upgrade-arl-auto/prepare_nodes_for_upgrade.html"
-  - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
-    url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: オンボードキーマネージャを使用してストレージ暗号化を管理します
+    url: "/upgrade-arl-auto/manage_storage_encryption_using_okm.html"
 - title: ステージ 2 ：移行してノード 1 を撤去
   pdf-filename: ステージ 2 ：node1の再配置とリタイア（ONTAP 9.5から9.7への「システムコントローラの交換」でアップグレード）
   entries:
@@ -90,11 +90,13 @@ entries:
   entries:
   - title: 概要
     url: "/upgrade-arl-auto/stage_6_index.html"
+  - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
+    url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
   - title: 新しいコントローラが正しくセットアップされていることを確認します
     url: "/upgrade-arl-auto/ensure_new_controllers_are_set_up_correctly.html"
   - title: 新しいコントローラモジュールで Storage Encryption をセットアップします
     url: "/upgrade-arl-auto/set_up_storage_encryption_new_module.html"
-  - title: 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
+  - title: 新しいコントローラモジュールでNetApp VolumeまたはAggregate Encryptionをセットアップします
     url: "/upgrade-arl-auto/set_up_netapp_volume_encryption_new_module.html"
   - title: 古いシステムの運用を停止
     url: "/upgrade-arl-auto/decommission_old_system.html"

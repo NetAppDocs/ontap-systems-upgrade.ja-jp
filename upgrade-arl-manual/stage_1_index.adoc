@@ -14,13 +14,11 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 
 
 [role="lead"]
-ステージ 1 では、アップグレードのためのノードを準備し、一連の事前確認を実行する必要があります。ストレージ暗号化のためにディスクのキー変更が必要になる場合があります。また、新しいコントローラをネットブートする準備を行う必要があります。
+ステージ1で必要に応じて、内部ディスクドライブにルートアグリゲートまたはデータアグリゲートが含まれていないことを確認し、ノードをアップグレードの準備をしてから、一連の事前確認を実行します。また、ストレージ暗号化のためにディスクのキーを変更し、新しいコントローラをネットブートする準備を行う必要がある場合もあります。
 
 .手順
 . link:determine_aggregates_on_internal_drives.html["コントローラの内蔵ディスクドライブにアグリゲートがあるかどうかを確認します"]
 . link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]
-. link:get_address_key_management_server_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]
-. link:manage_authentication_kmip.html["KMIP サーバを使用して認証を管理します"]
 . link:manage_authentication_okm.html["オンボードキーマネージャを使用して認証を管理"]
 . link:quiesce_snapmirror_relationships.html["SnapMirror 関係を休止します"]
 . link:prepare_for_netboot.html["ネットブートを準備"]

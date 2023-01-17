@@ -99,31 +99,32 @@ Controller replacement operation has been paused for user intervention.
 . コントローラの交換処理が開始されて事前確認が完了すると、処理が一時停止し、コントローラのアップグレードプロセスの後半で必要になる可能性がある出力情報を収集できます。
 . システムコンソールで、コントローラの交換用手順の指示に従って、次のコマンドセットを実行します。
 +
-次のコマンドの出力を個別に実行して保存する必要があります。
+各ノードに接続されているシリアルポートで、次のコマンドの出力を個別に実行して保存します。
 
 +
 ** vserver services name-service dns show
-** network interface show -curr-node nodename __ role cluster、intercluster、node-mgmt、cluster-mgmt、data
-** 'network port show -node-node_name --物理タイプ
-** 「 service-processor show -node * -instance 」のように表示されます
-** 「 network fcp adapter show -node-node_name _ 」のように指定します
+** `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
+** `network port show -node _local_ -type physical`
+** `service-processor show -local -instance`
+** `network fcp adapter show -node _local_`
 ** 「 network port ifgrp show 」のように表示されます
-** 'system node show-instance -node _node_name _`
-** 'run-node_node_name sysconfig '
-** storage aggregate show -node _node_name _`
-** volume show -node node_name _`
+** `system node show -instance -node _local_`
+** `run -node _local_ sysconfig`
+** `storage aggregate show -node _local_`
+** `volume show -node _local_`
 ** storage array config show -switch_switch_name_`
-** 'system license show -owner_node_name
+** `system license show -owner _local_`
 ** 「 storage encryption disk show 」のように表示されます
 ** 「 securitykey manager onboard show-backup 」を参照してください
 ** 「 security key-manager external show 」と入力します
 ** 「 security key-manager external show-status 」
-** 「 reachability show-detail` 」
+** 「 network port reachability show-detail` 」と表示されます
 
 
-+
 
-NOTE: オンボードキーマネージャを使用した NetApp Volume Encryption を使用している場合は、キー管理ツールのパスフレーズを準備しておき、あとで手順 でキー管理ツールの再同期を完了します。
+
+
+NOTE: オンボードキーマネージャを使用するNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用する場合は、キー管理ツールのパスフレーズを必要なだけ残して、あとで手順 でキー管理ツールの再同期を完了します。
 
 . システムで自己暗号化ドライブを使用している場合は、Knowledge Baseの文書を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] アップグレード対象のHAペアで使用されている自己暗号化ドライブのタイプを確認する。ONTAP ソフトウェアは、次の2種類の自己暗号化ドライブをサポートしています。
 +

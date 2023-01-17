@@ -14,7 +14,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラ上で system co
 
 
 [role="lead"]
-ステージ 5 で、 node4 をインストールしてブートした場合、 node2 のクラスタポートとノード管理ポートがオンラインになっていることを確認し、 node4 のインストールがあることを確認します。node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node2 のアグリゲートを node3 から node4 に再配置します。
+ステージ 5 で、 node4 をインストールしてブートした場合、 node2 のクラスタポートとノード管理ポートがオンラインになっていることを確認し、 node4 のインストールがあることを確認します。NVEを使用している場合は、key-manager configurationをリストアします。必要に応じて、ノード4でFCまたはUTA / UTA2設定を設定します。node2のNASデータLIFとルート以外のアグリゲートもnode3からnode4に再配置し、SAN LIFがnode4にあることを確認します。
 
 .手順
 . link:install_boot_node4.html["ノード 4 をインストールしてブートします"]

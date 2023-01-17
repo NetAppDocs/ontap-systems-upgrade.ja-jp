@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_node3_installation.html 
 keywords: verifying, verify, node, install, installation 
-summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して " ノード 1 の物理ポートがノード 3 に正しくマッピングされ " ネットワーク構成がノード 3 にリストアされることを確認します' 
+summary: 'を使用して、ONTAP 9.8以降を実行しているコントローラをアップグレードする際に、node1の物理ポートがnode3に正しくマッピングされていることを確認し、ネットワーク設定をnode3にリストアしておく必要があります `system controller replace` コマンド' 
 ---
 = ノード 3 のインストールを確認します
 :hardbreaks:
@@ -138,7 +138,7 @@ network port show -node node3
 
 . [step2] クラスタ上のブロードキャストドメインの一覧を表示します。
 +
-「 broadcast-domain show 」
+「 network port broadcast-domain show 」
 
 . [[step3]] node3 のすべてのポートの到達可能性をリストします。
 +
@@ -310,7 +310,7 @@ VLAN の復元が成功すると、指定された宛先ポートに、取り外
 
 . [[step9] すべてのポート修復が完了したら、空のブロードキャストドメインを削除します。
 +
-「broadcast-domain delete -broadcast-domain broadcast_domain_name _」の形式で指定します
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
 
 . [[step10] ] ポートの到達可能性を確認します。
 +

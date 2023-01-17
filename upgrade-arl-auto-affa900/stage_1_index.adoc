@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/stage_1_index.html 
+keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
+summary: ONTAP 9.8 以降を実行しているコントローラで system controller replace コマンドを使用して、 ARL アップグレードのステージ 1 プロセスシーケンスを実行します。 
+---
+= ステージ 1 ：アップグレードを準備
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ステージ1で、AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードに適したハードウェアがあることを確認し、事前確認を実行して、必要に応じてアグリゲートの所有権を修正します。OKMを使用してストレージ暗号化を管理していて、SnapMirror関係を休止することができる場合は、特定の情報を記録する必要があります。
+
+.手順
+. link:verify_upgrade_hardware.html["アップグレードハードウェアを確認します"]
+. link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]
+. link:manage_storage_encryption_using_okm.html["オンボードキーマネージャを使用してストレージ暗号化を管理します"]
+

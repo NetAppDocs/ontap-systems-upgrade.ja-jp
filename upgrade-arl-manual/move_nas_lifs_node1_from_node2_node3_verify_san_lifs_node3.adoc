@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html 
 keywords: move, nas, san, lif, ports, broadcast domain, node1, node2, node3 
-summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に、 node2 にある node1 の NAS データ LIF を node2 から node3 に移動します。 
+summary: ONTAP 9.7以前を実行しているコントローラでARLを手動でアップグレードする場合は、node2のnode1 NASデータLIFをnode2からnode3に移動します。 
 ---
 = node1 で所有されている NAS データ LIF を node2 から node3 に移動し、ノード 3 の SAN LIF を確認します
 :hardbreaks:

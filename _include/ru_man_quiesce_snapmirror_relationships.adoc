@@ -18,6 +18,6 @@ SnapMirror 関係が Transferring 状態でない場合は、中止は失敗し�
 
 . クラスタ間のすべての関係を休止します。
 +
-snapmirror quiesce -destination-pathコマンドを使用して'vserver_vserver_name_`を実行します
+`snapmirror quiesce -destination-vserver *`
 
 

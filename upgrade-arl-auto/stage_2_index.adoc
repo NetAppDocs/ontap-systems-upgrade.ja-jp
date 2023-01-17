@@ -14,11 +14,11 @@ summary: ONTAP 9.5 から 9.7 までを実行しているコントローラで�
 
 
 [role="lead"]
-ステージ 2 で、ノード 1 のアグリゲートと LIF をノード 2 に再配置し、ノード 1 の情報を記録してから、ノード 1 を廃棄します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。
+ステージ2で、ノード1の非ルートアグリゲートとNASデータLIFをノード2に再配置します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。必要に応じて、障害が発生したアグリゲートまたは拒否されたアグリゲートを再ノード1の必要な情報を記録してから、ノード1を廃棄する必要があります。ネットブートnode3とnode4には、あとで手順 で準備することもできます。
 
 .手順
-. link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"]
-. link:relocate_failed_or_vetoed_aggr.html["障害が発生したアグリゲートを再配置するか"]
+. link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"]
+. link:relocate_failed_vetoed_aggr.html["障害が発生したアグリゲートを再配置するか"]
 . link:retire_node1.html["ノード 1 を撤去"]
 . link:prepare_for_netboot.html["ネットブートを準備"]
 

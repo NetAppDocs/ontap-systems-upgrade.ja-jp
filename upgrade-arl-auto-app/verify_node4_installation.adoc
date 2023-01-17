@@ -144,7 +144,7 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 
 . クラスタのブロードキャストドメインの一覧を表示します。
 +
-「 broadcast-domain show 」
+「 network port broadcast-domain show 」
 
 . node4 にあるすべてのポートの到達可能性をリストします。
 +
@@ -312,7 +312,7 @@ VLAN の復元が成功すると、指定された宛先ポートに、取り外
 
 . ポートの修復がすべて完了したら、空のブロードキャストドメインを削除します。
 +
-「broadcast-domain delete -broadcast-domain broadcast_domain_name _」の形式で指定します
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
 
 . ポートの到達可能性を確認します
 +

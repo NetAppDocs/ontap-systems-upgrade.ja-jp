@@ -28,7 +28,7 @@ MetroCluster IP 構成のアップグレードについては、を参照して�
 
 
 
-NOTE: この手順では、 NetApp Storage Encryption （ NSE ）および NetApp Volume Encryption （ NVE ）を使用できます。
+NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
 
 [[sys_commands _98_supported_systems]] 次の表は、コントローラのアップグレードでサポートされるモデルマトリックスを示しています。
 

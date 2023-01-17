@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/stage_3_index.html 
+keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
+summary: ONTAP 9.8 以降を実行しているコントローラで system controller replace コマンドを使用して、 ARL アップグレードのステージ 1 プロセスシーケンスを実行します。 
+---
+= ステージ 3 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ステージ3では、コントローラとNVRAMモジュールをアップグレードしてnode1をブートし、アップグレードしたnode1のインストールを確認します。NetApp Volume Encryption（NVE）を使用している場合は、キー管理ツールの設定をリストアします。ノード1のルート以外のアグリゲートとNASデータLIFをnode2からアップグレードしたnode1に再配置し、SAN LIFがnode1に存在することを確認します。
+
+.手順
+. link:boot_node1_with_a900_controller_and_nvs.html["AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします"]
+. link:verify_node1_installation.html["ノード 1 のインストールを確認します"]
+. link:restore_key_manager_config_upgraded_node1.html["アップグレードした node1 でキー管理ツールの設定をリストアします"]
+. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF を node2 からアップグレードした node1 に移動します"]
+

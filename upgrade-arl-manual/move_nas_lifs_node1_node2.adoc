@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/move_nas_lifs_node1_node2.html 
 keywords: node1, node3, nas, lifs, cluster, san 
-summary: 2 ノードクラスタの場合はノード 1 の NAS データ LIF をノード 2 に、 ONTAP 9.7 以前を実行しているコントローラでは ARL を手動でアップグレードする場合は 3 つ目のノードに移動します。 
+summary: 2ノードクラスタの場合はノード1のNASデータLIFをノード2に、ONTAP 9.7以前を実行しているコントローラでは手動でARLをアップグレードする場合は3つ目のノードに移動します。 
 ---
 = node1 で所有されている NAS データ LIF を node2 に移動します
 :hardbreaks:

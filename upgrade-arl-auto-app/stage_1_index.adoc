@@ -14,9 +14,9 @@ summary: ONTAP 9.8 以降を実行しているコントローラで system contr
 
 
 [role="lead"]
-ステージ 1 では、アップグレードのためのノードを準備し、一連の事前確認を実行する必要があります。ストレージ暗号化のためにディスクのキー変更が必要になる場合があります。また、新しいコントローラをネットブートする準備を行う必要があります。
+ステージ1では、事前確認を実行し、必要に応じてアグリゲートの所有権を修正します。OKMを使用してストレージ暗号化を管理していて、SnapMirror関係を休止することができる場合は、特定の情報を記録する必要があります。
 
 .手順
 . link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]
-. link:get_ip_address_of_external_kms_for_storage_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]
+. link:manage_storage_encryption_using_okm.html["オンボードキーマネージャを使用してストレージ暗号化を管理します"]
 

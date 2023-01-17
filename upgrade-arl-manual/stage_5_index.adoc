@@ -14,7 +14,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 
 
 [role="lead"]
-ステージ 5 で、 node4 をインストールしてブートし、 node2 のクラスタポートとノード管理ポートを node4 にマッピングし、 node4 のインストールを確認します。さらに、 node2 によって所有されているデータ LIF と SAN LIF を node3 から node4 に移動し、 node2 のアグリゲートを node3 から node4 に再配置します。
+ステージ5で、node4のインストールとブートの際には、クラスタポートとノード管理ポートをnode2からnode4にマッピングし、node4のインストールを確認して、node2に属するデータLIFとSAN LIFをnode3からnode4に移動します。node2のアグリゲートもnode3からnode4に再配置します。
 
 .手順
 . link:install_boot_node4.html["ノード 4 をインストールしてブートします"]
@@ -22,5 +22,5 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 . link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]
 . link:verify_node4_installation.html["ノード 4 のインストールを確認します"]
 . link:move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html["node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF を確認します"]
-. link:relocate_node2_non_root_aggr_node3_node4.html["ノード 2 のルート以外のアグリゲートをノード 3 からノード 4 に再配置します"]
+. link:relocate_node2_non_root_aggr_node3_node4.html["ノード2のルート以外のアグリゲートをノード3からノード4に再配置します"]
 

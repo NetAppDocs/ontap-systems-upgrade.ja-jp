@@ -135,7 +135,7 @@ Warning: Repairing port "node_name:port" may cause it to move into a different b
 .. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair repair repair repair repair repair repair 」コマンドを実行してから約 1 分待ちます。
 .. クラスタのすべてのブロードキャストドメインを一覧表示します。
 +
-「 broadcast-domain show 」
+「 network port broadcast-domain show 」
 
 .. 到達可能性の修復が実行されると、 ONTAP は正しいブロードキャストドメインにポートを配置しようとします。ただし、ポートの到達可能性を判別できず、既存のブロードキャストドメインのいずれにも対応していない場合、 ONTAP はこれらのポート用に新しいブロードキャストドメインを作成します。すべてのメンバーポートがインターフェイスグループのメンバーポートになる場合は、必要に応じて、新しく作成したブロードキャストドメインを削除できます。ブロードキャストドメインを削除する
 +

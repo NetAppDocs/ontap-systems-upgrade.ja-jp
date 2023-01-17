@@ -14,7 +14,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラ上で system co
 
 
 [role="lead"]
-ステージ 4 では、ルート以外のすべてのアグリゲートが node2 から node3 に再配置され、 node2 で所有されている SAN 以外のデータ LIF が node3 に移動されます。ノード 2 の必要な情報を記録してから、 node2 を撤去する必要があります。
+ステージ4で、ルート以外のアグリゲートとNASデータLIFをnode2からnode3に再配置します。あとで手順 で使用するために必要なノード2の情報を記録してから、node2を撤去する必要があります。
 
 .手順
 . link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します"]

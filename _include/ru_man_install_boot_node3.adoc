@@ -9,9 +9,13 @@
 
 ただし、ノード 1 にインストールされている ONTAP 9 のバージョンが同じかそれ以降である場合は、ノード 3 をネットブートする必要はありません。
 
+[IMPORTANT]
+====
+ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <<man_install3_step1,手順 1.>> から <<man_install3_step5,手順 5>>をクリックします <<man_install3_step6,手順 6>> およびの手順に従ってください link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<man_install3_step7,手順 7>>。
 
-NOTE: * 重要：ストレージアレイに接続された V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、この作業を完了する必要があります <<man_install3_step1,手順 1.>> から <<man_install3_step5,手順 5>>をクリックします <<man_install3_step6,手順 6>> およびの手順に従ってください link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<man_install3_step7,手順 7>>。ただし、ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を実行し、に進みます link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタ・プロンプトでコマンドを入力します。
+ただし、ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を実行し、に進みます link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタ・プロンプトでコマンドを入力します。
 
+====
 .手順
 . [[man_install3_step1] ノード 3 のラックスペースがあることを確認します。
 +
@@ -88,7 +92,8 @@ NOTE: * 注意 * ：遅延は無視しないでください。バッテリーの
 .. このセクションに戻って、から始めて残りの手順を実行します <<man_install3_step7,手順 7>>。
 
 
-* 重要 * ： V シリーズまたは FlexArray 仮想化ソフトウェアで ONTAP をブートする前に、オンボード FC ポート、 CNA オンボードポート、 CNA カードを再設定する必要があります。
+
+IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用してONTAP をブートする前に、FCオンボードポート、CNAオンボードポート、およびCNAカードを再設定する必要があります。
 
 |===
 . [man_install3_step7] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。
@@ -136,7 +141,8 @@ NOTE: * 注意 * ：遅延は無視しないでください。バッテリーの
 両方のコントローラが同じシャーシ内にある場合は、電源はすでにオンになっているはずです。
 
 +
-* 注： node4 はブート環境のプロンプトのままにします。その場合はの node4 に戻ります link:install_boot_node4.html["ノード 4 をインストールしてブートします"]。
+
+NOTE: node4にはブート環境のプロンプトが表示されたままにします。node4には戻ります link:install_boot_node4.html["ノード 4 をインストールしてブートします"]。
 
 .. に警告メッセージが表示される場合は <<man_install3_step4,手順 4>>の手順に従ってください <<man_install3_step5,手順 5>>
 .. コンソールケーブルを node4 から node3 に戻します。
@@ -216,7 +222,19 @@ NOTE: ネットブート接続として管理ポートおよび IP を使用す�
 | 実行中です | ブート環境プロンプトで「 ifconfig e0M -auto 」コマンドを入力すると、接続が自動的に設定されます 
 
 
-| 実行されていません | ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。ifconfig e0M -addr=_filer_addr_-mask=_netmask_-gw=_gateway_-dns=_dns _domain =_dns_domain_`_filer_addr_`は、ストレージシステムのIPアドレスです。`_netmask_`はストレージ・システムのネットワーク・マスクです`_gateway_`はストレージ・システムのゲートウェイです`_dNS_addr_`は'ネットワーク上のネーム・サーバのIPアドレスです`_dNS_domain_`はDomain Name Service (DNS)ドメイン名ですこのオプションパラメータを使用する場合は、ネットブートサーバの URL に完全修飾ドメイン名を指定する必要はなく、サーバのホスト名だけを指定します。* 注 * ：インターフェイスによっては、他のパラメータが必要になる場合があります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。 
+| 実行されていません  a| 
+ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` は、ストレージシステムのIPアドレスです（必須）。
+`_netmask_` は、ストレージシステムのネットワークマスクです（必須）。
+`_gateway_` は、ストレージシステムのゲートウェイです（必須）。
+`_dns_addr_` は、ネットワーク上のネームサーバのIPアドレスです（オプション）。
+`_dns_domain_` は、ドメインネームサービス（DNS）ドメイン名です。このオプションパラメータを使用する場合は、ネットブートサーバの URL に完全修飾ドメイン名を指定する必要はなく、サーバのホスト名だけを指定します。
+
+
+NOTE: インターフェイスによっては、その他のパラメータが必要になる場合もあります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。
+
 |===
 . [[man_install3_step21] ノード 3 でネットブートを実行します。
 +
@@ -242,20 +260,17 @@ NOTE: トランクを中断しないでください。
 このメニューオプションを選択すると、新しい ONTAP イメージがブートデバイスにダウンロードおよびインストールされます。
 
 +
-
-NOTE: 次のメッセージは無視してください。
+次のメッセージは無視してください。
 
 +
-[listing]
-----
-This procedure is not supported for Non-Disruptive Upgrade on an HA pair.
-----
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
+
 +
 コントローラのアップグレードではなく、 ONTAP による環境の無停止アップグレードも記録されています。
 
 +
 
-NOTE: 新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールすると、正しいイメージがインストールされない場合があります。この問題環境はすべての ONTAP リリースに対応しています。
+NOTE: 新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールすると、正しいイメージがインストールされない場合があります。この問題環境はすべての ONTAP リリースに対応しています。オプションを指定してネットブート手順 を実行する `(7) Install new software` ブートメディアを消去して、同じONTAP バージョンのONTAP を両方のイメージパーティションに配置します。
 
 . [man_install3_step23]] 手順を続行するかどうかを確認するメッセージが表示されたら 'y`' と入力し ' パッケージのプロンプトが表示されたら ' 次の URL を入力します
 +

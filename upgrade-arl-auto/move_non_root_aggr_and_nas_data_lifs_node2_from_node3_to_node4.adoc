@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html 
 keywords: move, non-root, aggregates, nas, lif, node2, node3, node4 
-summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合 " ノード 3 の NAS データ LIF を node3 から node4 に移動します' 
+summary: 'を使用して、ONTAP 9.5を実行しているコントローラを9.7にアップグレードする場合は、node3のnode2 NASデータLIFをnode3からnode4に移動します `system controller replace` コマンド' 
 ---
 = node2 によって所有されているルート以外のアグリゲートと NAS データ LIF を、 node3 から node4 に移動します
 :hardbreaks:

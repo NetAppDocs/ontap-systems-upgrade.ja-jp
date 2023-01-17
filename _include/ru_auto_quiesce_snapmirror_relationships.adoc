@@ -24,6 +24,6 @@ SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は�
 
 . クラスタ間のすべての関係を休止します。
 +
-snapmirror quiesce -destination-pathコマンドを使用して'次のコマンドを実行します
+`snapmirror quiesce -destination-vserver *`
 
 

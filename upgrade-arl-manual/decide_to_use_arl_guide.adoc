@@ -24,7 +24,7 @@ summary: 手動 ARL 手順 を使用して、 ONTAP 9.7 以前を実行してい
 
 
 
-NOTE: この手順では、 NetApp Storage Encryption （ NSE ）および NetApp Volume Encryption （ NVE ）を使用できます。
+NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
 
 コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
 

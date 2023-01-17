@@ -2,12 +2,13 @@
 :allow-uri-read: 
 
 
-ステージ 6 で、新しいノードが正しくセットアップされていることを確認します。新しいノードの 1 つにユニファイドターゲットアダプタがある場合は、ポート設定をすべてリストアする必要があります。また、アダプタのパーソナリティの変更が必要になる場合もあります。また、新しいノードで暗号化が有効になっている場合はストレージ暗号化もセットアップする必要があります。また、古いノードの運用を停止する必要があります。
+ステージ6では、新しいノードが正しくセットアップされていることを確認し、暗号化が有効な新しいノードがある場合は、ストレージ暗号化またはNetApp Volume Encryptionを設定およびセットアップします。また、古いノードの運用を停止し、SnapMirrorの処理を再開する必要があります。
 
 .手順
+. link:get_ip_address_of_external_kms_for_storage_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]
 . link:ensure_new_controllers_are_set_up_correctly.html["新しいコントローラが正しくセットアップされていることを確認します"]
 . link:set_up_storage_encryption_new_module.html["新しいコントローラモジュールで Storage Encryption をセットアップします"]
-. link:set_up_netapp_volume_encryption_new_module.html["新しいコントローラモジュールで NetApp Encryption をセットアップします"]
+. link:set_up_netapp_volume_encryption_new_module.html["新しいコントローラモジュールでNetApp VolumeまたはAggregate Encryptionをセットアップします"]
 . link:decommission_old_system.html["古いシステムの運用を停止"]
 . link:resume_snapmirror_operations.html["SnapMirror 処理を再開します"]
 

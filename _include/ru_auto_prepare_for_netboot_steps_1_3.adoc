@@ -12,10 +12,23 @@
 | 用途 | 作業 
 
 
-| FAS/AFF8000 シリーズシステム | 「 <ONTAP_version>_image.tgz 」ファイルの内容をターゲットディレクトリに展開します。 tar -zxvf <ONTAP_version>_image.tgz * Note * ： Windows で内容を展開する場合は、 7-Zip または WinRAR を使用してネットブートイメージを展開します。ディレクトリの一覧には、カーネル・ファイル「 netboot/ kernel 」を含むネットブート・フォルダが含まれている必要があります 
+| FAS/AFF8000 シリーズシステム  a| 
+「 ONTAP_version_image.tgz 」ファイルの内容をターゲットディレクトリ「 tar -zxvf ONTAP_version_image.tgz 」に展開します
 
 
-| その他すべてのシステム | ディレクトリの一覧に次のファイルが含まれている必要があります。 `<ONTAP_version>_image.tgz *Note*: 「 <ONTAP_version>_image.tgz 」ファイルの内容を抽出する必要はありません。 
+NOTE: Windows で内容を展開する場合は、 7-Zip または WinRAR を使用してネットブートイメージを展開します。
+
+ディレクトリの一覧には、カーネル・ファイル「 netboot/ kernel 」を含むネットブート・フォルダが含まれている必要があります
+
+
+
+| その他すべてのシステム  a| 
+ディレクトリの一覧に次のファイルが表示されます。
+`<ontap_version>_image.tgz`
+
+
+NOTE: 「 ONTAP_version_image.tgz 」ファイルの内容を抽出する必要はありません。
+
 |===
 +
 のディレクトリの情報を使用します link:stage_3_install_boot_node3_overview.html["ステージ 3"]。

@@ -49,7 +49,14 @@ NOTE: ネットブート接続として管理ポートおよび IP を使用す�
 
 
 | 実行されていません  a| 
-ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。ifconfig e0M -addr=_filer_addr_-mask=_netmask_-gw=_gateway_-dns=_dns _domain =_dns_domain_`_filer_addr_`は、ストレージシステムのIPアドレスです。`_netmask_`はストレージ・システムのネットワーク・マスクです`_gateway_`はストレージ・システムのゲートウェイです`_dNS_addr_`は'ネットワーク上のネーム・サーバのIPアドレスですこのパラメータはオプションです。`_dNS_domain_`はDomain Name Service (DNS)ドメイン名ですこのパラメータはオプションです。
+ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` は、ストレージシステムのIPアドレスです（必須）。
+`_netmask_` は、ストレージシステムのネットワークマスクです（必須）。
+`_gateway_` は、ストレージシステムのゲートウェイです（必須）。
+`_dns_addr_` は、ネットワーク上のネームサーバのIPアドレスです（オプション）。
+`_dns_domain_` は、Domain Name Service（DNS；ドメインネームサービス）ドメイン名です（オプション）。
 
 
 NOTE: インターフェイスによっては、その他のパラメータが必要になる場合もあります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。
@@ -87,13 +94,18 @@ Selection (1-11)?
 このメニューオプションを選択すると、新しい ONTAP イメージがブートデバイスにダウンロードおよびインストールされます。
 
 +
-[NOTE]
-====
-次のメッセージは無視してください 'This 手順 is not supported for Non-Disruptive Upgrade on an HA pair'環境の無停止の ONTAP ソフトウェアアップグレード。コントローラのアップグレードは含まれません。
+次のメッセージは無視してください。
 
-新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールすると、正しいイメージがインストールされない場合があります。この問題環境 All ONTAP リリース
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
 
-====
++
+環境の無停止の ONTAP ソフトウェアアップグレード。コントローラのアップグレードは含まれません。
+
++
+
+NOTE: 新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールした場合、正しいイメージがインストールされないことがあります。この問題環境 All ONTAP リリースオプションを指定してネットブート手順 を実行する `(7) Install new software` ブートメディアを消去して、両方のイメージパーティションに同じONTAP バージョンを配置します。
+
 . 手順を続行するかどうかを確認するメッセージが表示されたら 'y' と入力し ' パッケージの入力を求められたら 'URL:\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` と入力します
 +
 「 path_to_the_web-accessible_directory 」は、「 ONTAP_version_image.tgz 」をダウンロードした場所を指します <<netboot_node1_step2,手順 2>>。
@@ -201,7 +213,7 @@ NOTE: node1 で対応する UTC 時間を設定します。
 setsetenv partner-sysid_node2 _sysid_`
 
 +
-node2のシステムIDは'node show -node _node2 _コマンドの出力から取得できます
+node1の場合、 `partner-sysid` node2のものである必要があります。node2のシステムIDはから取得できます `node show -node _node2_` node2に対するコマンドの出力。
 
 +
 .. 設定を保存します。
@@ -213,8 +225,5 @@ node2のシステムIDは'node show -node _node2 _コマンドの出力から取
 . node1 の LOADER プロンプトで、 node1 の「 partner-sysid 」を確認します。
 +
 printenv partner-sysid
-
-+
-node1 の場合 'partner-sysid' は node2 のものである必要があります
 
 

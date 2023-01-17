@@ -17,14 +17,18 @@ entries:
 - title: ステージ 1 ：アップグレードを準備
   pdf-filename: ステージ 1 ：アップグレードを準備（AFF A900またはFAS9500にアップグレード）
   entries:
+  - title: 概要
+    url: "/upgrade-arl-auto-affa900/stage_1_index.html"
   - title: アップグレードハードウェアを確認します
     url: "/upgrade-arl-auto-affa900/verify_upgrade_hardware.html"
   - title: ノードをアップグレードする準備をします
     url: "/upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html"
-  - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
-    url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: オンボードキーマネージャを使用してストレージ暗号化を管理します
+    url: "/upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html"
 - title: ステージ 2 ：リソースを再配置し、AFF A700またはFAS9000 node1を撤去します
   entries:
+  - title: 概要
+    url: "/upgrade-arl-auto-affa900/stage_2_index.html"
   - title: ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
   - title: 障害が発生したアグリゲートを再配置するか
@@ -35,6 +39,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
 - title: ステージ 3 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします
   entries:
+  - title: 概要
+    url: "/upgrade-arl-auto-affa900/stage_3_index.html"
   - title: AFF A900またはFAS9500コントローラとNVRAMモジュールでnode1をブートします
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: ノード 1 のインストールを確認します
@@ -45,18 +51,24 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html"
 - title: ステージ 4 ：リソースを node2 から再配置し、 node2 を撤去
   entries:
+  - title: 概要
+    url: "/upgrade-arl-auto-affa900/stage_4_index.html"
   - title: ルート以外のアグリゲートと NAS データ LIF を node2 から node1 に再配置します
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: ノード 2 を撤去
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
 - title: ステージ 5 ：AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします
   entries:
+  - title: 概要
+    url: "/upgrade-arl-auto-affa900/stage_5_index.html"
   - title: AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします
     url: "/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html"
   - title: ネットブート node2
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
 - title: ステージ 6 ：AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします
   entries:
+  - title: 概要
+    url: "/upgrade-arl-auto-affa900/stage_6_index.html"
   - title: AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: node2 のインストールを確認します
@@ -67,11 +79,15 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html"
 - title: ステージ 7 ：アップグレードを完了します
   entries:
+  - title: 概要
+    url: "/upgrade-arl-auto-affa900/stage_7_index.html"
+  - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
+    url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
   - title: 新しいコントローラが正しくセットアップされていることを確認します
     url: "/upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html"
   - title: 新しいコントローラモジュールで Storage Encryption をセットアップします
     url: "/upgrade-arl-auto-affa900/set_up_storage_encryption_new_module.html"
-  - title: 新しいコントローラモジュールで NetApp Volume Encryption をセットアップします
+  - title: 新しいコントローラモジュールでNetApp VolumeまたはAggregate Encryptionをセットアップします
     url: "/upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html"
   - title: 古いシステムの運用を停止
     url: "/upgrade-arl-auto-affa900/decommission_old_system.html"

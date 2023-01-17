@@ -95,7 +95,7 @@ network port show -node node2`
 
 . クラスタのブロードキャストドメインの一覧を表示します。
 +
-「 broadcast-domain show 」
+「 network port broadcast-domain show 」
 
 . node2 のすべてのポートの到達可能性を表示します。
 +

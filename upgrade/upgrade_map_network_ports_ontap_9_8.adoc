@@ -2,7 +2,7 @@
 permalink: upgrade/upgrade-map-network-ports-ontap-9-8.html 
 sidebar: sidebar 
 keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, physical, port, correct, configure, setting, data, map network ports using ontap 9.8 
-summary: node3 と node4 がアップグレード後にクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。 
+summary: アップグレード後に node3 と node4 がクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。 
 ---
 = ONTAP 9.8以降を使用してネットワークポートをマッピングします
 :allow-uri-read: 
@@ -114,7 +114,7 @@ from the port. Are you sure you want to continue? {y|n}:
 .. ONTAP が修復を完了できるようにするには、最後のポートで「 reachability repair repair repair repair repair repair repair 」コマンドを実行してから約 1 分待ちます。
 .. クラスタのすべてのブロードキャストドメインを一覧表示します。
 +
-「 broadcast-domain show 」
+「 network port broadcast-domain show 」
 
 .. 到達可能性の修復が実行されると、 ONTAP は正しいブロードキャストドメインにポートを配置しようとします。ただし、ポートの到達可能性を特定できず、既存のブロードキャストドメインに対応していない場合は、 ONTAP によってそれらのポート用の新しいブロードキャストドメインが作成されます。すべてのメンバーポートがインターフェイスグループのメンバーポートになる場合は、必要に応じて、新しく作成したブロードキャストドメインを削除できます。ブロードキャストドメインを削除する
 +
