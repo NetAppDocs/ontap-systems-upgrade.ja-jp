@@ -6,9 +6,25 @@
 次の手順を実行して、暗号化設定を新しいノードに同期します。
 
 .手順
-. クラスタプロンプトで次のコマンドを使用して、オンボードキーマネージャ（ OKM ）の暗号化設定を同期します。
+. ノード3から次のコマンドを実行します。
 +
 「セキュリティキーマネージャオンボード同期」
 
-. OKM のクラスタ全体のパスフレーズを入力します。
+. データアグリゲートを再配置する前に、ノード3のSVM-KEKキーが「true」にリストアされたことを確認します。
++
+[listing]
+----
+::> security key-manager key query -node node3 -fields restored -key-type SVM-KEK
+----
++
+.例
+[listing]
+----
+::> security key-manager key query -node node3 -fields restored -key-type SVM-KEK
+
+node     vserver   key-server   key-id                                  restored
+-------- --------- -----------  --------------------------------------- --------
+node3    svm1      ""           00000000000000000200000000000a008a81976 true
+                                2190178f9350e071fbb90f00000000000000000
+----
 

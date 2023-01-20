@@ -35,9 +35,51 @@ ucadmin show
 ====
 . [[auto_check_4_step22]] LOADERプロンプトで、次を起動します。
 +
-「 boot_ontap 」
+「 boot_ontap menu
 
 +
 これで、ブート時に以前に割り当てられていたすべてのディスクをノードで検出できるようになり、想定どおりにブートできるようになります。
+
++
+交換するクラスタノードがルートボリューム暗号化を使用している場合、ONTAP ソフトウェアはディスクからボリューム情報を読み取ることができません。ルートボリュームのキーをリストアします。
+
++
+.. 特別なブートメニューに戻ります。
+`LOADER> boot_ontap menu`
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. （10）Set Onboard Key Manager Recovery secrets（オンボードキーマネージャリカバリシークレットの設定）*を選択します
+.. 入力するコマンド `y` 次のプロンプトが表示されます。
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. プロンプトで、キー管理ツールのパスフレーズを入力します。
+.. プロンプトが表示されたら、バックアップデータを入力します。
++
+
+NOTE: でパスフレーズとバックアップデータを入手しておく必要があります link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] この手順のセクション。
+
+.. システムが再度特別な起動メニューを起動したら、オプション*（1）Normal Boot *を実行します
++
+
+NOTE: この段階でエラーが発生する場合があります。エラーが発生した場合は、の手順を繰り返します <<auto_check_4_step22,手順 22>> システムが正常に起動するまで。
+
+
 
 
