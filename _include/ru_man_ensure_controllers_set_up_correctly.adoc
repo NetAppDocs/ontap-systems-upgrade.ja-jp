@@ -71,7 +71,7 @@ volume show -node _node3 --state offline `volume show -node _node4 --state off`
 +
 license-code パラメータには、アルファベットの文字キーをアルファベットの大文字 28 個まで入力できます。ライセンスは一度に 1 つずつ追加することも、ライセンスキーごとにカンマで区切って複数ずつ追加することもできます。
 
-. 構成に自己暗号化ドライブが使用されている場合は、を設定しておきます `kmip.init.maxwait` 変数をに設定します `off` （例：で） link:install_boot_node3.html#step16["手順 16"] of _ Install and boot node3 _）では、変数の設定を解除する必要があります。
+. [[unset_maxwait_manual]]構成で自己暗号化ドライブを使用している場合は、を設定します `kmip.init.maxwait` 変数をに設定します `off` （例：で） link:install_boot_node3.html#step16["手順 16"] of _ Install and boot node3 _）では、変数の設定を解除する必要があります。
 +
 `set diag; systemshell -node-node_name --コマンドsudo kenv -u -p kmip.init.maxwait`
 

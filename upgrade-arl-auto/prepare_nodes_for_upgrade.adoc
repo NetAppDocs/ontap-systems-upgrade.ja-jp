@@ -124,8 +124,7 @@ Controller replacement operation has been paused for user intervention.
 ** 「 storage encryption disk show 」のように表示されます
 
 
-
-
++
 
 NOTE: オンボードキーマネージャを使用するNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用する場合は、あとで手順 でキー管理ツールのパスフレーズを使用してキー管理ツールの再同期を完了できるようにしておきます。
 
@@ -138,9 +137,9 @@ NOTE: オンボードキーマネージャを使用するNetApp Volume Encryptio
 
 [NOTE]
 ====
-** FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
-** SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
 
+SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["サポートされている自己暗号化ドライブの詳細を確認できます"^]。

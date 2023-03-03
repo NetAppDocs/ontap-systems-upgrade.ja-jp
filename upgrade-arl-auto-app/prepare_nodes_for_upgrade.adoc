@@ -140,8 +140,7 @@ NOTE: FAS8080 や AFF8080 システムなど、ノードあたり 3 つ以上の
 ** 「 network port reachability show-detail` 」と表示されます
 
 
-
-
++
 
 NOTE: オンボードキーマネージャ（OKM）を使用するNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、あとで手順 でキー管理ツールのパスフレーズを使用してキー管理ツールの再同期を完了できます。
 
@@ -154,9 +153,9 @@ NOTE: オンボードキーマネージャ（OKM）を使用するNetApp Volume 
 
 [NOTE]
 ====
-** FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
-** SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
 
+SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["サポートされている自己暗号化ドライブの詳細を確認できます"^]。

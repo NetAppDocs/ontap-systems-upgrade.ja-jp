@@ -728,9 +728,9 @@ NOTE: この時点では node2 の AutoSupport メッセージはネットアッ
 
 [NOTE]
 ====
-** FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
-** SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
 
+SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["サポートされている自己暗号化ドライブの詳細を確認できます"^]。
