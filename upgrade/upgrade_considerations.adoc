@@ -49,7 +49,7 @@ https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI による�
 内蔵ストレージを搭載したシステム
 
 
-NOTE: 次のシステムには内蔵ストレージがあります。FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A200、AFF A220、AFF A700s、 AFF A800、AFF A250、AFF C190。
+NOTE: 内蔵ストレージのシステムは次のとおりです：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A200、AFF A220、AFF A700s、 AFF A800、AFF A250、AFF C250、およびAFF C190。
 
 * お使いのシステムが上記のリストにない場合は、を参照してください https://hwu.netapp.com["NetApp Hardware Universe の略"^] 内蔵ドライブがあるかどうかを確認します。
 * 内蔵ストレージを搭載したシステムの場合は、ボリュームを移動してアップグレードすることを推奨します。
@@ -79,7 +79,7 @@ https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_wi
 
 * システムでアウトオブバンド ACP を使用している場合は、アウトオブバンド ACP からインバンド ACP への移行が必要になることがあります。
 +
-https://kb.netapp.com/app/answers/answer_view/a_id/1029778["ネットアップの技術情報アーティクル 1029778 ：「 In-Band ACP Setup and Support"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["ネットアップの技術情報アーティクル：In-Band ACP Setup and Support"^]
 
 
 

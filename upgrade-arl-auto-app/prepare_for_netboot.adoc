@@ -53,6 +53,6 @@ NOTE: 「 ONTAP_version_image.tgz 」ファイルの内容を抽出する必要�
 
 |===
 +
-のディレクトリの情報を使用します link:stage_3_install_boot_node3_overview.html["ステージ 3"]。
+のディレクトリの情報を使用します link:install_boot_node3.html["ステージ 3"]。
 
 

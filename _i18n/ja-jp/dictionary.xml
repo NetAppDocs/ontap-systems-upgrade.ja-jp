@@ -543,7 +543,6 @@
   <block id="bbbe961bb71cae13cea3f5b878f4dbb9" category="doc">ステージ 2 ：移行してノード 1 を撤去</block>
   <block id="7de24b16e7313de118da7559fecd8fd4" category="inline-link-macro">ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します</block>
   <block id="22e9bda17d40c1dbdb534fd455e19fcd" category="list-text"><block ref="22e9bda17d40c1dbdb534fd455e19fcd" category="inline-link-macro-rx"></block></block>
-  <block id="650a4c1ea41a0f666ee188ff323d26b9" category="list-text"><block ref="650a4c1ea41a0f666ee188ff323d26b9" category="inline-link-macro-rx"></block></block>
   <block id="93d6a78ca650a17d67b6a45ca81b7f3f" category="inline-link-macro">ノード 1 を撤去</block>
   <block id="830cfeba72054433fc0dcccc19f6d055" category="list-text"><block ref="830cfeba72054433fc0dcccc19f6d055" category="inline-link-macro-rx"></block></block>
   <block id="4815c2d091d790c1d3bab94177b38eaf" category="list-text"><block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
@@ -791,7 +790,6 @@
   <block id="103ec41a89beb368e3357fad5f451a92" category="list-text">ネットアップサポートサイトのソフトウェアダウンロードセクションから適切な ONTAP ソフトウェアをダウンロードし、「 &lt;ONTAP_version&gt;_image.tgz 」ファイルを Web にアクセスできるディレクトリに保存します。</block>
   <block id="5b1b8c3f072422a936e63f0d977e41e0" category="list-text">Web にアクセスできるディレクトリに移動し、必要なファイルが利用可能であることを確認します。</block>
   <block id="843ab277685630f82095416c5b9ae5a1" category="inline-link-macro">ステージ 3</block>
-  <block id="c7b2f3e7dacd4ee5eb9b0618c5079d8f" category="paragraph">のディレクトリの情報を使用します <block ref="1f9dd4a8865e8664f884ec11b5f13dfc" category="inline-link-macro-rx"></block>。</block>
   <block id="8e698b8d4467a7a6309118b19a3aa168" category="summary">新しいハードウェアを設置するための特別なツールが必要です。また、アップグレードプロセス中に他のドキュメントを参照する必要があります。</block>
   <block id="0e635d7a91ccc4eccdfb03e35353c899" category="doc">必要な工具とドキュメント</block>
   <block id="f987ca44be5e66313a3fedb59305367d" category="paragraph">アップグレードを実行するには、次の工具が必要です。</block>
@@ -1164,7 +1162,6 @@
   <block id="cc9d127dc39047b3e73421f03d8d0026" category="cell">次のコマンドを入力します。「 storage aggregate relocation start -override-vetoes * -ndocontroller -upgrade true</block>
   <block id="6067a4436975e19e7c76700ceeabd5c2" category="cell">次のコマンドを入力します。「 storage aggregate relocation start -overridedestination-checks * -nd-controllerupgrade true</block>
   <block id="83e3abbe2d4f63155eff798e62e1a616" category="inline-link-macro">ステージ 3 ：ノード 3 の設置とブート</block>
-  <block id="bb9252c2a7cbae6e0a2014a53400a55c" category="paragraph">ただし、元のコントローラと同じバージョンの ONTAP 9 がインストールされているコントローラには、ネットブートする必要はありません。その場合は、このセクションをスキップしてに進みます <block ref="a3940c661e200ff7ee0136ca0ef37651" category="inline-link-macro-rx"></block></block>
   <block id="47d2d2bfe5e2f318b6d816e5adc3929d" category="paragraph">このフェーズで node3 がクラッシュした場合は、 HA がすでに無効になっているため、テイクオーバーは実行されません。</block>
   <block id="f361f80547aae98b60e1c7ecc861a027" category="paragraph">ノード 3 のリブートまでルート以外のアグリゲートがすでに再配置されています。</block>
   <block id="07c1aaa58cd1a9ed9a8f92aecfc26662" category="paragraph">node3 のブート中に、すべてのアグリゲートでクライアントが停止します。</block>
@@ -1328,7 +1325,6 @@
   <block id="7a3f3e085939e759393b43bef32cbc95" category="list-text">クラスタに SAN ホストがある場合は、 LUN シリアル番号の変更に関する問題を解決するための手順が必要になることがあります。</block>
   <block id="31e9ea6f4ed38186085bf9a52128a461" category="inline-link">ストレージコントローラマザーボードの交換時および iSCSI と FCP を使用したヘッドのアップグレード時の問題の解決方法</block>
   <block id="6125b5468b29015c919d2eaf565415e6" category="list-text">システムでアウトオブバンド ACP を使用している場合は、アウトオブバンド ACP からインバンド ACP への移行が必要になることがあります。</block>
-  <block id="c0ae7629e7bfcf00be0d40631578d6f7" category="inline-link">ネットアップの技術情報アーティクル 1029778 ：「 In-Band ACP Setup and Support</block>
   <block id="41e8d90d580396f4d1d06d6dcc1e6ff7" category="paragraph"><block ref="41e8d90d580396f4d1d06d6dcc1e6ff7" category="inline-xref-macro-rx"></block></block>
   <block id="b578e0f4f47404bddfc292477bc08776" category="inline-xref-macro">ストレージを移動してコントローラハードウェアをアップグレードします</block>
   <block id="dbef6fd254e4765e61a6f3112a900a32" category="paragraph"><block ref="dbef6fd254e4765e61a6f3112a900a32" category="inline-xref-macro-rx"></block></block>
@@ -2647,9 +2643,7 @@
   <block id="1b9078b6f6fd34ef368d1162644a9f35" category="list-text">Brocade スイッチの場合は、「 witchCfgPersistentenable 」コマンドを使用します。</block>
   <block id="7f53ae5380891cb24e6bd16877533f63" category="list-text">Cisco スイッチの場合は 'no suspend' コマンドを使用します</block>
   <block id="017a287daf9403479607113762fdf28d" category="paragraph">ノード 3 とノード 4 を手順の後半で物理的にラックに設置したあと、ネットブートが必要になることがあります。「 _netboot_ 」は、リモートサーバに保存されている ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。</block>
-  <block id="3dd228d301de455327861edf46a3a6c7" category="paragraph">ただし、元のコントローラと同じバージョンの ONTAP 9 がインストールされているコントローラには、ネットブートする必要はありません。その場合は、このセクションをスキップしてに進みます <block ref="2bff11e37a7944fe4126fc6d0031317c" category="inline-link-macro-rx"></block>。</block>
   <block id="021eb7b60dabf41949ccbeca660311c4" category="list-text">[man_netboot_Step1] ネットアップサポートサイトにアクセスして、システムのネットブートの実行に使用するファイルをダウンロードします。</block>
-  <block id="7704ef8efcd46a7ed3c60b0b5522a4f5" category="paragraph">では、ディレクトリの情報を使用します <block ref="f7260a7bcbdd09edcf840aac6c5a4af7" category="inline-link-macro-rx"></block>。</block>
   <block id="630cec3291759dd967d8afd9c4e8545f" category="inline-link-macro">ノード 1 で所有されているルート以外のアグリゲートと NAS データ LIF を node2 に再配置します</block>
   <block id="7115fb4a39be3cfe6cee8101025f1504" category="list-text"><block ref="7115fb4a39be3cfe6cee8101025f1504" category="inline-link-macro-rx"></block></block>
   <block id="381638a6e0f7aca4ddd9fcf0b9a1b531" category="inline-link-macro">node1 で所有されている NAS データ LIF を node2 に移動します</block>
@@ -2884,7 +2878,6 @@
   <block id="58e1fb49e8eda8dc590e37ebdffc8e85" category="list-text">2 ノード MetroCluster 構成をアップグレードする場合は、次の項を参照してください。<block ref="a3f8fb08d450ed0f7b5dc460c9a9149e" category="inline-link-rx"></block></block>
   <block id="b71567cb9c157f9c9b7aa387b9fe6ae0" category="paragraph"><block ref="b71567cb9c157f9c9b7aa387b9fe6ae0" category="inline-link-rx"></block></block>
   <block id="b1ddd6d6d90c80426e14d10c6ded3cc0" category="paragraph"><block ref="b1ddd6d6d90c80426e14d10c6ded3cc0" category="inline-link-rx"></block></block>
-  <block id="8481ff5a6197df6d5f77cc03a2cc6d88" category="paragraph"><block ref="8481ff5a6197df6d5f77cc03a2cc6d88" category="inline-link-rx"></block></block>
   <block id="793b486187db5ad7f686089607c08fea" category="list-text">パラメータ '_node1_sysid_' は ' 元のノードのシャットダウン _ で記録した値です <block ref="1e1f8cc7c148a6ce0e555a2eab402733" category="inline-link-macro-rx"></block>。</block>
   <block id="cfd2431baff6fc4122f2c8fed540c128" category="paragraph">ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。元のノードと新しいノードで、物理ポートのレイアウトが異なる場合があります。ポートと接続の適切なレイアウトを特定するには、元のノードと交換用ノードの間のポートのマッピングを行う必要があります。</block>
   <block id="a57aac48a821a53a307169a496e18118" category="inline-link-macro">手順 5.</block>
@@ -4215,8 +4208,6 @@
   <block id="5dd3fadb015da65e82238831e11341c9" category="paragraph">次の例を参考にしてください。</block>
   <block id="b76a3b855e625194513f3473a25582fd" category="list-text">ブートメニューでノードが停止したら、「22/7」と入力し、非表示オプション「boot_after_controller_replacement」を選択して、AFF A700 node2ディスクをAFF A900 node2に再割り当てします。</block>
   <block id="3dbb60dab5c1891455791640814da2b9" category="list-text">に記載されているストレージ暗号化のbootargsをチェックしてリセットします <block ref="025202ee75dff38076e126e76d5042ed" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e427f9006ac0f6079ad11054809d205e" category="admonition">内蔵ドライブが搭載されたモデル：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A200、AFF A220、AFF A700s、 AFF A800、AFF A250。</block>
-  <block id="db80f5bf265434b9ca90bc5f0cac1f17" category="admonition">次のシステムには内蔵ストレージがあります。FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A200、AFF A220、AFF A700s、 AFF A800、AFF A250、AFF C190。</block>
   <block id="e908e6e2b5df3efafd19fa616b538a72" category="list-text">内蔵ストレージを搭載したシステムの場合は、システムをドライブシェルフに変換して、同じクラスタ内の新しいノードに接続できます。FAS2520のコントローラはドライブシェルフに変換できません。</block>
   <block id="e9ddbc0542fbe11aae2eccf01c4e4a89" category="paragraph">最大5台のシステムをドライブシェルフに変換する作業は、ストレージを移動してアップグレードする場合のワークフローのオプションです。</block>
   <block id="aa5eafaf3f0b641d5e680da72815213b" category="paragraph">内蔵ストレージを使用するシステムの一覧を次に示します。FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A200、AFF A220、AFF A700s、 AFF A800、AFF A250。</block>
@@ -4488,4 +4479,12 @@
   <block id="a6b5dd0182841750a8833ae708a7b2f5" category="admonition">* HAペアでコントローラのアップグレードが完了したら、すぐにの設定を解除する必要があります<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数（Variable）：を参照してください <block ref="70709a8592d9d71b5cffa2529c50ab50" category="inline-link-macro-rx"></block>。これを行わないと、停電が発生した場合にデータが失われる可能性があります。*</block>
   <block id="d5252796ebf0e69c5d3078a9ac59bb72" category="list-text">[[unset_maxwait_manual]]構成で自己暗号化ドライブを使用している場合は、を設定します<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例：で） <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> of _ Install and boot node3 _）では、変数の設定を解除する必要があります。</block>
   <block id="ff8e7d9040b97e4276e06db695236077" category="list-text">node2のLOADER&gt;プロンプトで、デフォルトの環境変数を設定します。</block>
+  <block id="12dd85e558ba4dfcc9dce978f489296a" category="admonition">内蔵ドライブを搭載したモデル：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A200、AFF A220、AFF A700s、 AFF A800、AFF A250、およびAFF C250。</block>
+  <block id="61a0b5df76df0fff1f7315d4d3251795" category="admonition">内蔵ストレージのシステムは次のとおりです：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A200、AFF A220、AFF A700s、 AFF A800、AFF A250、AFF C250、およびAFF C190。</block>
+  <block id="91d5a2c546d26762fc836e91700a4d86" category="inline-link">ネットアップの技術情報アーティクル：In-Band ACP Setup and Support</block>
+  <block id="0af17efca2dae8b310233b584154a94b" category="paragraph"><block ref="0af17efca2dae8b310233b584154a94b" category="inline-link-rx"></block></block>
+  <block id="00e3434af8f53caecc96a787f100e5fa" category="paragraph">ただし、元のコントローラと同じバージョンの ONTAP 9 がインストールされているコントローラには、ネットブートする必要はありません。その場合は、このセクションをスキップしてに進みます <block ref="6ba5630a5f60662e8fc1f03d17393494" category="inline-link-macro-rx"></block>。</block>
+  <block id="f2d3ce1d1db6751407cc3928aac9de0c" category="paragraph">では、ディレクトリの情報を使用します <block ref="17f88a9bcb978d5101977810aab93c38" category="inline-link-macro-rx"></block>。</block>
+  <block id="ab2126455dabf7b57fb465e0cbe0ec41" category="paragraph">のディレクトリの情報を使用します <block ref="ab6acaf1648b65fe7eff652317a95a17" category="inline-link-macro-rx"></block>。</block>
+  <block id="85e374a47bd77502ca7ecd58923ec819" category="paragraph">ただし、元のコントローラと同じバージョンの ONTAP 9 がインストールされているコントローラには、ネットブートする必要はありません。その場合は、このセクションをスキップしてに進みます <block ref="c6531ef0bbbd2a28b8b9b75b1dc2026b" category="inline-link-macro-rx"></block></block>
 </blocks>

@@ -18,7 +18,7 @@ summary: ONTAP 9.5 から 9.7 までを実行しているコントローラで�
 
 .手順
 . link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"]
-. link:relocate_failed_vetoed_aggr.html["障害が発生したアグリゲートを再配置するか"]
+. link:relocate_failed_or_vetoed_aggr.html["障害が発生したアグリゲートを再配置するか"]
 . link:retire_node1.html["ノード 1 を撤去"]
 . link:prepare_for_netboot.html["ネットブートを準備"]
 
