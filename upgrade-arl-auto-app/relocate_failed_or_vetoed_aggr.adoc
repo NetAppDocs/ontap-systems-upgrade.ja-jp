@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-app/relocate_failed_vetoed_aggr.html 
+permalink: upgrade-arl-auto-app/relocate_failed_or_vetoed_aggr.html 
 keywords: relocating, failed, vetoed, aggregates, relocation, operation 
 summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して " 失敗したアグリゲートや拒否されたアグリゲートを手動で再配置します' 
 ---
