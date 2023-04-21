@@ -19,12 +19,12 @@ summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を�
 .このタスクについて
 node2 に同じバージョンの ONTAP 9 がインストールされていない場合は、 node4 をネットブートする必要があります。node4 のインストールが完了したら、 Web サーバに格納されている ONTAP 9 イメージからブートします。その後、の手順に従って、後続のシステムのブートに使用する正しいファイルをブートメディアデバイスにダウンロードできます link:prepare_for_netboot.html["ネットブートを準備"]
 
-ただし、 node2 に同じバージョンまたはそれ以降のバージョンの Data ONTAP 9 がインストールされている場合は、ネットブート node4 には必要ありません。
+ただし、ノード2に同じバージョンまたはそれ以降のバージョンのONTAP 9がインストールされている場合は、ノード4をネットブートする必要はありません。
 
 * 重要な情報： *
 
-* V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <<man_install4_Step1,手順 1.>> から <<man_install4_Step7,手順 7>>をクリックします <<man_install4_Step8,手順 8>> およびの手順に従ってください link:set_fc_uta_uta2_config_node4.html["ノード 4 で FC または UTA / UTA2 設定を設定します"] 必要に応じて、メンテナンスモードでコマンドを入力します。その後、このセクションに戻って手順を再開する必要があります <<man_install4_Step9,手順 9>>。
-* ただし、ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を完了してから、セクションに進んでください link:set_fc_uta_uta2_config_node4.html["ノード 4 で FC または UTA / UTA2 設定を設定します"]クラスタ・プロンプトでコマンドを入力します。
+* V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <<man_install4_Step1,手順 1.>> から <<man_install4_Step7,手順 7>>をクリックします <<man_install4_Step8,手順 8>> およびの手順に従ってください link:set_fc_uta_uta2_config_node4.html["ノード 4 で FC または UTA / UTA2 設定を設定します"] 必要に応じて、メンテナンスモードでコマンドを入力します。その後、このセクションに戻り、で手順 を再開する必要があります <<man_install4_Step9,手順 9>>。
+* ただし、ストレージディスクを搭載したシステムをアップグレードする場合は、このセクション全体を完了してからセクションに進む必要があります link:set_fc_uta_uta2_config_node4.html["ノード 4 で FC または UTA / UTA2 設定を設定します"]クラスタ・プロンプトでコマンドを入力します。
 
 
 .手順
@@ -122,7 +122,7 @@ WARNING: * 警告 : 遅延を上書きしないでください。バッテリー
 
 
 
-IMPORTANT: VシリーズシステムでData ONTAP をブートする前に、FCオンボードポート、UTA / UTA2オンボードポート、およびUTA / UTA2カードを再設定する必要があります。
+IMPORTANT: VシリーズシステムでONTAP をブートする前に、FCオンボードポート、UTA / UTA2オンボードポート、およびUTA / UTA2カードを再設定する必要があります。
 
 |===
 . [[man_install4_Step9] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。
@@ -157,33 +157,26 @@ IMPORTANT: VシリーズシステムでData ONTAP をブートする前に、FC�
 +
 「デフォルト設定」
 
-. を設定します `bootarg.storageencryption.support` および `kmip.init.maxwait` node2構成のロード後にブートループが発生しないようにするための変数。
+. NetApp Storage Encryption（NSE）ドライブを搭載している場合は、次の手順を実行します。
 +
-手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
 
+NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
+
++
+.. 設定 `bootarg.storageencryption.support` 終了： `true` または `false`：
 +
 [cols="35,65"]
 |===
+
+
 | 次のドライブが使用中の場合 | 次に、 
 
 
-| FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ  a| 
-** `setenv bootarg.storageencryption.support *true*`
-** 'etenv kmip.init.maxwait off
+| FIPS 140-2レベル2の自己暗号化要件に準拠したNSEドライブ | `setenv bootarg.storageencryption.support *true*` 
 
 
-
-
-| ネットアップの非FIPS SED  a| 
-** `setenv bootarg.storageencryption.support *false*`
-** 'etenv kmip.init.maxwait off
-
-
+| ネットアップの非FIPS SED | `setenv bootarg.storageencryption.support *false*` 
 |===
-+
-
-WARNING: * HAペアでコントローラのアップグレードが完了したら、すぐにの設定を解除する必要があります `kmip.init.maxwait` 変数（Variable）：を参照してください link:ensure_controllers_set_up_correctly.html#unset_maxwait_manual["新しいコントローラが正しくセットアップされていることを確認します（手順11）"]。これを行わないと、停電が発生した場合にデータが失われる可能性があります。*
-
 +
 [NOTE]
 ====
@@ -192,6 +185,12 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
 
 ====
+.. 特別なブートメニューに移動してオプションを選択します `(10) Set Onboard Key Manager recovery secrets`。
++
+パスフレーズと、前の手順で手順 に記録しておいたバックアップ情報を入力します。を参照してください link:manage_authentication_okm.html["オンボードキーマネージャを使用して認証キーを管理します"]。
+
+
+
 . ノード 4 にインストールされている ONTAP のバージョンが node2 にインストールされている ONTAP 9 と同じかそれ以降の場合は、次のコマンドを入力します。
 +
 「 boot_ontap menu

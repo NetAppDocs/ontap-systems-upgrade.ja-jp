@@ -17,7 +17,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラ上で system co
 ステージ6では、新しいノードが正しくセットアップされていることを確認し、暗号化が有効な新しいノードがある場合は、ストレージ暗号化またはNetApp Volume Encryptionを設定およびセットアップします。また、古いノードの運用を停止し、SnapMirrorの処理を再開する必要があります。
 
 .手順
-. link:get_ip_address_of_external_kms_for_storage_encryption.html["ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します"]
+. link:manage-authentication-using-kmip-servers.html["KMIP サーバを使用して認証を管理します"]
 . link:ensure_new_controllers_are_set_up_correctly.html["新しいコントローラが正しくセットアップされていることを確認します"]
 . link:set_up_storage_encryption_new_module.html["新しいコントローラモジュールで Storage Encryption をセットアップします"]
 . link:set_up_netapp_volume_encryption_new_module.html["新しいコントローラモジュールでNetApp VolumeまたはAggregate Encryptionをセットアップします"]

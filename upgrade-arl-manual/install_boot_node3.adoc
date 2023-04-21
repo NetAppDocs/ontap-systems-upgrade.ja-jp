@@ -23,15 +23,15 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、 ARL �
 
 [IMPORTANT]
 ====
-ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <<man_install3_step1,手順 1.>> から <<man_install3_step5,手順 5>>をクリックします <<man_install3_step6,手順 6>> およびの手順に従ってください link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<man_install3_step7,手順 7>>。
+ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続されている FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、これで完了です <<man_install3_step1,手順 1.>> から <<man_install3_step5,手順 5>>をクリックします <<man_install3_step6,手順 6>> およびの手順に従ってください link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<man_install3_step7,手順 7>>。
 
-ただし、ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を実行し、に進みます link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタ・プロンプトでコマンドを入力します。
+ただし、ストレージディスクを搭載したシステムをアップグレードする場合は、このセクション全体を完了してからに進む必要があります link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタ・プロンプトでコマンドを入力します。
 
 ====
 .手順
 . [[man_install3_step1] ノード 3 のラックスペースがあることを確認します。
 +
-ノード 1 とノード 2 が別々のシャーシに搭載されている場合は、ノード 3 をノード 1 と同じラックの場所に設置できます。ただし、 node1 が node2 の同じシャーシに設置されている場合は、 node3 を専用のラックスペースに配置する必要があります。その場合は、 node1 の場所に近い場所に配置することを推奨します。
+ノード 1 とノード 2 が別々のシャーシに搭載されている場合は、ノード 3 をノード 1 と同じラックの場所に設置できます。ただし、ノード1がノード2と同じシャーシに搭載されていた場合は、ノード3をノード1の場所に近い独自のラックスペースに配置する必要があります。
 
 . [[step2] ノードモデルの _ インストールおよびセットアップ手順 _ に従って、ラックにノード 3 をインストールします。
 +
@@ -60,7 +60,7 @@ NOTE: 両方のノードを同じシャーシに搭載したシステムにア�
 ** SAN 構成： iSCSI イーサネットおよび FC スイッチポート
 +
 
-NOTE: ほとんどのプラットフォームモデルには一意のインターコネクトカードモデルがあるため、インターコネクトカードまたはクラスタインターコネクトケーブルの接続を node1 から node3 に移動する必要はない場合があります。MetroCluster 構成の場合、 FC-VI ケーブルの接続を node1 から node3 に移動する必要があります。新しいホストに FC-VI カードがない場合は、 FC-VI カードの移動が必要になることがあります。
+NOTE: ほとんどのプラットフォームモデルには一意のインターコネクトカードモデルがあるため、インターコネクトカードまたはクラスタインターコネクトケーブルの接続を node1 から node3 に移動する必要はない場合があります。MetroCluster 構成の場合は、FC-VIケーブルの接続をノード1からノード3に移行する必要があります。新しいホストに FC-VI カードがない場合は、 FC-VI カードの移動が必要になることがあります。
 
 
 
@@ -166,33 +166,24 @@ NOTE: node4にはブート環境のプロンプトが表示されたままにし
 +
 「デフォルト設定」
 
-. [[man_install3_step16]]を設定します `bootarg.storageencryption.support` および `kmip.init.maxwait` ノード1の構成のロード後にブートループが発生しないようにする変数。
+. [[man_install3_step16]]ネットアップストレージ暗号化ドライブがインストールされている場合は、次の手順を実行します。
 +
-手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
 
+NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
+
++
+.. 設定 `bootarg.storageencryption.support` 終了： `true` または `false`：
 +
 [cols="35,65"]
 |===
 | 次のドライブが使用中の場合 | 次に、 
 
 
-| FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ  a| 
-** `setenv bootarg.storageencryption.support *true*`
-** 'etenv kmip.init.maxwait off
+| FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ | `setenv bootarg.storageencryption.support *true*` 
 
 
-
-
-| ネットアップの非FIPS SED  a| 
-** `setenv bootarg.storageencryption.support *false*`
-** 'etenv kmip.init.maxwait off
-
-
+| ネットアップの非FIPS SED | `setenv bootarg.storageencryption.support *false*` 
 |===
-+
-
-WARNING: * HAペアでコントローラのアップグレードが完了したら、すぐにの設定を解除する必要があります `kmip.init.maxwait` 変数（Variable）：を参照してください link:ensure_controllers_set_up_correctly.html#unset_maxwait_manual["新しいコントローラが正しくセットアップされていることを確認します（手順11）"]。これを行わないと、停電が発生した場合にデータが失われる可能性があります。*
-
 +
 [NOTE]
 ====
@@ -201,6 +192,9 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
 
 ====
+.. オンボードキー管理情報のリストアについては、ネットアップサポートにお問い合わせください。
+
+
 . [[man_install3_step17]] node3 にインストールされている ONTAP のバージョンが、 node1 にインストールされている ONTAP 9 のバージョンと同じかそれ以降である場合は、ディスクをリストして新しい node3 に再割り当てします。
 +
 「 boot_ontap 」

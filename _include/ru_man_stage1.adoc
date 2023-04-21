@@ -7,7 +7,7 @@
 .手順
 . link:determine_aggregates_on_internal_drives.html["コントローラの内蔵ディスクドライブにアグリゲートがあるかどうかを確認します"]
 . link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]
-. link:manage_authentication_okm.html["オンボードキーマネージャを使用して認証を管理"]
+. link:manage_authentication_okm.html["オンボードキーマネージャを使用して認証キーを管理します"]
 . link:quiesce_snapmirror_relationships.html["SnapMirror 関係を休止します"]
 . link:prepare_for_netboot.html["ネットブートを準備"]
 

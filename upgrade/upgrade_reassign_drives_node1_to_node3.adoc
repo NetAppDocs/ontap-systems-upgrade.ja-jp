@@ -1,0 +1,57 @@
+---
+permalink: upgrade/upgrade_reassign_drives_node1_to_node3.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: ノード1からノード3にドライブを再割り当てする前に、ノード1をノード3に物理的に接続します 
+---
+= ドライブをノード1からノード3に再割り当てします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFF A250 node1をNS224ドライブシェルフに変換してAFF A400 node3に接続したら、node1に属していたドライブをnode3に再割り当てする必要があります。
+
+.手順
+. LOADERプロンプトで、ノード3をメンテナンスモードでブートします。
++
+「 boot_ontap maint 」を使用してください
+
+. 100GbEインターフェイスの状態を表示します。
++
+`storage port show`
+
+. 100GbEインターフェイスをストレージポートに設定します。
++
+`storage port modify -p e0c -m storage`
+
++
+`storage port modify -p e0d -m storage`
+
+. 100GbEインターフェイスのモードが変更されたことを確認します。
++
+`storage port show`
+
+. すべての接続ドライブを表示します。
++
+「ディスクショー V 」
+
+. ローカルシステムIDを記録します。
+. すべてのドライブをノード1からノード3に再割り当てします。
++
+`disk reassign -s _node1_ -d _node3_ -p _node2_`
+
+. 再割り当てしたすべてのドライブが新しいシステムIDで表示されることを確認します。
++
+`disk show -s _node3 system ID_`
+
++
+
+NOTE: ドライブが表示されない場合は、*停止*し、テクニカルサポートにお問い合わせください。
+
+. メンテナンスモードを終了します。
++
+「 halt 」
+
+

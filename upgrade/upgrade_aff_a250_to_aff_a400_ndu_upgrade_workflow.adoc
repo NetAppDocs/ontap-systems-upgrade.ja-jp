@@ -1,0 +1,28 @@
+---
+permalink: upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, AFF, FAS, systems, entry, level 
+summary: ストレージやクラスタスイッチを追加購入することなく、エントリレベルのNetApp AFF およびFAS システムに対してNDUを実行できます。 
+---
+= ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp AFF A250システムからAFF A400システムへの無停止アップグレードを実行するには、各AFF A250ノードをNS224ドライブシェルフに変換し、AFF A400の交換用ノードに接続します。
+
+この手順 では、AFF A250ハイアベイラビリティ（HA）ペアコントローラの名前はノード1およびノード2、交換用AFF A400 HAペアコントローラの名前はノード3およびノード4です。
+
+image::../upgrade/media/ndu_upgrade_entry_level_systems.PNG[ドライブシェルフに変換してAFF A250をAFF A400にアップグレードするワークフロー]
+
+.手順。
+. xref:upgrade_migrate_lifs_aggregates_node2_to_node1.adoc[ノード2のLIFとデータアグリゲートをノード1に移行します]
+. xref:upgrade_convert_node2_drive_shelf_connect_node4.adoc[node2をドライブシェルフに変換し、node4に接続します]
+. xref:upgrade_reassign_drives_node2_to_node4.adoc[ドライブをノード2からノード4に再割り当てします]
+. xref:upgrade_migrate_aggregates_epsilon_lifs_node1_node4.adoc[ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します]
+. xref:upgrade_convert_node1_drive_shelf_connect_node3.html[node1をドライブシェルフに変換し、node3に接続します]
+. xref:upgrade_reassign_drives_node1_to_node3.adoc[ドライブをノード1からノード3に再割り当てします]
+. xref:upgrade_migrate_lIFs_aggregates_node4_node3.adoc[ノード4のLIFとデータアグリゲートをノード3に移行します]
+

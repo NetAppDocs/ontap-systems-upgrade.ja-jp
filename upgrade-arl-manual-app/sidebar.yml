@@ -23,7 +23,7 @@ entries:
     url: "/upgrade-arl-manual-app/determine_aggregates_on_internal_drives.html"
   - title: ノードをアップグレードする準備をします
     url: "/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html"
-  - title: オンボードキーマネージャを使用して認証を管理
+  - title: オンボードキーマネージャを使用して認証キーを管理します
     url: "/upgrade-arl-manual-app/manage_authentication_okm.html"
   - title: SnapMirror 関係を休止します
     url: "/upgrade-arl-manual-app/quiesce_snapmirror_relationships.html"
@@ -93,11 +93,8 @@ entries:
   entries:
   - title: 概要
     url: "/upgrade-arl-manual-app/stage_6_index.html"
-  - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
-    url: "/upgrade-arl-manual-app/get_address_key_management_server_encryption.html"
   - title: KMIP サーバを使用して認証を管理します
     url: "/upgrade-arl-manual-app/manage_authentication_kmip.html"
-  - title: オンボードキーマネージャを使用して認証を管理
   - title: 新しいコントローラが正しくセットアップされていることを確認します
     url: "/upgrade-arl-manual-app/ensure_controllers_set_up_correctly.html"
   - title: 新しいコントローラモジュールで Storage Encryption をセットアップします

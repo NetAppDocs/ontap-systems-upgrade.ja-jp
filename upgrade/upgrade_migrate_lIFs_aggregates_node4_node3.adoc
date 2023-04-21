@@ -1,0 +1,134 @@
+---
+permalink: upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif 
+summary: ノード3を準備し、ノードノード3をノード4に接続してから、ノード4のデータLIFとデータアグリゲートをノード3に移行します。 
+---
+= ノード4のLIFとデータアグリゲートをノード3に移行します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレードを完了するには、ノード3をノード4に接続し、ノード4のデータ論理インターフェイス（LIF）とデータアグリゲートをノード3に移行します。
+
+.手順
+. ノードのLOADERプロンプトで、ノードをブートメニューでブートします。
++
+「 boot_ontap menu
+
+. オプションを選択します `6 Update flash from backup config` をクリックして、/varファイルシステムをノード3にリストアします。
++
+これにより、オールフラッシュベースの構成がディスクへの最後のバックアップに置き換えられます。
+
+. 「 y 」と入力して続行します。
+. ノードが通常どおりブートするのを待ちます。
++
+[NOTE]
+====
+想定どおり、ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。
+
+システムIDが一致していないことを示す警告がノードから報告されます。入力するコマンド `y` システムIDを上書きします。
+
+====
+. ノード3をノード4に接続します。
++
+.. 冗長性を確保するために、マルチパスハイアベイラビリティ（MPHA）ケーブルをNS224シェルフに接続します。
+.. HAペアのケーブル（別 々 のインターフェイスの場合）をノード間に接続します。
+.. ノード間にクラスタケーブル（別 々 のインターフェイスの場合）を接続します。
+
+
+. クラスタLIFを移行します。
++
+「 advanced 」の権限が必要です
+
++
+「 network port show 」のように表示されます
+
+. クラスタのブロードキャストドメインを変更して、必要なクラスタポートを追加します。
++
+`network port broadcast-domain remove-ports -broadcast-domain _broadcast_domain_name_ -ports _port_names_`
+
++
+`network port broadcast-domain add-ports -broadcast-domain Cluster -ports _port_names_`
+
++
+
+NOTE: ONTAP 9.8以降では、クラスタ接続用の既存の物理ポートに新しいIPspaceと1つ以上のブロードキャストドメインを指定できます。
+
+. 必要なクラスタポートが含まれるようにクラスタIPspaceを変更し、最大転送単位がまだ設定されていない場合は9000に設定します。
++
+「network port modify -node _node_name --port_port_name_-mtu 9000 -ipspace Cluster」
+
+. すべてのクラスタネットワークLIFを表示します。
++
+「 network interface show -role cluster 」のように表示されます
+
+. すべてのクラスタネットワークLIFをホームポートに移行します。
++
+「 network interface show -role cluster 」のように表示されます
+
+. すべてのデータネットワークLIFを表示します。
++
+`network interface show -role data`
+
+. すべてのデータLIFをノード3に移行します。
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+
+. すべてのデータネットワークLIFを表示します。
++
+`network interface show -role data`
+
++
+クラスタLIFと管理LIFはノード間で移行できません。停止しているLIFがある場合は、LIFの管理ステータスをに設定します `up` 次のコマンドをLIFごとに1回入力します。
+
++
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+
+. クラスタ管理LIFを移行します。
++
+`network interface migrate -vserver _vserver_name_ -lif cluster_mgmt -destination-node _node3_ -destination-port _port_name_`
+
+. クラスタ管理LIFのステータスを表示します。
++
+`network interface show cluster_mgmt`
+
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+`storage aggregate show`
+
+. HAペア、ストレージフェイルオーバー、および自動ギブバックを有効にします。
++
+cluster ha modify -configured true
+
+. ノード4が所有するデータアグリゲートをノード3に移行します。
++
+`storage aggregate relocation start -aggregate _aggregate_name_ -node _node4_ -destination _node3_`
+
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+`storage aggregate show`
+
+. ノード間でネットワークLIFの自動リバートを有効にします。
++
+`network interface modify -lif * -auto-revert true`
+
+. クラスタのステータスを表示します。
++
+「 cluster show 」を参照してください
+
+. フェールオーバー適格性を表示します。
++
+「 storage failover show 」をクリックします
+
++
+
+NOTE: クラスタレポートの出力で、あるノードが別のノードに属するアグリゲートを誤って所有している可能性があります。この場合は、クラスタの両側からテイクオーバーとギブバックを実行して正常に動作します。
+
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+`storage aggregate show`
+
+

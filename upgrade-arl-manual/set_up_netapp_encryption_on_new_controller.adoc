@@ -66,6 +66,9 @@ security key-manager setup -node _new_controller_name_`
 +
 このコマンドには、オンボードキーマネージャ（ OKM ）のパスフレーズが必要です
 
++
+詳細については、技術情報アーティクルを参照してください https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu["ONTAP ブートメニューから外部キー管理サーバの設定をリストアする方法"^]。
+
 ** OKM の認証をリストアします：
 +
 [cols="35,65"]
@@ -83,6 +86,4 @@ security key-manager setup -node _new_controller_name_`
 
 
 .完了後
-認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。次のコマンドを使用して、ボリュームをオンラインに戻します。
-
-「 volume online 」と入力します
+認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。を使用して、それらのボリュームをオンラインに戻します `volume online` コマンドを実行します

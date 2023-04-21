@@ -17,41 +17,38 @@ summary: AFF A900 コントローラモジュールと NVRAM モジュールで 
 AFF A900またはFAS9500コントローラとNVRAMモジュールで構成されたnode2が、アップグレード可能な状態になりました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールをスワップすると、コンソール接続と管理接続のみが移動します。ここでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートするために必要な手順を示します。
 
 .手順
-. [[boot_node2 _stp1]を設定します `bootarg.storageencryption.support` および `kmip.init.maxwait` node2構成のロード後にブートループが発生しないようにするための変数。
+. [boot_node2_step1]] NetApp Storage Encryption（NSE）ドライブがインストールされている場合は、次の手順を実行します。
 +
-手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
 
+NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
+
++
+.. 設定 `bootarg.storageencryption.support` 終了： `true` または `false`：
 +
 [cols="35,65"]
 |===
+
+
 | 次のドライブが使用中の場合 | 次に、 
 
 
-| FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ  a| 
-** `setenv bootarg.storageencryption.support *true*`
-** 'etenv kmip.init.maxwait off
+| FIPS 140-2レベル2の自己暗号化要件に準拠したNSEドライブ | `setenv bootarg.storageencryption.support *true*` 
 
 
-
-
-| ネットアップの非FIPS SED  a| 
-** `setenv bootarg.storageencryption.support *false*`
-** 'etenv kmip.init.maxwait off
-
-
+| ネットアップの非FIPS SED | `setenv bootarg.storageencryption.support *false*` 
 |===
-+
-
-WARNING: * HAペアでコントローラのアップグレードが完了したら、すぐにの設定を解除する必要があります `kmip.init.maxwait` 変数（Variable）：を参照してください link:ensure_new_controllers_are_set_up_correctly.html#unset_maxwait["新しいコントローラが正しくセットアップされていることを確認します（手順12）"]。これを行わないと、停電が発生した場合にデータが失われる可能性があります。*
-
 +
 [NOTE]
 ====
-FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。
-
-SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
+FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
 
 ====
+.. 特別なブートメニューに移動してオプションを選択します `(10) Set Onboard Key Manager recovery secrets`。
++
+パスフレーズと、前の手順で手順 に記録しておいたバックアップ情報を入力します。を参照してください link:manage_storage_encryption_using_okm.html["オンボードキーマネージャを使用してストレージ暗号化を管理します"]。
+
+
+
 . ノードをブートメニューでブートします。
 +
 「 boot_ontap menu

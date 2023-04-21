@@ -21,12 +21,4 @@ security key-manager setup -node _new_controller_name_`
 +
 security key-manager restore -node _new_controller_name_`
 
-. すべての自己暗号化ディスクのキーを新しい認証キーに変更します。
-+
-'storage encryption disk modify -disk * [-data-key-id nonMSID AK
-
-. 連邦情報処理標準（ FIPS ）を使用する場合は、すべての自己暗号化ディスクのキーを新しい認証キーに変更してください。
-+
-「 storage encryption disk * modify -disk * [-fips-key-id nonAK 」」
-
 

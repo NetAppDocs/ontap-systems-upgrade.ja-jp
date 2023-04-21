@@ -128,7 +128,7 @@ Controller replacement operation has been paused for user intervention.
 
 NOTE: オンボードキーマネージャを使用するNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用する場合は、あとで手順 でキー管理ツールのパスフレーズを使用してキー管理ツールの再同期を完了できるようにしておきます。
 
-. システムで自己暗号化ドライブを使用している場合は、Knowledge Baseの文書を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPSドライブが取り付けられていることを確認する方法"^] アップグレード対象のHAペアで使用されている自己暗号化ドライブのタイプを確認する。ONTAP ソフトウェアは、次の2種類の自己暗号化ドライブをサポートしています。
+. システムで自己暗号化ドライブを使用している場合は、Knowledge Baseの文書を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] アップグレード対象のHAペアで使用されている自己暗号化ドライブのタイプを確認する。ONTAP ソフトウェアは、次の2種類の自己暗号化ドライブをサポートしています。
 +
 --
 ** FIPS認定のNetApp Storage Encryption（NSE）SASドライブまたはNVMeドライブ

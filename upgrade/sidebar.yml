@@ -82,3 +82,21 @@ entries:
     url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
   - title: アップグレードを完了する
     url: "/upgrade/upgrade-complete-move-volumes.html"
+- title: ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします
+  entries:
+  - title: ワークフロー
+    url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
+  - title: ノード2のLIFとデータアグリゲートをノード1に移行します
+    url: "/upgrade/upgrade_migrate_lifs_aggregates_node2_to_node1.html"
+  - title: node2をドライブシェルフに変換し、node4に接続します
+    url: "/upgrade/upgrade_convert_node2_drive_shelf_connect_node4.html"
+  - title: ドライブをノード2からノード4に再割り当てします
+    url: "/upgrade/upgrade_reassign_drives_node2_to_node4.html"
+  - title: ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します
+    url: "/upgrade/upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html"
+  - title: node1をドライブシェルフに変換し、node3に接続します
+    url: "/upgrade/upgrade_convert_node1_drive_shelf_connect_node3.html"
+  - title: ドライブをノード1からノード3に再割り当てします
+    url: "/upgrade/upgrade_reassign_drives_node1_to_node3.html"
+  - title: ノード4のLIFとデータアグリゲートをノード3に移行します
+    url: "/upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html"

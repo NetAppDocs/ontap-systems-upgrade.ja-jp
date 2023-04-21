@@ -1,0 +1,96 @@
+---
+permalink: upgrade/upgrade_migrate_lifs_aggregates_node2_to_node1.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs 
+summary: ノード2の論理インターフェイス（LIF）とデータアグリゲートをノード1に移行します。 
+---
+= ノード2のLIFとデータアグリゲートをノード1に移行します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFF A250 node2をドライブシェルフに変換する前に、node2の論理インターフェイス（LIF）とデータアグリゲートをnode1に移行します。
+
+.作業を開始する前に
+次の要件を満たしていることを確認します。
+
+* AFF A250コントローラとAFF A400コントローラには、同じONTAP リリースとパッチバージョンがインストールされています。
+* 両方のAFF A400コントローラがでスタンバイになっています `Maintenance Mode` プロンプト。
+* 適切なケーブル配線をすべて用意しておきます。
+
+
+.このタスクについて
+次の手順は、AFF A250 node1で実行します。
+
+.手順
+. クラスタフェイルオーバーの自動ギブバックを無効にします。
++
+`storage failover modify -node _node_name_ -auto-giveback false`
+
+. HAペアの両方のノードでLIFの自動リバートを無効にします。
++
+`network interface modify -lif * -auto-revert false`
+
+. すべてのデータネットワークLIFのステータスを表示します。
++
+`network interface show -role data`
+
+. クラスタ管理LIFのステータスを表示します。
++
+`network interface show cluster_mgmt`
+
+. ノード2でホストされているStorage Virtual MachineからすべてのデータLIFを移行します。
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+
++
+
+NOTE: このコマンドは、SAN以外のLIFのみを移行します。iSCSI LIFとFCP LIFの移行には使用できません。
+
+. クラスタ内のすべてのデータLIFのステータスを表示します。
++
+`network interface show -role data`
+
+. LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
++
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+`storage aggregate show`
+
+. フェールオーバー適格性を表示します。
++
+「 storage failover show 」をクリックします
+
+. ノード2のデータアグリゲートをノード1に移行します。
++
+`storage aggregate relocation start -aggregate _aggregate_name_ -node _node2_ -destination _node1_`
+
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+`storage aggregate show`
+
+. クラスタ内のすべてのデータボリュームのステータスを表示します。
++
+volume show
+
+. を表示します `ha` イプシロンのステータスと所有権：
++
+「 cluster show 」を参照してください
+
+. 無効にします `cluster ha`：
++
+cluster ha modify -configured false
+
+. を表示します `ha` イプシロンのステータスと所有権：
++
+「 cluster show 」を参照してください
+
+. ノード 2 を停止します。
++
+`halt -node _node2_ -inhibit-takeover true -ignore-quorum-warnings true`
+
+

@@ -81,8 +81,8 @@ entries:
   entries:
   - title: 概要
     url: "/upgrade-arl-auto-affa900/stage_7_index.html"
-  - title: ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します
-    url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: KMIP サーバを使用して認証を管理します
+    url: "/upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html"
   - title: 新しいコントローラが正しくセットアップされていることを確認します
     url: "/upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html"
   - title: 新しいコントローラモジュールで Storage Encryption をセットアップします

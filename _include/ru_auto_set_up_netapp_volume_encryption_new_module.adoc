@@ -62,6 +62,9 @@
 +
 このコマンドには、OKMのパスフレーズが必要です
 
++
+詳細については、技術情報アーティクルを参照してください https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu["ONTAP ブートメニューから外部キー管理サーバの設定をリストアする方法"^]。
+
 
 
 --

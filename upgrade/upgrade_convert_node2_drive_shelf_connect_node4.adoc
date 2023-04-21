@@ -1,0 +1,35 @@
+---
+permalink: upgrade/upgrade_convert_node2_drive_shelf_connect_node4.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: ノード2（AFF A250）をNS224ドライブシェルフに変換し、ノード4（AFF A400）に接続します。 
+---
+= node2をドライブシェルフに変換し、node4に接続します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFF A250 node2をNS224ドライブシェルフに変換し、AFF A400 node4に接続してから、node2からnode4にドライブを再割り当てします。
+
+.手順
+. ノード2からすべてのネットワークケーブルを外します。
+. ノード2をAFF A250シャーシから取り外します。
+. NVMeシェルフモジュール（NSM）をノード2のベイに挿入します。
+. ノード4の100GbEポートe0cとNSM Bのポートe0aをケーブル接続して、NSMをノード4に接続します。
++
+image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400とNS224シェルフ1台]
+
+. node2のポートe0cとe0dの25GbEケーブルを、node4の任意の2つの25GbEオンボードポート（e0e、e0f、e0g、またはe0h）に接続します。
++
+
+NOTE: 25GbEオンボードポートがノード4にない場合は、25GbE PCIeアダプタを使用して接続できます。
+
+. AFF A400システムでオンボードポートとしてFCポートを使用している場合は、移行時にクラスタ接続用に各ノードに25Gbイーサネットアダプタを取り付けます。
++
+.. ポートe0aとe0bを使用して、AFF A400ノード間のHAペアケーブルを接続します。
+.. ポートe3aとe3bを使用して、AFF A400ノードをクラスタケーブルで接続します。
+
+
+

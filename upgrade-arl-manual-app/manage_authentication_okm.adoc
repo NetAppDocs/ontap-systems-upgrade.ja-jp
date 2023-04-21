@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/manage_authentication_okm.html 
 keywords: manage, authentication, onboard key manager, okm, key, passphrase, fips 
-summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする際に認証キーを管理するには、オンボードキーマネージャを使用します。 
+summary: オンボードキーマネージャを使用して、ONTAP 9.8以降を実行しているコントローラでARLを手動でアップグレードする際に認証キーを管理します。 
 ---
-= オンボードキーマネージャを使用して認証を管理
+= オンボードキーマネージャを使用して認証キーを管理します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,19 +14,12 @@ summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を�
 
 
 [role="lead"]
-オンボードキーマネージャを使用して認証キーを管理できます。オンボードキーマネージャ（ OKM ）を使用する場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。
+オンボードキーマネージャ（OKM）を使用して認証キーを管理できます。OKMをセットアップした場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。
 
 .手順
-. クラスタ内のすべてのノードがキー管理サーバを使用できることを確認します。
+. クラスタ全体のパスフレーズを記録します。
 +
-「 securitykey -manager key show 」を参照してください
+これは、CLIまたはREST APIを使用してOKMを設定または更新したときに入力したパスフレーズです。
 
-. すべての自己暗号化ディスクのキーを新しい認証キーに変更します。
-+
-'storage encryption disk modify -disk * [-data-key-id nonMSID AK
-
-. 連邦情報処理標準（ FIPS ）を使用する場合は、すべての自己暗号化ディスクのキーを新しい認証キーに変更してください。
-+
-「 storage encryption disk * modify -disk * [-fips-key-id nonAK 」」
-
+. を実行して、キー管理ツールの情報をバックアップします `security key-manager onboard show-backup` コマンドを実行します
 

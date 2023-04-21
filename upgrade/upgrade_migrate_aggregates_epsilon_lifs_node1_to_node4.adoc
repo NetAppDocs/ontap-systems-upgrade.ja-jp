@@ -1,0 +1,103 @@
+---
+permalink: upgrade/upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+summary: ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します。 
+---
+= ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFF A250 node1をドライブシェルフに変換する前に、node1のデータアグリゲート、イプシロン、および論理インターフェイス（LIF）をAFF A400 node4に移行します。
+
+.手順
+. ノードのLOADERプロンプトで、ノードをブートメニューでブートします。
++
+「 boot_ontap menu
+
+. オプションを選択します `6 Update flash from backup config` /varファイルシステムをnode4にリストアします。
++
+これにより、オールフラッシュベースの構成がディスクへの最後のバックアップに置き換えられます。
+
+. 「 y 」と入力して続行します。
++
+[NOTE]
+====
+想定どおり、ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。
+
+ノードからシステムIDの不一致の警告が報告されました。入力するコマンド `y` システムIDを上書きします。
+
+====
+. クラスタLIFを移行します。
++
+「 advanced 」の権限が必要です
+
++
+「 network port show 」のように表示されます
+
++
+[NOTE]
+====
+AFF A250をAFF A400にアップグレードするときにシステムクラスタポートが異なる場合は、ノード4のインターフェイスを一時的にクラスタポートに変更しなければならないことがあります。
+
+.. `network port modify -node _node4_ -port _port_name_ -mtu 9000 -ipspace Cluster`
+.. `network interface migrate -vserver Cluster -lif _cluster_LIF_  -destination-node _node4_ -destination-port _port_name_`
+
+
+====
+. ノード1のデータアグリゲートをノード4に移行します。
++
+`storage aggregate relocation start -aggregate-list _aggregate_list_name_ -node _node1_ -destination _node4_ -ndo-controller-upgrade true -override-destination-checks true`
+
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+`storage aggregate show`
+
+. イプシロンを移行するには、ノード1からIFを削除し、ノード4に移動します。
++
+.. ノード1からイプシロンを削除します。
++
+`cluster modify -epsilon false -node _local_node_name_`
+
+.. イプシロンをノード4に移動します。
++
+`cluster modify -epsilon true -node _partner_node_name_`
+
+
+
+. クラスタのステータスを表示します。
++
+「 cluster show 」を参照してください
+
+. すべてのデータネットワークLIFを表示します。
++
+`network interface show -role data`
+
+. すべてのデータLIFをノード4に移行します。
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+
+. クラスタ内のすべてのデータLIFのステータスを表示します。
++
+`network interface show -role data`
+
+. LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
++
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+
+. クラスタ管理LIFを移行します。
++
+`network interface migrate -vserver _vserver_name_ -lif cluster_mgmt -destination-node _node4_ -destination-port _port_name_`
+
+. クラスタ管理LIFのステータスを表示します。
++
+`network interface show cluster_mgmt`
+
+. ノード 1 を停止します。
++
+`halt -node _node1_ -inhibit-takeover true -ignore-quorum-warnings true`
+
+
