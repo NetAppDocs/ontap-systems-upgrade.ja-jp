@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/stage_4_index.html
 keywords: relocate, retire, node2, LIF, node3, non-root aggregates, stage 4 
 summary: ONTAP 9.8 以降を実行しているコントローラ上で system controller replace コマンドを使用して、 ARL アップグレードのステージ 4 プロセスシーケンスを実行します。 
 ---
-= ステージ 4 ：ノード 2 の移動と撤去
+= 概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

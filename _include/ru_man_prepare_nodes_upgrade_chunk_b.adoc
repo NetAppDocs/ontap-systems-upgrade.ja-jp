@@ -348,7 +348,7 @@ node2            enable    Postmaster    -                 mailhost
 | AutoSupport が有効になっていません ...  a| 
 AutoSupport を有効にするには、 _System Administration Reference_. の手順に従ってください。を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_. にリンクします。）
 
-+*注：* AutoSupport は、ストレージシステムの初回構成時にデフォルトで有効になります。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。
+* 注： AutoSupport は、ストレージ・システムを初めて設定したときに、デフォルトで有効になっています。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。
 
 |===
 .. [man_prepare_nodes _step34]] 元のノードの両方で次のコマンドを入力し、 AutoSupport が正しいメールホストの詳細および受信者の E メール ID で設定されていることを確認します。

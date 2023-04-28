@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/stage_5_index.html
 keywords: install, boot, node4, node2, node-management, stage 5 
 summary: ONTAP 9.8 以降を実行しているコントローラ上で system controller replace コマンドを使用して、 ARL アップグレードのステージ 5 プロセスシーケンスを実行します。 
 ---
-= ステージ 5 ：ノード 4 をインストールしてブートします
+= 概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

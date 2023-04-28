@@ -2008,7 +2008,6 @@
   <block id="82afadce5c137568366e29a810db005a" category="cell">AutoSupport が有効になっています ...</block>
   <block id="c732f1d7a89abd68a48f92313a9b4364" category="inline-xref">手順 34</block>
   <block id="1ab718a04314b36269d3b2b096aac75a" category="list-text">に進みます <block ref="395265ffe56efe9e97ae9cc3752b2f60" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e5358fe562a4d74ac4231d8e23d0b088" category="inline-link-macro">ストレージ暗号化用の外部キー管理サーバの IP アドレスを取得します</block>
   <block id="9c13f9e2316ce6eb31c97c43c9f42070" category="cell">AutoSupport が有効になっていません ...</block>
   <block id="6fcae9afe7013bc84597d8c4231312ba" category="list-text">AutoSupport を有効にするには、 _System Administration Reference_. の手順に従ってください。を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 _System Administration Reference_. にリンクします。）</block>
   <block id="4179c1d88c83e870ed525f69e82e0369" category="list-text">[man_prepare_nodes _step34]] 元のノードの両方で次のコマンドを入力し、 AutoSupport が正しいメールホストの詳細および受信者の E メール ID で設定されていることを確認します。</block>
@@ -2279,7 +2278,6 @@
   <block id="6bdf9080f49ca89e65220e312d51e688" category="list-text">次のコマンドを使用して、キー管理サーバを追加します。</block>
   <block id="0dd9d4ff0944e970430f96022e169191" category="list-text">次のコマンドを使用して、キー管理サーバが正常に追加されたことを確認します。</block>
   <block id="3bf7f9a82df0c130b46780052ca49e4c" category="list-text">次のコマンドを使用して、新しいノードでキー管理サーバセットアップウィザードを起動します。</block>
-  <block id="ce647643e8b085a9425f156173190659" category="list-text">外部キーマネージャ（ EKD ）の認証を復元します。</block>
   <block id="a5e463e5138622ba8c2355b41f67a0ff" category="paragraph">このコマンドには、オンボードキーマネージャ（ OKM ）のパスフレーズが必要です</block>
   <block id="ce4c94d5e669859aacda58a7f2429ddf" category="cell">その他すべての ONTAP バージョン</block>
   <block id="fedb2a32e0130d4ae814cd5cc418f72f" category="list-text">[[step1] 次の手順を実行して、ルート以外のアグリゲートを再配置します。</block>
@@ -2682,7 +2680,6 @@
   <block id="94c614d182457fbc97ae1deaaabd5813" category="paragraph">2 ノードスイッチレスクラスタのノードをアップグレードする場合は、アップグレードの実行中もスイッチレスクラスタのノードをそのまま使用できます。スイッチクラスタに変換する必要はありません。</block>
   <block id="fdc03a42e0e3399344b3116546b77b4d" category="list-text">[man_lif_verify_3_step5] プラットフォームで同じでないデータポートがある場合は、ブロードキャストドメインにポートを追加します。</block>
   <block id="3e874a6c7a8a7acafa16272d6c2b74ee" category="paragraph">次の例は、ノード「 8200-1 」のポート「 e0a 」とノード「 8060-1 」のポート「 e0i 」を、 IPspace 「 Default 」内のブロードキャストドメイン「 mgmt 」に追加します。</block>
-  <block id="08ac1a2fb254b60e9c511fe04b6536d0" category="cell">外部キーマネージャ（ EKM ）</block>
   <block id="e5255775e89f083d8e69c73098e5fff2" category="list-text">次のコマンドを入力して、 node4 が node3 と同じクラスタの一部であること、および healthy であることを確認します。</block>
   <block id="a8b841bb612aacb195cf6acc0585fc92" category="list-text">次のコマンドを入力して、ノード 4 がノード 3 と通信できること、およびすべての LIF が動作していることを確認します。</block>
   <block id="07d4c533878766923bd46c0ad1c07580" category="list-text">に進みます <block ref="861668d9cff26e583cb336053a01f9e4" category="inline-xref-macro-rx"></block>。</block>
@@ -2922,8 +2919,6 @@
   <block id="fa332b15cdfbb22760413e4a60513a40" category="cell">- 完了しました <block ref="a4882b71f5935aea43154f35b1a6d350" category="inline-xref-macro-rx"></block> セクションに移動します <block ref="7401650b9cd3ea8be2a2d31b363b2b3c" category="inline-link-macro-rx"></block>。</block>
   <block id="b6481dacfe88e9c856041be2326875ff" category="cell">手順 4 を省略して、に進みます <block ref="7401650b9cd3ea8be2a2d31b363b2b3c" category="inline-link-macro-rx"></block>。</block>
   <block id="5055165524bf9c633a40b424396e9008" category="section-title">SnapMirror 関係を休止します（オプション）。</block>
-  <block id="511701430e4fbf5079759a7c3b7c28ff" category="doc">ステージ 4 ：ノード 2 の情報を記録し、 node2 を撤去</block>
-  <block id="d21a0858f74e1b40b984bb621122ad41" category="doc">Stage5.ノード 4 をインストールしてブートします</block>
   <block id="0df71f161bb7f6f4a1dd4c0ceefcb245" category="sidebar">ステージ 4 ：情報を記録し、 node2 を撤去</block>
   <block id="69dd6fe430ae07730e1c32b2939c278c" category="inline-link-macro">ONTAP 9.9.1 コマンド：マニュアルページリファレンス</block>
   <block id="9d844ecf2e54ad978b96146975590298" category="cell"><block ref="9d844ecf2e54ad978b96146975590298" category="inline-link-macro-rx"></block></block>
@@ -3591,7 +3586,6 @@
   <block id="c3ca05cd3954f0276fbe21e438b23691" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合のステージ 6 のプロセスシーケンス</block>
   <block id="bd01c5b770f12580d6d085fd6e8ad756" category="summary">システムをネットブートする前に、 ONTAP 9.7 以前を実行するコントローラで ARL を手動でアップグレードする際に、すべての SnapMirror 関係を休止します。</block>
   <block id="cb42877b8f5a499b59fbb4b10124a134" category="summary">ONTAP 9.7 以前を実行しているコントローラでは、 ARL を手動でアップグレードする際に、 node3 をインストールして ONTAP ソフトウェアをインストールします。</block>
-  <block id="c9db4eeeb7068245ea24e65d2b3044b1" category="summary">ONTAP 9.7 以前を実行しているコントローラでは、 ARL を手動でアップグレードする際にストレージ暗号化を設定します。</block>
   <block id="a986e1d99c36977cba4daadf9f7b9d1e" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合に、ステージ 2 、ステージ 3 、またはステージ 5 で LIF がオンラインにならない。</block>
   <block id="10a1bf2406c5b22e1d135998f630df5f" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、 node2 の物理ポートが node4 に正しくマッピングされていることを確認します。</block>
   <block id="5392067398aba96b96eb467b43962fc8" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、 MetroCluster 構成の健全性を確認して処理を修正します。</block>
@@ -4187,7 +4181,6 @@
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">この情報で使用される用語</block>
   <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">MetroCluster FC構成の場合</block>
   <block id="e05e5b3ebbe0e2f7ee773e008e2cd7bd" category="cell">次のドライブが使用中の場合</block>
-  <block id="cbfa089efcac1a28956de515cdcbcecc" category="cell">FIPS 140-2レベル2の自己暗号化要件に準拠したNetApp Storage Encryption（NSE）ドライブ</block>
   <block id="9a7a5052834bdcd10b9395aaeaf8d876" category="list-text"><block ref="62a739993e7d046df94dbc6dc7c3f174" prefix="" category="inline-code"></block></block>
   <block id="102a08eb3220b17bfbecbc277298074d" category="cell">ネットアップの非FIPS SED</block>
   <block id="ad55a196e6d3053365555c02e73f7628" category="list-text"><block ref="20ac903c04b877a6840785a4ed61d182" prefix="" category="inline-code"></block></block>
@@ -4347,7 +4340,6 @@
   <block id="2c524a09a41084103cfccb89e1e2dd49" category="paragraph">ステージ6で、コントローラとNVRAMモジュールをアップグレードしてnode2をブートし、アップグレードしたnode2のインストールを確認します。NVEを使用している場合は、key-manager configurationをリストアします。さらに、node1のルート以外のアグリゲートとNASデータLIFをnode1からアップグレードされたnode2に再配置し、SAN LIFがnode2に存在することを確認します。</block>
   <block id="2201f8be38de620c7e36cb511d56aa13" category="cell"><block ref="2201f8be38de620c7e36cb511d56aa13" category="inline-link-macro-rx"></block></block>
   <block id="fb13f8b167e25a81b898b43d42165d58" category="paragraph">ステージ7では、新しいノードが正しくセットアップされていることを確認し、暗号化が有効な新しいノードがある場合は、ストレージ暗号化またはNVEを設定してセットアップします。また、古いノードの運用を停止し、SnapMirrorの処理を再開する必要があります。</block>
-  <block id="3c71d8aea4515e5bab3212b7c7635c9b" category="doc">ステージ 2 ：ノード1からリソースを再配置し、AFF A700またはFAS9000 node1を撤去します</block>
   <block id="98d03c0eb9112cc9024f712528415cd8" category="paragraph">ステージ2で、ノード1の非ルートアグリゲートとNASデータLIFをノード2に再配置します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。必要に応じて、障害が発生したアグリゲートまたは拒否されたアグリゲートを再手順 であとから使用するためにノード1の情報を記録しておき、対応するノード1のコントローラとNVRAMモジュールを交換し、ノード1を廃棄して、アップグレードしたノード1をネットブートする必要があります。</block>
   <block id="ba3ed006f5a9fb6f965da2e3e183b4ad" category="inline-link-macro">ネットブート</block>
   <block id="d7c7c51e5bb760e2570a29b82d44f1bf" category="list-text"><block ref="d7c7c51e5bb760e2570a29b82d44f1bf" category="inline-link-macro-rx"></block></block>
@@ -4419,7 +4411,6 @@
   <block id="85e374a47bd77502ca7ecd58923ec819" category="paragraph">ただし、元のコントローラと同じバージョンの ONTAP 9 がインストールされているコントローラには、ネットブートする必要はありません。その場合は、このセクションをスキップしてに進みます <block ref="c6531ef0bbbd2a28b8b9b75b1dc2026b" category="inline-link-macro-rx"></block></block>
   <block id="ec8f42afc125efe6d556f20ecc052848" category="inline-link-macro">オンボードキーマネージャを使用して認証キーを管理します</block>
   <block id="67f80d13cf548292184bc05f4b74227a" category="list-text"><block ref="67f80d13cf548292184bc05f4b74227a" category="inline-link-macro-rx"></block></block>
-  <block id="f4672cbaffd9e421a79615ec725fc37c" category="paragraph">+*注：* AutoSupport は、ストレージシステムの初回構成時にデフォルトで有効になります。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。</block>
   <block id="905e3cdcc0a66a5627f194c9bef68b48" category="inline-link">ドライブがFIPS認定かどうかを確認する方法</block>
   <block id="9a939769a0a1b5b6c994c5ee6a8c23b2" category="list-text">システムで自己暗号化ドライブを使用している場合は、Knowledge Baseの文書を参照してください<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> アップグレード対象のHAペアで使用されている自己暗号化ドライブのタイプを確認する。ONTAP ソフトウェアは、次の2種類の自己暗号化ドライブをサポートしています。</block>
   <block id="93cbc4495a566db3a58548f326fa221c" category="paragraph">システムをネットブートする前に、すべてのSnapMirror関係が休止されていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。</block>
@@ -4449,11 +4440,8 @@
   <block id="28556bd95def05fed56f5833d7b0b25b" category="inline-link-macro">オンボードキーマネージャを使用してストレージ暗号化を管理します</block>
   <block id="2b0f9b46416ed6835a9cf4374bf56295" category="list-text"><block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block></block>
   <block id="2f3067e385c13bed8c91d99a529e1f6c" category="paragraph">オンボードキーマネージャ（OKM）を使用して暗号化キーを管理できます。OKMをセットアップした場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。</block>
-  <block id="56848c85d01c97e89fd91301765bc221" category="list-text">NetApp Storage Encryptionドライブが搭載されている場合は、次の手順を実行します。</block>
   <block id="03b784c13f464c141a29ed9b7adc0b70" category="paragraph">FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。</block>
   <block id="bbe12f0052143b9b4fa08d13234931ab" category="paragraph">パスフレーズと、前の手順で手順 に記録しておいたバックアップ情報を入力します。を参照してください <block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block>。</block>
-  <block id="08054d649addde697b85edb4a8ffb183" category="list-text">NetApp Storage Encryption（NSE）ドライブが搭載されている場合は、を設定します<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 終了：<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> または<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
-  <block id="f5da7c2e2634ff80aa6ca2b591dbeb0c" category="paragraph">パスフレーズと、前の手順で手順 に記録しておいたバックアップ情報を入力します。を参照してください <block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block></block>
   <block id="1b2c9b4403be6eaaf7fa2209a153c703" category="list-text"><block ref="1b2c9b4403be6eaaf7fa2209a153c703" category="inline-link-macro-rx"></block></block>
   <block id="eaf73ead47320ec21942b56fd3660eea" category="list-text">オンボードキー管理情報のリストアについては、ネットアップサポートにお問い合わせください。</block>
   <block id="c5915780f057e573017a845938fc8511" category="summary">ノード3を準備し、ノードノード3をノード4に接続してから、ノード4のデータLIFとデータアグリゲートをノード3に移行します。</block>
@@ -4605,10 +4593,11 @@
   <block id="493f827b1132078fbdd11bc0ceceed47" category="list-text">すべてのドライブをノード2からノード4に再割り当てします。</block>
   <block id="c6de9e9749bb1b9764c879c3f4e55899" category="paragraph"><block ref="d3a7175de7ab1d1112d49ac67a531b10" prefix="" category="inline-code"></block></block>
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
-  <block id="c9c88276ee2c2102cc859c79f38df03f" category="paragraph">&lt;stdin&gt; の未解決のディレクティブ-インクルード:../_include/ru_man_get_ip_address_external_km_server.adoc []</block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">ONTAP 9.7以前を実行しているコントローラでARLを手動でアップグレードする際に、OKMを使用して認証キーを管理します。</block>
-  <block id="e9e0a1f4688f13dee423ee10d2c9cf11" category="list-text">[[man_install3_step16]]ネットアップストレージ暗号化ドライブがインストールされている場合は、次の手順を実行します。</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">オンボードキーマネージャを使用してストレージ暗号化を管理します</block>
   <block id="bd001ad1a159ea8195f2f6877d4e5047" category="list-text"><block ref="bd001ad1a159ea8195f2f6877d4e5047" category="inline-link-macro-rx"></block></block>
   <block id="73d106cd4da3fdbd0b8a8317db146c37" category="list-text">[boot_node2_step1]] NetApp Storage Encryption（NSE）ドライブがインストールされている場合は、次の手順を実行します。</block>
+  <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">* 注： AutoSupport は、ストレージ・システムを初めて設定したときに、デフォルトで有効になっています。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。</block>
+  <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 終了：<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> または<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
+  <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">外部キー管理ツール</block>
 </blocks>

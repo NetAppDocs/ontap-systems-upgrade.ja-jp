@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_3_index.html
 keywords: stage 3, install node3, non-SAN data LIFs, non-root aggregates 
 summary: ONTAP 9.5 から 9.7 までのコントローラでは、 system controller replace コマンドを使用して、 ARL アップグレードのステージ 3 プロセスシーケンスを実行します。 
 ---
-= ステージ 3 ：node3 をインストールしてブートします
+= 概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

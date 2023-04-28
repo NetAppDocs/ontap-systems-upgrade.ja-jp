@@ -280,16 +280,16 @@ IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用�
 . スイッチベースのゾーニングを使用している場合は、新しい WWPN 値が反映されるようにゾーニングを調整します。
 
 
-. NetApp Storage Encryption（NSE）ドライブが搭載されている場合は、を設定します `bootarg.storageencryption.support` 終了： `true` または `false`。
+. NetApp Storage Encryption（NSE）ドライブを搭載している場合は、次の手順を実行します。
 +
 
 NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
 
 +
+.. 設定 `bootarg.storageencryption.support` 終了： `true` または `false`。
++
 [cols="35,65"]
 |===
-
-
 | 次のドライブが使用中の場合 | 次に、 
 
 
@@ -304,9 +304,11 @@ NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Bas
 FIPSドライブは、同じノードまたはHAペアで他のタイプのドライブと混在させることはできません。SEDと非暗号化ドライブを同じノードまたはHAペアで混在させることができます。
 
 ====
-. 特別なブートメニューに移動してオプションを選択します `(10) Set Onboard Key Manager recovery secrets`。
+.. 特別なブートメニューに移動してオプションを選択します `(10) Set Onboard Key Manager recovery secrets`。
 +
-パスフレーズと、前の手順で手順 に記録しておいたバックアップ情報を入力します。を参照してください link:manage_storage_encryption_using_okm.html["オンボードキーマネージャを使用してストレージ暗号化を管理します"]
+パスフレーズと、前の手順で手順 に記録しておいたバックアップ情報を入力します。を参照してください link:manage_storage_encryption_using_okm.html["オンボードキーマネージャを使用してストレージ暗号化を管理します"]。
+
+
 
 . ノードをブートメニューに追加します。
 +

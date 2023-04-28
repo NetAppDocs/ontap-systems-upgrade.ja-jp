@@ -56,7 +56,7 @@ security key-manager setup -node _new_controller_name_`
 | 用途 | 使用するコマンド 
 
 
-| 外部キーマネージャ（ EKM ） | 「 securitykey-manager external restore 」このコマンドには、 OKM のパスフレーズが必要です 
+| 外部キー管理ツール | 「 securitykey-manager external restore 」このコマンドには、 OKM のパスフレーズが必要です 
 
 
 | オンボードキーマネージャ（ OKM ） | 「セキュリティキーマネージャオンボード同期」 

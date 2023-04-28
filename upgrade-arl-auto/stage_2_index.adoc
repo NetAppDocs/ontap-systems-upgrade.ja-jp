@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_2_index.html
 keywords: Prepare nodes for upgrade, storage encryption, KMS, key management server, stage 2 
 summary: ONTAP 9.5 から 9.7 までを実行しているコントローラでは、 system controller replace コマンドを使用して、 ARL アップグレードのステージ 2 プロセスシーケンスを実行します。 
 ---
-= ステージ 2 ：移行してノード 1 を撤去
+= 概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
