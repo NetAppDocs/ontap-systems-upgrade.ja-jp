@@ -33,18 +33,40 @@ AFF A250 node1をNS224ドライブシェルフに変換してAFF A400 node3に�
 +
 `storage port show`
 
++
+次の例のような出力が表示されます。
+
++
+[listing]
+----
+*> storage port modify -p e0c -m storage
+Nov 10 16:27:23 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0c to storage mode.
+
+Nov 10 16:27:29 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8885.
+
+*> storage port modify -p e0d -m storage
+Nov 10 16:27:34 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0d to storage mode.
+
+Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8886.
+
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e0c  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
+----
 . すべての接続ドライブを表示します。
 +
 「ディスクショー V 」
 
-. ローカルシステムIDを記録します。
+. ローカルシステムIDの値を記録します（ノード3のシステムID）。また、「owner」列でノード1とノード2のシステムIDを記録します。
 . すべてのドライブをノード1からノード3に再割り当てします。
 +
-`disk reassign -s _node1_ -d _node3_ -p _node2_`
+`disk reassign -s _node1_system_ID_ -d _node3_system_ID_ -p _node4_system_ID_`
 
 . 再割り当てしたすべてのドライブが新しいシステムIDで表示されることを確認します。
 +
-`disk show -s _node3 system ID_`
+`disk show -s _node3_system_ID_`
 
 +
 
@@ -55,3 +77,6 @@ NOTE: ドライブが表示されない場合は、*停止*し、テクニカル
 「 halt 」
 
 
+
+.次の手順
+link:upgrade_migrate_lIFs_aggregates_node4_node3.html["ノード4のLIFとデータアグリゲートをノード3に移行します"]

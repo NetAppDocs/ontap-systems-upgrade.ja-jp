@@ -14,7 +14,7 @@ summary: ノード1のデータアグリゲート、イプシロン、およびL
 AFF A250 node1をドライブシェルフに変換する前に、node1のデータアグリゲート、イプシロン、および論理インターフェイス（LIF）をAFF A400 node4に移行します。
 
 .手順
-. ノードのLOADERプロンプトで、ノードをブートメニューでブートします。
+. ノード4のLOADERプロンプトで、ノードをブートメニューでブートします。
 +
 「 boot_ontap menu
 
@@ -26,7 +26,7 @@ AFF A250 node1をドライブシェルフに変換する前に、node1のデー�
 +
 [NOTE]
 ====
-想定どおり、ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。
+ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。
 
 ノードからシステムIDの不一致の警告が報告されました。入力するコマンド `y` システムIDを上書きします。
 
@@ -43,11 +43,31 @@ AFF A250 node1をドライブシェルフに変換する前に、node1のデー�
 ====
 AFF A250をAFF A400にアップグレードするときにシステムクラスタポートが異なる場合は、ノード4のインターフェイスを一時的にクラスタポートに変更しなければならないことがあります。
 
-.. `network port modify -node _node4_ -port _port_name_ -mtu 9000 -ipspace Cluster`
-.. `network interface migrate -vserver Cluster -lif _cluster_LIF_  -destination-node _node4_ -destination-port _port_name_`
-
+`network port modify -node _node4_ -port _port_name_ -mtu 9000 -ipspace Cluster`
 
 ====
++
+`network interface migrate -vserver Cluster -lif _cluster_LIF_  -destination-node _node4_ -destination-port _port_name_`
+
+. クラスタがクォーラムに参加するまで待ってから、クラスタノードが正常であることを確認します。
++
+`– cluster show`
+
++
+
+NOTE: 現在の状態では、HAペアとストレージフェイルオーバーは無効のままです。
+
+. クラスタLIFをノード4の一時的な25Gクラスタポートに移動します。
++
+`network interface modify`
+
+. アップグレードするAFF A250クラスタでインターフェイスグループとデータVLANが使用されている場合は、この手順を実行します。そうでない場合は、に進みます <<migrate_node1_nod4,手順 8>>。
++
+AFF A250システムとAFF A400システムでは、物理ネットワークポート名が異なります。そのため、ノード4でインターフェイスグループが正しく設定されておらず、VLANが削除される可能性があります。正しく設定されていないインターフェイスグループと削除されたVLANを確認し、必要に応じて修正します。
+
+
+
+[[migrate_node1_nod4]]
 . ノード1のデータアグリゲートをノード4に移行します。
 +
 `storage aggregate relocation start -aggregate-list _aggregate_list_name_ -node _node1_ -destination _node4_ -ndo-controller-upgrade true -override-destination-checks true`
@@ -60,11 +80,11 @@ AFF A250をAFF A400にアップグレードするときにシステムクラス�
 +
 .. ノード1からイプシロンを削除します。
 +
-`cluster modify -epsilon false -node _local_node_name_`
+`cluster modify -epsilon false -node _node1_`
 
 .. イプシロンをノード4に移動します。
 +
-`cluster modify -epsilon true -node _partner_node_name_`
+`cluster modify -epsilon true -node _node4_`
 
 
 
@@ -78,7 +98,7 @@ AFF A250をAFF A400にアップグレードするときにシステムクラス�
 
 . すべてのデータLIFをノード4に移行します。
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node4_ -destination-port _port_name_`
 
 . クラスタ内のすべてのデータLIFのステータスを表示します。
 +
@@ -86,7 +106,7 @@ AFF A250をAFF A400にアップグレードするときにシステムクラス�
 
 . LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+「network interface modify -vserver vserver_name __-lif LIF_name -status-admin up
 
 . クラスタ管理LIFを移行します。
 +
@@ -101,3 +121,6 @@ AFF A250をAFF A400にアップグレードするときにシステムクラス�
 `halt -node _node1_ -inhibit-takeover true -ignore-quorum-warnings true`
 
 
+
+.次の手順
+link:upgrade_convert_node1_drive_shelf_connect_node3.html["node1をドライブシェルフに変換し、node3に接続します"]

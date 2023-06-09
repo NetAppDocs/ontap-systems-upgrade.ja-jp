@@ -65,7 +65,7 @@ NOTE: 内蔵ストレージのシステムは次のとおりです：FAS2520、F
 
 追加の手順が必要になる場合があります
 
-* AFF A250からAFF A400にアップグレードする場合は、を参照してください xref:upgrade-aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします]。
+* AFF A250からAFF A400にアップグレードする場合は、を参照してください xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします]。
 * 新しいシステムのスロット数が元のシステムのスロット数より少ない場合、またはポートのタイプが異なる場合は、新しいシステムにアダプタを追加しなければならないことがあります。
 +
 https://hwu.netapp.com["NetApp Hardware Universe の略"^]

@@ -16,8 +16,17 @@ AFF A250 node2をドライブシェルフに変換する前に、node2の論理�
 .作業を開始する前に
 次の要件を満たしていることを確認します。
 
-* AFF A250コントローラとAFF A400コントローラには、同じONTAP リリースとパッチバージョンがインストールされています。
-* 両方のAFF A400コントローラがでスタンバイになっています `Maintenance Mode` プロンプト。
+* AFF A250コントローラとAFF A400コントローラでは、同じONTAPリリースおよびパッチバージョンが実行されます。
++
+[NOTE]
+====
+** 各AFF A400に、AFF A250で実行されているバージョンと同じバージョンのONTAPをネットブートしてインストールする必要があります。
+** 各AFF A400のプライマリブートイメージとバックアップブートイメージのONTAPバージョンが同じである必要があります。
+** AFF A400クラスタが以前に設定されていた場合は、を実行して残りのクラスタ構成をクリアする必要があります `wipeconfig` ブートメニューから選択します。
+
+
+====
+* 両方のAFF A400コントローラがLOADERプロンプトでスタンバイになっています。
 * 適切なケーブル配線をすべて用意しておきます。
 
 
@@ -25,9 +34,13 @@ AFF A250 node2をドライブシェルフに変換する前に、node2の論理�
 次の手順は、AFF A250 node1で実行します。
 
 .手順
-. クラスタフェイルオーバーの自動ギブバックを無効にします。
+. advanced 権限レベルに切り替えます。
 +
-`storage failover modify -node _node_name_ -auto-giveback false`
+「 advanced 」の権限が必要です
+
+. ストレージフェイルオーバーの自動ギブバックを無効にします。
++
+`storage failover modify -node _node1_ -auto-giveback false`
 
 . HAペアの両方のノードでLIFの自動リバートを無効にします。
 +
@@ -39,11 +52,11 @@ AFF A250 node2をドライブシェルフに変換する前に、node2の論理�
 
 . クラスタ管理LIFのステータスを表示します。
 +
-`network interface show cluster_mgmt`
+`network interface show -role cluster_mgmt`
 
 . ノード2でホストされているStorage Virtual MachineからすべてのデータLIFを移行します。
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node1_ -destination-port _port_name_`
 
 +
 
@@ -55,7 +68,7 @@ NOTE: このコマンドは、SAN以外のLIFのみを移行します。iSCSI LI
 
 . LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+「network interface modify -vserver vserver_name __-lif LIF_name -status-admin up
 
 . クラスタ内のすべてのデータアグリゲートのステータスを表示します。
 +
@@ -94,3 +107,6 @@ cluster ha modify -configured false
 `halt -node _node2_ -inhibit-takeover true -ignore-quorum-warnings true`
 
 
+
+.次の手順
+link:upgrade_convert_node2_drive_shelf_connect_node4.html["node2をドライブシェルフに変換し、node4に接続します"]

@@ -4447,16 +4447,11 @@
   <block id="c5915780f057e573017a845938fc8511" category="summary">ノード3を準備し、ノードノード3をノード4に接続してから、ノード4のデータLIFとデータアグリゲートをノード3に移行します。</block>
   <block id="14c081fe52465ec7ccf2f4a54191e82f" category="doc">ノード4のLIFとデータアグリゲートをノード3に移行します</block>
   <block id="05de3b37a54714d747bf2287c86b33a8" category="paragraph">アップグレードを完了するには、ノード3をノード4に接続し、ノード4のデータ論理インターフェイス（LIF）とデータアグリゲートをノード3に移行します。</block>
-  <block id="c1b64e6b2dac6bcfd0408bd4a24526c7" category="list-text">ノードのLOADERプロンプトで、ノードをブートメニューでブートします。</block>
   <block id="6e33572ac852586911bf2ae34e3f5811" category="list-text">オプションを選択します<block ref="1fbad292f1d0674d5769c555d41b2d77" prefix=" " category="inline-code"></block> をクリックして、/varファイルシステムをノード3にリストアします。</block>
   <block id="c6ea68faeb5eef782dd065f60bd53073" category="paragraph">これにより、オールフラッシュベースの構成がディスクへの最後のバックアップに置き換えられます。</block>
   <block id="3f9a85730e6aa38445beae1ddf78208c" category="list-text">ノードが通常どおりブートするのを待ちます。</block>
-  <block id="66c4a1c908a97d9c1eb0fa0ae04db414" category="paragraph">想定どおり、ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。</block>
   <block id="ed5222dac3009de0d14e22c21c0adf23" category="paragraph">システムIDが一致していないことを示す警告がノードから報告されます。入力するコマンド<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> システムIDを上書きします。</block>
   <block id="de6a33ef3a48198329f4a33ece58f132" category="list-text">ノード3をノード4に接続します。</block>
-  <block id="113caadcb5e0c32dc402e92ce0e397df" category="list-text">冗長性を確保するために、マルチパスハイアベイラビリティ（MPHA）ケーブルをNS224シェルフに接続します。</block>
-  <block id="9491a56ee04b6c96c003af35a2859c6a" category="list-text">HAペアのケーブル（別 々 のインターフェイスの場合）をノード間に接続します。</block>
-  <block id="d7882ec6d05b95c59c9195c7f3adbfdc" category="list-text">ノード間にクラスタケーブル（別 々 のインターフェイスの場合）を接続します。</block>
   <block id="a0b5ad751866a2018195aa595ae090ff" category="list-text">クラスタLIFを移行します。</block>
   <block id="050a7fd0d3c2ede3b69ba2432774511f" category="list-text">クラスタのブロードキャストドメインを変更して、必要なクラスタポートを追加します。</block>
   <block id="adb4b7912344d67d584552b9dd9ddc8f" category="paragraph"><block ref="6dc01498c5cd366c83995c4944d250b8" prefix="" category="inline-code"></block></block>
@@ -4464,13 +4459,9 @@
   <block id="b91d2190033f094261d455058cfe79e9" category="admonition">ONTAP 9.8以降では、クラスタ接続用の既存の物理ポートに新しいIPspaceと1つ以上のブロードキャストドメインを指定できます。</block>
   <block id="f2767cdcca3a202a2753e74e19d9ccc0" category="list-text">必要なクラスタポートが含まれるようにクラスタIPspaceを変更し、最大転送単位がまだ設定されていない場合は9000に設定します。</block>
   <block id="53fd9af6e06882afec866439335e5a77" category="list-text">すべてのクラスタネットワークLIFを表示します。</block>
-  <block id="49152dbe5fcec0c369a772568ba903c4" category="list-text">すべてのクラスタネットワークLIFをホームポートに移行します。</block>
   <block id="5237cceb9c8a1d87dddfba2c9daa3497" category="list-text">すべてのデータネットワークLIFを表示します。</block>
   <block id="0677a94596edc598cdc9d887ed969f0d" category="paragraph"><block ref="5d34967e2c3400a34ca823eae056de33" prefix="" category="inline-code"></block></block>
   <block id="29a8ddc29c73c85061146bccdbb07ae8" category="list-text">すべてのデータLIFをノード3に移行します。</block>
-  <block id="e141259d262902e06e74fb034cfa5db8" category="paragraph"><block ref="c06a7e4d4041165a2295fcfe659f0520" prefix="" category="inline-code"></block></block>
-  <block id="8a4223b997363d8fe0f1dc3f2be2c09e" category="paragraph">クラスタLIFと管理LIFはノード間で移行できません。停止しているLIFがある場合は、LIFの管理ステータスをに設定します<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> 次のコマンドをLIFごとに1回入力します。</block>
-  <block id="22fbac471f05451b14481d901b353112" category="paragraph"><block ref="b7fcd8f633208aafa7c1b0e80e3ca5dd" prefix="" category="inline-code"></block></block>
   <block id="251845cf9ac84826e8f6ab5a27d80c2c" category="list-text">クラスタ管理LIFを移行します。</block>
   <block id="03166631394b38903e8e2387f152ab40" category="paragraph"><block ref="72554b9e32d834ceecd34e642cec85e1" prefix="" category="inline-code"></block></block>
   <block id="22c144e9a19a414b679e74f1116a7d65" category="list-text">クラスタ管理LIFのステータスを表示します。</block>
@@ -4488,7 +4479,6 @@
   <block id="25eeae4605f08eb0ddb15cbc058a08f4" category="summary">ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します。</block>
   <block id="09fa2e71970bf35d303f7d5117c1ec08" category="doc">ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します</block>
   <block id="1fff09525a7ec19070144a8043bfac52" category="paragraph">AFF A250 node1をドライブシェルフに変換する前に、node1のデータアグリゲート、イプシロン、および論理インターフェイス（LIF）をAFF A400 node4に移行します。</block>
-  <block id="f72a391078e6a71defad1bb5a201ad96" category="list-text">ノードのLOADERプロンプトで、ノードをブートメニューでブートします。</block>
   <block id="4159d43758263f7e4d6f789a480f67ff" category="list-text">オプションを選択します<block ref="1fbad292f1d0674d5769c555d41b2d77" prefix=" " category="inline-code"></block> /varファイルシステムをnode4にリストアします。</block>
   <block id="f6029dd039c2f2751b5b3872ff225887" category="paragraph">ノードからシステムIDの不一致の警告が報告されました。入力するコマンド<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> システムIDを上書きします。</block>
   <block id="8f7942d995bbb58129abd3dace41a7f6" category="paragraph">AFF A250をAFF A400にアップグレードするときにシステムクラスタポートが異なる場合は、ノード4のインターフェイスを一時的にクラスタポートに変更しなければならないことがあります。</block>
@@ -4498,9 +4488,7 @@
   <block id="aef9222d1f4054aa30ba3e27d3e31db0" category="paragraph"><block ref="e8efde3213094177ae38d2e89dfa8513" prefix="" category="inline-code"></block></block>
   <block id="0f070b1aad2f1845775a0935d200ee5e" category="list-text">イプシロンを移行するには、ノード1からIFを削除し、ノード4に移動します。</block>
   <block id="6e18c14fb79ee607d655fcfd08d2d097" category="list-text">ノード1からイプシロンを削除します。</block>
-  <block id="b974b7c454888deb970f6f8527ea60e1" category="paragraph"><block ref="629a08e9700e6d747e177e7c2931f7e0" prefix="" category="inline-code"></block></block>
   <block id="ad9c87b3fd93a445b9b5b9101ac79c9d" category="list-text">イプシロンをノード4に移動します。</block>
-  <block id="51d735998d1b79a34407f57e1d7783a7" category="paragraph"><block ref="9c8a08cb77d8a658f0ba77cc2a9531f4" prefix="" category="inline-code"></block></block>
   <block id="f090faf8a1364b2c5c3344398469f725" category="list-text">すべてのデータLIFをノード4に移行します。</block>
   <block id="20dd08ce792e55622e246eb216113e38" category="list-text">クラスタ内のすべてのデータLIFのステータスを表示します。</block>
   <block id="8681536b6d1a0653fcb2346458c0f435" category="paragraph"><block ref="2001f06ab7fcd2e18cc3fae82e1bff0a" prefix="" category="inline-code"></block></block>
@@ -4513,8 +4501,6 @@
   <block id="f312852c2228fc5463b754cc0bc1100c" category="list-text">NVMeシェルフモジュール（NSM）をノード1のベイに挿入します。</block>
   <block id="edc57374a646e1dd11be34ef97db4a60" category="list-text">ノード3の100GbEポートe0cとNSM Aのポートe0aをケーブル接続して、NSMをノード3に接続します。</block>
   <block id="00f53ab497c778aca87b7babb758248e" category="image-alt">AFF A400とNS224シェルフ1台</block>
-  <block id="cee2bcaa5c5bc92df6198d0d807ff617" category="list-text">node1のポートe0cとe0dの25GbEケーブルを、node3の任意の2つの25GbEオンボードポート（e0e、e0f、e0g、またはe0h）に接続します。</block>
-  <block id="3751fadae61debeee03f49b1ce3d9b9d" category="admonition">25GbEオンボードポートがノード3にない場合は、25GbE PCIeアダプタを使用して接続できます。</block>
   <block id="9cfc5bc37e7e5bebc0da26c161922b94" category="doc">ドライブをノード1からノード3に再割り当てします</block>
   <block id="e519ebb23aa7a4b2837b111a1b7f6e37" category="paragraph">AFF A250 node1をNS224ドライブシェルフに変換してAFF A400 node3に接続したら、node1に属していたドライブをnode3に再割り当てする必要があります。</block>
   <block id="703ed6844ecb747111a93208ef26855d" category="list-text">LOADERプロンプトで、ノード3をメンテナンスモードでブートします。</block>
@@ -4525,16 +4511,12 @@
   <block id="8bdd1c70b3e50cc1b55e8a602553049d" category="paragraph"><block ref="78fbedccc73bd636c3e3fe9bd5d914b1" prefix="" category="inline-code"></block></block>
   <block id="9348afc40821f943f039141fbe06827e" category="list-text">100GbEインターフェイスのモードが変更されたことを確認します。</block>
   <block id="b634b70f41f02eed2102392209e4eba2" category="list-text">すべての接続ドライブを表示します。</block>
-  <block id="5a3c27543227c9225728fc79864c2e6b" category="list-text">ローカルシステムIDを記録します。</block>
   <block id="6425e7e0295d5f579c5a7518ecf877e7" category="list-text">すべてのドライブをノード1からノード3に再割り当てします。</block>
-  <block id="1a96e7461e6f16036bea36d35244a505" category="paragraph"><block ref="44bdfa7a7b169f56e20cfb7d6e9f4451" prefix="" category="inline-code"></block></block>
   <block id="7cc594bfd85b67196f32c1868f75ba5b" category="list-text">再割り当てしたすべてのドライブが新しいシステムIDで表示されることを確認します。</block>
-  <block id="8ae7a6323a6ab388ec465c3dc53ed0d4" category="paragraph"><block ref="498974f79bce1a50961fdd2135a9de01" prefix="" category="inline-code"></block></block>
   <block id="d8e70c9c2ae4a4c0cf7be5cd32cfa6d6" category="admonition">ドライブが表示されない場合は、*停止*し、テクニカルサポートにお問い合わせください。</block>
   <block id="b81d07712272425546299d94028eada1" category="list-text">メンテナンスモードを終了します。</block>
   <block id="0d9cedfc5d4329809a5596b4682832d3" category="admonition">内蔵ストレージのシステムは次のとおりです：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A150、AFF A200、AFF A220、 AFF A250、AFF A700s、AFF A800、AFF C190、AFF C250、 およびAFF C800。</block>
   <block id="6a3104dd603be761e5020da6f96a9944" category="inline-xref-macro">ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします</block>
-  <block id="2923945103bc9c8457bc8e1bd91f8462" category="list-text">AFF A250からAFF A400にアップグレードする場合は、を参照してください <block ref="e3a175280cdcc5ca4e2375e1b4099892" category="inline-xref-macro-rx"></block>。</block>
   <block id="15cef8c52a9390a0d7fe3fdbd4c153c8" category="summary">ストレージやクラスタスイッチを追加購入することなく、エントリレベルのNetApp AFF およびFAS システムに対してNDUを実行できます。</block>
   <block id="88123ea98247c1cbdb6aca7561de79a7" category="paragraph">NetApp AFF A250システムからAFF A400システムへの無停止アップグレードを実行するには、各AFF A250ノードをNS224ドライブシェルフに変換し、AFF A400の交換用ノードに接続します。</block>
   <block id="f023a71f63cfb01aeff4e5fe98a66467" category="paragraph">この手順 では、AFF A250ハイアベイラビリティ（HA）ペアコントローラの名前はノード1およびノード2、交換用AFF A400 HAペアコントローラの名前はノード3およびノード4です。</block>
@@ -4553,12 +4535,8 @@
   <block id="a5e24971e7f8bc950fa0e926bf40be01" category="summary">ノード2の論理インターフェイス（LIF）とデータアグリゲートをノード1に移行します。</block>
   <block id="45993060a44a5e6d17ba07cb1a841a66" category="paragraph">AFF A250 node2をドライブシェルフに変換する前に、node2の論理インターフェイス（LIF）とデータアグリゲートをnode1に移行します。</block>
   <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">次の要件を満たしていることを確認します。</block>
-  <block id="a481d37b4e1be8d55c3f9f05549eb344" category="list-text">AFF A250コントローラとAFF A400コントローラには、同じONTAP リリースとパッチバージョンがインストールされています。</block>
-  <block id="c0c747dabc59bf4ef271b7d983aeda02" category="list-text">両方のAFF A400コントローラがでスタンバイになっています<block ref="295c54be6a83de7aa3b31efc81ad2604" prefix=" " category="inline-code"></block> プロンプト。</block>
   <block id="0d44c7acdd1367079b91981b80442797" category="list-text">適切なケーブル配線をすべて用意しておきます。</block>
   <block id="8e9e1246932fe59d1bc52f76ee1575a1" category="paragraph">次の手順は、AFF A250 node1で実行します。</block>
-  <block id="98d05c8fa42d9a030f0f7cec3344a4e6" category="list-text">クラスタフェイルオーバーの自動ギブバックを無効にします。</block>
-  <block id="35754a1a2862a63e50c4ad8d5a95cec5" category="paragraph"><block ref="54843b75f8ce62eaa4167efe291f4360" prefix="" category="inline-code"></block></block>
   <block id="eac6f02df6a7e3c70219adde0a26c9c1" category="list-text">HAペアの両方のノードでLIFの自動リバートを無効にします。</block>
   <block id="4d71038ff6c6532bb7d82441384470f1" category="paragraph"><block ref="6579825e76cb92aa00ca8ad4f32bae01" prefix="" category="inline-code"></block></block>
   <block id="002e3e6384dcf90dc6e7967cba2ee6c7" category="list-text">すべてのデータネットワークLIFのステータスを表示します。</block>
@@ -4578,20 +4556,13 @@
   <block id="af881ada02a5ff45a792b5132b5dc590" category="list-text">ノード2をAFF A250シャーシから取り外します。</block>
   <block id="52885fceb67c760ddf25c2efb185c778" category="list-text">NVMeシェルフモジュール（NSM）をノード2のベイに挿入します。</block>
   <block id="bdbdd80897c0788773e2926936349dd7" category="list-text">ノード4の100GbEポートe0cとNSM Bのポートe0aをケーブル接続して、NSMをノード4に接続します。</block>
-  <block id="527ab3ebef33024bc87fa623b33eef97" category="list-text">node2のポートe0cとe0dの25GbEケーブルを、node4の任意の2つの25GbEオンボードポート（e0e、e0f、e0g、またはe0h）に接続します。</block>
-  <block id="165856f47552d3ec2e62dd8130dc4077" category="admonition">25GbEオンボードポートがノード4にない場合は、25GbE PCIeアダプタを使用して接続できます。</block>
-  <block id="5144d88318beae932bc266c9e9647d9c" category="list-text">AFF A400システムでオンボードポートとしてFCポートを使用している場合は、移行時にクラスタ接続用に各ノードに25Gbイーサネットアダプタを取り付けます。</block>
-  <block id="cd1ec608dfca5c3ad14f852da4327a91" category="list-text">ポートe0aとe0bを使用して、AFF A400ノード間のHAペアケーブルを接続します。</block>
-  <block id="82a48dbbe4b5f315035f687b5d8a6dec" category="list-text">ポートe3aとe3bを使用して、AFF A400ノードをクラスタケーブルで接続します。</block>
   <block id="27f43fb944a56ff83e6e461d944a7f41" category="admonition">内蔵ドライブを搭載したモデル：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF A150、AFF A200、AFF A220、 AFF A250、AFF A700s、AFF A800、AFF C190、AFF C250、 およびAFF C800。</block>
   <block id="83a06e5916453976ff0100cc86be2ff9" category="paragraph">AFF A250からAFF A400にアップグレードする場合は、を参照してください <block ref="16a60590ab4a03950f527e475b265368" category="inline-xref-macro-rx"></block>。</block>
   <block id="530f824f291c9dbf82563102e66eb4ee" category="summary">ノード2からノード4にドライブを再割り当てする前に、ノード2をノード4に物理的に接続します。</block>
   <block id="e90f638890adabd702a0e4a41624e1e7" category="paragraph">AFF A250 node2をNS224ドライブシェルフに変換してAFF A400 node4に接続したら、node2に属していたドライブをnode4に再割り当てする必要があります。</block>
-  <block id="5111f596a070ad565832003e81ded5cb" category="paragraph">ノード2とノード4の両方がLOADERプロンプトでスタンバイになっていることを確認します。</block>
   <block id="f451745de9dc10b2155ba09d2c6a86fa" category="paragraph">ノード4で次の手順を実行します。</block>
   <block id="3ff02d1b5db59825508b26f5c12d7855" category="list-text">LOADERプロンプトで、ノード4をメンテナンスモードでブートします。</block>
   <block id="493f827b1132078fbdd11bc0ceceed47" category="list-text">すべてのドライブをノード2からノード4に再割り当てします。</block>
-  <block id="c6de9e9749bb1b9764c879c3f4e55899" category="paragraph"><block ref="d3a7175de7ab1d1112d49ac67a531b10" prefix="" category="inline-code"></block></block>
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">ONTAP 9.7以前を実行しているコントローラでARLを手動でアップグレードする際に、OKMを使用して認証キーを管理します。</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">オンボードキーマネージャを使用してストレージ暗号化を管理します</block>
@@ -4600,4 +4571,56 @@
   <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">* 注： AutoSupport は、ストレージ・システムを初めて設定したときに、デフォルトで有効になっています。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。</block>
   <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 終了：<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> または<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
   <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">外部キー管理ツール</block>
+  <block id="acee5931a95d2a864a2cc97bd35f0778" category="list-text">node2のポートe0cおよびe0dの25GbEケーブルを、node4の任意の2つの25GbEオンボードポート（e0e、e0f、e0g、またはe0h）に接続して、一時的なクラスタ接続を作成します。</block>
+  <block id="fe6bc0e7261673653a6a606cad425d7a" category="admonition">AFF A400システムでオンボードポートとしてFCポートを使用している場合は、移行中にクラスタ接続用に各ノードに25Gbイーサネットアダプタを取り付けます。</block>
+  <block id="6a4be8cf9df45f4c45456ed242281e41" category="list-text">ポートe0aとe0bを使用して、AFF A400ノード間に25GbE HAインターコネクトケーブルを接続します。ポートをクロスコネクトしないでください。</block>
+  <block id="ef5c1b93d72b03ecb85a660acc0e158e" category="list-text">ポートe3aとe3bを使用して、AFF A400ノードを100GbEクラスタインターコネクトケーブルで接続します。ポートをクロスコネクトしないでください。</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">次の手順</block>
+  <block id="3c6ba9b5c38f48cb17c85b592674d539" category="paragraph"><block ref="3c6ba9b5c38f48cb17c85b592674d539" category="inline-link-macro-rx"></block></block>
+  <block id="80a4f774da4aad689d87e38d2ee37cec" category="list-text">ノード4のLOADERプロンプトで、ノードをブートメニューでブートします。</block>
+  <block id="d831a49d6e9a68e16b03819a4d93d5b3" category="paragraph">ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。</block>
+  <block id="02bee8118e509838b175dc6af02b1656" category="list-text">クラスタがクォーラムに参加するまで待ってから、クラスタノードが正常であることを確認します。</block>
+  <block id="997eb7bba8074ae0f85e4289780ffed3" category="paragraph"><block ref="e21dfdb513f3d169faabea3a7c3b4d2e" prefix="" category="inline-code"></block></block>
+  <block id="bda4a4c895c8daf31f2f07c2ea75784a" category="admonition">現在の状態では、HAペアとストレージフェイルオーバーは無効のままです。</block>
+  <block id="2527cc683b8d8a3f55c18b809cd0d993" category="list-text">クラスタLIFをノード4の一時的な25Gクラスタポートに移動します。</block>
+  <block id="453a6890d60e4080c71b10898159e292" category="paragraph"><block ref="141f671a5edc94f5cc9316f953bc9ffb" prefix="" category="inline-code"></block></block>
+  <block id="1cc0c4fb70ea4ef3078ace7cb874c670" category="list-text">アップグレードするAFF A250クラスタでインターフェイスグループとデータVLANが使用されている場合は、この手順を実行します。そうでない場合は、に進みます <block ref="4b16e82b249f06e8e1072980655988c8" category="inline-xref-macro-rx"></block>。</block>
+  <block id="f775e7a110c3b78dc0235ba28c368c60" category="paragraph">AFF A250システムとAFF A400システムでは、物理ネットワークポート名が異なります。そのため、ノード4でインターフェイスグループが正しく設定されておらず、VLANが削除される可能性があります。正しく設定されていないインターフェイスグループと削除されたVLANを確認し、必要に応じて修正します。</block>
+  <block id="33698ba306347fd90f01d626d1abfcca" category="paragraph"><block ref="2b1b294cd9d0ee2bd18dd6c40a96b6a5" prefix="" category="inline-code"></block></block>
+  <block id="2b393bdd35aaf14e4786dc05d3d2a2b0" category="paragraph"><block ref="ea2254c44ed515e6bbabb509521b400a" prefix="" category="inline-code"></block></block>
+  <block id="373757bd79d829efe6cd3e1b7bdc29b1" category="paragraph"><block ref="b95325036a6ab6591c8c62dc75aa0c07" prefix="" category="inline-code"></block></block>
+  <block id="e86b9bc23de1f214996444ef551bacb8" category="paragraph"><block ref="e86b9bc23de1f214996444ef551bacb8" category="inline-link-macro-rx"></block></block>
+  <block id="19d2be7671048f96b330174181b1de57" category="list-text">AFF A250コントローラとAFF A400コントローラでは、同じONTAPリリースおよびパッチバージョンが実行されます。</block>
+  <block id="683887c2109727babcb5b39c0d61e352" category="list-text">各AFF A400に、AFF A250で実行されているバージョンと同じバージョンのONTAPをネットブートしてインストールする必要があります。</block>
+  <block id="f9262bd265958425983bc808f732d39c" category="list-text">各AFF A400のプライマリブートイメージとバックアップブートイメージのONTAPバージョンが同じである必要があります。</block>
+  <block id="40b07a60976aa6fcd676d94878f5dad9" category="list-text">AFF A400クラスタが以前に設定されていた場合は、を実行して残りのクラスタ構成をクリアする必要があります<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> ブートメニューから選択します。</block>
+  <block id="97e64cb5ae1558cb0463a2970e98dc26" category="list-text">両方のAFF A400コントローラがLOADERプロンプトでスタンバイになっています。</block>
+  <block id="4698a416e17d630db63674e447dbfc5f" category="list-text">ストレージフェイルオーバーの自動ギブバックを無効にします。</block>
+  <block id="80095ad672599fa958afdcb8727dacc2" category="paragraph"><block ref="f1c9a22463f8c06461f1da10d7161697" prefix="" category="inline-code"></block></block>
+  <block id="60279cc87ea49c11eaa5d74c4e374034" category="paragraph"><block ref="566d3677c793a945309b816b922e48aa" prefix="" category="inline-code"></block></block>
+  <block id="82cbf9b2779c49bd3e1a89ee2b5f5469" category="paragraph"><block ref="d40c04d5127ca63517b9339e7b3bbe72" prefix="" category="inline-code"></block></block>
+  <block id="89f7cee20d9833c231c0e50fc41ce58d" category="paragraph"><block ref="89f7cee20d9833c231c0e50fc41ce58d" category="inline-link-macro-rx"></block></block>
+  <block id="054943dd272f07ebc51955439845e874" category="list-text">ノード1のポートe0cとe0dからノード3の任意の2つの25GbEオンボードポート（e0e、e0f、e0g、またはe0h）に25GbEケーブルを移動して、一時的なクラスタ接続をノード3に移動します。</block>
+  <block id="2fbb74e3e06daf149b588471e96a56a4" category="paragraph"><block ref="2fbb74e3e06daf149b588471e96a56a4" category="inline-link-macro-rx"></block></block>
+  <block id="a78b7f334ca640e546ff8a35039a2f6d" category="paragraph">次の例のような出力が表示されます。</block>
+  <block id="1a8aae2fd970a548f3432fc893e2e2a4" category="list-text">ローカルシステムIDの値を記録します（ノード3のシステムID）。また、「owner」列でノード1とノード2のシステムIDを記録します。</block>
+  <block id="5f4acfc7e9721dc380c9f455a2759335" category="paragraph"><block ref="569b55012f0c87971717dcbb7fe0ce6b" prefix="" category="inline-code"></block></block>
+  <block id="dac641b24757fdc949ee7247c4113ba1" category="paragraph"><block ref="afbb7843b974a758a0b43c8f36ebfe95" prefix="" category="inline-code"></block></block>
+  <block id="bfdfbe3df70ea3584435d9a8c7e7cd9c" category="paragraph"><block ref="bfdfbe3df70ea3584435d9a8c7e7cd9c" category="inline-link-macro-rx"></block></block>
+  <block id="d4475b94edb2d33fc8b6ba888ea6646a" category="paragraph">ノード3とノード4の両方でLOADERプロンプトがスタンバイになっていることを確認します。</block>
+  <block id="873758a76f1010f1137e7bd76f1cefbd" category="list-text">ローカルシステムIDの値を記録します。これはノード4のシステムIDです。また、「owner」列でノード1とノード2のシステムIDを記録します。</block>
+  <block id="c3e43ad38b28cdc94de3fd49e3347b93" category="paragraph"><block ref="991070c54d3d7b822feec6be9693fee8" prefix="" category="inline-code"></block></block>
+  <block id="b02db68cec23a51db526132de61ca05e" category="list-text">node2のルートアグリゲートがの出力に報告され、アグリゲートがオンラインになっていることを確認します。</block>
+  <block id="e2c52cb2e34e893afee819116adecafb" category="paragraph"><block ref="e2c52cb2e34e893afee819116adecafb" category="inline-link-macro-rx"></block></block>
+  <block id="0d852f04ea9e05e14f3341677cfe1ec3" category="list-text">ノード3のLOADERプロンプトで、ノードをブートメニューでブートします。</block>
+  <block id="8871153c553f28f590babbf4847f1774" category="list-text">冗長性を確保するために、マルチパスハイアベイラビリティ（MPHA）ケーブルをNS224シェルフに接続します。ノード3の100GbEポートe0dとNSM Bのポートe0bを接続し、ノード4の100GbEポートe0dとNSM Aのポートe0aを接続します。</block>
+  <block id="8582a774c20e728e955aa1abe472aef0" category="list-text">HAポートe0aとe0bがノード間で接続されていることを確認します。</block>
+  <block id="dba88c9d0ba00806556e1233e41bcf14" category="list-text">クラスタポートe3aとe3bがノード間で接続されていることを確認します。</block>
+  <block id="12ebe392929ef1bc96f493b7c71832c1" category="list-text">両方のノードのすべてのクラスタネットワークLIFをホームポートに移行します。</block>
+  <block id="8d590ee6ed5dff34f56afdb6a0802e90" category="list-text">クラスタネットワークLIFのホームポートを確認します。</block>
+  <block id="ac74cf8a52d92025e28cd87a3aa57fe5" category="paragraph"><block ref="2bbcd71ec298833035e8f3c13150e697" prefix="" category="inline-code"></block></block>
+  <block id="11945612fb52dde0264600b02ee87b76" category="list-text">すべてのデータLIFのホームノードとホームポートを設定します。停止しているLIFがある場合は、LIFの管理ステータスをに設定します<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> 次のコマンドをLIFごとに1回入力します。</block>
+  <block id="b2e9444b2e3d3f6bcd5b8053418d9f98" category="paragraph"><block ref="b04273b4623b1fb5400a1445280a00fc" prefix="" category="inline-code"></block></block>
+  <block id="9eaa084ea5e1fc23b5bd8f4e4b31ae16" category="list-text">ストレージフェイルオーバーの自動ギブバックを有効にします。</block>
+  <block id="452b3b4e54b69d07570137489de879c0" category="paragraph"><block ref="06113f79bc639d145a6e40cfdd6b4211" prefix="" category="inline-code"></block></block>
 </blocks>

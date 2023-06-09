@@ -14,7 +14,7 @@ summary: ノード3を準備し、ノードノード3をノード4に接続し�
 アップグレードを完了するには、ノード3をノード4に接続し、ノード4のデータ論理インターフェイス（LIF）とデータアグリゲートをノード3に移行します。
 
 .手順
-. ノードのLOADERプロンプトで、ノードをブートメニューでブートします。
+. ノード3のLOADERプロンプトで、ノードをブートメニューでブートします。
 +
 「 boot_ontap menu
 
@@ -27,16 +27,16 @@ summary: ノード3を準備し、ノードノード3をノード4に接続し�
 +
 [NOTE]
 ====
-想定どおり、ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。
+ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。
 
 システムIDが一致していないことを示す警告がノードから報告されます。入力するコマンド `y` システムIDを上書きします。
 
 ====
 . ノード3をノード4に接続します。
 +
-.. 冗長性を確保するために、マルチパスハイアベイラビリティ（MPHA）ケーブルをNS224シェルフに接続します。
-.. HAペアのケーブル（別 々 のインターフェイスの場合）をノード間に接続します。
-.. ノード間にクラスタケーブル（別 々 のインターフェイスの場合）を接続します。
+.. 冗長性を確保するために、マルチパスハイアベイラビリティ（MPHA）ケーブルをNS224シェルフに接続します。ノード3の100GbEポートe0dとNSM Bのポートe0bを接続し、ノード4の100GbEポートe0dとNSM Aのポートe0aを接続します。
+.. HAポートe0aとe0bがノード間で接続されていることを確認します。
+.. クラスタポートe3aとe3bがノード間で接続されていることを確認します。
 
 
 . クラスタLIFを移行します。
@@ -65,27 +65,29 @@ NOTE: ONTAP 9.8以降では、クラスタ接続用の既存の物理ポート�
 +
 「 network interface show -role cluster 」のように表示されます
 
-. すべてのクラスタネットワークLIFをホームポートに移行します。
+. 両方のノードのすべてのクラスタネットワークLIFをホームポートに移行します。
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+
+. すべてのクラスタネットワークLIFを表示します。
 +
 「 network interface show -role cluster 」のように表示されます
 
-. すべてのデータネットワークLIFを表示します。
+. クラスタネットワークLIFのホームポートを確認します。
 +
-`network interface show -role data`
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-port _port_name_`
 
 . すべてのデータLIFをノード3に移行します。
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
 
 . すべてのデータネットワークLIFを表示します。
 +
 `network interface show -role data`
 
+. すべてのデータLIFのホームノードとホームポートを設定します。停止しているLIFがある場合は、LIFの管理ステータスをに設定します `up` 次のコマンドをLIFごとに1回入力します。
 +
-クラスタLIFと管理LIFはノード間で移行できません。停止しているLIFがある場合は、LIFの管理ステータスをに設定します `up` 次のコマンドをLIFごとに1回入力します。
-
-+
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+`network interface modify -vserver _vserver_name_ -lif lif_name -home-node _node_name_ -home-port _port_name_ -status-admin up`
 
 . クラスタ管理LIFを移行します。
 +
@@ -114,6 +116,10 @@ cluster ha modify -configured true
 . ノード間でネットワークLIFの自動リバートを有効にします。
 +
 `network interface modify -lif * -auto-revert true`
+
+. ストレージフェイルオーバーの自動ギブバックを有効にします。
++
+`storage failover modify -node * -auto-giveback true`
 
 . クラスタのステータスを表示します。
 +

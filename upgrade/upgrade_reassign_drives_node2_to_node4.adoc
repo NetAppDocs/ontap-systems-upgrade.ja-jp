@@ -14,7 +14,7 @@ summary: ノード2からノード4にドライブを再割り当てする前に
 AFF A250 node2をNS224ドライブシェルフに変換してAFF A400 node4に接続したら、node2に属していたドライブをnode4に再割り当てする必要があります。
 
 .作業を開始する前に
-ノード2とノード4の両方がLOADERプロンプトでスタンバイになっていることを確認します。
+ノード3とノード4の両方でLOADERプロンプトがスタンバイになっていることを確認します。
 
 .このタスクについて
 ノード4で次の手順を実行します。
@@ -40,7 +40,7 @@ AFF A250 node2をNS224ドライブシェルフに変換してAFF A400 node4に�
 `storage port show`
 
 +
-次のような出力が表示されます。
+次の例のような出力が表示されます。
 
 +
 [listing]
@@ -59,16 +59,16 @@ Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added
 Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
 ---- ---- ------- ----------- -------- ------- -------
 e0c  ENET storage 100 Gb/s    enabled  online  30
-e0d  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
 ----
 . すべての接続ドライブを表示します。
 +
 「ディスクショー V 」
 
-. ローカルシステムIDを記録します。
+. ローカルシステムIDの値を記録します。これはノード4のシステムIDです。また、「owner」列でノード1とノード2のシステムIDを記録します。
 . すべてのドライブをノード2からノード4に再割り当てします。
 +
-`disk reassign -s _node2_ -d _node4_ -p _node1_`
+`disk reassign -s _node2_system_ID_ -d _node4_system_ID_ -p _node1_system_ID_`
 
 . 再割り当てしたすべてのドライブが新しいシステムIDで表示されることを確認します。
 +
@@ -78,8 +78,15 @@ e0d  ENET storage 100 Gb/s    enabled  online  30
 
 NOTE: ドライブが表示されない場合は、*停止*し、テクニカルサポートにお問い合わせください。
 
+. node2のルートアグリゲートがの出力に報告され、アグリゲートがオンラインになっていることを確認します。
++
+「 aggr status 」を入力します
+
 . メンテナンスモードを終了します。
 +
 「 halt 」
 
 
+
+.次の手順
+link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html["ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します"]

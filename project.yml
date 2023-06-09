@@ -23,6 +23,8 @@ homepage:
     links:
     - title: コントローラハードウェアをアップグレードします
       url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+    - title: ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします
+      url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
   - title: ONTAP 9.8 以降を実行しているシステムでアグリゲートを移動してアップグレードします
     links:
     - title: "「 system controller replace 」コマンドを使用します（ AFF A700 から AFF A900 ）。"
