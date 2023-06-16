@@ -31,7 +31,7 @@ VMware vStorage APIs for Array Integration （ VAAI ）でコピーオフロー�
  a| 
 特定の LIF
  a| 
-「network interface migrate -vserver vserver_name -lif_lif_name_-source-node-source_node_name __-destination-node-dest_node_name -destination-port_dest_port_name_destination-port_dest_port_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
 
 
 
