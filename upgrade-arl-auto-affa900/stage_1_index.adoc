@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/stage_1_index.html 
 keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
-summary: ONTAP 9.8 以降を実行しているコントローラで system controller replace コマンドを使用して、 ARL アップグレードのステージ 1 プロセスシーケンスを実行します。 
+summary: 'を使用したARLアップグレードのステージ1プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードする場合。' 
 ---
 = 概要
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで system contr
 
 
 [role="lead"]
-ステージ1で、AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードに適したハードウェアがあることを確認し、事前確認を実行して、必要に応じてアグリゲートの所有権を修正します。OKMを使用してストレージ暗号化を管理していて、SnapMirror関係を休止することができる場合は、特定の情報を記録する必要があります。
+ステージ1では、アップグレードに適したハードウェアがあることを確認し、事前確認を実行します。また、必要に応じてアグリゲートの所有権も適切です。オンボードキーマネージャを使用してストレージ暗号化を管理し、SnapMirror関係を休止できる場合は、特定の情報を記録しておく必要があります。
 
 .手順
 . link:verify_upgrade_hardware.html["アップグレードハードウェアを確認します"]

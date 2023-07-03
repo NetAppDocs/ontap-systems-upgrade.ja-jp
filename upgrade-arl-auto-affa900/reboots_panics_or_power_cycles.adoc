@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/reboots_panics_or_power_cycles.html 
 keywords: reboots, panics, power, cycles, node, crash 
-summary: AFF A700 を AFF A900 にアップグレードする際、システムがクラッシュする（リブート、パニック状態、電源再投入のいずれか）場合があります。 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合、さまざまな段階でシステムがクラッシュする（リブート、パニック、または電源再投入）ことがあります。 
 ---
 = リブート、パニック、電源再投入
 :hardbreaks:

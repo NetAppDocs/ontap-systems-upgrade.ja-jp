@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/retire_node2.html 
-keywords: retire, node2 
-summary: AFF A700 から AFF A900 へのアップグレード時に、 node2 をシャットダウンしてラックまたはシャーシから取り外します。 
+keywords: retire, node2, retiring, node 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ノード2をシャットダウンしてラックまたはシャーシから取り外します。 
 ---
 = ノード 2 を撤去
 :hardbreaks:

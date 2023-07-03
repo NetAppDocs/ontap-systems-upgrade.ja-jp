@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_failed_or_vetoed_aggr.html 
 keywords: relocate, failed, vetoed, aggregates, relocation, operation 
-summary: AFF A700 から AFF A900 へのアップグレード中に、障害が発生したアグリゲートの再配置または拒否されたアグリゲート。 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合に、障害が発生したアグリゲートまたは拒否されたアグリゲートを再配置します。 
 ---
 = 障害が発生したアグリゲートを再配置するか
 :hardbreaks:

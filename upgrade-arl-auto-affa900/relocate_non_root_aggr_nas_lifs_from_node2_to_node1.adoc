@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html 
-keywords: relocate, non-root, aggregates, nas, lif, node2, node1. aff, a900, NVRAM, controller 
-summary: AFF A700 から AFF A900 へのアップグレード中に、ノード 2 のルート以外のアグリゲートをノード 1 に再配置します。 
+keywords: relocate, non-root, aggregates, nas, lif, node2, node1, NVRAM, controller, module, modules 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ノード2のルート以外のアグリゲートをノード1に再配置します。 
 ---
 = ルート以外のアグリゲートと NAS データ LIF を node2 から node1 に再配置します
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: AFF A700 から AFF A900 へのアップグレード中に、ノード 
 
 
 [role="lead"]
-node2をAFF A900またはFAS9500コントローラモジュールとNVRAMモジュールに交換する前に、node2に所有されているルート以外のアグリゲートをnode1に再配置する必要があります。
+ノード2を交換用システムモジュールと交換する前に、ノード2が所有するルート以外のアグリゲートをノード1に再配置する必要があります。
 
 .作業を開始する前に
 前の段階で確認したあとに、 node2 のリソースリリースが自動的に開始されます。ルート以外のアグリゲートと SAN 以外のデータ LIF が node2 から新しい node1 に移行されます。
@@ -37,10 +37,10 @@ storage aggregate show -node node1 -state online -root false
 ----
 cluster::> storage aggregate show -node node1 state online -root false
 
-Aggregate     Size        Available   Used%   State	 #Vols	 Nodes	  RAID	   Status
+Aggregate     Size        Available   Used%   State	  #Vols	 Nodes	 RAID	  Status
 ----------    ---------   ---------   ------  -----   -----  ------  -------  ------
-aggr_1	      744.9GB      744.8GB	 0%	 online	  5	 node1	  raid_dp  normal
-aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
+aggr_1	      744.9GB     744.8GB	  0%	  online	  5	 node1   raid_dp  normal
+aggr_2	      825.0GB	  825.0GB	  0%	  online	  1	 node1   raid_dp  normal
 2 entries were displayed.
 ----
 +
@@ -62,7 +62,7 @@ volume show -node node1 -state offline`
 +
 このコマンドで使用する'_vserver-name_'は'前のvolume showコマンドの出力にあります
 
-. LIF が正しいポートに移動され、ステータスが「 up 」になっていることを確認します。LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを up に設定します。
+. LIF が正しいポートに移動され、ステータスが「 up 」になっていることを確認します。LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
 「network interface modify -vserver _vserver_name __ lif_lif_name_-home-nodename_-status-admin up
 

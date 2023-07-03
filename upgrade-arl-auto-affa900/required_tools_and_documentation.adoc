@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/required_tools_and_documentation.html 
 keywords: required, tools, documentation, install, worksheet, ontap 
-summary: AFF A700 から AFF A900 へのアップグレードを実行するには、特定のツールとドキュメントが必要です。 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードするには、特定のツールとドキュメントが必要です。 
 ---
 = 必要な工具とドキュメント
 :hardbreaks:

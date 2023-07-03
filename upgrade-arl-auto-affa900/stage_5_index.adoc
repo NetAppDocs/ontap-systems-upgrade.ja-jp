@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/stage_5_index.html 
-keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
-summary: ONTAP 9.8 以降を実行しているコントローラで system controller replace コマンドを使用して、 ARL アップグレードのステージ 1 プロセスシーケンスを実行します。 
+keywords: upgrade, install, netboot, node2, overview, stage 1 
+summary: 'を使用したARLアップグレードのステージ1プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
 = 概要
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: ONTAP 9.8 以降を実行しているコントローラで system contr
 
 
 [role="lead"]
-ステージ5で、アップグレードしたnode2に提供された新しいNVRAMとコントローラモジュールを取り付け、さらにnode2をネットブートします。
+ステージ5では、アップグレードしたノード2用に受け取った新しいシステムモジュールをインストールし、次にノード2をネットブートします。
 
 .手順
-. link:install_a900_nvs_and_controller_on_node2.html["AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします"]
+. link:install_replacement_system_modules_on_node2.html["交換用システムモジュールをノード2に取り付けます"]
 . link:netboot_node2.html["ネットブート node2"]
 

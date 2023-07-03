@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html 
 keywords: restore key-manager, configuration, node1, nve, arl, volume, encryption 
-summary: 必要に応じて、 AFF A700 から AFF A900 へのアップグレード時に、アップグレードした node1 でキー管理ツールの設定をリストアします。 
+summary: ARLを使用して同じシャーシのコントローラモデルをアップグレードする場合は、必要に応じてアップグレード後のnode1でキー管理ツールの設定をリストアします。 
 ---
 = アップグレードした node1 でキー管理ツールの設定をリストアします
 :hardbreaks:

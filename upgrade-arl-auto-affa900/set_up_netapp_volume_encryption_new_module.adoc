@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html 
 keywords: set up, netapp volume encryption, controller, module, nve, node 
-summary: 必要に応じて、AFF A700からAFF A900へのアップグレード時に、NVEまたはNAE用に新しいコントローラモジュールを設定します。」 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合に、必要に応じてNVEまたはNAE用に新しいコントローラモジュールを設定します。」 
 ---
 = 新しいコントローラモジュールでNetApp VolumeまたはAggregate Encryptionをセットアップします
 :hardbreaks:
@@ -23,7 +23,7 @@ summary: 必要に応じて、AFF A700からAFF A900へのアップグレード�
 ====
 .オンボードキーマネージャ
 --
-*オンボードキーマネージャ*を使用してNVEまたはNAEを設定します
+オンボードキーマネージャを使用してNVEまたはNAEを設定します。
 
 .手順
 . リンクされたすべてのキー管理サーバから新しいノードに認証キーをリストアします。
@@ -35,7 +35,7 @@ summary: 必要に応じて、AFF A700からAFF A900へのアップグレード�
 --
 .外部キー管理
 --
-*外部キー管理*を使用してNVEまたはNAEを設定します
+外部キー管理を使用してNVEまたはNAEを設定します。
 
 .手順
 . キー管理サーバがまだ使用可能であり、ステータスと認証キー情報が正しいことを確認します。

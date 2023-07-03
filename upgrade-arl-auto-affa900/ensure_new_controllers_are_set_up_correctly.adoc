@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html 
 keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability 
-summary: HA ペアが有効になっていることを確認し、ノード 1 とノード 2 のストレージアクセスと LIF を確認し、 AFF A700 を AFF A900 にアップグレードしたあとにアグリゲートの所有権を確認します。 
+summary: HAペアが有効になっていることを確認し、ノード1とノード2のストレージアクセスとLIFを確認し、同じシャーシ内のコントローラモデルをアップグレードしたあとにアグリゲートの所有権を確認します。 
 ---
 = 新しいコントローラが正しくセットアップされていることを確認します
 :hardbreaks:
@@ -29,11 +29,11 @@ summary: HA ペアが有効になっていることを確認し、ノード 1 �
 [listing]
 ----
 cluster::> storage failover show
-                                Takeover
-Node	         Partner	        Possible	      State Description
--------------  --------------   --------------  ------------------
-node1	         node2            true	           Connected to node2
-node2	         node1            true	           Connected to node1
+                          Takeover
+Node	    Partner       Possible      State Description
+----------  -----------   ------------  ------------------
+node1	    node2         true	        Connected to node2
+node2	    node1         true	        Connected to node1
 ----
 . 次のコマンドを使用して出力を調べ、 node1 と node2 が同じクラスタに属していることを確認します。
 +
@@ -122,7 +122,7 @@ Do you want to continue? {y|n}: y
 +
 でキャプチャした出力と比較できます link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] セクション。
 
-. [[unset_maxwait]]構成で自己暗号化ドライブを使用している場合は、を設定します `kmip.init.maxwait` 変数をに設定します `off` （たとえば、AFF A900またはFAS9500コントローラとNVRAMモジュールでのIn_Boot node2など）、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["手順 1."]）を使用している場合は、次のように変数を設定解除
+. [[unset_maxwait]]構成で自己暗号化ドライブを使用している場合は、を設定します `kmip.init.maxwait` 変数をに設定します `off` （例：In_Boot node2と交換用システムモジュール_、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["手順 1."]）を使用している場合は、次のように変数を設定解除
 +
 `set diag; systemshell -node-node_name --コマンドsudo kenv -u -p kmip.init.maxwait`
 

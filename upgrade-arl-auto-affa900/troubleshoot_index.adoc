@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/troubleshoot_index.html 
-keywords: troubleshooting, node, aggregate, lif, migrate, failure 
-summary: AFF A700 から AFF A900 へのアップグレード中に発生する可能性のある障害のトラブルシューティング。 
+keywords: troubleshooting, troublehsoot, node, aggregate, lif, migrate, failure 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする際に発生する可能性がある障害をトラブルシューティングします。 
 ---
 = トラブルシューティングを行う
 :hardbreaks:

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/stage_2_index.html 
-keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
-summary: ONTAP 9.8 以降を実行しているコントローラ上で system controller replace コマンドを使用して、 ARL アップグレードのステージ 2 プロセスシーケンスを実行します。 
+keywords: upgrade, relocate, retire, replace, netboot, overview, stage 2 
+summary: 'を使用したARLアップグレードのステージ2プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
 = 概要
 :hardbreaks:
@@ -14,11 +14,12 @@ summary: ONTAP 9.8 以降を実行しているコントローラ上で system co
 
 
 [role="lead"]
-ステージ2で、ノード1の非ルートアグリゲートとNASデータLIFをノード2に再配置します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。必要に応じて、障害が発生したアグリゲートまたは拒否されたアグリゲートを再手順 であとから使用するためにノード1の情報を記録しておき、対応するノード1のコントローラとNVRAMモジュールを交換し、ノード1を廃棄して、アップグレードしたノード1をネットブートする必要があります。
+ステージ2で、ノード1の非ルートアグリゲートとNASデータLIFをノード2に再配置します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。必要に応じて、障害が発生したアグリゲートまたは拒否されたアグリゲートを再あとで手順で使用できるようにノード1の情報を記録してから、対応するノード1のシステムモジュールを交換し、ノード1を撤去して、アップグレードしたノード1をネットブートする必要があります。
 
 .手順
 . link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"]
 . link:relocate_failed_or_vetoed_aggr.html["障害が発生したアグリゲートを再配置するか"]
 . link:retire_node1.html["ノード 1 を撤去"]
-. link:netboot_node1.html["ネットブート"]
+. link:replace_node1_system_modules.html["ノード1のシステムモジュールを交換します"]
+. link:netboot_node1.html["ネットブート node1"]
 

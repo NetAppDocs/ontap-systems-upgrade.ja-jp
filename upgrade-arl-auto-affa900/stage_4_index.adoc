@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/stage_4_index.html 
-keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
-summary: ONTAP 9.8 以降を実行しているコントローラで system controller replace コマンドを使用して、 ARL アップグレードのステージ 1 プロセスシーケンスを実行します。 
+keywords: upgrade, relocate, retire, overview, stage 4 
+summary: 'を使用したARLアップグレードのステージ1プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
 = 概要
 :hardbreaks:

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/netboot_node1.html 
-keywords: preparing, netboot, ontap, node1, aff, a900 
-summary: 対応する AFF A900 ノード 1 のコントローラモジュールと NVRAM モジュールをスワップしたら、ノード 1 をネットブートする必要があります。 
+keywords: preparing, prepare, netboot, ontap, node1 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、対応する交換用システムモジュールの交換後にノード1をネットブートする必要があります。 
 ---
 = ネットブート node1
 :hardbreaks:
@@ -14,12 +14,13 @@ summary: 対応する AFF A900 ノード 1 のコントローラモジュール�
 
 
 [role="lead"]
-対応するAFF A900またはFAS9500 node1のコントローラモジュールとNVRAMモジュールを交換したら、ノード1をネットブートする必要があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを追加する必要があります。
+対応する交換用システムモジュールを交換したら、node1をネットブートする必要があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを追加する必要があります。
 
-AFF A900またはFAS9500コントローラモジュールのブートメディアにインストールされているONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900またはFAS9500ブートメディア上のONTAP バージョンは、アップグレードするAFF A700またはFAS9000システムで実行されているONTAP バージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。
+交換用コントローラモジュールのブートメディアに取り付けられているONTAPのバージョンは、シャーシに取り付けられて電源がオンになっていないかぎり確認できません。交換用システムのブートメディアにあるONTAPのバージョンがアップグレードする古いシステムで実行されているONTAPのバージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。アップグレードでサポートされているONTAPの最小バージョンを確認するには、を参照してください link:index.html["概要"]。
 
+イメージを設定するには、ネットブートのあとにを実行します `wipeconfig` コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、 `wipeconfig` コマンドは、ブートメディア上の残りの設定を消去します。
 
-NOTE: また、 USB ブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["システムの初期セットアップのためにONTAP をインストールするためにboot_recovery loaderコマンドを使用する方法"^]。
+また、 USB ブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["システムの初期セットアップのためにONTAP をインストールするためにboot_recovery loaderコマンドを使用する方法"^]。
 
 .作業を開始する前に
 * システムから HTTP サーバにアクセスできることを確認します。

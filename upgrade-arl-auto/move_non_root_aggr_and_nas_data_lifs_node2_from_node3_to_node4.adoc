@@ -131,7 +131,7 @@ NOTE: リンク速度が元のポートと同じポートに SAN LIF を移動�
 +
 'network interface show -home-node <node4 > -role data
 
-.. LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを up に設定します。
+.. LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
 「network interface modify -vserver vserver_name __-lif LIF_name -status-admin up
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
-summary: AFF A700からAFF A900へのアップグレード時に、node2のnode1 NASデータLIFがnode2からnode1に再配置されていることを確認します。 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合、ノード2のノード1のNASデータLIFがノード2からノード1に再配置されたことを確認します。 
 ---
 = ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF を node2 からアップグレードした node1 に移動します
 :hardbreaks:
@@ -42,7 +42,7 @@ summary: AFF A700からAFF A900へのアップグレード時に、node2のnode1
 
 . ネットワーク到達可能性チェックを実行します。
 +
-network port reachable-show-detail-node node1
+network port reachability show -node node1
 
 +
 インターフェイスグループポートおよび VLAN ポートを含むすべての接続ポートのステータスが「 OK 」であることを確認します。

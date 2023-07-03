@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/lif_migration_failure.html 
 keywords: lif, migration, failure, mtu 
-summary: AFF A700 から AFF A900 へのアップグレード時に、ステージ 2 、ステージ 3 、またはステージ 5 で LIF がオンラインにならない。 
+summary: 第2段階、第3段階、または第5段階でARLを使用して同じシャーシ内のコントローラモデルをアップグレードすると、移行後にLIFがオンラインにならない。 
 ---
 = LIF の移行が失敗しました
 :hardbreaks:

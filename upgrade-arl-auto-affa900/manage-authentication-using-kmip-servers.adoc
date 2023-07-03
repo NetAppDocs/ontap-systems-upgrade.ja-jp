@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html 
 keywords: storage, encryption, authentication, key, manager, external 
-summary: ストレージ暗号化の設定と管理、認証キーの管理、および AFF A700 から AFF A900 へのアップグレード時の SnapMirror 関係の休止 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ストレージ暗号化の設定と管理、認証キーの管理、SnapMirror関係の休止が行われます。 
 ---
 = KMIP サーバを使用して認証を管理します
 :hardbreaks:

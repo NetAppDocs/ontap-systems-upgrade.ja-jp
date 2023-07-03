@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/verify_node2_installation.html 
-keywords: verifying, verify, node, install, installation, aff, a900, NVRAM, controller 
-summary: AFF A900 コントローラモジュールと NVRAM モジュールを使用して、 node2 のインストールを確認します。 
+keywords: verifying, verify, node, install, installation, NVRAM, controller, module, modules 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ノード2のインストールと交換用モジュールを確認します。 
 ---
 = node2 のインストールを確認します
 :hardbreaks:
@@ -14,10 +14,10 @@ summary: AFF A900 コントローラモジュールと NVRAM モジュールを�
 
 
 [role="lead"]
-AFF A900またはFAS9500コントローラとNVRAMモジュールで、node2のインストールを確認する必要があります。物理ポートは変更されないため、古いnode2の物理ポートを交換するnode2にマッピングする必要はありません。
+ノード2のインストールと交換用システムモジュールを確認する必要があります。物理ポートは変更されないため、古いnode2の物理ポートを交換するnode2にマッピングする必要はありません。
 
 .このタスクについて
-AFF A900またはFAS9500コントローラモジュールでnode1をブートしたあと、正しくインストールされていることを確認する必要があります。node2 がクォーラムに参加するまで待ってから、コントローラの交換処理を再開する必要があります。
+交換用システムモジュールでノード1をブートしたら、正しく取り付けられていることを確認する必要があります。node2 がクォーラムに参加するまで待ってから、コントローラの交換処理を再開する必要があります。
 
 手順のこの時点で、 node2 がクォーラムに参加する間、処理が一時停止します。
 

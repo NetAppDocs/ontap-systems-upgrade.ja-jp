@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/set_up_storage_encryption_new_module.html 
 keywords: set up storage, encryption, controller, module, node 
-summary: 必要に応じて、ストレージ暗号化を設定し、 SSL 証明書をインストールし、 AFF A700 から AFF A900 へのアップグレード時にキー管理サーバをセットアップします。 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、必要に応じてストレージ暗号化を設定し、SSL証明書をインストールし、キー管理サーバをセットアップします。 
 ---
 = 新しいコントローラモジュールで Storage Encryption をセットアップします
 :hardbreaks:

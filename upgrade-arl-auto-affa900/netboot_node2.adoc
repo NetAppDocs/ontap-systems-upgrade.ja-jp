@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/netboot_node2.html 
-keywords: preparing, netboot, ontap, aff, a900, node2 
-summary: 対応する AFF A900 node2 コントローラモジュールと NVRAM モジュールをスワップしたら、ネットブートが必要になることがあります。 
+keywords: preparing, prepare, netboot, ontap, node2 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、対応する交換用ノード2システムモジュールを交換したあとに、それらのモジュールをネットブートする必要があります。 
 ---
 = ネットブート node2
 :hardbreaks:
@@ -14,12 +14,11 @@ summary: 対応する AFF A900 node2 コントローラモジュールと NVRAM 
 
 
 [role="lead"]
-対応するAFF A900またはFAS9500 node2のコントローラモジュールとNVRAMを交換したあと、モジュールでネットブートが必要になることがあります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。
+対応する交換用ノード2のシステムモジュールを交換したあと、モジュールのネットブートが必要になる場合があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備を行うときは、システムがアクセスできる Web サーバに、 ONTAP 9 ブート・イメージのコピーを配置する必要があります。
 
-AFF A900またはFAS9500コントローラモジュールのブートメディアにインストールされているONTAP のバージョンは、シャーシに取り付けて電源がオンになっていないかぎり確認できません。AFF A900またはFAS9500ブートメディア上のONTAP バージョンは、アップグレードするAFF A700またはFAS9000システム上で実行されているONTAP バージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してからブートメニューの「 wipeconfig 」コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、「 wipeconfig 」コマンドはブートメディア上の残留設定をクリアします。
+交換用コントローラモジュールのブートメディアに取り付けられているONTAPのバージョンは、シャーシに取り付けられて電源がオンになっていないかぎり確認できません。交換用システムのブートメディアにあるONTAPのバージョンは、アップグレードする古いシステムで実行されているONTAPのバージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートのあとにを実行します `wipeconfig` コマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合は、 `wipeconfig` コマンドは、ブートメディア上の残りの設定を消去します。
 
-
-NOTE: また、 USB ブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["システムの初期セットアップのためにONTAP をインストールするためにboot_recovery loaderコマンドを使用する方法"^]。
+また、 USB ブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["システムの初期セットアップのためにONTAP をインストールするためにboot_recovery loaderコマンドを使用する方法"^]。
 
 .作業を開始する前に
 * システムから HTTP サーバにアクセスできることを確認します。
@@ -70,7 +69,7 @@ netboot\http://web_server_ip/path_to_web_accessible_directory/netboot/kernel`
 
 NOTE: トランクを中断しないでください。
 
-. 次の出力に示すように、AFF A900またはFAS9500コントローラモジュールで実行されているnode2がブートするまで待ち、ブートメニューのオプションを表示します。
+. 交換用コントローラモジュールでnode2がブートし、ブートメニューオプションが表示されるまで待ちます（次の出力を参照）。
 +
 [listing]
 ----
@@ -170,7 +169,7 @@ Controller HA configuration: ha
 +
 node2 で LOADER プロンプトが停止します。
 
-. node2 で、システムの日付、時刻、およびタイムゾーンを確認します。
+. ノード1で、システムの日付、時刻、およびタイムゾーンを確認します。
 +
 「食事」
 
@@ -203,7 +202,7 @@ NOTE: node2 で対応する UTC 時間を設定します。
 setENV partner-sysid_node1_sysid_`
 
 +
-node2の場合、 `partner-sysid` AFF A900またはFAS9500にアップグレードするノード1のノードでなければなりません。
+node2の場合、 `partner-sysid` アップグレードするノード1のノード1である必要があります。
 
 +
 .. 設定を保存します。

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html 
-keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability, aff, a700, a900 
-summary: ARL 手順 を使用して AFF A700 を AFF A900 にアップグレードするかどうかを決定します。 
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
+summary: 同じシャーシ内のコントローラモデルをアップグレードするARL手順を使用するかどうかを決定します。 
 ---
 = アグリゲートの再配置手順を使用するかどうかを決定します
 :hardbreaks:
@@ -14,12 +14,36 @@ summary: ARL 手順 を使用して AFF A700 を AFF A900 にアップグレー�
 
 
 [role="lead"]
-このコンテンツでは、AFF A700 HAペアのストレージコントローラを、新しいAFF A900コントローラまたはFAS9000 HAペアのコントローラと新しいFAS9500コントローラとの間でアップグレードする方法について説明します。既存のデータとディスクはすべて維持されます。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
+このコンテンツでは、既存のデータとディスクをすべて残したまま、HAペアのストレージコントローラをアップグレードする方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
 
 この手順 は、次の状況で使用します。
 
-* AFF A900またはFAS9500コントローラ、NVRAMモジュール、およびアップグレードに必要な部品を受け取ったことを、ネットアップの営業担当者に確認しておきます。
-* ONTAP 9.10.1P10、9.11.1P6、またはそれ以降のリリースを実行している。
+* 次のいずれかのコントローラのアップグレードを実行している。
++
+[cols="50,50"]
+|===
+| 古いコントローラ | 交換用コントローラ 
+
+
+| AFF A220、AFF A200、またはAFF C190 | AFF A150 
+
+
+| FAS2620またはFAS2720 | FAS2820 
+
+
+| AFF A700の略 | AFF A900 の略 
+
+
+| FAS9000 | FAS9500 
+|===
+* NetAppの営業担当者に、コントローラアップグレード用のハードウェアが届いていることを確認しておきます。
++
+** AFF A150コントローラ
+** FAS2820コントローラ
+** AFF A900またはFAS9500コントローラモジュールとNVRAMモジュール、およびアップグレードに必要なパーツ。
+
+
+* アップグレードに必要な最小ONTAPバージョンを実行している。詳細については、を参照してください link:index.html["概要"]。
 * 新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。
 * ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。
 
@@ -30,7 +54,7 @@ Do * not * この手順 は、次の状況で使用します。
 * クラスタインターコネクトストレージとイーサネット接続ストレージに共有スイッチを使用している。
 
 
-Fabric MetroCluster または MetroCluster IP 設定のアップグレードについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび Expansion コンテンツにリンクするには、次の手順を実行します。
+AFF A700またはFAS9000システムでのFabric MetroClusterまたはMetroCluster IP構成のアップグレードについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび Expansion コンテンツにリンクするには、次の手順を実行します。
 
 
 NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html 
-keywords: boot, NVRAM, controller, module, node2, aff, a700, a900 
-summary: AFF A900 コントローラモジュールと NVRAM モジュールで node2 をブートします。 
+keywords: boot, NVRAM, controller, module, node2, replacement 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、交換用コントローラモジュールでノード2をブートします。 
 ---
-= AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートします
+= 交換用システムモジュールでノード2をブートします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,8 +14,27 @@ summary: AFF A900 コントローラモジュールと NVRAM モジュールで 
 
 
 [role="lead"]
-AFF A900またはFAS9500コントローラとNVRAMモジュールで構成されたnode2が、アップグレード可能な状態になりました。AFF A700からAFF A900またはFAS9000からFAS9500へのアップグレードでは、コントローラとNVRAMモジュールをスワップすると、コンソール接続と管理接続のみが移動します。ここでは、AFF A900またはFAS9500コントローラとNVRAMモジュールでnode2をブートするために必要な手順を示します。
+これで、交換用モジュールを含むノード2をブートする準備が完了しました。システムモジュールの交換によるアップグレードでは、コンソール接続と管理接続のみが移行されます。このセクションでは、次のアップグレード構成の場合に、交換用モジュールでnode2をブートするために必要な手順を示します。
 
+[cols="35,65"]
+|===
+| 古いノード2コントローラ | 交換用ノード2のシステムモジュール 
+
+
+| AFF A220の略
+AFF A200
+AFF C190の略 | AFF A150コントローラモジュール 
+
+
+| FAS2620
+FAS2720 | FAS2820コントローラモジュール 
+
+
+| AFF A700の略 | AFF A900コントローラおよびNVRAMモジュール 
+
+
+| FAS9000 | FAS9500コントローラおよびNVRAMモジュール 
+|===
 .手順
 . [boot_node2_step1]] NetApp Storage Encryption（NSE）ドライブがインストールされている場合は、次の手順を実行します。
 +
@@ -51,7 +70,7 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 +
 「 boot_ontap menu
 
-. ブートメニューでノードが停止したら、「22/7」と入力し、非表示オプション「boot_after_controller_replacement」を選択して、AFF A700 node2ディスクをAFF A900 node2に再割り当てします。
+. 「22/7」と入力して隠しオプションを選択し、古いノード2のディスクを交換用ノード2に再割り当てします `boot_after_controller_replacement` ノードがブートメニューで停止したとき。
 +
 少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。
 
