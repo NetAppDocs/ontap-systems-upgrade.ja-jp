@@ -106,7 +106,7 @@ summary: ONTAP 9.5 を実行するコントローラのアップグレードを�
 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP をアップグレードします"^] | ONTAP のダウンロードとアップグレードの手順については、を参照してください 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"^] | 古いシステムシャーシとディスクを残したままシステムを無停止でアップグレードするために必要なアグリゲートの再配置手順について説明します。 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"^] | 古いシステムシャーシとディスクをそのまま使用して、システムを無停止でアップグレードするために必要なアグリゲートの再配置手順について説明します。 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"^] | ONTAP 9.8 を実行するコントローラを、 system controller replace コマンドを使用して無停止でアップグレードする場合に必要なアグリゲートの再配置手順について説明します。 

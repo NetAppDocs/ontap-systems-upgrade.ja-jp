@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/stage_6_index.html 
 keywords: upgrade, boot, node2, verify, restore, overview, stage 1 
-summary: 'を使用したARLアップグレードのステージ1プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
+summary: 'を使用したARLアップグレードのステージ6プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
 = 概要
 :hardbreaks:

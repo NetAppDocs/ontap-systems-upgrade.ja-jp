@@ -4,13 +4,25 @@ sidebar: sidebar
 keywords: create, aggregate, node, store, volume, original, node, identify, aggregate, individually, create an aggregate and moving volumes to the new nodes 
 summary: 元のノードから移動するボリュームを格納するために、新しい各ノードに少なくとも 1 つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。 
 ---
-= アグリゲートを作成してボリュームを新しいノードに移動
+= アグリゲートの作成とボリュームの移動
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+ONTAPソフトウェアのアップグレード時に、新しいノードにアグリゲートを作成し、ボリュームを移動することでデータを移行します。
+
+ストレージ構成にSANボリュームまたは暗号化されたボリュームが含まれている場合は、これらのボリュームも移動する必要があります。
+
+* <<move_san_vols,SANボリュームを移動します>>
+* <<暗号化が有効なボリュームを移動します>>
+
+
+
+
+== アグリゲートを作成してボリュームを新しいノードに移動
+
 元のノードから移動するボリュームを格納するために、新しい各ノードに少なくとも 1 つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。
 
 .作業を開始する前に
@@ -18,12 +30,15 @@ summary: 元のノードから移動するボリュームを格納するため�
 
 https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["必要なデータ保護手順を探します"^]。
 
+
+NOTE: NetAppでは、Storage Virtual Machine（SVM）ごとに、ルートボリュームを移動する前にクラスタ内のルート以外のすべてのボリュームを移動し、この手順を一度に1つのSVMで実行することを推奨しています。
+
 .手順
 . 新しいノードごとに少なくとも 1 つのアグリゲートを作成します。
 +
-「 storage aggregate create -aggregate aggr_name -node new_node_name -diskcount integer 」という形式で指定します
+`storage aggregate create -aggregate _aggr_name_ -node _new_node_name_ -diskcount integer`
 
-. 新しいアグリゲートを、ボリュームを移動する元のノードのアグリゲートと同じ SVM に追加します。
+. ボリュームの移動元のノードのアグリゲートと同じStorage Virtual Machine（SVM）に新しいアグリゲートを追加します。
 +
 「 vserver add-aggregates 」
 
@@ -36,7 +51,7 @@ vserver show -vserversvm_name'
 
 . 元のノードから新しいノードに移動するボリュームの情報を表示します。
 +
-volume show -vserver svm_name -node original_node_name
+`volume show -vserver _svm_name_ -node _original_node_name_`
 
 +
 あとで参照できるように、コマンドの出力は残しておく必要があります。
@@ -57,7 +72,7 @@ vs1       vs1root      aggr1        online     RW         20MB    18.88MB    5%
 ----
 . 指定したボリュームを移動可能なアグリゲートを特定します。
 +
-volume move target-aggr show -vserver SVM_name -volume vol_name `
+`volume move target-aggr show -vserver _svm_name_ -volume _vol_name_`
 
 +
 次の例は、「 vs2 」 SVM の「 user_max 」ボリュームを、表示されているどのアグリゲートにも移動できることを示しています。
@@ -77,28 +92,40 @@ node12a_aggr4    10.36GB         FCAL
 ----
 . 移動する各ボリュームで検証チェックを実行し、指定したアグリゲートに移動できることを確認します。
 +
-volume move start -vserver svm_name -volume volume_name -destination -aggregate destination_aggregate-name -perform-validation-only true ’
+`volume move start -vserver _svm_name_ -volume _volume_name_ -destination-aggregate _destination_aggregate_name_ -perform-validation-only true`
 
 . ボリュームを一度に 1 つずつ移動します（ advanced 権限レベル）。
 +
-volume move start -vserver svm_name -volume vol_name -destination-aggregate destination_aggr_name -cutover-window integer
+`volume move start -vserver _svm_name_ -volume _vol_name_ -destination-aggregate _destination_aggr_name_ -cutover-window integer`
 
 +
 ノードのルートボリューム（ vol0 ）は移動できません。SVM ルートボリュームを含むその他のボリュームも移動できます。
 
 . 「 volume move 」操作の結果を表示して、ボリュームが正常に移動されたことを確認します。
 +
-volume move show -vserver svm_name -volume vol_name
+`volume move show -vserver _svm_name_ -volume _vol_name_`
 
 . 複数回試行しても 'volume move' 操作が最終フェーズを完了しない場合は ' 強制的に移動を終了します
 +
-volume move trigger-cutover -vserver SVM_name -volume vol_name -force true ’
+`volume move trigger-cutover -vserver _svm_name_ -volume _vol_name_ -force true`
 
 +
 ボリュームの移動処理を強制的に終了させると、移動しているボリュームへのクライアントアクセスが中断される可能性があります。
 
 . ボリュームが指定した SVM に正常に移動され、正しいアグリゲートに配置されていることを確認します。
 +
-volume show -vserver svm_name です
+`volume show -vserver _svm_name_`
 
 
+
+
+
+== SANボリュームを移動します
+
+SANボリュームを移動するには、の手順に従います https://docs.netapp.com/us-en/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html["Linux iSCSI ホストを MetroCluster FC ノードから MetroCluster IP ノードに移動しています"^]。この環境では、MetroCluster構成とMetroCluster以外の構成の両方でSANボリュームを移動しています。
+
+
+
+== 暗号化が有効なボリュームを移動します
+
+アグリゲート暗号化が有効になっているボリュームを移動するには、の手順を実行します https://docs.netapp.com/us-en/ontap/encryption-at-rest/encrypt-existing-volume-task.html["volume move start コマンドを使用して、既存のボリュームの暗号化を有効にします"^]。

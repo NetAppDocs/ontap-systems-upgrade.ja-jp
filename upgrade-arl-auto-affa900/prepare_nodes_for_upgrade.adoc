@@ -19,7 +19,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 .手順
 . 古いコントローラで実行されているサービスプロセッサ（SP）またはベースボード管理コントローラ（BMC）ファームウェアのバージョンを表示します。
 +
-`service-processor show` コマンドを実行します
+`service-processor show`
 
 +
 サポートされているSPまたはBMCファームウェアのバージョンがあることを確認します。
@@ -150,7 +150,7 @@ Controller replacement operation has been paused for user intervention.
 
 +
 
-NOTE: オンボードキーマネージャを使用するNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用する場合は、キー管理ツールのパスフレーズを必要なだけ残して、あとで手順 でキー管理ツールの再同期を完了します。
+NOTE: オンボードキーマネージャを使用したNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、手順の後半の工程でキー管理ツールの再同期を実行できるように、キー管理ツールのパスフレーズを準備しておいてください。
 
 . システムで自己暗号化ドライブを使用している場合は、Knowledge Baseの文書を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] アップグレード対象のHAペアで使用されている自己暗号化ドライブのタイプを確認する。ONTAP ソフトウェアは、次の2種類の自己暗号化ドライブをサポートしています。
 +

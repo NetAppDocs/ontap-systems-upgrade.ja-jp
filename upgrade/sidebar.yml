@@ -64,7 +64,7 @@ entries:
     url: "/upgrade/upgrade-prepare-when-moving-volumes.html"
   - title: 新しいノードを設置して追加
     url: "/upgrade/upgrade-install-and-join-new-nodes-move-vols.html"
-  - title: アグリゲートを作成してボリュームを移動
+  - title: アグリゲートの作成とボリュームの移動
     url: "/upgrade/upgrade-create-aggregate-move-volumes.html"
   - title: SAN 以外のデータ LIF とクラスタ管理 LIF を移動する
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"
