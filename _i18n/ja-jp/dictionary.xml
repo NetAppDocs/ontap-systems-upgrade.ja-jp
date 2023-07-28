@@ -1225,7 +1225,6 @@
   <block id="fe82c8b7274d1544ce545c5b1bb60481" category="paragraph">「 vserver add-aggregates 」</block>
   <block id="39e7eb0e1fd08f1ba6fea6e4df4f0d50" category="paragraph">新しいアグリゲートとボリュームの移動元となる古いアグリゲートの両方が同じ SVM に存在する必要があります。</block>
   <block id="65c0e65d7f3d4f9b7e59695a5beed439" category="list-text">新しいアグリゲートが元のノードのアグリゲートと同じ SVM に割り当てられていることを確認します。</block>
-  <block id="d144782c7f277a43532b9873909babed" category="paragraph">vserver show -vserversvm_name'</block>
   <block id="60ffd94dccfc67beb8507929d59460e3" category="list-text">元のノードから新しいノードに移動するボリュームの情報を表示します。</block>
   <block id="045e4ac6df29d2cafc7b15a9d2d9e81e" category="paragraph">あとで参照できるように、コマンドの出力は残しておく必要があります。</block>
   <block id="291a171e8b949620eda68d899d2e3e06" category="paragraph">次の例は、「 vs1 」 SVM と「 node0 」ノードのボリュームを表示します。</block>
@@ -4719,12 +4718,6 @@ AFF C190からAFF A150へ</block>
   <block id="4ca61b6580e69e11b24f59b9ac4072a9" category="list-text">元のノードで新しいノードと同じバージョンのソフトウェアがサポートされている必要があります。</block>
   <block id="36596c0816df78df5e957f4a98189433" category="inline-link">バージョンが混在したONTAPクラスタ</block>
   <block id="85e5b517efa68824f0234d73603eb6a7" category="admonition">ソフトウェアバージョンが混在したクラスタのアップグレードの詳細については、を参照してください<block ref="d823e4718a376dd43333fd0519ed9811" category="inline-link-rx"></block>。</block>
-  <block id="b60ec04bcd2e9c2318176db5554a658d" category="doc">アグリゲートの作成とボリュームの移動</block>
-  <block id="963335c836d3a76f0b7a6fe41a21aa10" category="paragraph">ONTAPソフトウェアのアップグレード時に、新しいノードにアグリゲートを作成し、ボリュームを移動することでデータを移行します。</block>
-  <block id="df6a90d1df953a09f0861a13f5b797ac" category="paragraph">ストレージ構成にSANボリュームまたは暗号化されたボリュームが含まれている場合は、これらのボリュームも移動する必要があります。</block>
-  <block id="2b6df1fd9c8637b8e45b452843b61251" category="inline-xref">SANボリュームを移動します</block>
-  <block id="5d3013f3192caf5b6d504d6b74b3c0bd" category="list-text"><block ref="bec3fd5974c2411b73ce484bc58515dc" category="inline-xref-macro-rx"></block></block>
-  <block id="c18328ed9c3f2ac31d9f3c316cc9e737" category="list-text"><block ref="4b487523353dbb4021f9c789f1abd771" category="inline-xref-macro-rx"></block></block>
   <block id="26e45a92e217288c9847a5d2ced10530" category="admonition">NetAppでは、Storage Virtual Machine（SVM）ごとに、ルートボリュームを移動する前にクラスタ内のルート以外のすべてのボリュームを移動し、この手順を一度に1つのSVMで実行することを推奨しています。</block>
   <block id="1c36e2804cb1ec373c2a554d3b816849" category="paragraph"><block ref="5f689443af4fd8e259550080d375f644" prefix="" category="inline-code"></block></block>
   <block id="d2d22984b72e7ba1d65fc825394c313c" category="list-text">ボリュームの移動元のノードのアグリゲートと同じStorage Virtual Machine（SVM）に新しいアグリゲートを追加します。</block>
@@ -4735,9 +4728,10 @@ AFF C190からAFF A150へ</block>
   <block id="cc3a467b8580d41426d4329faee0f040" category="paragraph"><block ref="f2384b5c154a2111fb6276b4aca913cf" prefix="" category="inline-code"></block></block>
   <block id="bffd5b081e9a5849648039713909f29e" category="paragraph"><block ref="0b16dbbb7b08013a425b1eda1ac6c38b" prefix="" category="inline-code"></block></block>
   <block id="ce294e2d50479fda57c6fd56279415cc" category="paragraph"><block ref="fb8ac527e5a233ade0c11a4584eca81d" prefix="" category="inline-code"></block></block>
-  <block id="ad6b5250334c326be9a638a7f4693ca4" category="inline-link">Linux iSCSI ホストを MetroCluster FC ノードから MetroCluster IP ノードに移動しています</block>
-  <block id="0bdc5d6c2eb50e1cec81ff459335b642" category="paragraph">SANボリュームを移動するには、の手順に従います<block ref="5da33795dc988979c1b6bb2285c365f5" category="inline-link-rx"></block>。この環境では、MetroCluster構成とMetroCluster以外の構成の両方でSANボリュームを移動しています。</block>
-  <block id="2729d03a958013cde2327ff523899d85" category="section-title">暗号化が有効なボリュームを移動します</block>
   <block id="c773b38bfd21b7a35d0d8783b04fa05f" category="inline-link">volume move start コマンドを使用して、既存のボリュームの暗号化を有効にします</block>
-  <block id="0a770440a8b9e6d0362d3a18060f162d" category="paragraph">アグリゲート暗号化が有効になっているボリュームを移動するには、の手順を実行します<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block>。</block>
+  <block id="7dc9e3aa635e299178bab6d9a48bf453" category="inline-link">Linux iSCSI ホストを MetroCluster FC ノードから MetroCluster IP ノードに移動</block>
+  <block id="0345ed9888a23976d10ee4dbe39e5b1c" category="paragraph">ストレージ構成にSANボリュームが含まれている場合は、の手順に従います。<block ref="850d31fae3bf8532793cf4bdf951a1e7" category="inline-link-rx"></block> をクリックして、作成したボリュームを新しいノードに移動します。</block>
+  <block id="666b05db74464377ceeeff39f469bcde" category="paragraph"><block ref="e31e4085164f9a5d9e1c0ec1ca25fc65" prefix="" category="inline-code"></block></block>
+  <block id="214d6a2680fcbe83e2c825740dae5888" category="admonition">ストレージ構成に暗号化が有効なボリュームが含まれている場合は、の手順に従います。<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block> をクリックして移動します。</block>
+  <block id="565ead98cf39206ccfb37fb835c84352" category="sidebar">アグリゲートを作成し、新しいndoにボリュームを移動する</block>
 </blocks>
