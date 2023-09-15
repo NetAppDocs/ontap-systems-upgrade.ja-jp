@@ -71,7 +71,7 @@ netboot\http://web_server_ip/path_to_web_accessible_directory/netboot/kernel`
 
 NOTE: トランクを中断しないでください。
 
-. AFF A900またはFAS9500コントローラモジュールで実行されているnode1がブートするまで待ち、次のようにブートメニューオプションを表示します。
+. ASA A900、AFF A900、またはFAS9500コントローラモジュールでnode1がブートし、ブートメニューオプションが表示されるまで待ちます。
 +
 [listing]
 ----

@@ -3624,23 +3624,12 @@
   <block id="831816e1924f3edb2d170ec4c291d0f3" category="section-title">AFF A700またはFAS9000 NVRAMモジュールを取り外します</block>
   <block id="fceff39b493e10b2b789e99ad15cc406" category="paragraph">次の手順 を使用して、AFF A700またはFAS9000 NVRAMモジュールを取り外します。</block>
   <block id="3d748e41fa426d2025ff3eb80b369ede" category="admonition">AFF A700またはFAS9000 NVRAMモジュールはスロット6にあり、システム内の他のモジュールの2倍の高さです。</block>
-  <block id="32820fb65b578170b0fc242eb57ba80e" category="list-text">コアダンプデバイスをAFF A700 NVRAMモジュールからAFF A900 NVRAMモジュールに移動しないでください。</block>
   <block id="d0106eeb656b11c6a07a8e45dcf1b214" category="list-text">FAS9000 NVRAMモジュールに取り付けられているすべてのフラッシュキャッシュモジュールをFAS9500 NVRAMモジュールに移動します。</block>
-  <block id="c7fecf95820e09d00c74bf86805bc991" category="section-title">AFF A900またはFAS9500 NVRAMモジュールを取り付けます</block>
-  <block id="1a841cb7f620c7f0684b56a8a034fb65" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500 NVRAMモジュールをnode1のスロット6に取り付けます。</block>
-  <block id="830a042377d7fdbd36c48ece8669e61c" category="section-title">AFF A900またはFAS9500コントローラモジュールをnode1にインストールします。</block>
-  <block id="bb0ced2b785386259d517f7ae7bd88d1" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500コントローラモジュールをnode1にインストールします。</block>
   <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000からFAS9500へ</block>
   <block id="c9df35145886ac45d1457faee2b9dd89" category="admonition">I/O カード、データケーブル、ディスクシェルフ、およびディスクを移動、切断、再接続する必要はありません。</block>
   <block id="4ed758f1326f5379f7dc30fe674ce726" category="inline-link-macro">コントローラのアップグレードに関するガイドラインを参照してください</block>
   <block id="61bb0e064fd915427168b2e72e080eff" category="list-text">この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、を読んで理解する必要があります <block ref="937d04c1dac5501bcacf105e8700fe45" category="inline-link-macro-rx"></block> および <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> アップグレード開始前のセクション。</block>
-  <block id="f57bde3eaa64080d17b3c49dfac5f25f" category="list-text">AFF A900およびFAS9500システムでは、高電圧（200~240V）のみがサポートされます。AFF A700またはFAS9000システムをローライン電源（100~120V）で実行している場合、この手順 を使用する前に、AFF A700またはFAS9000の入力電源を変換する必要があります。</block>
-  <block id="dbc99796dd5482cbc7660b57b686c30f" category="list-text">AFF A900またはFAS9500 NVRAMとコントローラモジュールをnode2にインストールします</block>
-  <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500 NVRAMモジュールをnode2のスロット6に取り付けます。</block>
-  <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">AFF A900またはFAS9500コントローラモジュールをnode2にインストールします</block>
-  <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">次の手順 を使用して、AFF A900またはFAS9500コントローラモジュールをnode2にインストールします。</block>
   <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">AFF A700またはFAS9000システムでFlexArray 仮想化ソフトウェアを使用している。</block>
-  <block id="fed5188660beab0c1ca98ade1cf9e488" category="list-text">AFF A900またはFAS9500コントローラモジュールで実行されているnode1がブートするまで待ち、次のようにブートメニューオプションを表示します。</block>
   <block id="038bf310b30027962de2d4e7d3c544e6" category="paragraph">「system node AutoSupport invoke -node _node_name」-type all -message " MAINT=2h Upgrading _node_name _from_platform_original_to _platform_new_new_"」というメッセージが表示されます</block>
   <block id="10de09f0f92f196f1e5984884c43ba27" category="list-text">storage failover modify -node node_name -enabled false</block>
   <block id="981b4567a35216af18afaec3c97bc50d" category="paragraph">system node halt -node _node_name _`</block>
@@ -4054,10 +4043,8 @@
   <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">既存のコントローラと交換用コントローラで同じバージョンのONTAP を使用する必要はありません。ONTAP ソフトウェアのアップグレードは、コントローラのアップグレード時に実行されます。</block>
   <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">アップグレードするときは、サポートされているONTAP バージョンとパッチレベルで交換用コントローラを取り付ける必要があります。</block>
   <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">手順 を起動して最初のノードをアップグレードしたあとに、コントローラのアップグレードをキャンセルまたは取り消すことはできません。</block>
-  <block id="37ef3103c62f7c4c537260066ec1fcad" category="paragraph">AFF A900またはFAS9500 NVRAMと、node2にアップグレード用に受け取ったコントローラモジュールをインストールします。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
   <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">インストールを実行する際には、次の点に注意する必要があります。</block>
   <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">スロット6-1および6-2の空のフィラーモジュールをすべて古いNVRAMモジュールから新しいNVRAMモジュールに移動します。</block>
-  <block id="97bcf885640a80425f98f36e28630da4" category="paragraph">AFF A900またはFAS9500 NVRAMと、node1にアップグレード用に受け取ったコントローラモジュールをインストールします。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">このタスクについて</block>
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">この情報で使用される用語</block>
   <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">MetroCluster FC構成の場合</block>
@@ -4518,9 +4505,6 @@ FAS2720</block>
   <block id="e1ea632cab9e8d0f0821fea579334839" category="cell">FAS2620またはFAS2720</block>
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="d12ea131bf417fe3ef7b6423e508e706" category="list-text">NetAppの営業担当者に、コントローラアップグレード用のハードウェアが届いていることを確認しておきます。</block>
-  <block id="8e02c0c89f1b8ab4a56a9c71f0625665" category="list-text">AFF A150コントローラ</block>
-  <block id="6378cfc8fa57ccbd128875c2ace0b13d" category="list-text">FAS2820コントローラ</block>
-  <block id="7a91ac5d471b05d929d8adc1accb6f07" category="list-text">AFF A900またはFAS9500コントローラモジュールとNVRAMモジュール、およびアップグレードに必要なパーツ。</block>
   <block id="798f018ee352fb079a57a34119747a3b" category="list-text">アップグレードに必要な最小ONTAPバージョンを実行している。詳細については、を参照してください <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>。</block>
   <block id="1155b04ebff43df03ca1b9ec1d6b56a7" category="paragraph">AFF A700またはFAS9000システムでのFabric MetroClusterまたはMetroCluster IP構成のアップグレードについては、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster アップグレードおよび Expansion コンテンツにリンクするには、次の手順を実行します。</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">ARLを使用して同じシャーシのコントローラモデルをアップグレードする場合は、必要に応じてアップグレード後のnode1でキー管理ツールの設定をリストアします。</block>
@@ -4532,9 +4516,6 @@ FAS2720</block>
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">アップグレードを開始する前に、同じシャーシ内のコントローラモデルをアップグレードするための正しいハードウェアがあることを確認してください。</block>
   <block id="03edb26b26a23464d3e656fd4bb1aa20" category="cell">アップグレード対象</block>
   <block id="010fb6bd96430e7065ef62ecb9af2e9b" category="cell">必要なのは...</block>
-  <block id="c44a10256b9f85d5e800b2ed43581a1f" category="cell">AFF A220からAFF A150へ
-AFF A200からAFF A150へ
-AFF C190からAFF A150へ</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">コントローラモジュール×2</block>
   <block id="a96a413dc366d34740f0c82530514332" category="cell">FAS2620またはFAS2720からFAS2820</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">2台のコントローラと2台のNVRAMモジュール</block>
@@ -4560,10 +4541,6 @@ AFF C190からAFF A150へ</block>
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">同じシャーシのコントローラモデルをARLでアップグレードする際に、交換用システムモジュールをノード2に取り付けます。</block>
   <block id="7339c5b8269b308a3bb75b606b220a40" category="doc">交換用システムモジュールをノード2に取り付けます</block>
   <block id="34fc38d77d703f82e3ea00d22de0aeb3" category="paragraph">アップグレード用に受け取った交換用システムモジュールをノード2にインストールします。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
-  <block id="5e7fd8c323cf342aa95dc80800a1fdc6" category="list-text"><block ref="97cf05fba75cf4dbb437038017dd54d4" category="inline-xref-macro-rx"></block></block>
-  <block id="ba64144c5d9737bf50bbe571abc9950d" category="list-text"><block ref="969846cffb9e5ea10d5ad5e6bf7f7cb4" category="inline-xref-macro-rx"></block></block>
-  <block id="6758213905204ffa4f80a34952db5e54" category="section-title">AFF A150またはFAS2820コントローラモジュールをノード2に取り付けます</block>
-  <block id="7ceecefaf0c99b73e87c1d5f9cf924ab" category="paragraph">アップグレード用に受け取ったAFF A150またはFAS2820コントローラモジュールをノード2に取り付けます。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
   <block id="d1cf73ac3312e046217517b06817c8be" category="list-text">取り外すコントローラから、コンソール、管理、SASストレージ、データネットワークのケーブルをすべて外します。</block>
   <block id="d31ea2ed80c8ed7a812def7ec46c2274" category="admonition">ベイBは、シャーシの下部にあります。</block>
   <block id="e5c4a336c6c9037915d316eae71744e6" category="admonition">シャーシはすでに電源がオンになっているため、完全に装着されるとすぐに node2 がブートを開始します。ノード2がブートしないように、NetAppでは、コントローラモジュールをスロットに完全に挿入する前に、コンソールケーブルと管理ケーブルをノード2のコントローラモジュールに接続することを推奨しています。</block>
@@ -4593,13 +4570,10 @@ AFF C190からAFF A150へ</block>
   <block id="1b96f3aa099b152fc864dedb115af912" category="list-text">カムハンドルのラッチをつかんで解除し、カムハンドルを最大限に開いてコントローラモジュールをミッドプレーンから離し、両手でコントローラモジュールをシャーシから外します。</block>
   <block id="d6daae29261c119313124d1d21a1c267" category="image-alt">DRW 2240 x オープンカムラッチ</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">コントローラモジュールを裏返し、平らで安定した場所に置きます。</block>
-  <block id="d6b285e69842dbc0d924036d7b995d3b" category="section-title">AFF A150またはFAS2820コントローラモジュールを設置します</block>
-  <block id="912a077db1a14ff7e811477241783af6" category="paragraph">次の手順を使用して、AFF A150またはFAS2820コントローラモジュールをノード1に取り付けます。</block>
   <block id="0dc0820d363c65f7e12beec6160b793f" category="list-text">コントローラモジュールの端をシャーシの開口部に合わせ、コントローラモジュールをシステムに半分までそっと押し込みます。</block>
   <block id="73c39df93369189180566421495bd86b" category="list-text">カムハンドルを開いた状態で、コントローラモジュールをミッドプレーンまでしっかりと押し込んで完全に装着します。コントローラモジュールが完全に装着されると、ロックラッチが上がります。カムハンドルをロック位置まで閉じます。</block>
   <block id="3d642aff56195f4217e6874d1165bde1" category="list-text">自動ブートを中断すると、 node1 で LOADER プロンプトが停止します。時間内に自動ブートを中断せずにnode1がブートを開始した場合は、プロンプトが表示されたら* Ctrl-C *を押してブートメニューに移動します。ノードがブートメニューで停止したら、オプション8を使用してノードをリブートし、リブート時に自動ブートを中断します。</block>
   <block id="06fe1e1c3556d47d3a40caee57ba2411" category="section-title">AFF A700またはFAS9000コントローラとNVRAMモジュールを交換してください</block>
-  <block id="72066ce06d5938f1862e6c83c33aada4" category="section-title">AFF A900またはFAS9500 NVRAMとコントローラモジュールを設置します</block>
   <block id="98b9e41d81ea8470149a461f166a4b92" category="summary">コントローラのアップグレード後に古いシステムが動作しなくなったことをNetAppに通知します。</block>
   <block id="fd03f78134ad299c30781abefe876b6e" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、SnapMirror転送と関係を再開します。</block>
   <block id="f941430cfefa788e4cbb0ace9529e703" category="summary">を使用したARLアップグレードのステージ1プロセスシーケンス<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 同じシャーシ内のコントローラモデルをアップグレードする場合。</block>
@@ -4620,9 +4594,7 @@ AFF C190からAFF A150へ</block>
   <block id="9e87e1dea37ce673e27a23a144a4e0ad" category="cell">交換用システム</block>
   <block id="eae7ed824c301543a7e09d88d74d7b19" category="cell">サポートされるONTAPのバージョン</block>
   <block id="c0aa270d19e4484079bd0c1488dd7e54" category="cell">9.10.1P15、9.11.1P11、9.12.1P5以降</block>
-  <block id="faa1e7a6bde5d1d403d386d297d27d7d" category="paragraph">9.10.1P15、9.11.1P11以降（AFF A200およびAFF A150）</block>
   <block id="1b09c77bbb88991cb420df4ea90eb3b8" category="admonition">AFF A200では、9.11.1よりもあとのバージョンのONTAPはサポートされません。</block>
-  <block id="d64804559c99c24fbbd319d9bee6abb7" category="paragraph">9.11.1P7以降（FAS2620）</block>
   <block id="9558d12002264bd41bf4a596c8f8ac1c" category="admonition">FAS2620では、9.11.1よりあとのバージョンのONTAPはサポートされません。</block>
   <block id="fe8a27b3504b515f0bd7508cfd89776a" category="paragraph">9.13.1以降（FAS2820）</block>
   <block id="5abae7190ce598d45fe390e44304cde0" category="cell">9.13.1以降</block>
@@ -4630,9 +4602,6 @@ AFF C190からAFF A150へ</block>
   <block id="17c022b189bd2857924f4bbe654cb97e" category="paragraph">NetAppでは、可能であれば、古いシステムと交換用システムで同じONTAPバージョンを使用することを推奨しています。</block>
   <block id="9c1e88e5963163799eaba4d977d7d52f" category="paragraph">上記の表のONTAPの最小バージョンは必須です。これらのバージョンのONTAPにはサービスプロセッサまたはベースボード管理コントローラ（BMC）のファームウェアバージョンが適用されています。このファームウェアバージョンは、アップグレード時にシャーシ内に異なるコントローラタイプを混在させるために必要です。</block>
   <block id="48adbf20fd6c8a4139f6b2da13a4ed5b" category="paragraph">手順では、ルート以外のアグリゲートを古いコントローラノード間で移行します。インストールが完了したら、ルート以外のアグリゲートを古いコントローラノードから交換用コントローラノードに移行します。アップグレードするノードでホストされているデータには、アップグレード手順の実行中にアクセスできます。</block>
-  <block id="a329d0cf2e9de4cf2f5e7d162573f7a5" category="list-text">AFF A220、AFF A200、またはAFF C190システムの各ノードのコントローラモジュールを新しいAFF A150モジュールと交換します。</block>
-  <block id="cc9c49df693f66fdb8e78aaa496a3ca9" category="list-text">FAS2620またはFAS2720システムの各ノードのコントローラモジュールを新しいFAS2820モジュールと交換します。</block>
-  <block id="6617b5d0f699d4c1d9a03a9a07c8eeab" category="list-text">AFF A700またはFAS9000システムの各ノードの2台のコントローラモジュールとNVRAMモジュールを、新しいAFF A900またはFAS9500モジュールと交換します。</block>
   <block id="1f08ef6e3750d69789334fc412377b8b" category="list-text">ONTAPのバージョンでサポートされていないスイッチおよびアップグレード先の交換用システムがある場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe にリンクするには、次の手順を実行します。</block>
   <block id="9016b0ff2820f5a72022aceaaea6350a" category="list-text">この手順専用 環境 AFF A200、AFF A220、AFF C190、FAS2620、FAS2720、 AFF A700およびFAS9000システム：AFF A150、FAS2820、AFF A900、またはFAS9500システムへのアップグレードが必要なその他すべてのコントローラモデルについては、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 「system controller replace」コマンドを使用して、ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードする方法_およびアグリゲートの再配置を使用して、ONTAP 9.8以降を実行しているコントローラハードウェアを手動でアップグレードする方法_へのリンク。</block>
   <block id="373edaf8d573901bcaba4be302784a3b" category="list-text">AFF A200、AFF A220、AFF C190、FAS2620、FAS2720からアップグレードする場合 ダウンタイムが発生するAFF A700またはFAS9000システムでは、ストレージを移動することでコントローラハードウェアをアップグレードするか、テクニカルサポートにお問い合わせください。を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。</block>
@@ -4734,4 +4703,49 @@ AFF C190からAFF A150へ</block>
   <block id="666b05db74464377ceeeff39f469bcde" category="paragraph"><block ref="e31e4085164f9a5d9e1c0ec1ca25fc65" prefix="" category="inline-code"></block></block>
   <block id="214d6a2680fcbe83e2c825740dae5888" category="admonition">ストレージ構成に暗号化が有効なボリュームが含まれている場合は、の手順に従います。<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block> をクリックして移動します。</block>
   <block id="565ead98cf39206ccfb37fb835c84352" category="sidebar">アグリゲートを作成し、新しいndoにボリュームを移動する</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">詳細はこちら。</block>
+  <block id="bfa6cc72f08aa2823167e389b6677da0" category="cell"><block ref="70d1727ffc9c452707805fb17e6a5b52" category="inline-link-macro-rx"></block>
+
+この手順を使用して、特定のモデルおよびONTAPソフトウェアバージョンのオールSANアレイ（ASA）として構成されたAFFコントローラをASAコントローラにアップグレードできます。 <block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>。</block>
+  <block id="7fbeff1dd4b772a22c3163f4be820b9c" category="cell">AFF A220をASAとして構成</block>
+  <block id="8b3182da28f8002496d5953dd474566c" category="cell">ASA A150コントローラモジュール</block>
+  <block id="ac8778c8e9d09a5fbedc8eed17a252ae" category="cell">AFF A700をASAとして構成</block>
+  <block id="04d8a92a6a296cdc3dcff1b84bdc663d" category="cell">ASA A900コントローラおよびNVRAMモジュール</block>
+  <block id="0814a528a6e09bdfa454da4598d03b6a" category="cell">ASA A150</block>
+  <block id="0e096ce16590ab86950913510752010e" category="cell">ASA A900</block>
+  <block id="0d1ed1043a9669e13b81f70da0ae56bb" category="list-text">ASA A150、AFF A150、またはFAS2820コントローラ</block>
+  <block id="4ab38fe544b152aed6d17891d6b4942f" category="list-text">ASA A900、AFF A900、またはFAS9500コントローラおよびNVRAMモジュールとアップグレードに必要なパーツ</block>
+  <block id="eb33e3b941791062baa1b3c30813ebb4" category="list-text">ASA A900、AFF A900、またはFAS9500コントローラモジュールでnode1がブートし、ブートメニューオプションが表示されるまで待ちます。</block>
+  <block id="93f5e3175d1952ff3357d8c3f9f9ebcc" category="admonition">また、この手順を使用して、ASAとして構成されたAFF A220を交換することもできます。</block>
+  <block id="fe86eeb48c828c1dfa6494efc6b765cd" category="admonition">また、この手順を使用して、ASAとして構成されたAFF A700を交換することもできます。</block>
+  <block id="23025a0dc68c759874f99e85d38e7ede" category="section-title">ASA A150、AFF A150、またはFAS2820コントローラモジュールの設置</block>
+  <block id="a75c1ab30ac0399f6d1308046a287763" category="paragraph">次の手順を使用して、ASA A150、AFF A150、またはFAS2820コントローラモジュールをノード1に取り付けます。</block>
+  <block id="d7a4c6633fbd09856927cf66880d4940" category="section-title">ASA A900、AFF A900、またはFAS9500 NVRAMとコントローラモジュールの設置</block>
+  <block id="8c93dbb7f81c4c2f4b51369fa9829a6f" category="paragraph">アップグレード用に受け取ったASA A900、AFF A900、またはFAS9500のNVRAMとコントローラモジュールをnode1に取り付けます。</block>
+  <block id="70b323769da32749c57798f0d8e782e5" category="list-text">コアダンプデバイスをAFF A700 NVRAMモジュールからASA A900またはAFF A900 NVRAMモジュールに移動しないでください。</block>
+  <block id="74cfe385d1c40d7e412430b003bd358b" category="section-title">ASA A900、AFF A900、またはFAS9500 NVRAMモジュールの設置</block>
+  <block id="ea5c1600c51a21564153c6355d751d45" category="paragraph">次の手順を使用して、ASA A900、AFF A900、またはFAS9500 NVRAMモジュールをノード1のスロット6に取り付けます。</block>
+  <block id="ad6cf4baff2cddaf65f868a474f4ace2" category="section-title">ASA A900、AFF A900、またはFAS9500コントローラモジュールをノード1に取り付けます。</block>
+  <block id="1e05d2a5422d862c8080573b0bffa1d7" category="paragraph">次の手順を使用して、ASA A900、AFA A900、またはFAS9500コントローラモジュールをノード1に取り付けます。</block>
+  <block id="d98f9591f3c1e658d83adfdac174718a" category="cell">ASA A900コントローラおよびNVRAMモジュール^2^</block>
+  <block id="400a12b5c5627da96b0587ceaacabfa4" category="inline-xref">ASA A150、AFF A150、またはFAS2820コントローラモジュールをノード2に設置します。</block>
+  <block id="6d3b42496d1ff908492db44e6a7a996a" category="list-text"><block ref="4e16cb21c83d577e1da9298c1d3d7001" category="inline-xref-macro-rx"></block></block>
+  <block id="74cae3e1383e831697d2a89099232c43" category="inline-xref">ASA A900、AFF A900、またはFAS9500のNVRAMとコントローラモジュールをノード2に設置します。</block>
+  <block id="4f801783b3b54e6e155c8ba840a7984b" category="list-text"><block ref="090089409a807fc3646805d2e86db88d" category="inline-xref-macro-rx"></block></block>
+  <block id="abb999476ce6c21d1aa738091bf3cc58" category="section-title">ASA A150、AFF A150、またはFAS2820コントローラモジュールをノード2に設置します。</block>
+  <block id="78bd224431479d8d5cafd763cca39b7c" category="paragraph">アップグレード用に受け取ったASA A150、AFF A150、またはFAS2820コントローラモジュールをノード2に取り付けます。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
+  <block id="a2f2586b0e85eb39267cb5c9d9e043d2" category="paragraph">アップグレード用に受け取ったASA A900、AFF A900、またはFAS9500のNVRAMとコントローラモジュールをノード2に取り付けます。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
+  <block id="5dc4e3a6479ea8cf51106f2ac874a145" category="paragraph">次の手順を使用して、ASA A900、AFF A900、またはFAS9500 NVRAMモジュールをノード2のスロット6に取り付けます。</block>
+  <block id="f457531b113b8b894781ad94a1fa19d3" category="section-title">ASA A900、AFF A900、またはFAS9500コントローラモジュールをノード2に設置します。</block>
+  <block id="839847d15e69edb34b89aa9634714fd2" category="paragraph">次の手順を使用して、ASA A900、AFF A900、またはFAS9500コントローラモジュールをノード2に取り付けます。</block>
+  <block id="86e722dcbc94e4ea341e26dd6af9f76a" category="cell">AFF A220をオールSANアレイ（ASA）として構成</block>
+  <block id="4fdc3efb53d664a8ab709272358f7966" category="cell">9.13.1P1以降</block>
+  <block id="184f38916b6639f5bdbf7619d90cebc3" category="paragraph">9.10.1P15、9.11.1P11以降</block>
+  <block id="d243c4c373219990c87996aba8af4741" category="paragraph">9.11.1P7（FAS2620）</block>
+  <block id="a4e58f4757b38ca2c59f5da9e90013a5" category="list-text">古いコントローラの各ノードのコントローラモジュールを新しいモジュールと交換します。この環境an AFF A220、AFF A200、AFF C190、FAS2620、FAS2720システムへのアップグレードです。</block>
+  <block id="15f948008082950e48724b1453dd6e11" category="list-text">古いコントローラの各ノードのコントローラモジュールとNVRAMモジュールを新しいモジュールと交換します。この環境an AFF A700またはFAS9000システムのアップグレード。</block>
+  <block id="6e43ae996b970f40321b42d34dd0b4b8" category="list-text">ASA A900、AFF A900、およびFAS9500システムは、ハイライン電源（200V~240V）のみをサポートします。AFF A700またはFAS9000システムをローライン電源（100~120V）で実行している場合、この手順 を使用する前に、AFF A700またはFAS9000の入力電源を変換する必要があります。</block>
+  <block id="97a6d360c94d9b7bc50b22cbefedff0a" category="cell">AFF A220をASA to ASA A150として構成</block>
+  <block id="d6e2de75372db4a1d57d81d7f91749d1" category="cell">AFF A220、AFF A200、またはAFF C190からAFF A150へ</block>
+  <block id="6370691b1097dc9c4671ff1a5e381609" category="cell">AFF A700をASA to ASA A900として構成</block>
 </blocks>
