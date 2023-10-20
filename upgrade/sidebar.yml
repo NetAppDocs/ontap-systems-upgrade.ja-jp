@@ -6,8 +6,6 @@ entries:
   url: "/upgrade/upgrade-decide-to-use-this-guide.html"
 - title: 考慮事項
   url: "/upgrade/upgrade-considerations.html"
-- title: 方法を選択します
-  url: "/upgrade/upgrade-methods.html"
 - title: ストレージを移動してアップグレード
   entries:
   - title: ワークフロー
@@ -64,7 +62,9 @@ entries:
     url: "/upgrade/upgrade-prepare-when-moving-volumes.html"
   - title: 新しいノードを設置して追加
     url: "/upgrade/upgrade-install-and-join-new-nodes-move-vols.html"
-  - title: アグリゲートを作成し、新しいndoにボリュームを移動する
+  - title: Linux iSCSIホストを新しいノードに移動する
+    url: "/upgrade/upgrade_move_linux_iscsi_hosts_to_new_nodes.html"
+  - title: アグリゲートを作成してボリュームを新しいノードに移動
     url: "/upgrade/upgrade-create-aggregate-move-volumes.html"
   - title: SAN 以外のデータ LIF とクラスタ管理 LIF を移動する
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"

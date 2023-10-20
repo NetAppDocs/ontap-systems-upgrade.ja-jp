@@ -1,0 +1,70 @@
+---
+permalink: choose_controller_upgrade_procedure.html 
+sidebar: sidebar 
+keywords:  
+summary: 一般に、コントローラハードウェアのアップグレード方法は、元のノードのプラットフォームモデルによって異なります。アップグレードするには、アグリゲートまたはボリュームストレージを移動するか（無停止の手順）、またはストレージを移動します（停止を伴う手順）。 
+---
+= コントローラハードウェアのアップグレード手順を選択
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+一般に、コントローラハードウェアのアップグレード方法は、元のノードのプラットフォームモデルによって異なります。アップグレードするには、アグリゲートの再配置またはボリュームの移動（どちらも無停止の手順）、またはストレージを移動（停止を伴う手順）します。元のノードと新しいノードでONTAPのバージョンが異なる場合は、ハードウェアのアップグレードを開始する前にソフトウェアのアップグレードを実行しなければならないことがあります。
+
+[role="tabbed-block"]
+====
+.内蔵ドライブ搭載システム
+--
+内蔵ドライブを搭載したシステムのアップグレード手順を選択します。次のリストを参照してください。
+
+* FAS2620、FAS2650、FAS2720、およびFAS2750
+* AFF A150、AFF A200、AFF A220、AFF A250、AFF A700s、 およびAFF A800
+* AFF C190、AFF C250、およびAFF C800
+* ASA A150、ASA A250、ASA A800、およびASA AFF A220
+
+
+お使いのシステムがリストにない場合は、 https://hwu.netapp.com["NetApp Hardware Universe の略"^] 内蔵ドライブがあるかどうかを確認します。
+
+image:workflow_internal_drives.png["アップグレード手順の選択の決定ワークフロー"]
+
+--
+.外付けドライブのみを搭載したシステム
+--
+外付けドライブのみを搭載したシステムのアップグレード手順を選択します。次のリストを参照してください。
+
+* FAS8200、FAS8300、FAS8700、FAS9000、FAS9500
+* AFF A300、AFF A320、AFF A400、AFF A700、AFF A900
+* AFF C400
+* ASA A400、ASA A900、およびASA AFF A700
+
+
+お使いのシステムがリストにない場合は、 https://hwu.netapp.com["NetApp Hardware Universe の略"^] 外付けドライブのみがあるかどうかを確認します。
+
+image:workflow_external_drives.png["アップグレード手順の選択の決定ワークフロー"]
+
+--
+====
+コントローラハードウェアのアップグレード手順について説明します。
+
+* link:upgrade-arl/index.html["アグリゲートの再配置を使用したアップグレード"]
++
+アグリゲートの再配置は手順に代わるものです。新しいノードを使用してクラスタを拡張および縮小する必要はありません。これは、2ノードのスイッチレスクラスタの場合に便利です。アグリゲートの再配置によるデータの移動は、ボリュームの移動時にアグリゲート間でデータをコピーするよりも高速です。
+
+* link:upgrade/upgrade-decide-to-use-this-guide.html["ボリュームを移動してアップグレード"]
+* link:upgrade/upgrade-decide-to-use-this-guide.html["ストレージを移動してアップグレード"]
+
+
+[NOTE]
+====
+*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAPのバージョンをアップグレードする"^] 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["バージョンが混在したONTAPクラスタに関する詳細情報"^]。
+
+*注2 *：無停止アップグレードでは、元のシステムのデータを格納するために、独自のストレージとシェルフを備えた新しいシステムが必要です。
+
+*注3 *：ボリュームを移動することでアップグレードする場合は、新しいノードを追加し、ボリュームとLIFを新しいノードに移動してから、クラスタから削除するノードを分離します。2ノードスイッチレスクラスタをアップグレードする場合は、新しいノードを追加する前に、クラスタスイッチのペアを使用してスイッチ接続クラスタに変換します。
+
+====
+MetroCluster構成をアップグレードする場合は、を参照してください。 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 構成をアップグレード、更新、または拡張します"^]。
+
+個 々 のコンポーネントを交換する場合は、を参照してください。 https://docs.netapp.com/us-en/ontap-systems/index.html["AFF および FAS システムのマニュアル"^] およびそのコンポーネントのField Replaceable Unit（FRU；フィールド交換可能ユニット）のリーフレットを参照してください。

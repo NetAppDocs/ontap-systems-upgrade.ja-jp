@@ -13,11 +13,6 @@ summary: 元のノードから移動するボリュームを格納するため�
 [role="lead"]
 元のノードから移動するボリュームを格納するために、新しい各ノードに少なくとも 1 つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。
 
-[NOTE]
-====
-ストレージ構成にSANボリュームが含まれている場合は、の手順に従います。 https://docs.netapp.com/us-en/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html["Linux iSCSI ホストを MetroCluster FC ノードから MetroCluster IP ノードに移動"^] をクリックして、作成したボリュームを新しいノードに移動します。
-
-====
 .作業を開始する前に
 ボリュームを移動するには、データ保護ミラー関係を初期化しておく必要があります。
 

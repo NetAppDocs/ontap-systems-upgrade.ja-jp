@@ -15,6 +15,15 @@ summary: ストレージを移動してアップグレードする場合は、�
 
 image::../upgrade/media/workflow_for_upgrading_by_moving_storage.png[ストレージの移動によるコントローラハードウェアのアップグレードワークフロー]
 
+[NOTE]
+====
+ストレージを移動してコントローラハードウェアをアップグレードする手順では、元のノードは node1 と node2 に、新しいノードは node3 と node4 と呼ばれます。説明されている手順では、 node1 は node3 に置き換えられ、 node2 は node4 に置き換えられます。
+
+image::../upgrade/media/original_to_new_nodes.png[元のノードから新しいノード]
+
+node1 、 node2 、 node3 、および node4 という用語は、元のノードと新しいノードを区別するためだけに使用されます。手順を使用する場合は、これらのノードを元のノードと新しいノードの実際の名前に置き換える必要があります。ただし実際には、ノードの名前は変更されません。 node3 には node1 という名前が付けられ、 node4 にはコントローラハードウェアのアップグレード後に node2 という名前が付けられます。
+
+====
 .手順
 . xref:upgrade-prepare-when-moving-storage.adoc[ストレージ移動時にアップグレードを準備]
 . xref:upgrade-shutdown-remove-original-nodes.adoc[元のノードをシャットダウンします]
@@ -26,4 +35,8 @@ image::../upgrade/media/workflow_for_upgrading_by_moving_storage.png[ストレ�
 . xref:upgrade-attach-shelves-reassign-disks.adoc[ストレージシェルフを接続し、ディスク所有権を再割り当てします]
 . xref:upgrade-restore-root-volume-config.adoc[ルートボリューム構成をリストア]
 . xref:upgrade-complete.adoc[アップグレードを完了します]
+
+
+.関連情報
+* xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします] （無停止の手順）。
 
