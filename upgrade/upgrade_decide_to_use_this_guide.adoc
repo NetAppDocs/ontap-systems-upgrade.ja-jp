@@ -36,7 +36,7 @@ MetroCluster構成をアップグレードする場合は、を参照してく�
 
 .関連情報
 * xref:upgrade-considerations.adoc[コントローラハードウェアのアップグレードに関する考慮事項]
-* xref:choose_controller_upgrade_procedure.adoc[コントローラハードウェアをアップグレードする方法を選択します]
+* link:../choose_controller_upgrade_procedure.html["コントローラハードウェアをアップグレードする方法を選択します"]
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster のメンテナンスタスクの手順の参照先"^]
 * https://hwu.netapp.com["NetApp Hardware Universe の略"^]
 

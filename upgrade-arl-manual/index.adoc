@@ -42,5 +42,5 @@ NOTE: このドキュメントでは、元のノードの名前は _node1_AND _n
 * この FlexArray システム、 V シリーズシステム、 AFF システム、および手順環境 FAS 仮想化ソフトウェアを搭載したシステムです。必要なライセンスがインストールされていれば、 ONTAP 9 以降にリリースされた FAS システムをストレージアレイに接続できます。既存の V シリーズシステムは ONTAP 9 でサポートされます。ストレージアレイと V シリーズのモデルについては、を参照してください link:other_references.html["参考資料"] Hardware Universe へのリンクおよび V シリーズサポートマトリックスを参照してください。
 
 
-* この手順環境 MetroCluster の 4 ノード構成と 8 ノード構成では、 ONTAP 9.5 以前が実行されています。ONTAP 9.6 以降を実行する MetroCluster 構成の場合は、に進みます link:other_references.html["参考資料"] 「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行しているコントローラハードウェアを ONTAP 9.7_ にアップグレードするには、次のコマンドを使用します。
+* この手順環境 MetroCluster の 4 ノード構成と 8 ノード構成では、 ONTAP 9.5 以前が実行されています。ONTAP 9.6 以降を実行する MetroCluster 構成の場合は、に進みます link:other_references.html["参考資料"] to _using "system controller replace"コマンドを使用して、ONTAP 9.5を実行しているコントローラハードウェアをONTAP 9.7_にアップグレードする。
 

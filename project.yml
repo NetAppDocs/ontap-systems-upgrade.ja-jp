@@ -35,7 +35,7 @@ homepage:
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
   - title: ONTAP 9.7以前を実行しているシステムでアグリゲートを再配置してアップグレードする
     links:
-    - title: "「 system controller replace 」コマンドを使用します（ほとんどのシステム）。"
+    - title: system controller replaceコマンドを使用する
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
     - title: 手動コマンドを使用する
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
