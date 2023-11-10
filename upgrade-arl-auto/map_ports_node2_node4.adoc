@@ -229,7 +229,7 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-. 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
+. ポート7700をリスンしていない各クラスタLIFについて、LIFの管理ステータスをに設定します。 `down` 次に `up`：
 +
 `::> net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up
 

@@ -84,10 +84,20 @@ network port modify -node node2 -port e1b -ipspace Cluster -mtu 9000`
 +
 cluster show -node node2 -fields health`
 
-.. 各クラスタ LIF がポート 7700 をリスンしている必要があります。クラスタ LIF がポート 7700 をリスンしていることを確認します。
+.. アップグレードするHAペアで実行しているONTAPのバージョンに応じて、次のいずれかの操作を実行します。
 +
-`::> network connections listening show -vserver Cluster `
+[cols="30,70"]
+|===
+| ONTAP のバージョン | 作業 
 
+
+| 9.8 ~ 9.11.1 | クラスタ LIF がポート 7700 をリスンしていることを確認します。
+
+`::> network connections listening show -vserver Cluster` 
+
+
+| 9.12.1以降 | この手順をスキップして、 <<man_map_2_Step3,手順 3>>。 
+|===
 +
 次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。
 
@@ -105,7 +115,7 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-.. 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
+.. ポート7700をリスンしていない各クラスタLIFについて、LIFの管理ステータスをに設定します。 `down` 次に `up`：
 +
 `::> net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up
 

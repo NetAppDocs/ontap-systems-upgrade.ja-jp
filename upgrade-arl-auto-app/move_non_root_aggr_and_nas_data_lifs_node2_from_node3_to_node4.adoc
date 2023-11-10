@@ -19,6 +19,9 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 .このタスクについて
 アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 4 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認します。
 
+
+NOTE: T6ベースのイーサネットネットワークインターフェイスカードまたはマザーボードポートのポート速度を変更すると、速度変換後に不正な形式のパケットが受信されることがあります。を参照してください https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["NetApp Bugs OnlineのバグID1570339"^] ナレッジベースの記事 https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["40GbEから100GbEへの変換後のT6ポートのCRCエラー"^] を参照してください。
+
 .手順
 . 再配置処理を再開します。
 +

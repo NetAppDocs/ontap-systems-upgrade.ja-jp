@@ -39,10 +39,20 @@ cluster show -node node4 -fields health`
 +
 「 cluster show 」を参照してください
 
-. 各クラスタ LIF がポート 7700 をリスンしている必要があります。クラスタ LIF がポート 7700 をリスンしていることを確認します。
+. アップグレードするHAペアで実行しているONTAPのバージョンに応じて、次のいずれかの操作を実行します。
 +
-`::> network connections listening show -vserver Cluster `
+[cols="30,70"]
+|===
+| ONTAP のバージョン | 作業 
 
+
+| 9.8 ~ 9.11.1 | クラスタ LIF がポート 7700 をリスンしていることを確認します。
+
+`::> network connections listening show -vserver Cluster` 
+
+
+| 9.12.1以降 | この手順をスキップして、 <<verify_node4_step5,手順 5>>。 
+|===
 +
 次の 2 ノードクラスタの例に示すように、クラスタポートでリスンしているポート 7700 は想定される結果です。
 
@@ -60,14 +70,14 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-. 必要に応じて、ポート 7700 でリスンしていない各クラスタ LIF の管理ステータスを「 down 」に設定してから「 up 」に設定します。
+. ポート7700をリスンしていない各クラスタLIFについて、LIFの管理ステータスをに設定します。 `down` 次に `up`：
 +
 `::> net int modify -vserver Cluster-lif cluster_lif_cluster-status-admin down；net int modify -vserver Cluster-lif cluster_lif_-status-admin up
 
 +
 手順 3 を繰り返して、クラスタ LIF がポート 7700 でリスンしていることを確認します。
 
-. advanced 権限モードに切り替えます。
+. [[verify_node4_step5]] advanced権限モードに切り替えます。
 +
 「高度」
 
@@ -133,6 +143,9 @@ node4 がクォーラムにあり、 node3 と通信できることを確認し�
 
 .このタスクについて
 VLAN 、インターフェイスグループ、およびブロードキャストドメインの作成と再作成の詳細については、を参照してください link:other_references.html["参考資料"] をクリックして _ ネットワーク管理 _ にリンクします。
+
+
+NOTE: AFF A800またはAFF C800システムでクラスタポートe0aおよびe1aのポート速度を変更すると、速度変換後に不正な形式のパケットを受信することがあります。を参照してください https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["NetApp Bugs OnlineのバグID1570339"^] ナレッジベースの記事 https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["40GbEから100GbEへの変換後のT6ポートのCRCエラー"^] を参照してください。
 
 .手順
 . アップグレードされた node2 （ node4 ）にある物理ポートをすべて一覧表示します。
