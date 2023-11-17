@@ -1398,14 +1398,12 @@
   <block id="44e9f0c666ea054f51421040e37dee98" category="summary">元のノードからボリュームを移動したら、 SAN 以外のデータ LIF とクラスタ管理 LIF を元のノードから新しいノードに移行する必要があります。</block>
   <block id="7d0330f92f5b6340af08f88bf712e687" category="doc">SAN 以外のデータ LIF とクラスタ管理 LIF を新しいノードに移動します</block>
   <block id="87375b5769d5bc8e37ee39d964c25804" category="paragraph">VMware vStorage APIs for Array Integration （ VAAI ）でコピーオフロード処理に使用されている LIF を移行することはできません。</block>
-  <block id="d079690ef04f3c3ab2f4e91b5f28e90b" category="list-text">クラスタ LIF がホストされているノードから、 SAN 以外のデータ LIF のホームポートを元のノードから新しいノードに変更します。</block>
   <block id="fc522dd9612f86c0ea7c802be05de893" category="cell">移行する項目</block>
   <block id="1d073f20d5a5045e1aa3afacf792bf7c" category="cell">入力するコマンド</block>
   <block id="0a4bc8aea04444e0f2b960facbd686f4" category="paragraph">特定の LIF</block>
   <block id="fb465127c12aa152a3a6787bc1358040" category="paragraph">SAN 以外のすべてのデータ LIF とクラスタ管理 LIF</block>
   <block id="8d4031ef52b7ff00f19077a56df4c26e" category="paragraph">次のコマンドは、 SVM 「 vs0 」の「 datalif1 」という名前の LIF を「 node0b 」のポート「 e0d 」に移行します。</block>
   <block id="44807f621f3e0960500d7db205f07c8e" category="paragraph">次に、現在の（ローカル）ノードからすべてのデータ LIF とクラスタ管理 LIF を移行するコマンドを示します。</block>
-  <block id="08784f3476a94c005c9ffbca34e62ce0" category="list-text">クラスタ管理 LIF のホームノードが元のいずれかのノードにあるかどうかを確認します。「 network interface show -lif cluster_mgmt -fields home-node</block>
   <block id="68c8a99bc9172a87f6301c02d55008f8" category="list-text">クラスタ管理 LIF のホームノードが元のいずれかのノードにある場合は、次の手順を実行します。</block>
   <block id="a7d2bd92477c7708999d89fc281f2cfb" category="list-text">クラスタ管理 LIF のホームノードを新しいノードの 1 つに切り替えます。</block>
   <block id="038faacffbd9c39ca68e42dccdbe915f" category="list-text">クラスタ管理 LIF を新しいノードの 1 つに移行します。</block>
@@ -3616,10 +3614,6 @@
   <block id="d8a3e002e1fe8c2f25656a36ddbfbeba" category="list-text">元のノードのSVMに現在接続されているアクティブなイニシエータの一覧を表示します。+`iscsi connection show -vserver _Vserver_name -lif_old_lif_`</block>
   <block id="3b5280aac62d339d908a3019ce691faa" category="paragraph">`lun portset remove -vserver _vserver_name -portset_portset_name __ port-name _lif_name_`</block>
   <block id="6e2a280fc54f306b51d2674e9eea36fc" category="paragraph">「network interface delete -vserver _vserver_name _-lif_lif_name_`」のように指定します</block>
-  <block id="0c7ec176679cf1c9c562b2bc88ed9472" category="paragraph">「network interface modify -vserver vserver_name -lif_lif_lif_name」-home-node_new_node_nameに-home-port｛&lt;netport | ifgrp&gt;｝」を指定します</block>
-  <block id="24aef972cbe11a33dc4e5cb93310061b" category="paragraph">'network interface migrate-all -node _node_name _`</block>
-  <block id="b84d32c43b649cc6913dcced9685f6db" category="paragraph">「network interface modify -vserver _cluster_name _-lif cluster_mgmt -home-node _new_node_nameの-home-port｛&lt;netport | ifgrp&gt;｝」のように指定します</block>
-  <block id="6e4f5a3bbafa35688ed0eba9be161169" category="paragraph">「network interface migrate -vserver _vserver_name _-lif cluster -mgmt-destination-node-new_node_name -destination-port｛&lt;netport | ifgrp&gt;｝</block>
   <block id="019ba4e936e9a1ab59eec2033ea3a6b4" category="paragraph">'system node AutoSupport invoke -node node_name Type all -message "Upgrading node_name from_platform_original_to _platform_new_new_"</block>
   <block id="f29dc737795110e1cc8fbd850515968a" category="paragraph">'network port delete -node1_-port_port_name_`</block>
   <block id="525ce0d5109d2abc61cc41e941dec46b" category="paragraph">「network port broadcast-domain show -ports_node_name：port_name_`</block>
@@ -4398,7 +4392,6 @@
   <block id="b2e9444b2e3d3f6bcd5b8053418d9f98" category="paragraph"><block ref="b04273b4623b1fb5400a1445280a00fc" prefix="" category="inline-code"></block></block>
   <block id="9eaa084ea5e1fc23b5bd8f4e4b31ae16" category="list-text">ストレージフェイルオーバーの自動ギブバックを有効にします。</block>
   <block id="452b3b4e54b69d07570137489de879c0" category="paragraph"><block ref="06113f79bc639d145a6e40cfdd6b4211" prefix="" category="inline-code"></block></block>
-  <block id="b7fb6eb57cd7c0b92ddce1c6b7f38e07" category="paragraph"><block ref="101c5ced41d107d54620027143ba74f3" prefix="" category="inline-code"></block></block>
   <block id="a48dffce96c7d2cee50452bbbe3c3149" category="list-text"><block ref="f1c84a71e0779351e0f5be10141fff81" prefix="" category="inline-code"></block></block>
   <block id="1b0afd0b9e1ef791af87236c19a70f16" category="list-text"><block ref="7f5b95324bf0335821a8f979872431c9" prefix="" category="inline-code"></block></block>
   <block id="6dcc62df7a079d79f6374d9c17d2120e" category="list-text"><block ref="169aa9029e0b9363f74914feb183b562" prefix="" category="inline-code"></block></block>
@@ -4779,7 +4772,6 @@ FAS2720</block>
   <block id="ca189dbb46d0896b1743f452fe344293" category="inline-link">元のノードと新しいノードでサポートされているONTAPのバージョンとパッチレベルを確認する</block>
   <block id="8870bf8eb809743305db4031987fa36e" category="list-text"><block ref="b3ab3127149837ef7459a9eb97a04a54" category="inline-link-rx"></block>。</block>
   <block id="7d01893ca79a018810882cd8d3394250" category="inline-link-macro">ONTAPのバージョンをアップグレードする</block>
-  <block id="2268f05309a25f9d6de565ec4364d034" category="list-text">可能な場合は、元のノードと新しいノードで同じバージョンのONTAPを実行することをNetAppで推奨します。これができない場合は、 <block ref="a6dedec0dd1fe7caeb3c7769e262d6a2" category="inline-link-macro-rx"></block> 元のノードと新しいノードのバージョンの差が4つ以下になるように、サポートされる最大バージョンに変更します。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。</block>
   <block id="50250e80343bef6bd18b0a749aecd73b" category="inline-link">バージョンが混在したONTAPクラスタに関する詳細情報</block>
   <block id="bb9ba0401316edbefdd465cc73bfbf1c" category="paragraph"><block ref="d732a285dea0d120c69b9115e25ab72f" category="inline-link-rx"></block>。</block>
   <block id="5df011f91a8a4b3c3604963326b854f6" category="cell">システムに内蔵ドライブが搭載されていますか？また、ボリュームを移動していますか？</block>
@@ -4842,7 +4834,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="51d3b2a6cd78fb20797c74bb50b689f5" category="paragraph">アグリゲートの再配置は手順に代わるものです。新しいノードを使用してクラスタを拡張および縮小する必要はありません。これは、2ノードのスイッチレスクラスタの場合に便利です。アグリゲートの再配置によるデータの移動は、ボリュームの移動時にアグリゲート間でデータをコピーするよりも高速です。</block>
   <block id="73d856629c7408ec32b9b5ffa5af9ed6" category="list-text"><block ref="73d856629c7408ec32b9b5ffa5af9ed6" category="inline-link-macro-rx"></block></block>
   <block id="8b9b2634fd898f04166a765851aba8f2" category="list-text"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block></block>
-  <block id="b10988c4185192c8e53d7add421e9720" category="paragraph">*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 <block ref="a6dedec0dd1fe7caeb3c7769e262d6a2" category="inline-link-macro-rx"></block> 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>。</block>
   <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">*注2 *：無停止アップグレードでは、元のシステムのデータを格納するために、独自のストレージとシェルフを備えた新しいシステムが必要です。</block>
   <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">*注3 *：ボリュームを移動することでアップグレードする場合は、新しいノードを追加し、ボリュームとLIFを新しいノードに移動してから、クラスタから削除するノードを分離します。2ノードスイッチレスクラスタをアップグレードする場合は、新しいノードを追加する前に、クラスタスイッチのペアを使用してスイッチ接続クラスタに変換します。</block>
   <block id="16319414c65274d365d86327a61ef5dc" category="inline-link">AFF および FAS システムのマニュアル</block>
@@ -4873,4 +4864,12 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="403701bd83bf4b3cf916d0207d89b4e6" category="cell">この手順をスキップして、 <block ref="8837566debd0bf055ddeb89904e2fbbc" category="inline-xref-macro-rx"></block>。</block>
   <block id="6fdc0880de0e199aedb20bf62f491976" category="list-text">[[verify_node4_step5]] advanced権限モードに切り替えます。</block>
   <block id="694bd1275df145cf6b146f04be06b773" category="cell">この手順をスキップして、 <block ref="b6919d088e29a20fea866ec3a396e020" category="inline-xref-macro-rx"></block>。</block>
+  <block id="2e23c7e78862e31423e93a8c06fbeebd" category="doc">SAN以外のデータLIFとクラスタ管理LIFを新しいノードに移動する</block>
+  <block id="0479b56f75b526758f089a2063e31e6c" category="list-text">クラスタ管理LIFでログインし、元のノードのすべてのLIFをカンマで区切って指定します。</block>
+  <block id="47abbe9b564eba6007fe4489d824eb6e" category="list-text">SAN以外のデータLIFのホームポートを元のノードから新しいノードに変更します。</block>
+  <block id="d0301a3c428aa6200596747434ea62ce" category="list-text">クラスタ管理LIFのホームノードが元のいずれかのノードにあるかどうかを確認します。</block>
+  <block id="f4050efc501652e600f6e7e735cf5616" category="inline-link-macro">新しいiSCSI接続が作成されました</block>
+  <block id="527226c39d06e4e2f6eec2dca988d2ba" category="list-text">iSCSI SANボリュームを移動する場合は、 <block ref="6f18756f17709181fa11fd9271f705fc" category="inline-link-macro-rx"></block>。</block>
+  <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">可能な場合は、元のノードと新しいノードで同じバージョンのONTAPを実行することをNetAppで推奨します。これができない場合は、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードと新しいノードのバージョンの差が4つ以下になるように、サポートされる最大バージョンに変更します。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。</block>
+  <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>。</block>
 </blocks>

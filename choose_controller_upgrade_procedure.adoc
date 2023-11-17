@@ -58,7 +58,7 @@ image:workflow_external_drives.png["アップグレード手順の選択の決�
 
 [NOTE]
 ====
-*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAPのバージョンをアップグレードする"^] 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["バージョンが混在したONTAPクラスタに関する詳細情報"^]。
+*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["ONTAPのバージョンをアップグレードする"^] 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["バージョンが混在したONTAPクラスタに関する詳細情報"^]。
 
 *注2 *：無停止アップグレードでは、元のシステムのデータを格納するために、独自のストレージとシェルフを備えた新しいシステムが必要です。
 

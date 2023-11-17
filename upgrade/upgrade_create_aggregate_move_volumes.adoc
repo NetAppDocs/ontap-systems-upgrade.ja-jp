@@ -14,9 +14,12 @@ summary: 元のノードから移動するボリュームを格納するため�
 元のノードから移動するボリュームを格納するために、新しい各ノードに少なくとも 1 つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。
 
 .作業を開始する前に
-ボリュームを移動するには、データ保護ミラー関係を初期化しておく必要があります。
-
+* ボリュームを移動するには、データ保護ミラー関係を初期化しておく必要があります。
++
 https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["必要なデータ保護手順を探します"^]。
+
+* iSCSI SANボリュームを移動する場合は、 link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html["新しいiSCSI接続が作成されました"]。
+
 
 
 NOTE: NetAppでは、Storage Virtual Machine（SVM）ごとに、ルートボリュームを移動する前にクラスタ内のルート以外のすべてのボリュームを移動し、この手順を一度に1つのSVMで実行することを推奨しています。

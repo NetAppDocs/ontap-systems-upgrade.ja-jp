@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: move, volume, original, node, migrate, non-san, lif, cluster-management, move non-san data lifs and cluster management lifs to the new nodeas 
 summary: 元のノードからボリュームを移動したら、 SAN 以外のデータ LIF とクラスタ管理 LIF を元のノードから新しいノードに移行する必要があります。 
 ---
-= SAN 以外のデータ LIF とクラスタ管理 LIF を新しいノードに移動します
+= SAN以外のデータLIFとクラスタ管理LIFを新しいノードに移動する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -17,10 +17,18 @@ summary: 元のノードからボリュームを移動したら、 SAN 以外の
 VMware vStorage APIs for Array Integration （ VAAI ）でコピーオフロード処理に使用されている LIF を移行することはできません。
 
 .手順
-. クラスタ LIF がホストされているノードから、 SAN 以外のデータ LIF のホームポートを元のノードから新しいノードに変更します。
+. クラスタ管理LIFでログインし、元のノードのすべてのLIFをカンマで区切って指定します。
 +
-「network interface modify -vserver vserver_name -lif_lif_lif_name」-home-node_new_node_nameに-home-port｛<netport | ifgrp>｝」を指定します
-
+[source, cli]
+----
+network interface show -curr-node <list_of_original_node_names>
+----
+. SAN以外のデータLIFのホームポートを元のノードから新しいノードに変更します。
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <new_node_name> -home-port {<netport|ifgrp>}
+----
 . 次のいずれかを実行します。
 +
 [cols="1,2"]
@@ -31,21 +39,25 @@ VMware vStorage APIs for Array Integration （ VAAI ）でコピーオフロー�
  a| 
 特定の LIF
  a| 
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
-
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <dest_node_name> -destination-port <dest_port_name>
+----
 
 
  a| 
 SAN 以外のすべてのデータ LIF とクラスタ管理 LIF
  a| 
-'network interface migrate-all -node _node_name _`
-
+[source, cli]
+----
+network interface migrate-all -node <node_name>
+----
 |===
 +
 次のコマンドは、 SVM 「 vs0 」の「 datalif1 」という名前の LIF を「 node0b 」のポート「 e0d 」に移行します。
 
 +
-[listing]
+[source, cli]
 ----
 cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-node node0b -destination-port e0d
 ----
@@ -53,21 +65,30 @@ cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-nod
 次に、現在の（ローカル）ノードからすべてのデータ LIF とクラスタ管理 LIF を移行するコマンドを示します。
 
 +
-[listing]
+[source, cli]
 ----
 cluster::> network interface migrate-all -node local
 ----
-. クラスタ管理 LIF のホームノードが元のいずれかのノードにあるかどうかを確認します。「 network interface show -lif cluster_mgmt -fields home-node
+. クラスタ管理LIFのホームノードが元のいずれかのノードにあるかどうかを確認します。
++
+[source, cli]
+----
+network interface show -lif cluster_mgmt -fields home-node
+----
 . クラスタ管理 LIF のホームノードが元のいずれかのノードにある場合は、次の手順を実行します。
 +
 .. クラスタ管理 LIF のホームノードを新しいノードの 1 つに切り替えます。
 +
-「network interface modify -vserver _cluster_name _-lif cluster_mgmt -home-node _new_node_nameの-home-port｛<netport | ifgrp>｝」のように指定します
-
+[source, cli]
+----
+network interface modify -vserver <cluster_name> -lif cluster_mgmt -home-node <new_node_name> -home-port {<netport|ifgrp>}
+----
 .. クラスタ管理 LIF を新しいノードの 1 つに移行します。
 +
-「network interface migrate -vserver _vserver_name _-lif cluster -mgmt-destination-node-new_node_name -destination-port｛<netport | ifgrp>｝
-
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif cluster-mgmt -destination-node <new_node_name> -destination-port {<netport|ifgrp>}
+----
 
 
 
