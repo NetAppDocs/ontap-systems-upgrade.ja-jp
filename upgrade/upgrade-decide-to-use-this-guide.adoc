@@ -35,7 +35,7 @@ NOTE: ONTAP 9.8 では、自動ポート配置機能が導入され、ハード�
 MetroCluster構成をアップグレードする場合は、を参照してください。 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 構成をアップグレード、更新、または拡張します"^]。
 
 .関連情報
-* xref:upgrade-considerations.adoc[コントローラハードウェアのアップグレードに関する考慮事項]
+* link:upgrade-considerations.html["コントローラハードウェアのアップグレードに関する考慮事項"]
 * link:../choose_controller_upgrade_procedure.html["コントローラハードウェアをアップグレードする方法を選択します"]
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster のメンテナンスタスクの手順の参照先"^]
 * https://hwu.netapp.com["NetApp Hardware Universe の略"^]

@@ -17,10 +17,10 @@ summary: ONTAP 9.8 以降を実行しているコントローラの元のノー�
 ノードペアをアップグレードするには、元のノードを準備し、元のノードと新しいノードの両方で一連の手順を実行する必要があります。その後、元のノードの運用を停止できます。
 
 .手順
-. link:stage1_prepare_for_upgrade.html["ステージ 1 ：アップグレードの準備"]
-. link:stage2_relocate_retire_node1.html["ステージ 2 ：ノード 1 の再配置と撤去"]
-. link:stage_3_install_boot_node3.html["ステージ 3 ：ノード 3 をインストールしてブートします"]
-. link:stage4_record_info_retire_node2.html["ステージ 4 ：情報を記録し、 node2 を撤去"]
-. link:stage5_install_boot_node4.html["ステージ 5 ：ノード 4 をインストールしてブートします"]
-. link:stage6_complete_upgrade.html["ステージ 6 ：アップグレードを完了する"]
+. link:stage_1_index.html["ステージ 1 ：アップグレードの準備"]
+. link:stage_2_index.html["ステージ 2 ：ノード 1 の再配置と撤去"]
+. link:stage_3_index.html["ステージ 3 ：ノード 3 をインストールしてブートします"]
+. link:stage_4_index.html["ステージ 4 ：情報を記録し、 node2 を撤去"]
+. link:stage_5_index.html["ステージ 5 ：ノード 4 をインストールしてブートします"]
+. link:stage_6_index.html["ステージ 6 ：アップグレードを完了する"]
 

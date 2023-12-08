@@ -11,18 +11,35 @@ summary: ストレージやクラスタスイッチを追加購入すること�
 
 
 [role="lead"]
-NetApp AFF A250システムからAFF A400システムへの無停止アップグレードを実行するには、各AFF A250ノードをNS224ドライブシェルフに変換し、AFF A400の交換用ノードに接続します。
+NetApp AFF A250システムからNetApp AFF A400システムへの無停止アップグレードを実行するには、各AFF A250ノードをNS224ドライブシェルフに変換し、AFF A400の交換用ノードに接続します。
 
+.このタスクについて
 この手順 では、AFF A250ハイアベイラビリティ（HA）ペアコントローラの名前はノード1およびノード2、交換用AFF A400 HAペアコントローラの名前はノード3およびノード4です。
 
-image::../upgrade/media/ndu_upgrade_entry_level_systems.PNG[ドライブシェルフに変換してAFF A250をAFF A400にアップグレードするワークフロー]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"]link:upgrade_migrate_lifs_aggregates_node2_to_node1.html["ノード2のLIFとデータアグリゲートをノード1に移行します"]
+[role="quick-margin-para"]
+AFF A250 node2をドライブシェルフに変換する前に、node2の論理インターフェイス（LIF）とデータアグリゲートをnode1に移行します。
 
-.手順。
-. xref:upgrade_migrate_lifs_aggregates_node2_to_node1.adoc[ノード2のLIFとデータアグリゲートをノード1に移行します]
-. xref:upgrade_convert_node2_drive_shelf_connect_node4.adoc[node2をドライブシェルフに変換し、node4に接続します]
-. xref:upgrade_reassign_drives_node2_to_node4.adoc[ドライブをノード2からノード4に再割り当てします]
-. xref:upgrade_migrate_aggregates_epsilon_lifs_node1_node4.adoc[ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します]
-. xref:upgrade_convert_node1_drive_shelf_connect_node3.html[node1をドライブシェルフに変換し、node3に接続します]
-. xref:upgrade_reassign_drives_node1_to_node3.adoc[ドライブをノード1からノード3に再割り当てします]
-. xref:upgrade_migrate_lIFs_aggregates_node4_node3.adoc[ノード4のLIFとデータアグリゲートをノード3に移行します]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"]link:upgrade_convert_node2_drive_shelf_connect_node4.html["node2をドライブシェルフに変換し、node4に接続します"]
+[role="quick-margin-para"]
+AFF A250 node2をNS224ドライブシェルフに変換し、AFF A400 node4に接続してから、node2からnode4にドライブを再割り当てします。
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]link:upgrade_reassign_drives_node2_to_node4.html["ドライブをノード2からノード4に再割り当てします"]
+[role="quick-margin-para"]
+AFF A250 node2をNS224ドライブシェルフに変換してAFF A400 node4に接続したら、node2に属していたドライブをnode4に再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."]link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html["ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します"]
+[role="quick-margin-para"]
+AFF A250 node1をドライブシェルフに変換する前に、node1のデータアグリゲート、イプシロン、およびLIFをAFF A400 node4に移行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"]link:upgrade_convert_node1_drive_shelf_connect_node3.html["node1をドライブシェルフに変換し、node3に接続します"]
+[role="quick-margin-para"]
+AFF A250 node1をNS224ドライブシェルフに変換し、AFF A400 node3に接続してから、node1からnode3にドライブを再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"]link:upgrade_reassign_drives_node1_to_node3.html["ドライブをノード1からノード3に再割り当てします"]
+[role="quick-margin-para"]
+AFF A250 node1をNS224ドライブシェルフに変換してAFF A400 node3に接続したら、node1に属していたドライブをnode3に再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]link:upgrade_migrate_lIFs_aggregates_node4_node3.html["ノード4のLIFとデータアグリゲートをノード3に移行します"]
+[role="quick-margin-para"]
+アップグレードを完了するには、ノード3をノード4に接続し、ノード4のデータLIFとデータアグリゲートをノード3に移行します。

@@ -1,0 +1,67 @@
+---
+permalink: upgrade/upgrade-by-moving-storage-parent.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: ストレージを移動してアップグレードする場合は、元のノードを準備し、新しいノードをセットアップします。一部のプラットフォームモデルでは、新しいノードへの内蔵ストレージの移動がサポートされています。新しいノードにディスクを再割り当てし、ルートボリュームの設定をリストアし、ネットワークポートを設定します。ストレージの移動によるアップグレードは、停止を伴う手順で実行されます。 
+---
+= ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージを移動してコントローラハードウェアをアップグレードする場合は、元のノードを準備し、新しいノードをセットアップします。一部のプラットフォームモデルでは、新しいノードへの内蔵ストレージの移動がサポートされています。新しいノードにディスクを再割り当てし、ルートボリュームの設定をリストアし、ネットワークポートを設定します。ストレージの移動によるアップグレードは、停止を伴う手順で実行されます。
+
+[NOTE]
+====
+ストレージを移動してコントローラハードウェアをアップグレードする手順では、元のノードは node1 と node2 に、新しいノードは node3 と node4 と呼ばれます。説明されている手順では、 node1 は node3 に置き換えられ、 node2 は node4 に置き換えられます。
+
+image::../upgrade/media/original_to_new_nodes.png[ノード3とノード4をノード1とノード2に交換]
+
+node1 、 node2 、 node3 、および node4 という用語は、元のノードと新しいノードを区別するためだけに使用されます。手順を使用する場合は、これらのノードを元のノードと新しいノードの実際の名前に置き換える必要があります。ただし実際には、ノードの名前は変更されません。 node3 には node1 という名前が付けられ、 node4 にはコントローラハードウェアのアップグレード後に node2 という名前が付けられます。
+
+====
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"]link:upgrade-prepare-when-moving-storage.html["ストレージ移動時にアップグレードを準備"]
+[role="quick-margin-para"]
+ストレージを移動してアップグレードする前に、元のノードからライセンス情報を収集し、ネットワーク設定を計画し、システムIDを記録し、ネットブートに必要なファイルを準備します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"]link:upgrade-shutdown-remove-original-nodes.html["元のノードをシャットダウンします"]
+[role="quick-margin-para"]
+元のノードをシャットダウンして削除する場合は、アップグレードに関するAutoSupportメッセージを送信し、メールボックスを削除し、ノードの電源をオフにして、シャーシを取り外します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]link:upgrade-remove-disk-ownership-new-nodes.html["新しいノードに接続されているディスクの所有権を削除します"]
+[role="quick-margin-para"]
+新しいノードに内蔵ディスクまたはアドオンシェルフがシステムに接続されている場合は、コントローラのアップグレードが妨げられる可能性があります。  ノード3 /ノード4に付属の新しいディスクの所有権を削除する必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."]link:upgrade-reset-default-configuration-node3-and-node4.html["新しいノードのデフォルト設定をリセットします"]
+[role="quick-margin-para"]
+ブートメディア上の設定情報がコントローラのアップグレードに影響しないことを確認するには、ノード3とノード4の設定をデフォルトの設定にリセットします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"]link:upgrade-install-new-nodes.html["新しいノードをインストール"]
+[role="quick-margin-para"]
+ストレージを移動してアップグレードするときは、まず node3 と node4 を設置し、新しいノードへの電源、コンソール、およびネットワーク接続を接続します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"]link:upgrade-set-up-new-nodes.html["新しいノードをセットアップ"]
+[role="quick-margin-para"]
+ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。元のノードと新しいノードで、物理ポートのレイアウトが異なる場合があります。ポートと接続の適切なレイアウトを特定するには、元のノードと交換用ノードの間のポートのマッピングを行う必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]link:upgrade-optional-move-internal-storage.html["オプション：内蔵ストレージを移動するか、システムをドライブシェルフに変換します"]
+[role="quick-margin-para"]
+必要に応じて、元のノードがサポート対象のモデルである場合、ストレージを移動してアップグレードする処理中に、ノードの内蔵SATAドライブ、SSD、またはSASドライブを、新しいノードに接続されているドライブシェルフに移動できます。また、システムをドライブシェルフに変換して、新しいノードに接続することもできます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["8"]link:upgrade-attach-shelves-reassign-disks.html["ストレージシェルフを接続し、ディスク所有権を再割り当てします"]
+[role="quick-margin-para"]
+ノード1とノード2に属していたディスクを、それぞれノード3とノード4に再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-9.png["9つ"]link:upgrade-restore-root-volume-config.html["ルートボリューム構成をリストア"]
+[role="quick-margin-para"]
+構成情報をルートボリュームからブートデバイスにリストアします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-10.png["テン"]link:upgrade-complete.html["アップグレードを完了します"]
+[role="quick-margin-para"]
+ONTAP 9.8以降またはONTAP 9.7以前でアップグレードを完了します。
+
+.関連情報
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします"] （無停止の手順）。
+

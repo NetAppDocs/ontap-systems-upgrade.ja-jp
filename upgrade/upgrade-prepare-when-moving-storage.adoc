@@ -167,4 +167,4 @@ NOTE: 「 ONTAP_version_image.tgz 」ファイルの内容を抽出する必要�
 |===
 
 
-ディレクトリ内の情報をに使用します xref:upgrade-set-up-new-nodes.adoc[新しいノードをセットアップ]。
+ディレクトリ内の情報をに使用します link:upgrade-set-up-new-nodes.html["新しいノードをセットアップ"]。

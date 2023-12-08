@@ -23,7 +23,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 NOTE: ネットアップのマーケティング資料では、 Converged Network Adapter （ CNA ；統合ネットワークアダプタ）アダプタおよびポートを UTA2 と呼ぶ場合があります。ただし、 CLI では CNA という用語が使用されます。
 
 * ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクを搭載したシステムをアップグレードする場合は、に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"] セクション。
-* ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、で section_Install および boot node3_and resume に戻ります link:install_boot_node3.html#step23["手順 23"]。
+* ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、で section_Install および boot node3_and resume に戻ります link:install_boot_node3.html#auto_install3_step23["手順 23"]。
 
 
 .選択肢
@@ -121,7 +121,7 @@ NOTE: FCポートはイニシエータとしてプログラムする必要があ
 
 | は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています  a| 
 ** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合は、セクションに進みます <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
-** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、このセクションを省略してください <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>> セクション「 _Install 」に戻り、再開時に node3 _ をブートします link:install_boot_node3.html#step23["手順 23"]。
+** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、このセクションを省略してください <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>> セクション「 _Install 」に戻り、再開時に node3 _ をブートします link:install_boot_node3.html#auto_install3_step23["手順 23"]。
 
 
 |===
@@ -308,7 +308,7 @@ Adapter  Mode       Type        Mode     Type        Status
 | ストレージディスクがあります | に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"] 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | _Install に戻り、 node3 をブートして、のセクションを再開します link:install_boot_node3.html#step23["手順 23"]。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | _Install に戻り、 node3 をブートして、のセクションを再開します link:install_boot_node3.html#auto_install3_step23["手順 23"]。 
 |===
 . [[auto_check3_step13]] メンテナンスモードを終了します。
 +

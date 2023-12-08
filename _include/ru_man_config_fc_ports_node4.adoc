@@ -142,7 +142,7 @@ NOTE: FCポートはイニシエータとしてプログラムする必要があ
 
 | は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています  a| 
 ** に進みます <<ノード 4 の UTA / UTA2 ポートを確認して設定してください>> ノード 4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合
-** node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します link:install_boot_node4.html#Step9["手順 9"]。
+** node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します link:install_boot_node4.html#man_install4_Step9["手順 9"]。
 
 
 |===

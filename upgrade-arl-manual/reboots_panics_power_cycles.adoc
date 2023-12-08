@@ -60,7 +60,7 @@ node2 はテイクオーバーしませんが、ルート以外のすべての�
 . ノード 1 を起動します。
 . ノードペアのアップグレード用手順に進みます。
 +
-「 storage failover show 」コマンドの出力には変更が表示されることがありますが、これは通常の動作であり、手順には影響しません。トラブルシューティングのセクションを参照してください link:issues_multiple_stages_of_procedure.html#Unexpected-storage-failover-show-command-output["予期しない「 storage failover show 」コマンドの出力が表示されます"]。
+の出力にいくつかの変更が表示される場合があります。 `storage failover show` コマンドですが、これは一般的なコマンドであり、手順には影響しません。トラブルシューティングのセクションを参照してください link:issues_multiple_stages_of_procedure.html#storage-failover-command["予期しない「 storage failover show 」コマンドの出力が表示されます"]。
 
 
 
@@ -205,7 +205,7 @@ node3 が再度ブートするまでは、残りのアグリゲートが停止�
 
 .手順
 . ノード 3 を起動します。
-. node2 に属していた残りのアグリゲートを再配置します link:relocate_node2_non_root_aggr_node3_node4.html#Step1["手順 1."] から link:relocate_node2_non_root_aggr_node3_node4.html#step3["手順 3"] セクションの _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置する例を次に示します。
+. node2 に属していた残りのアグリゲートを再配置します link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1["手順 1."] から link:relocate_node2_non_root_aggr_node3_node4.html#step3["手順 3"] セクションの _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置する例を次に示します。
 . ノードペアのアップグレード用手順に進みます。
 
 

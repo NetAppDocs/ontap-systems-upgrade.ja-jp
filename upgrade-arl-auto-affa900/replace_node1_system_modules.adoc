@@ -50,11 +50,11 @@ NOTE: また、この手順を使用して、ASAとして構成されたAFF A700
 
 . ケーブルマネジメントデバイスをコントローラモジュールの右側と左側から取り外し、脇に置きます。
 +
-image::../media/drw_25xx_cable_management_arm.png[DRW 25xx ケーブル管理アーム]
+image::../media/drw_25xx_cable_management_arm.png[ケーブル管理ARMの取り外し]
 
 . カムハンドルのラッチをつかんで解除し、カムハンドルを最大限に開いてコントローラモジュールをミッドプレーンから離し、両手でコントローラモジュールをシャーシから外します。
 +
-image::../media/drw_2240_x_opening_cam_latch.png[DRW 2240 x オープンカムラッチ]
+image::../media/drw_2240_x_opening_cam_latch.png[カムハンドルを開く]
 
 . コントローラモジュールを裏返し、平らで安定した場所に置きます。
 

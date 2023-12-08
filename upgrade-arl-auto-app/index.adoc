@@ -8,7 +8,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラ・ハードウ
 :allow-uri-read: 
 
 
-[role="lead lead"]
+[role="lead"]
 この手順 では、次のシステム構成で Aggregate Relocation （ ARL ；アグリゲートの再配置）を使用してコントローラハードウェアをアップグレードする方法について説明します。
 
 [cols="40,20,40"]

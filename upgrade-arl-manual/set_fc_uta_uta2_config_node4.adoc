@@ -21,7 +21,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 
 ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクが搭載されたシステムをアップグレードする場合は、に進みます link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]。
 
-ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合に、ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、 UTA / UTA2 カードがないときは、 _Install and boot node4 セクションに戻って再開する必要があります link:install_boot_node4.html#Step9["手順 9"]。ノード 4 に十分なラックスペースがあることを確認してください。node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場所に node4 を配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。
+ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合に、ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、 UTA / UTA2 カードがないときは、 _Install and boot node4 セクションに戻って再開する必要があります link:install_boot_node4.html#man_install4_Step9["手順 9"]。ノード 4 に十分なラックスペースがあることを確認してください。node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場所に node4 を配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。
 
 .選択肢
 * <<ノード 4 の FC ポートを設定します>>
@@ -168,7 +168,7 @@ NOTE: FCポートはイニシエータとしてプログラムする必要があ
 
 | は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています  a| 
 ** に進みます <<ノード 4 の UTA / UTA2 ポートを確認して設定してください>> ノード 4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合
-** node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します link:install_boot_node4.html#Step9["手順 9"]。
+** node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します link:install_boot_node4.html#man_install4_Step9["手順 9"]。
 
 
 |===
@@ -387,6 +387,6 @@ f-a    2b      fc      target    cna      -          online
 | ストレージディスクがあります | に進みます link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]。 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | section_Install および boot node4 _ に戻り、のセクションを再開します link:install_boot_node4.html#Step9["手順 9"]。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | section_Install および boot node4 _ に戻り、のセクションを再開します link:install_boot_node4.html#man_install4_Step9["手順 9"]。 
 |===
 

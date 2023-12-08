@@ -14,7 +14,7 @@ summary: アップグレード後に node3 と node4 がクラスタ内および
 アップグレード後に node3 と node4 がクラスタ内およびネットワークと相互に通信できるようにするには、物理ポートがクラスタやデータなどの目的の用途に応じた設定で正しく設定されていることを確認する必要があります。
 
 .作業を開始する前に
-以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8以降を実行している場合は、の手順 を使用する必要があります xref:upgrade-map-network-ports-ontap-9-8.adoc[ONTAP 9.8以降を使用してネットワークポートをマッピングします]。
+以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8以降を実行している場合は、の手順 を使用する必要があります link:upgrade-map-network-ports-ontap-9-8.html["ONTAP 9.8以降を使用してネットワークポートをマッピングします"]。
 
 .このタスクについて
 これらの手順は、 node3 と node4 で実行する必要があります。
@@ -23,7 +23,7 @@ summary: アップグレード後に node3 と node4 がクラスタ内および
 NOTE: 次のコマンド例では、「 node1 」と呼んでいます。この段階で手順の交換用ノード「 node3 」と「 node4 」の名前は実際には「 node1 」と「 node2 」です。
 
 .手順
-. ONTAP 9.8以降を実行しているシステムの場合は、* STOP *をクリックします。の手順を使用する必要があります xref:upgrade-map-network-ports-ontap-9-8.adoc[ONTAP 9.8以降を使用してネットワークポートをマッピングします]。
+. ONTAP 9.8以降を実行しているシステムの場合は、* STOP *をクリックします。の手順を使用する必要があります link:upgrade-map-network-ports-ontap-9-8.html["ONTAP 9.8以降を使用してネットワークポートをマッピングします"]。
 . storage_, の移動時のアップグレードの準備でメモしておいたノード 1 とノード 2 のポートと LIF の設定情報を確認します。 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["手順 3"]。
 . storage_ 、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["手順 3"]。
 +
@@ -138,4 +138,4 @@ network port show -node node1
 
 
 .完了後
-これで物理ポートのマッピングが完了しました。アップグレードを完了するには、に進みます xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 以前で最終アップグレード手順を実行します]。
+これで物理ポートのマッピングが完了しました。アップグレードを完了するには、に進みます link:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html["ONTAP 9.7 以前で最終アップグレード手順を実行します"]。

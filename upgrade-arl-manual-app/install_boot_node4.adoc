@@ -334,7 +334,7 @@ NOTE: システムに共有ディスク、ハイブリッドアグリゲート�
 | 共有なし | disk disk reassign -s `_node2 _sysid_-d_node4 _sysid_` 
 |===
 +
-'node2 _sysid' 値には ' で取得した情報を使用します link:record_node2_information.html#man_node2_info_step10["手順 10"] をクリックします。`_node4 sysid_`の場合は'で取得した情報を使用します <<man_install4_step23,手順 23>>。
+をクリックします `<node2_sysid>` で取得した情報を使用します。 link:record_node2_information.html#man_record_2_step10["手順 10"] をクリックします。の場合 `_node4_sysid_`で取得した情報を使用します。 <<man_install4_step23,手順 23>>。
 
 +
 

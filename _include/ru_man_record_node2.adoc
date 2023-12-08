@@ -29,7 +29,7 @@ node2
 ----
 +
 
-NOTE: システムにクラスタ間 LIF がない可能性があります。クラスタ管理 LIF は、ノードペアの一方のノードにしか配置しません。の出力例にクラスタ管理 LIF が表示されています link:record_node1_information.html#step["手順 1."] インレコード node1 のポート情報 _ 。
+NOTE: システムにクラスタ間 LIF がない可能性があります。クラスタ管理 LIF は、ノードペアの一方のノードにしか配置しません。クラスタ管理LIFがの出力例に表示されます。 link:record_node1_information.html#step1["手順 1."] インレコード node1 のポート情報 _ 。
 
 . セクションで使用する情報を出力に記録します link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]。
 +

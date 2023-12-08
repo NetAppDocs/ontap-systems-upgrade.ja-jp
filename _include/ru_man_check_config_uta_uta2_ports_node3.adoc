@@ -253,6 +253,6 @@ Adapter  Mode     Type       Mode     Type       Status
 | ストレージディスクがあります | に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]。 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | _Install に戻り、 node3 をブートし、で再開します link:install_boot_node3.html#step7["手順 7"]。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | _Install に戻り、 node3 をブートし、で再開します link:install_boot_node3.html#man_install3_step7["手順 7"]。 
 |===
 

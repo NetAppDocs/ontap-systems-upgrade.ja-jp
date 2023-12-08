@@ -280,7 +280,7 @@ IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用�
 . スイッチベースのゾーニングを使用している場合は、新しい WWPN 値が反映されるようにゾーニングを調整します。
 
 
-. NetApp Storage Encryption（NSE）ドライブを搭載している場合は、次の手順を実行します。
+. [[auto_install4_step27]] NetAppストレージ暗号化（NSE）ドライブがインストールされている場合は、次の手順を実行します。
 +
 
 NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
@@ -315,7 +315,7 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 「 boot_ontap menu
 
 +
-FC または UTA / UTA2 設定がない場合は、を実行します link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 15"] ノード 4 が node2 のディスクを認識できるようにします。
+FC または UTA / UTA2 設定がない場合は、を実行します link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 15"] ノード4がノード2のディスクを認識できるようにします。
 
 . [[step29]] ストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用する MetroCluster 構成、 V シリーズシステム、およびシステムについては、ノードに接続されているディスクを検出するために、 FC または UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください link:set_fc_or_uta_uta2_config_node4.html["ノード 4 で FC または UTA / ut2 の設定を行います"]。
 

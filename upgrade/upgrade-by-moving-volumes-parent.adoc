@@ -1,0 +1,46 @@
+---
+permalink: upgrade/upgrade-by-moving-volumes-parent.html 
+sidebar: sidebar 
+keywords: upgrade by moving volumes 
+summary: ボリュームを移動してアップグレードする場合は、元のノードを準備し、新しいノードをクラスタに追加します。ボリュームを新しいノードに移動し、 LIF を設定して、クラスタから元のノードを削除します。ボリュームの移動によるアップグレード手順は無停止で実行できます。 
+---
+= ワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ボリュームを移動してコントローラハードウェアをアップグレードする場合は、元のノードを準備し、新しいノードをクラスタに追加します。ボリュームを新しいノードに移動し、 LIF を設定して、クラスタから元のノードを削除します。ボリュームの移動によるアップグレード手順は無停止で実行できます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"]link:upgrade-prepare-when-moving-volumes.html["ボリューム移動時にアップグレードを準備"]
+[role="quick-margin-para"]
+ボリュームを移動してコントローラハードウェアをアップグレードする前に、いくつかの準備手順を実行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"]link:upgrade-install-and-join-new-nodes-move-vols.html["新しいノードを設置してクラスタに追加"]
+[role="quick-margin-para"]
+元のノードからボリュームを移動できるように、新しいノードを設置してクラスタに追加します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html["Linux iSCSIホストを新しいノードに移動する"]
+[role="quick-margin-para"]
+iSCSI SANボリュームを新しいノードに移動する前に、新しいiSCSI接続を作成し、新しいノードへのiSCSIパスを再スキャンします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."]link:upgrade-create-aggregate-move-volumes.html["アグリゲートを作成してボリュームを新しいノードに移動"]
+[role="quick-margin-para"]
+元のノードから移動するボリュームを格納するために、新しいノードのそれぞれに少なくとも1つのアグリゲートを作成します。ボリュームごとにアグリゲートを指定し、各ボリュームを個別に移動する必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"]link:upgrade-move-lifs-to-new-nodes.html["SAN 以外のデータ LIF とクラスタ管理 LIF を新しいノードに移動します"]
+[role="quick-margin-para"]
+元のノードからボリュームを移動したら、SAN以外のデータLIFとクラスタ管理LIFを元のノードから新しいノードに移行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"]link:upgrade_move_delete_recreate_san_lifs.html["SAN LIF を移動、削除、または作成する"]
+[role="quick-margin-para"]
+クラスタの内容とクラスタ環境に応じて、SAN LIFを移動、削除、作成するか、削除したSAN LIFを再作成します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]link:upgrade-unjoin-original-nodes-move-volumes.html["クラスタから元のノードを分離"]
+[role="quick-margin-para"]
+ボリュームを新しいノードに移動したら、クラスタから元のノードを削除します。ノードを削除すると、ノードの設定が消去され、すべてのディスクが初期化されます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["8"]link:upgrade-complete-move-volumes.html["アップグレードを完了します"]
+[role="quick-margin-para"]
+ボリュームを移動することでアップグレードの手順を完了するには、サービスプロセッサ（SP）を設定し、新しいライセンスをインストールし、AutoSupportをセットアップします。また、ストレージまたはボリュームの暗号化を設定し、FCポートまたはNCAポートを設定する必要がある場合もあります。

@@ -121,7 +121,7 @@ NOTE: FCポートはイニシエータとしてプログラムする必要があ
 
 | は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています  a| 
 ** に進みます link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["ノード 4 の UTA / UTA2 ポートを確認して設定してください"] ノード 4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合
-** node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します link:install_boot_node4.html#step23["手順 23"]。
+** node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します link:install_boot_node4.html#auto_install4_step23["手順 23"]。
 
 
 |===
@@ -291,7 +291,7 @@ f-a   2b       fc             target       cna           -             online
 | ストレージディスクがあります | セクションに移動します link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]。 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | section_Install および boot node4 に戻り、で再開します link:install_boot_node4.html#step23["手順 23"]。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | section_Install および boot node4 に戻り、で再開します link:install_boot_node4.html#auto_install4_step23["手順 23"]。 
 |===
 . [[auto_check_4_step13]] メンテナンスモードを終了します。
 +

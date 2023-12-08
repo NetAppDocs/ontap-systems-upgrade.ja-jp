@@ -316,7 +316,7 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 「 boot_ontap menu
 
 +
-FC または UTA / UTA2 設定がない場合は、を実行します link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 15"] ノード 4 が node2 のディスクを認識できるようにします。
+FC または UTA / UTA2 設定がない場合は、を実行します link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 15"] ノード4がノード2のディスクを認識できるようにします。
 
 . [step29] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムについて、ノードに接続されているディスクを検出するために、ノード 3 の FC ポートまたは UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください link:set_fc_or_uta_uta2_config_on_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"]。
 

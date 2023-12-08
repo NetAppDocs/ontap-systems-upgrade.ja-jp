@@ -215,6 +215,6 @@ f-a    2b      fc      target    cna      -          online
 | ストレージディスクがあります | に進みます link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]。 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | section_Install および boot node4 _ に戻り、のセクションを再開します link:install_boot_node4.html#Step9["手順 9"]。 
+| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | section_Install および boot node4 _ に戻り、のセクションを再開します link:install_boot_node4.html#man_install4_Step9["手順 9"]。 
 |===
 
