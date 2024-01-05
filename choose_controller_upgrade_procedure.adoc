@@ -67,4 +67,4 @@ image:workflow_external_drives.png["アップグレード手順の選択の決�
 ====
 MetroCluster構成をアップグレードする場合は、を参照してください。 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 構成をアップグレード、更新、または拡張します"^]。
 
-個 々 のコンポーネントを交換する場合は、を参照してください。 https://docs.netapp.com/us-en/ontap-systems/index.html["AFF および FAS システムのマニュアル"^] およびそのコンポーネントのField Replaceable Unit（FRU；フィールド交換可能ユニット）のリーフレットを参照してください。
+個 々 のコンポーネントを交換する場合は、を参照してください。 https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAPハードウェアシステムのドキュメント"^] およびそのコンポーネントのField Replaceable Unit（FRU；フィールド交換可能ユニット）のリーフレットを参照してください。

@@ -100,6 +100,22 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco クラスタ
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 クラスタスイッチを使用した 2 ノードスイッチクラスタへの移行"^]
 
+. 必要に応じて、古いシステムでBaseboard Management Controller（BMC；ベースボード管理コントローラ）用に使用していたデフォルト以外のユーザアカウントを再作成します。
++
+.. BMC管理者ユーザアカウントのパスワードを変更またはリセットします。
++
+BMC管理者ユーザアカウントのパスワードが空白（パスワードなし）であるか、システム管理者ユーザアカウントのパスワードと同じです。
+
+.. デフォルト以外のBMCユーザアカウントを再作成するには、 `security login create` コマンドにを指定します `application` 次の例に示すように、「service-processor」に設定します。
++
+`security login create -user-or-group-name bmcuser -application service-processor -authentication-method password -role admin`
+
++
+
+NOTE: BMCでユーザアカウントを作成するには、管理者権限が必要です。
+
+
+
 . 必要に応じて、ネットアップサポートサイト経由で元のシステムを運用停止にし、システムの運用を停止したこととサポートデータベースから削除できることをネットアップに通知します。
 +
 .. にログインします https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"^] サイト

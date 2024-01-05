@@ -1,6 +1,6 @@
 ---
 indexpage:
-  lead: このサイトでは、AFFおよびFASストレージシステムのアップグレード手順について説明します。ストレージシステムに適したアップグレード手順を選択します。
+  lead: このサイトでは、AFF、FAS、およびASAストレージシステムのアップグレード手順について説明します。ストレージシステムに適したアップグレード手順を選択します。
   tiles:
   - title: はじめに
     links:
@@ -34,7 +34,7 @@ indexpage:
       url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
   - title: リソースの追加
     links:
-    - title: ONTAP システムのドキュメント
+    - title: ONTAPハードウェアシステムのドキュメント
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
     - title: ONTAP スイッチのドキュメント
       url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html

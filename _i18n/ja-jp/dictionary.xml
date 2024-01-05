@@ -2543,7 +2543,6 @@
   <block id="c526c49b8044ea431a2ad56bde07cd17" category="list-text">[step2] node3 が node2 と通信できること、およびすべての LIF が動作していることを確認します。</block>
   <block id="0ccfa81b1f21bfb5655a443ca59f1146" category="inline-link-macro">ノード 1 で所有されている NAS データ LIF をノード 2 からノード 3 に移動し、ノード 3 の SAN LIF を確認します</block>
   <block id="d1e338a03ea3eb1b2592ad7856e6b249" category="list-text">[[step4]] ノードの 1 つで次のコマンドを入力し、その出力を調べて、 node2 および node3 がクォーラムにあることを確認します。</block>
-  <block id="6af6b76d592516d40ca101051c678be3" category="doc">AFF および FAS システムのアップグレードに関するドキュメント</block>
   <block id="c659f2c431be96152886f89fc8d66545" category="list-text">[step2] ノード 1 およびノード 2 のすべての LIF の自動リバート設定を変更します。</block>
   <block id="cbda167ce953729cf8b9be29b0e35ede" category="list-text">[[step3] インターフェイスグループおよび VLAN でホストされる NAS データ LIF を node1 で移行するには、次の手順を実行します。</block>
   <block id="9ebd90a8ee1baaa50f7229ecbad7e8b4" category="list-text">[[substepa]] すべてのインターフェイスグループでホストされている LIF と node1 上の VLAN を、インターフェイスグループと同じネットワーク上の LIF をホストできる node2 のポートに移行します。そのためには、各 LIF に対して次のコマンドを 1 回入力します。</block>
@@ -2615,7 +2614,6 @@
   <block id="7d94daad2b6e9d77a6320a64c21fbc4a" category="sidebar">MetroCluster 構成のシステムをアップグレードする</block>
   <block id="c6bb96cc8b84319277f00b15adc71d75" category="sidebar">MetroCluster 構成のアップグレード用手順を選択します</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">リソースの追加</block>
-  <block id="aaf23d643347b5921ba9716fa4c13f83" category="sidebar">ONTAP システムのドキュメント</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP スイッチのドキュメント</block>
   <block id="dd032435fa83549d8bf3928550409a3e" category="sidebar">ONTAP ソフトウェアのドキュメント</block>
   <block id="519131237f79eadb2dc6a1e003a087bc" category="sidebar">NetApp Active IQ Config Advisor の略</block>
@@ -4747,8 +4745,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="8b9b2634fd898f04166a765851aba8f2" category="list-text"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block></block>
   <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">*注2 *：無停止アップグレードでは、元のシステムのデータを格納するために、独自のストレージとシェルフを備えた新しいシステムが必要です。</block>
   <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">*注3 *：ボリュームを移動することでアップグレードする場合は、新しいノードを追加し、ボリュームとLIFを新しいノードに移動してから、クラスタから削除するノードを分離します。2ノードスイッチレスクラスタをアップグレードする場合は、新しいノードを追加する前に、クラスタスイッチのペアを使用してスイッチ接続クラスタに変換します。</block>
-  <block id="16319414c65274d365d86327a61ef5dc" category="inline-link">AFF および FAS システムのマニュアル</block>
-  <block id="c2238e72fe75968b1d2d41e7beba323b" category="paragraph">個 々 のコンポーネントを交換する場合は、を参照してください。<block ref="9e966fb68ec771eec4870f18e1909b4f" category="inline-link-rx"></block> およびそのコンポーネントのField Replaceable Unit（FRU；フィールド交換可能ユニット）のリーフレットを参照してください。</block>
   <block id="c024cf342a69d8b35b142333f2608aa5" category="sidebar">ONTAP 9.8以降を実行しているシステムでのアグリゲートの再配置によるアップグレード</block>
   <block id="5d3c4b59db4a991b7c6450c61662dc60" category="sidebar">ONTAP 9.7以前を実行しているシステムでアグリゲートを再配置してアップグレードする</block>
   <block id="d58d42ec84ab0189beb36da55893f387" category="sidebar">ストレージまたはボリュームの移動によるアップグレード</block>
@@ -4897,5 +4893,15 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="ac5c825456c3417b5a4af98c4f3e915f" category="paragraph">^1 AFF A800 システムに必要な追加手順については、セクションの「 A800 」を参照する手順に進んでください <block ref="d7767766539bb5c2349ec33972e353b3" category="inline-link-macro-rx"></block>または <block ref="1ac9d612a445bb1be7d33490e7f7168c" category="inline-link-macro-rx"></block>。</block>
   <block id="e517f479718742d7735088b63cb4b0a6" category="list-text">[[step5] 次のいずれかの操作を実行します。</block>
   <block id="1f6c36e4c21adc6fcbbeb1628f0ce398" category="paragraph">コントローラハードウェアをアップグレードするその他の方法については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。</block>
-  <block id="a8337c93c769b636588431825fedbc33" category="sidebar">このサイトでは、AFFおよびFASストレージシステムのアップグレード手順について説明します。ストレージシステムに適したアップグレード手順を選択します。</block>
+  <block id="ce334042acf5cdb00aa6b0cacc91188d" category="list-text">必要に応じて、古いシステムでBaseboard Management Controller（BMC；ベースボード管理コントローラ）用に使用していたデフォルト以外のユーザアカウントを再作成します。</block>
+  <block id="7cd124c3569d4b8de1ffd3a55e5a0f72" category="list-text">BMC管理者ユーザアカウントのパスワードを変更またはリセットします。</block>
+  <block id="f9c20a87fa881cd6931b55ff9caab40b" category="paragraph">BMC管理者ユーザアカウントのパスワードが空白（パスワードなし）であるか、システム管理者ユーザアカウントのパスワードと同じです。</block>
+  <block id="98295c6ad28170a1a290ca42442cdb79" category="list-text">デフォルト以外のBMCユーザアカウントを再作成するには、<block ref="5d6b067bb8a979d6b47c787077dfae6f" prefix=" " category="inline-code"></block> コマンドにを指定します<block ref="3676d55f84497cbeadfc614c1b1b62fc" prefix=" " category="inline-code"></block> 次の例に示すように、「service-processor」に設定します。</block>
+  <block id="715d318a746fe248ce78ec5e2626f09e" category="paragraph"><block ref="95c8ee682558c9e9a0683d5d70ee2be7" prefix="" category="inline-code"></block></block>
+  <block id="b6025c8f8309b4b8106567e8e60f52ac" category="admonition">BMCでユーザアカウントを作成するには、管理者権限が必要です。</block>
+  <block id="a64a5798382cc068c2d777ff826bccb5" category="doc">ONTAPハードウェアのアップグレードに関するドキュメント</block>
+  <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAPハードウェアシステムのドキュメント</block>
+  <block id="c2bb4d5f8818bc80f7aa15d94d57c6e3" category="paragraph">個 々 のコンポーネントを交換する場合は、を参照してください。<block ref="e18a2433f1085adba8dc86307fee18d1" category="inline-link-rx"></block> およびそのコンポーネントのField Replaceable Unit（FRU；フィールド交換可能ユニット）のリーフレットを参照してください。</block>
+  <block id="dec452d8e293e5516524ae8a86713211" category="sidebar">このサイトでは、AFF、FAS、およびASAストレージシステムのアップグレード手順について説明します。ストレージシステムに適したアップグレード手順を選択します。</block>
+  <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">ONTAPハードウェアシステムのドキュメント</block>
 </blocks>
