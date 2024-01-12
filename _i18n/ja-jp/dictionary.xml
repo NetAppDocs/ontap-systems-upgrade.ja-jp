@@ -1257,7 +1257,6 @@
   <block id="e062efd67a70d34c188657c2ffafc80e" category="summary">ノード 1 とノード 2 に属していたディスクを、それぞれノード 3 とノード 4 に再割り当てする必要があります。</block>
   <block id="43b6e140cee78de5a68c093867c65596" category="doc">ストレージシェルフを接続し、ディスク所有権を再割り当てします</block>
   <block id="507efb4e488acd48724d3f1c3d4b184d" category="paragraph">このセクションの手順は、 node3 と node4 で実行します。そのあと、 node3 の各手順を完了してから次の手順に進みます。</block>
-  <block id="3a1ea4eb792e23021a7c1dcb702a9545" category="list-text">ストレージシェルフのケーブルを node1 / node2 から node3 / node4 に接続します。電源装置とシェルフの物理的な接続を確認します。</block>
   <block id="6617e295325d64b4136755492970fe4c" category="list-text">node3 の LOADER プロンプトから、メンテナンスモードでブートします。</block>
   <block id="533823574e82f810ad592fb31173b543" category="list-text">node3 のシステム ID を表示します。</block>
   <block id="9d0e35f7d62f6d238b5cb5794b6d495c" category="paragraph">「ディスクショー V 」</block>
@@ -2646,7 +2645,6 @@
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">ノード 4 で FC または UTA / UTA2 設定を設定します</block>
   <block id="2e546c2ae4e7d18e3a62352f7899f8ad" category="paragraph">各ノード 4 のプラットフォームについて、『 Installation and Setup Instructions 』または『 FlexArray Virtualization Installation Requirements and Reference_for the node4 』、該当するディスクシェルフのドキュメント、および _High Availability management _ の手順に従って、次の接続をケーブル接続します。</block>
   <block id="96fc3790ed0f779b648493fc7e4b2e7c" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> FlexArray 仮想化インストール要件およびリファレンスとハイアベイラビリティ管理へのリンク。</block>
-  <block id="c83b4e572cf3ae5eb7bac42baed0ac9e" category="summary">このトピックでは、他の参照コンテンツや Web サイトにリンクすることができます。</block>
   <block id="82a3300ad94a5e1dcf0a6abbfe1060e2" category="paragraph">このコンテンツの手順を実行するときは、参照コンテンツを参照するか、参照 Web サイトにアクセスする必要があります。</block>
   <block id="14f94d0b133a9aa34a775e955c95b8bc" category="list-text"><block ref="13e4a2cf4e0a4edbef519c9af2452c86" category="inline-xref-macro-rx"></block></block>
   <block id="ec5873b9b6861954a7c07d183dd486b0" category="section-title">参照コンテンツ</block>
@@ -3268,10 +3266,8 @@
   <block id="c0ff48676f87627f73474db6b1018a88" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする際に、 node3 と node4 をネットブートする準備をします。</block>
   <block id="14173ffe47c7c7e4971c06932a3084e2" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、 KMIP サーバを使用して認証キーを管理します。</block>
   <block id="78bd6f667bd547c51374b0e978e9d001" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合に必要な参照コンテンツと Web サイト。</block>
-  <block id="c08f0b6d71108219929095cbd90d111d" category="paragraph">この手順 は、次の状況で使用します。</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。</block>
-  <block id="9cc6fc2f026195efe30da793b04e5bd0" category="paragraph">Do * not * この手順 は、次の状況で使用します。</block>
   <block id="d94e9d7914bbd98510d8cb9e0a6d08b1" category="list-text">クラスタインターコネクトストレージとイーサネット接続ストレージに共有スイッチを使用している。</block>
   <block id="af18adb321560258c2b9a80d2757792a" category="paragraph">アップグレードの各段階で、システムがクラッシュする（リブート、パニック状態、または電源の再投入）場合があります。</block>
   <block id="c7fc4caaca02af86d84b04f258dfd7e6" category="paragraph">node2 はテイクオーバーしませんが、ルート以外のすべてのアグリゲートから引き続きデータを提供しています。</block>
@@ -4892,7 +4888,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="756e1a7c05678e697a7ba0945d87ed6c" category="paragraph">FC または UTA / UTA2 設定がない場合は、を実行します <block ref="cd67767b7b87c1efe6325584571ce48d" category="inline-link-macro-rx"></block> ノード4がノード2のディスクを認識できるようにします。</block>
   <block id="ac5c825456c3417b5a4af98c4f3e915f" category="paragraph">^1 AFF A800 システムに必要な追加手順については、セクションの「 A800 」を参照する手順に進んでください <block ref="d7767766539bb5c2349ec33972e353b3" category="inline-link-macro-rx"></block>または <block ref="1ac9d612a445bb1be7d33490e7f7168c" category="inline-link-macro-rx"></block>。</block>
   <block id="e517f479718742d7735088b63cb4b0a6" category="list-text">[[step5] 次のいずれかの操作を実行します。</block>
-  <block id="1f6c36e4c21adc6fcbbeb1628f0ce398" category="paragraph">コントローラハードウェアをアップグレードするその他の方法については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。</block>
   <block id="ce334042acf5cdb00aa6b0cacc91188d" category="list-text">必要に応じて、古いシステムでBaseboard Management Controller（BMC；ベースボード管理コントローラ）用に使用していたデフォルト以外のユーザアカウントを再作成します。</block>
   <block id="7cd124c3569d4b8de1ffd3a55e5a0f72" category="list-text">BMC管理者ユーザアカウントのパスワードを変更またはリセットします。</block>
   <block id="f9c20a87fa881cd6931b55ff9caab40b" category="paragraph">BMC管理者ユーザアカウントのパスワードが空白（パスワードなし）であるか、システム管理者ユーザアカウントのパスワードと同じです。</block>
@@ -4904,4 +4899,10 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="c2bb4d5f8818bc80f7aa15d94d57c6e3" category="paragraph">個 々 のコンポーネントを交換する場合は、を参照してください。<block ref="e18a2433f1085adba8dc86307fee18d1" category="inline-link-rx"></block> およびそのコンポーネントのField Replaceable Unit（FRU；フィールド交換可能ユニット）のリーフレットを参照してください。</block>
   <block id="dec452d8e293e5516524ae8a86713211" category="sidebar">このサイトでは、AFF、FAS、およびASAストレージシステムのアップグレード手順について説明します。ストレージシステムに適したアップグレード手順を選択します。</block>
   <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">ONTAPハードウェアシステムのドキュメント</block>
+  <block id="1320db1e300a995e122ea5d434b23e9b" category="list-text">ノード1 /ノード2に接続していたシェルフのストレージシェルフケーブルをノード3 /ノード4に接続します。</block>
+  <block id="4e14960b0c5923b866b1398172c14f69" category="admonition">このアップグレード手順の実行中は、新しいシェルフをノード3 /ノード4に接続しないでください。コントローラのアップグレードが完了したら、新しいシェルフをシステムに無停止で接続できます。</block>
+  <block id="c1f694580637b3e597cbb094a01e4f0b" category="list-text">電源装置とシェルフの物理的な接続を確認します。</block>
+  <block id="ed55776ebd74bfbd9eb16e468efd309c" category="paragraph">この手順は、次の状況で使用できます。</block>
+  <block id="3767c7624c68d0c29496b5a31369dec4" category="paragraph">次の状況では、この手順を使用できません。</block>
+  <block id="30fe187542d0301b8cde168dff779374" category="paragraph">コントローラハードウェアのその他のアップグレード方法については、を参照してください。 <block ref="9f3bef3f6be14e6a346fc21a2929c802" category="inline-link-macro-rx"></block>。</block>
 </blocks>
