@@ -1,5 +1,8 @@
 ---
 indexpage:
+  title: ONTAPハードウェアのアップグレードに関するドキュメント
+  summary: アグリゲートの再配置、ボリュームの移動、またはストレージの移動を実行して、コントローラハードウェアをアップグレードします。
+  keywords: aggregate, relocation, moving, manual, upgrade, relocate
   lead: このサイトでは、AFF、FAS、およびASAストレージシステムのアップグレード手順について説明します。ストレージシステムに適したアップグレード手順を選択します。
   tiles:
   - title: はじめに
@@ -10,18 +13,20 @@ indexpage:
       url: "/choose_controller_upgrade_procedure.html"
   - title: ONTAP 9.8以降を実行しているシステムでのアグリゲートの再配置によるアップグレード
     links:
+    - title: ONTAP 9.15.1で導入されたコントローラハードウェアをアップグレードするには、「system controller replace」コマンドを使用します。
+      url: "/upgrade-arl-auto-app-9151/index.html"
     - title: "「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+      url: "/upgrade-arl-auto-affa900/index.html"
     - title: "「 system controller replace 」コマンドを使用（ほとんどのシステム）"
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+      url: "/upgrade-arl-auto-app/index.html"
     - title: 手動コマンドを使用する
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+      url: "/upgrade-arl-manual-app/index.html"
   - title: ONTAP 9.7以前を実行しているシステムでアグリゲートを再配置してアップグレードする
     links:
     - title: system controller replaceコマンドを使用する
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+      url: "/upgrade-arl-auto/index.html"
     - title: 手動コマンドを使用する
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+      url: "/upgrade-arl-manual/index.html"
   - title: ストレージまたはボリュームの移動によるアップグレード
     links:
     - title: コントローラハードウェアをアップグレードします
@@ -36,7 +41,7 @@ indexpage:
     links:
     - title: ONTAPハードウェアシステムのドキュメント
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
-    - title: ONTAP スイッチのドキュメント
+    - title: ONTAPハードウェアシステムのスイッチマニュアル
       url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
     - title: ONTAP ソフトウェアのドキュメント
       url: https://docs.netapp.com/us-en/ontap/index.html

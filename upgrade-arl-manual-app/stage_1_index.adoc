@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/stage_1_index.html
 keywords: stage 1, prepare, upgrade, steps 
 summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードするための、第 1 段階のプロセスシーケンス。 
 ---
-= 概要
+= ステージ1の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

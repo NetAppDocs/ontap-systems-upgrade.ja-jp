@@ -25,6 +25,9 @@ summary: 同じシャーシ内のコントローラモデルをアップグレ�
 | 古いコントローラ | 交換用コントローラ 
 
 
+| AFF A800用 | AFF A70およびAFF A90 
+
+
 | AFF A220をASAとして構成 | ASA A150 
 
 
@@ -44,6 +47,7 @@ summary: 同じシャーシ内のコントローラモデルをアップグレ�
 |===
 * NetAppの営業担当者に、コントローラアップグレード用のハードウェアが届いていることを確認しておきます。
 +
+** アップグレードに必要なAFF A90コントローラ×2またはAFF A70コントローラ×2、およびすべてのI/Oモジュール。100GbEケーブルに必要な長さ。
 ** ASA A150、AFF A150、またはFAS2820コントローラ
 ** ASA A900、AFF A900、またはFAS9500コントローラおよびNVRAMモジュールとアップグレードに必要なパーツ
 
@@ -55,11 +59,11 @@ summary: 同じシャーシ内のコントローラモデルをアップグレ�
 
 次の状況では、この手順を使用できません。
 
-* AFF A700またはFAS9000システムでFlexArray 仮想化ソフトウェアを使用している。
+* AFF A800、AFF A700、またはFAS9000システムでFlexArray仮想化ソフトウェアを使用している。
 * クラスタインターコネクトストレージとイーサネット接続ストレージに共有スイッチを使用している。
 
 
-AFF A700またはFAS9000システムでのFabric MetroClusterまたはMetroCluster IP構成のアップグレードについては、を参照してください link:other_references.html["参考資料"] MetroCluster アップグレードおよび Expansion コンテンツにリンクするには、次の手順を実行します。
+AFF A800、AFF A700、またはFAS9000システムでMetroCluster IP構成をアップグレードする方法については、「_ MetroCluster Upgrade and Expansion_content」へのリンクを参照してください link:other_references.html["参考資料"] 。
 
 
 NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。

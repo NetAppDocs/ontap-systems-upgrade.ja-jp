@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/manage-authentication-using-kmip-servers.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをアップグレードする場合、ストレージ暗号化の設定と管理、認証キーの管理、およびSnapMirror関係の休止を `system controller replace` 行います。' 
+---
+= KMIP サーバを使用して認証を管理します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Key Management Interoperability Protocol （ KMIP ）サーバを使用して、認証キーを管理できます。
+
+.手順
+. 新しいコントローラを追加します。
++
+「 security key-manager external enable 」と入力します
+
+. キー管理ツールを追加します。
++
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
+
+. キー管理サーバが設定され、クラスタ内のすべてのノードで使用できることを確認します。
++
+「 security key-manager external show-status 」
+
+. リンクされたすべてのキー管理サーバの認証キーを新しいノードにリストアします。
++
+'security key-manager external restore -node _new_controller_name_`
+
+

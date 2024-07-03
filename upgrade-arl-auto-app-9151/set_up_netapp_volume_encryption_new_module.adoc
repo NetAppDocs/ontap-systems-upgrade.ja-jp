@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/set_up_netapp_volume_encryption_new_module.html 
+keywords: set up, netapp volume encryption, controller, module, nve, node 
+summary: '必要に応じて、コマンドを使用してONTAP 9.15.1以降を実行するコントローラをアップグレードする際に、NVEまたはNAE用に新しいコントローラモジュールを設定し `system controller replace` ます。' 
+---
+= 新しいコントローラモジュールでNetApp VolumeまたはAggregate Encryptionをセットアップします
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新しいコントローラの交換したコントローラまたはハイアベイラビリティ（HA）パートナーがNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、新しいコントローラモジュールをNVEまたはNAE用に設定する必要があります。
+
+.このタスクについて
+この手順には、新しいコントローラモジュールで実行する手順が含まれています。コマンドは正しいノードで入力する必要があります。
+
+[role="tabbed-block"]
+====
+.オンボードキーマネージャ
+--
+オンボードキーマネージャを使用してNVEまたはNAEを設定します。
+
+.手順
+. リンクされたすべてのキー管理サーバから新しいノードに認証キーをリストアします。
++
+「セキュリティキーマネージャオンボード同期」
+
+
+
+--
+.外部キー管理
+--
+外部キー管理を使用してNVEまたはNAEを設定します。
+
+.手順
+. キー管理サーバがまだ使用可能であり、ステータスと認証キー情報が正しいことを確認します。
++
+「 securitykey manager key query -node node 」を参照してください
+
+. 前の手順で確認したキー管理サーバを新しいコントローラのキー管理サーバリストに追加します。
++
+.. キー管理サーバを追加します。
++
+「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します
+
+.. リストされている各キー管理サーバについて、同じ手順を繰り返します。最大 4 台のキー管理サーバをリンクできます。
+.. キー管理サーバが正常に追加されたことを確認します。
++
+「 security key-manager external show 」と入力します
+
+
+
+. 新しいコントローラモジュールで、キー管理セットアップウィザードを実行して、キー管理サーバをセットアップしてインストールします。
++
+既存のコントローラモジュールと同じキー管理サーバをインストールする必要があります。
+
++
+.. 新しいノードでキー管理サーバセットアップウィザードを起動します。
++
+「 security key-manager external enable 」と入力します
+
+.. ウィザードの手順に従って、キー管理サーバを設定します。
+
+
+. リンクされたすべてのキー管理サーバから新しいノードに認証キーをリストアします。
++
+「セキュリティキーマネージャの外部リストア」
+
++
+このコマンドには、OKMのパスフレーズが必要です
+
++
+詳細については、技術情報アーティクルを参照してください https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu["ONTAP ブートメニューから外部キー管理サーバの設定をリストアする方法"^]。
+
+
+
+--
+====
+.完了後
+認証キーを使用できなかったか、 EKM サーバに到達できなかったためにボリュームがオフラインになっていないか確認してください。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します

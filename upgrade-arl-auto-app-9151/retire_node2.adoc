@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/retire_node2.html 
+keywords: retire, node2 
+summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコントローラをアップグレードする場合は、ノード2をシャットダウンしてラックまたはシャーシから取り外し `system controller replace` ます。' 
+---
+= ノード 2 を撤去
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ノード2を撤去するには、まずノード2を正しくシャットダウンし、ラックまたはシャーシから取り外します。
+
+.手順
+. 処理を再開します。
++
+「システムコントローラの交換が再開」
+
++
+ノードは自動的に停止します。
+
+
+
+.完了後
+アップグレードの完了後に、 node2 の運用を停止できます。を参照してください link:decommission_old_system.html["古いシステムの運用を停止"]。

@@ -14,10 +14,14 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 [role="lead"]
-ノード1のインストールと交換用システムモジュールを確認する必要があります。物理ポートは変更されないため、古いnode1の物理ポートを交換用node1にマッピングする必要はありません。
+交換用コントローラモジュールでノード1をブートしたら、正しく取り付けられていることを確認します。
+
+AFF A800のアップグレードの場合のみ、既存のノード1の物理ポートを交換用のノード1にマッピングします。これは、AFF A800とAFF A90またはAFF A70コントローラ間で物理ポートが変更されるためです。
+
+それ以外のアップグレードでは物理ポートに変更がないため、古いノード1の物理ポートを交換用ノード1にマッピングする必要はありません。
 
 .このタスクについて
-交換用コントローラモジュールでノード1をブートしたら、正しく取り付けられていることを確認します。ノード 1 がクォーラムに参加するのを待ってから、コントローラの交換処理を再開する必要があります。
+ノード 1 がクォーラムに参加するのを待ってから、コントローラの交換処理を再開する必要があります。
 
 手順のこの時点で、コントローラのアップグレード処理はノード 1 がクォーラムへの自動参加を試みるため一時停止している必要があります。
 
@@ -33,6 +37,14 @@ cluster show -node node1 -fields health`
 +
 「 cluster show 」を参照してください
 
++
+[NOTE]
+====
+ブート後にノード1がクォーラムに参加していない場合は、5分待ってからもう一度確認します。クラスタ接続によっては、ポート到達可能性スキャンが完了してLIFがそれぞれのホームポートに移動するまでに時間がかかることがあります。
+
+node1が5分経ってもクォーラムに参加しない場合は、diagnostic権限コマンドを使用して「Cluster ipspace」にノードを配置し、新しいノードのクラスタポートを変更することを検討して `network port modify <port_name> -ipspace Cluster`ください。
+
+====
 . advanced 権限モードに切り替えます。
 +
 「高度」
@@ -116,16 +128,14 @@ Node1
           a0a-822  Default:822                          ok
           a0a-823  Default:823                          ok
           e0M      Default:Mgmt                         ok
-          e11a     -                                    no-reachability
-          e11b     -                                    no-reachability
-          e11c     -                                    no-reachability
-          e11d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e2a      -                                    no-reachability
+          e2b      -                                    no-reachability
           e3a      -                                    no-reachability
           e3b      -                                    no-reachability
-          e4a      Cluster:Cluster                      ok
-          e4e      Cluster:Cluster                      ok
-          e5a      -                                    no-reachability
-          e7a      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
           e9a      Default:Default                      ok
           e9a-822  Default:822                          ok
           e9a-823  Default:823                          ok
@@ -134,10 +144,10 @@ Node1
           e9b-823  Default:823                          ok
           e9c      Default:Default                      ok
           e9d      Default:Default                      ok
-22 entries were displayed.
+20 entries were displayed.
 ----
 +
-上記の例では、コントローラの交換後にノード 1 がブートしています。物理的に接続されていないため、一部のポートに到達できません。「 OK 」以外の到達可能性ステータスのポートはすべて修復する必要があります。
+上記の例では、コントローラの交換後にノード1がブートしています。「no-reachability」と表示されたポートは物理的に接続されていません。到達可能性ステータスが以外のポートは修復する必要があります `ok`。
 
 +
 
@@ -160,12 +170,12 @@ NOTE: アップグレード中、ネットワークポートとその接続は�
 +
 [listing]
 ----
-Cluster ::> reachability repair -node node1 -port e11b
+Cluster ::> reachability repair -node node1 -port e1b
 ----
 +
 [listing]
 ----
-Warning: Repairing port "node1:e11b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node1:e1b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
 +
 上記の例に示すように、ポートの到達可能性ステータスが、現在配置されているブロードキャストドメインの到達可能性ステータスと異なる場合があることを示す警告メッセージが表示されます。ポートと回答 'y' または 'n' の接続を適宜確認します

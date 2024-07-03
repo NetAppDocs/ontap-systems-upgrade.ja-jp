@@ -27,8 +27,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 
 . プロンプトが表示されたら、「 y 」と入力します。
 . 再配置は、次のいずれかの方法で強制的に実行できます。
-
-
++
 [cols="35,65"]
 |===
 | オプション | 説明 
@@ -39,3 +38,4 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 
 | デスティネーションチェックの無効化 | 次のコマンドを使用します。storage aggregate relocation start -node node1 -destination node2 -aggregate-list_aggr_list --nd-controller-upgrade true -override-vetoes true -override-vetoes true -override-vetoes destination-checks true 
 |===
+

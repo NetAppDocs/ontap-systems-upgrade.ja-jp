@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/troubleshoot_index.html 
+keywords: troubleshooting, troubleshoot, node, aggregate, lif, migrate, failure 
+summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行しているコントローラのアップグレード時に発生する可能性がある障害をトラブルシューティングします `system controller replace` 。' 
+---
+= トラブルシューティングを行う
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ノードペアのアップグレード中に障害が発生する可能性があります。ノードがクラッシュする、アグリゲートが再配置されない、または LIF が移行されない可能性があります。障害の原因とその解決策は、アップグレード手順の実行中に障害が発生したタイミングによって異なります。
+
+手順の各フェーズについては、セクションの表を参照してください link:overview_of_the_arl_upgrade.html["ARL アップグレードの概要"]。発生する可能性のある障害の情報は、手順のフェーズ別に表示されます。

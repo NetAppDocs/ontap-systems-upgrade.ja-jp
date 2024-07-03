@@ -1,0 +1,306 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/verify_node3_installation.html 
+keywords: verifying, verify, node, install, installation 
+summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをアップグレードする場合は、ノード1の物理ポートがノード3に正しくマッピングされていることを確認し、ノード3のネットワーク設定をリストアします `system controller replace` 。' 
+---
+= ノード 3 のインストールを確認します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+node1 の物理ポートが、 node3 の物理ポートに正しくマッピングされていることを確認する必要があります。これにより、 node3 は、アップグレード後にクラスタ内の他のノードおよびネットワークと通信できるようになります。
+
+.このタスクについて
+を参照してください link:other_references.html["参考資料"] Hardware Universe にリンクして新しいノードのポートに関する情報を取得するには、次の手順を実行します。このセクションの後半の情報を使用します。
+
+物理ポートのレイアウトは、ノードのモデルによって異なる場合があります。新しいノードがブートすると、 ONTAP は、自動的にクォーラムに参加するためにクラスタ LIF をホストするポートを判別しようとします。
+
+node1 の物理ポートが node3 の物理ポートに直接マッピングされていない場合は、次のセクションを参照してください <<ノード 3 でネットワーク設定をリストア>> ネットワーク接続を修復するために使用する必要があります。
+
+node3 のインストールとブートが完了したら、正しくインストールされていることを確認する必要があります。node3 がクォーラムに参加するのを待ってから、再配置処理を再開する必要があります。
+
+手順のこの時点で、 node3 がクォーラムに参加する間、処理が一時停止します。
+
+.手順
+. ノード 3 がクォーラムに参加していることを確認し
++
+cluster show -node node3 -fields health`
+
++
+「 health 」フィールドの出力は「 true 」でなければなりません。
+
+. ノード 3 が node2 と同じクラスタに含まれており、ノード 3 が正常であることを確認します。
++
+「 cluster show 」を参照してください
+
+. [[Verify_node3_step_5]] advanced権限モードに切り替えます。
++
+「高度」
+
+. コントローラ交換処理のステータスを確認し、ノード 1 を停止する前と同じ状態で一時停止状態になっていることを確認して、新しいコントローラの設置とケーブルの移動の物理的なタスクを実行します。
++
+「 system controller replace show 」と表示されます
+
++
+「 system controller replace show-sdetails 」というエラーが表示されます
+
+. コントローラの交換処理を再開します。
++
+「システムコントローラの交換が再開」
+
+. コントローラの交換は一時停止し、次のメッセージが表示されます。
++
+....
+Cluster::*> system controller replace show
+Node             Status                       Error-Action
+---------------- ------------------------     ------------------------------------
+Node1(now node3) Paused-for-intervention      Follow the instructions given in
+                                              Step Details
+Node2                      None
+
+Step Details:
+--------------------------------------------
+To complete the Network Reachability task, the ONTAP network configuration must be manually adjusted to match the new physical network configuration of the hardware. This includes:
+
+1. Re-create the interface group, if needed, before restoring VLANs. For detailed commands and instructions, refer to the "Re-creating VLANs, ifgrps, and broadcast domains" section of the upgrade controller hardware guide for the ONTAP version running on the new controllers.
+2. Run the command "cluster controller-replacement network displaced-vlans show" to check if any VLAN is displaced.
+3. If any VLAN is displaced, run the command "cluster controller-replacement network displaced-vlans restore" to restore the VLAN on the desired port.
+
+2 entries were displayed.
+....
++
+
+NOTE: この手順では、 VLAN 、 ifgrp 、およびブロードキャストドメインの作成に関するセクションの名前が、 node3 のネットワーク設定の名前が _Restore に変更されています。
+
+. コントローラの交換を一時停止状態にした状態で次のセクションに進んで、ノードのネットワーク設定をリストアします。
+
+
+
+
+== ノード 3 でネットワーク設定をリストア
+
+node3 がクォーラムにあり、 node2 と通信できることを確認したら、 node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインが node3 にあることを確認します。また、 node3 のすべてのネットワークポートが正しいブロードキャストドメインに設定されていることを確認します。
+
+.このタスクについて
+VLAN 、インターフェイスグループ、およびブロードキャストドメインの作成と再作成の詳細については、を参照してください link:other_references.html["参考資料"] をクリックして _ ネットワーク管理 _ にリンクします。
+
+.手順
+. アップグレードされた node1 （ node3 ）にある物理ポートをすべて一覧表示します。
++
+network port show -node node3
+
++
+ノードのすべての物理ネットワークポート、 VLAN ポート、およびインターフェイスグループポートが表示されます。この出力から、 ONTAP によって「 Cluster 」ブロードキャストドメインに移動された物理ポートを確認できます。この出力を使用して、 LIF をホストするためにインターフェイスグループメンバーポート、 VLAN ベースポート、またはスタンドアロンの物理ポートとして使用するポートを決定できます。
+
+. クラスタのブロードキャストドメインの一覧を表示します。
++
+「 network port broadcast-domain show 」
+
+. node3 にあるすべてのポートの到達可能性をリストします。
++
+「 network port reachability show 」のように表示されます
+
++
+次の例のような出力が表示されます。
+
++
+[listing]
+----
+ClusterA::*> network port reachability show
+Node      Port     Expected Reachability                Reachability Status
+--------- -------- ------------------------------------ ---------------------
+node1_node3
+          e0M      Default:Mgmt                         ok
+          e10a     Default:Default                      ok
+          e10b     -                                    no-reachability
+          e10c     Default:Default                      ok
+          e10d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
+node2_node4
+          e0M      Default:Mgmt                         ok
+          e4a      Default:Default                      ok
+          e4b      -                                    no-reachability
+          e4c      Default:Default                      ok
+          e4d      -                                    no-reachability
+          e3a      Cluster:Cluster                      ok
+          e3b      Cluster:Cluster                      ok
+18 entries were displayed.
+----
++
+上記の例では、 node1 _node3 はコントローラの交換後にブートしたばかりです。一部のポートは想定されるブロードキャストドメインに到達できないため、修復が必要です。
+
+. [[auto_verify_3_step4]] 'node3 の各ポートの到達可能性を 'OK' 以外の到達可能性ステータスで修復します次のコマンドを最初に任意の物理ポートで実行し、次に任意の VLAN ポートで一度に 1 つずつ実行します。
++
+`network port reachability repair -node <node_name>  -port <port_name>`
+
++
+次の例のような出力が表示されます。
+
++
+[listing]
+----
+Cluster ::> reachability repair -node node1_node3 -port e4a
+----
++
+[listing]
+----
+Warning: Repairing port "node1_node3: e4a" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
++
+上記の警告メッセージは、到達可能性ステータスのポートで、現在配置されているブロードキャストドメインの到達可能性ステータスとは異なる可能性がある場合に表示されます。ポートと回答 'y' または 'n' の接続を適宜確認します
+
++
+すべての物理ポートに想定される到達可能性があることを確認します。
+
++
+「 network port reachability show 」のように表示されます
+
++
+到達可能性の修復が実行されると、 ONTAP は正しいブロードキャストドメインにポートを配置しようとします。ただし、ポートの到達可能性を判別できず、既存のどのブロードキャストドメインにも属していない場合、 ONTAP はこれらのポート用に新しいブロードキャストドメインを作成します。
+
+. インターフェイスグループの設定が新しいコントローラの物理ポートレイアウトと一致しない場合は、次の手順に従って設定を変更します。
++
+.. 最初に、インターフェイスグループのメンバーポートにする物理ポートを、それぞれのブロードキャストドメインメンバーシップから削除する必要があります。これを行うには、次のコマンドを使用します。
++
+`network port broadcast-domain remove-ports -broadcast-domain <broadcast-domain_name> -ports <node_name:port_name>`
+
+.. インターフェイスグループにメンバーポートを追加します。
++
+`network port ifgrp add-port -node <node_name> -ifgrp <ifgrp> -port <port_name>`
+
+.. インターフェイスグループは、最初のメンバーポートが追加されてから約 1 分後にブロードキャストドメインに自動的に追加されます。
+.. インターフェイスグループが適切なブロードキャストドメインに追加されたことを確認します。
++
+`network port reachability show -node <node_name> -port <ifgrp>`
+
++
+インターフェイスグループの到達可能性ステータスが「 OK 」でない場合は、適切なブロードキャストドメインに割り当てます。
+
++
+`network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_name> -ports <node:port>`
+
+
+
+. 次の手順に従って、ブロードキャストドメインに適切な物理ポートを割り当て `Cluster` ます。
++
+.. 'Cluster' ブロードキャスト・ドメインに到達可能なポートを判別します
++
+「 network port reachability show-reachable-broadcast-domain Cluster ： Cluster 」
+
+.. 到達可能性ステータスが「 OK 」でない場合は、「 Cluster 」ブロードキャストドメインに到達可能なすべてのポートを修復します。
++
+`network port reachability repair -node <node_name> -port <port_name>`
+
+
+
+. 次のいずれかのコマンドを使用して、残りの物理ポートを正しいブロードキャストドメインに移動します。
++
+`network port reachability repair -node <node_name> -port <port_name>`
+
++
+「 network port broadcast-domain remove-port 」のようになります
+
++
+「 network port broadcast-domain add-port 」と入力します
+
++
+到達不能または予期しないポートが存在しないことを確認します。次のコマンドを使用してすべての物理ポートの到達可能性ステータスをチェックし、出力を調べてステータスが「 OK 」であることを確認します。
+
++
+「 network port reachability show-detail` 」と表示されます
+
+. 次の手順を実行して、取り外された可能性のある VLAN を復元します。
++
+.. 取り外された VLAN のリスト：
++
+「cluster controller -replacement network変位- VLANs show」と表示されます
+
++
+次のような出力が表示されます。
+
++
+[listing]
+----
+Cluster::*> displaced-vlans show
+(cluster controller-replacement network displaced-vlans show)
+          Original
+Node      Base Port   VLANs
+--------  ----------  -----------------------------------------
+Node1       a0a       822, 823
+            e4a       822, 823
+2 entries were displayed.
+----
+.. 以前のベースポートから取り外された VLAN を復元します。
++
+クラスタ・コントローラ交換ネットワークが取り外されましたVLANがリストアされました
+
++
+次に、インターフェイスグループ a0a から削除された VLAN を同じインターフェイスグループにリストアする例を示します。
+
++
+[listing]
+----
+Cluster::*> displaced-vlans restore -node node1_node3 -port a0a -destination-port a0a
+----
++
+次に、ポート「e9a」で削除されたVLANを「e9d」にリストアする例を示します。
+
++
+[listing]
+----
+Cluster::*> displaced-vlans restore -node node1_node3 -port e9a -destination-port e9d
+----
++
+VLAN の復元が成功すると、指定された宛先ポートに、取り外された VLAN が作成されます。デスティネーションポートがインターフェイスグループのメンバーである場合、またはデスティネーションポートがダウンしている場合、 VLAN のリストアは失敗します。
+
++
+新しくリストアした VLAN が適切なブロードキャストドメインに配置されるまで約 1 分待ちます。
+
+.. 必要に応じて'クラスタコントローラ交換ネットワークではないVLANポート用に新しいVLANポートを作成しますが'VLANは出力を示しますが'他の物理ポート上で構成する必要があります
+
+
+. ポートの修復がすべて完了したら、空のブロードキャストドメインを削除します。
++
+`network port broadcast-domain delete -broadcast-domain <broadcast_domain_name>`
+
+. [[step10] ] ポートの到達可能性を確認します。
++
+「 network port reachability show 」のように表示されます
+
++
+すべてのポートが正しく設定され、正しいブロードキャストドメインに追加されている場合、「 network port reachability show 」コマンドは、接続されているすべてのポートの到達可能性ステータスを「 ok 」、物理的に接続されていないポートのステータスを「 no-reachability 」と報告する必要があります。この 2 つ以外のステータスが報告されたポートがある場合は、到達可能性修復を実行し、の手順に従ってブロードキャストドメインにポートを追加または削除します <<auto_verify_3_step4,手順 4>>。
+
+. すべてのポートがブロードキャストドメインに配置されたことを確認します。
++
+「 network port show 」のように表示されます
+
+. ブロードキャストドメインのすべてのポートで、正しい Maximum Transmission Unit （ MTU ；最大伝送ユニット）が設定されていることを確認します。
++
+「 network port broadcast-domain show 」
+
+. 次の手順に従って、リストアが必要な SVM および LIF のホームポートがある場合は、それらを指定して LIF のホームポートをリストアします。
++
+.. 移動された LIF を表示します。
++
+「 dispaced-interface show 」
+
+.. LIF のホームノードとホームポートをリストアします。
++
+`cluster controller-replacement network displaced-interface restore-home-node -node <node_name> -vserver <vserver_name> -lif-name <LIF_name>`
+
+
+
+. すべての LIF にホームポートがあり、意図的に稼働状態になっていることを確認します。
++
+network interface show -fields home-port、status-admin
+
+

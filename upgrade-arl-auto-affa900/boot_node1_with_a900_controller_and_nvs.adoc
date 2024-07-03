@@ -18,7 +18,10 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 [cols="35,65"]
 |===
-| 古いノード1のコントローラ | 交換用ノード1のシステムモジュール 
+| 既存のノード1コントローラ | 交換用ノード1のシステムモジュール 
+
+
+| AFF A800用 | AFF A90またはAFF A70^1^ 
 
 
 | AFF A220をASAとして構成 | AFF A150コントローラモジュール^1^ 
@@ -42,9 +45,40 @@ FAS2720 | FAS2820コントローラモジュール^1^
 | FAS9000 | FAS9500コントローラおよびNVRAMモジュール^2^ 
 |===
 ^1^コントローラモジュールを交換する場合は、すべての接続を古いコントローラモジュールから交換用コントローラモジュールに移動します。
+
 ^2^コントローラモジュールとNVRAMモジュールを交換する場合は、コンソール接続と管理接続のみを移動します。
 
 .手順
+. （AFF A800アップグレードのみ）LOADERプロンプトでメンテナンスモードに切り替えます。
++
+「 boot_ontap maint 」を使用してください
+
++
+.. 確認プロンプトに応答し `yes` ます。
+.. 100GbEインターフェイスの状態を表示します。
++
+`storage port show`です。
+
++
+次の出力例に示すように、NS224シェルフまたはストレージスイッチに接続されたすべての100GbEポートがポートとして報告されます `storage` 。
+
++
+[listing]
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e8a  ENET storage 100 Gb/s    enabled  online  30
+e8b  ENET storage 100 Gb/s    enabled  online  30
+e11a ENET storage 100 Gb/s    enabled  online  30
+e11b ENET storage 100 Gb/s    enabled  online  30
+----
+.. メンテナンスモードを終了します。
++
+「 halt 」
+
+
+
 . [[A900_boot_node1]] NetAppストレージ暗号化（NSE）ドライブが取り付けられている場合は、次の手順を実行します。
 +
 
@@ -92,8 +126,8 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 「[localhost:disk.encryptNoSupport:alert]: FIPS認定暗号化ドライブと」、または「[localhost:diskown.errorDuringIO: error]: Error」がディスクエラーで発生した場合は、次の手順を実行します。
 
 .. LOADERプロンプトでノードを停止します。
-.. に記載されているストレージ暗号化のbootargsをチェックしてリセットします <<A900_boot_node1,手順 1.>>。
-.. LOADERプロンプトで、ブートします。
+.. に記載されているストレージ暗号化のbootargを確認してリセットします <<A900_boot_node1,手順 2>>。
+.. LOADERプロンプトでブートします。
 +
 「 boot_ontap 」
 

@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_4_index.html
 keywords: upgrade, relocate, retire, overview, stage 4 
 summary: 'を使用したARLアップグレードのステージ4プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
-= 概要
+= ステージ4の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

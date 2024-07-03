@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_3_index.html
 keywords: relocate, retire, node1, steps, stage 3 
 summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合のステージ 3 のプロセスシーケンス 
 ---
-= 概要
+= ステージ3の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

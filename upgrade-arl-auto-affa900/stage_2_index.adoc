@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_2_index.html
 keywords: upgrade, relocate, retire, replace, netboot, overview, stage 2 
 summary: 'を使用したARLアップグレードのステージ2プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
-= 概要
+= ステージ2の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,6 +20,6 @@ summary: 'を使用したARLアップグレードのステージ2プロセスシ
 . link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します"]
 . link:relocate_failed_or_vetoed_aggr.html["障害が発生したアグリゲートを再配置するか"]
 . link:retire_node1.html["ノード 1 を撤去"]
-. link:replace_node1_system_modules.html["ノード1のシステムモジュールを交換します"]
+. link:replace-node1-affa800.html["ノード1のシステムモジュールを交換します"]
 . link:netboot_node1.html["ネットブート node1"]
 

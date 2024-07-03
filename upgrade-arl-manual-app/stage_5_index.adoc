@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/stage_5_index.html
 keywords: stage 5, install, boot, node3, node4, relocate, aggregates 
 summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合のステージ 5 のプロセスシーケンス。 
 ---
-= 概要
+= ステージ5の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

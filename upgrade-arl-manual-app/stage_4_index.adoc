@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/stage_4_index.html
 keywords: stage 4, node2, retire, information 
 summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合のステージ 4 のプロセスシーケンス。 
 ---
-= 概要
+= ステージ4の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

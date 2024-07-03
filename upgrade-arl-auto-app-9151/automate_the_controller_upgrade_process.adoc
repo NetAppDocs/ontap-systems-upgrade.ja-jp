@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/automate_the_controller_upgrade_process.html 
+keywords: automating, controller, upgrade, process, network, port, ha 
+summary: 部分的に自動化されたARL手順を使用して、ONTAP 9.15.1以降を実行しているコントローラをアップグレードします。 
+---
+= コントローラのアップグレードプロセスを自動化する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+コントローラのアップグレード時に、コントローラは、より新しい、またはより強力なプラットフォームを実行する別のコントローラに交換されます。ここでは一部自動化された手順について説明します。この手順では、ネットワークポートの到達可能性チェックが自動で行われるため、コントローラのアップグレードがさらに簡単になります。

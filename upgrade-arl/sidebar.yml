@@ -1,11 +1,4 @@
 ---
 section: upgrade-arl
-title: アグリゲートの再配置を使用したアップグレード
-entries:
-- title: 概要
-  url: "/upgrade-arl/index.html"
-- section: upgrade-arl-auto-affa900
-- section: upgrade-arl-auto-app
-- section: upgrade-arl-manual-app
-- section: upgrade-arl-auto
-- section: upgrade-arl-manual
+title: ARLのアップグレード手順を選択
+url: "/upgrade-arl/index.html"

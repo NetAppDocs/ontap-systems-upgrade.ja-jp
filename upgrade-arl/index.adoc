@@ -4,7 +4,7 @@ permalink: upgrade-arl/index.html
 keywords: aggregate, relocation, moving, manual, upgrade, relocate, hardware 
 summary: アグリゲートの再配置を使用してコントローラハードウェアをアップグレードする 
 ---
-= 概要
+= ARLのアップグレード手順を選択
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -31,9 +31,10 @@ ARL には、システムコマンドまたは手動アップグレードを使�
 | この ONTAP バージョンを実行している場合 | システムコマンドでアップグレードするには、次のコマンドを使用します。 
 
 
-| 9.10.1 以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"^]
+| 9.15.1以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["ONTAP 9.15.1で導入されたコントローラハードウェアをアップグレードするには、「system controller replace」コマンドを使用します。"] 
 
-この手順を使用して、特定のモデルおよびONTAPソフトウェアバージョンのオールSANアレイ（ASA）として構成されたAFFコントローラをASAコントローラにアップグレードできます。 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["詳細はこちら。"]。 
+
+| 9.10.1 以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"] この手順を使用して、特定のモデルおよびONTAPソフトウェアバージョンのオールSANアレイ（ASA）として構成されたAFFコントローラをASAコントローラにアップグレードできます。link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["詳細はこちら。"]です。 
 
 
 | 9.8 以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"] 

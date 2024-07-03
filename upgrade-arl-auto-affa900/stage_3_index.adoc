@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_3_index.html
 keywords: upgrade, boot, node1, verify, restore, overview, stage 3 
 summary: 'を使用したARLアップグレードのステージ3プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
-= 概要
+= ステージ3の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,10 @@ summary: 'を使用したARLアップグレードのステージ3プロセスシ
 
 
 [role="lead"]
-ステージ3では、アップグレードしたシステムモジュールでnode1をブートし、アップグレードしたnode1のインストールを確認します。NetApp Volume Encryption（NVE）を使用している場合は、キー管理ツールの設定をリストアします。ノード1のルート以外のアグリゲートとNASデータLIFをnode2からアップグレードしたnode1に再配置し、SAN LIFがnode1に存在することを確認します。
+ステージ3では、外付けシェルフのクラスタHAとストレージの共有接続を接続します（存在する場合）。アップグレードしたシステムモジュールでnode1をブートし、アップグレードしたnode1のインストールを確認します。NetApp Volume Encryption（NVE）を使用している場合は、キー管理ツールの設定をリストアします。ノード1のルート以外のアグリゲートとNASデータLIFをnode2からアップグレードしたnode1に再配置し、SAN LIFがnode1に存在することを確認します。
 
 .手順
+. link:cable-node1-for-shared-cluster-HA-storage.html["共有クラスタHAストレージのノード1をケーブル接続（AFF A800のアップグレードのみ）"]
 . link:boot_node1_with_a900_controller_and_nvs.html["交換用システムモジュールでノード1をブートします"]
 . link:verify_node1_installation.html["ノード 1 のインストールを確認します"]
 . link:restore_key_manager_config_upgraded_node1.html["アップグレードした node1 でキー管理ツールの設定をリストアします"]

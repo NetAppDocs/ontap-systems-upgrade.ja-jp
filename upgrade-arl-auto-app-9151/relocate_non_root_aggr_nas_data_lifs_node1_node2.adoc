@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_data_lifs_node1_node2.html 
+keywords: relocating, non-root, aggregates, nas, data, lif, node1, node2 
+summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコントローラをアップグレードする場合は、ルート以外のアグリゲートとNASデータLIFをノード1からノード2に移動し、ノード1のリソースをノード3に移動し `system controller replace` ます。' 
+---
+= ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ノード 1 をノード 3 に交換する前に、ルート以外のアグリゲートと NAS データ LIF をノード 1 からノード 2 に移動してから、ノード 1 のリソースをノード 3 に移動する必要があります。
+
+.作業を開始する前に
+この処理は、タスクの開始時にすでに一時停止されている必要があります。手動で再開する必要があります。
+
+.このタスクについて
+アグリゲートと LIF の移行が完了すると、検証のために処理が一時停止されます。この段階で、ルート以外のアグリゲートと SAN 以外のデータ LIF がすべて node3 に移行されているかどうかを確認する必要があります。
+
+
+NOTE: アグリゲートおよび LIF のホーム所有者は変更されません。現在の所有者のみが変更されます。
+
+.手順
+. アグリゲートの再配置処理と NAS データ LIF の移動処理を再開します。
++
+「システムコントローラの交換が再開」
+
++
+ルート以外のアグリゲートと NAS データ LIF はすべて、 node1 から node2 に移行されます。
+
++
+処理が一時停止することで、ノード 1 のルート以外のアグリゲートと SAN 以外のデータ LIF がすべて node2 に移行されているかどうかを確認できます。
+
+. アグリゲートの再配置処理と NAS データ LIF の移動処理のステータスを確認します。
++
+「 system controller replace show-sdetails 」というエラーが表示されます
+
+. 処理が一時停止したまま、ルート以外のすべてのアグリゲートが node2 でそれぞれの状態でオンラインになっていることを確認します。
++
+storage aggregate show -node _node2 --state online -root false
+
++
+次の例は、 node2 のルート以外のアグリゲートがオンラインになっていることを示しています。
+
++
+[listing]
+----
+cluster::> storage aggregate show -node node2 state online -root false
+
+Aggregate  Size     Available  Used%  State  #Vols  Nodes  RAID Status
+---------  -------  ---------  -----  ------ -----  ------ --------------
+aggr_1     744.9GB  744.8GB    0%     online     5  node2  raid_dp,normal
+aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
+2 entries were displayed.
+----
++
+アグリゲートがオフラインになった場合、または node2 で外部になった場合は、各アグリゲートに対して 1 回、 node2 で次のコマンドを使用してアグリゲートをオンラインにします。
+
++
+storage aggregate online -aggregate _aggr_name_`
+
+. node2 で次のコマンドを使用し、出力を調べて、すべてのボリュームがオンラインであることを確認します。
++
+volume show -node-node2 --状態オフライン
+
++
+node2 上にオフラインのボリュームがある場合は、各ボリュームに対して 1 回、 node2 で次のコマンドを使用してオンラインにします。
+
++
+'volume online -vserver_name_-volume_name_`
+
++
+このコマンドで使用する'_vserver_name_'は'前のvolume showコマンドの出力にあります
+
+
+
+. [[step5] いずれかの LIF が停止している場合は、次のコマンドを使用して、各 LIF に対して 1 回ずつ LIF の管理ステータスを「 up 」に設定します。
++
+「network interface modify -vserver _vserver_name __ lif_lif_name_-home-nodename_-status-admin up
+
+

@@ -21,6 +21,10 @@ summary: 一般に、コントローラハードウェアのアップグレー�
 
 * FAS2620、FAS2650、FAS2720、およびFAS2750
 * AFF A150、AFF A200、AFF A220、AFF A250、AFF A700s、 およびAFF A800
++
+
+NOTE: アグリゲートの再配置を使用して、AFF A800をAFF A70またはAFF A90にアップグレードすることもできます。link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["詳細はこちら。"]です。
+
 * AFF C190、AFF C250、およびAFF C800
 * ASA A150、ASA A250、ASA A800、およびASA AFF A220
 
@@ -50,10 +54,9 @@ image:workflow_external_drives.png["アップグレード手順の選択の決�
 
 * link:upgrade-arl/index.html["アグリゲートの再配置を使用したアップグレード"]
 +
-アグリゲートの再配置は手順に代わるものです。新しいノードを使用してクラスタを拡張および縮小する必要はありません。これは、2ノードのスイッチレスクラスタの場合に便利です。アグリゲートの再配置によるデータの移動は、ボリュームの移動時にアグリゲート間でデータをコピーするよりも高速です。
+アグリゲートの再配置は手順に代わるものです。新しいノードを使用してクラスタを拡張および縮小する必要はないため、2ノードのスイッチレスクラスタの場合に便利です。アグリゲートの再配置によるデータの移動は、ボリュームの移動時にアグリゲート間でデータをコピーするよりも高速です。
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html["ボリュームを移動してアップグレード"]
-* link:upgrade/upgrade-decide-to-use-this-guide.html["ストレージを移動してアップグレード"]
+* link:upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"]
 
 
 [NOTE]

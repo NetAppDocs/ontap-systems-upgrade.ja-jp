@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/manage_storage_encryption_using_okm.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをアップグレードする場合、ストレージ暗号化の設定と管理、認証キーの管理、およびSnapMirror関係の休止を `system controller replace` 行います。' 
+---
+= オンボードキーマネージャを使用してストレージ暗号化を管理します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+オンボードキーマネージャ（OKM）を使用して暗号化キーを管理できます。OKMをセットアップした場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。
+
+.手順
+. クラスタ全体のパスフレーズを記録します。
++
+これは、CLIまたはREST APIを使用してOKMを設定または更新したときに入力したパスフレーズです。
+
+. を実行して、キー管理ツールの情報をバックアップします `security key-manager onboard show-backup` コマンドを実行します
+
+
+
+
+== SnapMirror 関係を休止します（オプション）。
+
+手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。
+
+.手順
+. デスティネーションクラスタの SnapMirror 関係のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
++
+[NOTE]
+====
+このステータスが「Transferring」の場合は、転送を中止する必要があります。snapmirror abort -destination -vserver _vserver_name _`
+
+====
++
+SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は失敗します。
+
+. クラスタ間のすべての関係を休止します。
++
+`snapmirror quiesce -destination-vserver *`
+
+

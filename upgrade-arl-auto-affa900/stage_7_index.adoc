@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_7_index.html
 keywords: upgrade, authentication, storage, volume, aggregate, encryption, overview, stage 7 
 summary: 'を使用したARLアップグレードのステージ7プロセスシーケンス `system controller replace` 同じシャーシ内のコントローラモデルをアップグレードするためのコマンド。' 
 ---
-= 概要
+= ステージ7の概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

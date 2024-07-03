@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/prepare_for_netboot.html 
+keywords: preparing, netboot, ndac, ontap 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して "node3 と node4 をネットブートする準備をします' 
+---
+= ネットブートを準備
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ノード 3 とノード 4 を手順の後半で物理的にラックに設置したあと、ネットブートが必要になることがあります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートを準備するときは、システムがアクセスできるWebサーバにONTAP 9ブートイメージのコピーを配置します。
+
+USBブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["システムの初期セットアップのためにONTAP をインストールするためにboot_recovery loaderコマンドを使用する方法"^]。
+
+.作業を開始する前に
+* システムから HTTP サーバにアクセスできることを確認します。
+* を参照してください link:other_references.html["参考資料"] からネットアップサポートサイトにリンクして、使用しているプラットフォームに必要なシステムファイルと、適切なバージョンの ONTAP をダウンロードします。
+
+
+.このタスクについて
+元のコントローラと同じバージョンの ONTAP 9 がインストールされていない場合は、新しいコントローラをネットブートする必要があります。新しいコントローラをそれぞれ取り付けたら、 Web サーバに保存されている ONTAP 9 イメージからシステムをブートします。その後、以降のシステムブートで使用するブートメディアデバイスに正しいファイルをダウンロードできます。
+
+.手順
+. ネットアップサポートサイトにアクセスして、システムのネットブートの実行に使用するファイルをダウンロードします。
+. ネットアップサポートサイトのソフトウェアダウンロードセクションから適切な ONTAP ソフトウェアをダウンロードし、「 <ONTAP_version>_image.tgz 」ファイルを Web にアクセスできるディレクトリに保存します。
+. Web にアクセスできるディレクトリに移動し、必要なファイルが利用可能であることを確認します。
++
+ディレクトリの一覧に次のファイルが表示されます。
+`<ontap_version>_image.tgz`
+
++
+
+NOTE: 「 ONTAP_version_image.tgz 」ファイルの内容を抽出する必要はありません。
+
++
+のディレクトリの情報を使用します link:install_boot_node3.html["ステージ 3"]。
+
+

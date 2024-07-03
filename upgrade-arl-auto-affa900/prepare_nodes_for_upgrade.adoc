@@ -30,6 +30,9 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 | 古いコントローラ | SPまたはBMC | 最小ファームウェアバージョン 
 
 
+| AFF A800用 | BMC の場合 | 10.9 
+
+
 | AFF A220の略 | BMC の場合 | 11.9P1 
 
 
@@ -52,18 +55,20 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 'system controller replace start-nodes_node_name _`
 
 +
-次のような出力が表示されます。
+次の例のような出力が表示されます。出力には、クラスタで実行されているONTAPのバージョンが表示されます。
 
 +
 ....
 Warning:
-1. Current ONTAP version is 9.x
+1. Current ONTAP version is 9.15.1
 
 2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM  batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
 
 Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
 
 3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedures.
 
 Do you want to continue? {y|n}: y
 ....
@@ -126,7 +131,7 @@ Controller replacement operation has been paused for user intervention.
 . コントローラの交換処理が開始されて事前確認が完了すると、処理が一時停止し、コントローラのアップグレードプロセスの後半で必要になる可能性がある出力情報を収集できます。
 . システムコンソールで、コントローラの交換用手順の指示に従って、次のコマンドセットを実行します。
 +
-各ノードに接続されているシリアルポートで、次のコマンドの出力を個別に実行して保存します。
+各ノードに接続されているシリアルポートからコマンドを実行し、コマンドの出力を個別に保存します。
 
 +
 ** vserver services name-service dns show
@@ -137,6 +142,11 @@ Controller replacement operation has been paused for user intervention.
 ** `network port ifgrp show -node _local_`
 ** `system node show -instance -node _local_`
 ** `run -node _local_ sysconfig`
+** `run -node local sysconfig -ac`
+** `run -node local aggr status -r`
+** `vol show -fields type`
+** `run local aggr options _data_aggregate_name_`
+** `vol show -fields type , space-guarantee`
 ** `storage aggregate show -node _local_`
 ** `volume show -node _local_`
 ** storage array config show -switch_switch_name_`
@@ -146,11 +156,11 @@ Controller replacement operation has been paused for user intervention.
 ** 「 security key-manager external show 」と入力します
 ** 「 security key-manager external show-status 」
 ** `network port reachability show -detail -node _local_`
-
-
 +
 
 NOTE: オンボードキーマネージャを使用したNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、手順の後半の工程でキー管理ツールの再同期を実行できるように、キー管理ツールのパスフレーズを準備しておいてください。
+
+
 
 . システムで自己暗号化ドライブを使用している場合は、Knowledge Baseの文書を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] アップグレード対象のHAペアで使用されている自己暗号化ドライブのタイプを確認する。ONTAP ソフトウェアは、次の2種類の自己暗号化ドライブをサポートしています。
 +

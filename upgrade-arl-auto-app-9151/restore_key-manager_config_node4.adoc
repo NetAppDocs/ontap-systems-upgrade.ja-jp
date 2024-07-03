@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/restore_key-manager_config_node4.html 
+keywords: restore key-manager, configuration, node4, nve, arl, volume, encryption 
+summary: '必要に応じて、コマンドを使用してONTAP 9.15.1以降を実行するコントローラをアップグレードする際にノード4のキー管理ツールの設定をリストアします `system controller replace` 。' 
+---
+= ノード 4 でキー管理ツールの設定をリストアします
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Volume Encryption（NVE）およびNetApp Aggregate Encryption（NAE）を使用してアップグレードするシステムのボリュームを暗号化する場合は、暗号化設定を新しいノードに同期する必要があります。キー管理ツールを同期しない場合は、ARLを使用してノード2のアグリゲートをノード3からノード4に再配置すると、ノード4に暗号化されたボリュームとアグリゲートをオンラインにするために必要な暗号化キーがないと処理が失敗することがあります。
+
+.このタスクについて
+次の手順を実行して、暗号化設定を新しいノードに同期します。
+
+.手順
+. ノード4から次のコマンドを実行します。
++
+「セキュリティキーマネージャオンボード同期」
+
+. データアグリゲートを再配置する前に、ノード4でSVMのKEKキーが「true」にリストアされたことを確認します。
++
+[listing]
+----
+::> security key-manager key query -node node4 -fields restored -key-type SVM-KEK
+----
++
+.例
+[listing]
+----
+::> security key-manager key query -node node4 -fields restored -key-type SVM-KEK
+
+node     vserver   key-server   key-id                                  restored
+-------- --------- -----------  --------------------------------------- --------
+node4    svm1      ""           00000000000000000200000000000a008a81976 true
+                                2190178f9350e071fbb90f00000000000000000
+----
+

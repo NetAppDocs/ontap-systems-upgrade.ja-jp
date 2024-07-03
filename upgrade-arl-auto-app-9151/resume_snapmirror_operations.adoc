@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/resume_snapmirror_operations.html 
+keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
+summary: 'ONTAP 9.15.1以降を実行するコントローラのアップグレード時に、コマンドを使用してSnapMirror転送と関係を再開し `system controller replace` ます。' 
+---
+= SnapMirror 処理を再開します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+アップグレード前に休止していた SnapMirror 転送を再開し、 SnapMirror 関係を再開できます。更新はアップグレードの完了後にスケジュールどおりに実行されます。
+
+.手順
+. デスティネーションで SnapMirror のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
+. SnapMirror 関係を再開します。
++
+snapmirror resume -destination–vserver_vserver_name _`
+
+

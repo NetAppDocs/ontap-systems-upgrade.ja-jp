@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html 
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
+summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをARLでアップグレードするかどうかを決定します `system controller replace` 。' 
+---
+= アグリゲートの再配置手順を使用するかどうかを決定します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+この手順では、既存のデータとディスクを残したまま、HAペアのストレージコントローラを新しいコントローラにアップグレードする方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
+
+この手順は、次の状況で使用できます。
+
+* ONTAP 9.15.1 以降を実行している必要があります。
+* 新しいコントローラを新しいHAペアとしてクラスタに追加したり、ボリューム移動手順を使用してデータを移行したりすることはありません。
+* ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。
+
+
+
+NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
+
+次の状況では、この手順を使用できません。
+
+* AFF A800をAFF A70またはAFF A90にアップグレードする。AFF A800のこのアップグレードを実行するには、「to _use "system controller replace"コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードする」を参照してください link:other_references.html["参考資料"] 。
+* バックエンドストレージに外付けアレイを使用して、VシリーズシステムまたはFlexArray仮想化ストレージシステムをアップグレードする場合。VシリーズまたはFlexArrayシステムのアップグレードオプションについては、テクニカルサポートにお問い合わせください。
+* MetroClusterのFCまたはIP構成をアップグレードする。MetroCluster構成をアップグレードするには、MetroClusterのアップグレードおよび拡張に関するドキュメント_へのリンクを参照してください link:other_references.html["参考資料"] 。
+
+
+[[sys_commands_9151_supported_systems]]次の表は、コントローラのアップグレードでサポートされるモデルマトリックスを示しています。
+
+|===
+| 既存のコントローラ | 交換用コントローラ 
+
+
+| AFF A300 | AFF A70、AFF A90、およびAFF A1K 
+
+
+| AFF A400 | AFF A70、AFF A90、およびAFF A1K 
+
+
+| AFF A700の略 | AFF A70、AFF A90、およびAFF A1K 
+
+
+| AFF A900 の略 | AFF A90およびAFF A1K 
+|===
+[NOTE]
+====
+AFF A70およびAFF A90は、オンボードディスクを搭載した統合システムです。2台のコントローラとディスクを1台のシャーシに搭載します。新しいコントローラに内蔵ドライブが搭載されている場合は、既存のシステムをアップグレードできません。
+
+コントローラのアップグレードモデルの組み合わせが上記の表にない場合は、テクニカルサポートにお問い合わせください。
+
+====
+コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+
+を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。

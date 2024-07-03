@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/retire_node1.html 
+keywords: retiring, node 
+summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコントローラをアップグレードする場合は、ノード2のHAペアを無効にし、ノード1をシャットダウンし `system controller replace` ます。' 
+---
+= ノード 1 を撤去
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ノード 1 を撤去するには、自動処理を再開して、ノード 2 と HA ペアを無効にし、ノード 1 を正しくシャットダウンします。手順の後半の工程で、ノード1をラックまたはシャーシから取り外します。
+
+.手順
+. 処理を再開します。
++
+「システムコントローラの交換が再開」
+
+. ノード 1 が停止されたことを確認します。
++
+「 system controller replace show-sdetails 」というエラーが表示されます
+
+
+
+.完了後
+アップグレードが完了したら、 node1 の運用を停止できます。を参照してください link:decommission_old_system.html["古いシステムの運用を停止"]。
