@@ -4833,7 +4833,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="5ffd3baa415444f7f3227edef43b10d9" category="paragraph">MetroCluster FC構成では、できるだけ早くディザスタリカバリ/フェイルオーバーサイトのノードを交換する必要があります。コントローラモデルの不一致が原因で原因ディザスタリカバリのミラーリングがオフラインになる可能性があるため、 MetroCluster 内のコントローラモデルの不一致はサポートされません。2つ目のサイトでノードを交換する場合は、コマンドを使用し<block ref="bf0b9d28548e0e53fb793faa9566bdc3" prefix=" " category="inline-code"></block> てMetroClusterチェックをバイパスします。</block>
   <block id="df3d0238913361ab2420c20a053ba0d8" category="list-text">[[man_install4_step6]]ノード4の電源をオンにし、Ctrl+Cキーを押してブートを中断してブート環境プロンプトにアクセスします。</block>
   <block id="5109ad8944e00ebd941b9f7cfd563728" category="list-text">Ctrl+Cキーを押してブートメニューを表示し、メンテナンスモードを選択します。</block>
-  <block id="bded243b14f6ad1b4c632bdd333e5c2b" category="admonition">アグリゲートの再配置を使用して、AFF A800をAFF A70またはAFF A90にアップグレードすることもできます。<block ref="d1dba95bc7d2bdf76ec2b452fc9b5611" category="inline-link-macro-rx"></block>です。</block>
   <block id="24a28632436fc3dd7e0e4fbde05fdf59" category="paragraph">アグリゲートの再配置は手順に代わるものです。新しいノードを使用してクラスタを拡張および縮小する必要はないため、2ノードのスイッチレスクラスタの場合に便利です。アグリゲートの再配置によるデータの移動は、ボリュームの移動時にアグリゲート間でデータをコピーするよりも高速です。</block>
   <block id="21e5a4b07b3d917519fb1f0a2c21d347" category="list-text"><block ref="21e5a4b07b3d917519fb1f0a2c21d347" category="inline-link-macro-rx"></block></block>
   <block id="2c4564f93114738d1a23cefcb9f1a209" category="paragraph">ストレージの移動によるコントローラハードウェアのアップグレードは、システムの停止を伴う手順です。アップグレードを開始する前に、一般的なアップグレードシナリオとアップグレードに関する考慮事項を確認してください。</block>
@@ -5193,4 +5192,5 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="e53c96ea4b74db1471d45fc6c84eef75" category="sidebar">ステージ5。ノード4を設置してブート（ONTAP 9.15.1以降では「system controller replace」を使用してアップグレード）</block>
   <block id="fe9158ff831e80fc9361c4a06ba512f1" category="sidebar">ステージ6。アップグレードの完了（ONTAP 9.15.1以降では「system controller replace」を使用したアップグレード）</block>
   <block id="1d2cec084b14c2bb8b27b81dee7eff45" category="sidebar">トラブルシューティング（ONTAP 9.15.1以降では「System controller replace」を使用したアップグレード）</block>
+  <block id="f6450b8785035cd4f0854992330d2734" category="admonition">アグリゲートの再配置を使用して、AFF A800をAFF A70またはAFF A90にアップグレードすることもできます。<block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>です。</block>
 </blocks>

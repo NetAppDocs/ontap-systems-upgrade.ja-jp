@@ -23,7 +23,7 @@ summary: 一般に、コントローラハードウェアのアップグレー�
 * AFF A150、AFF A200、AFF A220、AFF A250、AFF A700s、 およびAFF A800
 +
 
-NOTE: アグリゲートの再配置を使用して、AFF A800をAFF A70またはAFF A90にアップグレードすることもできます。link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["詳細はこちら。"]です。
+NOTE: アグリゲートの再配置を使用して、AFF A800をAFF A70またはAFF A90にアップグレードすることもできます。link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["詳細はこちら。"]です。
 
 * AFF C190、AFF C250、およびAFF C800
 * ASA A150、ASA A250、ASA A800、およびASA AFF A220
