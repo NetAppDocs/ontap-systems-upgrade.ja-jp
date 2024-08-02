@@ -102,6 +102,17 @@ NOTE: このドキュメントでは、ノード名の参照としてのみ * no
 * この手順は、交換用コントローラハードウェアが新しく購入されていて、他のシステムで使用されていないことを前提としています。使用済みのコントローラを「 wipeconfig 」コマンドで準備するために必要な手順は、この手順には含まれていません。交換用コントローラハードウェアが以前に別の ONTAP クラスタまたはスタンドアロンのシングルノードシステムとして使用されていた場合は、テクニカルサポートにお問い合わせください。
 * この手順を使用して、ノードが 3 つ以上あるクラスタのコントローラハードウェアをアップグレードできますが、クラスタ内の HA ペアごとに手順を個別に実行する必要があります。
 * ONTAPのバージョンでサポートされていないスイッチおよびアップグレード先の交換用システムがある場合は、を参照してください link:other_references.html["参考資料"] Hardware Universe にリンクするには、次の手順を実行します。
+* AFF A70システムとAFF A90システムは、クラスタ接続とHA接続の両方で100GbEネットワークポートを共有します。これらのシステムでは、従来のクラスタスイッチとの10GbEまたは25GbEクラスタ接続をサポートできますが、NetApp 10GbEおよび25GbEスイッチが不要になった場合は、100GbEクラスタ速度に更新することを推奨します。詳細については、次のナレッジベースの記事を参照してください。
++
+--
+** link:https://kb.netapp.com/?title=on-prem%2Fontap%2FOHW%2FOHW-KBs%2FHow_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_A1K%252C_AFF_A90_or_AFF_A70["AFF A1K、AFF A90、またはAFF A70の新しいクラスタセットアップで10Gまたは25Gのクラスタポートを構成する方法"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_A1K_AFF_A90_or_AFF_A70["AFF A1K、AFF A90、またはAFF A70で既存のクラスタを10Gまたは25Gのクラスタポートから40Gまたは100Gのクラスタポートに変換する方法"^]
+
+
+--
++
+既存のノードのクラスタポートe0aまたはe0bを新しいノードのクラスタポートにリンクできない場合は、を参照してください link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978["NetApp Bugs OnlineのバグIDCONTAP-166978"^]。
+
 * この手順は、AFF A800、AFF A200、AFF A220、AFF C190、FAS2620、 FAS2720、AFF A700、FAS9000システム：AFF A90、AFF A70、AFF A150、FAS2820、AFF A900へのアップグレードが必要なその他すべてのコントローラモデル またはFAS9500システムの場合は、「system controller replace」コマンドを使用してONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードする方法_およびアグリゲートの再配置を使用してONTAP 9.8以降を実行しているコントローラハードウェアを手動でアップグレードする方法_へのリンクを参照し link:other_references.html["参考資料"] てください。
 * ASA A900、AFF A900、およびFAS9500システムは、ハイライン電源（200V~240V）のみをサポートします。AFF A700またはFAS9000システムをローライン電源（100~120V）で実行している場合、この手順 を使用する前に、AFF A700またはFAS9000の入力電源を変換する必要があります。
 * AFF A800、AFF A200、AFF A220、AFF C190、FAS2620からアップグレードする場合 FAS2720、AFF A700、またはFAS9000システムでダウンタイムが発生した場合は、ストレージを移動することでコントローラハードウェアをアップグレードするか、テクニカルサポートにお問い合わせください。「ボリュームまたはストレージの移動によるアップグレード」へのリンクを参照してください link:other_references.html["参考資料"] 。

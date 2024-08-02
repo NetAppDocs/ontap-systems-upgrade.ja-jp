@@ -5205,4 +5205,13 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="642bccb8ea8bf1d5af20ff2b734c1972" category="paragraph">スイッチ接続クラスタの場合は、次の要件を満たしていることを確認します。</block>
   <block id="0bc65976ff133ee82e86f9a6d1241bd3" category="list-text">AFF A90ノードまたはAFF A70ノード上の同一のクラスタポートが同じスイッチ上にあります。たとえば、アップグレードが完了したら、node1のe1aとnode2のe1aを1つのクラスタスイッチに接続する必要があります。同様に、両方のノードの2番目のクラスタポートを2番目のクラスタスイッチに接続する必要があります。共有クラスタHAポート（ノード1のe1aがスイッチAに接続され、ノード2のe1aがスイッチBに接続されている）をクロス接続すると、HA通信に障害が発生します。</block>
   <block id="a8ddcf9ff72eca8d08263b606043e793" category="list-text">AFF A90およびAFF A70ノードは、共有クラスタHAイーサネットポートを使用します。共有クラスタHAポートをサポートするリファレンス構成ファイル（RCF）がクラスタスイッチにインストールされていることを確認します。</block>
+  <block id="95aecbf4d4598d28238d33836d5f1d39" category="list-text">AFF A70システムとAFF A90システムは、クラスタ接続とHA接続の両方で100GbEネットワークポートを共有します。これらのシステムでは、従来のクラスタスイッチとの10GbEまたは25GbEクラスタ接続をサポートできますが、NetApp 10GbEおよび25GbEスイッチが不要になった場合は、100GbEクラスタ速度に更新することを推奨します。詳細については、次のナレッジベースの記事を参照してください。</block>
+  <block id="46f6c35d9a23403b9b4475860494f7e1" category="inline-link-macro">AFF A1K、AFF A90、またはAFF A70の新しいクラスタセットアップで10Gまたは25Gのクラスタポートを構成する方法</block>
+  <block id="d5262d5b7c57ddb8a1bce6f64f715cf1" category="list-text"><block ref="d5262d5b7c57ddb8a1bce6f64f715cf1" category="inline-link-macro-rx"></block></block>
+  <block id="ddafb8accea93e408c3e1081312cd023" category="inline-link-macro">AFF A1K、AFF A90、またはAFF A70で既存のクラスタを10Gまたは25Gのクラスタポートから40Gまたは100Gのクラスタポートに変換する方法</block>
+  <block id="441c3294ac36b4f16260ca4b44ff0ca4" category="list-text"><block ref="441c3294ac36b4f16260ca4b44ff0ca4" category="inline-link-macro-rx"></block></block>
+  <block id="ac431d04c49bd36c09bfbc24a8f894f9" category="inline-link-macro">NetApp Bugs OnlineのバグIDCONTAP-166978</block>
+  <block id="f24d3bbf01666420670f76d88d0728aa" category="paragraph">既存のノードのクラスタポートe0aまたはe0bを新しいノードのクラスタポートにリンクできない場合は、を参照してください <block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block>。</block>
+  <block id="da56dddfadc94faded5adccdf08f341d" category="list-text">AFF A70、AFF A90、およびAFF A1Kシステムは、クラスタ接続とHA接続の両方で100GbEネットワークポートを共有します。これらのシステムでは、従来のクラスタスイッチとの10GbEまたは25GbEクラスタ接続をサポートできますが、NetApp 10GbEおよび25GbEスイッチが不要になった場合は、100GbEクラスタ速度に更新することを推奨します。詳細については、次のナレッジベースの記事を参照してください。</block>
+  <block id="9224ff81582fe0027e574d0b62a2ff67" category="list-text">AFF A70、AFF A90、またはAFF A1Kシステムにアップグレードすると、ONTAPは、Storage Efficiencyを使用していないボリュームも含めて、既存のシンプロビジョニングされたすべてのボリュームのストレージ効率化を変換し、ハードウェアオフロード機能を使用する新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block>です。</block>
 </blocks>
