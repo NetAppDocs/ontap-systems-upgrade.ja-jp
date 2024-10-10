@@ -105,8 +105,8 @@ NOTE: このドキュメントでは、ノード名の参照としてのみ * no
 * AFF A70システムとAFF A90システムは、クラスタ接続とHA接続の両方で100GbEネットワークポートを共有します。これらのシステムでは、従来のクラスタスイッチとの10GbEまたは25GbEクラスタ接続をサポートできますが、NetApp 10GbEおよび25GbEスイッチが不要になった場合は、100GbEクラスタ速度に更新することを推奨します。詳細については、次のナレッジベースの記事を参照してください。
 +
 --
-** link:https://kb.netapp.com/?title=on-prem%2Fontap%2FOHW%2FOHW-KBs%2FHow_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_A1K%252C_AFF_A90_or_AFF_A70["AFF A1K、AFF A90、またはAFF A70の新しいクラスタセットアップで10Gまたは25Gのクラスタポートを構成する方法"^]
-** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_A1K_AFF_A90_or_AFF_A70["AFF A1K、AFF A90、またはAFF A70で既存のクラスタを10Gまたは25Gのクラスタポートから40Gまたは100Gのクラスタポートに変換する方法"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_ASA_A1K_A90_A70_FAS90_FAS70["AFF / ASA A1K、A90、A70、FAS90、FAS70の新しいクラスタセットアップで10Gまたは25Gのクラスタポートを構成する方法"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_ASA_A1K_A90_A70_FAS90_FAS70["AFF / ASA A1K、A90、A70、FAS90、FAS70で既存のクラスタを10Gまたは25Gのクラスタポートから40Gまたは100Gのクラスタポートに変換する方法"^]
 
 
 --

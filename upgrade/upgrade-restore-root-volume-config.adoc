@@ -38,8 +38,6 @@ NOTE: FAS8300、AFF A400、FAS8700のように、ポート「e0a」と「e0b」�
 (8) Reboot node.
 (9) Configure Advanced Drive Partitioning.
 Selection (1-9)? 6
-Controller Hardware Upgrade Express Guide 19
-Upgrading controller hardware by moving storage
 This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: y
 ----
 +

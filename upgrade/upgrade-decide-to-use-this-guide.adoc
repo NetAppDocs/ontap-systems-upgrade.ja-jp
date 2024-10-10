@@ -17,9 +17,17 @@ summary: このコンテンツでは、ストレージまたはボリューム�
 
 [NOTE]
 ====
-ONTAP 9.15.1で導入されたAFF A70、AFF A90、またはAFF A1Kシステムにアップグレードすると、ONTAPでは、Storage Efficiencyを使用していないボリュームも含め、既存のシンプロビジョニングされたすべてのボリュームのストレージ効率化が変換され、ハードウェアオフロード機能を使用する新しいStorage Efficiency機能が適用されます。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。 https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["詳細はこちら。"^]です。
+* ONTAP 9 .15.1で導入されたシステムにアップグレードすると、ONTAPは既存ボリュームのStorage Efficiencyを変換し、ハードウェアオフロード機能を利用した新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。
++
+** AFF A70、AFF A90、またはAFF A1Kシステムの場合、ONTAPは、Storage Efficiencyを使用しないボリュームも含めて、既存のシンプロビジョニングされたすべてのボリュームのストレージ効率を変換します。
+** FAS70およびFAS90システムの場合、ONTAPで変換されるのは、アップグレード前にすでにStorage Efficiencyが有効になっているシンプロビジョニングされた既存のボリュームのストレージ効率のみです。
++
+link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["Storage Efficiencyの詳細"^]です。
 
-ONTAP 9.8 では、自動ポート配置機能が導入され、ハードウェアのアップグレード手順が簡略化されています。
+
+
+* ONTAP 9.8 では、自動ポート配置機能が導入され、ハードウェアのアップグレード手順が簡略化されています。
+
 
 ====
 * 元のノードと新しいノードに互換性があり、サポートされている。
