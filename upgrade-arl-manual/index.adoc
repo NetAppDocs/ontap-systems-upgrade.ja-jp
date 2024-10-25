@@ -10,7 +10,7 @@ summary: 手動の ARL アップグレード手順 を使用して、 ONTAP 9.7 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

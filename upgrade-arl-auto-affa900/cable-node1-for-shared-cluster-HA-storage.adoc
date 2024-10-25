@@ -10,7 +10,7 @@ summary: AFF A800 node1に接続していたクラスタ接続、HA接続、ス�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

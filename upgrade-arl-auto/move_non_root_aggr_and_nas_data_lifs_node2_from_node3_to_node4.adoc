@@ -10,7 +10,7 @@ summary: 'を使用して、ONTAP 9.5を実行しているコントローラを9
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

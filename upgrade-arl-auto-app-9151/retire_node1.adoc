@@ -10,7 +10,7 @@ summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコ�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

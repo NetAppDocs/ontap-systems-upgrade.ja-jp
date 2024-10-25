@@ -10,47 +10,171 @@ summary: アグリゲートの再配置を使用してコントローラハー�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
-このコンテンツでは、アグリゲートの再配置（ ARL ）を使用して、システムを停止することなくコントローラハードウェアをアップグレードする方法について説明します。
+アグリゲートの再配置（ARL）を使用すると、システムを停止することなくコントローラハードウェアをアップグレードできます。コントローラハードウェアをアップグレードするその他の方法については、を参照してくださいlink:../upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"]。
 
-コントローラハードウェアのその他のアップグレード方法については、を参照してください。 link:../upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"]。
+ARLを使用すると、ルート以外のアグリゲートを元のノードから同じクラスタ内の新しいノードに移行して、ONTAPを実行しているノードのペアのコントローラハードウェアを無停止でアップグレードできます。アップグレード中は、アップグレード対象のノードでホストされているデータにアクセスできます。
 
-ONTAP を実行しているノードペアで、元のノードから同じクラスタ内の新しいノードにルート以外のアグリゲートを移行することで、コントローラハードウェアを無停止でアップグレードできます。アップグレード中は、アップグレード対象のノードでホストされているデータにアクセスできます。
+ARLでは、HA構成を利用して、ルート以外のアグリゲートが同じクラスタ内のストレージを共有している場合に、それらのアグリゲートの所有権を別のノードに移動できます。
 
-ARL では HA 構成を利用して、ルート以外のアグリゲートの所有権をノード間で移動できます（ルート以外のアグリゲートが同じクラスタ内のストレージを共有している場合）。
+ARLを使用してコントローラハードウェアをアップグレードする方法はいくつかあります。適切な手順を選択するには、各ARLアップグレードオプションでサポートされるシステムとONTAPのバージョンに関する次の情報を確認してください。
 
-ARL には、システムコマンドまたは手動アップグレードを使用したコントローラハードウェアのアップグレード用の方法が 2 つあります。を開始する前に、コントローラハードウェアのアップグレードに適したコンテンツを選択していることを確認する必要があります。
 
-システムコマンドを使用してアップグレードを実行する場合は、次の表を参照してください。
 
-[cols="30,70"]
+== ONTAP 9 .15.1以降では、「system controller replace」コマンドを使用します。
+
+アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、link:../upgrade-arl-auto-app-9151/index.html["ONTAP 9.15.1で導入されたコントローラハードウェアをアップグレードするには、「system controller replace」コマンドを使用します。"]アップグレード手順を開始します。
+
+.サポートされるシステムの表示
+[%collapsible]
+====
 |===
-| この ONTAP バージョンを実行している場合 | システムコマンドでアップグレードするには、次のコマンドを使用します。 
+| 既存のコントローラ | 交換用コントローラ | ONTAP以降でサポート 
 
 
-| 9.15.1以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["ONTAP 9.15.1で導入されたコントローラハードウェアをアップグレードするには、「system controller replace」コマンドを使用します。"] 
+| FAS8200 、 FAS8300 、 FAS8700 、 FAS9000 | FAS70、FAS90 | 9.15.1P3 
 
 
-| 9.10.1 以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"] この手順を使用して、特定のモデルおよびONTAPソフトウェアバージョンのオールSANアレイ（ASA）として構成されたAFFコントローラをASAコントローラにアップグレードできます。link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["詳細はこちら。"]です。 
+| FAS9500 | FAS90 | 9.15.1P3 
 
 
-| 9.8 以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"] 
+| AFF A300、AFF A400、AFF A700 | AFF A70、AFF A90、AFF A1K | 9.15.1 
 
 
-| 9.5 から 9.7 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html["「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを ONTAP 9.7 にアップグレードします"] 
+| AFF A900 の略 | AFF A90、AFF A1K | 9.15.1 
 |===
-手動アップグレードを実行する場合は、次の表を参照してください。
+====
 
-[cols="30,70"]
+
+== 同じシャーシでコントローラモデルをアップグレード
+
+アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、link:../upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"]アップグレード手順を開始します。
+
+.サポートされるシステムの表示
+[%collapsible]
+====
+[cols="20,20,40"]
 |===
-| この ONTAP バージョンを実行している場合 | 手動でアップグレードするには、次を使用します 
+| 古いシステム | 交換用システム | サポートされるONTAPのバージョン 
 
 
-| 9.8 以降 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアを手動でアップグレードします"] 
+| AFF A800用 | AFF A70またはAFF A90 | 9.15.1以降 
 
 
-| 9.0 から 9.7 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["ONTAP 9.7 以前を実行しているコントローラハードウェアを手動でアップグレードします"] 
+| AFF A220をオールSANアレイ（ASA）として構成 | ASA A150 | 9.13.1P1以降 
+
+
+| AFF A220の略 | AFF A150 | 9.10.1P15、9.11.1P11、9.12.1P5以降 
+
+
+| AFF A200 | AFF A150  a| 
+9.10.1P15、9.11.1P11以降
+
+*注*：AFF A200では、9.11.1以降のONTAPバージョンはサポートされません。
+
+
+
+| AFF C190の略 | AFF A150 | 9.10.1P15、9.11.1P11、9.12.1P5以降 
+
+
+| FAS2620 | FAS2820  a| 
+9.11.1P7（FAS2620）
+
+*注*：FAS2620では、9.11.1以降のONTAPバージョンはサポートされません。
+
+9.13.1以降（FAS2820）
+
+
+
+| FAS2720 | FAS2820 | 9.13.1以降 
+
+
+| AFF A700をASAとして構成 | ASA A900 | 9.13.1P1以降 
+
+
+| AFF A700の略 | AFF A900 の略 | 9.10.1P10、9.11.1P6以降 
+
+
+| FAS9000 | FAS9500 | 9.10.1P10、9.11.1P6以降 
 |===
+====
+
+
+== ONTAP 9 .8以降で「system controller replace」コマンドを使用する
+
+アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、link:../upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"]アップグレード手順を開始します。
+
+.サポートされるシステムの表示
+[%collapsible]
+====
+|===
+| 古いコントローラ | 交換用コントローラ 
+
+
+| FAS8020 、 FAS8040 、 FAS8060 、 FAS8080 | FAS8200 、 FAS8300 、 FAS8700 、 FAS9000 
+
+
+| FAS8060、FAS8080 | FAS9500 
+
+
+| AFF8020 、 AFF8040 、 AFF8060 、 AFF8080 | AFF A300、AFF A400、AFF A700、AFF A800 
+
+
+| AFF8060、AFF8080 | AFF A900 の略 
+
+
+| FAS8200 | FAS8300、FAS8700、FAS9000、FAS9500 
+
+
+| FAS8300、FAS8700、FAS9000 | FAS9500 
+
+
+| AFF A300 | AFF A400、AFF A700、AFF A800、AFF A900 
+
+
+| AFF A320 | AFF A400 
+
+
+| AFF A400 、 AFF A700 | AFF A900 の略 
+|===
+====
+
+
+== ONTAP 9 .5 ~ 9.7で「system controller replace」コマンドを使用
+
+アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、link:../upgrade-arl-auto/index.html["「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを 9.7 にアップグレードします"]アップグレード手順を開始します。
+
+.サポートされるシステムの表示
+[%collapsible]
+====
+[cols="50,50"]
+|===
+| 古いコントローラ | 交換用コントローラ 
+
+
+| FAS8020 、 FAS8040 、 FAS8060 、 FAS8080 | FAS8200 、 FAS8300 、 FAS8700 、 FAS9000 
+
+
+| AFF8020 、 AFF8040 、 AFF8060 、 AFF8080 | AFF A300、AFF A400、AFF A700、AFF A800 
+
+
+| FAS8200 | FAS8700、FAS9000、FAS8300 
+
+
+| AFF A300 | AFF A700、AFF A800、AFF A400 
+|===
+====
+
+
+== 手動のARLコマンドを使用
+
+アップグレードシナリオが「system commands」でサポートされていない場合は、手動コマンドを使用してARLアップグレードを実行できます。
+
+ONTAPのバージョンに応じた手順を選択してアップグレードを開始します。
+
+* link:../upgrade-arl-manual-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアを手動でアップグレードします"]
+* link:../upgrade-arl-manual/index.html["ONTAP 9.7 以前を実行しているコントローラハードウェアを手動でアップグレードします"]
+

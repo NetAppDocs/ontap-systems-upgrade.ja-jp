@@ -10,7 +10,7 @@ summary: ARLを使用して同じシャーシのコントローラモデルを�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

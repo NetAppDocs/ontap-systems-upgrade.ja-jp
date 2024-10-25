@@ -10,7 +10,7 @@ summary: HAペアが有効になっていることを確認し、ノード1と�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

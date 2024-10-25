@@ -10,7 +10,7 @@ summary: システムをネットブートする前に、 ONTAP 9.7 以前を実
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

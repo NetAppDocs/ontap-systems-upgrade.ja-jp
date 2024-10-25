@@ -10,7 +10,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラでは、 node2 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

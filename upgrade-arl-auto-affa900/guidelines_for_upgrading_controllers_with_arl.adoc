@@ -10,7 +10,7 @@ summary: アップグレード構成にARLを使用できるかどうかを確�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

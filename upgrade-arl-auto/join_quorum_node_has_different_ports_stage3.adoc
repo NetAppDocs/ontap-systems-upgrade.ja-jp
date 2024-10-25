@@ -10,7 +10,7 @@ summary: 'ステージ 3 では、 ONTAP 9.5 を実行しているコントロ�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: '必要に応じて "system controller replace" コマンドを使用�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

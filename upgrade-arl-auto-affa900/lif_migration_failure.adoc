@@ -10,7 +10,7 @@ summary: 第2段階、第3段階、または第5段階でARLを使用して同�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

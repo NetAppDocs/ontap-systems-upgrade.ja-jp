@@ -10,7 +10,7 @@ summary: 元のノードと新しいノードでタスクを実行して、ア�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

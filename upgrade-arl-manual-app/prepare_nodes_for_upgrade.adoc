@@ -10,7 +10,7 @@ summary: ノードを準備して情報を収集し、 ONTAP 9.8 以降を実行
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

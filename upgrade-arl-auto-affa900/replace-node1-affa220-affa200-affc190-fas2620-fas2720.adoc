@@ -10,7 +10,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -32,11 +32,11 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 . ケーブルマネジメントデバイスをコントローラモジュールの右側と左側から取り外し、脇に置きます。
 +
-image::../media/drw_25xx_cable_management_arm.png[ケーブル管理ARMの取り外し]
+image:drw_25xx_cable_management_arm.png["ケーブル管理ARMの取り外し"]
 
 . カムハンドルのラッチをつかんで解除し、カムハンドルを最大限に開いてコントローラモジュールをミッドプレーンから離し、両手でコントローラモジュールをシャーシから外します。
 +
-image::../media/drw_2240_x_opening_cam_latch.png[カムハンドルを開く]
+image:drw_2240_x_opening_cam_latch.png["カムハンドルを開く"]
 
 . コントローラモジュールを裏返し、平らで安定した場所に置きます。
 

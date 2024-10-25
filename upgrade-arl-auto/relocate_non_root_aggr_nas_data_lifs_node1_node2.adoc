@@ -10,7 +10,7 @@ summary: 「 system controller replace 」コマンドを使用して ONTAP 9.5 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

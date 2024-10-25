@@ -10,7 +10,7 @@ summary: 'を使用したARLアップグレードのステージ2プロセスシ
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

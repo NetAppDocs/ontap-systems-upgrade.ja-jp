@@ -10,7 +10,7 @@ summary: 2ノードクラスタの場合はノード1のNASデータLIFをノー
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

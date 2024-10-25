@@ -10,7 +10,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラペアで ARL �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

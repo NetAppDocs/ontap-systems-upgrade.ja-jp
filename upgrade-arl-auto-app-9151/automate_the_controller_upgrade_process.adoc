@@ -10,7 +10,7 @@ summary: 部分的に自動化されたARL手順を使用して、ONTAP 9.15.1�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

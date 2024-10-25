@@ -10,7 +10,7 @@ summary: アップグレードを開始する前に、同じシャーシ内の�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

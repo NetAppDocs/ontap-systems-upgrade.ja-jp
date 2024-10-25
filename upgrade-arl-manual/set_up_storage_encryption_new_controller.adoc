@@ -10,7 +10,7 @@ summary: 必要に応じて、 ONTAP 9.7 以前を実行しているコントロ
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

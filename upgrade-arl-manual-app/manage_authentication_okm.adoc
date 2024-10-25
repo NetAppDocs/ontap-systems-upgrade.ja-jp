@@ -10,7 +10,7 @@ summary: オンボードキーマネージャを使用して、ONTAP 9.8以降�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

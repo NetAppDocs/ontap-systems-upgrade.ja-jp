@@ -10,7 +10,7 @@ summary: 'ONTAP 9.15.1以降を実行しているコントローラハードウ�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -40,7 +40,7 @@ NOTE: この手順を使用して、MetroClusterのFCまたはIP構成をアッ�
 * ONTAP 9 .15.1で導入されたシステムにアップグレードすると、ONTAPは既存ボリュームのStorage Efficiencyを変換し、ハードウェアオフロード機能を利用した新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。
 +
 ** AFF A70、AFF A90、またはAFF A1Kシステムの場合、ONTAPは、Storage Efficiencyを使用しないボリュームも含めて、既存のシンプロビジョニングされたすべてのボリュームのストレージ効率を変換します。
-** FAS70およびFAS90システムの場合、ONTAPで変換されるのは、アップグレード前にすでにStorage Efficiencyが有効になっているシンプロビジョニングされた既存のボリュームのストレージ効率のみです。
+** FAS70およびFAS90システムの場合、ONTAPで変換されるのは、シンプロビジョニングされている既存のボリュームで、アップグレード前にStorage Efficiencyが有効になっていたボリュームのストレージ効率のみです。
 
 
 +

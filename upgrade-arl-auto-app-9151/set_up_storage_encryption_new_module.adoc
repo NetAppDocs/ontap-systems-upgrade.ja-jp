@@ -10,7 +10,7 @@ summary: '必要に応じて、コマンドを使用してONTAP 9.15.1以降を�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

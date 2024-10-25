@@ -10,7 +10,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ WARNING: ノード 1 で作業しているときは、コンソールケーブ�
 +
 .. カムハンドルのオレンジ色のボタンを下にスライドさせてロックを解除します。
 +
-image::../media/drw_9500_remove_PCM.png[コントローラモジュールを取り外します]
+image:drw_9500_remove_PCM.png["コントローラモジュールを取り外します"]
 
 +
 [cols="20,80"]
@@ -43,12 +43,12 @@ image::../media/drw_9500_remove_PCM.png[コントローラモジュールを取�
 
 
  a| 
-image::../media/black_circle_one.png[番号 1]
+image:black_circle_one.png["番号 1"]
 | カムハンドルのリリースボタン 
 
 
  a| 
-image::../media/black_circle_two.png[番号 2]
+image:black_circle_two.png["番号 2"]
 | カムハンドル 
 |===
 .. カムハンドルを回転させて、コントローラモジュールをシャーシから完全に外し、コントローラモジュールをシャーシから引き出します。
@@ -81,7 +81,7 @@ NVRAM モジュールがシャーシから外れ、数インチ移動します�
 
 .. NVRAM モジュール前面の両側にあるプルタブを引いてモジュールをシャーシから取り外します。
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM モジュールを取り外します]
+image:drw_a900_move-remove_NVRAM_module.png["NVRAM モジュールを取り外します"]
 
 +
 [cols="20,80"]
@@ -89,12 +89,12 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM モジュールを�
 
 
  a| 
-image::../media/black_circle_one.png[番号 1]
+image:black_circle_one.png["番号 1"]
 | 文字と数字が記載された I/O カムラッチ 
 
 
  a| 
-image::../media/black_circle_two.png[番号 2]
+image:black_circle_two.png["番号 2"]
 | ロックが完全に解除された I/O ラッチ 
 |===
 
@@ -127,7 +127,7 @@ ASA A900、AFF A900、またはFAS9500 NVRAMモジュールをノード1のス�
 . NVRAM モジュールをスロット 6 のシャーシ開口部の端に合わせます。
 . NVRAM モジュールをスロットにそっと挿入し、文字と数字が記載された I/O カムラッチを上に押して NVRAM モジュールを所定の位置にロックします。
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM モジュールを取り付けます]
+image:drw_a900_move-remove_NVRAM_module.png["NVRAM モジュールを取り付けます"]
 
 +
 [cols="20,80"]
@@ -135,12 +135,12 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM モジュールを�
 
 
  a| 
-image::../media/black_circle_one.png[番号 1]
+image:black_circle_one.png["番号 1"]
 | 文字と数字が記載された I/O カムラッチ 
 
 
  a| 
-image::../media/black_circle_two.png[番号 2]
+image:black_circle_two.png["番号 2"]
 | ロックが完全に解除された I/O ラッチ 
 |===
 
@@ -171,7 +171,7 @@ NOTE: シャーシの電源がすでにオンになっているため、ノー�
 WARNING: コネクタの破損を防ぐため、コントローラモジュールをシャーシに挿入する際に力を入れすぎないようにしてください。
 
 +
-image::../media/drw_9500_remove_PCM.png[コントローラモジュールを取り付けます]
+image:drw_9500_remove_PCM.png["コントローラモジュールを取り付けます"]
 
 +
 [cols="20,80"]
@@ -179,12 +179,12 @@ image::../media/drw_9500_remove_PCM.png[コントローラモジュールを取�
 
 
  a| 
-image::../media/black_circle_one.png[番号 1]
+image:black_circle_one.png["番号 1"]
 | カムハンドルのロックラッチ 
 
 
  a| 
-image::../media/black_circle_two.png[番号 2]
+image:black_circle_two.png["番号 2"]
 | カムハンドルがアンロック位置にある 
 |===
 . モジュールを装着したらすぐにシリアルコンソールに接続し、 node1 の自動ブートを中断できるようにします。

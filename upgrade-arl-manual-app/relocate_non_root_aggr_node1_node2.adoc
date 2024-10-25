@@ -10,7 +10,7 @@ summary: ルート以外のアグリゲートをノード 1 からノード 2 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

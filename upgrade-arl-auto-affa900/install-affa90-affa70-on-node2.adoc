@@ -10,7 +10,7 @@ summary: 同じシャーシのコントローラモデルをARLでアップグ�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ summary: 同じシャーシのコントローラモデルをARLでアップグ�
 NOTE: 手順 の後半で指示があるまでコントローラモジュールをシャーシに完全に挿入しないでください。
 
 +
-image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[AFF A90またはAFF A70の取り付け]
+image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["AFF A90またはAFF A70の取り付け"]
 
 . 管理ポートとコンソールポートを node1 コントローラモジュールにケーブル接続します。
 +

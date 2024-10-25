@@ -10,7 +10,7 @@ summary: ONTAP 9.1 以降の場合は、ポートレイアウトを再設定し�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
