@@ -5191,7 +5191,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="f43de3716b79c8e43965aeacd1411a48" category="cell">AFF A300、AFF A400、AFF A700</block>
   <block id="5fa70989a3e04b27c407da750f3d94fe" category="cell">AFF A70、AFF A90、AFF A1K</block>
   <block id="ccf78fb30997636f483e58875cad308b" category="cell">AFF A90、AFF A1K</block>
-  <block id="fd63300d56f60b7a5ff6928593e24ff3" category="paragraph">AFF A70とAFF A90は、1台のシャーシに2台のオンボードディスクと2台のコントローラを搭載した統合システムです。</block>
   <block id="e0acd4a9bc97511cc024bf1c07dc8536" category="list-text">内蔵ドライブを搭載したAFF A70またはAFF A90にアップグレードする場合は、アップグレード前にドライブの所有権を削除する必要があります。アップグレードが完了したら、内蔵ドライブをAFF A70ノードまたはAFF A90ノードに割り当て、データアグリゲートの作成に使用できます。ルートアグリゲートまたはデータアグリゲートを内蔵ドライブに移行する必要はありません。</block>
   <block id="9f63491a94b75b12a4f685455f82295c" category="list-text">内蔵ドライブのないAFF A70またはAFF A90にアップグレードする場合は、アップグレードの完了後に内蔵ドライブを割り当てる必要はありません。</block>
   <block id="1c6b77da3506137a2164e23d95b49133" category="list-text">AFF A70、AFF A90、AFF A1K、FAS70、およびFAS90システムは、クラスタ接続とHA接続の両方で100GbEネットワークポートを共有します。これらのシステムでは、従来のクラスタスイッチとの10GbEまたは25GbEクラスタ接続をサポートできますが、NetApp 10GbEおよび25GbEスイッチが不要になった場合は、100GbEクラスタ速度に更新することを推奨します。詳細については、次のナレッジベースの記事を参照してください。</block>
@@ -5247,4 +5246,5 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="a8146cc42b0ac83dacd0c674c2e19baa" category="paragraph"><block ref="a8146cc42b0ac83dacd0c674c2e19baa" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fd4a2232b0a4fad7f2f7a5207ee94001" category="sidebar">ONTAPシステムとソフトウェアの詳細</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP スイッチのドキュメント</block>
+  <block id="91c8d030b7d32b838af9bb14f227c952" category="paragraph">AFF A70とAFF A90は、HA構成の2台のコントローラと1台のシャーシにオンボードディスクを搭載した統合システムです。</block>
 </blocks>
