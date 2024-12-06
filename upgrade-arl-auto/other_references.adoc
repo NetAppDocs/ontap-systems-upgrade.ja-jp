@@ -46,7 +46,7 @@ summary: ONTAP 9.5 を実行するコントローラのアップグレードを�
 | link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 仮想化インストール要件およびリファレンスガイド"^] | FlexArray 仮想化システムのケーブル接続手順とその他の情報について説明します 
 
 
-| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["高可用性管理"^] | ストレージフェイルオーバー、テイクオーバー / ギブバックなどのハイアベイラビリティクラスタ構成をインストールおよび管理する方法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HAペアの管理"^] | ストレージフェイルオーバー、テイクオーバー / ギブバックなどのハイアベイラビリティクラスタ構成をインストールおよび管理する方法について説明します。 
 
 
 | link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI を使用した論理ストレージ管理"^] | ボリューム、 FlexClone ボリューム、ファイル、 LUN を使用して論理ストレージリソースを効率的に管理する方法について説明します。 FlexCache 、重複排除、圧縮、 qtree 、およびクォータ 

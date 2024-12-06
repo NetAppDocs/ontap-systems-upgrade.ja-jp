@@ -29,10 +29,10 @@ node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場
 . ノードモデルの _Installation and Setup Instructions _ の手順に従って、ノード 4 をラックに設置します。
 . ノード 4 をケーブル接続します。 node2 から node4 に接続を移動します。
 +
-各ノード 4 のプラットフォームについて、『 Installation and Setup Instructions 』または『 FlexArray Virtualization Installation Requirements and Reference_for the node4 』、該当するディスクシェルフのドキュメント、および _High Availability management _ の手順に従って、次の接続をケーブル接続します。
+ノード4プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_の手順書、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。
 
 +
-を参照してください link:other_references.html["参考資料"] FlexArray 仮想化インストール要件およびリファレンスとハイアベイラビリティ管理へのリンク。
+FlexArray仮想化インストール要件およびReference_and_HA pair management_へのリンクを参照してくださいlink:other_references.html["参考資料"]。
 
 +
 ** コンソール（リモート管理ポート）

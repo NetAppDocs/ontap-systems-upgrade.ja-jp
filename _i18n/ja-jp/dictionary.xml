@@ -2622,8 +2622,6 @@
   <block id="cf3329822cb6acbd3f59abba0514d804" category="sidebar">SAN LIF を削除</block>
   <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">元のノードを分離</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">ノード 4 で FC または UTA / UTA2 設定を設定します</block>
-  <block id="2e546c2ae4e7d18e3a62352f7899f8ad" category="paragraph">各ノード 4 のプラットフォームについて、『 Installation and Setup Instructions 』または『 FlexArray Virtualization Installation Requirements and Reference_for the node4 』、該当するディスクシェルフのドキュメント、および _High Availability management _ の手順に従って、次の接続をケーブル接続します。</block>
-  <block id="96fc3790ed0f779b648493fc7e4b2e7c" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> FlexArray 仮想化インストール要件およびリファレンスとハイアベイラビリティ管理へのリンク。</block>
   <block id="82a3300ad94a5e1dcf0a6abbfe1060e2" category="paragraph">このコンテンツの手順を実行するときは、参照コンテンツを参照するか、参照 Web サイトにアクセスする必要があります。</block>
   <block id="14f94d0b133a9aa34a775e955c95b8bc" category="list-text"><block ref="13e4a2cf4e0a4edbef519c9af2452c86" category="inline-xref-macro-rx"></block></block>
   <block id="ec5873b9b6861954a7c07d183dd486b0" category="section-title">参照コンテンツ</block>
@@ -2638,8 +2636,6 @@
   <block id="d1b75581244e03161b57c29a9ac4bb22" category="inline-link-macro">CLI によるディスクおよびアグリゲートの管理</block>
   <block id="c3aed88c9ee3a48f5d62930613f5710f" category="cell"><block ref="c3aed88c9ee3a48f5d62930613f5710f" category="inline-link-macro-rx"></block></block>
   <block id="083222857448e1fa46a20ea7d228c4a3" category="cell">CLI を使用して ONTAP 物理ストレージを管理する方法について説明します。アグリゲートを作成、拡張、管理する方法、 Flash Pool アグリゲートを使用する方法、ディスクを管理する方法、および RAID ポリシーを管理する方法を示します。</block>
-  <block id="9fc34575910b3b930388b5434f515842" category="inline-link-macro">高可用性管理</block>
-  <block id="8b8cdc632b8dd03afd9af9cf3f0bbb00" category="cell"><block ref="8b8cdc632b8dd03afd9af9cf3f0bbb00" category="inline-link-macro-rx"></block></block>
   <block id="c1a14ef4c1320caf80e81dff4161eb9b" category="inline-link-macro">CLI を使用した論理ストレージ管理</block>
   <block id="23806251831778e9042b7dc8e04e42d9" category="cell"><block ref="23806251831778e9042b7dc8e04e42d9" category="inline-link-macro-rx"></block></block>
   <block id="9dc1904e0c3ace141704b477cd9b345d" category="inline-link-macro">Network Management の略</block>
@@ -2662,12 +2658,10 @@
   <block id="4ba8d4701b7c72b570a63797aff938e0" category="list-text">ONTAP 9.10.1 以降では、 4 ノードの MetroCluster FC 構成のデフォルトの自動ネゴシエートスイッチオーバー（ NSO ）ベースのアップグレード手順が使用されます。4 ノード MetroCluster FC 構成をアップグレードする場合、「 system controller replace start 」コマンドを問題するときに、「 -nso 」パラメータを「 false 」に設定して、 NSO ベースの手順の起動を禁止する必要があります。</block>
   <block id="b5217a01cec2b264eab0761f085ee2eb" category="list-text">「 system controller replace start 」コマンドは、 advanced 権限レベルでのみ実行できます。</block>
   <block id="45e3f26bb2c9a72d8467afe9a6c33e38" category="cell">交換するノードで同じバージョンの ONTAP が実行されていることを確認します。ONTAP イメージのバージョンが異なると、タスクは失敗します。新しいノードには、元のノードと同じバージョンの ONTAP 9.x がインストールされている必要があります。新しいノードに別のバージョンの ONTAP がインストールされている場合は、設置後に新しいコントローラをネットブートする必要があります。ONTAP のアップグレード方法については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> リンク先： ONTAP のアップグレード _ 。</block>
-  <block id="954ad5efed3e43bfb3badad9c505735b" category="cell">交換するノードに不足しているディスクまたは障害が発生しているディスクがある場合、タスクは失敗します。足りないディスクがある場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI でディスクおよびアグリゲートの管理にリンクするには、 CLI_ 、 _ で論理ストレージの管理に使用します。 HA ペアのストレージを構成するには、 _ 、 _ ハイアベイラビリティ管理 _ を使用します。</block>
   <block id="3f906c041fb469b2794aa7ce7964b2a7" category="list-text">システムコンソールで、コントローラの交換用手順の指示に従って、次のコマンドセットを実行します。</block>
   <block id="c209ee9c3a703005ec3303b04dddff2f" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster の管理とディザスタリカバリのコンテンツにリンクし、ネゴシエートスイッチオーバー、修復、スイッチバックについて記載された手順を使用するには、次の手順を実行します。</block>
   <block id="b029dd94e134cfaf963a04051ff43f6d" category="admonition">内蔵ドライブをサポートするシステム（ FAS2700 または AFF A250 など）をアップグレードする場合でも内蔵ドライブがないときは、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> および、 _ アグリゲートの再配置に含まれる手順を使用して、使用している ONTAP のバージョンに適したコントローラ Hardware_content を手動でアップグレードします。</block>
   <block id="14fc1fec490b9f5ad23d58c3c55d4441" category="paragraph">内蔵ドライブを搭載したエントリレベルのコントローラをアップグレードする場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ボリュームまたは storage を移動して _Upgrade にリンクし、 Data ONTAP に移動して、 clustered 手順を実行するノードのペアをアップグレードする _ に進みます。</block>
-  <block id="5ab1ba3aba863ed7175637aaa48e2f73" category="paragraph">設置とセットアップの手順 _ または FlexArray 仮想化インストールの要件とリファレンス _ を使用して、ノード 3 プラットフォーム、該当するディスクシェルフのドキュメント、および _High Availability Management _ を使用して、次の接続をケーブル接続します。</block>
   <block id="c78fd54aa1461d651da28406676f336f" category="admonition">この手順では、 VLAN 、 ifgrp 、およびブロードキャストドメインの作成に関するセクションの名前が「 _node4 にあるネットワーク設定のリストア」に変更されています。</block>
   <block id="de1d1723e281ecfbe16611cb895dd237" category="paragraph">VLAN 、インターフェイスグループ、およびブロードキャストドメインの作成と再作成の詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして _ ネットワーク管理 _ にリンクします。</block>
   <block id="84b1703925b211a597f4b166b1d80848" category="list-text">HA クラスタなどの MetroCluster 以外手順のシステムでは、 ARL アップグレードのみがサポートされます。</block>
@@ -2681,7 +2675,6 @@
   <block id="794c7b1870555759c37165eedd11e861" category="admonition">この手順では、 VLAN 、 ifgrp 、およびブロードキャストドメインの作成に関するセクションの名前が、 node3 のネットワーク設定の名前が _Restore に変更されています。</block>
   <block id="2618ba1924760141eb8ebfb30bb1d8a9" category="paragraph">VLAN 、インターフェイスグループ、およびブロードキャストドメインの作成と再作成の詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> およびリンク先： _ ネットワーク管理 _ 。</block>
   <block id="b838d4fde6c980fa55cf1649eccebfb3" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 _Network Management_ または _ONTAP 9 コマンド：マニュアルページリファレンスにリンクしてください。</block>
-  <block id="9b4a7067960efcb28456ef46d4ac8143" category="cell">交換するノードに不足しているディスクまたは障害が発生しているディスクがある場合、タスクは失敗します。足りないディスクがある場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI でディスクおよびアグリゲートの管理にリンクするには、 CLI_ 、 _ で論理ストレージの管理に使用します。 HA ペアのストレージを構成するには、 _ 、 _ ハイアベイラビリティ管理 _ を使用します。</block>
   <block id="eff04d06fc1c15ba7f721c6eb771ca87" category="list-text">AFF A320 システムからアップグレードする場合は、ボリューム移動を使用してコントローラハードウェアをアップグレードするか、テクニカルサポートにお問い合わせください。ボリュームの移動を希望する場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。</block>
   <block id="9897d9d5a6dc54cd05e35a06df6d54b5" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ネットワーク管理 _ または _ ONTAP 9 コマンド：マニュアルページリファレンス _ および _ LIF でのフェイルオーバー設定の詳細については、 _ を参照してください。</block>
   <block id="c27e64cafb401d038cff1543dd15a9f5" category="paragraph">このコンテンツの以前のバージョンには、完全に手動で実行するだけで構成されるコントローラの無停止更新プロセスの手順が含まれていました。このコンテンツでは、新しい自動手順の手順を説明します。</block>
@@ -2722,13 +2715,9 @@
   <block id="34c3e41105245eedc58a41b84d06a8da" category="list-text">必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <block ref="ff47d2d93900744c317edfe39ed00899" category="inline-xref-macro-rx"></block>。</block>
   <block id="da988c28044d8fc8463a4db2336f20f0" category="list-text">_ インストールおよびセットアップ手順 _ または _ FlexArray 仮想化インストール要件およびリファレンス _ （ノード 4 プラットフォーム用）</block>
   <block id="72860e73833a237fd9811df9152c9a7a" category="list-text">該当するディスクシェルフの手順を選択します</block>
-  <block id="b9b51f95b333e31e76a0f718bee344fa" category="list-text">高可用性管理に関するドキュメント（ _High Availability MANAGEMENT</block>
   <block id="6afaaeefe5c37f69581ad1614c57cff4" category="paragraph">に進みます <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 _Network Management_ または _ONTAP 9 コマンド：マニュアルページリファレンスにリンクしてください。</block>
   <block id="9f60baa5d0a7e514432de3c5beb88857" category="paragraph">ルートアグリゲートまたはデータアグリゲートが含まれるコントローラを内蔵ディスクドライブにアップグレードする場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ボリュームまたは storage を移動して _Upgrade にリンクし、 Data ONTAP に移動して、 clustered 手順を実行するノードのペアをアップグレードする _ に進みます。</block>
   <block id="ae307041467b0820fea754d90cc7abda" category="admonition">クラスタ内のノードの ONTAP をアップグレードする場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> リンク先： ONTAP のアップグレード _ 。</block>
-  <block id="986991a93176ee231138e71796e3557e" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 高可用性管理にリンクし、 HA ペアのベストプラクティスセクションの _ に従ってください。元のノードのどちらも 50% 以上の利用率で実行しないでください。あるノードの利用率が 50% 未満の場合は、コントローラのアップグレード中に両方のノードの負荷を処理できます。</block>
-  <block id="e1cbc9b64c5a195f57ded4409cfe8fbc" category="paragraph">いずれかのノードが部分的なギブバック状態にある場合は、「 storage failover giveback 」コマンドを使用してギブバックを実行し、「 storage failover show-giveback 」コマンドを使用して、ギブバックする必要がないことを確認します。コマンドの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 _High Availability MANAGEMENT にリンクします。</block>
-  <block id="f6ad618b685a2a7a446cddb4787d965d" category="paragraph">足りないディスクがある場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI でディスクおよびアグリゲートの管理にリンクするには、 CLI_ 、 _ で論理ストレージの管理に使用します。 HA ペアのストレージを構成するには、 _ 、 _ ハイアベイラビリティ管理 _ を使用します。</block>
   <block id="26284a568c7e38bb6355694c41ff5f8d" category="paragraph">いずれかのディスクで障害が発生した場合は、 CLI での _Disk およびアグリゲートの管理の手順に従ってディスクを取り外します。を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI を使用してディスクおよびアグリゲートの管理にリンクするには、を参照してください）。</block>
   <block id="2722bd9e96d97f6dd8c071e92fb500ce" category="list-text">_ インストールおよびセットアップ手順 _ または _ FlexArray 仮想化インストール要件およびリファレンス _ （ node3 プラットフォーム用）</block>
   <block id="025b7f36f1c9c8c4d48374557ce1ad36" category="paragraph">storage aggregate relocation コマンドの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI_ および ONTAP 9 コマンド：マニュアルページリファレンス _ を使用してディスクおよびアグリゲートの管理にリンクするには、次の手順を実行します。</block>
@@ -4875,7 +4864,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="ef0d9aeefdd01090b7d838fdbc756532" category="cell">AFF A800^1^</block>
   <block id="120ae360daecd24b580b71f9f2766bbc" category="cell">9.15.1</block>
   <block id="f60554150b9183af4229445611dee7e7" category="paragraph">9.10.1P15、9.11.1P11以降^2^</block>
-  <block id="b7f5f3e815fc26505623dcbc51f6b401" category="paragraph">9.11.1P7（FAS2620）^2^</block>
   <block id="de800e8602c1bb83b0bea67e9b57ae7d" category="paragraph">^1^ ONTAP 9.151で導入されたシステムにアップグレードすると、ONTAPは、Storage Efficiencyを使用していないボリュームも含めて、シンプロビジョニングされている既存のすべてのボリュームのストレージ効率を変換し、ハードウェアオフロード機能を使用する新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block>です。</block>
   <block id="43d7379ace473361bbbcf942aef43f03" category="paragraph">^2^ AFF A200およびFAS2620システムでは、9.11.1よりも新しいバージョンのONTAPはサポートされていません。</block>
   <block id="5cfd2d4152e78b9d89cbc6307d966fda" category="cell">既存のオブジェクト</block>
@@ -5215,7 +5203,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="3e44bbb802d299056c9839f8bdfc777a" category="cell">9.15.1以降</block>
   <block id="184f38916b6639f5bdbf7619d90cebc3" category="paragraph">9.10.1P15、9.11.1P11以降</block>
   <block id="45b09eba6fe8095ae38635150e57152a" category="paragraph">*注*：AFF A200では、9.11.1以降のONTAPバージョンはサポートされません。</block>
-  <block id="d243c4c373219990c87996aba8af4741" category="paragraph">9.11.1P7（FAS2620）</block>
   <block id="26ed1ff6e78b37e572170171b4fabc0f" category="paragraph">*注*：FAS2620では、9.11.1以降のONTAPバージョンはサポートされません。</block>
   <block id="074a728bac13ce0b2d079bed92780d8d" category="section-title">ONTAP 9 .8以降で「system controller replace」コマンドを使用する</block>
   <block id="bf2f20b69fe364bf3a76fbb262d9c675" category="paragraph">アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、<block ref="f597d5199c2cdfe3f660f286188248d5" category="inline-link-macro-rx"></block>アップグレード手順を開始します。</block>
@@ -5247,4 +5234,25 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="fd4a2232b0a4fad7f2f7a5207ee94001" category="sidebar">ONTAPシステムとソフトウェアの詳細</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP スイッチのドキュメント</block>
   <block id="91c8d030b7d32b838af9bb14f227c952" category="paragraph">AFF A70とAFF A90は、HA構成の2台のコントローラと1台のシャーシにオンボードディスクを搭載した統合システムです。</block>
+  <block id="664f9c52f93e2fbf6e801148b0f573ad" category="inline-link-macro">HAペアの管理</block>
+  <block id="fc0b22bb38f11521c03de86c56643d5d" category="cell"><block ref="fc0b22bb38f11521c03de86c56643d5d" category="inline-link-macro-rx"></block></block>
+  <block id="89f76e97cb211d84e00c11992dfadf74" category="paragraph">ノード4プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_の手順書、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。</block>
+  <block id="26c5c260ce25606c1c0bb202b032dfa3" category="paragraph">FlexArray仮想化インストール要件およびReference_and_HA pair management_へのリンクを参照してください<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>。</block>
+  <block id="b082861c64ae79f202957f36b4724f12" category="paragraph">ノード3プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。</block>
+  <block id="62e8c46614cda642480e223b008f5dfc" category="list-text">HAペア管理のドキュメント</block>
+  <block id="147e1330d5f2538de36e6ee787c5446d" category="paragraph">HAペア管理_へのリンクを参照し<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>、HAペアの_ベストプラクティス_セクションに従ってください。元のノードのどちらも 50% 以上の利用率で実行しないでください。あるノードの利用率が 50% 未満の場合は、コントローラのアップグレード中に両方のノードの負荷を処理できます。</block>
+  <block id="270b6acdba0a7f34d4c1dd4dd05525ab" category="paragraph">いずれかのノードが部分的なギブバック状態の場合は、<block ref="b27ff28f78c71d3027cc2fb76f6fe30c" prefix=" " category="inline-code"></block>コマンドを使用してギブバックを実行し、コマンドを使用してギブバック<block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix=" " category="inline-code"></block>が必要なアグリゲートがないことを確認します。コマンドの詳細については、「_HA pair management_」へのリンクを参照して<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>ください。</block>
+  <block id="395d4fd7f065a92548b412c96dbe1faa" category="paragraph">見つからないディスクがある場合は、CLI_を使用したディスクへのリンクとアグリゲートの管理、CLI_を使用した論理ストレージの管理、および_HAペアのMANAGEMENT_を参照して<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>、HAペアのストレージを設定してください。</block>
+  <block id="7c67b8b9f7d3533c33fb6cecf037204c" category="inline-link-macro">SANホストからASA R2ストレージシステムへのデータアクセスを有効にする</block>
+  <block id="e8a1c12a435b7bb9c68529ddb55c1850" category="admonition">ASA R2交換用システムへのASAのアップグレードはサポートされていません。ASAからASA R2へのデータの移行については、を参照してください<block ref="1aa51bb167bf6182c65d56fb25d15ddf" category="inline-link-macro-rx"></block>。</block>
+  <block id="c8d7e0b6f3e69fd12ca1cfc90687f6a8" category="paragraph">9.11.1P7以降のパッチリリース（FAS2620）</block>
+  <block id="8499179dca2bc3203741083d0d24160c" category="cell">交換するノードに不足しているディスクまたは障害が発生しているディスクがある場合、タスクは失敗します。見つからないディスクがある場合は、CLI_を使用したディスクへのリンクとアグリゲートの管理、CLI_を使用した論理ストレージの管理、および_HAペアのMANAGEMENT_を参照して<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>、HAペアのストレージを設定してください。</block>
+  <block id="96921c9c55ac5491d93180278bb4bc78" category="paragraph">9.11.1P7以降のパッチリリース（FAS2620）^2^</block>
+  <block id="8ac418c9132657ca13947b8d7087efa1" category="cell">交換するノードに不足しているディスクまたは障害が発生しているディスクがある場合、タスクは失敗します。見つからないディスクがある場合は、CLI_を使用したディスクへのリンクとアグリゲートの管理、CLI_を使用した論理ストレージの管理、および_HAペアのMANAGEMENT_を参照して<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>、HAペアのストレージを設定してください。</block>
+  <block id="66691da5eb04d0eba08bba016646849a" category="paragraph">アップグレードできるのは、同じシリーズの交換用システムのみです。</block>
+  <block id="e882986702fe0f326c1fa2d4698be2cd" category="list-text">AFF AシリーズシステムからAFF Aシリーズシステム</block>
+  <block id="737115f91c530c4e8ddec392681db510" category="list-text">AFF CシリーズシステムからAFF Cシリーズシステムへ</block>
+  <block id="04a7d3ed17290dfa8c947b7265180931" category="list-text">ASA システムから ASA システムへの移動</block>
+  <block id="6cc3f2b4a05b456b1f754eaf8cb03200" category="list-text">ASA AシリーズシステムからASA Aシリーズシステム</block>
+  <block id="af2a1a7e91ed894338bb4bd32c3e13d0" category="list-text">ASA CシリーズシステムからASA Cシリーズシステムへ</block>
 </blocks>

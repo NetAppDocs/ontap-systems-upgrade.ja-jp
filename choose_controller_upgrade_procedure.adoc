@@ -27,6 +27,10 @@ NOTE: アグリゲートの再配置を使用して、AFF A800をAFF A70また�
 
 * AFF C190、AFF C250、およびAFF C800
 * ASA A150、ASA A250、ASA A800、およびASA AFF A220
++
+
+NOTE: ASA R2交換用システムへのASAのアップグレードはサポートされていません。ASAからASA R2へのデータの移行については、を参照してくださいlink:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SANホストからASA R2ストレージシステムへのデータアクセスを有効にする"^]。
+
 
 
 お使いのシステムがリストにない場合は、 https://hwu.netapp.com["NetApp Hardware Universe の略"^] 内蔵ドライブがあるかどうかを確認します。
@@ -42,6 +46,10 @@ image:workflow_internal_drives.png["アップグレード手順の選択の決�
 * AFF A300、AFF A320、AFF A400、AFF A700、AFF A900
 * AFF C400
 * ASA A400、ASA A900、およびASA AFF A700
++
+
+NOTE: ASA R2交換用システムへのASAのアップグレードはサポートされていません。ASAからASA R2へのデータの移行については、を参照してくださいlink:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SANホストからASA R2ストレージシステムへのデータアクセスを有効にする"^]。
+
 
 
 お使いのシステムがリストにない場合は、 https://hwu.netapp.com["NetApp Hardware Universe の略"^] 外付けドライブのみがあるかどうかを確認します。
