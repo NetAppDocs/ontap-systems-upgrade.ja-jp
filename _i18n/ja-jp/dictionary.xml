@@ -3223,7 +3223,6 @@
   <block id="78bd6f667bd547c51374b0e978e9d001" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合に必要な参照コンテンツと Web サイト。</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。</block>
-  <block id="d94e9d7914bbd98510d8cb9e0a6d08b1" category="list-text">クラスタインターコネクトストレージとイーサネット接続ストレージに共有スイッチを使用している。</block>
   <block id="af18adb321560258c2b9a80d2757792a" category="paragraph">アップグレードの各段階で、システムがクラッシュする（リブート、パニック状態、または電源の再投入）場合があります。</block>
   <block id="c7fc4caaca02af86d84b04f258dfd7e6" category="paragraph">node2 はテイクオーバーしませんが、ルート以外のすべてのアグリゲートから引き続きデータを提供しています。</block>
   <block id="7e3345ca183a02251269d1034b280331" category="list-text">node1 の LOADER プロンプトで、 node1 の「 partner-sysid 」を確認します。</block>
@@ -5255,4 +5254,5 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="04a7d3ed17290dfa8c947b7265180931" category="list-text">ASA システムから ASA システムへの移動</block>
   <block id="6cc3f2b4a05b456b1f754eaf8cb03200" category="list-text">ASA AシリーズシステムからASA Aシリーズシステム</block>
   <block id="af2a1a7e91ed894338bb4bd32c3e13d0" category="list-text">ASA CシリーズシステムからASA Cシリーズシステムへ</block>
+  <block id="bd78dcbf9a0f6c9dff2586a02d89b664" category="list-text">システムでONTAP 9.15.1以降が実行されており、イーサネットスイッチを使用してイーサネット接続ストレージに接続している。</block>
 </blocks>
