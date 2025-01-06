@@ -47,7 +47,27 @@ network port reachability show -node node1
 +
 インターフェイスグループポートおよび VLAN ポートを含むすべての接続ポートのステータスが「 OK 」であることを確認します。
 
-. AFF A800をAFF A70またはAFF A90にアップグレードする場合は、FCP SAN LIFを再割り当てする必要があります。その他のすべてのシステムアップグレードについては、次の手順に進み <<resume_relocation_step4,手順 4>>ます。
+. 次のアップグレードでは、FCP SAN LIFを再割り当てする必要があります。
++
+[cols="35,65"]
+|===
+| 既存のシステム | 交換用システム 
+
+
+| AFF A250用 | AFF A30、AFF A50 
+
+
+| AFF C250用 | AFF C30、AFF C60 
+
+
+| AFF A800用 | AFF A70、AFF A90 
+
+
+| AFF C800用 | C80 
+|===
++
+その他のすべてのシステムのアップグレードについては、に進みます<<resume_relocation_step4,手順 4>>。
+
 +
 .. FCPまたはFC-NVMeデータアクセスに使用するFCP SAN LIFを正しいホームポートに再割り当てします。
 +
@@ -58,6 +78,7 @@ network port reachability show -node node1
 FC LIFを移動する必要があるFCターゲットポートへの物理的な接続が確立されていることを確認します。
 
 +
+--
 ... LIF のステータスを「 down 」に設定します。
 +
 `network interface modify -vserver <vserver_name> -lif <lif_name>  -status-admin down`
@@ -72,10 +93,11 @@ FC LIFを移動する必要があるFCターゲットポートへの物理的な
 
 
 
-
-
+--
 +
 node1のホームにあるFC SAN LIFごとに手順aとbを繰り返します。
+
+
 
 . [[resume_relocation_step4]]再配置操作を再開します
 +

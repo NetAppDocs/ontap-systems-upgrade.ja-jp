@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html 
+permalink: upgrade-arl-auto-affa900/install-aff-a30-a50-c30-c50-node2.html 
 keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement 
 summary: 同じシャーシのコントローラモデルをARLでアップグレードする際に、交換用システムモジュールをノード2に取り付けます。 
 ---
-= AFF A90またはAFF A70モジュールをノード2に取り付けます。
+= AFF A30、AFF A50、AFF C30、またはAFF C60モジュールをノード2に取り付けます。
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,13 @@ summary: 同じシャーシのコントローラモデルをARLでアップグ�
 
 
 [role="lead"]
-アップグレード用に受け取ったAFF A90またはAFF A70コントローラモジュールをノード2に取り付けます。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。
+アップグレード用に受け取った交換用コントローラモジュールをノード2に取り付けます。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。
 
 .手順
-. コントローラモジュールの端をシャーシの開口部に合わせ、コントローラモジュールをシステムに半分までそっと押し込みます。
+. キャビネットまたはTelcoラックの中央にあるレールにストレージシステムを配置し、ストレージシステムを下から支えて所定の位置にスライドさせます。
 +
 
 NOTE: 手順の後半で指示されるまで、コントローラモジュールをシャーシに完全に挿入しないでください。
-
-+
-image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["AFF A90またはAFF A70の取り付け"]
 
 . 管理ポートとコンソールポートを node1 コントローラモジュールにケーブル接続します。
 +

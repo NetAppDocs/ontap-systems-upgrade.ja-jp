@@ -35,7 +35,7 @@ summary: 手動の ARL アップグレード手順 を使用して、 ONTAP 9.8 
 
 * ASA システムから ASA システムへの移動
 +
-ASA R2交換用システムへのASAのアップグレードはサポートされていません。ASAからASA R2へのデータの移行については、を参照してくださいlink:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SANホストからASA R2ストレージシステムへのデータアクセスを有効にする"^]。
+ASA R2交換システムへのASAアップグレードはサポートされていません。ASAからASA R2へのデータの移行については、を参照してくださいlink:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SANホストからASA R2ストレージシステムへのデータアクセスを有効にする"^]。
 
 +
 アップグレードできるのは、同じシリーズの交換用システムのみです。

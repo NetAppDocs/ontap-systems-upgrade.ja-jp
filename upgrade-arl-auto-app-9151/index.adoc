@@ -37,16 +37,16 @@ NOTE: この手順を使用して、MetroClusterのFCまたはIP構成をアッ�
 * この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、を読んで理解する必要があります link:guidelines_for_upgrading_controllers_with_arl.html["ARL を使用したコントローラのアップグレードに関するガイドライン"] および link:overview_of_the_arl_upgrade.html["ARL アップグレードの概要"] アップグレード開始前のセクション。
 * この手順は、交換用コントローラハードウェアが新しく購入され、使用されていないことを前提としています。この手順には、コマンドを使用して使用済みコントローラを準備するために必要な手順 `wipeconfig` は含まれていません。交換用コントローラハードウェアを以前に使用した場合は、テクニカルサポートにお問い合わせください。
 * この手順を使用して、ノードが 3 つ以上あるクラスタでコントローラハードウェアをアップグレードできます。ただし、クラスタ内のハイアベイラビリティ（ HA ）ペアごとに手順を個別に実行する必要があります。
-* ONTAP 9 .15.1で導入されたシステムにアップグレードすると、ONTAPは既存ボリュームのStorage Efficiencyを変換し、ハードウェアオフロード機能を利用した新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。
+* ONTAP 9.15.1以降で導入されたシステムにアップグレードすると、ONTAPは既存ボリュームのStorage Efficiencyを変換し、ハードウェアオフロード機能を使用する新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。
 +
-** AFF A70、AFF A90、またはAFF A1Kシステムの場合、ONTAPは、Storage Efficiencyを使用しないボリュームも含めて、既存のシンプロビジョニングされたすべてのボリュームのストレージ効率を変換します。
+** AFF A20、AFF A30、AFF A50、AFF A70、AFF A90、AFF A1K、AFF C30、AFF C60、およびAFF C80システムについては、ONTAPによって、シンプロビジョニングされた既存のすべてのボリューム（Storage Efficiencyを使用しないボリュームも含む）のストレージ効率が変換されます。
 ** FAS70およびFAS90システムの場合、ONTAPで変換されるのは、シンプロビジョニングされている既存のボリュームで、アップグレード前にStorage Efficiencyが有効になっていたボリュームのストレージ効率のみです。
 
 
 +
 link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["Storage Efficiencyの詳細"^]です。
 
-* AFF A70、AFF A90、AFF A1K、FAS70、およびFAS90システムは、クラスタ接続とHA接続の両方で100GbEネットワークポートを共有します。これらのシステムでは、従来のクラスタスイッチとの10GbEまたは25GbEクラスタ接続をサポートできますが、NetApp 10GbEおよび25GbEスイッチが不要になった場合は、100GbEクラスタ速度に更新することを推奨します。詳細については、次のナレッジベースの記事を参照してください。
+* AFF A20、AFF A50、AFF A70、AFF A90、AFF A1K、FAS70、およびFAS90システムは、クラスタ接続とHA接続の両方で100GbEネットワークポートを共有します。これらのシステムでは、従来のクラスタスイッチとの10GbEまたは25GbEクラスタ接続をサポートできますが、NetApp 10GbEおよび25GbEスイッチが不要になった場合は、100GbEクラスタ速度に更新することを推奨します。詳細については、次のナレッジベースの記事を参照してください。
 +
 --
 ** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_ASA_A1K_A90_A70_FAS90_FAS70["AFF / ASA A1K、A90、A70、FAS90、FAS70の新しいクラスタセットアップで10Gまたは25Gのクラスタポートを構成する方法"^]
@@ -54,6 +54,9 @@ link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-con
 
 
 --
++
+AFF A20システムは、クラスタ接続とHA接続の両方で10GbEおよび25GbEネットワークポートを共有します。これらは、AFF A20システムでサポートされる唯一のネットワークポートクラスタ接続です。
+
 +
 既存のノードのクラスタポートe0aまたはe0bを新しいノードのクラスタポートにリンクできない場合は、を参照してください link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978["NetApp Bugs OnlineのバグIDCONTAP-166978"^]。
 

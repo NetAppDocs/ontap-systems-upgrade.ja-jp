@@ -17,10 +17,10 @@ summary: このコンテンツでは、ストレージまたはボリューム�
 
 [NOTE]
 ====
-* ASA R2交換用システムへのASAのアップグレードはサポートされていません。ASAからASA R2へのデータの移行については、を参照してくださいlink:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SANホストからASA R2ストレージシステムへのデータアクセスを有効にする"^]。
-* ONTAP 9 .15.1で導入されたシステムにアップグレードすると、ONTAPは既存ボリュームのStorage Efficiencyを変換し、ハードウェアオフロード機能を利用した新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。
+* ASA R2交換システムへのASAアップグレードはサポートされていません。ASAからASA R2システムへのデータの移行については、を参照してくださいlink:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SANホストからASA R2ストレージシステムへのデータアクセスを有効にする"^]。
+* ONTAP 9.15.1以降で導入されたシステムにアップグレードすると、ONTAPは既存ボリュームのStorage Efficiencyを変換し、ハードウェアオフロード機能を使用する新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。
 +
-** AFF A70、AFF A90、またはAFF A1Kシステムの場合、ONTAPは、Storage Efficiencyを使用しないボリュームも含めて、既存のシンプロビジョニングされたすべてのボリュームのストレージ効率を変換します。
+** AFF A20、AFF A30、AFF A50、AFF A70、AFF A90、AFF A1K、AFF C30、AFF C60、およびAFF C80については、ONTAPによって、シンプロビジョニングされた既存のすべてのボリューム（Storage Efficiencyを使用しないボリュームも含む）のストレージ効率が変換されます。
 ** FAS70およびFAS90システムの場合、ONTAPで変換されるのは、シンプロビジョニングされている既存のボリュームで、アップグレード前にStorage Efficiencyが有効になっていたボリュームのストレージ効率のみです。
 +
 link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["Storage Efficiencyの詳細"^]です。

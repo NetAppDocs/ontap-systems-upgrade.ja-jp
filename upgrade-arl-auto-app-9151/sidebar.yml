@@ -1,6 +1,6 @@
 ---
 section: upgrade-arl-auto-app-9151
-title: ONTAP 9.15.1で導入されたコントローラハードウェアをアップグレードするには、「system controller replace」コマンドを使用します。
+title: ONTAP 9.15.1以降で導入されたコントローラハードウェアをアップグレードするには、「system controller replace」コマンドを使用します。
 entries:
 - title: 概要
   url: "/upgrade-arl-auto-app-9151/index.html"

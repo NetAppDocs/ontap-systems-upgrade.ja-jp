@@ -16,40 +16,19 @@ summary: 同じシャーシ内のコントローラモデルをアップグレ�
 [role="lead"]
 このコンテンツでは、既存のデータとディスクをすべて残したまま、HAペアのストレージコントローラをアップグレードする方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
 
+
+
+== ARLのアップグレードでサポート
+
 この手順は、次の状況で使用できます。
 
-* 次のいずれかのコントローラのアップグレードを実行している。
+* コントローラのアップグレードがに表示されlink:index.html#supported-systems,["サポートされるシステムマトリックス"]ます。
+* NetAppの営業担当者に、コントローラのアップグレードに必要なハードウェアが揃っていることを確認しておきます。
 +
-[cols="50,50"]
-|===
-| 古いコントローラ | 交換用コントローラ 
-
-
-| AFF A800用 | AFF A70およびAFF A90 
-
-
-| AFF A220をASAとして構成 | ASA A150 
-
-
-| AFF A220、AFF A200、またはAFF C190 | AFF A150 
-
-
-| FAS2620またはFAS2720 | FAS2820 
-
-
-| AFF A700をASAとして構成 | ASA A900 
-
-
-| AFF A700の略 | AFF A900 の略 
-
-
-| FAS9000 | FAS9500 
-|===
-* NetAppの営業担当者に、コントローラアップグレード用のハードウェアが届いていることを確認しておきます。
-+
-** アップグレードに必要なAFF A90コントローラ×2またはAFF A70コントローラ×2、およびすべてのI/Oモジュール。100GbEケーブルに必要な長さ。
+** AFF A90、AFF A70、またはAFF C80コントローラ×2、およびすべてのI/Oモジュール。100GbEケーブルに必要な長さ。
+** AFF A50、AFF A30、AFF C30、またはAFF C60コントローラとI/Oモジュール×2必要なケーブル。
 ** ASA A150、AFF A150、またはFAS2820コントローラ
-** ASA A900、AFF A900、またはFAS9500コントローラおよびNVRAMモジュールとアップグレードに必要なパーツ
+** ASA A900、AFF A900、またはFAS9500コントローラとNVRAMモジュールとそのパーツ
 
 
 * アップグレードに必要な最小ONTAPバージョンを実行している。詳細については、を参照してください link:index.html["概要"]。
@@ -58,12 +37,18 @@ summary: 同じシャーシ内のコントローラモデルをアップグレ�
 * システムでONTAP 9.15.1以降が実行されており、イーサネットスイッチを使用してイーサネット接続ストレージに接続している。
 
 
+
+
+== ARLのアップグレードではサポートされない
+
 次の状況では、この手順を使用できません。
 
-* AFF A800、AFF A700、またはFAS9000システムでFlexArray仮想化ソフトウェアを使用している。
+* アップグレードする既存のシステムでFlexArray仮想化ソフトウェアを使用している。
+* MetroCluster IP設定をアップグレードしようとしています。
++
+MetroCluster IP構成をアップグレードするには、MetroCluster Upgrade and Expansion_contentへのリンクを参照してくださいlink:other_references.html["参考資料"]。
 
 
-AFF A800、AFF A700、またはFAS9000システムでMetroCluster IP構成をアップグレードする方法については、「_ MetroCluster Upgrade and Expansion_content」へのリンクを参照してください link:other_references.html["参考資料"] 。
 
 
 NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。

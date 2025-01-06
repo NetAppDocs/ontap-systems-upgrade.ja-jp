@@ -71,6 +71,23 @@ netboot\http://web_server_ip/path_to_web_accessible_directory/netboot/kernel`
 
 NOTE: トランクを中断しないでください。
 
+. （AFF A250およびAFF C250のアップグレードのみ）交換用コントローラモジュールのノード1をブートすると、次の警告が表示されます。
++
+[listing]
+----
+*****************************************************
+* WARNING: Partner is not of the same family/model. *
+* Mixing is only allowed when upgrading the system. *
+* The system will shut down in 24 hours.            *
+*****************************************************
+Do you want to continue (y/n):
+----
++
+答えろ `y`
+
++
+この警告は、構成に既存のコントローラのノード2が含まれているために表示されます。node2をアップグレードするまで、システムがブートするたびにが表示されます。これは想定される動作です。
+
 . 交換用コントローラモジュールで実行されているnode1がブートし、ブートメニューオプションが次のように表示されるまで待ちます。
 +
 [listing]
