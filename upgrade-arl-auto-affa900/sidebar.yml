@@ -37,7 +37,7 @@ entries:
     entries:
     - title: AFF A250またはAFF C250の交換
       url: "/upgrade-arl-auto-affa900/replace-node1-affa250-affc250.html"
-    - title: AFF A800の交換
+    - title: AFF A800またはAFF C800の交換
       url: "/upgrade-arl-auto-affa900/replace-node1-affa800.html"
     - title: AFF A220、AFF A200、AFF C190、FAS2620、FAS2720の交換
       url: "/upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html"
@@ -57,7 +57,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
   - title: アップグレードした node1 でキー管理ツールの設定をリストアします
     url: "/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html"
-  - title: ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF を node2 からアップグレードした node1 に移動します
+  - title: ノード1のルート以外のアグリゲートとNASデータLIFをノード2からアップグレード後のノード1に移動します。
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html"
 - title: ステージ4。リソースを再配置してノード2を撤去します
   entries:

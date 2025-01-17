@@ -26,16 +26,18 @@ summary: 同じシャーシ内のコントローラモデルをアップグレ�
 * NetAppの営業担当者に、コントローラのアップグレードに必要なハードウェアが揃っていることを確認しておきます。
 +
 ** AFF A90、AFF A70、またはAFF C80コントローラ×2、およびすべてのI/Oモジュール。100GbEケーブルに必要な長さ。
-** AFF A50、AFF A30、AFF C30、またはAFF C60コントローラとI/Oモジュール×2必要なケーブル。
+** AFF A50、AFF A30、AFF C30、またはAFF C60コントローラとI/Oモジュール×2、および必要なケーブル
 ** ASA A150、AFF A150、またはFAS2820コントローラ
-** ASA A900、AFF A900、またはFAS9500コントローラとNVRAMモジュールとそのパーツ
+** ASA A900、AFF A900、またはFAS9500コントローラとNVRAMモジュールおよびパーツ
 
 
-* アップグレードに必要な最小ONTAPバージョンを実行している。詳細については、を参照してください link:index.html["概要"]。
-* 新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。
-* ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。
+* アップグレードに必要な最小ONTAPバージョンを実行しています。詳細については、を参照してください link:index.html["概要"]。
+* ONTAPの管理に関する経験があり、診断権限モードで作業する場合のリスクを十分に理解していること。
 * システムでONTAP 9.15.1以降が実行されており、イーサネットスイッチを使用してイーサネット接続ストレージに接続している。
 
+
+
+NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
 
 
 
@@ -43,15 +45,13 @@ summary: 同じシャーシ内のコントローラモデルをアップグレ�
 
 次の状況では、この手順を使用できません。
 
+* 新しいコントローラを新しいHAペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する。
 * アップグレードする既存のシステムでFlexArray仮想化ソフトウェアを使用している。
-* MetroCluster IP設定をアップグレードしようとしています。
+* MetroCluster IP設定をアップグレードしています。
 +
 MetroCluster IP構成をアップグレードするには、MetroCluster Upgrade and Expansion_contentへのリンクを参照してくださいlink:other_references.html["参考資料"]。
 
 
-
-
-NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
 
 コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
 

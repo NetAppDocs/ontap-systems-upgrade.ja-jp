@@ -21,5 +21,5 @@ summary: 'を使用したARLアップグレードのステージ3プロセスシ
 . link:boot_node1_with_a900_controller_and_nvs.html["交換用システムモジュールでノード1をブートします"]
 . link:verify_node1_installation.html["ノード 1 のインストールを確認します"]
 . link:restore_key_manager_config_upgraded_node1.html["アップグレードした node1 でキー管理ツールの設定をリストアします"]
-. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF を node2 からアップグレードした node1 に移動します"]
+. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["ノード1のルート以外のアグリゲートとNASデータLIFをノード2からアップグレード後のノード1に移動します。"]
 

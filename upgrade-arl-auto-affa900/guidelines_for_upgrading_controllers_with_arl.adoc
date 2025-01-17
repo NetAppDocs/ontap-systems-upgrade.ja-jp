@@ -22,7 +22,7 @@ summary: アップグレード構成にARLを使用できるかどうかを確�
 
 特定のシステム構成では、コントローラのアップグレードがサポートされます。サポートされるシステムとONTAPの最小バージョンの一覧については、を参照してください link:index.html["概要"]。
 
-新しいシャーシを含む完全なシステムとして新しいAFF A30、AFF A50、AFF A70、AFF、AFF A150、AFF A900、AFF A90 C30、AFF C60、AFF C80、FAS2820、またはFAS9500を受け取った場合は、「system controller replace」コマンドのリンクを参照しlink:other_references.html["参考資料"]て、ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードしてください。
+新しいシャーシを含む完全なシステムとして新しいAFF A30、AFF A150 A50、AFF A70、AFF、AFF、AFF A900、AFF A90 C30、AFF C60、AFF C80、FAS2820、またはFAS9500を受け取った場合は、「system controller replace」コマンドを参照して、link:other_references.html["参考資料"]ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードしてください_。
 
 ARL を使用したコントローラのアップグレードは、 SnapLock Enterprise ボリュームおよび SnapLock Compliance ボリュームが設定されたシステムでサポートされます。
 
