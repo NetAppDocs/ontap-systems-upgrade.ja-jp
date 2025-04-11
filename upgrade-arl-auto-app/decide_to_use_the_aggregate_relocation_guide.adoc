@@ -65,7 +65,7 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 
 NOTE: コントローラのアップグレードモデルの組み合わせが上記の表にない場合は、テクニカルサポートにお問い合わせください。
 
-^1 AFF A800 システムに必要な追加手順については、セクションの「 A800 」を参照する手順に進んでください link:set_fc_or_uta_uta2_config_on_node3.html#auto_check3_step23["ノード 3 の UTA / UTA2 ポートを確認して設定し、手順 23 を実行します"]または link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step23["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 23"]。
+^1^ AFF A800システムに必要なその他の手順については、セクションlink:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["ノード1のディスクをノード3に再割り当て（手順9）"]、またはのA800に関する説明に記載されている手順に進みますlink:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9["ノード2のディスクをノード4に再割り当て（手順9）"]。
 
 ^2^2ノードスイッチレスクラスタ構成でAFF A300からAFF A400、またはFAS8200からFAS8300システムにアップグレードする場合は、コントローラのアップグレード用に一時的なクラスタポートを選択する必要があります。AFF A400 および FAS8300 システムは、イーサネットバンドルとして、メザニンカードポートはイーサネットタイプ、 FC タイプの FC バンドルとして、 2 種類の構成で提供されます。
 

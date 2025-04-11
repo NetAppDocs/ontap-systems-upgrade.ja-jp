@@ -1,0 +1,222 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/reassign-node2-disks-to-node4.html 
+keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA/UTA2 card, node4, target, adapter, ports 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は "node4 オンボード FC ポート "UTA/UTA2 ポート " または UTA/UTA2 カードを設定します' 
+---
+= ノード2のディスクをノード4に再割り当てします。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノード2に属していたディスクをノード4に再割り当てしてから、ノード4のインストールを確認する必要があります。
+
+.このタスクについて
+このセクションの手順はノード4で実行します。
+
+.手順
+. [reassign-node2-node4-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで node2 と入力し、次の例のように node2 のディスクを node4 に再割り当てします。
++
+.コンソールの出力例を展開します
+[%collapsible]
+====
+[listing]
+----
+LOADER-A> boot_ontap menu ...
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+.
+Please choose one of the following:
+
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+Selection (1-9)? 22/7
+.
+.
+(boot_after_controller_replacement) Boot after controller upgrade
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+
+Please choose one of the following:
+
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+Selection (1-9)? boot_after_controller_replacement
+.
+This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
+.
+.
+Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
+.
+.
+Changing sysid of node <node being replaced> disks.
+Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
+Partner sysid = 4294967295, owner sysid = 536953334
+.
+.
+.
+Terminated
+<node reboots>
+.
+.
+System rebooting...
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+.
+.
+System rebooting...
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+Login: ...
+----
+====
+. というメッセージが表示されてシステムがリブートループに入るの `no disks found`は、ポートがターゲットモードにリセットされたためディスクを認識できないためです。この問題を解決するには、から<<auto_check_4_step8,手順 8>>に進み<<auto_check_4_step3,手順 3>>ます。
+. [[auto_check_4_step3]]自動ブート中にCtrl+Cキーを押して、LOADER>プロンプトでノードを停止します。
+. LOADERプロンプトで、メンテナンスモードに切り替えます。
++
+「 boot_ontap maint 」を使用してください
+
+. 保守モードで、以前に設定したすべてのイニシエータポートをターゲットモードで表示します。
++
+ucadmin show
+
++
+ポートをイニシエータモードに戻します。
+
++
+ucadmin modify -m fc -t initiator -f adapter name_`
+
+. ポートがイニシエータモードに変更されたことを確認します。
++
+ucadmin show
+
+. メンテナンスモードを終了します。
++
+「 halt 」
+
++
+[NOTE]
+====
+外付けディスクをサポートするシステムから外付けディスクもサポートするシステムにアップグレードする場合は、に進みます<<auto_check_4_step8,手順 8>>。
+
+外付けディスクを使用するシステムから、内蔵ディスクと外付けディスクの両方をサポートするシステム（AFF A800システムなど）にアップグレードする場合は、に進みます。<<auto_check_4_step9,手順 9>>
+
+====
+. [[auto_check_4_step8]] LOADERプロンプトでブートします。
++
+「 boot_ontap menu
+
++
+これで、ブート時に以前に割り当てられていたすべてのディスクをノードで検出できるようになり、想定どおりにブートできるようになります。
+
++
+交換するクラスタノードがルートボリューム暗号化を使用している場合、ONTAPはディスクからボリューム情報を読み取ることができません。ルートボリュームのキーをリストアします。
+
++
+.. 特別なブートメニューに戻ります。
++
+`LOADER> boot_ontap menu`
+
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. （10）Set Onboard Key Manager Recovery secrets（オンボードキーマネージャリカバリシークレットの設定）*を選択します
+.. 入力するコマンド `y` 次のプロンプトが表示されます。
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. プロンプトで、キー管理ツールのパスフレーズを入力します。
+.. プロンプトが表示されたら、バックアップデータを入力します。
++
+
+NOTE: でパスフレーズとバックアップデータを入手しておく必要があります link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] この手順のセクション。
+
+.. システムが再度特別な起動メニューを起動したら、オプション*（1）Normal Boot *を実行します
++
+
+NOTE: この段階でエラーが発生する場合があります。エラーが発生した場合は、の手順を繰り返します <<auto_check_4_step22,手順 22>> システムが正常に起動するまで。
+
+
+
+. [[auto_check_4_step9]]外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（AFF A800システムなど）にアップグレードする場合は、node2アグリゲートをルートアグリゲートとして設定し、node2のルートアグリゲートからノード4がブートすることを確認します。ルートアグリゲートを設定するには、ブートメニューに移動し、メンテナンスモードに切り替えるオプションを選択します `5`。
++
+
+WARNING: * ここに示す順序で以下の手順を実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。 *
+
++
+次の手順では、 node4 に node2 のルートアグリゲートからブートするよう設定しています。
+
++
+.. メンテナンスモードに切り替えます。
++
+「 boot_ontap maint 」を使用してください
+
+.. node2 アグリゲートの RAID 、プレックス、およびチェックサムの情報を確認します。
++
+「 aggr status -r 」
+
+.. node2 アグリゲートのステータスを確認します。
++
+「 aggr status 」を入力します
+
+.. 必要に応じて、 node2 アグリゲートをオンラインにします。
++
+「aggr_online root_aggr_from__」に設定します
+
+.. ノード 4 が元のルートアグリゲートからブートしないようにします。
++
+'aggr offline_root_aggr_on_node4
+
+.. node2 のルートアグリゲートを node4 の新しいルートアグリゲートとして設定します。
++
+'aggr options aggr_from__ node2 _root
+
+
+
+

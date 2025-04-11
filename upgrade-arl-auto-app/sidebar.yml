@@ -51,6 +51,8 @@ entries:
     url: "/upgrade-arl-auto-app/install_boot_node3.html"
   - title: ノード 3 で FC または UTA / UTA2 設定を設定します
     url: "/upgrade-arl-auto-app/set_fc_or_uta_uta2_config_on_node3.html"
+  - title: ノード1のディスクをノード3に再割り当て
+    url: "/upgrade-arl-auto-app/reassign-node1-disks-to-node3.html"
   - title: ノード 3 のインストールを確認します
     url: "/upgrade-arl-auto-app/verify_node3_installation.html"
   - title: ノード 3 でキー管理ツールの設定をリストアします
@@ -75,6 +77,8 @@ entries:
     url: "/upgrade-arl-auto-app/install_boot_node4.html"
   - title: ノード 4 で FC または UTA / UTA2 設定を設定します
     url: "/upgrade-arl-auto-app/set_fc_or_uta_uta2_config_node4.html"
+  - title: ノード2のディスクをノード4に再割り当てします。
+    url: "/upgrade-arl-auto-app/reassign-node2-disks-to-node4.html"
   - title: ノード 4 のインストールを確認します
     url: "/upgrade-arl-auto-app/verify_node4_installation.html"
   - title: ノード 4 でキー管理ツールの設定をリストアします

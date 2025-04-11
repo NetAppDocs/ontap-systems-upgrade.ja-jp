@@ -1,0 +1,250 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/reassign-node1-disks-to-node3.html 
+keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports, FlexArray Virtualization 
+summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は " オンボード FC ポート "UTA/UTA2 ポート " または UTA/UTA2 カードを node3 に設定します' 
+---
+= ノード1のディスクをノード3に再割り当て
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノード3のインストールを検証する前に、ノード1に属していたディスクをノード3に再割り当てする必要があります。
+
+.このタスクについて
+このセクションの手順はノード3で実行します。
+
+.手順
+. [reassign-node1-node3-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで、 node1 のディスクを node3 に再割り当てするには、次の例のように入力します。
++
+.コンソールの出力例を展開します
+[%collapsible]
+====
+[listing]
+----
+LOADER-A> boot_ontap menu
+...
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+.
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+Selection (1-9)? 22/7
+.
+.
+(boot_after_controller_replacement)   Boot after controller upgrade
+(9a)                                  Unpartition all disks and remove their ownership information.
+(9b)                                  Clean configuration and initialize node with partitioned disks.
+(9c)                                  Clean configuration and initialize node with whole disks.
+(9d)                                  Reboot the node.
+(9e)                                  Return to main boot menu.
+
+Please choose one of the following:
+
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+Selection (1-9)? boot_after_controller_replacement
+.
+This will replace all flash-based configuration with the last backup to
+disks. Are you sure you want to continue?: yes
+.
+.
+Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
+.
+.
+Changing sysid of node <node being replaced> disks.
+Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
+Partner sysid = 4294967295, owner sysid = 536953334
+.
+.
+.
+Terminated
+<node reboots>
+.
+.
+System rebooting...
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+.
+.
+System rebooting...
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+Login:
+...
+----
+====
+. というメッセージが表示されてシステムがリブートループに入るの `no disks found`は、ポートがターゲットモードにリセットされたためディスクを認識できないためです。この問題を解決するには、へ<<auto_check3_step8,手順 8>>進み<<auto_check3_step3,手順 3>>ます。
+. [[auto_check3_step3]]自動ブート中にCtrl+Cキーを押して、LOADER>プロンプトでノードを停止します。
+. [[step18]] LOADERプロンプトでメンテナンスモードに切り替えます。
++
+「 boot_ontap maint 」を使用してください
+
+. [[step19]] メンテナンスモードで、現在ターゲットモードになっている以前に設定されたすべてのイニシエータポートを表示します。
++
+ucadmin show
+
++
+ポートをイニシエータモードに戻します。
+
++
+ucadmin modify -m fc -t initiator -f adapter name_`
+
+. [[step20]] ポートがイニシエータモードに変更されていることを確認します。
++
+ucadmin show
+
+. [[step2]] メンテナンスモードを終了します。
++
+「 halt 」
+
++
+[NOTE]
+====
+外付けディスクをサポートするシステムから外付けディスクもサポートするシステムにアップグレードする場合は、に進みます<<auto_check3_step8,手順 8>>。
+
+外付けディスクをサポートするシステムから、内蔵ディスクと外付けディスクの両方をサポートするシステム（AFF A800システムなど）にアップグレードする場合は、に進みます。<<auto_check3_step9,手順 9>>
+
+====
+. [[auto_check3_step8]] LOADERプロンプトでブートします。
++
+「 boot_ontap menu
+
++
+これで、ブート時に以前に割り当てられていたすべてのディスクをノードで検出できるようになり、想定どおりにブートできるようになります。
+
++
+交換するクラスタノードがルートボリューム暗号化を使用している場合、ONTAPはディスクからボリューム情報を読み取ることができません。ルートボリュームのキーをリストアします。
+
++
+.. 特別なブートメニューに戻ります。
++
+`LOADER> boot_ontap menu`
+
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. （10）Set Onboard Key Manager Recovery secrets（オンボードキーマネージャリカバリシークレットの設定）*を選択します
+.. 入力するコマンド `y` 次のプロンプトが表示されます。
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. プロンプトで、キー管理ツールのパスフレーズを入力します。
+.. プロンプトが表示されたら、バックアップデータを入力します。
++
+
+NOTE: でパスフレーズとバックアップデータを入手しておく必要があります link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] この手順のセクション。
+
+.. システムが再度特別な起動メニューを起動したら、オプション*（1）Normal Boot *を実行します
++
+
+NOTE: この段階でエラーが発生する場合があります。エラーが発生した場合は、システムが正常にブートするまでの手順を繰り返し <<auto_check3_step8,手順 8>> ます。
+
+
+
+. [[auto_check3_step9]] 外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（ AFF A800 システムなど）にアップグレードする場合は、 node1 アグリゲートをルートアグリゲートとして設定し、ノード 1 のルートアグリゲートからノード 3 がブートすることを確認します。ルートアグリゲートを設定するには、ブートメニューに移動し、メンテナンスモードに切り替えるオプションを選択します `5`。
++
+
+CAUTION: * ここに示す順序で以下の手順を実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。 *
+
++
+次の手順は、 node3 を node1 のルートアグリゲートからブートするように設定します。
+
++
+.. メンテナンスモードに切り替えます。
++
+「 boot_ontap maint 」を使用してください
+
+.. node1 アグリゲートの RAID 、プレックス、およびチェックサムの情報を確認します。
++
+「 aggr status -r 」
+
+.. node1 アグリゲートのステータスを確認します。
++
+「 aggr status 」を入力します
+
+.. 必要に応じて、 node1 アグリゲートをオンラインにします。
++
+「aggr_online root_aggr_from__」を参照してください
+
+.. node3 を元のルートアグリゲートからブートできないようにします。
++
+「aggr offline_root_aggr_on_node3」を参照してください
+
+.. node1 ルートアグリゲートを、 node3 の新しいルートアグリゲートとして設定します。
++
+'aggr options aggr_from__ node1 __ root
+
+.. ノード 3 のルートアグリゲートがオフラインになっていること、およびノード 1 からテイクオーバーされたディスクのルートアグリゲートがオンラインになっていて root に設定されていることを確認します。
++
+「 aggr status 」を入力します
+
++
+
+NOTE: 前の手順を実行しないと、原因 node3 を内部ルートアグリゲートからブートするか、原因システムで新しいクラスタ構成が存在すると想定するか、あるいはクラスタ構成を特定するように求められる可能性があります。
+
++
+次の例は、コマンドの出力を示しています。
+
++
+[listing]
+----
+ -----------------------------------------------------------------
+ Aggr                 State    Status             Options
+
+ aggr0_nst_fas8080_15 online   raid_dp, aggr      root, nosnap=on
+                               fast zeroed
+                               64-bit
+
+ aggr0                offline  raid_dp, aggr      diskroot
+                               fast zeroed
+                               64-bit
+ -----------------------------------------------------------------
+----
+
+
+

@@ -89,7 +89,7 @@ NOTE: を参照してください link:prepare_for_netboot.html["ネットブー
 . [[step6] 次のいずれかの操作を選択して、ネットブート接続を設定します。
 +
 
-NOTE: ネットブート接続として管理ポートおよび IP を使用する必要があります。アップグレードの実行中にデータ LIF IP を使用しないでください。データ LIF が停止する可能性があります。
+NOTE: ネットブート接続として管理ポートおよび IP を使用する必要があります。データLIF IPは使用しないでください。使用しないと、アップグレードの実行中にデータが停止する可能性があります。
 
 +
 [cols="30,70"]
@@ -254,7 +254,7 @@ printenv partner-sysid
 | システムの状態 | 説明 
 
 
-| ディスクがあり、バックエンドストレージがない | に進みます <<auto_install3_step23,手順 23>> 
+| ディスクがあり、バックエンドストレージがない | に移動<<auto_install3_step27,ステップ27>> 
 
 
 | は、 V シリーズシステム、または FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムです  a| 
@@ -281,6 +281,7 @@ IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用�
 . [[step26]] スイッチベースのゾーニングを使用する構成の場合は、ゾーニングを調整して新しい WWPN 値を反映します。
 
 
+[[auto_install3_step27]]
 . NetApp Storage Encryption（NSE）ドライブを搭載している場合は、次の手順を実行します。
 +
 
@@ -316,7 +317,7 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 「 boot_ontap menu
 
 +
-FC または UTA / UTA2 設定がない場合は、を実行します link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 15"] ノード4がノード2のディスクを認識できるようにします。
+FC構成またはUTA / UTA2構成がない場合は、を実行してlink:reassign-node2-disks-to-node4.html#reassign-node1-node3-app-step1["ノード1のディスクをノード3に再割り当て（手順1）"]ノード3がノード1のディスクを認識できるようにします。
 
 . [step29] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムについて、ノードに接続されているディスクを検出するために、ノード 3 の FC ポートまたは UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください link:set_fc_or_uta_uta2_config_on_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"]。
 

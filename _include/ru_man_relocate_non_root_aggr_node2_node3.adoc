@@ -2,10 +2,37 @@
 :allow-uri-read: 
 
 
-node2 を node4 に置き換える前に、 node2 の AutoSupport メッセージを送信し、 node2 に所有されているルート以外のアグリゲートを node3 に再配置する必要があります。
+ノード2をノード4に交換する前に、ノード2に関するAutoSupportメッセージを送信し、ノード2で所有されているルート以外のアグリゲートをノード3に再配置する必要があります。
 
+[[sysconfig-a-command]]
 .手順
-. [[step1] node2 に関する AutoSupport メッセージをネットアップに送信します。
+. ノード2とノード3でパートナーシステムIDが正しく設定されていることを確認します。
++
+** `system node run -node _node2_ -command sysconfig -a`
+** `system node run -node _node3_ -command sysconfig -a`
++
+次の例のような出力が表示されます。
+
++
+[listing, subs="+quotes"]
+----
+NetApp Release 9.16.1: Mon Feb 10 07:55:45 EST 2025
+System ID: _system-ID_; *partner ID: _partner-system-ID_*
+System Serial Number: _system-serial-number_
+System Rev: A0
+System Storage Configuration: Mixed-Path HA
+----
++
+ノード2またはノード3の「パートナーID」が正しくない場合は、次の手順を実行します。
+
++
+... 値が正しくないノードをリブートします。
+... のコマンドを再実行し<<sysconfig-a-command,手順 1.>>、「partner ID」が正しい値に変更されたことを確認します。
+
+
+
+
+. ノード2のAutoSupportメッセージをNetAppに送信します。
 +
 「system node AutoSupport invoke -node _node2 _-type all -message」「Upgrading _node2 _from_platform_old_to _platform_new_new_」というメッセージが表示されます
 
@@ -16,7 +43,7 @@ system node AutoSupport show -node _node2 _-instanceです
 +
 「 Last Subject Sent ：」および「 Last Time Sent ：」のフィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。
 
-. [[step3]] ルート以外のアグリゲートの再配置：
+. ルート以外のアグリゲートを再配置します。
 +
 .. 権限レベルを advanced に設定します。
 +
@@ -36,7 +63,7 @@ NOTE: コマンドは、ルート以外のアグリゲートのみを特定し�
 
 .. プロンプトが表示されたら、「 y 」と入力します。
 +
-再配置はバックグラウンドで実行されます。アグリゲートの再配置には数秒から数分かかる場合があります。この時間には、クライアントの停止部分と停止部分の両方が含まれます。このコマンドでは、オフラインまたは制限されたアグリゲートが再配置されません。
+再配置はバックグラウンドで実行されます。アグリゲートの再配置には数秒から数分かかる場合があります。この時間には、クライアントの停止部分と停止部分の両方が含まれます。コマンドでは、オフラインまたは制限されたアグリゲートは再配置されません。
 
 .. admin 権限レベルに戻ります。
 +
@@ -49,7 +76,7 @@ NOTE: コマンドは、ルート以外のアグリゲートのみを特定し�
 storage aggregate relocation show -node-node2 _`
 
 +
-アグリゲートを再配置すると、そのアグリゲートの出力に「 Done 」と表示されます。
+再配置後のアグリゲートについては、出力に「done」と表示されます。
 
 +
 
@@ -62,7 +89,7 @@ NOTE: node2 に所有されているすべてのアグリゲートが node3 に�
 | 再配置する対象 | 作業 
 
 
-| すべてのアグリゲートが完了しました | に進みます <<man_relocate_2_3_step6,手順 6>>。 
+| すべてのアグリゲートが完了しました | にアクセスします。 
 
 
 | アグリゲートに障害が発生したか、拒否された  a| 
@@ -108,7 +135,7 @@ storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd
 storage aggregate relocation コマンドの詳細については、を参照してください link:other_references.html["参考資料"] CLI_ および ONTAP 9 コマンド：マニュアルページリファレンス _ を使用してディスクおよびアグリゲートの管理にリンクするには、次の手順を実行します。
 
 |===
-. [man_relocate_2_3_step6] ルート以外のアグリゲートがすべてノード 3 でオンラインになっていることを確認します。
+. [man_relocate_2_3_step7] ルート以外のアグリゲートがすべてノード 3 でオンラインになっていることを確認します。
 +
 storage aggregate show -node _node3 --state offline-root false
 
@@ -128,7 +155,7 @@ volume show -node _node3 --state offline`
 +
 'volume online -vserver_Vserver -name_volume_volume-name _`
 
-. node2 にオンラインのルート以外のアグリゲートがないことを確認します。
+. node2がルート以外のオンラインのアグリゲートを所有していないことを確認します。
 +
 「storage aggregate show-owner-name_node2」-ha -policy sfo-state online」と表示されます
 

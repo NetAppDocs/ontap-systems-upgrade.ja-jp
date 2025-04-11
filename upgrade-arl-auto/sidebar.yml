@@ -51,6 +51,8 @@ entries:
     url: "/upgrade-arl-auto/install_boot_node3.html"
   - title: ノード 3 で FC または UTA / UTA2 設定を設定します
     url: "/upgrade-arl-auto/set_fc_or_uta_uta2_config_on_node3.html"
+  - title: ノード1のディスクをノード3に再割り当て
+    url: "/upgrade-arl-auto/reassign-node1-disks-to-node3.html"
   - title: ポートを node1 から node3 にマッピングします
     url: "/upgrade-arl-auto/map_ports_node1_node3.html"
   - title: ノードのネットワークポートセットが異なる場合は、クォーラムを追加します
@@ -77,6 +79,8 @@ entries:
     url: "/upgrade-arl-auto/install_boot_node4.html"
   - title: ノード 4 で FC または UTA / UTA2 設定を設定します
     url: "/upgrade-arl-auto/set_fc_or_uta_uta2_config_node4.html"
+  - title: ノード2のディスクをノード4に再割り当てします。
+    url: "/upgrade-arl-auto/reassign-node2-disks-to-node4.html"
   - title: node2 のポートを node4 にマッピングします
     url: "/upgrade-arl-auto/map_ports_node2_node4.html"
   - title: ノードのネットワークポートセットが異なる場合は、クォーラムを追加します

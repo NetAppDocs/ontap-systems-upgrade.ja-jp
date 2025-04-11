@@ -22,13 +22,8 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 
 NOTE: ネットアップのマーケティング資料では、 Converged Network Adapter （ CNA ；統合ネットワークアダプタ）アダプタおよびポートを UTA2 と呼ぶ場合があります。ただし、 CLI では CNA という用語が使用されます。
 
-* ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクを搭載したシステムをアップグレードする場合は、に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"] セクション。
-* ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、で section_Install および boot node3_and resume に戻ります link:install_boot_node3.html#auto_install3_step23["手順 23"]。
-
-
-.選択肢
-* <<ノード 3 の FC ポートを設定>>
-* <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>
+* ストレージディスクを搭載したシステムをアップグレードする場合、ノード3にオンボードのFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、に進みます。link:reassign-node1-disks-to-node3.html["ノード1のディスクをノード3に再割り当て"]
+* ただし、Vシリーズシステムまたはストレージアレイを搭載したFlexArray仮想化ソフトウェアを搭載したシステムで、node3にオンボードのFCポート、オンボードUTA / UTAポート、またはUTA / UTA2カードがない場合は、_Installに戻ってnode3_をブートし、で再開しますlink:install_boot_node3.html#auto_install3_step23["手順 23"]。
 
 
 
@@ -106,22 +101,22 @@ NOTE: FCポートはイニシエータとしてプログラムする必要があ
 . 保守モードのブート・メニューからオプション「 5 」を選択します。
 
 
-. [[auto_check3_step8] 次のいずれかの操作を実行します
+. 次のいずれかを実行します。
 +
 |===
 | アップグレードするシステム | 次に、 
 
 
 | ストレージディスクがあります  a| 
-** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合は、セクションに進みます <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
-** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、このセクションを省略してください <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。をクリックして、セクションに移動します link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]。
+** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合は、に進みます <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
+** ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、この手順をスキップし<<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>てに進みますlink:reassign-node1-disks-to-node3.html["ノード1のディスクをノード3に再割り当て"]。
 
 
 
 
 | は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています  a| 
-** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合は、セクションに進みます <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
-** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、このセクションを省略してください <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>> セクション「 _Install 」に戻り、再開時に node3 _ をブートします link:install_boot_node3.html#auto_install3_step23["手順 23"]。
+** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合は、に進みます <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
+** ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、この手順をスキップし<<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>て_Installに戻り、node3_ at resumeをブートしますlink:install_boot_node3.html#auto_install3_step23["手順 23"]。
 
 
 |===
@@ -305,7 +300,7 @@ Adapter  Mode       Type        Mode     Type        Status
 | システムの状態 | 作業 
 
 
-| ストレージディスクがあります | に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"] 
+| ストレージディスクがあります | にアクセスします。 
 
 
 | は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | _Install に戻り、 node3 をブートして、のセクションを再開します link:install_boot_node3.html#auto_install3_step23["手順 23"]。 
@@ -314,234 +309,5 @@ Adapter  Mode       Type        Mode     Type        Status
 +
 「 halt 」
 
-. [[step14]] ブートメニューへのノードのブート時に 'boot_ontap menu' を実行しますA800 にアップグレードする場合は、に進みます <<auto_check3_step23,手順 23>>。
-
-
-. [auto9597_check_node3 _step15]] ノード 3 で、ブートメニューに移動し、 22-7 を使用して、非表示オプション「 boot_after_controller_replacement 」を選択します。プロンプトで、 node1 のディスクを node3 に再割り当てするには、次の例のように入力します。
-+
-.コンソールの出力例を展開します
-[%collapsible]
-====
-[listing]
-----
-LOADER-A> boot_ontap menu
-...
-*******************************
-*                             *
-* Press Ctrl-C for Boot Menu. *
-*                             *
-*******************************
-.
-.
-Please choose one of the following:
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-Selection (1-9)? 22/7
-.
-.
-(boot_after_controller_replacement)   Boot after controller upgrade
-(9a)                                  Unpartition all disks and remove their ownership information.
-(9b)                                  Clean configuration and initialize node with partitioned disks.
-(9c)                                  Clean configuration and initialize node with whole disks.
-(9d)                                  Reboot the node.
-(9e)                                  Return to main boot menu.
-
-Please choose one of the following:
-
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-Selection (1-9)? boot_after_controller_replacement
-.
-This will replace all flash-based configuration with the last backup to
-disks. Are you sure you want to continue?: yes
-.
-.
-Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
-.
-.
-Changing sysid of node <node being replaced> disks.
-Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
-Partner sysid = 4294967295, owner sysid = 536953334
-.
-.
-.
-Terminated
-<node reboots>
-.
-.
-System rebooting...
-.
-Restoring env file from boot media...
-copy_env_file:scenario = head upgrade
-Successfully restored env file from boot media...
-.
-.
-System rebooting...
-.
-.
-.
-WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
-Override system ID? {y|n} y
-Login:
-...
-----
-====
-. システムが再起動ループに入って「ディスクが見つかりません」というメッセージが表示された場合は、ポートがターゲットモードにリセットされ、ディスクを認識できないためです。に進みます <<auto_check3_step17,手順 17>> 終了： <<auto_check3_step22,手順 22>> これを解決します。
-. [[auto_check3_step17]]自動ブート中にCtrl+Cキーを押して、LOADER>プロンプトでノードを停止します。
-. [[step18]] LOADERプロンプトでメンテナンスモードに切り替えます。
-+
-「 boot_ontap maint 」を使用してください
-
-. [[step19]] メンテナンスモードで、現在ターゲットモードになっている以前に設定されたすべてのイニシエータポートを表示します。
-+
-ucadmin show
-
-+
-ポートをイニシエータモードに戻します。
-
-+
-ucadmin modify -m fc -t initiator -f adapter name_`
-
-. [[step20]] ポートがイニシエータモードに変更されていることを確認します。
-+
-ucadmin show
-
-. [[step2]] メンテナンスモードを終了します。
-+
-「 halt 」
-
-+
-[NOTE]
-====
-外付けディスクをサポートするシステムから、外付けディスクもサポートするシステムにアップグレードする場合は、に進みます <<auto_check3_step22,手順 22>>。
-
-外付けディスクをサポートするシステムから、AFF A800システムなどの内蔵ディスクと外付けディスクの両方をサポートするシステムにアップグレードする場合は、に進みます <<auto_check3_step23,手順 23>>。
-
-====
-. [[auto_check3_step22]] LOADERプロンプトでブートします。
-+
-「 boot_ontap menu
-
-+
-これで、ブート時に以前に割り当てられていたすべてのディスクをノードで検出できるようになり、想定どおりにブートできるようになります。
-
-+
-交換するクラスタノードがルートボリューム暗号化を使用している場合、ONTAPはディスクからボリューム情報を読み取ることができません。ルートボリュームのキーをリストアします。
-
-+
-.. 特別なブートメニューに戻ります。
-+
-`LOADER> boot_ontap menu`
-
-+
-[listing]
-----
-Please choose one of the following:
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-
-Selection (1-11)? 10
-----
-.. （10）Set Onboard Key Manager Recovery secrets（オンボードキーマネージャリカバリシークレットの設定）*を選択します
-.. 入力するコマンド `y` 次のプロンプトが表示されます。
-+
-`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
-
-.. プロンプトで、キー管理ツールのパスフレーズを入力します。
-.. プロンプトが表示されたら、バックアップデータを入力します。
-+
-
-NOTE: でパスフレーズとバックアップデータを入手しておく必要があります link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] この手順のセクション。
-
-.. システムが再度特別な起動メニューを起動したら、オプション*（1）Normal Boot *を実行します
-+
-
-NOTE: この段階でエラーが発生する場合があります。エラーが発生した場合は、の手順を繰り返します <<auto_check3_step22,手順 22>> システムが正常に起動するまで。
-
-
-
-. [[auto_check3_step23]] 外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（ AFF A800 システムなど）にアップグレードする場合は、 node1 アグリゲートをルートアグリゲートとして設定し、ノード 1 のルートアグリゲートからノード 3 がブートすることを確認します。ルート・アグリゲートを設定するには ' ブート・メニューからオプション 5 を選択して ' 保守モードに切り替えます
-+
-
-CAUTION: * ここに示す順序で以下の手順を実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。 *
-
-+
-次の手順は、 node3 を node1 のルートアグリゲートからブートするように設定します。
-
-+
-.. メンテナンスモードに切り替えます。
-+
-「 boot_ontap maint 」を使用してください
-
-.. node1 アグリゲートの RAID 、プレックス、およびチェックサムの情報を確認します。
-+
-「 aggr status -r 」
-
-.. node1 アグリゲートのステータスを確認します。
-+
-「 aggr status 」を入力します
-
-.. 必要に応じて、 node1 アグリゲートをオンラインにします。
-+
-「aggr_online root_aggr_from__」を参照してください
-
-.. node3 を元のルートアグリゲートからブートできないようにします。
-+
-「aggr offline_root_aggr_on_node3」を参照してください
-
-.. node1 ルートアグリゲートを、 node3 の新しいルートアグリゲートとして設定します。
-+
-'aggr options aggr_from__ node1 __ root
-
-.. ノード 3 のルートアグリゲートがオフラインになっていること、およびノード 1 からテイクオーバーされたディスクのルートアグリゲートがオンラインになっていて root に設定されていることを確認します。
-+
-「 aggr status 」を入力します
-
-+
-
-NOTE: 前の手順を実行しないと、原因 node3 を内部ルートアグリゲートからブートするか、原因システムで新しいクラスタ構成が存在すると想定するか、あるいはクラスタ構成を特定するように求められる可能性があります。
-
-+
-次の例は、コマンドの出力を示しています。
-
-+
-[listing]
-----
- -----------------------------------------------------------------
- Aggr                 State    Status             Options
-
- aggr0_nst_fas8080_15 online   raid_dp, aggr      root, nosnap=on
-                               fast zeroed
-                               64-bit
-
- aggr0                offline  raid_dp, aggr      diskroot
-                               fast zeroed
-                               64-bit
- -----------------------------------------------------------------
-----
-
-
+. [[step14]]を実行してノードをブートメニューにブートし `boot_ontap menu`ます。A800にアップグレードする場合は、に進みますlink:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["ノード1のディスクをノード3に再割り当て（手順9）"]。
 

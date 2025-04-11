@@ -1,0 +1,295 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/reassign-node2-disks-to-node4.html 
+keywords: setting, fc, uta, uta2 configuration, node 
+summary: 'ONTAP 9.8以降を実行するコントローラをアップグレードする場合、コマンドを使用してノード1に属していたディスクをノード3に再割り当てする必要があり `system controller replace`ます。' 
+---
+= ノード2のディスクをノード4に再割り当てします。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノード2に属していたディスクをノード4に再割り当てしてから、ノード4のインストールを確認する必要があります。
+
+.このタスクについて
+このセクションの手順はノード4で実行します。
+
+.手順
+. [reassign-node2-node4-app-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで node2 と入力し、次の例のように node2 のディスクを node4 に再割り当てします。
++
+.コンソールの出力例を展開します
+[%collapsible]
+====
+[listing]
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+The boot device has changed. System configuration information could be lost. Use option (6) to
+restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+This will replace all flash-based configuration with the last backup to disks. Are you sure
+you want to continue?: yes
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:
+<nodename of the node being replaced>
+Changing sysid of node node2 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote
+    key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+System rebooting...
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a
+boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
+====
++
+
+NOTE: 上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。
+
+. というメッセージが表示されてリブートループが発生した場合は `no disks found`、FCポートまたはUTA / UTA2ポートがターゲットモードにリセットされたためディスクを認識できないことを示しています。この問題を解決するには、に進む <<reassign-node2-node4-app-step8,手順 8>>か、セクションに進み<<reassign-node2-node4-app-step3,手順 3>>ますlink:verify_node4_installation.html["ノード 4 のインストールを確認します"]。
+. [reassign-node2-node4-app-step3]]自動ブート中にCtrl+Cキーを押して、Loader >プロンプトでノードを停止します。
+. LOADERプロンプトで、メンテナンスモードに切り替えます。
++
+「 boot_ontap maint 」を使用してください
+
+. 保守モードで、以前に設定したすべてのイニシエータポートをターゲットモードで表示します。
++
+ucadmin show
+
++
+ポートをイニシエータモードに戻します。
+
++
+ucadmin modify -m fc -t initiator -f adapter name_`
+
+. ポートがイニシエータモードに変更されたことを確認します。
++
+ucadmin show
+
+. メンテナンスモードを終了します。
++
+「 halt 」
+
++
+[NOTE]
+====
+外付けディスクをサポートするシステムから外付けディスクもサポートするシステムにアップグレードする場合は、に進みます<<reassign-node2-node4-app-step8,手順 8>>。
+
+外付けディスクを使用するシステムから、内蔵ディスクと外付けディスクの両方をサポートするシステム（AFF A800システムなど）にアップグレードする場合は、に進みます。<<reassign-node2-node4-app-step9,手順 9>>
+
+====
+. [[reassign-node2-node4-app-step8]] Loaderプロンプトでブートします。
++
+「 boot_ontap menu
+
++
+これで、ブート時に以前に割り当てられていたすべてのディスクをノードで検出できるようになり、想定どおりにブートできるようになります。
+
++
+交換するクラスタノードがルートボリューム暗号化を使用している場合、ONTAPはディスクからボリューム情報を読み取ることができません。ルートボリュームのキーをリストアします。
+
++
+
+NOTE: これは、ルートボリュームでNetAppボリューム暗号化を使用している場合にのみ該当します。
+
++
+.. 特別なブートメニューに戻ります。
++
+`LOADER> boot_ontap menu`
+
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. （10）Set Onboard Key Manager Recovery secrets（オンボードキーマネージャリカバリシークレットの設定）*を選択します
+.. 入力するコマンド `y` 次のプロンプトが表示されます。
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. プロンプトで、キー管理ツールのパスフレーズを入力します。
+.. プロンプトが表示されたら、バックアップデータを入力します。
++
+
+NOTE: でパスフレーズとバックアップデータを入手しておく必要があります link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] この手順のセクション。
+
+.. システムが再度特別な起動メニューを起動したら、オプション*（1）Normal Boot *を実行します
++
+
+NOTE: この段階でエラーが発生する場合があります。エラーが発生した場合は、システムが正常にブートするまでの手順を繰り返し <<reassign-node2-node4-app-step8,手順 8>> ます。
+
+
+
+. [reassign-node2-node4-app-step9]]外付けディスクを搭載したシステムから、内蔵ディスクと外付けディスクをサポートするシステム（AFF A800システムなど）にアップグレードする場合は、node2アグリゲートをルートアグリゲートとして設定し、node4がnode2のルートアグリゲートからブートされるようにします。ルートアグリゲートを設定するには、ブートメニューに移動し、メンテナンスモードに切り替えるオプションを選択します `5`。
++
+
+WARNING: * ここに示す順序で以下の手順を実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。 *
+
++
+次の手順では、 node4 に node2 のルートアグリゲートからブートするよう設定しています。
+
++
+.. メンテナンスモードに切り替えます。
++
+「 boot_ontap maint 」を使用してください
+
+.. node2 アグリゲートの RAID 、プレックス、およびチェックサムの情報を確認します。
++
+「 aggr status -r 」
+
+.. node2 アグリゲートのステータスを確認します。
++
+「 aggr status 」を入力します
+
+.. 必要に応じて、 node2 アグリゲートをオンラインにします。
++
+「aggr_online root_aggr_from__」に設定します
+
+.. ノード 4 が元のルートアグリゲートからブートしないようにします。
++
+'aggr offline_root_aggr_on_node4
+
+.. node2 のルートアグリゲートを node4 の新しいルートアグリゲートとして設定します。
++
+'aggr options aggr_from__ node2 _root
+
+.. ノード 4 のルートアグリゲートがオフラインになっていること、および node2 から提供されたディスクのルートアグリゲートがオンラインになっていて root に設定されていることを確認します。
++
+「 aggr status 」を入力します
+
++
+
+NOTE: 前の手順を実行しない場合は、原因 node4 から内部ルートアグリゲートをブートするか、原因システムが新しいクラスタ構成が存在すると想定するか、あるいはクラスタ構成を特定するように求められる可能性があります。
+
++
+次の例は、コマンドの出力を示しています。
+
+
+
++
+....
+---------------------------------------------------------------------
+Aggr State                       Status               Options
+aggr 0_nst_fas8080_15 online     raid_dp, aggr        root, nosnap=on
+                                 fast zeroed
+                                 64-bit
+aggr0 offline                    raid_dp, aggr        diskroot
+                                 fast zeroed`
+                                 64-bit
+---------------------------------------------------------------------
+....
+

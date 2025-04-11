@@ -23,7 +23,8 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 
 +
 
-NOTE: このコマンドは、 advanced 権限レベルの「 set -privilege advanced 」でのみ実行できます
+NOTE: このコマンドは、advanced権限レベルでのみ実行できます。
+`set -privilege advanced`
 
 +
 次の出力が表示されます。

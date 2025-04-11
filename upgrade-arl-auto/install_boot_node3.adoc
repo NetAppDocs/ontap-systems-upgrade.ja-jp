@@ -254,7 +254,7 @@ printenv partner-sysid
 | システムの状態 | 説明 
 
 
-| ディスクがあり、バックエンドストレージがない | に進みます <<auto_install3_step23,手順 23>> 
+| ディスクがあり、バックエンドストレージがない | に移動<<auto_install3_step27,ステップ27>> 
 
 
 | は、 V シリーズシステム、または FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムです  a| 
@@ -281,6 +281,7 @@ IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用�
 . [[step26]] スイッチベースのゾーニングを使用する構成の場合は、ゾーニングを調整して新しい WWPN 値を反映します。
 
 
+[[auto_install3_step27]]
 . NetApp Storage Encryption（NSE）ドライブを搭載している場合は、次の手順を実行します。
 +
 
@@ -313,7 +314,7 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 「 boot_ontap menu
 
 +
-FCまたはUTA / UTA2を設定していない場合は、 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 15"] ノード 4 が node2 のディスクを認識できるようにします。
+FC構成またはUTA / UTA2構成がない場合は、を実行してlink:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["ノード1のディスクをノード3に再割り当て（手順1）"]ノード3がノード1のディスクを認識できるようにします。
 
-. [[auto9597_istall3_step29]] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムの場合は、に進みます link:set_fc_or_uta_uta2_config_on_node3.html#auto9597_check_node3_step15["ノード 3 の UTA / UTA2 ポートの確認と設定、手順 15"]。
+. [[auto9597_istall3_step29]] MetroCluster構成、Vシリーズシステム、およびFlexArray仮想化ソフトウェアを搭載したシステムの場合は、に進みますlink:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["ノード1のディスクをノード3に再割り当て（手順1）"]。
 
