@@ -312,12 +312,12 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 
 
 
-. ノードをブートメニューに追加します。
+. ノードをブートメニューでブートします。
 +
 「 boot_ontap menu
 
 +
-FC構成またはUTA / UTA2構成がない場合は、を実行してlink:reassign-node2-disks-to-node4.html#reassign-node1-node3-app-step1["ノード1のディスクをノード3に再割り当て（手順1）"]ノード3がノード1のディスクを認識できるようにします。
+FC構成またはUTA / UTA2構成がない場合は、を実行してlink:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step1["ノード1のディスクをノード3に再割り当て（手順1）"]ノード3がノード1のディスクを認識できるようにします。
 
 . [step29] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムについて、ノードに接続されているディスクを検出するために、ノード 3 の FC ポートまたは UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください link:set_fc_or_uta_uta2_config_on_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"]。
 

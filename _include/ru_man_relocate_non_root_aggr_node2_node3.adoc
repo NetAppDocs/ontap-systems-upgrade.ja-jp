@@ -4,41 +4,76 @@
 
 ノード2をノード4に交換する前に、ノード2に関するAutoSupportメッセージを送信し、ノード2で所有されているルート以外のアグリゲートをノード3に再配置する必要があります。
 
-[[sysconfig-a-command]]
+
+CAUTION: この手順では、アグリゲートをノード3からノード2に再配置しないでください。その結果、アグリゲートがオフラインになり、再配置されたアグリゲートのデータが利用できなくなります。
+
+[[verify-partner-sys-id]]
 .手順
-. ノード2とノード3でパートナーシステムIDが正しく設定されていることを確認します。
+. ノード3でパートナーシステムIDが正しく設定されていることを確認します。
 +
-** `system node run -node _node2_ -command sysconfig -a`
-** `system node run -node _node3_ -command sysconfig -a`
+.. advanced 権限レベルに切り替えます。
++
+「 advanced 」の権限が必要です
+
+.. ノード3のパートナーシステムIDを表示します。
++
+`ha interconnect config show -node <node3-node1>`
+
 +
 次の例のような出力が表示されます。
 
 +
-[listing, subs="+quotes"]
+.例を示します
+[%collapsible]
+====
+[listing]
 ----
-NetApp Release 9.16.1: Mon Feb 10 07:55:45 EST 2025
-System ID: _system-ID_; *partner ID: _partner-system-ID_*
-System Serial Number: _system-serial-number_
-System Rev: A0
-System Storage Configuration: Mixed-Path HA
+cluster::*> ha interconnect config show -node <node>
+  (system ha interconnect config show)
+
+                       Node: node3-node1
+          Interconnect Type: RoCE
+            Local System ID: <node3-system-id>
+          Partner System ID: <node2-system-id>
+       Connection Initiator: local
+                  Interface: external
+
+Port   IP Address
+----   -----------------
+e4a-17   0.0.0.0
+e4b-18   0.0.0.0
 ----
+====
+
+
+. ノード3の「パートナーシステムID」が正しくない場合は、次の手順を実行します。
 +
-ノード2またはノード3の「パートナーID」が正しくない場合は、次の手順を実行します。
-
+.. ノード3を停止します。
 +
-... 値が正しくないノードをリブートします。
-... のコマンドを再実行し<<sysconfig-a-command,手順 1.>>、「partner ID」が正しい値に変更されたことを確認します。
+「 halt 」
 
+.. Loaderプロンプトで、正しい「partner-sysid」の値を設定します。
++
+ノード3の「partner-sysid」はノード2のシステムIDで、の出力で確認できます `ha interconnect config show`<<verify-partner-sys-id,手順 1.>>。
 
+.. 設定を保存します。
++
+'aveenv
+
+.. Loaderプロンプトで、ノード3をブートメニューでブートします。
++
+「 boot_ontap menu
+
+.. ノード3にログインします。
 
 
 . ノード2のAutoSupportメッセージをNetAppに送信します。
 +
-「system node AutoSupport invoke -node _node2 _-type all -message」「Upgrading _node2 _from_platform_old_to _platform_new_new_」というメッセージが表示されます
+`system node autosupport invoke -node <node2> -type all -message "Upgrading <node2> from <platform_old> to <platform_new>"`
 
 . AutoSupport メッセージが送信されたことを確認します。
 +
-system node AutoSupport show -node _node2 _-instanceです
+`system node autosupport show -node <node2> -instance`
 
 +
 「 Last Subject Sent ：」および「 Last Time Sent ：」のフィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。
@@ -51,11 +86,11 @@ system node AutoSupport show -node _node2 _-instanceです
 
 .. node2 が所有するアグリゲートを表示します。
 +
-storage aggregate show-owner-name_node2_`
+`storage aggregate show -owner-name <node2>`
 
 .. アグリゲートの再配置を開始する：
 +
-storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd-controller-upgrade trueを指定します
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controller-upgrade true`
 
 +
 
@@ -73,7 +108,7 @@ NOTE: コマンドは、ルート以外のアグリゲートのみを特定し�
 
 . node2 の再配置のステータスを確認します。
 +
-storage aggregate relocation show -node-node2 _`
+`storage aggregate relocation show -node <node2>`
 
 +
 再配置後のアグリゲートについては、出力に「done」と表示されます。
@@ -111,7 +146,7 @@ NOTE: event log showコマンドを実行すると'発生したエラーが表�
 
 .. 障害が発生したアグリゲートまたは拒否されたアグリゲートを
 +
-storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd-controllerupgrade true」を実行します
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controllerupgrade true`
 
 .. プロンプトが表示されたら、「 y 」と入力します。
 .. admin 権限レベルに戻ります。
@@ -135,29 +170,29 @@ storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd
 storage aggregate relocation コマンドの詳細については、を参照してください link:other_references.html["参考資料"] CLI_ および ONTAP 9 コマンド：マニュアルページリファレンス _ を使用してディスクおよびアグリゲートの管理にリンクするには、次の手順を実行します。
 
 |===
-. [man_relocate_2_3_step7] ルート以外のアグリゲートがすべてノード 3 でオンラインになっていることを確認します。
+. [man_relocate_2_3_step8] ルート以外のアグリゲートがすべてノード 3 でオンラインになっていることを確認します。
 +
-storage aggregate show -node _node3 --state offline-root false
+`storage aggregate show -node <node3> -state offline -root false`
 
 +
 オフラインになったアグリゲートや外部になったアグリゲートがある場合は、各アグリゲートを 1 つずつオンラインにする必要があります。
 
 +
-storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . ノード 3 ですべてのボリュームがオンラインになっていることを確認します。
 +
-volume show -node _node3 --state offline`
+`volume show -node <node3> -state offline`
 
 +
 ノード 3 でオフラインになっているボリュームがある場合は、各ボリュームについて 1 回、オンラインにする必要があります。
 
 +
-'volume online -vserver_Vserver -name_volume_volume-name _`
+`volume online -vserver <Vserver-name> -volume <volume-name>`
 
 . node2がルート以外のオンラインのアグリゲートを所有していないことを確認します。
 +
-「storage aggregate show-owner-name_node2」-ha -policy sfo-state online」と表示されます
+`storage aggregate show -owner-name <node2> -ha-policy sfo -state online`
 
 +
 ルート以外のオンラインアグリゲートがすべて node3 にすでに再配置されているため、コマンドの出力にルート以外のオンラインアグリゲートが表示されないようにする必要があります。

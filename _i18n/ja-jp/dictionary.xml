@@ -93,7 +93,6 @@
   <block id="20285adb42be1ddc0c2df8f7a2de7595" category="list-text">ストレージアレイ上のアレイ LUN に関連付けられたホストまたはボリュームグループの World Wide Port Name （ WWPN ；ワールドワイドポート名）値を変更する。</block>
   <block id="a2b95adba38da1a033c4cae3447040cc" category="paragraph">新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。</block>
   <block id="23eacbaf200afc53fbaaaaa3d6705308" category="list-text">スイッチベースのゾーニングを使用している場合は、新しい WWPN 値が反映されるようにゾーニングを調整します。</block>
-  <block id="d1cffd7fada9f21315c30db304bb2ca9" category="list-text">ノードをブートメニューに追加します。</block>
   <block id="a94e69437db24dee798bbd90bce4ee0a" category="paragraph">「 boot_ontap menu</block>
   <block id="9f6c1c59e595c7b6b493f92b24930c14" category="inline-link-macro">ノード 4 で FC または UTA / ut2 の設定を行います</block>
   <block id="cbe290335ddc7c966d9c148980b1ddd5" category="list-text">[[step29]] ストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用する MetroCluster 構成、 V シリーズシステム、およびシステムについては、ノードに接続されているディスクを検出するために、 FC または UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください <block ref="39202fc611c1fcac2f1575fc00cb55d3" category="inline-link-macro-rx"></block>。</block>
@@ -299,7 +298,6 @@
   <block id="b50635aa317c4f94943cbad3bf2ffdf2" category="list-text">ポートをケーブル接続します。</block>
   <block id="8eeb6ccf00d6f27741c5b734b3130459" category="list-text">[[step12]] 次のいずれかの操作を実行します。</block>
   <block id="4a137bad34f46785824a8100e1c6cba6" category="list-text">[[auto_check_4_step13]] メンテナンスモードを終了します。</block>
-  <block id="479951d6e509fddf053f700071fd43a4" category="list-text">[[step14]] ブートメニューからのノードのブート :</block>
   <block id="204783b1ca658239a7b205df8e2d83dd" category="paragraph">「 boot_ontap menu</block>
   <block id="f91809c39c7c5ad59f2475c5ee644448" category="admonition">上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。</block>
   <block id="24655647ccabfd614d439a15f52407aa" category="paragraph">「 boot_ontap maint 」を使用してください</block>
@@ -1690,7 +1688,6 @@
   <block id="ba9d984599b9d029b2fc827939de2324" category="cell">ノード 4 の使用可能なポートとブロードキャストドメイン</block>
   <block id="9b978a712974278ab5f3f7e894871a48" category="cell">ストレージシステムのプライベート SSL 証明書とパブリック SSL 証明書、および各キー管理サーバのプライベート SSL 証明書</block>
   <block id="d22f146c49d95d305653bf62234fdbc9" category="paragraph">新しいノードのポートに関する情報を Hardware Universe から取得しておく必要があります。に進みます <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 Hardware Universe にリンクします。この情報は、このセクションおよびの後半で使用します <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
-  <block id="770687a6c0857c42712724895dde4f94" category="paragraph">ノード 3 のソフトウェア設定は、ノード 3 の物理的な接続と同じである必要があります。また、アップグレードを続行する前に、 IP 接続をリストアする必要があります。</block>
   <block id="a7e55a2eda4d6d9856ad9438d37fbed0" category="paragraph">そのため、 node1 の物理ポートが node3 の物理ポートに直接マッピングされていない場合は、ブート後にクラスタ、管理、およびネットワーク接続をリストアするためにソフトウェア設定の変更が必要になります。また、ノード 1 のクラスタポートがノード 3 のクラスタポートに直接マッピングされていないと、ノード 3 は、正しい物理ポートでクラスタ LIF をホストするソフトウェア設定が変更されるまで、リブート時にクォーラムに自動的に再参加しないことがあります。</block>
   <block id="cbf79efe25579eb8669620f8a705d90c" category="list-text">[[step1] ノード 1 、ポート、ブロードキャストドメイン、 IPspace のすべてのケーブル接続情報を次の表に記録します。</block>
   <block id="2a04e456c6cc4811fe58e125c72d102f" category="cell">ノード 1 のブロードキャストドメインです</block>
@@ -3503,18 +3500,10 @@
   <block id="5861bf10ae07bb7c0e6218d5663221a4" category="paragraph">ucadmin modify -m fc | cna-t initiator | target_adapter_name_`</block>
   <block id="c5fabf666636164983c54a60426edaab" category="cell">「network fcp adapter modify -node node_name --adapter_adapter_adapter_adapter_name_-state up」の形式で指定します</block>
   <block id="e07e74f9f1df10fa040f36e818e29bd1" category="cell">'fcp config_adapter_name_up'</block>
-  <block id="d22419a850c185721a903c07372ae503" category="paragraph">「system node AutoSupport invoke -node _node2 _-type all -message」「Upgrading _node2 _from_platform_old_to _platform_new_new_」というメッセージが表示されます</block>
-  <block id="0035b3ff85f938e9dcfa6e01d00bacb3" category="paragraph">system node AutoSupport show -node _node2 _-instanceです</block>
   <block id="9fb768ad6510fe46b2016783cac8eadb" category="paragraph">storage aggregate show-owner-name_node2_`</block>
-  <block id="340e64569e9690b05ee5812624d5a313" category="paragraph">storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd-controller-upgrade trueを指定します</block>
-  <block id="f161887b8a8315e1921bdd784254366b" category="paragraph">storage aggregate relocation show -node-node2 _`</block>
   <block id="cde8cf801e542566f503970c16a89b61" category="admonition">event log showコマンドを実行すると'発生したエラーが表示されます</block>
-  <block id="9ef5127a85127a11a229ac4b55fc672f" category="paragraph">storage aggregate relocation start -node2_-destination_node3_aggregate-list *-nd-controllerupgrade true」を実行します</block>
-  <block id="841745404f0f5f47ea2e369557646743" category="paragraph">storage aggregate show -node _node3 --state offline-root false</block>
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph">storage aggregate online -aggregate _aggr_name_`</block>
   <block id="9768bc676d49dbda7bf856a2930c4b52" category="paragraph">volume show -node _node3 --state offline`</block>
-  <block id="091a8eb2e46c040b097f97a81745c527" category="paragraph">'volume online -vserver_Vserver -name_volume_volume-name _`</block>
-  <block id="b69d240b40718da8e6f1771cc452c580" category="paragraph">「storage aggregate show-owner-name_node2」-ha -policy sfo-state online」と表示されます</block>
   <block id="ffd863d528f6b76a6f398dd53b185d1d" category="cell">`disk reassign -s `_node2 _sysid_-d _node4 _sysid_-p _node3 _sysid_`</block>
   <block id="9666e158b6e459758482181fdc5caf71" category="cell">disk disk reassign -s `_node2 _sysid_-d_node4 _sysid_`</block>
   <block id="ff573218a71a52e566a9d2cb9c112902" category="paragraph">disk reassignコマンドは'_node2 _sysid_'が現在の所有者であるディスクだけを再割り当てします</block>
@@ -5246,23 +5235,14 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="179f979e0b97fa0abce7d9de4a3dcf35" category="cell">FAS70では9.15.1P3、FAS50ではFAS90 9.16.1P2</block>
   <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="cell">FAS8700</block>
   <block id="5ea464078a881a86e75acbaa27ab0f3f" category="inline-link-macro">ノード1のディスクをノード3に再割り当て（手順9）</block>
-  <block id="94832ce088252ec835bf30c1c169417f" category="list-text">[[step14]]を実行してノードをブートメニューにブートし<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>ます。A800にアップグレードする場合は、に進みます<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
   <block id="fb5a9693a9865f2503ac1d604da7e6f1" category="cell">にアクセスします。</block>
   <block id="2fdbbb745e51610452548329a23e078d" category="cell">に移動<block ref="cc5cb3430eee3043fed71981b076513b" category="inline-xref-macro-rx"></block></block>
   <block id="c66431825370525b71d1cf42669b4ad1" category="paragraph"><block ref="03d492bafa8bfc48b6d8087b415cb7c8" prefix="" category="inline-code"></block></block>
   <block id="cbf9a76a9a31fb5d20cbab55c42d6eb4" category="paragraph">ノード2をノード4に交換する前に、ノード2に関するAutoSupportメッセージを送信し、ノード2で所有されているルート以外のアグリゲートをノード3に再配置する必要があります。</block>
-  <block id="889a8a9b669ca02a5d0afd548c8a5bc9" category="list-text">ノード2とノード3でパートナーシステムIDが正しく設定されていることを確認します。</block>
-  <block id="04ad9370712a8951b033d3e79d288b91" category="list-text"><block ref="c4d3ac59e356b264f6335ae353d7f8cf" prefix="" category="inline-code"></block></block>
-  <block id="ae719a4d0999ee899d139c043e1dfb31" category="list-text"><block ref="9651ad056b06027f0f8a09826553c095" prefix="" category="inline-code"></block></block>
-  <block id="331474910fd513c32a8b5468be64110b" category="paragraph">ノード2またはノード3の「パートナーID」が正しくない場合は、次の手順を実行します。</block>
-  <block id="1157ffd8c7e3127247707fa870245090" category="list-text">値が正しくないノードをリブートします。</block>
-  <block id="20f3e479666bab0a0edd9ed3b561912d" category="list-text">のコマンドを再実行し<block ref="0ddf3aeb918097d937dd4c17e43bb51f" category="inline-xref-macro-rx"></block>、「partner ID」が正しい値に変更されたことを確認します。</block>
   <block id="a2f8774c7412a03482b475c596da177f" category="list-text">ノード2のAutoSupportメッセージをNetAppに送信します。</block>
   <block id="726243540d365dca09b0baa8a651d18b" category="list-text">ルート以外のアグリゲートを再配置します。</block>
   <block id="4b183b97df2f1d6ce9c112a7ed3e980c" category="paragraph">再配置はバックグラウンドで実行されます。アグリゲートの再配置には数秒から数分かかる場合があります。この時間には、クライアントの停止部分と停止部分の両方が含まれます。コマンドでは、オフラインまたは制限されたアグリゲートは再配置されません。</block>
   <block id="ce3a9a61e80721a6fb4afa31a98b6267" category="paragraph">再配置後のアグリゲートについては、出力に「done」と表示されます。</block>
-  <block id="85208ba1bad4c7dc925a1c2728862db6" category="cell">にアクセスします。</block>
-  <block id="f626c2e9002d46ebfc63c95da060d00a" category="list-text">[man_relocate_2_3_step7] ルート以外のアグリゲートがすべてノード 3 でオンラインになっていることを確認します。</block>
   <block id="d8a4c81968f4b397fdbe83d1475d852c" category="list-text">node2がルート以外のオンラインのアグリゲートを所有していないことを確認します。</block>
   <block id="6eb24316934652e1e079aaa905d2761d" category="inline-link-macro">ノード1のディスクをノード3に再割り当て（手順1）</block>
   <block id="694da05c353b1b646b03401140a4677f" category="paragraph">FC構成またはUTA / UTA2構成がない場合は、を実行して<block ref="7b43b3c87e448bde55a855b04c4928b3" category="inline-link-macro-rx"></block>ノード3がノード1のディスクを認識できるようにします。</block>
@@ -5302,7 +5282,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="fc62ebdcdad1c598fd567dcc92127be3" category="cell">にアクセスします。</block>
   <block id="39ec961403963bac4327f37c3a91e53d" category="cell">_Installに戻り、node4_をブートし、で再開します<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>。</block>
   <block id="328a7a0648a6342a4e5d9762596df977" category="inline-link-macro">ノード2のディスクをノード4に再割り当て（手順9）</block>
-  <block id="aa35d8be17402f68d91e5a22894b1a0d" category="paragraph">A800にアップグレードする場合は、に進みます<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
   <block id="b08503fa695caa40c403fd4b0a68ee5a" category="list-text">ストレージディスクを搭載したシステムをアップグレードする場合、ノード3にオンボードのFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、に進みます。<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
   <block id="bc6f0afd18b3a2600b507899a377b115" category="list-text">ただし、Vシリーズシステムまたはストレージアレイを搭載したFlexArray仮想化ソフトウェアを搭載したシステムで、node3にオンボードのFCポート、オンボードUTA / UTAポート、またはUTA / UTA2カードがない場合は、_Installに戻ってnode3_をブートし、で再開します<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
   <block id="fc1748891fee59e7ee68e749f479c431" category="list-text">ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、この手順をスキップし<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>てに進みます<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
@@ -5312,13 +5291,11 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="eaad59cad2124997123e3f040ef5cb96" category="list-text"><block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block></block>
   <block id="7578581e3a33edeb6b72193b779ff242" category="paragraph">^1^ AFF A800システムに必要なその他の手順については、セクション<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>、またはのA800に関する説明に記載されている手順に進みます<block ref="a9b70e5969497a28f737eb804f3061d5" category="inline-link-macro-rx"></block>。</block>
   <block id="ca05d8f8894d6ff273a92135000e282c" category="admonition">ネットブート接続として管理ポートおよび IP を使用する必要があります。データLIF IPは使用しないでください。使用しないと、アップグレードの実行中にデータが停止する可能性があります。</block>
-  <block id="913c3a812733a4774d27054bc2740e5e" category="paragraph">FC構成またはUTA / UTA2構成がない場合は、を実行して<block ref="3ca6a7fd02b3e66a513c8eda309bc152" category="inline-link-macro-rx"></block>ノード3がノード1のディスクを認識できるようにします。</block>
   <block id="187e2c8014ea1f526c1b4abd904abf74" category="paragraph">FCまたはUTA / UTA2の設定がない場合は、ノード4がノード2のディスクを認識できるようにを実行します<block ref="197c7e9b993124512db50edc55b3520e" category="inline-link-macro-rx"></block>。</block>
   <block id="6ce2823803aa2f6a15c6368e9054699b" category="paragraph">ステージ3では、ノード3をインストールしてブートし、ノード1のクラスタポートとノード管理ポートがノード3でオンラインになったことを確認し、ノード1のディスクをノード3に再割り当てして、ノード3のインストールを確認します。NetApp Volume Encryption（NVE）を使用している場合は、キー管理ツールの設定をリストアします。必要に応じて、ノード3にFCまたはUTA / UTA2設定を設定します。さらに、node1のNASデータLIFとルート以外のアグリゲートをnode2からnode3に再配置し、SAN LIFがnode3にあることを確認します。</block>
   <block id="9603a3cc81e2986384f6025c38748416" category="paragraph">ステージ5では、ノード4をインストールしてブートし、ノード2のクラスタポートとノード管理ポートがノード4でオンラインになったことを確認し、ノード2のディスクをノード4に再割り当てして、ノード4のインストールを確認します。NVEを使用している場合は、key-manager configurationをリストアします。必要に応じて、ノード4でFCまたはUTA / UTA2設定を設定します。node2のNASデータLIFとルート以外のアグリゲートもnode3からnode4に再配置し、SAN LIFがnode4にあることを確認します。</block>
   <block id="11f7f4fd840cd198a2f280c91b7faacb" category="list-text">このコマンドは、advanced権限レベルでのみ実行でき<block ref="2b4e2bfd3f993678e0b6870d28304a76" prefix=" " category="inline-code"></block>ます。</block>
   <block id="b3936429fa1be4b517a86a16e2b7e505" category="summary">ONTAP 9.8以降を実行するコントローラをアップグレードする場合、コマンドを使用してノード1に属していたディスクをノード3に再割り当てする必要があり<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>ます。</block>
-  <block id="d39e1430bb5637c814347c6472b72c52" category="list-text">ブートメニューに移動し、22/7を使用して隠しオプションを選択します<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。プロンプトで、 node1 のディスクを node3 に再割り当てするには、次の例のように入力します。</block>
   <block id="19c333b88ee80d0b1ae8ba1bdf9e539f" category="list-text">というメッセージが表示されてリブートループが発生した場合は<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>、FCポートまたはUTA / UTA2ポートがターゲットモードにリセットされたためディスクを認識できないことを示しています。この問題を解決するには、に進みます<block ref="8266acaa2ec393b5b0120a81f114e7db" category="inline-xref-macro-rx"></block> <block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>。またはセクションに進みます<block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
   <block id="bb109c63fb1855fdc41065496c4b5cbc" category="list-text">[reassign-node1-node3-app-step3]]自動ブート中にCtrl+Cキーを押して、Loader &gt;プロンプトでノードを停止します。</block>
   <block id="54e3eea9d71b7c4f02d2688c4e6f949e" category="paragraph">外付けディスクをサポートするシステムから外付けディスクもサポートするシステムにアップグレードする場合は、に進みます<block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>。</block>
@@ -5339,10 +5316,41 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="ce329eb9bee0d5646d8763528bd98e7e" category="list-text">ノード4にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、このセクションをスキップしてに進みます<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
   <block id="ec5c95c32056d74d6a1bcfef9db57ed5" category="list-text">スキップ_ノード4のUTA / UTA2ポートを確認して設定します。ノード4にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、_に戻ってnode4_をインストールしてブートし、の手順を再開します<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>。</block>
   <block id="09fd616bd129dbb6b064a8d755638ea6" category="inline-link-macro">ノード2のディスクをノード4に再割り当て（手順9）</block>
-  <block id="86fee9536c0b4315d9e50668d2a3d7ae" category="paragraph">A800にアップグレードする場合は、に進みます<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
   <block id="03cfdc59281567bffdff0dbb6def2026" category="list-text">ストレージディスクを搭載したシステムをアップグレードする場合、ノード3にオンボードFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、に進みます。<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
   <block id="9444c5a2921797201ef65c5f6bae3196" category="list-text">ただし、Vシリーズシステムまたはストレージアレイを搭載したFlexArray仮想化ソフトウェアを搭載したシステムで、node3にオンボードFCポート、オンボードUTA / UTAポート、またはUTA / UTA2カードがない場合は、_Installに戻り、node3_をブートしてから手順を再開します。<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block></block>
   <block id="812ad699d52f740e9c44459a956e3f62" category="list-text">ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、ノード3_のUTA / UTA2ポートを設定してに進みます。<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
   <block id="bd450dc25cacad31613a3b3330c2ed64" category="list-text">ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、ノード3_のUTA / UTA2ポートを設定してから_に戻ってノード3_のインストールとブートを行ってから、の手順を再開します。<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block></block>
   <block id="3a5beba976b4dab80c814dbb93201e2d" category="cell">_Installに戻ってnode3_をブートし、手順を再開し<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>ます。</block>
+  <block id="efbbd979af9db0d702ab6a5273480e16" category="paragraph">アップグレードを続行する前に、ノード3のソフトウェア設定がノード3の物理接続と一致している必要があり、ネットワーク接続がリストアされている必要があります。</block>
+  <block id="0750b6fd70b5c02e0dc63a82e8430e4a" category="admonition">この手順では、アグリゲートをノード3からノード2に再配置しないでください。その結果、アグリゲートがオフラインになり、再配置されたアグリゲートのデータが利用できなくなります。</block>
+  <block id="569f02d62115823f4fea09e43e09614c" category="list-text">ノード3でパートナーシステムIDが正しく設定されていることを確認します。</block>
+  <block id="fb0111f9cd842757d08889f0a7863a8b" category="list-text">ノード3のパートナーシステムIDを表示します。</block>
+  <block id="5a17539dbeea2e1642b36b86ee06822c" category="paragraph"><block ref="089ce08d08dd1b75c3f614830a776a5d" prefix="" category="inline-code"></block></block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">例を示します</block>
+  <block id="48ceab9868a32c98e5a4a3c1c644f968" category="list-text">ノード3の「パートナーシステムID」が正しくない場合は、次の手順を実行します。</block>
+  <block id="881c5e320a45f042e678d4b161772fce" category="list-text">ノード3を停止します。</block>
+  <block id="7800007d1254bb704e4ae7dfd07804b7" category="list-text">Loaderプロンプトで、正しい「partner-sysid」の値を設定します。</block>
+  <block id="a9de4ba6ab2c96c6e675e4aa27ae5f99" category="paragraph">ノード3の「partner-sysid」はノード2のシステムIDで、の出力で確認できます<block ref="02dc63281e3f95993aa2bd3cbf6cbaaa" prefix=" " category="inline-code"></block><block ref="bf7db627e57d537d277701b30eb920fb" category="inline-xref-macro-rx"></block>。</block>
+  <block id="dd3d0d406209c2954b2e2784db94b97b" category="list-text">Loaderプロンプトで、ノード3をブートメニューでブートします。</block>
+  <block id="d3ddde6e7673239ed55bc11b0d0eb088" category="list-text">ノード3にログインします。</block>
+  <block id="088fc05a96b10d26c3f25411385117f2" category="paragraph"><block ref="25337ccb7c73e802f2aa2e84f9657883" prefix="" category="inline-code"></block></block>
+  <block id="2e7bb8e758be89869c95ab23b96089a8" category="paragraph"><block ref="e8bddc5e75bda9e006a7808627e02c60" prefix="" category="inline-code"></block></block>
+  <block id="ceb3b4f875043e902ad0c2c7df540ac4" category="paragraph"><block ref="5f763a2ed6c527c7a7c8cdb44b2ef9a1" prefix="" category="inline-code"></block></block>
+  <block id="2a2be3ec611dd374f220ea53bd3e0758" category="paragraph"><block ref="17cc86d87f4cf199b09f90bd5a6c15dc" prefix="" category="inline-code"></block></block>
+  <block id="a6f10385b3e5082eca317137f25e29be" category="paragraph"><block ref="5b8fa3cd936d1ea49819298759fb9f1b" prefix="" category="inline-code"></block></block>
+  <block id="38044567d84e20ec724f63db53b11f1e" category="cell">にアクセスします。</block>
+  <block id="3f8dbc42a73ae9a6487e0757b393d2fb" category="paragraph"><block ref="9156be96f14f90b77022cc089e705729" prefix="" category="inline-code"></block></block>
+  <block id="6c434ec98af520797c570f40db8c4a28" category="list-text">[man_relocate_2_3_step8] ルート以外のアグリゲートがすべてノード 3 でオンラインになっていることを確認します。</block>
+  <block id="ef54d8b76027ced4d5a36092399b0849" category="paragraph"><block ref="3084412280b7ab74d58fde7f7ea5dcb7" prefix="" category="inline-code"></block></block>
+  <block id="8e3deaabd41a6198e56a6285ff5c48bc" category="paragraph"><block ref="6081a3855c6bc35b60d38be817747a5c" prefix="" category="inline-code"></block></block>
+  <block id="7adac7d8af549857f31077a908e21bf4" category="paragraph"><block ref="9d8096e1c24df88a36631f9f43c1b889" prefix="" category="inline-code"></block></block>
+  <block id="dcc422920951416bc8ad4e66178b7556" category="paragraph"><block ref="5262be8683d7b15cd5f469e52a116209" prefix="" category="inline-code"></block></block>
+  <block id="71b6de83a4e8abd455d17a4d6af4374a" category="list-text">ノードをブートメニューでブートします。</block>
+  <block id="2177cbe7b3a717ce6d53713b3fc10bd9" category="list-text">[[step14]]ノードをブートメニューでブートします。</block>
+  <block id="a4767f09ed98441b185563427dd0a442" category="paragraph">AFF A800システムにアップグレードする場合は、に進みます<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
+  <block id="5a7f7aa2acda9d8cf0b886b9d97aa6d5" category="list-text">[[step14]]を実行してノードをブートメニューにブートし<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>ます。AFF A800システムにアップグレードする場合は、に進みます<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>。</block>
+  <block id="798d18731b87565ff109b6fed67d6b99" category="paragraph">FC構成またはUTA / UTA2構成がない場合は、を実行して<block ref="b7ef417e87a2f1cf82b2e7cf12272083" category="inline-link-macro-rx"></block>ノード3がノード1のディスクを認識できるようにします。</block>
+  <block id="c8adb5c5421d34e18d5b9558706c9208" category="list-text">[reassign-node1-node3-app-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。プロンプトで node1 と入力し、次の例のように node1 のディスクを node3 に再割り当てします。</block>
+  <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">AFF A800システムにアップグレードする場合は、に進みます<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
+  <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[step14]]を実行してノードをブートメニューにブートし<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>ます。AFF A800システムにアップグレードする場合は、に進みます<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
 </blocks>

@@ -309,5 +309,5 @@ Adapter  Mode       Type        Mode     Type        Status
 +
 「 halt 」
 
-. [[step14]]を実行してノードをブートメニューにブートし `boot_ontap menu`ます。A800にアップグレードする場合は、に進みますlink:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["ノード1のディスクをノード3に再割り当て（手順9）"]。
+. [[step14]]を実行してノードをブートメニューにブートし `boot_ontap menu`ます。AFF A800システムにアップグレードする場合は、に進みますlink:reassign-node1-disks-to-node3.html#auto_check3_step9["ノード1のディスクをノード3に再割り当て（手順9）"]。
 

@@ -298,11 +298,11 @@ f-a   2b       fc             target       cna           -             online
 +
 「 halt 」
 
-. [[step14]] ブートメニューからのノードのブート :
+. [[step14]]ノードをブートメニューでブートします。
 +
 「 boot_ontap menu
 
 +
-A800にアップグレードする場合は、に進みますlink:reassign-node2-disks-to-node4.html#auto_check_4_step9["ノード2のディスクをノード4に再割り当て（手順9）"]。
+AFF A800システムにアップグレードする場合は、に進みますlink:reassign-node2-disks-to-node4.html#auto_check_4_step9["ノード2のディスクをノード4に再割り当て（手順9）"]。
 
 

@@ -20,7 +20,7 @@ summary: 'ONTAP 9.8以降を実行するコントローラをアップグレー�
 このセクションの手順はノード3で実行します。
 
 .手順
-. ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで、 node1 のディスクを node3 に再割り当てするには、次の例のように入力します。
+. [reassign-node1-node3-app-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで node1 と入力し、次の例のように node1 のディスクを node3 に再割り当てします。
 +
 .コンソールの出力例を展開します
 [%collapsible]
