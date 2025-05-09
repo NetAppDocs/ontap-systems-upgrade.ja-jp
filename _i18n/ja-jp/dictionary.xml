@@ -4216,7 +4216,6 @@
   <block id="95144cfdd742178c38add09e40185465" category="paragraph">アグリゲートの再配置（ARL）を使用して古いシステムシャーシとディスクを維持できるかどうかを理解するには、システムのアップグレード構成とONTAPのバージョンによって異なります。</block>
   <block id="af8278e543c162c1ee0f858b0715d01e" category="paragraph">特定のシステム構成では、コントローラのアップグレードがサポートされます。サポートされるシステムとONTAPの最小バージョンの一覧については、を参照してください <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>。</block>
   <block id="5b29cd0b8848fbfc7c43edd22b16cf04" category="section-title">スイッチ接続のクラスタ</block>
-  <block id="4f071a09d7910b1c963c0cf11fa85985" category="paragraph">クラスタスイッチに接続されたクラスタ内のノードをアップグレードする場合は、スイッチで実行されているmake、model、ファームウェアバージョン、RCF、およびONTAPのバージョンが、アップグレード後に交換用コントローラで実行されているバージョンと同じになることを確認する必要があります。必要に応じて、このドキュメントに記載されているARL手順を使用してコントローラをアップグレードする前にスイッチのアップグレードを実行する必要があります。</block>
   <block id="38622c9aae2baa5dfb1bdeeb2c31c5a3" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合、ノード1のノード2のNASデータLIFがノード1からノード2に再配置されたことを確認します。</block>
   <block id="25c0a64ebb3d4dec1d638d209b3b73a2" category="paragraph">これらのチェックが完了すると、ルート以外のアグリゲートとNASデータLIFが、交換用コントローラで実行中のnode2に再配置されます。</block>
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">同じシャーシのコントローラモデルをARLでアップグレードする際に、交換用システムモジュールをノード2に取り付けます。</block>
@@ -5106,7 +5105,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="cdce5e983821273e4c7e3414b8097d4e" category="cell">3a、3b</block>
   <block id="a789c48b3b7fe1b603ce142ae362e5ae" category="paragraph">スイッチ接続クラスタの場合は、AFF A30、AFF A50、AFF A70、AFF A90、AFF C30、AFF C60、またはAFF C80（交換用）ノードの次の要件を満たしていることを確認します。</block>
   <block id="403ccec6840b96b7b18ce39b52e40ae4" category="list-text">交換用ノードの同一のクラスタポートが同じスイッチ上にあります。たとえば、アップグレードが完了したら、node1のe1aとnode2のe1aを1つのクラスタスイッチに接続する必要があります。同様に、両方のノードの2番目のクラスタポートを2番目のクラスタスイッチに接続する必要があります。共有クラスタHAポート（ノード1のe1aがスイッチAに接続され、ノード2のe1aがスイッチBに接続されている）をクロス接続すると、HA通信に障害が発生します。</block>
-  <block id="b5bcf41de93d90fbeb1ad872fa73f5f9" category="list-text">交換用ノードは、共有のクラスタHAイーサネットポートを使用します。クラスタスイッチに、共有クラスタHAポートをサポートするリファレンス構成ファイル（RCF）がインストールされていることを確認します。</block>
   <block id="1cc3f304d5e589c069f5fc5ecdc865d1" category="section-title">ARLのアップグレードでサポート</block>
   <block id="26c0488d57efd7721cdf50179d2776e0" category="list-text">コントローラのアップグレードがに表示され<block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>ます。</block>
   <block id="4e793111a4193c7c02d75b240754c4f7" category="list-text">NetAppの営業担当者に、コントローラのアップグレードに必要なハードウェアが揃っていることを確認しておきます。</block>
@@ -5353,4 +5351,27 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="c8adb5c5421d34e18d5b9558706c9208" category="list-text">[reassign-node1-node3-app-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。プロンプトで node1 と入力し、次の例のように node1 のディスクを node3 に再割り当てします。</block>
   <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">AFF A800システムにアップグレードする場合は、に進みます<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
   <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[step14]]を実行してノードをブートメニューにブートし<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>ます。AFF A800システムにアップグレードする場合は、に進みます<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
+  <block id="007afae70e6899ccd5a02bd1b8e30413" category="list-text">交換用ノードは、共有のクラスタHAイーサネットポートを使用します。</block>
+  <block id="96a4f5b30dbe8d55de9aa12c4b2e6602" category="list-text">クラスタスイッチに、共有クラスタHAポートをサポートするリファレンス構成ファイル（RCF）がインストールされていることを確認します。</block>
+  <block id="1ef8dca5df94c49347909211a3845f3f" category="list-text">スイッチの既存の設定を削除します。</block>
+  <block id="ec959032169391b64e7918c7b1c9a04b" category="cell">スイッチのモデル</block>
+  <block id="ec434af0a2786fa23b468584c5622fe1" category="cell">手順</block>
+  <block id="48def1be7a1b40b720ff1892a761e8c8" category="cell">Cisco Nexus</block>
+  <block id="ce8d24a452c1c94c4680d7ce098325a9" category="inline-link-macro">リモート接続を維持したままCiscoインターコネクトスイッチの設定をクリアする方法</block>
+  <block id="f79602808677d4d116b317e4c44a8ee5" category="cell">ナレッジベースの記事<block ref="862bab57a4acfb616afcae48c16f2cfe" category="inline-link-macro-rx"></block></block>
+  <block id="4dd13a124f96d89e0fd6c36f6d82e131" category="cell">Broadcom BES-53248</block>
+  <block id="3a6a9877fc8c73a9267914b786517ca9" category="inline-link-macro">リモート接続を維持したままBroadcomインターコネクトスイッチの設定をクリアする方法</block>
+  <block id="363e3bb9e22f2f2472a215233919dbf7" category="cell">ナレッジベースの記事<block ref="4eb512d9e9a489effcea6ab616ebb791" category="inline-link-macro-rx"></block></block>
+  <block id="b0a38d8703521c30e6e97aed4cde98e8" category="list-text">スイッチのセットアップを設定して確認します。</block>
+  <block id="5aec304982416461faa5bf9b3a0b2cf3" category="cell">Cisco Nexus 9336C-FX2</block>
+  <block id="b0411eb90c7d5ca211940fcb5d8f219a" category="inline-link-macro">リファレンス構成ファイル（RCF）のアップグレード</block>
+  <block id="0b62f732d6ce50a66f369a7af44d4f34" category="cell"><block ref="0b62f732d6ce50a66f369a7af44d4f34" category="inline-link-macro-rx"></block></block>
+  <block id="f14d39745f2925af01d4497aa53d6677" category="inline-link-macro">リファレンス構成ファイル（RCF）のアップグレード</block>
+  <block id="1223d69b197fdd4739792e2757e36426" category="cell"><block ref="1223d69b197fdd4739792e2757e36426" category="inline-link-macro-rx"></block></block>
+  <block id="94f92369bb57ec3cd50af356ac87615d" category="cell">NVIDIA SN2100</block>
+  <block id="ec65012ad6ac37ed9d5b425acfa4cdea" category="inline-link-macro">リファレンス構成ファイル（RCF）スクリプトのインストールまたはアップグレード</block>
+  <block id="c18748e2481d76fb9941a180443193c9" category="cell"><block ref="c18748e2481d76fb9941a180443193c9" category="inline-link-macro-rx"></block></block>
+  <block id="4cd0d55ba9459c2dab2de91b9c03814c" category="paragraph">2 ノードスイッチレスクラスタのノードをアップグレードする場合は、アップグレードの実行中もスイッチレスクラスタのノードをそのまま使用できます。スイッチクラスタに変換する必要はありません。</block>
+  <block id="8582dce1fa70b49f5e69ba957a35fc82" category="paragraph">クラスタスイッチに接続されたクラスタ内のノードをアップグレードする場合は、スイッチで実行されているmake、model、ファームウェアバージョン、RCF、およびONTAPのバージョンが、アップグレード後に交換用コントローラで実行されているバージョンと同じになることを確認する必要があります。必要に応じて、ARLを使用してコントローラをアップグレードする前にスイッチのアップグレードを実行する必要があります。</block>
+  <block id="c508e07c7b7e3a7f9abffdab705049ba" category="paragraph">詳細については、を参照してください <block ref="896b35cb78c99b0406f2809b80c7854f" category="inline-link-macro-rx"></block>。</block>
 </blocks>

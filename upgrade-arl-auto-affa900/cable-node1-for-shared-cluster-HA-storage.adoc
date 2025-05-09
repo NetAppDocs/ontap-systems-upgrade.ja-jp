@@ -101,5 +101,36 @@ summary: AFF A800 node1に接続していたクラスタ接続、HA接続、ス�
 スイッチ接続クラスタの場合は、AFF A30、AFF A50、AFF A70、AFF A90、AFF C30、AFF C60、またはAFF C80（交換用）ノードの次の要件を満たしていることを確認します。
 
 * 交換用ノードの同一のクラスタポートが同じスイッチ上にあります。たとえば、アップグレードが完了したら、node1のe1aとnode2のe1aを1つのクラスタスイッチに接続する必要があります。同様に、両方のノードの2番目のクラスタポートを2番目のクラスタスイッチに接続する必要があります。共有クラスタHAポート（ノード1のe1aがスイッチAに接続され、ノード2のe1aがスイッチBに接続されている）をクロス接続すると、HA通信に障害が発生します。
-* 交換用ノードは、共有のクラスタHAイーサネットポートを使用します。クラスタスイッチに、共有クラスタHAポートをサポートするリファレンス構成ファイル（RCF）がインストールされていることを確認します。
+* 交換用ノードは、共有のクラスタHAイーサネットポートを使用します。
+* クラスタスイッチに、共有クラスタHAポートをサポートするリファレンス構成ファイル（RCF）がインストールされていることを確認します。
++
+.. スイッチの既存の設定を削除します。
++
+[cols="30,70"]
+|===
+| スイッチのモデル | 手順 
+
+
+| Cisco Nexus | ナレッジベースの記事link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["リモート接続を維持したままCiscoインターコネクトスイッチの設定をクリアする方法"^] 
+
+
+| Broadcom BES-53248 | ナレッジベースの記事link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["リモート接続を維持したままBroadcomインターコネクトスイッチの設定をクリアする方法"^] 
+|===
+.. スイッチのセットアップを設定して確認します。
++
+[cols="30,70"]
+|===
+| スイッチのモデル | 手順 
+
+
+| Cisco Nexus 9336C-FX2 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html["リファレンス構成ファイル（RCF）のアップグレード"^] 
+
+
+| Broadcom BES-53248 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html["リファレンス構成ファイル（RCF）のアップグレード"^] 
+
+
+| NVIDIA SN2100 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html["リファレンス構成ファイル（RCF）スクリプトのインストールまたはアップグレード"^] 
+|===
+
+
 
