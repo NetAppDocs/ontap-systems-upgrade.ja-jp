@@ -38,7 +38,7 @@ ARL を使用したコントローラのアップグレードは、 SnapLock Ent
 
 クラスタスイッチに接続されたクラスタ内のノードをアップグレードする場合は、スイッチで実行されているmake、model、ファームウェアバージョン、RCF、およびONTAPのバージョンが、アップグレード後に交換用コントローラで実行されているバージョンと同じになることを確認する必要があります。必要に応じて、ARLを使用してコントローラをアップグレードする前にスイッチのアップグレードを実行する必要があります。
 
-詳細については、を参照してください link:upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["スイッチ接続クラスタへの接続"]。
+詳細については、を参照してください link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["スイッチ接続クラスタへの接続"]。
 
 
 
