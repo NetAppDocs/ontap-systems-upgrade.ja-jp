@@ -2,9 +2,9 @@
 section: upgrade-arl-manual
 title: ONTAP 9.7 以前を実行しているコントローラハードウェアを手動でアップグレードします
 entries:
-- title: 概要
+- title: ARL手順について学ぶ
   url: "/upgrade-arl-manual/index.html"
-- title: アグリゲートの再配置の内容を使用するかどうかを決定します
+- title: このARL手順を使用するかどうかを決定する
   url: "/upgrade-arl-manual/decide_to_use_arl_guide.html"
 - title: ARL のアップグレードワークフロー
   url: "/upgrade-arl-manual/arl_upgrade_workflow.html"
@@ -16,7 +16,7 @@ entries:
   url: "/upgrade-arl-manual/worksheet_information_before_during_upgrade.html"
 - title: ONTAP 9.1 以降の FC スイッチレイアウトを再設定します
   entries:
-  - title: 概要
+  - title: スイッチレイアウトの再構成の準備
     url: "/upgrade-arl-manual/reconfig_index.html"
   - title: カスタム AutoSupport メッセージは、スイッチの再設定前に送信します
     url: "/upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html"
@@ -37,8 +37,6 @@ entries:
 - title: ステージ 1 ：アップグレードを準備
   pdf-filename: ステージ 1 ：アップグレードを準備（ONTAP 9.7以前での手動アップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-manual/stage_1_index.html"
   - title: コントローラの内蔵ディスクドライブにアグリゲートがあるかどうかを確認します
     url: "/upgrade-arl-manual/determine_aggregates_on_internal_drives.html"
   - title: ノードをアップグレードする準備をします
@@ -52,8 +50,6 @@ entries:
 - title: ステージ 2 ：移行してノード 1 を撤去
   pdf-filename: ステージ 2 ：ノード1の再配置と撤去（ONTAP 9.7以前の手動アップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-manual/stage_2_index.html"
   - title: ルート以外のアグリゲートを node1 から node2 に再配置します。
     url: "/upgrade-arl-manual/relocate_non_root_aggr_node1_node2.html"
   - title: node1 で所有されている NAS データ LIF を node2 に移動します
@@ -65,8 +61,6 @@ entries:
 - title: ステージ 3 ：node3 をインストールしてブートします
   pdf-filename: ステージ 3 ：node3のインストールとブート（ONTAP 9.7以前での手動アップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-manual/stage_3_index.html"
   - title: node3 をインストールしてブートします
     url: "/upgrade-arl-manual/install_boot_node3.html"
   - title: ノード 3 で FC または UTA / UTA2 設定を設定します
@@ -86,8 +80,6 @@ entries:
 - title: ステージ 4 ：情報を記録し、 node2 を撤去
   pdf-filename: ステージ 4 ：情報を記録してnode2を撤去（ONTAP 9.7以前での手動アップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-manual/stage_4_index.html"
   - title: ノード 2 の情報を記録します
     url: "/upgrade-arl-manual/record_node2_information.html"
   - title: ノード 2 を撤去
@@ -95,8 +87,6 @@ entries:
 - title: ステージ 5 ：ノード 4 をインストールしてブートします
   pdf-filename: ステージ 5 ：node4のインストールとブート（ONTAP 9.7以前での手動アップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-manual/stage_5_index.html"
   - title: ノード 4 をインストールしてブートします
     url: "/upgrade-arl-manual/install_boot_node4.html"
   - title: ノード 4 で FC または UTA / UTA2 設定を設定します
@@ -115,8 +105,6 @@ entries:
 - title: ステージ 6 ：アップグレードを完了します
   pdf-filename: ステージ 6 ：アップグレードの完了（ONTAP 9.7以前での手動アップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-manual/stage_6_index.html"
   - title: KMIP サーバを使用して認証を管理します
     url: "/upgrade-arl-manual/manage_authentication_kmip.html"
   - title: 新しいコントローラが正しくセットアップされていることを確認します
@@ -132,8 +120,6 @@ entries:
 - title: トラブルシューティングを行う
   pdf-filename: トラブルシューティング（ONTAP 9.7以前での手動アップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-manual/troubleshoot_index.html"
   - title: アグリゲートの再配置に失敗しまし
     url: "/upgrade-arl-manual/aggregate_relocation_failures.html"
   - title: リブート、パニック、電源再投入

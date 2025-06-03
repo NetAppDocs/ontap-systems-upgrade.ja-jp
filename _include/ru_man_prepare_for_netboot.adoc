@@ -41,6 +41,6 @@ NOTE: Windows で内容を展開する場合は、 7-Zip または WinRAR を使
 | その他すべてのシステム | ディレクトリの一覧に次のファイルが表示されます。 `<ontap_version>_image.tgz`注：の内容を展開する必要はありません `<ontap_version>_image.tgz` ファイル。 
 |===
 +
-では、ディレクトリの情報を使用します link:stage_3_index.html["ステージ 3"]。
+ディレクトリ内の情報を使用するには、 link:install_boot_node3.html["ステージ 3"] 。
 
 

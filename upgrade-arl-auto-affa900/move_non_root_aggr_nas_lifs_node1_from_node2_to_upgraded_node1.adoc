@@ -63,7 +63,7 @@ network port reachability show -node node1
 | AFF A800用 | AFF A70、AFF A90 
 
 
-| AFF C800用 | C80 
+| AFF C800用 | AFF C80用 
 |===
 +
 その他のすべてのシステムのアップグレードについては、に進みます<<resume_relocation_step4,手順 4>>。

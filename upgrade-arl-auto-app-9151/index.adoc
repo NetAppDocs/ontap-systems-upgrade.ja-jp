@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app-9151/index.html
 keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
 summary: 'ONTAP 9.15.1以降を実行しているコントローラハードウェアをアップグレードするには、コマンドを使用してルート以外のアグリゲートの所有権を切り替えます `system controller replace` 。' 
 ---
-= 概要
+= ARLアップグレード手順について学ぶ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,8 @@ summary: 'ONTAP 9.15.1以降を実行しているコントローラハードウ�
 
 
 [role="lead"]
-この手順 では、次のシステム構成で Aggregate Relocation （ ARL ；アグリゲートの再配置）を使用してコントローラハードウェアをアップグレードする方法について説明します。
+コントローラハードウェアをアップグレードするためのアグリゲート再配置（ARL）方法はいくつかあります。このARL手順では、ONTAP 9.15.1以降で導入されたAFFおよびFASストレージシステムのHAコントローラペアを、既存のデータとディスクを維持しながら新しいコントローラにアップグレードする方法について説明します。
 
-[cols="40,20,40"]
-|===
-| メソッド | ONTAP バージョン | サポートされるシステム 
-
-
-| 「 system controller replace 」コマンドを使用します | 9.15.1以降 | link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_9151_supported_systems["サポートされているシステムマトリックスへのリンク"] 
-|===
 
 NOTE: この手順を使用して、MetroClusterのFCまたはIP構成をアップグレードすることはできません。MetroCluster構成をアップグレードするには、MetroClusterのアップグレードおよび拡張に関するドキュメント_へのリンクを参照してください link:other_references.html["参考資料"] 。
 
@@ -34,7 +27,7 @@ NOTE: この手順を使用して、MetroClusterのFCまたはIP構成をアッ�
 「 node1 」、「 node2 」、「 node3 」、および「 node4 」は、元のノードと新しいノードを区別するためだけに使用されます。手順を実行するときは、元のノードと新しいノードの実際の名前に置き換える必要があります。ただし実際には、コントローラハードウェアのアップグレード後もノードの名前は変わりません。ノード3の名前はnode1になり、ノード4の名前はnode2になります。
 
 .重要な情報：
-* この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、を読んで理解する必要があります link:guidelines_for_upgrading_controllers_with_arl.html["ARL を使用したコントローラのアップグレードに関するガイドライン"] および link:overview_of_the_arl_upgrade.html["ARL アップグレードの概要"] アップグレード開始前のセクション。
+* この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、以下の内容を読んで理解する必要があります。 link:guidelines_for_upgrading_controllers_with_arl.html["ARLを使用したコントローラのアップグレードに関するガイドライン"]そしてlink:overview_of_the_arl_upgrade.html["ARLアップグレードシーケンス"]アップグレードを開始する前に。
 * この手順は、交換用コントローラハードウェアが新しく購入され、使用されていないことを前提としています。この手順には、コマンドを使用して使用済みコントローラを準備するために必要な手順 `wipeconfig` は含まれていません。交換用コントローラハードウェアを以前に使用した場合は、テクニカルサポートにお問い合わせください。
 * この手順を使用して、ノードが 3 つ以上あるクラスタでコントローラハードウェアをアップグレードできます。ただし、クラスタ内のハイアベイラビリティ（ HA ）ペアごとに手順を個別に実行する必要があります。
 * ONTAP 9.15.1以降で導入されたシステムにアップグレードすると、ONTAPは既存ボリュームのStorage Efficiencyを変換し、ハードウェアオフロード機能を使用する新しいStorage Efficiency機能を適用します。これは自動バックグラウンドプロセスであり、システムのパフォーマンスへの明らかな影響はありません。

@@ -2,11 +2,11 @@
 section: upgrade-arl-auto
 title: "「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを 9.7 にアップグレードします"
 entries:
-- title: 概要
+- title: ARL手順について学ぶ
   url: "/upgrade-arl-auto/index.html"
 - title: コントローラのアップグレードプロセスを自動化する
   url: "/upgrade-arl-auto/automate_the_controller_upgrade_process.html"
-- title: アグリゲートの再配置の内容を使用するかどうかを決定します
+- title: このARL手順を使用するかどうかを決定する
   url: "/upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 必要な工具とドキュメント
   url: "/upgrade-arl-auto/required_tools_and_documentation.html"
@@ -18,13 +18,11 @@ entries:
   url: "/upgrade-arl-auto/check_metrocluster_config_errors.html"
 - title: スイッチオーバー、修復、スイッチバックを検証
   url: "/upgrade-arl-auto/verify_switchover_healing_switchback.html"
-- title: ARL アップグレードの概要
+- title: ARLアップグレードシーケンスについて学ぶ
   url: "/upgrade-arl-auto/overview_of_the_arl_upgrade.html"
 - title: ステージ 1 ：アップグレードを準備
   pdf-filename: ステージ 1 ：アップグレードの準備（ONTAP 9.5から9.7への「システムコントローラの交換」でアップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-auto/stage_1_index.html"
   - title: ノードをアップグレードする準備をします
     url: "/upgrade-arl-auto/prepare_nodes_for_upgrade.html"
   - title: オンボードキーマネージャを使用してストレージ暗号化を管理します
@@ -32,8 +30,6 @@ entries:
 - title: ステージ 2 ：移行してノード 1 を撤去
   pdf-filename: ステージ 2 ：node1の再配置とリタイア（ONTAP 9.5から9.7への「システムコントローラの交換」でアップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-auto/stage_2_index.html"
   - title: ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
     url: "/upgrade-arl-auto/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
   - title: 障害が発生したアグリゲートを再配置するか
@@ -45,8 +41,6 @@ entries:
 - title: ステージ 3 ：node3 をインストールしてブートします
   pdf-filename: ステージ 3 ：node3のインストールと起動（ONTAP 9.5から9.7への「system controller replace」にアップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-auto/stage_3_index.html"
   - title: node3 をインストールしてブートします
     url: "/upgrade-arl-auto/install_boot_node3.html"
   - title: ノード 3 で FC または UTA / UTA2 設定を設定します
@@ -64,8 +58,6 @@ entries:
 - title: ステージ 4 ：ノード 2 の移動と撤去
   pdf-filename: ステージ 4 ：node2の再配置と撤去（ONTAP 9.5から9.7への「システムコントローラの交換」にアップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-auto/stage_4_index.html"
   - title: ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します
     url: "/upgrade-arl-auto/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html"
   - title: ノード 2 を撤去
@@ -73,8 +65,6 @@ entries:
 - title: ステージ 5 ：ノード 4 をインストールしてブートします
   pdf-filename: ステージ 5 ：node4のインストールとブート（ONTAP 9.5から9.7への「system controller replace」でアップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-auto/stage_5_index.html"
   - title: ノード 4 をインストールしてブートします
     url: "/upgrade-arl-auto/install_boot_node4.html"
   - title: ノード 4 で FC または UTA / UTA2 設定を設定します
@@ -92,8 +82,6 @@ entries:
 - title: ステージ 6 ：アップグレードを完了します
   pdf-filename: ステージ 6 ：アップグレードの完了（ONTAP 9.5から9.7への「システムコントローラの交換」でアップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-auto/stage_6_index.html"
   - title: KMIP サーバを使用して認証を管理します
     url: "/upgrade-arl-auto/manage-authentication-using-kmip-servers.html"
   - title: 新しいコントローラが正しくセットアップされていることを確認します
@@ -109,8 +97,6 @@ entries:
 - title: トラブルシューティングを行う
   pdf-filename: トラブルシューティング（ONTAP 9.5を9.7にアップグレードする場合は、「システムコントローラの交換」にアップグレード）
   entries:
-  - title: 概要
-    url: "/upgrade-arl-auto/troubleshoot_index.html"
   - title: アグリゲートの再配置に失敗しまし
     url: "/upgrade-arl-auto/aggregate_relocation_failures.html"
   - title: リブート、パニック、電源再投入

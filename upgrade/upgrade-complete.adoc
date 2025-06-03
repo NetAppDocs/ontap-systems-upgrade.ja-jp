@@ -2,9 +2,9 @@
 permalink: upgrade/upgrade-complete.html 
 sidebar: sidebar 
 keywords: complete, upgrade, ontap, complete the upgrade 
-summary: ONTAP 9.8以降またはONTAP 9.7以前でアップグレードを完了します。 
+summary: ONTAP 9.8 以降、または ONTAP 9.7 以前で移動ストレージ アップグレードを完了します。 
 ---
-= 概要
+= ストレージ移行アップグレードワークフローを完了する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -17,6 +17,6 @@ ONTAP 9.8以降またはONTAP 9.7以前でアップグレードを完了しま�
 
 image:workflow_completing_upgrade_98_or_97x.png["アップグレードを完了します"]
 
-* link:upgrade-complete-ontap-9-8.html["ONTAP 9.8以降でアップグレードを完了します"]
-* link:upgrade-complete-ontap-9-7-or-earlier.html["ONTAP 9.7 以前でアップグレードを完了します"]
+* link:upgrade-map-network-ports-ontap-9-8.html["ONTAP 9.8以降でアップグレードを完了します"]
+* link:upgrade-map-network-ports-ontap-9-7-or-earlier.html["ONTAP 9.7 以前でアップグレードを完了します"]
 

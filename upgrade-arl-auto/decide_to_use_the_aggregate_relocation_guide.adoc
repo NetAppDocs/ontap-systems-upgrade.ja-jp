@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html
 keywords: aggregate relocation, decide to use, upgrade, model, matrix, replacement, controller 
 summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードするために "ARL を使用するかどうかを決定します' 
 ---
-= アグリゲートの再配置手順を使用するかどうかを決定します
+= この集約再配置手順を使用するかどうかを決定します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,20 +14,32 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 
 
 [role="lead"]
-このコンテンツでは、 HA ペアのストレージコントローラを新しいコントローラにアップグレードし、既存のデータとディスクをすべて残す方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
+コントローラハードウェアをアップグレードするには、アグリゲート再配置（ARL）の方法が複数あります。この手順では、ONTAP 9.7、9.6、または9.5を実行しているシステムで、「システムコントローラ置換コマンド」を使用してARLを使用してコントローラハードウェアをアップグレードする方法について説明します。この複雑な手順は、経験豊富なONTAP管理者のみが使用してください。
 
-このコンテンツは、次の状況で使用します。
+この ARL 手順がコントローラ ハードウェアのアップグレードに適しているかどうかを判断するには、サポートされているアップグレードについて次の状況をすべて確認する必要があります。
 
 * ONTAP 9.5 、 9.6 、または 9.7 を実行しているネットアップコントローラをアップグレードする場合。本ドキュメントは、 ONTAP 9.8 へのアップグレードには適用されません。
-* 新しいコントローラを新しい HA ペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する必要はありません。
+* 新しいコントローラを新しいHAペアとしてクラスタに追加したり、ボリューム移動を使用してデータを移行したりすることはありません。
 * ONTAP の管理経験があり、 diagnostic 権限モードで作業する場合のリスクが十分にあります。
+* ハードウェアアップグレードの組み合わせは、 <<sys_commands_95_97_supported_systems,サポートされているモデルマトリックス>> 。
 * MetroCluster 構成をアップグレードする場合は、 4 ノード以上の FC 構成になり、すべてのノードで ONTAP 9.6 または 9.7 を実行します。
 
 
+[NOTE]
+====
+* 。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています
++
+link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["既存のシステムシャーシとディスクを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します。"]です。
 
-NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
+* この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
 
-[[sys_commands _95_97_supported_systems] コントローラのアップグレードでサポートされるモデルマトリックスを次の表に示します。
+
+====
+
+
+== サポートされているシステムアップグレードの組み合わせ
+
+次の表は、この ARL 手順を使用したコントローラのアップグレードでサポートされるモデル マトリックスを示しています。
 
 [cols="50,50"]
 |===
@@ -63,7 +75,13 @@ NOTE: コントローラのアップグレードモデルの組み合わせが�
 * 一時的なクラスタポートを使用したコントローラのアップグレードが完了したら、クラスタ LIF を無停止で e3a および e3b 、 AFF A400 システムの 100GbE ポート、 FAS8300 システムの e0c および e0d 、 100GbE ポートに移行できます。
 
 
-コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+
+
+== 別のハードウェアアップグレード手順を選択する
+
+* link:../upgrade-arl/index.html["コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します"]です。
+* コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+
 
 .関連情報
-を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。
+参照link:other_references.html["参考資料"] _ONTAP 9 ドキュメント_にリンクします。

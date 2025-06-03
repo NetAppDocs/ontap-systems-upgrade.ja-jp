@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade 
 summary: ボリュームを移動することでアップグレードの手順を完了するには、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは NCA ポートを設定する必要がある場合もあります。 
 ---
-= アップグレードを完了します
+= ボリューム移動のアップグレードを完了する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -38,7 +38,7 @@ summary: ボリュームを移動することでアップグレードの手順�
 ** 「外部キー管理の暗号化キーを復元する」
 
 
-. 新しいノードに FC ポート（オンボードまたは FC アダプタ上）、オンボード CNA ポート、または CNA カードがある場合は、 FC ポートまたは CNA ポートを設定し、ストレージシステムプロンプトから次のコマンドを入力します。
+. 新しいノードに FC ポート (オンボードまたは FC アダプタ上)、オンボード CNA ポート、または CNA カードがある場合は、ストレージ システム プロンプトから次のコマンドを入力して FC ポートまたは CNA ポートを構成します。
 +
 「 system node hardware unified-connect modify -node node-name -adapter adapter-name -mode ｛ fc | cna ｝ -type ｛ target | initiator ｝ 」です
 

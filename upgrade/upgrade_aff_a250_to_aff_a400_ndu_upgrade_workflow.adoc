@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ndu, nondisruptive, upgrade, AFF, FAS, systems, entry, level 
 summary: ストレージやクラスタスイッチを追加購入することなく、エントリレベルのNetApp AFF およびFAS システムに対してNDUを実行できます。 
 ---
-= ワークフロー
+= ドライブシェルフワークフローに変換してAFF A250をAFF A400にアップグレードします
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

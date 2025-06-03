@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.htm
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
 summary: 'ONTAP 9.8 以降を実行するコントローラをアップグレードするために ARL を使用するかどうかを決定するには "system controller replace" コマンドを使用します' 
 ---
-= アグリゲートの再配置手順を使用するかどうかを決定します
+= この集約再配置手順を使用するかどうかを決定します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: 'ONTAP 9.8 以降を実行するコントローラをアップグレー
 
 
 [role="lead"]
-このコンテンツでは、既存のデータとディスクを残したまま、HAペアのストレージコントローラを新しいコントローラにアップグレードする方法について説明します。これは複雑な手順であり、経験豊富な管理者のみが使用する必要があります。
+コントローラハードウェアをアップグレードするには、アグリゲート再配置（ARL）の方法が複数あります。この手順では、ONTAP 9.8以降を実行しているシステムで、「システムコントローラ置換コマンド」を使用してアグリゲート再配置（ARL）を行い、コントローラハードウェアをアップグレードする方法について説明します。この複雑な手順は、経験豊富なONTAP管理者のみが実行できます。
 
-このコンテンツは、次のような状況で使用できます。
+この ARL 手順がコントローラ ハードウェアのアップグレードに適しているかどうかを判断するには、サポートされているアップグレードについて次の状況をすべて確認する必要があります。
 
 * ONTAP 9.8以降を実行している。
 * 新しいコントローラを新しいHAペアとしてクラスタに追加したり、ボリューム移動を使用してデータを移行したりすることはありません。
@@ -27,10 +27,21 @@ MetroCluster IP構成のアップグレードについては、MetroCluster Upgr
 
 
 
+[NOTE]
+====
+* 。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています
++
+link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["既存のシステムシャーシとディスクを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します。"]です。
 
-NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
+* この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
 
-[[sys_commands _98_supported_systems]] 次の表は、コントローラのアップグレードでサポートされるモデルマトリックスを示しています。
+
+====
+
+
+== サポートされているシステムアップグレードの組み合わせ
+
+次の表は、この ARL 手順を使用してコントローラのアップグレードを実行する場合にサポートされるシステム マトリックスを示しています。
 
 |===
 | 古いコントローラ | 交換用コントローラ 
@@ -110,7 +121,13 @@ NOTE: コントローラのアップグレードモデルの組み合わせが�
 
 
 ====
-コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+
+
+== 別のハードウェアアップグレード手順を選択する
+
+* link:../upgrade-arl/index.html["コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します"]です。
+* コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+
 
 .関連情報
-を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。
+参照link:other_references.html["参考資料"] _ONTAP 9 ドキュメント_にリンクします。

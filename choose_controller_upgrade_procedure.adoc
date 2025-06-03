@@ -21,21 +21,16 @@ summary: 一般に、コントローラハードウェアのアップグレー�
 
 * FAS2620、FAS2650、FAS2720、およびFAS2750
 * AFF A150、AFF A200、AFF A220、AFF A250、AFF A700s、 およびAFF A800
-+
-
-NOTE: アグリゲートの再配置を使用して、AFF A800をAFF A70またはAFF A90にアップグレードすることもできます。link:upgrade-arl-auto-affa900/index.html["詳細はこちら。"]です。
-
 * AFF C190、AFF C250、およびAFF C800
-+
-
-NOTE: アグリゲートの再配置を使用してAFF A250とAFF C250をアップグレードすることもできます。link:upgrade-arl-auto-affa900/index.html["詳細はこちら。"]です。
-
 * ASA A150、ASA A250、ASA A800、およびASA AFF A220
 +
 
 NOTE: ASA R2交換システムへのASAアップグレードはサポートされていません。ASAからASA R2システムへのデータの移行については、を参照してくださいlink:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SANホストからASA R2ストレージシステムへのデータアクセスを有効にする"^]。
 
 
+
+
+NOTE: 特定のコントローラのアップグレードでは、アグリゲートの再配置を使用して、内部ドライブを備えたシステムをアップグレードできます。link:upgrade-arl/index.html["詳細はこちら。"]です。
 
 お使いのシステムがリストにない場合は、 https://hwu.netapp.com["NetApp Hardware Universe の略"^] 内蔵ドライブがあるかどうかを確認します。
 

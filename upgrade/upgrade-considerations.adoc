@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: plan, upgrade, consideration, contact, technical, support, recommendation, guidance, cluster, considerations for upgrading controller hardware 
 summary: アップグレードを計画するには、アップグレードに関する一般的な考慮事項を理解しておく必要があります。必要に応じて、テクニカルサポートに連絡して、クラスタの構成に固有の推奨事項とガイダンスを確認してください。 
 ---
-= コントローラハードウェアのアップグレードに関する考慮事項
+= ボリュームまたはストレージを移動してコントローラハードウェアをアップグレードする場合の考慮事項
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -30,7 +30,7 @@ NOTE: コントローラのアップグレード手順を開始する前に、�
 | クラスタ内で異なるコントローラプラットフォームモデルを組み合わせていますか。  a| 
 link:https://hwu.netapp.com["ストレージプラットフォームの混在ルールに従っていることの確認"^]。
 
-HAペアのコントローラは、AFF、FAS、またはASAの2つのモデルである必要があります。
+HA ペアのコントローラは、2 つの AFF、FAS、または ASA モデルである必要があります。
 
 
 
@@ -67,7 +67,7 @@ NOTE: FCP、iSCSI、FCoEなどのブロックプロトコルを提供する8ノ�
 
 
 
-| 複数のHAペアを含むクラスタでHAペアをアップグレードできますか。 | コントローラのアップグレードを実行しないHAペアのノードにイプシロンを移動します。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。 
+| 複数の HA ペアがあるクラスター内の HA ペアをアップグレードしていますか? | コントローラのアップグレードを実行していない HA ペアのノードにイプシロンを移動します。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。 
 
 
 | ONTAP 9.6P11、9.7P8、またはそれ以降のリリースを実行していますか。 | NetAppでは、特定のノード障害が発生したときにクラスタをクォーラムに戻すために、Connectivity、Liveliness、and Availability Monitor（CLAM）テイクオーバーを有効にすることを推奨しています。。 `kernel-service` このコマンドには、advanced権限レベルのアクセスが必要です。詳細については、NetAppナレッジベースの記事を参照してください。 https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["CLAMテイクオーバーのデフォルト設定が変更されました"^]。

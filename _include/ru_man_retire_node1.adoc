@@ -77,7 +77,7 @@ WARNING: ストレージフェイルオーバーを無効にしないと、コ�
 network interface show -role data -curr-node 2_node2 -home-node1_home_`
 
 +
-「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。停止している LIF がある場合は、を参照してください link:troubleshoot_index.html["不具合のすす"] セクション。
+「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。LIFがダウンしている場合は、 link:aggregate_relocation_failures.html["不具合のすす"]セクション。
 
 . 次のいずれかを実行します。
 +
@@ -122,7 +122,7 @@ High Availability Configured: false
 ====
 4 ノードクラスタの場合は、クラスタ内の別の HA ペアのノードにイプシロンが設定されていることがあります。
 
-複数の HA ペアを含むクラスタの HA ペアをアップグレードする場合は、コントローラのアップグレードを実行していない HA ペアのノードにイプシロンを移動する必要があります。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。
+複数の HA ペアがあるクラスター内の HA ペアをアップグレードする場合は、コントローラーのアップグレードが行われていない HA ペアのノードにイプシロンを移動する必要があります。たとえば、 HA ペア構成の nodeA / nodeB および nodeC / ノードを含むクラスタで nodeA / nodeB をアップグレードする場合は、イプシロンを nodeC またはノードに移動する必要があります。
 
 ====
 +

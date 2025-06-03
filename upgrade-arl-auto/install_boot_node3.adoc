@@ -21,11 +21,14 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 
 ノード 1 にインストールされている ONTAP 9 のバージョンが異なる場合は、ノード 3 をネットブートする必要があります。node3 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、の手順に従って、後続のシステムのブートに使用する正しいファイルをブートメディアデバイスにダウンロードできます link:prepare_for_netboot.html["ネットブートを準備"]。
 
-.重要
+[IMPORTANT]
+====
+* AFF A800 または AFF C800 コントローラのアップグレードでは、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
 * ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <<auto_install3_step1,手順 1.>> から <<auto_install3_step21,手順 21>>をクリックしてから、このセクションの指示に従います link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、メンテナンスモードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<auto_install3_step23,手順 23>>。
 * ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を完了して、にアクセスする必要があります link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] セクションで、クラスタ・プロンプトでコマンドを入力します。
 
 
+====
 .手順
 . [[auto_install3_step1] ノード 3 のラックスペースがあることを確認します。
 +
@@ -34,7 +37,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 . [[auto_install3_step2] ノードモデルの _Installation and Setup Instructions_ に従って、ラックにノード 3 をインストールします。
 +
 
-NOTE: 両方のノードを同じシャーシに搭載したシステムにアップグレードする場合は、 node4 と node3 をシャーシに設置します。そうしないと、ノードをブートしたときにノードがデュアルシャーシ構成と同じように動作し、 node4 をブートした場合、ノード間のインターコネクトは稼働しません。
+NOTE: 両方のノードを同じシャーシに搭載したシステムにアップグレードする場合は、 node4 と node3 をシャーシに設置します。そうしないと、ノード 3 を起動すると、ノードはデュアル シャーシ構成であるかのように動作し、ノード 4 を起動すると、ノード間の相互接続が確立されません。
 
 . [[auto_install3_step3]] ケーブルノード 3 を接続し、ノード 1 からノード 3 に接続を移動します。
 +

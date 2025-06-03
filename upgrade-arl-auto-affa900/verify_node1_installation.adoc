@@ -31,7 +31,36 @@ cluster show -node node1 -fields health`
 +
 「 health 」フィールドの出力は「 true 」でなければなりません。
 
-. node1 が node2 と同じクラスタに含まれており、正常な状態であることを確認します。
+. この手順は以下のアップグレード構成に適用されます。その他のシステムアップグレードの場合は、この手順をスキップして<<verify-node1-step3,手順 3>> ：
++
+** 2ノードのスイッチレスクラスタ
+** スイッチ接続されたAFF A250またはAFF C250システムをAFF A50、AFF A30、AFF C30、またはAFF C60システムにアップグレードする
+
+
++
+--
+node1 が自動的にクォーラムに参加しない場合:
+
+.. ポート e1a と e1b の IPspace を確認します。
++
+「 network port show 」のように表示されます
+
+.. IPspace が「Cluster」でない場合は、e1a と e1b の IPspace を「Cluster」に変更します。
++
+`network port modify -node <node_name> -port <port> -ipspace Cluster`
+
+.. ポート e1a と e1b の IPspace が「Cluster」であることを確認します。
++
+「 network port show 」のように表示されます
+
+.. ノード1のクラスタLIFをe1aとe1bに移行します。
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
+
+
+
+--
+. [[verify-node1-step3]]node1 と node2 が同じクラスターの一部であり、クラスターが正常であることを確認します。
 +
 「 cluster show 」を参照してください
 
