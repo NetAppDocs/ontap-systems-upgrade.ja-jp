@@ -22,7 +22,7 @@ NOTE: アグリゲートおよび LIF のホーム所有者は変更されませ
 
 . 処理が一時停止したまま、ルート以外のすべてのアグリゲートが node2 でそれぞれの状態でオンラインになっていることを確認します。
 +
-storage aggregate show -node _node2 --state online -root false
+`storage aggregate show -node <node2> -state online -root false`
 
 +
 次の例は、 node2 のルート以外のアグリゲートがオンラインになっていることを示しています。
@@ -42,19 +42,19 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 アグリゲートがオフラインになった場合、または node2 で外部になった場合は、各アグリゲートに対して 1 回、 node2 で次のコマンドを使用してアグリゲートをオンラインにします。
 
 +
-storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . node2 で次のコマンドを使用し、出力を調べて、すべてのボリュームがオンラインであることを確認します。
 +
-volume show -node-node2 --状態オフライン
+`volume show -node <node2> -state offline`
 
 +
 node2 上にオフラインのボリュームがある場合は、各ボリュームに対して 1 回、 node2 で次のコマンドを使用してオンラインにします。
 
 +
-'volume online -vserver_name_-volume_name_`
+`volume online -vserver <vserver_name> -volume <volume_name>`
 
 +
-このコマンドで使用する'_vserver_name_'は'前のvolume showコマンドの出力にあります
+その `vserver_name`このコマンドで使用する方法は、前の出力で確認できます。  `volume show`指示。
 
 

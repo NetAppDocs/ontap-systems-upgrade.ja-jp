@@ -630,7 +630,6 @@
   <block id="01a72c63e79e1fcc9b3e0cac4fb2bf75" category="list-text">前の手順で確認したキー管理サーバを新しいコントローラのキー管理サーバリストに追加します。</block>
   <block id="3cdf420c4abece4e0eba648610592dde" category="cell">「 securitykey-manager external restore 」このコマンドには、 OKM のパスフレーズが必要です</block>
   <block id="a9849e92b148965a7bbb6c14d0afbcd0" category="cell">オンボードキーマネージャ（ OKM ）</block>
-  <block id="f52de228b93a6f965c1879aa97b007d6" category="paragraph">認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。volume online コマンドを使用して ' これらのボリュームをオンラインに戻します</block>
   <block id="7bd5452d2f3a1c07fc54d3a08cc82d64" category="paragraph">ノード 3 にオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードがある場合は、残りの手順を完了する前に設定を行う必要があります。</block>
   <block id="d897564a1ca4a58b7f422ba34b232ab7" category="paragraph">セクションの完了が必要な場合があります <block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>、を参照してください <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
   <block id="a1a2d377f686ce4835b9ee342fd6089b" category="list-text"><block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block></block>
@@ -1105,9 +1104,6 @@
   <block id="844ad6e55c95a4328e37b5e065b5ff4a" category="paragraph">「システム・ノード AutoSupport modify 」</block>
   <block id="e31a23cd4ecc24fce8358862c8b9bae7" category="list-text">新しい各ノードから、アップグレード後の AutoSupport メッセージをテクニカルサポートに送信します。</block>
   <block id="39f6fe42807470e793eabaa7b4decf63" category="paragraph">「 system node AutoSupport invoke -node node_name -type all -message 」 MAINT= end node_name が platform_old から platform_new に正常にアップグレードされました</block>
-  <block id="e68c8836280fba147b04a2b14b196600" category="paragraph">オンボードキー管理と外部キー管理のどちらを使用しているかに応じて、次のいずれかの手順を実行します。</block>
-  <block id="0ba3cc03b09a456d5100379e45dfaaba" category="list-text">「オンボード・キー管理の暗号化キーをリストアする」</block>
-  <block id="a96d0d7d353c649cc2f1612f3100f861" category="list-text">「外部キー管理の暗号化キーを復元する」</block>
   <block id="ef613ca6be844d20a9465aad12778acf" category="list-text">新しいノードに FC ポート（オンボードまたは FC アダプタ上）、オンボード CNA ポート、または CNA カードがある場合は、ストレージシステムプロンプトで次のコマンドを入力して、 FC ポートまたは CNA ポートを設定します。</block>
   <block id="7334dc04c7292582343d824254e622ce" category="paragraph">「 system node hardware unified-connect modify -node node-name -adapter adapter-name -mode ｛ fc | cna ｝ -type ｛ target | initiator ｝ 」です</block>
   <block id="b50a05f2d30350b2ea8e112696c796d0" category="paragraph">CNA の設定は、 CNA アダプタがオフラインの場合にのみ変更できます。</block>
@@ -1615,7 +1611,6 @@
   <block id="7cfd4d042bb6ab02bc385b9c06501763" category="cell">ステージ 3 ： _ インストールとブート node3 _ ステージ 5 ： _ インストールとブート node4 _</block>
   <block id="72a91a015e8c747a5a63794308310840" category="cell">SP の IP アドレス</block>
   <block id="e3d8433cfe5569460492707086339074" category="cell">ライセンスキー</block>
-  <block id="bb2a59fbd20fec79ac114c7a9f22ead2" category="cell">外部キー管理サーバの IP アドレス</block>
   <block id="234cfc2e3636ba2a3e5d47da84d5bd32" category="cell">ステージ 1 ： _ ストレージ暗号化のディスクのキーを変更 _</block>
   <block id="a6bab46fa807f06174c4873c5331a9b2" category="cell">ステージ 6 ：新しいノードでのストレージ暗号化のセットアップ _</block>
   <block id="09c90f884edd2efc00874f9fc863daeb" category="cell">Web にアクセスできるディレクトリの名前とパス。ノードをネットブートするためにファイルをダウンロードします</block>
@@ -2567,8 +2562,6 @@
   <block id="0fe674cba26a6125717793de11bb3096" category="inline-link">クラスタ拡張管理</block>
   <block id="ba4c26e136f2c434b8b6af81213365cf" category="paragraph"><block ref="ba4c26e136f2c434b8b6af81213365cf" category="inline-link-rx"></block></block>
   <block id="9d9192129e1b9a1e59bd50fc144f8867" category="paragraph"><block ref="9d9192129e1b9a1e59bd50fc144f8867" category="inline-link-rx"></block></block>
-  <block id="579f7a458ea3f243e9743154fab94bfb" category="inline-link">CLI を使用して暗号化を管理します</block>
-  <block id="6aee45ea83745bd29b2b86870d2afe83" category="list-text">の該当する手順を使用して、ストレージまたはボリュームの暗号化機能をリストアします<block ref="713156fa56254a04d458a101e174aa50" category="inline-link-rx"></block> 内容</block>
   <block id="086420e81e05bfb84cdecaa4b231e80e" category="paragraph"><block ref="086420e81e05bfb84cdecaa4b231e80e" category="inline-link-rx"></block></block>
   <block id="fbe34624578a760349ae68127c704b12" category="paragraph"><block ref="fbe34624578a760349ae68127c704b12" category="inline-link-rx"></block></block>
   <block id="22e61f778fcc138303ee1a3352b40770" category="list-text">にログインします<block ref="9a6f401ca1e7e89d8a0c29fb0cbe81b7" category="inline-link-rx"></block> サイト</block>
@@ -2582,7 +2575,6 @@
   <block id="cfd2431baff6fc4122f2c8fed540c128" category="paragraph">ストレージを移動してアップグレードするプロセスでは、 node3 と node4 の電源をオンにし、ソフトウェアイメージをブートしてノードを設定します。元のノードと新しいノードで、物理ポートのレイアウトが異なる場合があります。ポートと接続の適切なレイアウトを特定するには、元のノードと交換用ノードの間のポートのマッピングを行う必要があります。</block>
   <block id="a57aac48a821a53a307169a496e18118" category="inline-link-macro">手順 5.</block>
   <block id="2b74e29dce2257a68211617c402f9061" category="paragraph">新しいノードで実行されている ONTAP のバージョンが元のノードのバージョンと異なる場合は、ネットアップサポートサイトから Web にアクセスできるディレクトリに正しい「 &lt;ONTAP_version&gt;_image.tgz 」ファイルをダウンロードしておく必要があります（ storage_, を移動するときのアップグレードの準備を参照してください）。 <block ref="a49c2511b21eba354c03ca701f675aae" category="inline-link-macro-rx"></block>）。システムのネットブートを実行するには、「 &lt;ONTAP_version&gt;_image.tgz 」ファイルが必要です。</block>
-  <block id="fb466db54f62bed3a97d8ba7d3ed2c8e" category="list-text">の該当する手順を使用して、ストレージまたはボリュームの暗号化機能をリストアします<block ref="9dcdd70dc160b50ece72ebdfa01ae45b" category="inline-link-rx"></block> 内容</block>
   <block id="ac8600b2addf6ed639b9f65bda812bde" category="list-text">アップグレードする新しい各ノードについて、デフォルトのクラスタポート、データポート、およびノード管理ポートに関する情報を取得します。<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block></block>
   <block id="2c6817284baf4051a1411668b9c30fcb" category="list-text">[[prepare_move_store_5] ネットブートの実行に使用するファイルをダウンロードして準備します。</block>
   <block id="f18720a1eb7d7bace925c2a97a20075f" category="list-text">にアクセスします<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block> システムのネットブートの実行に使用するファイルをダウンロードするには、次の手順を実行します。</block>
@@ -3347,10 +3339,8 @@
   <block id="5861bf10ae07bb7c0e6218d5663221a4" category="paragraph">ucadmin modify -m fc | cna-t initiator | target_adapter_name_`</block>
   <block id="c5fabf666636164983c54a60426edaab" category="cell">「network fcp adapter modify -node node_name --adapter_adapter_adapter_adapter_name_-state up」の形式で指定します</block>
   <block id="e07e74f9f1df10fa040f36e818e29bd1" category="cell">'fcp config_adapter_name_up'</block>
-  <block id="9fb768ad6510fe46b2016783cac8eadb" category="paragraph">storage aggregate show-owner-name_node2_`</block>
   <block id="cde8cf801e542566f503970c16a89b61" category="admonition">event log showコマンドを実行すると'発生したエラーが表示されます</block>
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph">storage aggregate online -aggregate _aggr_name_`</block>
-  <block id="9768bc676d49dbda7bf856a2930c4b52" category="paragraph">volume show -node _node3 --state offline`</block>
   <block id="ffd863d528f6b76a6f398dd53b185d1d" category="cell">`disk reassign -s `_node2 _sysid_-d _node4 _sysid_-p _node3 _sysid_`</block>
   <block id="9666e158b6e459758482181fdc5caf71" category="cell">disk disk reassign -s `_node2 _sysid_-d_node4 _sysid_`</block>
   <block id="ff573218a71a52e566a9d2cb9c112902" category="paragraph">disk reassignコマンドは'_node2 _sysid_'が現在の所有者であるディスクだけを再割り当てします</block>
@@ -3383,13 +3373,6 @@
   <block id="06c8bee57dd2167bbb1dbfa5749c956a" category="paragraph">cluster modify -node _node2 _-epsilon true</block>
   <block id="0814e17724c439ef0cd37ea13167d663" category="paragraph">system node halt -node _node1_`</block>
   <block id="15a27fbf1719df235581c1df85f4770c" category="paragraph">'network interface show -curr-node 4：</block>
-  <block id="7ad7509ea03580dbba4ac42f8a0e9061" category="paragraph">storage failover modify -enabled true -node _node3_`</block>
-  <block id="f95d062b8f3dd313f851677720fd47c0" category="paragraph">storage aggregate show-owner-name_node3_`storage aggregate show-owner-name_node4 _`</block>
-  <block id="68c05b65b923848aa186ea69ee9487d7" category="paragraph">volume show -node _node3 --state offline `volume show -node _node4 --state off`</block>
-  <block id="113d7e75ab71ebd9bcdd1155228482fc" category="paragraph">'volume online -vserver_name_-volume_name_`</block>
-  <block id="d5538e0d48b9561003d2506ab100c330" category="paragraph">'system license add -license-code_license_code'license_code'license_code..._`</block>
-  <block id="f8bb98c031da24e788f5f02332ac5bb8" category="paragraph">system license clean-up-unused -expired `system license delete -serial-number_node_name --package_license_package_package_`</block>
-  <block id="e4c31b5f2905d746c57c1b1f1e038eac" category="paragraph">'system license delete -serial-number_node1_serial_number_-package *`system license delete -serial-number_node2 _serial_number_-package *`</block>
   <block id="bb445430e4b0638bdd79f943cd99a597" category="paragraph">system service-processor network modify -node _node_name _`</block>
   <block id="676d4cfadd30ded5fabdceb082fde10a" category="paragraph">network interface show -curr-node node1 __ role cluster、intercluster、node-mgmt、cluster-mgmt-mgmt</block>
   <block id="bbbfa87c5efa2321ddc7c2656baf791f" category="paragraph">'network port show -node1_-type physical’</block>
@@ -3452,17 +3435,8 @@
   <block id="8909b365f802b24a2d37f4d90ed96920" category="paragraph">「network port ifgrp remove-port -node_node_name」-ifgrp_ifgrp_name -port_port_name_`」という形式で指定します</block>
   <block id="173bdd18bf4da14689baa4b97bbd0911" category="paragraph">ucadmin modify -m fc -t target_adapter_`</block>
   <block id="e963df8c33a142fa50363ce5f3bbcbb9" category="paragraph">ucadmin modify -m fc -t initiator_adapter_`</block>
-  <block id="b552b2e6a2a24270da2f85599d5289a0" category="paragraph">storage aggregate show -node _node3 --state online -root false</block>
-  <block id="592033840c276a690ab8f96c3c733525" category="paragraph">このコマンドで使用する'_vserver_name_'は'前のvolume showコマンドの出力にあります</block>
-  <block id="5ae519d56c0326f582652e283c3ea809" category="paragraph">「network interface modify -vserver _vserver_name -- lif_lif_name_-home-node_name__-status-admin up</block>
   <block id="2d5c970ee87c5df0e21b3a8b9ed88ccb" category="paragraph">「security key-manager external add-servers -key-servers_key_manager_server_ip_address _」のように指定します</block>
   <block id="cf1e3ade592584c451b16fefa9ffaf61" category="paragraph">「storage failover show -fields local-missing-disks、partner-missing-disks」</block>
-  <block id="0d12a6e9cec4647b5d9b5253b4073e2b" category="paragraph">storage aggregate show-owner-name_node3_`</block>
-  <block id="0e71c4af1c9d433ba1aca904b40b449e" category="paragraph">storage aggregate show-owner-name_node4</block>
-  <block id="6041278c5d25ed9c37ecc9a4ba73306b" category="paragraph">'system license add -license-code_license_code'license_code'license_code..._`</block>
-  <block id="ee58b8665fc7b6cbed254e1253d5deb9" category="paragraph">'system license delete -serial-number_node_name --package_license_package_`</block>
-  <block id="bcacb0089032ec901277a70c73c0ec1b" category="paragraph">'system license delete -serial-number_node1_serial_number'-package *</block>
-  <block id="4a472f5ad7101a303b004c96117957a1" category="paragraph">'system license delete -serial-number_node2 _serial_number'-package *</block>
   <block id="0a06fcfc5f0fe34a7f9397c4cfc05b2a" category="paragraph">`set diag; systemshell -node-node_name --コマンドsudo kenv -u -p kmip.init.maxwait`</block>
   <block id="3bc434e6b7496efb94a7be3c795bee4a" category="paragraph">storage aggregate relocation start -node-source_node__ destination_destination-node-aggregate-list *</block>
   <block id="8723a951ee1fe15da772afbecba7e9cc" category="paragraph">'system controller replace start-nodes_node_name _`</block>
@@ -3508,8 +3482,6 @@
   <block id="6ffba319a9343d4d7079cd092fc1731f" category="paragraph">「network interface migrate -vserver Cluster -lif LIF_name -source-node node4 destination -node node4 -destination-port_name_`</block>
   <block id="6f6feb1d5079ae856c3e038f36cf5511" category="paragraph">「network interface modify -vserver _vserver_-lif lif_name _–home-port_port_name_`」です</block>
   <block id="714116d25588d456eb2625b3a4e3438f" category="paragraph">storage aggregate relocation start -Node_node1_-destination_node2 _aggregate-list *-ndocontroller -upgrade true</block>
-  <block id="c2acdfddae4bd8e19301f3c9da97795f" category="paragraph">storage aggregate show-owner-name_node1_`</block>
-  <block id="782650bc65c7f77fc89c4076c7b6450d" category="paragraph">volume show -node node1 __-state offline`</block>
   <block id="d87163e47ee27f2782fe148edbe3ed57" category="paragraph">'network port reachability repair-Node_node_name -- port_port_port_name_`</block>
   <block id="ec14d769131d094d612c9fca445d8baa" category="paragraph">「変位インターフェイスのリストア-home-node-node-node_node_name _- vserver_vserver_name _-lif - name_lif_name_name_」のように指定します</block>
   <block id="5062794872bed9f85f36826d260cf264" category="paragraph">「network interface modify -vserver _vserver_name __ lif_lif_name_-home-nodename_-status-admin up</block>
@@ -3780,7 +3752,6 @@
   <block id="93cbc4495a566db3a58548f326fa221c" category="paragraph">システムをネットブートする前に、すべてのSnapMirror関係が休止されていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。</block>
   <block id="1cf6b38ccce07c615f777e8d49040349" category="inline-link">ONTAP ブートメニューから外部キー管理サーバの設定をリストアする方法</block>
   <block id="a9021e1b94f8e36032c1a900148d17bf" category="paragraph">詳細については、技術情報アーティクルを参照してください<block ref="d55f681383ef8cdbd5ac64000ea6e309" category="inline-link-rx"></block>。</block>
-  <block id="3e735cdc84f6fab485c4ddb66b026489" category="paragraph">認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。を使用して、それらのボリュームをオンラインに戻します<block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block> コマンドを実行します</block>
   <block id="595e785894184e8832420129093393c7" category="summary">オンボードキーマネージャを使用して、ONTAP 9.8以降を実行しているコントローラでARLを手動でアップグレードする際に認証キーを管理します。</block>
   <block id="7de07b30845475194f5305d135dd504b" category="paragraph">オンボードキーマネージャ（OKM）を使用して認証キーを管理できます。OKMをセットアップした場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。</block>
   <block id="b57235dcd9249f0e9bf6001eecd99ce5" category="list-text">クラスタ全体のパスフレーズを記録します。</block>
@@ -3788,7 +3759,6 @@
   <block id="8cada82213a4eb50c1f0cba46389bd44" category="list-text">を実行して、キー管理ツールの情報をバックアップします<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> コマンドを実行します</block>
   <block id="219d5a10054a3daaa60cc6dc3881a506" category="paragraph">ノード 1 とノード 2 が別々のシャーシに搭載されている場合は、ノード 3 をノード 1 と同じラックの場所に設置できます。ただし、ノード1がノード2と同じシャーシに搭載されていた場合は、ノード3をノード1の場所に近い独自のラックスペースに配置する必要があります。</block>
   <block id="7abb4d22dfb96ceb2a52ebfc5cef2026" category="admonition">ほとんどのプラットフォームモデルには一意のインターコネクトカードモデルがあるため、インターコネクトカードまたはクラスタインターコネクトケーブルの接続を node1 から node3 に移動する必要はない場合があります。MetroCluster 構成の場合は、FC-VIケーブルの接続をノード1からノード3に移行する必要があります。新しいホストに FC-VI カードがない場合は、 FC-VI カードの移動が必要になることがあります。</block>
-  <block id="215bdc272bd2e7402000e545b699610b" category="list-text">[[man_install3_step16]] NetApp Storage Encryption（NSE）ドライブがインストールされている場合は、次の手順を実行します。</block>
   <block id="28fabaf13c83a39f567169d484c2bdb7" category="admonition">手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> 使用している自己暗号化ドライブのタイプを確認するため。</block>
   <block id="c31ef72d8e3bd3a09ff6ce8b371d8d63" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 終了：<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> または<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>：</block>
   <block id="f0b1dfc1f82eec89fa61235553e2e4d0" category="cell">FIPS 140-2レベル2の自己暗号化要件に準拠したNSEドライブ</block>
@@ -3910,7 +3880,6 @@
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">ONTAP 9.7以前を実行しているコントローラでARLを手動でアップグレードする際に、OKMを使用して認証キーを管理します。</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">オンボードキーマネージャを使用してストレージ暗号化を管理します</block>
-  <block id="73d106cd4da3fdbd0b8a8317db146c37" category="list-text">[boot_node2_step1]] NetApp Storage Encryption（NSE）ドライブがインストールされている場合は、次の手順を実行します。</block>
   <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">* 注： AutoSupport は、ストレージ・システムを初めて設定したときに、デフォルトで有効になっています。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。</block>
   <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 終了：<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> または<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
   <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">外部キー管理ツール</block>
@@ -4318,11 +4287,9 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">可能な場合は、元のノードと新しいノードで同じバージョンのONTAPを実行することをNetAppで推奨します。これができない場合は、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードと新しいノードのバージョンの差が4つ以下になるように、サポートされる最大バージョンに変更します。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。</block>
   <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>。</block>
   <block id="ebf27722a719cbdcb3983568ea50ef42" category="cell">_Install に戻り、 node3 をブートして、のセクションを再開します <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
-  <block id="06497c4478fee55f8a0ff3319fb722a8" category="list-text">[[auto_install4_step27]] NetAppストレージ暗号化（NSE）ドライブがインストールされている場合は、次の手順を実行します。</block>
   <block id="1e4625a567102c02db411f8ac4403956" category="list-text">[[unset_maxwait_system_commands]]構成で自己暗号化ドライブを使用している場合は、を設定します<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例：で） <block ref="e646557bd849df21a23243b7031e90bc" category="inline-link-macro-rx"></block>）を使用している場合は、次のように変数を設定解除</block>
   <block id="b0da566a6b16767a9a4f6a9815cc8a8c" category="image-alt">ケーブル管理ARMの取り外し</block>
   <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">カムハンドルを開く</block>
-  <block id="ab8dc73b82108799ac3b6894e5efe57e" category="list-text">[[A900_boot_node1]] NetAppストレージ暗号化（NSE）ドライブが取り付けられている場合は、次の手順を実行します。</block>
   <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">に記載されているストレージ暗号化のbootargsをチェックしてリセットします <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>。</block>
   <block id="e807a193ac5d601655295b7da3f1b093" category="paragraph">ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合に、ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、 UTA / UTA2 カードがないときは、 _Install and boot node4 セクションに戻って再開する必要があります <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。ノード 4 に十分なラックスペースがあることを確認してください。node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場所に node4 を配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。</block>
   <block id="1e46f02c6c16752b68ae9ed5650557a7" category="list-text">node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。</block>
@@ -5294,4 +5261,30 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="8f7d8cd660c3a1288b48778ea72e58a5" category="sidebar">このARL手順を使用するかどうかを決定する</block>
   <block id="8f921903953b3b6717329ab7de1391c1" category="sidebar">共有クラスタHAストレージ用のノード2をケーブル接続する</block>
   <block id="76751896989d28875a4eeddf2995da8d" category="sidebar">スイッチレイアウトの再構成の準備</block>
+  <block id="9c328071e0321bfbe1d164cac2c22ebd" category="paragraph"><block ref="e6b811afaa94951aac008a53e383ff23" prefix="" category="inline-code"></block></block>
+  <block id="b3b5d42abc670ac795f4b90cfc221655" category="paragraph"><block ref="cb38fc2887221a0ca6581f1d73b29ec5" prefix="" category="inline-code"></block></block>
+  <block id="028c6aaad70991eeba5c4bb66ea88329" category="paragraph">その<block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>このコマンドで使用する方法は、前の出力で確認できます。 <block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>指示。</block>
+  <block id="7edece7677f8bef06093b6be08879c67" category="paragraph"><block ref="b79a4da2e325c3015ed2f7afe206a96b" prefix="" category="inline-code"></block></block>
+  <block id="a29df3ccd4c80ed70466ab7e616060db" category="paragraph"><block ref="c1415a35d798d0e1bc89dfc239e96300" prefix="" category="inline-code"></block> &lt; ザ<block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>このコマンドで使用する方法は、前の出力で確認できます。 <block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>指示。</block>
+  <block id="316bb78c78d8c5d743c44432528cc2c4" category="paragraph"><block ref="4221e144bb878e9d4c97a49eaf2eb814" prefix="" category="inline-code"></block></block>
+  <block id="4d090b6b4178c6d326829a98b05a4cd7" category="paragraph"><block ref="534a01a4ca515955efe8376e84615e84" prefix="" category="inline-code"></block></block>
+  <block id="b7836a7a1972d5f8803e2f44bd3cb658" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block><block ref="6d203e2c19155492a108b65377909131" prefix=" " category="inline-code"></block></block>
+  <block id="4655a1857691d25ac0c12a710dad5454" category="paragraph"><block ref="365695b1d723adf070447422d9e8d907" prefix="" category="inline-code"></block><block ref="5db9f9801ff1015f8f0ec287f1a37e08" prefix=" " category="inline-code"></block></block>
+  <block id="8502756d136a7fbd63f0576ce096751b" category="paragraph"><block ref="e0dd455af4d681c74ccfc9dc72ac81da" prefix="" category="inline-code"></block></block>
+  <block id="a0cc12382dcdc36e42046d83b6c7e109" category="paragraph"><block ref="2599180db5e07a38b13f33bacd678ed0" prefix="" category="inline-code"></block><block ref="cad104e67eebc6460f05ee5386343340" prefix=" " category="inline-code"></block></block>
+  <block id="29d22afc321b012279dd6e65d63787dd" category="paragraph"><block ref="c1691ae4960273f7d983ed570ccc250a" prefix="" category="inline-code"></block><block ref="66730ced80aced888a1e584b32aac885" prefix=" " category="inline-code"></block></block>
+  <block id="dce88c7c89a608000baa31d7f41aafe5" category="cell">外部キー管理サーバーのIPアドレス</block>
+  <block id="f861760a9e4b91d9c15f4ed6899c8a67" category="list-text">オンボード キー管理または外部キー管理のどちらを使用しているかに応じて、次のいずれかの手順を使用して、ストレージまたはボリューム暗号化機能を復元します。</block>
+  <block id="7b5b637cc082477a9dd4c129c225152e" category="inline-link-macro">オンボードキー管理暗号化キーを復元する</block>
+  <block id="43a39f2ab9e3339214d6fda05936d597" category="list-text"><block ref="43a39f2ab9e3339214d6fda05936d597" category="inline-link-macro-rx"></block></block>
+  <block id="1ee623098df2f7856a034824be882999" category="inline-link-macro">外部キー管理の暗号化キーのリストア</block>
+  <block id="116698f9b98f4e456ff27e95e38fccf3" category="list-text"><block ref="116698f9b98f4e456ff27e95e38fccf3" category="inline-link-macro-rx"></block></block>
+  <block id="18b86b85ac7e74bdaf460ba1e2f65f0e" category="list-text">[[auto_install4_step27]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
+  <block id="bdac4e49f25f09fd22688c1a0aaf704a" category="paragraph">認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。これらのボリュームをオンラインに戻すには、 <block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block>指示。</block>
+  <block id="0095109d5b66e24afe910457a637e763" category="list-text">[[A900_boot_node1]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
+  <block id="c79e58170822a59a6dd931336ca868ed" category="list-text">[[boot_node2_step1]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
+  <block id="78afe52f3d782a64e711de589b4df3d3" category="paragraph"><block ref="346db28706192c9274da330f004e695a" prefix="" category="inline-code"></block></block>
+  <block id="ee003f27b169d76d97322f42ff3b1684" category="paragraph"><block ref="fa9973ef8cb7c81f6e65cb1c4e0c12f2" prefix="" category="inline-code"></block></block>
+  <block id="4dfbd3112f049daa92b3b9620a0a23b4" category="list-text">NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
+  <block id="780d3ce82c06a7096f3d7b6381f35cf4" category="list-text">[[man_install3_step16]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
 </blocks>

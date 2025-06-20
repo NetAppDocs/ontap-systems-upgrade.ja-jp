@@ -70,13 +70,10 @@ lun portset show
 +
 「 system node AutoSupport invoke -node node_name -type all -message 」 MAINT= end node_name が platform_old から platform_new に正常にアップグレードされました
 
-. の該当する手順を使用して、ストレージまたはボリュームの暗号化機能をリストアしますhttps://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["CLI を使用して暗号化を管理します"^] 内容
+. オンボード キー管理または外部キー管理のどちらを使用しているかに応じて、次のいずれかの手順を使用して、ストレージまたはボリューム暗号化機能を復元します。
 +
-オンボードキー管理と外部キー管理のどちらを使用しているかに応じて、次のいずれかの手順を実行します。
-
-+
-** 「オンボード・キー管理の暗号化キーをリストアする」
-** 「外部キー管理の暗号化キーを復元する」
+** link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["オンボードキー管理暗号化キーを復元する"^]
+** link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["外部キー管理の暗号化キーのリストア"^]
 
 
 . 新しいノードに FC ポート（オンボードまたは FC アダプタ上）、オンボード CNA ポート、または CNA カードがある場合は、ストレージシステムプロンプトで次のコマンドを入力して、 FC ポートまたは CNA ポートを設定します。

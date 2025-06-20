@@ -167,7 +167,7 @@ NOTE: node4にはブート環境のプロンプトが表示されたままにし
 +
 「デフォルト設定」
 
-. [[man_install3_step16]] NetApp Storage Encryption（NSE）ドライブがインストールされている場合は、次の手順を実行します。
+. [[man_install3_step16]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。
 +
 
 NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。

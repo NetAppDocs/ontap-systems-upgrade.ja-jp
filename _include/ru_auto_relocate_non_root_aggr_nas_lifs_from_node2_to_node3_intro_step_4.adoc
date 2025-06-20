@@ -18,7 +18,7 @@ NOTE: アグリゲートおよび LIF のホーム所有者は変更されませ
 .手順
 . ルート以外のすべてのアグリゲートがオンラインで、ノード 3 でそれらの状態になっていることを確認します。
 +
-storage aggregate show -node _node3 --state online -root false
+`storage aggregate show -node <node3> -state online -root false`
 
 +
 次の例は、 node2 のルート以外のアグリゲートがオンラインになっていることを示しています。
@@ -37,24 +37,21 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 アグリゲートがオフラインになった場合、または node3 で外部になった場合は、各アグリゲートに対して次のコマンドを実行してそれらのアグリゲートをオンラインにします。
 
 +
-storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . node3 で次のコマンドを実行し、出力を調べて、すべてのボリュームがノード 3 でオンラインになっていることを確認します。
 +
-volume show -node _node3 --state offline`
+`volume show -node <node3> -state offline`
 
 +
 node3 にオフラインのボリュームがある場合は、各ボリュームに対して次のコマンドを実行してそれらのボリュームをオンラインにします。
 
 +
-'volume online -vserver_name_-volume_name_`
-
-+
-このコマンドで使用する'_vserver_name_'は'前のvolume showコマンドの出力にあります
+`volume online -vserver <vserver_name> -volume <volume_name>` < ザ `vserver_name`このコマンドで使用する方法は、前の出力で確認できます。  `volume show`指示。
 
 . LIF が正しいポートに移動され、ステータスが「 up 」になっていることを確認します。LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +
-「network interface modify -vserver _vserver_name -- lif_lif_name_-home-node_name__-status-admin up
+`network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node_name> -status-admin up`
 
 . データ LIF を現在ホストしているポートが新しいハードウェアに存在しない場合は、ブロードキャストドメインから削除します。
 +

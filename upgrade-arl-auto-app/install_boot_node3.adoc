@@ -285,7 +285,7 @@ IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用�
 
 
 [[auto_install3_step27]]
-. NetApp Storage Encryption（NSE）ドライブを搭載している場合は、次の手順を実行します。
+. NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。
 +
 
 NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。

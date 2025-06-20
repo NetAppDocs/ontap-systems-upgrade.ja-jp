@@ -55,25 +55,25 @@ node2	    node1         true	        Connected to node1
 
 . アグリゲートがそれぞれのホームノードで所有されていることを確認します。
 +
-storage aggregate show-owner-name_node1_`
+`storage aggregate show -owner-name <node1>`
 
 +
-storage aggregate show-owner-name_node2_`
+`storage aggregate show -owner-name <node2>`
 
 . オフラインになっているボリュームがないかを確認します。
 +
-volume show -node node1 __-state offline`
+`volume show -node <node1> -state offline`
 
 +
-volume show -node-node2 --状態オフライン
+`volume show -node <node2> -state offline`
 
 . オフラインになっているボリュームがある場合は、セクションで取得したオフラインボリュームのリストと比較します link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]必要に応じて、次のコマンドを使用して、ボリュームごとに 1 回、オフラインボリュームをオンラインにします。
 +
-'volume online -vserver_name_-volume_name_`
+`volume online -vserver <vserver_name> -volume <volume_name>`
 
 . ノードごとに次のコマンドを使用して、新しいノードの新しいライセンスをインストールします。
 +
-'system license add -license-code_license_code'license_code'license_code..._`
+`system license add -license-code <license_code,license_code,license_code...>`
 
 +
 license-code パラメータには、アルファベットの文字キーをアルファベットの大文字 28 個まで入力できます。ライセンスは一度に 1 つずつ追加することも、複数追加することもできます。各ライセンスキーをカンマで区切って指定することもできます。
@@ -83,7 +83,7 @@ license-code パラメータには、アルファベットの文字キーをア�
 「システムライセンスのクリーンアップ - 未使用 - 期限切れ」
 
 +
-'system license delete -serial-number_node_name --package_license_package_`
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 
 +
 --
@@ -97,7 +97,8 @@ license-code パラメータには、アルファベットの文字キーをア�
 
 ** クラスタから特定のライセンスを削除するには、ノードで次のコマンドを使用します。
 +
-'system license delete -serial-number_node1_serial_number_-package *`system license delete -serial-number_node2 _serial_number_-package *`
+`system license delete -serial-number <node1_serial_number> -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
 
 
 
@@ -124,11 +125,11 @@ Do you want to continue? {y|n}: y
 
 . [[unset_maxwait]]構成で自己暗号化ドライブを使用している場合は、を設定します `kmip.init.maxwait` 変数をに設定します `off` （例：In_Boot node2と交換用システムモジュール_、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["手順 1."]）を使用している場合は、次のように変数を設定解除
 +
-`set diag; systemshell -node-node_name --コマンドsudo kenv -u -p kmip.init.maxwait`
+`set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
 
 . 両方のノードで次のコマンドを使用して SP を設定します。
 +
-system service-processor network modify -node _node_name _`
+`system service-processor network modify -node <node_name>`
 
 +
 を参照してください link:other_references.html["参考資料"] SP および _SP ONTAP 9 コマンドの詳細については ' システム管理リファレンスにリンクするには ' マニュアルページリファレンスを参照してください system の service-processor network modify コマンドの詳細については ' を参照してください
