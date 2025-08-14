@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/verify-rcf-configuration.html 
+keywords: aggregate, relocation, cluster, switch, rcf, shared 
+summary: スイッチ接続クラスタのアップグレード用に、クラスタ スイッチ RCF が新しいコントローラの共有クラスタ/HA ポートをサポートしていることを確認します。 
+---
+= クラスタスイッチのRCF構成を確認する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレード手順のこの段階では、すべてのデータ集約がノード 1 上にある必要があります。スイッチ接続クラスタを含む構成をアップグレードする場合は、クラスタ スイッチ参照構成ファイル (RCF) が新しいコントローラの共有クラスタ/HA ポートをサポートしていることを検証する必要があります。
+
+2ノードのスイッチレスクラスタ構成にアップグレードする場合は、このセクションをスキップして、link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html["ルート以外のアグリゲートと NAS データ LIF を node2 に戻します"] 。
+
+.手順
+. advanced 権限モードに切り替えます。
++
+「高度」
+
+. 「IC RDMA」のステータスを確認します。
++
+`ha interconnect status show`
+
++
+出力では、「IC RDMA接続」のステータスが `Up`。
+
++
+[cols="50,50"]
+|===
+| 「IC RDMA 接続」ステータスが ... | 次に、 
+
+
+| `Up` | こちらへlink:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html["ルート以外のアグリゲートと NAS データ LIF を node2 に戻します"]. 
+
+
+| `Down` | こちらへ<<verify-rcf-step3,手順 3>>. 
+|===
+. クラスター ポートを確認し、RCF を切り替えます。
++
+詳細については、を参照してください link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["スイッチ接続クラスタへの接続"]。
+
+. 「IC RDMA接続」のステータスが次のように変更されていることを確認します。 `Up` ：
++
+`ha interconnect status show`
+
+
+
+.次の手順
+link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html["ルート以外のアグリゲートと NAS データ LIF を node2 に戻します"]
