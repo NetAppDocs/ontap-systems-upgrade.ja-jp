@@ -4445,7 +4445,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="86c15a425269c6a2503b9871021e6df8" category="cell">AFF A700またはFAS9000</block>
   <block id="7f42c48311ba942f81d7a07c44c47d3b" category="admonition">このドキュメントでは、ノード名の参照としてのみ * node1 * と * node2 * という用語が使用されています。この手順を実行する場合は、ノードの実際の名前に置き換える必要があります。</block>
   <block id="a06d68e350c79a17b1b36fae9ee9106c" category="doc">AFF A90またはAFF A70モジュールをノード2に取り付けます。</block>
-  <block id="be3affc900cfc23554c8c8d7e7fb9b42" category="paragraph">アップグレード用に受け取ったAFF A90またはAFF A70コントローラモジュールをノード2に取り付けます。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
   <block id="011359cc38c137752e931fd997e519a7" category="image-alt">AFF A90またはAFF A70の取り付け</block>
   <block id="b360374fb1c72b27ec9072588d678096" category="admonition">シャーシの電源がすでにオンになっているため、ノード1はBIOSの初期化を開始し、完全に装着されるとすぐに自動ブートを実行します。ノード 1 のブートを中断するには、コントローラモジュールをスロットに完全に挿入する前に、シリアルコンソールケーブルと管理ケーブルをノード 1 のコントローラモジュールに接続することを推奨します。</block>
   <block id="da7cf8ace467e07feef604bd9a07fa23" category="list-text">自動ブートを中断すると、ノード1はLOADERプロンプトで停止します。時間内に自動ブートを中断せずにnode1がブートを開始した場合は、プロンプトが表示されるまで待ち、Ctrl+Cキーを押してブートメニューに移動します。ノードがブートメニューで停止したら、オプションを使用し<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> てノードをリブートし、リブート時に自動ブートを中断します。</block>
@@ -4481,7 +4480,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="9e0a1039504ca0408797903c8f8ca02d" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ノード1をAFF A220、AFF A200、AFF C190、FAS2620、またはFAS2720のシステムモジュールを交換します。</block>
   <block id="1bea5ea0e73e228055c8e231e1075879" category="paragraph">コントローラ内部のコンポーネントにアクセスするには、コントローラモジュールをシステムから取り外し、コントローラモジュールのカバーを取り外します。</block>
   <block id="3b59a6e4feb61a49bd8e07d1dc5ed44d" category="paragraph">ノード1のASA A150、AFF A150、またはFAS2820コントローラモジュールを設置、ケーブル接続します。</block>
-  <block id="3cf0b39ddc0b0c6fbe705a62aacc7d3c" category="list-text">シャーシの前面で、プラスのストッパーになるまで、親指で各ドライブをしっかりと押し込みます。これにより、ドライブがシャーシのミッドプレーンにしっかりと装着されます。</block>
   <block id="73ee2bd7f33c26664f94c379c6ab36d2" category="image-alt">ドライブを押してシャーシのミッドプレーンにしっかりと装着します。</block>
   <block id="9bedcc9650ba1fe86ed7720eb975429e" category="list-text">シャーシの背面に移動します。</block>
   <block id="f138b6c2f3e77b4a7b2b9693f7102662" category="list-text">ノード1のコントローラモジュールの電源装置をソースから取り外します。</block>
@@ -5306,4 +5304,10 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="48b45c4448ac737e7cd5110c5c5ab986" category="paragraph">ノード 1 を廃止するには、自動操作を再開してノード 2 との HA ペアを無効にし、ノード 1 を適切にシャットダウンします。手順の後半で、ラックまたはシャーシから node1 を取り外します。</block>
   <block id="fdece49a53b4d22867330bbf853edcbb" category="paragraph">ノード 1 を廃止した後、ノード 1 の電源がオフになっており、ネットワークに接続されていないことを確認します。 node1 と node2 の両方のアップグレードが完了するまで、node1 の古いハードウェアをこの状態のままにしておきます。その後、ノード1を廃止することができます。<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> 。</block>
   <block id="9385d14007f76e744745739d94bc306a" category="paragraph">ノード2を廃止した後、電源がオフになっており、ネットワークに接続されていないことを確認します。 node1 と node2 の両方のアップグレードが完了するまで、node2 の古いハードウェアをこの状態のままにしておきます。その後、ノード2を廃止することができます。<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3df2e25dd62a653c7cb81686296e66ad" category="admonition">シャーシの電源はすでにオンになっているため、node2 は完全に装着されるとすぐに BIOS 初期化を開始し、続いて AUTOBOOT を開始します。ノード 2 のブートを中断するには、コントローラ モジュールをスロットに完全に挿入する前に、シリアル コンソールと管理ケーブルをノード 2 コントローラ モジュールに接続することをお勧めします。</block>
+  <block id="0c1a4b73743825276f6a94f00753ae1c" category="list-text">モジュールが装着されたらすぐにシリアル コンソールを接続し、ノード 2 の AUTOBOOT を中断する準備をします。</block>
+  <block id="b83800b3bdc2a5eef7a8fe97664b1121" category="paragraph">アップグレード用に受け取ったAFF A90またはAFF A70コントローラ モジュールをノード 2 にインストールします。  Node2 は、システムの背面からコントローラを見たときにシャーシの下側のベイにあるコントローラ B です。</block>
+  <block id="4e0d7c1abfb8de7fd56ae6e56c1b7b4b" category="list-text">シャーシの前面で、親指を使って各ドライブを上部と下部のディスク ベイに、確実に止まるまでしっかりと押し込みます。これにより、ドライブがシャーシのミッドプレーンにしっかりと固定されます。</block>
+  <block id="a3fa441608c8038d19e72ef43c8108bc" category="section-title">システムコントローラの交換操作を再開します</block>
+  <block id="20d8255eb490088576c2cdeea2fb6e2a" category="list-text">ノード 2 コントローラー モジュールの電源をソースから取り外します。</block>
 </blocks>
