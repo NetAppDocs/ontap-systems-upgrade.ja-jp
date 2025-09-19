@@ -16,11 +16,17 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 [role="lead"]
 ノード2に属していたディスクをノード4に再割り当てしてから、ノード4のインストールを確認する必要があります。
 
-.このタスクについて
-このセクションの手順はノード4で実行します。
-
 .手順
-. [reassign-node2-node4-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで node2 と入力し、次の例のように node2 のディスクを node4 に再割り当てします。
+. [[reassign-node2-node4-step1]]ブート メニューで node2 が停止していることを確認し、node2 のディスクを node4 に再割り当てします。
++
+`boot_after_controller_replacement`
+
++
+少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。
+
++
+これらのプロンプトは、コンソールメッセージに埋もれている可能性があります。ノード名を入力しなかった場合や間違った名前を入力した場合は、名前をもう一度入力するように求められます。
+
 +
 .コンソールの出力例を展開します
 [%collapsible]
@@ -73,8 +79,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 .
 .
 Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
-.
-.
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node <node being replaced> disks.
 Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
 Partner sysid = 4294967295, owner sysid = 536953334
@@ -101,7 +106,7 @@ Override system ID? {y|n} y
 Login: ...
 ----
 ====
-. というメッセージが表示されてシステムがリブートループに入るの `no disks found`は、ポートがターゲットモードにリセットされたためディスクを認識できないためです。この問題を解決するには、から<<auto_check_4_step8,手順 8>>に進み<<auto_check_4_step3,手順 3>>ます。
+. システムが再起動ループに入り、メッセージが表示された場合は `no disks found`これは、ポートがターゲット モードにリセットされ、ディスクが認識されなくなるためです。実行する<<auto_check_4_step3,手順 3>>を通して<<auto_check_4_step8,手順 8>>この問題を解決するには、ノード 4 で実行します。
 . [[auto_check_4_step3]]自動ブート中にCtrl+Cキーを押して、LOADER>プロンプトでノードを停止します。
 . LOADERプロンプトで、メンテナンスモードに切り替えます。
 +
@@ -184,7 +189,7 @@ NOTE: この段階でエラーが発生する場合があります。エラー�
 
 
 
-. [[auto_check_4_step9]]外付けディスクがあるシステムから、内蔵ディスクと外付けディスクをサポートするシステム（AFF A800システムなど）にアップグレードする場合は、node2アグリゲートをルートアグリゲートとして設定し、node2のルートアグリゲートからノード4がブートすることを確認します。ルートアグリゲートを設定するには、ブートメニューに移動し、メンテナンスモードに切り替えるオプションを選択します `5`。
+. [[auto_check_4_step9]]外部ディスクを備えたシステムから内部ディスクと外部ディスクをサポートするシステム（AFF A800システムなど）にアップグレードする場合は、node2 アグリゲートをルート アグリゲートとして設定し、node4 が node2 のルート アグリゲートから起動することを確認します。ルートアグリゲートを設定するには、ノード4のブートメニューに移動し、オプションを選択します。 `5`メンテナンスモードに入ります。
 +
 
 WARNING: * ここに示す順序で以下の手順を実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。 *

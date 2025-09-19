@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-集約の再配置に失敗したり、拒否されたりした場合は、集約を手動でノード 2 に再配置するか、必要に応じて拒否または宛先チェックのいずれかをオーバーライドする必要があります。
+集約の再配置に失敗したり、拒否されたりした場合は、集約を手動でノード 3 に再配置するか、必要に応じて拒否または宛先チェックのいずれかをオーバーライドする必要があります。
 
 .このタスクについて
 エラーのため、システムは再配置操作を一時停止します。
@@ -11,7 +11,7 @@
 . イベント管理システム（ EMS ）のログで、アグリゲートの再配置に失敗した理由や拒否された理由を確認します。
 . 障害が発生したアグリゲートまたは拒否されたアグリゲートを
 +
-`storage aggregate relocation start -node <node1> -destination <node2> -aggregate-list <aggregate_name> -ndo-controller-upgrade true`
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list <aggregate_name> -ndo-controller-upgrade true`
 
 . プロンプトが表示されたら、「 y 」と入力します。
 . 再配置は、次のいずれかの方法で強制的に実行できます。
@@ -22,10 +22,10 @@
 
 
 | 拒否チェックの無視 | 次のコマンドを使用します。
-`storage aggregate relocation start -node node1 -destination node2 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true` 
+`storage aggregate relocation start -node node2 -destination node3 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true` 
 
 
 | デスティネーションチェックの無効化 | 次のコマンドを使用します。
-`storage aggregate relocation start -node node1 -destination node2 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
+`storage aggregate relocation start -node node2 -destination node3 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
 |===
 

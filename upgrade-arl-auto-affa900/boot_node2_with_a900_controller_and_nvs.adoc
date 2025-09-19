@@ -54,7 +54,10 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 +
 「 boot_ontap menu
 
-. 「22/7」と入力して隠しオプションを選択し、古いノード2のディスクを交換用ノード2に再割り当てします `boot_after_controller_replacement` ノードがブートメニューで停止したとき。
+. ノードがブート メニューで停止した場合は、node2 で次のコマンドを実行して、古い node2 ディスクを交換用の node2 に再割り当てします。
++
+`boot_after_controller_replacement`
+
 +
 少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。
 
@@ -161,6 +164,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 .
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063

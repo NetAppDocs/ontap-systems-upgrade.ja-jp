@@ -16,11 +16,17 @@ summary: 'ONTAP 9.8以降を実行するコントローラをアップグレー�
 [role="lead"]
 ノード3のインストールを検証する前に、ノード1に属していたディスクをノード3に再割り当てする必要があります。
 
-.このタスクについて
-このセクションの手順はノード3で実行します。
-
 .手順
-. [reassign-node1-node3-app-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで node1 と入力し、次の例のように node1 のディスクを node3 に再割り当てします。
+. [[reassign-node1-node3-app-step1]]ノード1がブートメニューで停止していることを確認します。ノード1のディスクをノード3に再割り当てします。
++
+`boot_after_controller_replacement`
+
++
+少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。
+
++
+これらのプロンプトは、コンソールメッセージに埋もれている可能性があります。ノード名を入力しなかった場合や間違った名前を入力した場合は、名前をもう一度入力するように求められます。
+
 +
 .コンソールの出力例を展開します
 [%collapsible]
@@ -89,6 +95,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 <output truncated>
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -125,7 +132,12 @@ Login:
 
 NOTE: 上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。
 
-. というメッセージが表示されてリブートループが発生した場合は `no disks found`、FCポートまたはUTA / UTA2ポートがターゲットモードにリセットされたためディスクを認識できないことを示しています。この問題を解決するには、に進みます<<reassign-node1-node3-app-step3,手順 3>> <<reassign-node1-node3-app-step8,手順 8>>。またはセクションに進みますlink:verify_node3_installation.html["ノード 3 のインストールを確認します"]。
+. システムが再起動ループに入り、メッセージが表示された場合は `no disks found`これは、システムが FC または UTA/UTA2 ポートをターゲット モードにリセットしたため、ディスクが認識されないことを示します。この問題を解決するには、次のいずれかのタスクを選択してください。
++
+** 実行する<<reassign-node1-node3-app-step3,手順 3>>に<<reassign-node1-node3-app-step8,手順 8>>ノード3上
+** セクションへ移動link:verify_node3_installation.html["ノード 3 のインストールを確認します"]
+
+
 . [reassign-node1-node3-app-step3]]自動ブート中にCtrl+Cキーを押して、Loader >プロンプトでノードを停止します。
 . LOADERプロンプトで、メンテナンスモードに切り替えます。
 +

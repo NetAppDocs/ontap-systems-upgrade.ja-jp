@@ -16,11 +16,17 @@ summary: 'ONTAP 9.8以降を実行するコントローラをアップグレー�
 [role="lead"]
 ノード2に属していたディスクをノード4に再割り当てしてから、ノード4のインストールを確認する必要があります。
 
-.このタスクについて
-このセクションの手順はノード4で実行します。
-
 .手順
-. [reassign-node2-node4-app-step1]]ブートメニューに移動し、22/7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで node2 と入力し、次の例のように node2 のディスクを node4 に再割り当てします。
+. [[reassign-node2-node4-app-step1]]ノード2がブートメニューで停止していることを確認し、ノード2のディスクをノード4に再割り当てします。
++
+`boot_after_controller_replacement`
+
++
+少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。
+
++
+これらのプロンプトは、コンソールメッセージに埋もれている可能性があります。ノード名を入力しなかった場合や間違った名前を入力した場合は、名前をもう一度入力するように求められます。
+
 +
 .コンソールの出力例を展開します
 [%collapsible]
@@ -98,6 +104,7 @@ you want to continue?: yes
 .
 Controller Replacement: Provide name of the node you would like to replace:
 <nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node2 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -147,7 +154,12 @@ Login:
 
 NOTE: 上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。
 
-. というメッセージが表示されてリブートループが発生した場合は `no disks found`、FCポートまたはUTA / UTA2ポートがターゲットモードにリセットされたためディスクを認識できないことを示しています。この問題を解決するには、に進む <<reassign-node2-node4-app-step8,手順 8>>か、セクションに進み<<reassign-node2-node4-app-step3,手順 3>>ますlink:verify_node4_installation.html["ノード 4 のインストールを確認します"]。
+. システムが再起動ループに入り、メッセージが表示された場合は `no disks found`これは、システムが FC または UTA/UTA2 ポートをターゲット モードにリセットしたため、ディスクが認識されないことを示します。この問題を解決するには、次のいずれかのタスクを選択してください。
++
+** 実行する<<reassign-node2-node4-app-step3,手順 3>>に<<reassign-node2-node4-app-step8,手順 8>>ノード4上
+** セクションへ移動link:verify_node4_installation.html["ノード 4 のインストールを確認します"]
+
+
 . [reassign-node2-node4-app-step3]]自動ブート中にCtrl+Cキーを押して、Loader >プロンプトでノードを停止します。
 . LOADERプロンプトで、メンテナンスモードに切り替えます。
 +
@@ -234,7 +246,7 @@ NOTE: この段階でエラーが発生する場合があります。エラー�
 
 
 
-. [reassign-node2-node4-app-step9]]外付けディスクを搭載したシステムから、内蔵ディスクと外付けディスクをサポートするシステム（AFF A800システムなど）にアップグレードする場合は、node2アグリゲートをルートアグリゲートとして設定し、node4がnode2のルートアグリゲートからブートされるようにします。ルートアグリゲートを設定するには、ブートメニューに移動し、メンテナンスモードに切り替えるオプションを選択します `5`。
+. [[reassign-node2-node4-app-step9]] 外部ディスクを備えたシステムから内部ディスクと外部ディスクをサポートするシステム（AFF A800システムなど）にアップグレードする場合は、node2 アグリゲートをルート アグリゲートとして設定し、node4 が node2 のルート アグリゲートから起動するようにします。ルートアグリゲートを設定するには、ノード4のブートメニューに移動し、オプションを選択します。 `5`メンテナンスモードに入ります。
 +
 
 WARNING: * ここに示す順序で以下の手順を実行する必要があります。正しく実行しないと、原因が停止したり、データが失われたりする可能性があります。 *

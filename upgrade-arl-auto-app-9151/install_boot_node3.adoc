@@ -270,7 +270,16 @@ NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Bas
 +
 「 boot_ontap menu
 
-. ノード3で、ブートメニューに移動し、22 / 7を使用して隠しオプションを選択します `boot_after_controller_replacement`。プロンプトで、 node1 のディスクを node3 に再割り当てするには、次の例のように入力します。
+. node3 がブート メニューで停止したら、node3 で次のコマンドを実行して、node1 のディスクを node3 に再割り当てします。
++
+`boot_after_controller_replacement`
+
++
+少し待機したあと、交換するノードの名前を入力するように求められます。共有ディスク（Advanced Disk Partitioning（ADP；アドバンストディスクパーティショニング）またはパーティショニングされたディスクとも呼ばれます）がある場合は、HAパートナーのノード名を入力するように求められます。
+
++
+これらのプロンプトは、コンソールメッセージに埋もれている可能性があります。ノード名を入力しなかった場合や間違った名前を入力した場合は、名前をもう一度入力するように求められます。
+
 +
 .コンソールの出力例を展開します
 [%collapsible]
@@ -339,6 +348,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 <output truncated>
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node1.html 
+keywords: relocating, failed, vetoed, aggregates, relocation, operation 
+summary: 'ONTAP 9.15.1以降を実行しているコントローラをアップグレードするときに、障害が発生したアグリゲートまたは拒否されたアグリゲートを手動でノード1に再配置します。 `system controller replace`コマンド。' 
+---
+= 障害が発生した、または拒否されたアグリゲートをノード1に再配置します。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+アグリゲートの再配置に失敗した場合、または拒否された場合は、アグリゲートを手動でノード 1 に再配置するか、必要に応じて拒否または宛先チェックのいずれかをオーバーライドする必要があります。
+
+.このタスクについて
+エラーのため、システムは再配置操作を一時停止します。
+
+.手順
+. イベント管理システム（ EMS ）のログで、アグリゲートの再配置に失敗した理由や拒否された理由を確認します。
+. 障害が発生したアグリゲートまたは拒否されたアグリゲートを
++
+`storage aggregate relocation start -node <node2> -destination <node1> -aggregate-list <aggregate_name> -ndo-controller-upgrade true`
+
+. プロンプトが表示されたら、「 y 」と入力します。
+. 再配置は、次のいずれかの方法で強制的に実行できます。
++
+[cols="35,65"]
+|===
+| オプション | 説明 
+
+
+| 拒否チェックの無視 | 次のコマンドを使用します。
+`storage aggregate relocation start -node node2 -destination node1 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true` 
+
+
+| デスティネーションチェックの無効化 | 次のコマンドを使用します。
+`storage aggregate relocation start -node node2 -destination node1 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
+|===
+

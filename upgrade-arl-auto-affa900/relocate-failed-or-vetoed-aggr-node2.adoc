@@ -1,7 +1,19 @@
-= 
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node2.html 
+keywords: relocate, failed, vetoed, aggregates, relocation, operation 
+summary: ARL を使用して同じシャーシ内のコントローラ モデルをアップグレードする場合は、障害が発生したアグリゲートまたは拒否されたアグリゲートをノード 2 に再配置します。 
+---
+= 障害が発生した、または拒否されたアグリゲートをノード2に再配置します。
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
+[role="lead"]
 集約の再配置に失敗したり、拒否されたりした場合は、集約を手動でノード 2 に再配置するか、必要に応じて拒否または宛先チェックのいずれかをオーバーライドする必要があります。
 
 .このタスクについて

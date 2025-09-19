@@ -33,7 +33,7 @@ entries:
   - title: ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
     url: "/upgrade-arl-auto-app/relocate_non_root_aggr_nas_data_lifs_node1_node2.html"
   - title: 障害が発生したアグリゲートを再配置するか
-    url: "/upgrade-arl-auto-app/relocate_failed_or_vetoed_aggr.html"
+    url: "/upgrade-arl-auto-app/relocate-failed-or-vetoed-aggr-node2.html"
   - title: ノード 1 を撤去
     url: "/upgrade-arl-auto-app/retire_node1.html"
   - title: ネットブートを準備
@@ -58,6 +58,8 @@ entries:
   entries:
   - title: ルート以外のアグリゲートと NAS データ LIF を node2 から node3 に再配置します
     url: "/upgrade-arl-auto-app/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html"
+  - title: 障害が発生したアグリゲートを再配置するか
+    url: "/upgrade-arl-auto-app/relocate-failed-or-vetoed-aggr-node3.html"
   - title: ノード 2 を撤去
     url: "/upgrade-arl-auto-app/retire_node2.html"
 - title: ステージ 5 ：ノード 4 をインストールしてブートします

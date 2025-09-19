@@ -1,7 +1,19 @@
-= 
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/relocate-failed-or-vetoed-aggr-node2.html 
+keywords: relocating, failed, vetoed, aggregates, relocation, operation 
+summary: 'ONTAP 9.15.1以降を実行しているコントローラをアップグレードするときに、障害が発生したアグリゲートまたは拒否されたアグリゲートを手動でノード2に再配置します。 `system controller replace`コマンド。' 
+---
+= 障害が発生した、または拒否されたアグリゲートをノード2に再配置します。
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
+[role="lead"]
 集約の再配置に失敗したり、拒否されたりした場合は、集約を手動でノード 2 に再配置するか、必要に応じて拒否または宛先チェックのいずれかをオーバーライドする必要があります。
 
 .このタスクについて
