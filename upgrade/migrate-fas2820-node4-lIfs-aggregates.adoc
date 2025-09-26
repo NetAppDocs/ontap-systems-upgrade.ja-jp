@@ -1,0 +1,201 @@
+---
+permalink: upgrade/migrate-fas2820-node4-lIfs-aggregates.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif 
+summary: 'アップグレードを完了するには、FAS2820node3 を node4 に接続し、node4 のデータ論理インターフェイス (LIF) とデータ アグリゲートを node3 に移行します。' 
+---
+= FAS2820ノード4のLIFとデータアグリゲートをノード3に移行する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレードを完了するには、 FAS2820ノード 3 をノード 4 に接続し、ノード 4 のデータ論理インターフェイス (LIF) とデータ アグリゲートをノード 3 に移行します。
+
+.このタスクについて
+node3 で次の手順を実行します。
+
+.手順
+. ノード3のLOADERプロンプトで、ノードをブートメニューでブートします。
++
+[source, cli]
+----
+boot_ontap menu
+----
+. オプションを選択します `6 Update flash from backup config` をクリックして、/varファイルシステムをノード3にリストアします。
++
+これにより、オールフラッシュベースの構成がディスクへの最後のバックアップに置き換えられます。
+
+. 「 y 」と入力して続行します。
+. ノードが通常どおりブートするのを待ちます。
++
+[NOTE]
+====
+ノードが自動的にリブートし、/varファイルシステムの新しいコピーがロードされます。
+
+システムIDが一致していないことを示す警告がノードから報告されます。入力するコマンド `y` システムIDを上書きします。
+
+====
+. クラスターと HA ポートがノード 3 とノード 4 の間で接続されていることを確認します。
+. ノード3とノード4のクラスターとHAポートを表示します。
++
+[source, cli]
+----
+set -privilege advanced
+----
++
+[source, cli]
+----
+network port show
+----
+. クラスタのブロードキャストドメインを変更して、必要なクラスタポートを追加します。
++
+[source, cli]
+----
+network port broadcast-domain remove-ports -broadcast-domain <broadcast_domain_name> -ports <port_names>
+----
++
+[source, cli]
+----
+network port broadcast-domain add-ports -broadcast-domain Cluster -ports <port_names>
+----
++
+
+NOTE: ONTAP 9.8以降では、クラスタ接続用の既存の物理ポートに新しいIPspaceと1つ以上のブロードキャストドメインを指定できます。
+
+. 必要なクラスタポートが含まれるようにクラスタIPspaceを変更し、最大転送単位がまだ設定されていない場合は9000に設定します。
++
+[source, cli]
+----
+network port modify -node <node_name> -port <port_name> -mtu 9000 -ipspace Cluster
+----
+. すべてのクラスタネットワークLIFを表示します。
++
+[source, cli]
+----
+network interface show -role cluster
+----
+. 両方のノード上のすべてのクラスタ ネットワーク LIF を計画したホーム ポートに移行します。
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node_name> -destination-port <port_name>
+----
+. すべてのクラスタネットワークLIFを表示します。
++
+[source, cli]
+----
+network interface show -role cluster
+----
+. クラスタ ネットワーク LIF のホーム ポートを構成します。
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-port <port_name>
+----
+. ノード 3 用のすべてのデータ LIF をノード 3 に移行します。
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node3> -destination-port <port_name>
+----
+. すべてのデータネットワークLIFを表示します。
++
+[source, cli]
+----
+network interface show -role data
+----
+. すべてのデータ LIF のホーム ノードとホーム ポートを構成します。  LIFがダウンしている場合は、その管理ステータスを `up`各 LIF に対して次のコマンドを 1 回入力します。
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <node_name> -home-port <port_name> -status-admin up
+----
+. クラスタ管理LIFを移行します。
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <cluster_mgmt_lif> -destination-node <node3> -destination-port <port_name>
+----
+. クラスタ管理LIFのステータスを表示します。
++
+[source, cli]
+----
+network interface show -role cluster-mgmt
+----
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+[source, cli]
+----
+storage aggregate show
+----
+. 2 ノード クラスターでクラスターの高可用性を有効にします。
++
+[source, cli]
+----
+cluster ha modify -configured true
+----
+. ノード3とノード4のストレージフェイルオーバーを有効にして検証します。
++
+[source, cli]
+----
+storage failover modify -node <node3> -enabled true
+----
++
+[source, cli]
+----
+storage failover modify -node <node4> -enabled true
+----
++
+[source, cli]
+----
+storage failover show
+----
+. node3 が所有する必要がある node4 が所有するデータ集約を移行します。
++
+[source, cli]
+----
+storage aggregate relocation start -aggregate <aggregate_name> -node <node4> -destination <node3>
+----
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+[source, cli]
+----
+storage aggregate show
+----
+. ノード間でネットワークLIFの自動リバートを有効にします。
++
+[source, cli]
+----
+network interface modify -lif * -auto-revert true
+----
+. ストレージフェイルオーバーの自動ギブバックを有効にします。
++
+[source, cli]
+----
+storage failover modify -node * -auto-giveback true
+----
+. クラスタのステータスを表示します。
++
+[source, cli]
+----
+cluster show
+----
+. フェールオーバー適格性を表示します。
++
+[source, cli]
+----
+storage failover show
+----
++
+
+NOTE: クラスター レポート出力では、ノードが別のノードに属するアグリゲートを誤って所有している可能性があります。この問題が発生した場合は、クラスターの両側からテイクオーバーとギブバックを実行します。
+
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+[source, cli]
+----
+storage aggregate show
+----
+

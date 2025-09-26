@@ -1,0 +1,29 @@
+---
+permalink: upgrade/convert-fas2820-node2-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas8280, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: 'ノード 2 (FAS2820) を DS212C ドライブ シェルフに変換し、ノード 4 に接続します。' 
+---
+= FAS2820ノード2をドライブシェルフに変換し、ノード4に接続します。
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FAS2820ノード2 を DS212C ドライブ シェルフに変換します。ノード 2 からノード 4 にドライブを再割り当てする前に、ノード 4 に接続します。  Node1 と node2 は、DS212C シェルフ内のコントローラーです。
+
+.手順
+. ノード2からすべてのネットワークケーブルを外します。
+. FAS2820シャーシからノード2 を取り外します。
+. IOM12 または IOM12B モジュールをノード 2 のベイに挿入します。
+. ノード 4 のシリアル接続 SCSI (SAS) ポートを IOM12 または IOM12B モジュールの使用可能なポートにケーブル接続します。参照link:https://hwu.netapp.com["Hardware Universe"^]システムの SAS ポートを確認します。
+. ノード 1 のポート e0a と e0b をノード 4 の任意の 2 つの 25GbE ポートに接続して、一時的なクラスター接続を作成します。
++
+
+NOTE: node4 が 10GbE クラスター接続のみをサポートしている場合は、一時的なクラスター接続を作成するには 10GbE ケーブルが必要です。
+
+
+
+.次の手順
+link:reassign-fas2820-node2-drives.html["ドライブをノード2からノード4に再割り当てします"]

@@ -4218,7 +4218,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="9ae5a6f4cdea37ce0343ce6fe870ca8d" category="list-text">内蔵ストレージを搭載したシステムの場合は、システムをドライブシェルフに変換して、同じクラスタ内の新しいノードに接続できます。</block>
   <block id="caaabddaf0ae26915d0c67052254e13f" category="admonition">AFF A700s、AFF A800、AFF C800、またはASA A800システムをドライブシェルフに変換することはできません。</block>
   <block id="e83ec3e9b2b468e112627883187c2fd0" category="section-title">追加の手順が必要になる可能性がある状況</block>
-  <block id="d79f8da307382ba028e64d108c30f593" category="inline-xref-macro">AFF A250からAFF A400にアップグレードする場合</block>
   <block id="e6dd5543cbcf668267e622e1c4af270f" category="list-text">新しいシステムのスロット数が元のシステムのスロット数より少ない場合、またはポートのタイプが異なる場合は、新しいシステムにアダプタを追加しなければならないことがあります。を参照してください<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>。</block>
   <block id="cb1a8b9d3abd4e33bdd8ea771ae95f90" category="inline-link">FlexArray for NetAppコントローラのアップグレードと交換で実行する具体的な手順</block>
   <block id="719139d3840fec9d3f2eb2a98eeabf46" category="list-text">元のノードまたは新しいノードでFlexArray仮想化ソフトウェアを使用している場合は、ナレッジベースの記事を参照してください。<block ref="aa5f5c779b9d140822ad13dbd4dfcaef" category="inline-link-rx"></block>。</block>
@@ -4343,7 +4342,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="24c234c0d0c43e69b12af6b120695505" category="list-text">[[map_98_5] データ LIF をホストする物理ポートのブロードキャストドメインメンバーシップを変更します。これは、に示すように、手動で実行できます <block ref="2d50e52fa53ee066c1e23dfcd4b5dae8" category="inline-link-macro-rx"></block>。NetAppでは、次の手順5の手順（a）から（g）までに示すように、ONTAP 9.8で導入された拡張ネットワーク到達可能性スキャンおよび修復手順を使用することを推奨しています。</block>
   <block id="3a2b68bdec4a67d63868881c41adfd33" category="paragraph">これで物理ポートのマッピングが完了しました。アップグレードを完了するには、に進みます <block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block>。</block>
   <block id="3548781d8fe3c65e8421c7698ed973f9" category="list-text"><block ref="3548781d8fe3c65e8421c7698ed973f9" category="inline-link-macro-rx"></block></block>
-  <block id="3f22ff9f0de0ae158372929690ccd37d" category="list-text"><block ref="7a22ca21c86b9e16042b418efc302d00" category="inline-link-macro-rx"></block> （無停止の手順）。</block>
   <block id="50ae6167d8a0516c8e8cb720a6888cf9" category="list-text"><block ref="50ae6167d8a0516c8e8cb720a6888cf9" category="inline-link-macro-rx"></block></block>
   <block id="54e45682922af9929fbc5d361d7c0b49" category="list-text"><block ref="54e45682922af9929fbc5d361d7c0b49" category="inline-link-macro-rx"></block></block>
   <block id="3ca57071250bef466a089a9c6c848bd5" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="964fb2d7d8e53060676c08185881a5ae" category="inline-link-macro-rx"></block></block>
@@ -4365,7 +4363,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="d1d6580288f1472dbd1db17b372d51d7" category="paragraph">構成情報をルートボリュームからブートデバイスにリストアします。</block>
   <block id="a185c3c138dca5ef46afc33288a67d1f" category="inline-image-macro">テン</block>
   <block id="7cdc9e64dfc551099556d0123c5bb981" category="paragraph-title"><block ref="6097494f0af631df68e3dcb7a6da8d2a" category="inline-image-macro-rx" type="image"></block><block ref="d38ccbe9c555caadedf9e9523ed99b16" category="inline-link-macro-rx"></block></block>
-  <block id="c9dc32dde68fdd77f0e2c8f513e472f8" category="list-text"><block ref="1aa042908822fc17e30db57dc8f3c350" category="inline-link-macro-rx"></block> （無停止の手順）。</block>
   <block id="d0820066ba6f14dca2420f2960ea8c42" category="paragraph">これらの手順は、ONTAP 9.8以降を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります <block ref="05d6674d1c6e0d48e8203d8e927e45b4" category="inline-link-macro-rx"></block>。</block>
   <block id="5e79c247ab4077723eed9dcb39fcfe47" category="list-text">ONTAP 9.7 以前を実行しているシステムの場合は、 * stop * と入力します。の手順を使用する必要があります <block ref="05d6674d1c6e0d48e8203d8e927e45b4" category="inline-link-macro-rx"></block>。</block>
   <block id="31f3762a2a2ed806ac8dc72ae0dc1eb5" category="admonition">FAS8300、AFF A400、FAS8700のように、ポート「e0a」と「e0b」をハイアベイラビリティ（HA）インターコネクトポートとして使用するシステムにコントローラをインプレースアップグレードする場合、 を確認します <block ref="7c3698c6a5737cb69d525ebacf49b908" category="inline-link-macro-rx"></block> アップグレード手順 を開始する前に、元のシステムのポート「e0a」と「e0b」で設定します。</block>
@@ -5084,7 +5081,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="8babcf5a4f3ceb219fe532ed80e3feb0" category="inline-link-macro">システムをドライブシェルフに変換して新しいノードに接続することもできます。</block>
   <block id="e41a07bd97897d75f6b22fcde3750258" category="admonition"><block ref="eb314f9c9756831ec72feb5f63dc05b9" category="inline-link-macro-rx"></block>です。</block>
   <block id="158d9483f2a61460306dea524e285d17" category="paragraph">ドライブは同じクラスター内でのみ移動できます。</block>
-  <block id="627b519764bbfa6f3e4d2ae785e58059" category="doc">ドライブシェルフワークフローに変換してAFF A250をAFF A400にアップグレードします</block>
   <block id="2f8d5ddddff80d2511453ce886eee1eb" category="doc">SAN LIFの移動、削除、または作成</block>
   <block id="ff4f01f0da7a9c33d69bb129757afc29" category="section-title">不要になったSAN LIFを削除する</block>
   <block id="58b02b1a4790c291e537964eb5ec39dd" category="doc">この集約再配置手順を使用するかどうかを決定します</block>
@@ -5329,4 +5325,106 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="41982d264a2a2a5af9a67f777e02916a" category="list-text">[[auto_check_4_step11]]ノード 4 がブート メニューで停止したら、ノード 4 で次のコマンドを実行して、ノード 2 のディスクをノード 4 に再割り当てします。</block>
   <block id="1e1ddf24bfeddc76d571c4800f2d82ad" category="summary">ONTAP 9.15.1以降を実行しているコントローラをアップグレードするときに、障害が発生したアグリゲートまたは拒否されたアグリゲートを手動でノード2に再配置します。<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>コマンド。</block>
   <block id="3129d56ef5cc88b17f6e15c1da3476f1" category="summary">ONTAP 9.15.1以降を実行しているコントローラをアップグレードするときに、障害が発生したアグリゲートまたは拒否されたアグリゲートを手動でノード3に再配置します。<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>コマンド。</block>
+  <block id="39bb0497bdbb1e04586599bcfb4c0318" category="summary">FAS2820ノード 1 を DS212C ドライブ シェルフに変換し、ノード 3 に接続してから、ノード 1 からノード 3 にドライブを再割り当てします。</block>
+  <block id="6d8572f1d7fdac9c27f62e363921947c" category="doc">FAS2820ノード1をドライブシェルフに変換し、ノード3に接続します。</block>
+  <block id="663fdf50ecba63371090c62811c866ac" category="paragraph">FAS2820ノード 1 を DS212C ドライブ シェルフに変換します。ノード 1 からノード 3 にドライブを再割り当てする前に、ノード 3 に接続します。</block>
+  <block id="8fe56965007c8482ebfb12c197c02d7e" category="list-text">FAS2820シャーシからノード 1 を削除します。</block>
+  <block id="a315276c33006971edc828b2d5f48c91" category="list-text">IOM12 または IOM12B モジュールをノード 1 のベイに挿入します。</block>
+  <block id="fcef638e0d5cb441f69abe1851a71025" category="list-text">ノード 3 SAS ポートを IOM12 または IOM12B モジュールの使用可能なポートにケーブル接続します。参照<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>システムの SAS ポートを確認します。参照<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>システムの SAS ポートを確認します。</block>
+  <block id="9aa378ddd116d4c0628d0af695d9cc17" category="list-text">ノード 4 のクラスター ポートをノード 3 の任意のクラスター ポートに接続して、一時的なクラスター接続を作成します。</block>
+  <block id="3936d65ca4d32956127070b6e56b2e64" category="admonition">node3 が 10GbE クラスター接続のみをサポートしている場合は、一時的なクラスター接続を作成するには 10GbE ケーブルが必要です。</block>
+  <block id="a369db1a615acf5202411aa57b6b0a3d" category="paragraph"><block ref="a369db1a615acf5202411aa57b6b0a3d" category="inline-link-macro-rx"></block></block>
+  <block id="2ad020d481d0a25e01559a9e966da553" category="summary">ノード 2 (FAS2820) を DS212C ドライブ シェルフに変換し、ノード 4 に接続します。</block>
+  <block id="d1257ec65502e0686c1e2a24a928f8f4" category="doc">FAS2820ノード2をドライブシェルフに変換し、ノード4に接続します。</block>
+  <block id="e5478c453b4e355829aeee75f0775944" category="paragraph">FAS2820ノード2 を DS212C ドライブ シェルフに変換します。ノード 2 からノード 4 にドライブを再割り当てする前に、ノード 4 に接続します。  Node1 と node2 は、DS212C シェルフ内のコントローラーです。</block>
+  <block id="64f46bf8cb3f756ca2a4b5e8380b0b81" category="list-text">FAS2820シャーシからノード2 を取り外します。</block>
+  <block id="ea390a7342e757edb35e4cfe75d8ecdb" category="list-text">IOM12 または IOM12B モジュールをノード 2 のベイに挿入します。</block>
+  <block id="1a7776196607803ade98b6e8e9df8344" category="list-text">ノード 4 のシリアル接続 SCSI (SAS) ポートを IOM12 または IOM12B モジュールの使用可能なポートにケーブル接続します。参照<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>システムの SAS ポートを確認します。</block>
+  <block id="725e2ebaa93fe8f09185c00e43898f5f" category="list-text">ノード 1 のポート e0a と e0b をノード 4 の任意の 2 つの 25GbE ポートに接続して、一時的なクラスター接続を作成します。</block>
+  <block id="86f6785d45d16c2b0ff31a1179934c9f" category="admonition">node4 が 10GbE クラスター接続のみをサポートしている場合は、一時的なクラスター接続を作成するには 10GbE ケーブルが必要です。</block>
+  <block id="bb7601ffb9123f9786cdac8af94211f0" category="paragraph"><block ref="bb7601ffb9123f9786cdac8af94211f0" category="inline-link-macro-rx"></block></block>
+  <block id="1e74494f5772c735812d575a898596c1" category="summary">各ノードを DS212C ドライブ シェルフに変換し、交換用ノードに接続することで、 FAS2820への無停止アップグレードを実行します。</block>
+  <block id="ab73d8c2e94481a6ff48a7c91868d2c2" category="doc">DS212Cドライブシェルフへの変換によるFAS2820からのアップグレード</block>
+  <block id="b013bc2ad201f8e021040fd0a4c8d714" category="paragraph">各ノードを DS212C ドライブ シェルフに変換し、それを交換ノードに接続することで、 NetApp FAS2820の無停止アップグレードを実行できます。</block>
+  <block id="9b4eafb4e3bcfaad97fc5e7af7aa1955" category="paragraph">この手順では、 FAS2820高可用性 (HA) ペア コントローラは node1 および node2 と呼ばれ、交換用 HA ペア コントローラは node3 および node4 と呼ばれます。</block>
+  <block id="d1d868e382ab4b08e3be5f07e03e038d" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="91744e9af34171046ee51e4df1cdf2ab" category="inline-xref-macro-rx"></block></block>
+  <block id="8313cf9b12eae77b602124631070e7c4" category="paragraph">FAS2820ノード 2 をドライブ シェルフに変換する前に、ノード 2 の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。</block>
+  <block id="58169b6641f5811fe5a42525bb985f58" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="9ad99f16aefbb0da0c8192358055567b" category="inline-xref-macro-rx"></block></block>
+  <block id="34e12f96079e8f2641f0bc5f76a14f3b" category="paragraph">FAS8280 ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続してから、ノード 2 からノード 4 にドライブを再割り当てします。</block>
+  <block id="0054cc808f512bbb3f118ca4abd076c2" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="d3f3d357ab78b548fc1601824fb28e41" category="inline-xref-macro-rx"></block></block>
+  <block id="5a6af6abdd490940dc1f9df9cde04966" category="paragraph">FAS2820ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続した後、以前ノード 2 に属していたドライブをノード 4 に再割り当てします。</block>
+  <block id="48f978643e148ed2cc94db905b383041" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="02b623c9dbb2d160132ae446a4c7a0c7" category="inline-xref-macro-rx"></block></block>
+  <block id="009ec9a2eb4000ba1aeab38e275d3dd4" category="paragraph">FAS2820ノード 1 をドライブ シェルフに変換する前に、ノード 1 のデータ アグリゲート、イプシロン、および LIF をノード 4 に移行します。</block>
+  <block id="26def2138cc961c62254cd174c55a771" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="9c43bd8b004df1da7b21ce814f6eafc2" category="inline-xref-macro-rx"></block></block>
+  <block id="fc0b4fd01b008060b7a81ca3f154ea4b" category="paragraph">FAS2820ノード 1 を DS212C ドライブ シェルフに変換し、ノード 3 に接続してから、ノード 1 からノード 3 にドライブを再割り当てします。</block>
+  <block id="a382921dc03bfcb77c9d970e45fe1495" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="9773b7b5ae1a3a9b51916da2f5695c60" category="inline-xref-macro-rx"></block></block>
+  <block id="d794a00a08edf3e003b5895b03494ddf" category="paragraph">FAS2820ノード 1 を DS212C ドライブに変換し、ノード 3 に接続した後、以前ノード 1 に属していたドライブをノード 3 に再割り当てします。</block>
+  <block id="850e71b118b51db23f5fa234e21d6eef" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="c1ca954fc21d09fcd7cbc3b5808e040e" category="inline-xref-macro-rx"></block></block>
+  <block id="3ac3cdc91bfaa2a43c0fca9946253b03" category="summary">ノード 1 のデータ アグリゲート、イプシロン、および論理インターフェイス (LIF) をノード 4 に移行します。</block>
+  <block id="39e528beab0388f2308ca06481682fe6" category="doc">FAS2820ノード1上のデータアグリゲート、イプシロン、LIFをノード4に移行する</block>
+  <block id="ec407094615b8064b7141eebdc4faf0a" category="paragraph">FAS2820ノード 1 上のデータ アグリゲート、イプシロン、および論理インターフェイス (LIF) をノード 4 に移行します。</block>
+  <block id="70431d2a3b3171dc183ad62c2cdf164e" category="paragraph">ノード4 で次の手順を実行します。</block>
+  <block id="29ef9d409bfc5bf6a0af1a52e7e295a9" category="list-text">node4 の LOADER プロンプトで、パートナー システム ID を設定します。</block>
+  <block id="9732d4a7f425483bed6ea088b429c321" category="list-text">パートナーのシステム ID を確認します。</block>
+  <block id="48aa8461c43c6d434c042a1f7cd26163" category="list-text">変更を保存します。</block>
+  <block id="58ce42757edc7d65f7aa335facfe4c55" category="list-text">ブートメニューでオプションを選択<block ref="1fbad292f1d0674d5769c555d41b2d77" prefix=" " category="inline-code"></block>/var ファイル システムを node4 に復元します。</block>
+  <block id="877e27c2d322a599ffdd08c891c17100" category="paragraph">FAS2820 を交換用コントローラにアップグレードするときにシステム クラスタ ポートが類似していない場合は、ノード 4 のインターフェイスを一時的にクラスタ ポートに変更する必要がある場合があります。</block>
+  <block id="5d7325b4306827947502da22033698f9" category="list-text">クラスターがクォーラムに達するまで待機し、クラスター ノードが正常であることを確認します。</block>
+  <block id="fce12fccf3a26cbb691acedd9868fc28" category="list-text">アップグレードするFAS2820クラスタでインターフェイス グループとデータ VLAN が使用されている場合にのみ、この手順を完了してください。それ以外の場合は、<block ref="5a1eec99d6beb6e9faa992f0e22335e5" category="inline-xref-macro-rx"></block> 。</block>
+  <block id="16a9d0a644dc77426403978271fa8238" category="paragraph">交換用コントローラーの物理ネットワーク ポート名は、 FAS2820のものとは異なります。これにより、VLAN が置き換えられ、ノード 4 上のインターフェース グループが誤って構成される可能性があります。</block>
+  <block id="c3e7a5e32bd2e11679ed6235b2adbd21" category="list-text">置き換えられた VLAN を表示します。</block>
+  <block id="577eb353d2dda6749c18595dad185a0e" category="list-text">置き換えられた VLAN を復元します。</block>
+  <block id="04b8389fdd361eb809430c42f4624631" category="list-text">誤って構成されたインターフェース グループを修正します。 FAS2820とアップグレードするコントローラー間のポート名は異なる場合があります。正しいメンバー ポートを使用してインターフェイス グループを更新します。</block>
+  <block id="5c884dd6b97d69df3e1af4a24ee863bc" category="list-text">データ集計ステータスを表示します:</block>
+  <block id="01392697d52d1d375332f041d834fead" category="list-text">イプシロンを node1 から削除し、node4 に移動して移行します。</block>
+  <block id="118cd161d4f37abbb3a8c4baec04ed48" category="list-text">クラスターのステータスを表示して、イプシロンの変更を確認します。</block>
+  <block id="9ad3f03c93e9dcbdf6be7194a18902d9" category="list-text">LIFがダウンしている場合は、その管理ステータスを<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>各 LIF に対して次のコマンドを 1 回入力します。</block>
+  <block id="df891edbd6b0f00d98d3d2376a067122" category="paragraph"><block ref="df891edbd6b0f00d98d3d2376a067122" category="inline-link-macro-rx"></block></block>
+  <block id="e0a957b08ecb5a9fd1e825f68f0e64dc" category="summary">ノード 2 をドライブ シェルフに変換する前に、 FAS2820ノード 2 上の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。</block>
+  <block id="601722b4c9c69820b9d720c8c940f724" category="doc">FAS2820ノード2のLIFとデータアグリゲートをノード1に移行する</block>
+  <block id="7d37ff2d3a9b0f3b21eda882f20eaae5" category="list-text">FAS2820と交換用コントローラには、可能な場合は同じONTAPリリースとパッチ バージョンがあります。参照<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>サポートされているONTAPリリースの場合。</block>
+  <block id="80cd304d38e2aed4d842aa1630bc0dad" category="list-text">FAS2820システムのONTAPバージョンと一致させるには、ノード 3 とノード 4 にONTAPバージョンをネットブートしてインストールする必要があります。  Node3 と node4 は交換用コントローラーです。</block>
+  <block id="80c7e88957d9462b8f6fac12ec261b8d" category="list-text">node3 コントローラと node4 コントローラのプライマリ ブート イメージとバックアップ ブート イメージの両方に同じONTAPバージョンが必要です。</block>
+  <block id="adc2a6d6f08e30b20353435634048f79" category="list-text">ノード3とノード4の残りのクラスタ構成をクリアするには、<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>ブートメニューから。</block>
+  <block id="da1ea0ee367c83a05341c10eb92921b5" category="list-text">両方の交換用コントローラは、LOADER プロンプトでスタンバイ状態になります。</block>
+  <block id="9cdda3ac4f8a5af7408c9611f78f7bf9" category="list-text">必要なケーブルはすべて揃っています。</block>
+  <block id="4465c00fc828473105f269a899d79c21" category="paragraph">次の手順は、 FAS2820ノード 1 で実行されます。</block>
+  <block id="5965c3c2057d5bfeb9e7cd6aa1da843d" category="list-text">クラスターhaを無効にする:</block>
+  <block id="2e82d870a2b26cff3089793672f0342d" category="paragraph"><block ref="2e82d870a2b26cff3089793672f0342d" category="inline-link-macro-rx"></block></block>
+  <block id="70213ce8df6f326c8c858906eda1740c" category="summary">アップグレードを完了するには、FAS2820node3 を node4 に接続し、node4 のデータ論理インターフェイス (LIF) とデータ アグリゲートを node3 に移行します。</block>
+  <block id="ac03f0a9aed6d7cc8cc2f9aa06ab5c2f" category="doc">FAS2820ノード4のLIFとデータアグリゲートをノード3に移行する</block>
+  <block id="798b92db311a432e12d579940612d93b" category="paragraph">アップグレードを完了するには、 FAS2820ノード 3 をノード 4 に接続し、ノード 4 のデータ論理インターフェイス (LIF) とデータ アグリゲートをノード 3 に移行します。</block>
+  <block id="546ad9f8a047416e6263ed28b1b6a61c" category="paragraph">node3 で次の手順を実行します。</block>
+  <block id="a76e7f8c364a7e27930ee7ff49df6e37" category="list-text">クラスターと HA ポートがノード 3 とノード 4 の間で接続されていることを確認します。</block>
+  <block id="6052d7b32607b02e8d7092b4374824ed" category="list-text">ノード3とノード4のクラスターとHAポートを表示します。</block>
+  <block id="32710cda7c5dad348e2b2e03cf81d971" category="list-text">両方のノード上のすべてのクラスタ ネットワーク LIF を計画したホーム ポートに移行します。</block>
+  <block id="6ac170d19dd75b39a772cfb2159effe2" category="list-text">クラスタ ネットワーク LIF のホーム ポートを構成します。</block>
+  <block id="8bd5f2b46faa7afe1f8b5fde87fe58a7" category="list-text">ノード 3 用のすべてのデータ LIF をノード 3 に移行します。</block>
+  <block id="d4ea258ab4e2dcf20e7e9f102a6ce502" category="list-text">すべてのデータ LIF のホーム ノードとホーム ポートを構成します。  LIFがダウンしている場合は、その管理ステータスを<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>各 LIF に対して次のコマンドを 1 回入力します。</block>
+  <block id="ab72b255e3349ae141f76089ccc6a9bd" category="list-text">2 ノード クラスターでクラスターの高可用性を有効にします。</block>
+  <block id="98ec39406efb767f83dc79971d983c15" category="list-text">ノード3とノード4のストレージフェイルオーバーを有効にして検証します。</block>
+  <block id="a04136bb695577e89cb64bd8d566305d" category="list-text">node3 が所有する必要がある node4 が所有するデータ集約を移行します。</block>
+  <block id="7ff9c5727fd29deb9cd8032b2551cd2b" category="admonition">クラスター レポート出力では、ノードが別のノードに属するアグリゲートを誤って所有している可能性があります。この問題が発生した場合は、クラスターの両側からテイクオーバーとギブバックを実行します。</block>
+  <block id="b7ed6d2578c289a342dff3870c0458e4" category="doc">FAS2820ノード1からノード3にドライブを再割り当てします</block>
+  <block id="67242858a5a960ad59c4112deff89a57" category="paragraph">以前FAS2820ノード 1 に割り当てられていたドライブをノード 3 に再割り当てします。</block>
+  <block id="2cc2671439ba3e907dc353e6fa9e2f82" category="paragraph">メンテナンス モードのプロンプトが表示されます。</block>
+  <block id="50ef837b20ef82f8d6c3ad3818c7e3b9" category="list-text">ローカル システム ID 値を記録します。これは、ノード 3 のシステム ID です。また、「OWNER」列から node1 と node4 のシステム ID を記録します。</block>
+  <block id="fc626981b1ece2c6c05c047f46bbfcbf" category="open-title">ディスク全体を使用する場合</block>
+  <block id="337d79852891a37d41285c9101c3fff4" category="paragraph">次のコマンドを実行します。</block>
+  <block id="17c26bafe75c18b3bcd768f9147f1213" category="open-title">パーティション化されたディスクを使用している場合</block>
+  <block id="7a276578eb1d5f5ba51a40f9a3c06c94" category="admonition">ドライブが表示されない場合は、*停止*してテクニカル サポートに連絡して支援を受けてください。</block>
+  <block id="f2301c41e07cf933742b943a7d3ecb4e" category="paragraph"><block ref="f2301c41e07cf933742b943a7d3ecb4e" category="inline-link-macro-rx"></block></block>
+  <block id="c76f454b1b8b44e22cf7a34d06691591" category="doc">FAS2820ノード2からノード4にドライブを再割り当てする</block>
+  <block id="52ce99ed56c027ff91b3e909018de81d" category="paragraph">以前FAS2820ノード 2 に属していたドライブをノード 4 に再割り当てします。</block>
+  <block id="e5549cfce8a8e0264f304166398e83fb" category="list-text">すべてのドライブをノード 2 からノード 4 に再割り当てします。</block>
+  <block id="08ca03a8874a1a38c5541456cb7a250f" category="paragraph"><block ref="08ca03a8874a1a38c5541456cb7a250f" category="inline-link-macro-rx"></block></block>
+  <block id="c2dd662463f4b0b3f6efeb80332e50d6" category="list-text"><block ref="1aa042908822fc17e30db57dc8f3c350" category="inline-link-macro-rx"></block>（非破壊的手順）</block>
+  <block id="d81919377c1c1774d8ca7b45cc02103c" category="inline-link-macro">ドライブシェルフへの変換によるFAS2820からのアップグレード</block>
+  <block id="8b2e9677889c0f0b26cd5e5a2e524532" category="list-text"><block ref="f9bfe9dff8f74d561bd9015eaa95aca7" category="inline-link-macro-rx"></block>（非破壊的手順）</block>
+  <block id="ed58851cec153c1db74f982f7968d38c" category="inline-link-macro">AFF A250をドライブシェルフに変換し、 AFF A400にアップグレードします</block>
+  <block id="a0d4e0637e12b87691937ec2f86fe18e" category="list-text"><block ref="182a6b47297b5fcc5de9721f7f6d6e2c" category="inline-link-macro-rx"></block>（非破壊的手順）</block>
+  <block id="af72e67cdd4847ff8df836082e1ecd28" category="sidebar">AFF A250をAFF A400にアップグレード</block>
+  <block id="6a6bad6107988979a4c7bb4f9b6e3f47" category="sidebar">AFF A250からAFF A400へのアップグレードについて</block>
+  <block id="1c89ca7629177ffaec440b31de61e887" category="sidebar">FAS2820からのアップグレード</block>
+  <block id="10952bb20745dcf0f30d5dd264d03924" category="sidebar">FAS2820からのアップグレードについて</block>
 </blocks>

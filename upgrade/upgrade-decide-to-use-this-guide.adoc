@@ -48,6 +48,8 @@ link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-con
 MetroCluster構成をアップグレードする場合は、を参照してください。 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 構成をアップグレード、更新、または拡張します"^]。
 
 .関連情報
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["AFF A250をドライブシェルフに変換し、 AFF A400にアップグレードします"]（非破壊的手順）
+* link:convert-fas2820-to-drive-shelf.html["ドライブシェルフへの変換によるFAS2820からのアップグレード"]（非破壊的手順）
 * link:upgrade-considerations.html["コントローラハードウェアのアップグレードに関する考慮事項"]
 * link:../choose_controller_upgrade_procedure.html["コントローラハードウェアをアップグレードする方法を選択します"]
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["MetroCluster のメンテナンスタスクの手順の参照先"^]

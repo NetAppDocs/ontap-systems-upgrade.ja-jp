@@ -1,0 +1,29 @@
+---
+permalink: upgrade/convert-fas2820-node1-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: FAS2820ノード 1 を DS212C ドライブ シェルフに変換し、ノード 3 に接続してから、ノード 1 からノード 3 にドライブを再割り当てします。 
+---
+= FAS2820ノード1をドライブシェルフに変換し、ノード3に接続します。
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FAS2820ノード 1 を DS212C ドライブ シェルフに変換します。ノード 1 からノード 3 にドライブを再割り当てする前に、ノード 3 に接続します。
+
+.手順
+. ノード1からすべてのネットワークケーブルを外します。
+. FAS2820シャーシからノード 1 を削除します。
+. IOM12 または IOM12B モジュールをノード 1 のベイに挿入します。
+. ノード 3 SAS ポートを IOM12 または IOM12B モジュールの使用可能なポートにケーブル接続します。参照link:https://hwu.netapp.com["Hardware Universe"^]システムの SAS ポートを確認します。参照link:https://hwu.netapp.com["Hardware Universe"^]システムの SAS ポートを確認します。
+. ノード 4 のクラスター ポートをノード 3 の任意のクラスター ポートに接続して、一時的なクラスター接続を作成します。
++
+
+NOTE: node3 が 10GbE クラスター接続のみをサポートしている場合は、一時的なクラスター接続を作成するには 10GbE ケーブルが必要です。
+
+
+
+.次の手順
+link:reassign-fas2820-node1-drives.html["ドライブをノード1からノード3に再割り当てします"]

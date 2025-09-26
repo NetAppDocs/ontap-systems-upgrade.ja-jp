@@ -68,9 +68,9 @@ entries:
     url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
   - title: アップグレードを完了する
     url: "/upgrade/upgrade-complete-move-volumes.html"
-- title: ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします
+- title: AFF A250をAFF A400にアップグレード
   entries:
-  - title: ワークフロー
+  - title: AFF A250からAFF A400へのアップグレードについて
     url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
   - title: ノード2のLIFとデータアグリゲートをノード1に移行します
     url: "/upgrade/upgrade_migrate_lifs_aggregates_node2_to_node1.html"
@@ -86,3 +86,21 @@ entries:
     url: "/upgrade/upgrade_reassign_drives_node1_to_node3.html"
   - title: ノード4のLIFとデータアグリゲートをノード3に移行します
     url: "/upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html"
+- title: FAS2820からのアップグレード
+  entries:
+  - title: FAS2820からのアップグレードについて
+    url: "/upgrade/convert-fas2820-to-drive-shelf.html"
+  - title: ノード2のLIFとデータアグリゲートをノード1に移行します
+    url: "/upgrade/migrate-fas2820-node2-lifs-aggregates.html"
+  - title: node2をドライブシェルフに変換し、node4に接続します
+    url: "/upgrade/convert-fas2820-node2-drive-shelf.html"
+  - title: ドライブをノード2からノード4に再割り当てします
+    url: "/upgrade/reassign-fas2820-node2-drives.html"
+  - title: ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します
+    url: "/upgrade/migrate-fas2820-aggregates-epsilon-lifs.html"
+  - title: node1をドライブシェルフに変換し、node3に接続します
+    url: "/upgrade/convert-fas2820-node1-drive-shelf.html"
+  - title: ドライブをノード1からノード3に再割り当てします
+    url: "/upgrade/reassign-fas2820-node1-drives.html"
+  - title: ノード4のLIFとデータアグリゲートをノード3に移行します
+    url: "/upgrade/migrate-fas2820-node4-lIfs-aggregates.html"

@@ -1,0 +1,147 @@
+---
+permalink: upgrade/migrate-fas2820-node2-lifs-aggregates.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs 
+summary: 'ノード 2 をドライブ シェルフに変換する前に、 FAS2820ノード 2 上の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。' 
+---
+= FAS2820ノード2のLIFとデータアグリゲートをノード1に移行する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノード 2 をドライブ シェルフに変換する前に、 FAS2820ノード 2 上の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。
+
+.作業を開始する前に
+次の要件を満たしていることを確認します。
+
+* FAS2820と交換用コントローラには、可能な場合は同じONTAPリリースとパッチ バージョンがあります。参照 https://hwu.netapp.com["NetApp Hardware Universe の略"^]サポートされているONTAPリリースの場合。
+
+
+[NOTE]
+====
+* FAS2820システムのONTAPバージョンと一致させるには、ノード 3 とノード 4 にONTAPバージョンをネットブートしてインストールする必要があります。  Node3 と node4 は交換用コントローラーです。
+* node3 コントローラと node4 コントローラのプライマリ ブート イメージとバックアップ ブート イメージの両方に同じONTAPバージョンが必要です。
+* ノード3とノード4の残りのクラスタ構成をクリアするには、 `wipeconfig`ブートメニューから。
+
+
+====
+* 両方の交換用コントローラは、LOADER プロンプトでスタンバイ状態になります。
+* 必要なケーブルはすべて揃っています。
+
+
+.このタスクについて
+次の手順は、 FAS2820ノード 1 で実行されます。
+
+.手順
+. advanced 権限レベルに切り替えます。
++
+[source, cli]
+----
+set -privilege advanced
+----
+. ストレージフェイルオーバーの自動ギブバックを無効にします。
++
+[source, cli]
+----
+storage failover modify -node node1 -auto-giveback false
+----
+. HAペアの両方のノードでLIFの自動リバートを無効にします。
++
+[source, cli]
+----
+network interface modify -lif * -auto-revert false
+----
+. すべてのデータネットワークLIFのステータスを表示します。
++
+[source, cli]
+----
+network interface show -role data
+----
+. クラスタ管理LIFのステータスを表示します。
++
+[source, cli]
+----
+network interface show -role cluster-mgmt
+----
+. ノード2でホストされているStorage Virtual MachineからすべてのデータLIFを移行します。
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node1> -destination-port <port_name>
+----
++
+
+NOTE: このコマンドは、SAN以外のLIFのみを移行します。iSCSI LIFとFCP LIFの移行には使用できません。
+
+. クラスタ内のすべてのデータLIFのステータスを表示します。
++
+[source, cli]
+----
+network interface show -role data
+----
+. LIFがダウンしている場合は、その管理ステータスを `up`各 LIF に対して次のコマンドを 1 回入力します。
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up
+----
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+[source, cli]
+----
+storage aggregate show
+----
+. フェールオーバー適格性を表示します。
++
+[source, cli]
+----
+storage failover show
+----
+. ノード2のデータアグリゲートをノード1に移行します。
++
+[source, cli]
+----
+storage aggregate relocation start -aggregate <aggregate_name> -node <node2> -destination <node1>
+----
+. クラスタ内のすべてのデータアグリゲートのステータスを表示します。
++
+[source, cli]
+----
+storage aggregate show
+----
+. クラスタ内のすべてのデータボリュームのステータスを表示します。
++
+[source, cli]
+----
+volume show
+----
+. を表示します `ha` イプシロンのステータスと所有権：
++
+[source, cli]
+----
+cluster show
+----
+. クラスターhaを無効にする:
++
+[source, cli]
+----
+cluster ha modify -configured false
+----
+. を表示します `ha` イプシロンのステータスと所有権：
++
+[source, cli]
+----
+cluster show
+----
+. ノード 2 を停止します。
++
+[source, cli]
+----
+halt -node <node2> -inhibit-takeover true -ignore-quorum-warnings true
+----
+
+
+.次の手順
+link:convert-fas2820-node2-drive-shelf.html["node2をドライブシェルフに変換し、node4に接続します"]

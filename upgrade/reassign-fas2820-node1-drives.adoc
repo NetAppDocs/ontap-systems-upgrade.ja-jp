@@ -1,0 +1,78 @@
+---
+permalink: upgrade/reassign-fas2820-node1-drives.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: FAS2820ノード 1 を DS212C ドライブに変換し、ノード 3 に接続した後、以前ノード 1 に属していたドライブをノード 3 に再割り当てします。 
+---
+= FAS2820ノード1からノード3にドライブを再割り当てします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以前FAS2820ノード 1 に割り当てられていたドライブをノード 3 に再割り当てします。
+
+.このタスクについて
+node3 で次の手順を実行します。
+
+.手順
+. LOADERプロンプトで、ノード3をメンテナンスモードでブートします。
++
+[source, cli]
+----
+boot_ontap maint
+----
++
+メンテナンス モードのプロンプトが表示されます。
+
+. すべての接続ドライブを表示します。
++
+[source, cli]
+----
+disk show -v
+----
+. ローカル システム ID 値を記録します。これは、ノード 3 のシステム ID です。また、「OWNER」列から node1 と node4 のシステム ID を記録します。
+. すべてのドライブをノード1からノード3に再割り当てします。
++
+[role="tabbed-block"]
+====
+.ディスク全体を使用する場合
+--
+次のコマンドを実行します。
+
+[source, cli]
+----
+disk reassign -s <node1_system_ID> -d <node3_system_ID>
+----
+--
+.パーティション化されたディスクを使用している場合
+--
+次のコマンドを実行します。
+
+[source, cli]
+----
+disk reassign -s <node1_system_ID> -d <node3_system_ID> -p <node4_system_ID>
+----
+--
+====
+. 再割り当てしたすべてのドライブが新しいシステムIDで表示されることを確認します。
++
+[source, cli]
+----
+disk show -s <node3_system_ID>
+----
++
+
+CAUTION: ドライブが表示されない場合は、*停止*してテクニカル サポートに連絡して支援を受けてください。
+
+. メンテナンスモードを終了します。
++
+[source, cli]
+----
+halt
+----
+
+
+.次の手順
+link:migrate-fas2820-node4-lIfs-aggregates.html["ノード4のLIFとデータアグリゲートをノード3に移行します"]

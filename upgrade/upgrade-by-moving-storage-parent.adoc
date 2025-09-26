@@ -69,5 +69,6 @@ node1 、 node2 、 node3 、および node4 という用語は、元のノー�
 ONTAP 9.8以降またはONTAP 9.7以前でアップグレードを完了します。
 
 .関連情報
-* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします"] （無停止の手順）。
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします"]（非破壊的手順）
+* link:convert-fas2820-to-drive-shelf.html["ドライブシェルフへの変換によるFAS2820からのアップグレード"]（非破壊的手順）
 

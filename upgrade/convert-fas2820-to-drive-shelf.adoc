@@ -1,0 +1,45 @@
+---
+permalink: upgrade/convert-fas2820-to-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas2820,  ndu, nondisruptive, upgrade, FAS, systems, entry, level 
+summary: 各ノードを DS212C ドライブ シェルフに変換し、交換用ノードに接続することで、 FAS2820への無停止アップグレードを実行します。 
+---
+= DS212Cドライブシェルフへの変換によるFAS2820からのアップグレード
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+各ノードを DS212C ドライブ シェルフに変換し、それを交換ノードに接続することで、 NetApp FAS2820の無停止アップグレードを実行できます。
+
+.このタスクについて
+この手順では、 FAS2820高可用性 (HA) ペア コントローラは node1 および node2 と呼ばれ、交換用 HA ペア コントローラは node3 および node4 と呼ばれます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"]xref:migrate-fas2820-node2-lifs-aggregates.adoc[ノード2のLIFとデータアグリゲートをノード1に移行します]
+[role="quick-margin-para"]
+FAS2820ノード 2 をドライブ シェルフに変換する前に、ノード 2 の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"]xref:convert-fas2820-node2-drive-shelf.adoc[node2をドライブシェルフに変換し、node4に接続します]
+[role="quick-margin-para"]
+FAS8280 ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続してから、ノード 2 からノード 4 にドライブを再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]xref:reassign-fas2820-node2-drives.adoc[ドライブをノード2からノード4に再割り当てします]
+[role="quick-margin-para"]
+FAS2820ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続した後、以前ノード 2 に属していたドライブをノード 4 に再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."]xref:migrate-fas2820-aggregates-epsilon-lifs.adoc[ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します]
+[role="quick-margin-para"]
+FAS2820ノード 1 をドライブ シェルフに変換する前に、ノード 1 のデータ アグリゲート、イプシロン、および LIF をノード 4 に移行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"]xref:convert-fas2820-node1-drive-shelf.html[node1をドライブシェルフに変換し、node3に接続します]
+[role="quick-margin-para"]
+FAS2820ノード 1 を DS212C ドライブ シェルフに変換し、ノード 3 に接続してから、ノード 1 からノード 3 にドライブを再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"]xref:reassign-fas2820-node1-drives.adoc[ドライブをノード1からノード3に再割り当てします]
+[role="quick-margin-para"]
+FAS2820ノード 1 を DS212C ドライブに変換し、ノード 3 に接続した後、以前ノード 1 に属していたドライブをノード 3 に再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]xref:migrate-fas2820-node4-lIfs-aggregates.adoc[ノード4のLIFとデータアグリゲートをノード3に移行します]
+[role="quick-margin-para"]
+アップグレードを完了するには、ノード3をノード4に接続し、ノード4のデータLIFとデータアグリゲートをノード3に移行します。
