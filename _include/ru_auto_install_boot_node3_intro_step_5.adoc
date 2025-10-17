@@ -12,7 +12,6 @@
 [IMPORTANT]
 ====
 * AFF A800 または AFF C800 コントローラのアップグレードでは、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
-* ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <<auto_install3_step1,手順 1.>> から <<auto_install3_step21,手順 21>>をクリックしてから、このセクションの指示に従います link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、メンテナンスモードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<auto_install3_step23,手順 23>>。
 * ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を完了して、にアクセスする必要があります link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] セクションで、クラスタ・プロンプトでコマンドを入力します。
 
 
@@ -29,10 +28,10 @@ NOTE: 両方のノードを同じシャーシに搭載したシステムにア�
 
 . [[auto_install3_step3]] ケーブルノード 3 を接続し、ノード 1 からノード 3 に接続を移動します。
 +
-ノード3プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。
+node3 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」ドキュメントを使用して、次の接続をケーブル接続します。
 
 +
-FlexArray仮想化インストール要件およびReference_and_HA pair management_へのリンクを参照してくださいlink:other_references.html["参考資料"]。
+参照link:other_references.html["参考資料"]_HAペア管理_にリンクします。
 
 +
 ** コンソール（リモート管理ポート）
@@ -67,7 +66,7 @@ To override this delay, press 'c' followed by 'Enter'
 .. バッテリの充電と起動プロセスが完了するまで待ちます。
 +
 
-WARNING: * 注意：遅延は無視しないでください。バッテリーの充電に失敗すると、データが失われるおそれがあります。 *
+WARNING: *遅延を無視しないでください。バッテリーの充電が不十分だと、データが失われる可能性があります。*
 
 +
 

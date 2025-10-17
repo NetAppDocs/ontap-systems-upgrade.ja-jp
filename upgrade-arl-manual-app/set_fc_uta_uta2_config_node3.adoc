@@ -17,25 +17,20 @@ summary: ONTAP 9.8 以降を実行しているコントローラでの手動 ARL
 ノード 3 にオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードがある場合は、残りの手順を完了する前に設定を行う必要があります。
 
 .このタスクについて
-完了する必要がある場合があります <<ノード 3 の FC ポートを設定>>または <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>、または両方のセクション。
+完了する必要があるかもしれません<<ノード 3 の FC ポートを設定>>または<<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>、または両方のセクション。
 
 
 NOTE: ネットアップのマーケティング資料では、 UTA2 という用語を CNA アダプタとポートという意味で使用している場合があります。ただし、 CLI では「 cna 」という用語を使用しています。
 
-* ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクを搭載したシステムをアップグレードする場合は、に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]。
+* ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"] 。
 * ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、 _Install に戻り、 node3 を再度起動して再開します link:install_boot_node3.html#man_install3_step22["手順 22"]。
-
-
-.選択肢：
-* <<ノード 3 の FC ポートを設定>>
-* <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>
 
 
 
 
 == ノード 3 の FC ポートを設定
 
-node3 にオンボードまたは FC アダプタの FC ポートがある場合は、ポートが事前に設定されていないため、ノードを稼働状態にする前にポート設定を設定する必要があります。ポートが設定されていないと、サービスが停止する可能性があります。
+node3 にオンボードまたはアドオン FC アダプタ上の FC ポートがある場合、システムの出荷時にポートが事前構成されていないため、ノードをサービスに投入する前にノード上でポート構成を設定する必要があります。ポートを設定しないと、サービスが中断される可能性があります。
 
 .作業を開始する前に
 に保存した FC ポート設定の値を node1 で確認しておく必要があります link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]。
@@ -44,131 +39,60 @@ node3 にオンボードまたは FC アダプタの FC ポートがある場合
 システムに FC 構成がない場合は、このセクションをスキップしてかまいません。システムにオンボード UTA / UTA2 ポートまたは UTA / UTA2 カードがある場合は、で設定します <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
 
 
-IMPORTANT: システムにストレージディスクがある場合は、クラスタプロンプトでこのセクションのコマンドを入力します。V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合は、このセクションに示すコマンドを保守モードで入力します。
+IMPORTANT: このセクションのコマンドをクラスタープロンプトに入力します。
 
 .手順
-. 次のいずれかを実行します。
+. システム上のすべての FC および統合ネットワーク アダプタに関する情報を表示します。
 +
-[cols="35,65"]
-|===
-| アップグレードするシステム | 作業 
+「 system node hardware unified-connect show 」を参照してください
 
-
-| ストレージディスクがあります | に進みます <<man_config_3_step5,手順 5>> 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | に進みます <<man_config_3_step2,手順 2>> 
-|===
-. [[man_config_3_step2] ノード 3 をブートし、メンテナンスモードにアクセスします。
-+
-「 boot_ontap maint 」を使用してください
-
-. [[step3]] 次のいずれかの操作を実行します。
-+
-[cols="35,65"]
-|===
-| アップグレードするシステム | 作業 
-
-
-| ストレージディスクがあります | 次のコマンドを入力します。 'system node hardware unified-connect show' 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 次のコマンドを「 ucadmin show 」と入力します 
-|===
-+
-システムには、システム上のすべての FC アダプタと統合ネットワークアダプタに関する情報が表示されます。
-
-. [[step4]] ノード 3 の FC 設定を、ノード 1 から前に取得した設定と比較します。
-. [man_config_3_step5] 次のいずれかの操作を実行します
+. ノード 3 の FC 設定を、先ほどノード 1 からキャプチャした設定と比較します。
+. [[man_config_3_step3]]次のいずれかのアクションを実行します。
 +
 [cols="35,65"]
 |===
 | 新しいノードのデフォルトの FC 設定 | 作業 
 
 
-| ノード 1 で取得したものと同じです | に進みます <<man_config_3_step11,手順 11>>。 
+| ノード 1 で取得したものと同じです | 行きます <<man_config_3_step9,手順 9>>。 
 
 
-| ノード 1 で取得したものとは異なります | に進みます <<man_config_3_step6,手順 6>>。 
+| ノード 1 で取得したものとは異なります | 行きます <<man_config_3_step4,手順 4>>。 
 |===
-. [[man_config_3_step6] 次のいずれかの操作を実行します。
+. [[man_config_3_step4]]必要に応じて、次のいずれかのコマンドを入力して、ノード3 の FC ポートを変更します。
 +
-[cols="35,65"]
-|===
-| アップグレードするシステム | 作業 
+** ターゲットポートをプログラムする場合：
++
+`system node hardware unified-connect modify -type \| -t target -adapter _port_name_`
 
+** イニシエータポートをプログラミングする場合：
++
+`system node hardware unified-connect modify -type \| -t initiator -adapter _port_name_`
 
-| ストレージディスクがあります  a| 
-次のいずれかのコマンドを入力して、必要に応じて node3 の FC ポートを変更します。
-
-** ターゲット・ポートをプログラムするには：system node hardware unified-connect modify -type |-t target-adapter_port_name_`
-** イニシエータ・ポートをプログラムするには' system node hardware unified-connect modify -type |-t initiator -adapter_port_name_`を使用します
-
-
++
 `-t` は FC4 のタイプで ' ターゲットまたはイニシエータです
 
 
 
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています  a| 
-必要に応じて、次のコマンドを入力して、node3のFCポートを変更します。
-
-`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
-
-`-t` は、FC4タイプ、ターゲット、イニシエータです。
-
-
-NOTE: FCポートはイニシエータとしてプログラムする必要があります。
-
-|===
-. [[step7]] 次のいずれかの操作を実行します。
+. 次のコマンドを入力して出力を調べ、新しい設定を確認します。
 +
-[cols="35,65"]
-|===
-| アップグレードするシステム | 作業 
+「 system node hardware unified-connect show 」を参照してください
 
-
-| ストレージディスクがあります | 次のコマンドを入力し、出力を調べて、新しい設定を確認します。「 system node hardware unified-connect show 」 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 次のコマンドを入力し、出力を確認して、新しい設定を確認します。 ucadmin show 
-|===
-. [[step8] 次のコマンドを入力して、メンテナンスモードを終了します。
+. メンテナンスモードを終了します。
 +
 「 halt 」
 
-. [[step9] コマンドを入力したら、ブート環境のプロンプトでシステムが停止するまで待ちます。
-. [[step10]] 次のいずれかの操作を実行します。
+. コマンドを入力したら、ブート環境のプロンプトでシステムが停止するまで待ちます。
+. ブート環境プロンプトで node3 をブートします。
 +
-[cols="35,65"]
-|===
-| アップグレードするシステム | 作業 
+「 boot_ontap 」
 
-
-| は、 V シリーズシステム、または clustered Data ONTAP 8.3 を実行する FlexArray 仮想化ソフトウェアを備えています | ブート環境プロンプトの「 boot_ontap maint 」で、ノード 3 をブートし、メンテナンスにアクセスします 
-
-
-| は、 V シリーズシステムではないか、 FlexArray 仮想化ソフトウェアがインストールされていません | ブート環境プロンプトで node3 を起動します 
-|===
-. [man_config_3_step11]] 次のいずれかの操作を実行します
+. [[man_config_3_step9]]次のいずれかのアクションを実行します。
 +
-[cols="35,65"]
-|===
-| アップグレードするシステム | 作業 
-
-
-| ストレージディスクがあります  a| 
 ** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合は、に進みます <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
 ** ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、この手順を省略してください <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>> にアクセスします link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]。
 
 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています  a| 
-** node3 にカードポートまたはオンボードポートがある場合は、に進みます <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>。
-** node3 にカードポートまたはオンボードポートがない場合は、を省略します <<ノード 3 の UTA / UTA2 ポートを確認して設定してください>>をクリックし、 _Install に戻り、 node3 をブートして、で再開します link:install_boot_node3.html#man_install3_step7["手順 7"]。
-
-
-|===
 
 
 
@@ -211,23 +135,15 @@ UTA / UTA2 ポートはアダプタまたはコントローラに搭載されて
 * 新しいコントローラのオンボード UTA / UTA2 ポートは、希望するパーソナリティを持つように出荷する前に設定されます。
 +
 
-NOTE: * 注意 * ：ストレージディスクがあるシステムの場合、保守モードに移行するよう指示されていないかぎり、クラスタプロンプトでこのセクションのコマンドを入力する必要があります。V シリーズシステムを使用している場合や FlexArray 仮想化ソフトウェアを使用していて、ストレージアレイに接続している場合は、このセクションのメンテナンスモードプロンプトでコマンドを入力する必要があります。UTA / UTA2 ポートを設定する場合は、メンテナンスモードにする必要があります。
+NOTE: メンテナンス モードに入るように指示されない限り、このセクションのコマンドをクラスター プロンプトに入力します。
 
 
 
 .手順
-. node3で次のコマンドを入力し、現在ポートがどのように設定されているかを確認します。
+. node3 で次のコマンドを入力して、現在のポート構成を確認します。
 +
-[cols="35,65"]
-|===
-| システムの状態 | 作業 
+「 system node hardware unified-connect show 」を参照してください
 
-
-| ストレージディスクがあります | 「 system node hardware unified-connect show 」を参照してください 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | ucadmin show 
-|===
 +
 次の例のような出力が表示されます。
 
@@ -249,23 +165,6 @@ NOTE: * 注意 * ：ストレージディスクがあるシステムの場合、
  f-b   0h       cna      target     -        -        online
  12 entries were displayed.
 ----
-+
-[listing]
-----
-*> ucadmin show
-         Current  Current    Pending  Pending  Admin
-Adapter  Mode     Type       Mode     Type     Status
--------  -------  ---------  -------  -------  ------
-0e       fc       initiator  -        -        online
-0f       fc       initiator  -        -        online
-0g       cna      target     -        -        online
-0h       cna      target     -        -        online
-0e       fc       initiator  -        -        online
-0f       fc       initiator  -        -        online
-0g       cna      target     -        -        online
-0h       cna      target     -        -        online
-*>
-----
 . [[step2] 現在の SFP+ モジュールが目的の用途と一致しない場合は、正しい SFP+ モジュールと交換します。
 +
 ネットアップの担当者に連絡して、正しい SFP+ モジュールを入手します。
@@ -281,40 +180,36 @@ Adapter  Mode     Type       Mode     Type     Status
 | 希望するパーソナリティがない | に進みます <<man_check_3_step5,手順 5>>。 
 
 
-| あなたがほしい人格を持っている | 手順 5 から 12 を省略して、に進みます <<man_check_3_step13,手順 13>>。 
+| あなたがほしい人格を持っている | ステップ5からステップ13をスキップして、<<man_check_3_step14,手順 14>> 。 
 |===
-. [man_check_3_step5] 次のいずれかの操作を実行します
+. [[man_check_3_step5]]システムにストレージディスクがあり、clustered Data ONTAP 8.3 を実行している場合は、ノード 3 を起動してメンテナンス モードに入ります。
 +
-[cols="35,65"]
-|===
-| システムの状態 | 作業 
+「 boot_ontap maint 」を使用してください
 
+. 設定を確認します。
++
+ucadmin show
 
-| ストレージディスクがあり、 clustered Data ONTAP 8.3 を実行している | node3 を起動し、「 boot_ontap maint 」というメンテナンスモードに切り替えます 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | に進みます <<man_check_3_step6,手順 6>>。すでにメンテナンスモードになっている必要があります。 
-|===
-. [[man_check_3_step6] 次のいずれかの操作を実行します。
+. 次のいずれかを実行します。
 +
 [cols="35,65"]
 |===
 | を設定する場合 | 作業 
 
 
-| UTA / UTA2 カードのポート | に進みます <<man_check_3_step7,手順 7>>。 
+| UTA / UTA2 カードのポート | 行きます <<man_check_3_step8,手順 8>>。 
 
 
-| オンボードの UTA/UTA2 ポート | 手順 7 を省略して、に進みます <<man_check_3_step8,手順 8>>。 
+| オンボードの UTA/UTA2 ポート | ステップ8をスキップして<<man_check_3_step9,手順 9>>。 
 |===
-. [[man_check_3_step7] アダプタがイニシエータモードの場合、 UTA / UTA2 ポートがオンラインの場合は、 UTA / UTA2 ポートをオフラインにします。
+. [[man_check_3_step8]]アダプタがイニシエーターモードであり、UTA/UTA2 ポートがオンラインの場合は、UTA/UTA2 ポートをオフラインにします。
 +
 storage disable adapter_adapter_adapter_adapter_name_`
 
 +
 ターゲットモードのアダプタは、メンテナンスモードで自動的にオフラインになります。
 
-. [man_check_3_step8] 現在の設定が目的の用途に一致しない場合は、必要に応じて設定を変更します。
+. [[man_check_3_step9]]現在の構成が目的の用途と一致しない場合は、必要に応じて構成を変更します。
 +
 ucadmin modify -m fc | cna-t initiator | target_adapter_name_`
 
@@ -323,51 +218,25 @@ ucadmin modify -m fc | cna-t initiator | target_adapter_name_`
 ** `-t` は FC4 のタイプ、「 target 」または「 initiator 」です。
 +
 
-NOTE: テープドライブ、 FlexArray 仮想化システム、および MetroCluster 構成には、 FC イニシエータを使用する必要があります。SAN クライアントには FC ターゲットを使用する必要があります。
+NOTE: テープ ドライブおよびMetroCluster構成には FC イニシエーターを使用する必要があります。  SAN クライアントには FC ターゲットを使用する必要があります。
 
 
 
-. 設定を確認します。
-+
-ucadmin show
-
-. 設定を確認します。
-+
-[cols="35,65"]
-|===
-| システムの状態 | 作業 
-
-
-| ストレージディスクがあります  a| 
-.. システムを停止します。
+. システムを停止します。
 +
 「 halt 」
 
 +
 ブート環境プロンプトが表示されます。
 
-.. 次のコマンドを入力します。
+. 次のコマンドを入力します。
 +
 「 boot_ontap 」
 
-
-
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 保守モードで再起動します（「 boot_NetApp maint 」） 
-|===
 . [[step11]] 設定を確認します。
 +
-[cols="35,65"]
-|===
-| システムの状態 | 作業 
+「 system node hardware unified-connect show 」を参照してください
 
-
-| ストレージディスクがあります | 「 system node hardware unified-connect show 」を参照してください 
-
-
-| は V シリーズまたは FlexArray 仮想化ソフトウェアを備えており、ストレージアレイに接続されています | ucadmin show 
-|===
 +
 次の例の出力は ' アダプタ「 1b 」の FC4 タイプがイニシエータに変更されており ' アダプタ「 2a 」および「 2b 」のモードが「 cna' 」に変更されていることを示しています
 
@@ -386,42 +255,9 @@ ucadmin show
 
  4 entries were displayed.
 ----
+. [[step12a]]各ポートごとに次のコマンドを入力して、ターゲット ポートをオンラインにします。
 +
-[listing]
-----
-*> ucadmin show
-         Current  Current    Pending  Pending    Admin
-Adapter  Mode     Type       Mode     Type       Status
--------  -------  ---------  -------  ---------  ------
-1a       fc       initiator  -        -          online
-1b       fc       target     -        initiator  online
-2a       fc       target     cna      -          online
-2b       fc       target     cna      -          online
-*>
-----
-. [[step12a] 次のいずれかのコマンドをポートごとに 1 回入力して、任意のターゲットポートをオンラインにします。
-+
-[cols="35,65"]
-|===
-| システムの状態 | 作業 
+「network fcp adapter modify -node node_name --adapter_adapter_adapter_adapter_name_-state up」の形式で指定します
 
-
-| ストレージディスクがあります | 「network fcp adapter modify -node node_name --adapter_adapter_adapter_adapter_name_-state up」の形式で指定します 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | 'fcp config_adapter_name_up' 
-|===
-. [[man_check_3_step13]] ポートをケーブル接続します。
-. [[step14]] 次のいずれかの操作を実行します。
-+
-[cols="35,65"]
-|===
-| システムの状態 | 作業 
-
-
-| ストレージディスクがあります | に進みます link:map_ports_node1_node3.html["ポートを node1 から node3 にマッピングします"]。 
-
-
-| は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています | _Install に戻り、 node3 をブートし、で再開します link:install_boot_node3.html#man_install3_step7["手順 7"]。 
-|===
+. [[man_check_3_step14]]ポートにケーブルを接続します。
 

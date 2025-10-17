@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/install_boot_node3.html 
-keywords: install, boot, node3, rack, transfer connections, v-series, flexarray, storage disks 
+keywords: install, boot, node3, rack, transfer connections, storage disks 
 summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする際に、 node3 をインストールして ONTAP ソフトウェアをインストールします。 
 ---
 = node3 をインストールしてブートします
@@ -24,7 +24,6 @@ summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を�
 [IMPORTANT]
 ====
 * AFF A800 または AFF C800 コントローラのアップグレードでは、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
-* ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続されている FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、これで完了です <<man_install3_step1,手順 1.>> から <<man_install3_step5,手順 5>>をクリックします <<man_install3_step6,手順 6>> およびの手順に従ってください link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<man_install3_step7,手順 7>>。
 * ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"]そしてlink:set_fc_uta_uta2_config_node3.html#uta-ports-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタープロンプトでコマンドを入力します。
 
 
@@ -44,7 +43,7 @@ NOTE: 両方のノードを同じシャーシに搭載したシステムにア�
 次の参考資料は、適切なケーブル接続を行う場合に役立ちます。に進みます link:other_references.html["参考資料"] をクリックしてリンクします。
 
 +
-** _ インストールおよびセットアップ手順 _ または _ FlexArray 仮想化インストール要件およびリファレンス _ （ node3 プラットフォーム用）
+** node3 プラットフォームのインストールとセットアップ手順
 ** 該当するディスクシェルフの手順を選択します
 ** HAペア管理のドキュメント
 
@@ -86,65 +85,25 @@ To override this delay, press 'c' followed by 'Enter'
 .. バッテリの充電と起動プロセスが完了するまで待ちます。
 +
 
-NOTE: * 注意 * ：遅延は無視しないでください。バッテリーの充電に失敗すると、データが失われるおそれがあります。
+WARNING: *遅延を無視しないでください。バッテリーの充電が不十分だと、データが失われる可能性があります。*
 
 
 
-. [[man_install3_step6] 次のいずれかの操作を実行します。
-+
-[cols="35,65"]
-|===
-| システムの状態 | 作業 
-
-
-| ディスクがあり、バックエンドストレージがない | 手順 7 から 12 を省略して、に進みます <<man_install3_step13,手順 13>>。 
-
-
-| は、 V シリーズシステム、または FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムです  a| 
-.. に進みます link:set_fc_uta_uta2_config_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"] をクリックし、サブセクションを完了します link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]必要に応じて、システムに適用されます。
-.. このセクションに戻って、から始めて残りの手順を実行します <<man_install3_step7,手順 7>>。
-
-
-
-IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用してONTAP をブートする前に、FCオンボードポート、CNAオンボードポート、およびCNAカードを再設定する必要があります。
-
-|===
-. [man_install3_step7] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。
-+
-システムにテープ SAN がある場合は、イニシエータをゾーニングする必要があります。手順については、ストレージアレイおよびゾーニングに関するドキュメントを参照してください。
-
-. [man_install3_step8] FC イニシエータポートをストレージアレイに新しいホストとして追加し、アレイ LUN を新しいホストにマッピングします。
-+
-手順については、ストレージアレイおよびゾーニングに関するドキュメントを参照してください。
-
-. [[man_install3_step9] ストレージアレイのアレイ LUN に関連付けられたホストまたはボリュームグループでの World Wide Port Name （ WWPN ；ワールドワイドポート名）の値を変更します。
-+
-新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。
-
-. [man_install3_step10] ：構成でスイッチベースのゾーニングを使用している場合は、ゾーニングを調整して新しい WWPN 値を反映させます。
-. [[man_install3_step11]] アレイ LUN が node3 に表示されることを確認します。
-+
-「 sysconfig -v 」を使用します
-
-+
-各 FC イニシエータポートで認識されるすべてのアレイ LUN が表示されます。アレイ LUN が表示されない場合は、このセクションで後述する node1 から node3 にディスクを再割り当てすることはできません。
-
-. [[man_install3_step12]] Ctrl+C キーを押してブートメニューを表示し、メンテナンスモードを選択します。
-. [[man_install3_step13]] メンテナンスモードのプロンプトで、次のコマンドを入力します。
+. メンテナンス モード プロンプトで、次のコマンドを入力します。
 +
 「 halt 」
 
 +
 ブート環境プロンプトが表示されます。
 
-. [[man_install3_step14]] 次のいずれかの操作を実行します
+. 次のいずれかを実行します。
 +
 [cols="35,65"]
 |===
 | アップグレード後のシステムの構成 | 作業 
 
 
-| デュアルシャーシ構成（コントローラが別々のシャーシに搭載されている場合） | に進みます <<man_install3_step15,手順 15>>。 
+| デュアルシャーシ構成（コントローラが別々のシャーシに搭載されている場合） | 行きます <<man_install3_step8,手順 8>>。 
 
 
 | シングルシャーシ構成（コントローラが同じシャーシに搭載されている場合）  a| 
@@ -159,11 +118,11 @@ NOTE: node4にはブート環境のプロンプトが表示されたままにし
 
 .. に警告メッセージが表示される場合は <<man_install3_step4,手順 4>>の手順に従ってください <<man_install3_step5,手順 5>>
 .. コンソールケーブルを node4 から node3 に戻します。
-.. に進みます <<man_install3_step15,手順 15>>。
+.. 行きます <<man_install3_step8,手順 8>>。
 
 
 |===
-. [[man_install3_step15]] ONTAP の node3 の設定：
+. [[man_install3_step8]] ONTAP用にノード3を設定します。
 +
 「デフォルト設定」
 
@@ -207,7 +166,7 @@ SEDと非暗号化ドライブを同じノードまたはHAペアで混在させ
 
 WARNING: 他のクラスタまたはHAペアでこの新しいノードを使用したことがある場合は、を実行する必要があります `wipeconfig` 次に進む前に、これを行わないと、サービスの停止やデータの損失が発生する可能性があります。交換用コントローラを以前に使用したことがある場合、特にコントローラが ONTAP 7-Mode を実行していた場合は、テクニカルサポートにお問い合わせください。
 
-. [[man_install3_step18]] CTRL-C を押してブートメニューを表示します。
+. CTRL-C を押してブート メニューを表示します。
 . [[man_install3_step19]] 次のいずれかの操作を実行します
 +
 [cols="35,65"]
@@ -215,12 +174,12 @@ WARNING: 他のクラスタまたはHAペアでこの新しいノードを使用
 | アップグレードするシステム | 作業 
 
 
-| Does _ not_ have the correct or current ONTAP version on node3 （ノード 3 に正しい バージョンまたは現在の バージョンがありません | に進みます <<man_install3_step20,手順 20>>。 
+| Does _ not_ have the correct or current ONTAP version on node3 （ノード 3 に正しい バージョンまたは現在の バージョンがありません | 行きます <<man_install3_step13,手順 13>>。 
 
 
-| ノード 3 に正しいバージョンまたは最新バージョンの ONTAP があること | に進みます <<man_install3_step25,手順 25>>。 
+| ノード 3 に正しいバージョンまたは最新バージョンの ONTAP があること | 行きます <<man_install3_step18,ステップ18>>。 
 |===
-. [[man_install3_step20]] 次のいずれかの操作を実行して、ネットブート接続を設定します。
+. [[man_install3_step13]]次のいずれかのアクションを選択して、ネットブート接続を構成します。
 +
 
 NOTE: ネットブート接続として管理ポートおよび IP を使用する必要があります。データ LIF IP を使用しないでください。使用していると、アップグレードの実行中にデータが停止する可能性があります。
@@ -248,7 +207,7 @@ NOTE: ネットブート接続として管理ポートおよび IP を使用す�
 NOTE: インターフェイスによっては、その他のパラメータが必要になる場合もあります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。
 
 |===
-. [[man_install3_step21] ノード 3 でネットブートを実行します。
+. ノード3でネットブートを実行します。
 +
 [cols="35,65"]
 |===
@@ -267,7 +226,7 @@ NOTE: インターフェイスによっては、その他のパラメータが�
 
 NOTE: トランクを中断しないでください。
 
-. [man_install3_step22]] ブートメニューから、オプション * （ 7 ） Install new software * first を選択します。
+. ブートメニューから、まずオプション*(7) 新しいソフトウェアをインストールする*を選択します。
 +
 このメニューオプションを選択すると、新しい ONTAP イメージがブートデバイスにダウンロードおよびインストールされます。
 
@@ -284,11 +243,11 @@ NOTE: トランクを中断しないでください。
 
 NOTE: 新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールすると、正しいイメージがインストールされない場合があります。この問題環境はすべての ONTAP リリースに対応しています。オプションを指定してネットブート手順 を実行する `(7) Install new software` ブートメディアを消去して、同じONTAP バージョンのONTAP を両方のイメージパーティションに配置します。
 
-. [man_install3_step23]] 手順を続行するかどうかを確認するメッセージが表示されたら 'y`' と入力し ' パッケージのプロンプトが表示されたら ' 次の URL を入力します
+. 手順を続行するように求められた場合は、 `y`パッケージの入力を求められた場合は、次の URL を入力します。
 +
 http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` にアクセスします
 
-. [[man_install3_step24]] 次の手順を実行します
+. 次の手順を実行します。
 +
 .. 次のプロンプトが表示されたら 'n' を入力してバックアップ・リカバリをスキップします
 +
@@ -307,12 +266,12 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-. [man_install3_step25]] '*(5) Maintenance mode boot を選択しますこれには '5` を入力し ' ブートを続行するように求められたら 'y' を入力します
+. [[man_install3_step18]]*(5)メンテナンスモードブート*を選択して、 `5`を入力し、 `y`起動を続行するかどうかを尋ねるプロンプトが表示されたら。
 . [[man_install3_step26]] 続行する前に、に進みます link:set_fc_uta_uta2_config_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"] ノードの FC ポートまたは UTA / UTA2 ポートに必要な変更を加えるため。
 +
 これらのセクションで推奨される変更を行ってからノードをリブートし、メンテナンスモードに切り替えます。
 
-. [[man_install3_step27]] node3 のシステム ID を確認します。
+. node3 のシステム ID を見つけます。
 +
 「ディスクショー - A` 」
 
@@ -338,7 +297,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 NOTE: コマンドを入力すると、「ディスクはありません」というメッセージが表示される場合があります。これはエラーメッセージではないため、手順を続行できます。
 
-. [man_install3_step28] 再割り当てするノードのスペア、ルートに属するディスク、およびでノード 2 に再配置されなかったルート以外のアグリゲート link:relocate_non_root_aggr_node1_node2.html["ルート以外のアグリゲートを node1 から node2 に再配置します。"]。
+. [[man_install3_step21]]ノード1のスペアディスク、ルートに属するディスク、および以前にノード2に再配置されなかったルート以外のアグリゲートを再割り当てします。link:relocate_non_root_aggr_node1_node2.html["ルート以外のアグリゲートを node1 から node2 に再配置します。"] 。
 +
 システムに共有ディスクがあるかどうかに応じて、適切な形式の「 disk reassign 」コマンドを入力します。
 
@@ -526,7 +485,7 @@ Destroying mailboxes forces a node to create new empty mailboxes, which clears a
 +
 'set time_hh:mm:ss_`
 
-. [[man_install3_step42]] パートナーシステム ID がで説明したとおりに正しく設定されていることを確認します <<man_install3_step28,手順 28>> アン下の -p スイッチ：
+. [[man_install3_step42]]パートナーシステムIDが、<<man_install3_step21,手順 21>> -p スイッチの場合:
 +
 printenv partner-sysid
 

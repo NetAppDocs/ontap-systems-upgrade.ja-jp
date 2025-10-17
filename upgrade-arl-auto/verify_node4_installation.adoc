@@ -38,7 +38,7 @@ cluster show -node node4 -fields health`
 . 交換したコントローラが MetroCluster 構成に対して正しく設定されており、スイッチオーバーモードでないことを確認します。
 +
 
-CAUTION: * 注意：この段階では、 MetroCluster 構成は正常な状態ではなく、エラーが発生していて解決できます。を参照してください link:verify_health_of_metrocluster_config.html["MetroCluster 構成の健全性を確認"]。
+CAUTION: この段階では、 MetroCluster構成は正常な状態ではなく、解決すべきエラーが発生する可能性があります。見るlink:verify_health_of_metrocluster_config.html["MetroCluster 構成の健全性を確認"]。
 
 
 

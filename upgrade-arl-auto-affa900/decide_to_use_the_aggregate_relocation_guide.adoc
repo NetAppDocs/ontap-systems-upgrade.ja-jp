@@ -48,7 +48,6 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 次の状況では、この ARL 手順は使用できません。
 
 * 新しいコントローラを新しいHAペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する。
-* アップグレードする既存のシステムでFlexArray仮想化ソフトウェアを使用している。
 * MetroCluster IP設定をアップグレードしています。
 +
 MetroCluster IP構成をアップグレードするには、MetroCluster Upgrade and Expansion_contentへのリンクを参照してくださいlink:other_references.html["参考資料"]。

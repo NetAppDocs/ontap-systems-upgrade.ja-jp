@@ -9,7 +9,6 @@
   <block id="6f4a225b29c0975663d0e4b9e1f4547f" category="inline-xref">手順 1.</block>
   <block id="2f5ad93b7f0dd7bdcdf63542c05e8ebe" category="inline-xref">手順 21</block>
   <block id="f775037aa1f7a8a52b5159236f7449e7" category="inline-xref">手順 23</block>
-  <block id="09702fca7923997e0da2187b92badbd9" category="list-text">ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続されている FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、これで完了です <block ref="72a284a0ab19d0d6976ab9f3aa1bfc65" category="inline-xref-macro-rx"></block> から <block ref="e953da376eb12d20ff3d04f195189ba7" category="inline-xref-macro-rx"></block>をクリックしてから、このセクションの指示に従ってください <block ref="1d789633b45165b05bf13f9838060fe6" category="inline-link-macro-rx"></block> およびへ <block ref="15e1611f6cc2b64b7163cc152446c8c0" category="inline-link-macro-rx"></block>、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <block ref="7d33d698028361a6b46f35be2a3ff5a2" category="inline-xref-macro-rx"></block>。</block>
   <block id="df5267f8e4bbfa9add1dd732e6b68e41" category="inline-link-macro">ノード 4 で FC または UTA / UTA2 設定を設定します</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
   <block id="c7009662ac7e20dc02b0e7d7e2ed8804" category="list-text">[[auto_install4_stp1] ノード 4 に十分なラックスペースがあることを確認します。</block>
@@ -29,7 +28,6 @@
   <block id="d728df788701a4dbee2b7991f0468dad" category="list-text">手順 4 で警告メッセージが表示された場合は、次の操作を実行します。</block>
   <block id="3e1ef1763b3680d2c8fbf0a8ea19db9b" category="list-text">NVRAM バッテリ低下以外の問題を示すコンソールメッセージがないか確認し、必要に応じて対処します。</block>
   <block id="d73910b693432e337843357586f3e39f" category="list-text">バッテリの充電と起動プロセスが完了するまで待ちます。</block>
-  <block id="5d043d33743f66f7467bf67aa5653705" category="admonition">* 注意：遅延は無視しないでください。バッテリーの充電に失敗すると、データが失われるおそれがあります。 *</block>
   <block id="b1e6d70b6a993d323936c87bff29461b" category="admonition">を参照してください <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
   <block id="d583a56b378186283bc180e8dfcdad82" category="list-text">[[step6] 次のいずれかの操作を選択して、ネットブート接続を設定します。</block>
   <block id="3a325cd28eedfb6e2a8828a9cc5043a2" category="cell">動的ホスト構成プロトコル（ DHCP ）の状態</block>
@@ -77,23 +75,8 @@
   <block id="55f472f17ae9bd54337956b780332fff" category="list-text">必要に応じて、 node4 にパートナーシステム ID を設定します。</block>
   <block id="e02ed2f754f906507b04045b6d64c6a8" category="list-text">設定を保存します。</block>
   <block id="4efce637d6ec3bc2a69f403fd39b9b41" category="paragraph">'aveenv</block>
-  <block id="62ac7cf3796c3e4bbe3285d1976b1c2c" category="list-text">[[step22]] 次のいずれかの操作を実行します。</block>
-  <block id="a566a7773caad8e1452ad7591dace303" category="cell">システムの状態</block>
-  <block id="b0d05d370a8e827d5c1d1e92258a25b2" category="cell">ディスクがあり、バックエンドストレージがない</block>
-  <block id="c9d3e45a02f36166b1f2d250fefe0e40" category="cell">は、 V シリーズシステム、または FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムです</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
-  <block id="6c87f26ede26b8a4600cd3be3a5c4a39" category="list-text">セクションに移動します <block ref="a6d322e902b744ff3a11f02b5c6d9496" category="inline-link-macro-rx"></block> をクリックし、このセクションのサブセクションを完了します。</block>
-  <block id="d4bf40b038a0294c5a0c9cfeacb6b991" category="list-text">このセクションに戻って、から始めて残りの手順を実行します <block ref="7d33d698028361a6b46f35be2a3ff5a2" category="inline-xref-macro-rx"></block>。</block>
-  <block id="f1f401fda84803d54fb9ed083d0ebefa" category="list-text">[[auto_install4_step23]] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。</block>
-  <block id="2a1ffcfd9b3fe851dbeca2f509c1f7a3" category="paragraph">システムにテープ SAN がある場合は、イニシエータをゾーニングする必要があります。必要に応じて、を参照してオンボードポートをイニシエータに変更します <block ref="1d789633b45165b05bf13f9838060fe6" category="inline-link-macro-rx"></block>。ゾーニングの詳細な手順については、ストレージアレイとゾーニングに関するドキュメントを参照してください。</block>
-  <block id="626097c557d64952b56d6d6e63d3ad8e" category="list-text">FC イニシエータポートをストレージアレイに新しいホストとして追加し、アレイ LUN を新しいホストにマッピングします。</block>
-  <block id="c90869b8dd8fd41fd210932364a2caf7" category="paragraph">手順については、ストレージアレイおよびゾーニングに関するドキュメントを参照してください。</block>
-  <block id="20285adb42be1ddc0c2df8f7a2de7595" category="list-text">ストレージアレイ上のアレイ LUN に関連付けられたホストまたはボリュームグループの World Wide Port Name （ WWPN ；ワールドワイドポート名）値を変更する。</block>
-  <block id="a2b95adba38da1a033c4cae3447040cc" category="paragraph">新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。</block>
-  <block id="23eacbaf200afc53fbaaaaa3d6705308" category="list-text">スイッチベースのゾーニングを使用している場合は、新しい WWPN 値が反映されるようにゾーニングを調整します。</block>
   <block id="a94e69437db24dee798bbd90bce4ee0a" category="paragraph">「 boot_ontap menu</block>
-  <block id="9f6c1c59e595c7b6b493f92b24930c14" category="inline-link-macro">ノード 4 で FC または UTA / ut2 の設定を行います</block>
-  <block id="cbe290335ddc7c966d9c148980b1ddd5" category="list-text">[[step29]] ストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用する MetroCluster 構成、 V シリーズシステム、およびシステムについては、ノードに接続されているディスクを検出するために、 FC または UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください <block ref="39202fc611c1fcac2f1575fc00cb55d3" category="inline-link-macro-rx"></block>。</block>
   <block id="32d978cffec9875e4d92dc55b84df69b" category="doc">node2 によって所有されているルート以外のアグリゲートと NAS データ LIF を、 node3 から node4 に移動します</block>
   <block id="33b455f1b5d98f0ba5db998a78bbbbe3" category="paragraph">ノード 4 のネットワーク設定を確認し、ノード 3 からノード 4 にアグリゲートを再配置する前に、ノード 2 に現在ノード 3 に属する NAS データ LIF が、ノード 3 からノード 4 に再配置されていることを確認する必要があります。また、ノード 4 に SAN LIF が存在することも確認する必要があります。</block>
   <block id="d2f28697e2bc23acb2a0a646043ffac0" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 4 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認します。</block>
@@ -129,9 +112,6 @@
   <block id="ac616410952c35e808a3c7ce4ea5b4a7" category="inline-link-macro">古いシステムの運用を停止</block>
   <block id="b39850fa882a12596e03ef7779fcfebc" category="list-text"><block ref="5e1bb6d16e6bc7a1d750ae669f510747" category="inline-xref-macro-rx"></block></block>
   <block id="2061ab494eae73f1e7251b76a58b27d3" category="cell">ストレージまたはボリュームを移動してクラスタ内のコントローラハードウェアを簡単にアップグレードする方法について説明します。サポートされるモデルをディスクシェルフに変換する方法についても説明します。</block>
-  <block id="5d1afe326f483a14ce8cd69456db1384" category="cell">ファブリック構成で MetroCluster のハードウェアコンポーネントとソフトウェアコンポーネントをインストールおよび設定する方法について説明します。</block>
-  <block id="e5c39acdb0f682a22a7b242d48ac3ce5" category="inline-link-macro">FlexArray 仮想化インストール要件およびリファレンスガイド</block>
-  <block id="d1d13e1cdd7f75473f7902868b6ba3d7" category="cell">FlexArray 仮想化システムのケーブル接続手順とその他の情報について説明します</block>
   <block id="595e15ec8af10c3d959522d0d1eab769" category="cell">MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。</block>
   <block id="b42a2144e64bfdf4eecf966f7bb495c5" category="inline-link-macro">ONTAP 9.0 コマンド：マニュアルページリファレンス</block>
   <block id="a4117daa2ff8204dba8b79ed1da09e5b" category="cell"><block ref="a4117daa2ff8204dba8b79ed1da09e5b" category="inline-link-macro-rx"></block></block>
@@ -230,20 +210,13 @@
   <block id="291e8826d2b19041a0543b448060f314" category="paragraph">ノード 4 でオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードが使用されている場合は、残りの手順を完了する前に設定する必要があります。</block>
   <block id="405ab80b96586360ea83735c37305935" category="inline-link-macro">ノード 4 のインストールを確認します</block>
   <block id="e5d8ce1e4e0f9c50b3cbdf452d60972e" category="inline-link-macro">手順 22</block>
-  <block id="6ef697f11922be2e4de0971f7d70997f" category="list-title">選択肢</block>
-  <block id="32681c366792ff09536e44772a3bddf2" category="list-text"><block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block></block>
-  <block id="17889f6fb09adc44188f6076a9e7852a" category="list-text"><block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block></block>
   <block id="cd7dd5075be56af4a3298feff04bb98a" category="paragraph">ノード 4 にオンボードまたは FC アダプタのいずれかの FC ポートがある場合は、ポートが事前に構成されていないため、ノードを稼働状態にする前にポートの設定を行う必要があります。ポートが設定されていないと、サービスが停止する可能性があります。</block>
   <block id="3bb2def349bd01a4e09f553241c547bb" category="paragraph">セクションに保存した node2 の FC ポート設定の値を確認しておく必要があります <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
   <block id="8651f71cd1a76b7df1a83cae390627a8" category="paragraph">システムに FC 構成がない場合は、このセクションをスキップしてかまいません。システムにオンボード UTA / UTA2 ポートまたは UTA / UTA2 アダプタが搭載されている場合は、で設定します <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>。</block>
   <block id="4d65ef8cf84d37cbb99560183afc8431" category="list-text">次のいずれかを実行します。</block>
-  <block id="78f6ac180c7bb87b8aee79da36246598" category="cell">アップグレードするシステム</block>
   <block id="a7a589b8e6e6d3aac1d1459d66a748a0" category="cell">次に、</block>
-  <block id="61bc24f9f2f24029ba7b04d76f768598" category="cell">ストレージディスクがあります</block>
   <block id="e1a8971092776bc2e25be6babad152ab" category="cell">「 system node hardware unified-connect show 」を参照してください</block>
-  <block id="58b0fc39873b9fe983d6b57e06585d6f" category="cell">は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています</block>
   <block id="5344ecb990fb0b0e60a7b979eeca26cd" category="cell">ucadmin show</block>
-  <block id="c5c0e497c3f1186f3d1cfecfc658c546" category="paragraph">システムには、システム上のすべての FC アダプタと統合ネットワークアダプタに関する情報が表示されます。</block>
   <block id="ede48791c6a4d48413c294cc39314600" category="list-text">ノード 4 の FC 設定とノード 1 から前に取得した設定を比較します。</block>
   <block id="bf5ce713a37cfb1c7cddb2ef1662c419" category="paragraph">必要に応じて、ノード 4 の FC ポートを変更します。</block>
   <block id="2c28eea077fe0201e484901f94587d87" category="list-text">ターゲットポートをプログラムする場合：</block>
@@ -262,9 +235,6 @@
   <block id="494d18d03e7c6fb4b46866273ca75c34" category="list-text">コントローラとは別に発注した UTA / UTA2 カードは、デフォルトの FC ターゲットパーソナリティとして出荷されます。</block>
   <block id="9fca14a117603ee6762ebe968e8cedec" category="list-text">新しいコントローラのオンボード UTA / UTA2 ポートは、要求したパーソナリティを持つように（出荷前に）設定されています。</block>
   <block id="898667c4cb95b7e44aafe17e4edf0567" category="paragraph">ただし、ノード 4 の UTA / UTA2 ポートの設定を確認し、必要に応じて変更してください。</block>
-  <block id="504b32f9515b15fa8407335de4be00e7" category="admonition">* 注意 * ：ストレージディスクがある場合は、メンテナンスモードに指示されていないかぎり、クラスタプロンプトでこのセクションのコマンドを入力します。ストレージアレイに接続された MetroCluster FC システム、 V シリーズシステム、または FlexArray 仮想化ソフトウェアを搭載したシステムがある場合、 UTA / UTA2 ポートを設定するにはメンテナンスモードにする必要があります。</block>
-  <block id="5113998ac3c679e0d1220f045f54831f" category="list-text">ノード 4 で次のいずれかのコマンドを使用して、ポートが現在どのように設定されているかを確認します。</block>
-  <block id="8eae44e92f7155cef20bea12cd5a16c8" category="cell">システムの状態</block>
   <block id="fd894a783c8c8400a3021bd2ad147cba" category="paragraph">次の例のような出力が表示されます。</block>
   <block id="64da799aef6205bb6034c61f1f25c391" category="list-text">現在の SFP+ モジュールが目的の用途と一致しない場合は、正しい SFP+ モジュールに交換します。</block>
   <block id="d72066c585919f0b5faa9807de695bf8" category="paragraph">ネットアップの担当者に連絡して、正しい SFP+ モジュールを入手します。</block>
@@ -275,28 +245,19 @@
   <block id="feb4c7d35f5c6972a78c24ac4caebf00" category="cell">に進みます <block ref="7ffb05d2232c9c60f695127651bcf871" category="inline-xref-macro-rx"></block>。</block>
   <block id="3fa4c0ba2b210d02bdf49ea3e2812989" category="cell">あなたがほしい人格を持っている</block>
   <block id="c0f1d3db2a584ee59498c0abaa47adf7" category="inline-xref">手順 13</block>
-  <block id="a06e3550b827dbbc3fa903ada41f165b" category="cell">手順 5 から 12 を省略して、に進みます <block ref="8c1d75fc2023dc4e109b4251bd0229b1" category="inline-xref-macro-rx"></block>。</block>
   <block id="1228ef3c4a262a3a23b05009801f9d74" category="list-text">[[auto_check_4_step5] 次のいずれかの操作を実行します。</block>
   <block id="bb8715eb9d3c8fc0a643a55fc3e9ed29" category="cell">を設定する場合</block>
   <block id="c4c1b40245719a0e56eb453401560e8e" category="cell">UTA / UTA2 カードのポート</block>
   <block id="805e47ec7b4ef2165b02c8ff12688343" category="inline-xref">手順 7</block>
-  <block id="5ab10acc3f713db2883e41aeefc0a947" category="cell">に進みます <block ref="8fa9bd2d3aca152bc08859144a7af8fa" category="inline-xref-macro-rx"></block></block>
   <block id="a7f2071dd0b7eee34d97c156132a3210" category="cell">オンボードの UTA/UTA2 ポート</block>
   <block id="d60d761a93da31e724112577c571c923" category="inline-xref">手順 8</block>
-  <block id="5014f056b226c4802b8e30f5800a2ea3" category="cell">手順 7 を省略して、に進みます <block ref="3d86a68aa8fb2ef1661a4814f02f3b64" category="inline-xref-macro-rx"></block>。</block>
-  <block id="ef0770e5329716a78bdc700afc4541c1" category="list-text">アダプタがイニシエータモードで、 UTA / UTA2 ポートがオンラインの場合は、 UTA / UTA2 ポートをオフラインにします。</block>
   <block id="fff4e24de6543fad49dbe48a7b01e1d1" category="paragraph">ターゲットモードのアダプタは、メンテナンスモードで自動的にオフラインになります。</block>
   <block id="d8f98bdc807ae3903ae80ea0b78fbd6e" category="list-text">[[auto_check_4_step7] 現在の構成が目的の用途に一致しない場合は、必要に応じて構成を変更します。</block>
   <block id="2e23b3b6b4b04a1d678f35eda127d4d6" category="list-text">`-t` は FC4 のタイプ、「 target 」または「 initiator 」です。</block>
-  <block id="3f0869d2c33ab7caf7185458236590fe" category="admonition">テープドライブ、 FlexArray 仮想化システム、および MetroCluster 構成には、 FC イニシエータを使用する必要があります。SAN クライアントには FC ターゲットを使用する必要があります。</block>
-  <block id="7e0be6e2a6d4c241d66e582ce0ecbcea" category="list-text">[[auto_check_4_step8] 次のコマンドを使用して設定を確認し、出力を調べます。</block>
   <block id="fe040552b4fc83efe2ba593498969954" category="list-text">設定を確認します。</block>
   <block id="38827adabf48650b74e5fe794b8f2413" category="paragraph">次の例の出力は ' アダプタ「 1b 」の FC4 タイプがイニシエータに変更され ' アダプタ「 2a 」および「 2b 」のモードが「 cna' 」に変更されていることを示しています</block>
   <block id="4cf4d3bfbda859f7fbe3247599afeba5" category="list-text">次のいずれかのコマンドをポートごとに 1 回入力して、ターゲットポートをオンラインにします。</block>
   <block id="b50635aa317c4f94943cbad3bf2ffdf2" category="list-text">ポートをケーブル接続します。</block>
-  <block id="8eeb6ccf00d6f27741c5b734b3130459" category="list-text">[[step12]] 次のいずれかの操作を実行します。</block>
-  <block id="4a137bad34f46785824a8100e1c6cba6" category="list-text">[[auto_check_4_step13]] メンテナンスモードを終了します。</block>
-  <block id="204783b1ca658239a7b205df8e2d83dd" category="paragraph">「 boot_ontap menu</block>
   <block id="f91809c39c7c5ad59f2475c5ee644448" category="admonition">上記のコンソールの出力例では、アドバンストディスクパーティショニング（ ADP ）ディスクを使用するシステムの場合は ONTAP からパートナーノード名の入力を求められます。</block>
   <block id="24655647ccabfd614d439a15f52407aa" category="paragraph">「 boot_ontap maint 」を使用してください</block>
   <block id="82b61383829ad9f7c791ca9adcbe4b1f" category="list-text">保守モードで、以前に設定したすべてのイニシエータポートをターゲットモードで表示します。</block>
@@ -396,7 +357,6 @@
   <block id="31ccaad020ad8995655b8785712ac7b9" category="paragraph">ノード 1 にインストールされている ONTAP 9 のバージョンが異なる場合は、ノード 3 をネットブートする必要があります。node3 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、の手順に従って、後続のシステムのブートに使用する正しいファイルをブートメディアデバイスにダウンロードできます <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
   <block id="2ad1e670b60bb257ae5313d5009813a5" category="inline-link-macro">ノード 3 の FC ポートを設定</block>
   <block id="b6f436f6398306a921de09279a6a8256" category="inline-link-macro">ノード 3 の UTA / UTA2 ポートを確認して設定してください</block>
-  <block id="9a1df33637b4fc5aa325b169d3a7aa84" category="list-text">ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <block ref="7c8db700ba9d62850f8b66020ea3d4b9" category="inline-xref-macro-rx"></block> から <block ref="d133a54ce8997c6b3c1ffdd4bfb32c84" category="inline-xref-macro-rx"></block>をクリックしてから、このセクションの指示に従います <block ref="b8be2332e6727dc6b48478780a30df1b" category="inline-link-macro-rx"></block> および <block ref="e1881302722b07e924682c0aeef752a5" category="inline-link-macro-rx"></block> 必要に応じて、メンテナンスモードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <block ref="d602dbbaca50060142dad0af29921558" category="inline-xref-macro-rx"></block>。</block>
   <block id="80f025cc78499a80da49bd37c9bde220" category="list-text">ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を完了して、にアクセスする必要があります <block ref="b8be2332e6727dc6b48478780a30df1b" category="inline-link-macro-rx"></block> および <block ref="e1881302722b07e924682c0aeef752a5" category="inline-link-macro-rx"></block> セクションで、クラスタ・プロンプトでコマンドを入力します。</block>
   <block id="56fd5e5051297f55fa1e22d93c8d71b8" category="list-text">[[auto_install3_step1] ノード 3 のラックスペースがあることを確認します。</block>
   <block id="2c6541bc32b15b7aae8bab68f0ca5874" category="paragraph">ノード 1 とノード 2 が別々のシャーシに搭載されている場合は、ノード 3 をノード 1 と同じラックの場所に設置できます。ただし、 node1 が node2 の同じシャーシに設置されている場合は、 node3 を専用のラックスペースに配置する必要があります。その場合は、 node1 の場所に近い場所に配置することを推奨します。</block>
@@ -429,17 +389,7 @@
   <block id="a35c7561d833fab42eb0820cd7256987" category="list-text">[step18]] on node3 で、ブート環境のプロンプトで次のコマンドを使用して時間を確認します。</block>
   <block id="8fa05814ac535bc4cac5dc313de56abe" category="list-text">[[step19]] 必要に応じて、ノード 3 の時刻を設定します。</block>
   <block id="b7b77c4a8d173f38e98b19b6fa156359" category="paragraph">printenv partner-sysid</block>
-  <block id="74c497c4741babe01069b2689c6f6d96" category="inline-link-macro">ノード 3 で FC または UTA / UTA2 設定を設定します</block>
-  <block id="2987901eef48d33908a5fe3bc58101db" category="list-text">セクションに移動します <block ref="9cb2fecd70723749806307bb1e7fc101" category="inline-link-macro-rx"></block> をクリックし、このセクションのサブセクションを完了します。</block>
-  <block id="824a922c708e37c4e38da69123f1f712" category="list-text">このセクションに戻って、から始めて残りの手順を実行します <block ref="d602dbbaca50060142dad0af29921558" category="inline-xref-macro-rx"></block>。</block>
-  <block id="d2382bf853b3c31a2584de4ebbcb20f5" category="list-text">[[auto_install3_step23]] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。</block>
-  <block id="72797da0a6dd02827100892ec56ff0f7" category="inline-link-macro">ノード 3 で FC ポートを設定しています</block>
-  <block id="33b34c9b4b9fcbf19dc61172941a60f7" category="paragraph">システムにテープ SAN がある場合は、イニシエータをゾーニングする必要があります。必要に応じて、を参照してオンボードポートをイニシエータに変更します <block ref="587d3c60b98ebe686bf65e1387fc811f" category="inline-link-macro-rx"></block>。ゾーニングの詳細な手順については、ストレージアレイとゾーニングに関するドキュメントを参照してください。</block>
-  <block id="c72fdddc98e37cd5e62f25b9974065fc" category="list-text">[[step24]] ストレージアレイに FC イニシエータポートを新しいホストとして追加し、アレイ LUN を新しいホストにマッピングします。</block>
-  <block id="3ba1b014c973048d41b40e37b1cfeb69" category="list-text">[[step25]] ストレージアレイ上のアレイ LUN に関連付けられたホストまたはボリュームグループで、 World Wide Port Name （ WWPN ）値を変更します。</block>
-  <block id="be6df649a349785ed8ec2a552e7c8903" category="list-text">[[step26]] スイッチベースのゾーニングを使用する構成の場合は、ゾーニングを調整して新しい WWPN 値を反映します。</block>
   <block id="bc26b5e5559721e19875fb91dce22cec" category="inline-link-macro">ノード 3 で FC または UTA / UTA2 設定を設定します</block>
-  <block id="8ba547e72776f098f3b70a6614639f73" category="list-text">[step29] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムについて、ノードに接続されているディスクを検出するために、ノード 3 の FC ポートまたは UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください <block ref="c73225f56714e22dffa9ff7369895ce1" category="inline-link-macro-rx"></block>。</block>
   <block id="ca710412a883d1570696f0510733c7a0" category="list-text">node2 のチェック後、 node2 クラスタのストレージフェイルオーバーとクラスタ HA ペアが有効になります。処理が完了すると、両方のノードに「 Completed 」と表示され、クリーンアップ処理が実行されます。</block>
   <block id="9d070d121ee26abdb5d314d6fff4c15c" category="list-text">ストレージフェイルオーバーが有効になっていることを確認します。</block>
   <block id="751035e5db88d172e881299c202d9b13" category="paragraph">「 storage failover show 」をクリックします</block>
@@ -477,8 +427,6 @@
   <block id="27af4227ca8acc558df96e2723ec9b37" category="inline-link-macro">新しいコントローラモジュールで Storage Encryption をセットアップします</block>
   <block id="a1e79be82a0d3f4b4c3568d0f3e32af4" category="paragraph">ノード 3 とノード 4 でストレージ暗号化が有効になっている場合は、セクションを完了します <block ref="18c90c300c0b71334b8b427eaf4f38a3" category="inline-link-macro-rx"></block>。それ以外の場合は、の項を実行します <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
   <block id="8fb4b518ce39a0704f920c9d4f2f7b77" category="doc">アグリゲートの再配置を使用してコントローラハードウェアをアップグレードする</block>
-  <block id="2b8ce2a5a31645114136f0f0bb138e41" category="paragraph">この情報では、元のノードの名前は「 node1 」と「 node2 」になり、新しいノードの名前は「 node3 」と「 node4 」になります。説明されている手順では、 node1 は node3 に置き換えられ、 node2 は node4 に置き換えられます。「 node1 」、「 node2 」、「 node3 」、および「 node4 」は、元のノードと新しいノードを区別するためだけに使用されます。手順を使用するときは、元のノードと新しいノードの実際の名前を置き換える必要があります。ただし実際には、ノードの名前は変更されません。 node3 には node1 という名前が付けられ、 node4 にはコントローラハードウェアのアップグレード後に node2 という名前が付けられます。</block>
-  <block id="997df92b20e351845274e553840f1763" category="paragraph">この情報の中で、「 FlexArray 仮想化ソフトウェアを搭載したシステム」とは、これらの新しいプラットフォームに属するシステムを指します。「 V シリーズシステム」という用語は、ストレージアレイに接続可能な独立したハードウェアシステムを指します。</block>
   <block id="bc0c3600d83329affdb0d85df2aeac56" category="list-text">この手順は、交換用コントローラハードウェアが新しく購入され、使用されていないことを前提としています。使用済みのコントローラを「 wipeconfig 」コマンドで準備するために必要な手順は、この手順には含まれていません。交換用コントローラハードウェアを以前に使用していた場合は、テクニカルサポートに問い合わせる必要があります。特に、コントローラが Data ONTAP 7-Mode を実行していた場合は、テクニカルサポートにお問い合わせください。</block>
   <block id="8d7b68591c9cb3f00554e8b1dd0cc34a" category="list-text">ARL を使用すると、システムを停止することなく、アップグレードするクラスタよりも新しいバージョンの ONTAP を実行する新しいコントローラへのアップグレードを実行できます。古いコントローラと新しいコントローラの ONTAP バージョンの組み合わせは、 ONTAP ソフトウェアリリースの NDU モデルによって決まります。たとえば、 ONTAP 9.8 を実行しているコントローラがあり、そのコントローラで最後にサポートされていたバージョンである場合は、 ONTAP 9.8 より後のバージョンの ONTAP を実行している新しいコントローラにアップグレードできます。</block>
   <block id="3f765691a1037f4fcf966c679a3f3a4a" category="doc">ステージ 3 ：node3 をインストールしてブートします</block>
@@ -564,7 +512,6 @@
   <block id="61d1def7733487d4ddcc1c11e4c26d34" category="paragraph">LIF が表示されなくなった場合は、ホームノードをノード 3 にリストアします。</block>
   <block id="32cbc0f35ce50a85e5c8c6b2f7b35d1f" category="paragraph">このアップグレード手順では、交換するコントローラモデルで ONTAP の新しいバージョンがサポートされておらず、新しいコントローラで以前のバージョンの ONTAP がサポートされていない主な環境アップグレードシナリオを使用します。</block>
   <block id="3f95c69711726ab20c6ad2092e62e13d" category="list-text">この手順を使用して、ノードが 3 つ以上あるクラスタでコントローラハードウェアをアップグレードできます。ただし、クラスタ内のハイアベイラビリティ（ HA ）ペアごとに手順を個別に実行する必要があります。</block>
-  <block id="b63bac0d0a2ee7a43a0c82d9d71a631a" category="list-text">この FlexArray システム、 V シリーズシステム、 AFF システム、および手順環境 FAS 仮想化ソフトウェアを搭載したシステムです。必要なライセンスがインストールされていれば、 ONTAP 9.5 以降にリリースされた FAS システムをストレージアレイに接続できます。ストレージアレイと V シリーズのモデルの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe にリンクして、 V シリーズサポートマトリックスにアクセスしてください。</block>
   <block id="9ac92b97b9314fe7c9c80b03c2f61746" category="list-text">この手順環境システムは、 4 ノードの NetApp MetroCluster 構成以上を実行しています。MetroCluster 構成サイトは物理的に異なる場所に設置できるため、 HA ペアの場合は各 MetroCluster サイトでコントローラの自動アップグレードを個別に実行する必要があります。</block>
   <block id="71dd89b192a133f8ccfd6e18f0397ebc" category="paragraph">交換したコントローラまたは新しいコントローラの HA パートナーで Storage Encryption が使用されている場合は、 SSL 証明書のインストールやキー管理サーバのセットアップなど、新しいコントローラモジュールを Storage Encryption 用に設定する必要があります。</block>
   <block id="1bf6f98fb62d5ca413d6cce101954a5f" category="paragraph">この手順には、新しいコントローラモジュールで実行する手順が含まれています。コマンドは正しいノードで入力する必要があります。</block>
@@ -630,18 +577,10 @@
   <block id="a9849e92b148965a7bbb6c14d0afbcd0" category="cell">オンボードキーマネージャ（ OKM ）</block>
   <block id="7bd5452d2f3a1c07fc54d3a08cc82d64" category="paragraph">ノード 3 にオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードがある場合は、残りの手順を完了する前に設定を行う必要があります。</block>
   <block id="d897564a1ca4a58b7f422ba34b232ab7" category="paragraph">セクションの完了が必要な場合があります <block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>、を参照してください <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
-  <block id="a1a2d377f686ce4835b9ee342fd6089b" category="list-text"><block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block></block>
-  <block id="3088a544c36eafa56a0950901fa93b6a" category="list-text"><block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block></block>
-  <block id="8992459eb47b3dc5036bd8be4d821db3" category="paragraph">node3 にオンボードまたは FC アダプタの FC ポートがある場合は、ポートが事前に設定されていないため、ノードを稼働状態にする前にポート設定を設定する必要があります。ポートが設定されていないと、サービスが停止する可能性があります。</block>
   <block id="7551ace690fab9fce9d0a9cad21a0ae7" category="paragraph">セクションに保存した FC ポート設定の値を node1 で確認しておく必要があります <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
   <block id="dfec8ed00cbb51821de82d335a0ba98b" category="paragraph">システムに FC 構成がない場合は、このセクションをスキップしてかまいません。システムにオンボード UTA / UTA2 ポートまたは UTA / UTA2 カードがある場合は、で設定します <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>。</block>
-  <block id="bc56374912cd801964f37da82292340c" category="list-text">[[step1] ノード 3 の FC 設定を、ノード 1 から前に取得した設定と比較します。</block>
   <block id="831368d2ac042989f939504faf6cdf51" category="list-text">[[step2]] 次のいずれかの操作を実行します。</block>
-  <block id="9e7870f5e5208d6877c9cc3acc6453c0" category="paragraph">メンテナンスモード（ブートメニューのオプション 5 ）で、必要に応じてノード 3 の FC ポートを変更します。</block>
   <block id="7e6f8de582e2388fb39a5c5c26caa64f" category="list-text">[[step3]] 次のいずれかの操作を実行します。</block>
-  <block id="6ee9ff94b07628e8d936112db18664d2" category="cell">次のコマンドを使用して、新しい設定を確認します。 ucadmin show</block>
-  <block id="bc53092d23cdf154996298ad69f4e7f0" category="list-text">[[step4]] メンテナンスモードを終了します。</block>
-  <block id="25c2f630f05e1a3933f0c056165ae65b" category="list-text">[[step6] コマンドを入力したら、ブート環境のプロンプトでシステムが停止するまで待ちます。</block>
   <block id="d2dce3cff13fd2c8259fdef7c637226e" category="list-text">[[auto_check3_step8] 次のいずれかの操作を実行します</block>
   <block id="d190fd34bae28aff670090c55eb7e24b" category="paragraph">ノード 3 にオンボード UTA / UTA2 ポートまたは UTA / UTA2 カードが搭載されている場合は、アップグレードしたシステムの使用方法によって、ポートの設定を確認し、場合によっては再設定する必要があります。</block>
   <block id="7cda71007d207ef48448dffed511abb8" category="paragraph">FC にユニファイドターゲットアダプタ（ UTA / UTA2 ）ポートを使用する場合は、まずポートの設定を確認する必要があります。</block>
@@ -649,27 +588,10 @@
   <block id="7561dbd16073c82eda6418543cdd93ec" category="paragraph">UTA / UTA2 ポートはアダプタまたはコントローラに搭載されている場合がありますが、次の構成になっています。ノード 3 の UTA / UTA2 ポートの設定を確認し、必要に応じて変更してください。</block>
   <block id="7107b4a109094877db55716e76bb317a" category="list-text">コントローラを注文した UTA / UTA2 カードは、注文したパーソナリティを指定するために出荷前に設定されます。</block>
   <block id="ac077d6a8af47d3f6459bdc75d20144c" category="list-text">新しいコントローラのオンボード UTA / UTA2 ポートは、希望するパーソナリティを持つように出荷する前に設定されます。</block>
-  <block id="1acb31a5b3534092750f6ee560e0995c" category="admonition">* 注意 * ：ストレージディスクがある場合は、メンテナンスモードに指示されていないかぎり、クラスタプロンプトでこのセクションのコマンドを入力します。V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合は、このセクションのメンテナンスモードプロンプトでコマンドを入力します。UTA / UTA2 ポートを設定する場合は、メンテナンスモードにする必要があります。</block>
-  <block id="acb716cb88324392697eb22eddc7c3a3" category="list-text">[[step1] node3 で次のコマンドを入力して、ポートが現在どのように設定されているかを確認します。</block>
-  <block id="e8eedad0c370be864050462beebc8141" category="cell">対処は不要です。</block>
   <block id="b9372fe4eb2e1f51dc5ecc63ef944026" category="list-text">[[step2] 現在の SFP+ モジュールが目的の用途と一致しない場合は、正しい SFP+ モジュールと交換します。</block>
-  <block id="cf64c78b7d463ed3f7aa4e4a9d43ca20" category="list-text">[[step3]] 「 ucadmin show 」コマンドの出力を調べ、 UTA / UTA2 ポートに希望するパーソナリティがあるかどうかを確認します。</block>
   <block id="37ba28d857fa9f472bd54799a71b4d1f" category="list-text">[[step4]] 次のいずれかの操作を実行します。</block>
   <block id="2c59ff8f0f110684a1947a7be9c33989" category="cell">UTA / UTA2 ポート</block>
-  <block id="a74e65d44694577cd6490a79583dff8a" category="cell">に進みます <block ref="e33bb2c935af60d67309f774bd9b33e2" category="inline-xref-macro-rx"></block>。</block>
-  <block id="eb97cddf7fc62845fc1e4eea9c2d99cd" category="cell">手順 5 から 12 を省略して、に進みます <block ref="1b9dfae277e309ab4a6eabe371e415ad" category="inline-xref-macro-rx"></block>。</block>
-  <block id="c38c7f4981b1e1041fde50ff14eac24d" category="list-text">[[auto_check3_step5] 次のいずれかの操作を実行します。</block>
-  <block id="19971734faa0d5692ce82090e92c08e4" category="cell">に進みます <block ref="8636550629e708c32b80412fc9a4bd9f" category="inline-xref-macro-rx"></block></block>
-  <block id="23cdc9078cbdc89882a254d05d67d976" category="cell">手順 7 を省略して、に進みます <block ref="c9ad15d95077080d869d1e4c8360803a" category="inline-xref-macro-rx"></block>。</block>
-  <block id="da0cddf6f2fcc9355331e1d32bd6c782" category="list-text">[[step6] アダプタがイニシエータモードの場合、および UTA / UTA2 ポートがオンラインの場合は、 UTA / UTA2 ポートをオフラインにします。</block>
-  <block id="8538924568e2fc8f0f2a3823de803c1a" category="list-text">[[auto_check3_step7] 現在の構成が目的の用途に一致しない場合は、必要に応じて構成を変更します。</block>
   <block id="68393ca2b7b9884fdd9f7eea661220e1" category="list-text">「 -m 」はパーソナリティ・モードで、「 fc 」または「 cna 」です。</block>
-  <block id="47677c5f320a3d7c211f1c3bf5ad457b" category="list-text">[[auto_check3_step8] 設定を確認します。</block>
-  <block id="315e31e9f839439e107a11b7ff7facb6" category="list-text">[[step9] 設定を確認します。</block>
-  <block id="b72b45050e36429103ef8a4d16d411be" category="list-text">[[step10]] 次のいずれかのコマンドを入力して、各ポートに 1 回ずつターゲットポートをオンラインにします。</block>
-  <block id="b479e4a9e97e157251ef3d2064ea4380" category="list-text">[[step11]] ポートをケーブル接続します。</block>
-  <block id="3f9068a407bdbb378e93f4d5d6b9abe6" category="list-text">[[auto_check3_step12]] 次のいずれかの操作を実行します。</block>
-  <block id="56b97cceb683f15e6179871d3991edcc" category="list-text">[[auto_check3_step13]] メンテナンスモードを終了します。</block>
   <block id="8e26679b9fca64c8419387ed5ddbd066" category="list-text">[[step19]] メンテナンスモードで、現在ターゲットモードになっている以前に設定されたすべてのイニシエータポートを表示します。</block>
   <block id="4306b082c2e67956b1918aaea01dbeec" category="list-text">[[step20]] ポートがイニシエータモードに変更されていることを確認します。</block>
   <block id="4c830d7f040ff17fe7d01c1e6f446b3f" category="list-text">[[step2]] メンテナンスモードを終了します。</block>
@@ -834,7 +756,6 @@
   <block id="bf3f92b1cc4c69581f2185ebf4603ed4" category="list-text">次の手順に従って、リストアが必要な SVM および LIF のホームポートがある場合は、それらを指定して LIF のホームポートをリストアします。</block>
   <block id="5103bf442db985e287322952e9087bad" category="list-text">LIF のホームノードとホームポートをリストアします。</block>
   <block id="4a8c92edcf5608186b4e424977f98a73" category="cell">ブート環境プロンプトで「 ifconfig e0M -auto 」コマンドを入力すると、接続が自動的に設定されます</block>
-  <block id="732b920f8c31e81584bfe00d62cf46b6" category="paragraph">必要に応じて、を参照してオンボードポートをイニシエータに変更します <block ref="1d789633b45165b05bf13f9838060fe6" category="inline-link-macro-rx"></block>。ゾーニングの詳細な手順については、ストレージアレイとゾーニングに関するドキュメントを参照してください。</block>
   <block id="b24179e00e90966dedcd7ebbac3c3c96" category="list-text">ネットワークとすべての VLAN 、インターフェイスグループ、およびブロードキャストドメインが正しく設定されていることを手動で確認してください。</block>
   <block id="35c143d9885250e0128441d72be169dd" category="list-text">「 y 」と入力して続行します。</block>
   <block id="0fe1ab232beb36c111a482c1e5418bbf" category="paragraph">これらのチェックの実行後、システムによって、 node2 によって所有されているルート以外のアグリゲートと NAS データ LIF が新しいコントローラ node4 に再配置されます。リソースの再配置が完了すると、システムは一時停止します。</block>
@@ -942,7 +863,6 @@
   <block id="0fcf2ee62acd9eae83b609a0e7ecaa72" category="cell">ONTAP 9.5</block>
   <block id="3554bd6dca965e0e8bcb314a54ef655c" category="list-text">オンボードキーマネージャのクラスタ全体のパスフレーズを入力します。</block>
   <block id="04e69ed9c039a8d1bc156ec97e69f0d2" category="inline-link-macro">node2 のポートを node4 にマッピングします</block>
-  <block id="8791ac28601fdc37abff08e6c499f508" category="list-text">に進みます <block ref="15e1611f6cc2b64b7163cc152446c8c0" category="inline-link-macro-rx"></block> ノード 4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合</block>
   <block id="38c5d8cbf396fa8049b864a52905989e" category="inline-link-macro">ノードのネットワークポートセットが異なる場合は、クォーラムを追加します</block>
   <block id="9645dac7a86b8b52dafb1d2bce8d2cbc" category="paragraph">ONTAP 9.5 から 9.7 では、 Key Management Interoperability Protocol （ KMIP ）サーバを使用して認証キーを管理できます。</block>
   <block id="40f491be1da04740c193fe7b8e4df207" category="paragraph">アグリゲートの再配置（ ARL ）を使用して ONTAP 9.5 を実行するコントローラのペアを ONTAP 9.7 にアップグレードできるかどうかは、プラットフォームと、元のコントローラと交換用コントローラの両方の構成によって異なります。</block>
@@ -958,12 +878,10 @@
   <block id="87955a4e69dc9556a2a78cd5f057d2f3" category="paragraph">「 node1 」、「 node2 」、「 node3 」、および「 node4 」は、元のノードと新しいノードを区別するためだけに使用されます。手順を使用するときは、元のノードと新しいノードの実際の名前を置き換える必要があります。ただし実際には、ノードの名前は変更されません。「 node3 」の名前は「 node1 」と同じで、「 node4 」の名前はコントローラハードウェアのアップグレード後に「 node2 」と同じです。</block>
   <block id="48d957729e77cbd1ec1cf772f951270a" category="list-text">この手順は、交換用コントローラハードウェアが新しく購入され、使用されていないことを前提としています。使用済みのコントローラを「 wipeconfig 」コマンドで準備するために必要な手順は、この手順には含まれていません。交換用コントローラハードウェアを以前に使用していた場合は、テクニカルサポートに問い合わせる必要があります。特に、コントローラが Data ONTAP 7-Mode を実行していた場合は、テクニカルサポートにお問い合わせください。</block>
   <block id="e5e0e33438e3e93b68faec10a86b2f1c" category="list-text">この手順を使用して、ノードが 3 つ以上あるクラスタのコントローラハードウェアをアップグレードできますが、クラスタ内の HA ペアごとに手順を個別に実行する必要があります。</block>
-  <block id="8aa258d7d2576cff89b65debb971736d" category="list-text">この FlexArray システム、 V シリーズシステム、 AFF システム、および手順環境 FAS 仮想化ソフトウェアを搭載したシステムです。必要なライセンスがインストールされていれば、 ONTAP 9.5 以降にリリースされた FAS システムをストレージアレイに接続できます。既存の V シリーズシステムは、 ONTAP 9.5 でサポートされます。ストレージアレイと V シリーズのモデルの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe にリンクして、 V シリーズサポートマトリックスにアクセスしてください。</block>
   <block id="5606085c29237d873046f0814d8b70b0" category="list-text">次のコマンドを入力して、 node4 が node3 と同じクラスタに含まれていること、および正常であることを確認します。</block>
   <block id="7f1799dcf19180943a8e7e660bf6a3dd" category="list-text">処理のステータスを確認し、 node4 の設定情報が node2 と同じであることを確認します。</block>
   <block id="a10c88f3a400c8c2aa654ddd4a616518" category="paragraph">ノード 4 の設定が異なる場合は、あとで手順でシステムが停止する可能性があります。</block>
   <block id="838d8de52d85e0b64e9643b598ef2b7e" category="list-text">交換したコントローラが MetroCluster 構成に対して正しく設定されており、スイッチオーバーモードでないことを確認します。</block>
-  <block id="c7bfe1826ae50dfa18e857462ed5be48" category="admonition">* 注意：この段階では、 MetroCluster 構成は正常な状態ではなく、エラーが発生していて解決できます。を参照してください <block ref="14c0e32a98a31f9fd4a16b635b2f7ebd" category="inline-link-macro-rx"></block>。</block>
   <block id="d214189b511a4dddc29ca037a9c05cc4" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。ノード 3 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認する必要があります。</block>
   <block id="b003ff957beed57b873253f1e4cd0441" category="list-text">[[step5] - データ LIF をホストしているポートが新しいハードウェアに存在しない場合は、ブロードキャストドメインから削除します。</block>
   <block id="45560e4a070877091866d34d12016154" category="list-text">インターフェイスグループまたは VLAN が設定されている場合は、次の手順を実行します。</block>
@@ -997,7 +915,6 @@
   <block id="74c90316d25b4cdc5c8e524af066a5a0" category="paragraph">「セキュリティキーマネージャの外部リストア」</block>
   <block id="eed577fe70cdcd6a422d81d49e0f94ca" category="paragraph">このコマンドには、オンボードキーマネージャ（ OKM ）のパスフレーズが必要です。</block>
   <block id="57bd5edad2e4a85125aa9528f6fa4cea" category="list-text">OKM の認証をリストアします：</block>
-  <block id="5bb1d2d89905f521825083d671817bcb" category="cell">は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています</block>
   <block id="fb2ae3407dbb65ffe5f8f2ab09ba07d0" category="list-text">次のコマンドを入力し、出力を確認して、新しいクラスタポートがクラスタブロードキャストドメインにあることを確認します。</block>
   <block id="3cb8659a043650dc7ac58ea24d685632" category="paragraph">「 network port show -node node -port port -fields broadcast-domain 」</block>
   <block id="31ee4113a91e33fbefc812b660a4b1ed" category="paragraph">次の例は、ポート「 e1a 」が node3 のクラスタドメインにあることを示しています。</block>
@@ -1484,30 +1401,13 @@
   <block id="6904f97422da010c9982167637cc6d56" category="list-text">[[man_install4_Step7] ステップ 6 で警告メッセージが表示された場合は、次の操作を実行します。</block>
   <block id="abb5e8621f032d746c9aa9b35f472595" category="list-text">NVRAM バッテリ低下以外の問題を示すコンソールメッセージがないか確認し、必要に応じて対処します。</block>
   <block id="8ece0169cd074b513037985b1656b1cd" category="list-text">バッテリの充電と起動プロセスが完了するまで待ちます。</block>
-  <block id="30567eb6dc573926907b3bb63db7137a" category="admonition">* 警告 : 遅延を上書きしないでください。バッテリーの充電に失敗すると、データが失われる可能性があります。 *</block>
-  <block id="945c73c9ea193c92dd8b512126669f13" category="list-text">[[man_install4_Step8] 次のいずれかの操作を行います。</block>
   <block id="fb89a7ef586904dc37e09f10f3f0ec64" category="inline-xref">手順 15</block>
-  <block id="a2a7998a5450e891bb5464c1204815d8" category="cell">手順 9 から 14 を省略して、に進みます <block ref="5c1f19cc6cb716956fba505fb903a21f" category="inline-xref-macro-rx"></block>。</block>
-  <block id="0366496afb0bd008f8fb19b74f53ec71" category="inline-link-macro">ノード 4 の FC ポートを設定します</block>
-  <block id="7973536954a566dd7a59dc4fa1580481" category="list-text">node4 の FC または UTA / UTA2 設定のセクションに移動し、セクションの作業を行います <block ref="5dc4a26bdcd4279b0919835bab13d0db" category="inline-link-macro-rx"></block> および <block ref="b0f6547feb9924da912bf4fa3357e2fc" category="inline-link-macro-rx"></block>必要に応じて、システムに適用されます。</block>
-  <block id="f01b0d07fd3bcdce42fd5cf6a8f46551" category="list-text">このセクションに戻って、から始めて残りの手順を実行します <block ref="9b924d5c1ba14dd46bf7c40da5a15e7c" category="inline-xref-macro-rx"></block>。</block>
-  <block id="562a6369849944020611b8a9540b9c5c" category="list-text">[[man_install4_Step9] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。</block>
-  <block id="a68de9b3c6fcb14f9c96b6e558ca71f8" category="list-text">ストレージアレイ上のアレイ LUN に関連付けられたホストまたはボリュームグループの World Wide Port Name （ WWPN ；ワールドワイドポート名）値を変更する。</block>
-  <block id="1ad5461b16a79391d48cbca2383e0c9e" category="list-text">次のコマンドを入力し、出力を調べて、アレイ LUN が node4 に認識されていることを確認します。</block>
-  <block id="6b3585cc5d8743bbae5204f3097641c4" category="paragraph">「 sysconfig -v 」を使用します</block>
-  <block id="134f75a624b82855271656ebc0cf2d5f" category="paragraph">各 FC イニシエータポートで認識されるすべてのアレイ LUN が表示されます。アレイ LUN が表示されない場合は、このセクションの後半で node2 から node4 にディスクを再割り当てすることはできません。</block>
-  <block id="a2835e58397213dc9bedb9afe05d29d2" category="list-text">[[man_install4_Step15]] メンテナンスモードのプロンプトで、次のコマンドを入力します。</block>
   <block id="2f31b93de57cc6e92ee38aaed9b49765" category="paragraph">ブート環境プロンプトが表示されます。</block>
   <block id="9b30a77b62fcc76d557f789dd6ce3167" category="list-text">ONTAP のノード 4 を設定します。</block>
   <block id="c769624c49a19cf249ae2dabe50fafd5" category="list-text">ノード 4 にインストールされている ONTAP のバージョンが node2 にインストールされている ONTAP 9 と同じかそれ以降の場合は、次のコマンドを入力します。</block>
   <block id="648ad8a1b1818127b7b933420429d236" category="cell">アップグレードするシステム</block>
   <block id="bd525e59dc1c481092f22bdaeff4a9cb" category="cell">ノード 4 に正しい ONTAP バージョンまたは現在の バージョンがない</block>
-  <block id="d4d1f4ca7806007366aa98184f062124" category="inline-xref">手順 20</block>
-  <block id="642ae729bd75051692412fd6ebaf2526" category="cell">に進みます <block ref="1fde564298826640b3bacb4260e3eaea" category="inline-xref-macro-rx"></block>。</block>
   <block id="9b66895c756fece1df6c42e12763649b" category="cell">ノード 4 の ONTAP のバージョンが正しいか、最新のバージョンであることが必要です</block>
-  <block id="7769822edfc550f3ba37429715882554" category="inline-xref">手順 25</block>
-  <block id="107c908e64ebe1cdac15562994203122" category="cell">に進みます <block ref="aadd3e12a76cc16c765ef6c4ab9ed890" category="inline-xref-macro-rx"></block>。</block>
-  <block id="76b2a354a862c0069407c912fb51ee50" category="list-text">[[man_install4_Step20]] 次のいずれかの操作を選択して、ネットブート接続を設定します。</block>
   <block id="a1e9c2458084c8aed432506005e0789e" category="cell">netboot\http://web_server_ip/path_to_webaccessible_directory/netboot/kernel`</block>
   <block id="7e0c898eb7a2157f9a4fe767ff353ea1" category="cell">netboot\http://web_server_ip/path_to_webaccessible_directory/ontap_version_image.tgz`</block>
   <block id="feed6e71880a4cdb6f484b72b59ad1c7" category="paragraph">「 path_to_the_web-accessible_directory 」は、「 ONTAP_version_image.tgz 」をダウンロードした場所を指します <block ref="d7ca8bd1bdacba48998a89c59527e756" category="inline-link-macro-rx"></block> の項で、 netboot_ の準備を参照してください。</block>
@@ -1519,8 +1419,6 @@
   <block id="ad4f522a516d9a5742a3b1abdd5d7e77" category="paragraph">http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` にアクセスします</block>
   <block id="3678fe02acf5ec3ff8f4fbebc3fd7a4d" category="list-text">次の手順を実行します。</block>
   <block id="037fcad07615e2da823be3a48a35cfb8" category="paragraph">コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データのリストアが必要なためです。</block>
-  <block id="212239c0a7a5196ffbd8cc3895cfce05" category="list-text">[man_install4_Step25]] ブートメニューからメンテナンスモード「 5 」を選択し ' ブートを続行するように求められたら 'y' を入力します</block>
-  <block id="88dd4b794782fce5edb7683e13199311" category="list-text">[[man_install4_Step26]] 続行する前に、に進みます <block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block> ノードの FC ポートまたは UTA / UTA2 ポートに必要な変更を加えるため。これらのセクションで推奨される変更を行ってからノードをリブートし、メンテナンスモードに切り替えます。</block>
   <block id="7e3544f15733cd05bc2830419b4be7f9" category="list-text">次のコマンドを入力し、出力を調べて node4 のシステム ID を特定します。</block>
   <block id="4e974a66c77c6d900d32abc8f0338440" category="paragraph">次の例に示すように、ノードのシステム ID 、およびそのディスクに関する情報が表示されます。</block>
   <block id="fae986fa29654ebe6966932d05eb132d" category="inline-link-macro">ルート以外のアグリゲートを node2 から node3 に再配置します。</block>
@@ -1548,7 +1446,6 @@
   <block id="e3f03a007dc36d2b8067017bfe222275" category="list-text">ノード 4 で、ブート環境プロンプトの日付を確認します。</block>
   <block id="02bb70865b20c57eb319b73c84b5fd7f" category="list-text">ノード 4 で、ブート環境プロンプトの時刻を確認します。</block>
   <block id="6f690bd73c9853fafd7c1e4456ccea21" category="inline-xref">手順 26</block>
-  <block id="c73ed66a3414025099d74b00d7536036" category="list-text">パートナーシステム ID が、に示すように正しく設定されていることを確認します <block ref="6f4b83e10b4758eab71105c01c130b34" category="inline-xref-macro-rx"></block> オプション（ Option ）の下。</block>
   <block id="0f463f9540d67b2794aa78893f83b8aa" category="list-text">ブート環境プロンプトでブートメニューを入力します。</block>
   <block id="ca0b24352c36c0cc73393a18e38ead22" category="list-text">ブート・メニューで ' プロンプトに「 6 」と入力して 'Option *(6) Update flash from backup config * を選択します</block>
   <block id="23fc33b520f7242c5f2fb610689e9e8c" category="list-text">プロンプトで「 y 」と入力します。</block>
@@ -1605,8 +1502,6 @@
   <block id="6df8f51a4f207a8aec19520cbafdafd9" category="cell">ステージ 3 ： _ ノード 1 のポートを node3 ステージ 5 ： _node2 のポートを node4 に再割り当てする</block>
   <block id="0cefe51dc41d2718e2eb5823909bbc12" category="cell">（ SAN 環境のみ） FC ポートのデフォルト設定</block>
   <block id="f7a78d2e3df99d48acd611b5ebd92bff" category="cell">新しいノードで FC ポートを設定する</block>
-  <block id="98577d60c614df3fef5fca33b637ac23" category="cell">（ V シリーズシステムまたは FlexArray 仮想化ソフトウェアのみを使用するシステム） V シリーズシステムまたは FlexArray 仮想化ソフトウェアを使用するシステムのトポロジ</block>
-  <block id="7cfd4d042bb6ab02bc385b9c06501763" category="cell">ステージ 3 ： _ インストールとブート node3 _ ステージ 5 ： _ インストールとブート node4 _</block>
   <block id="72a91a015e8c747a5a63794308310840" category="cell">SP の IP アドレス</block>
   <block id="e3d8433cfe5569460492707086339074" category="cell">ライセンスキー</block>
   <block id="234cfc2e3636ba2a3e5d47da84d5bd32" category="cell">ステージ 1 ： _ ストレージ暗号化のディスクのキーを変更 _</block>
@@ -1699,9 +1594,7 @@
   <block id="aa4444dc8b6bab3b2f6234aeca290090" category="section-title">前提条件と用語</block>
   <block id="c77e53bb71e6f82e9c063dc5e5174b70" category="paragraph">このマニュアルの記述は次の前提に基づいています。</block>
   <block id="3eb93a8b34b97361565e1e43b5172c6c" category="list-text">交換用コントローラハードウェアは新しく購入され、使用されていません。</block>
-  <block id="2c1539b425b852831dfd3949e3fa3f6e" category="admonition">* 注意 * ：この手順は、交換用コントローラハードウェアが新しく、使用されていないと想定しているため、使用済みコントローラを「 wipeconfig 」コマンドで準備するために必要な手順は、この手順には含まれていません。交換用コントローラハードウェアを以前に使用していた場合は、テクニカルサポートに問い合わせる必要があります。特に、コントローラが Data ONTAP 7-Mode を実行していた場合は、テクニカルサポートにお問い合わせください。</block>
   <block id="813522154d0016da078c804c8b48926e" category="list-text">ノードのペアをアップグレードする際のガイドラインを確認し、理解しておきます。</block>
-  <block id="31536b7b125b53b91a4202e748df16c7" category="admonition">* 注意 * NVRAM の内容は消去しないでください。NVRAM の内容をクリアする必要がある場合は、ネットアップテクニカルサポートにお問い合わせください。</block>
   <block id="4e2f57efeba52fa3484b04fa5b7501f6" category="list-text">「 mody 」コマンドの前後に適切なコマンドを実行し、両方の「 show 」コマンドの出力を比較して、「 mody 」コマンドが成功したことを確認しています。</block>
   <block id="418bba28a84b33a46f081045deea4425" category="list-text">SAN 構成の場合、 HA ペア上の各 Storage Virtual Machine （ SVM ）にローカル LIF とパートナー LIF があります。各 SVM にローカル LIF とパートナー LIF がない場合は、アップグレードを開始する前に、その SVM のリモートノードとローカルノードに SAN データ LIF を追加します。</block>
   <block id="4deee541ccbe8bdf4518c19cd687519b" category="list-text">SAN 構成でポートセットを使用する場合は、バインドされた各ポートセットに HA ペアの各ノードの LIF が少なくとも 1 つ含まれていることを確認しておく必要があります。</block>
@@ -1720,7 +1613,6 @@
   <block id="7fcb92cfc1dea17cbdc84eda52cfac2b" category="list-text">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> からネットアップサポートサイトにリンクして、ネットアップサポートサイトでサポートケースをオープンしてください。</block>
   <block id="38fd59ef0181a70014c49f0cfdd6ed5d" category="paragraph">アップグレード中に発生する可能性がある問題をケースで報告できます。</block>
   <block id="e7b328a01b5a6b8fffc172cfd9f564c0" category="list-text">node3 と node4 の NVMEM または NVRAM バッテリが充電されていることを確認し、充電されていない場合は充電します。</block>
-  <block id="6ab3181b33a0075c13f2de4c0920deff" category="admonition">* 注意 * NVRAM の内容は消去しないでください。NVRAM の内容をクリアする必要がある場合は、ネットアップテクニカルサポートにお問い合わせください。</block>
   <block id="051d9c31ffa2621a5e49ba9e6d76c916" category="list-text">node3 と node4 にある ONTAP のバージョンを確認します。</block>
   <block id="53e359796554176ecef5639c8ed3ed05" category="paragraph">node3 と node4 にある ONTAP のバージョンに関する情報は、梱包箱に含める必要があります。ONTAP のバージョンは、ノードがブートするとき、またはノードを保守モードでブートしてコマンドを実行するときに表示されます。</block>
   <block id="7877022c956918624cc0373ff564cad4" category="paragraph">「バージョン」</block>
@@ -1762,7 +1654,6 @@
   <block id="86bd7b7efad49e1892e19e0073d55fb5" category="list-text">両方のノードのモデル、システム ID 、シリアル番号を記録します。</block>
   <block id="dfb5c700fcc3e30efac3db32160fbcf2" category="admonition">この情報を使用して、ディスクの再割り当てと元のノードの運用を停止します。</block>
   <block id="e09e773592434045763d0f91877696a1" category="list-text">ノード 1 とノード 2 の両方で次のコマンドを入力し、シェルフ、各シェルフ内のディスク数、フラッシュストレージの詳細、メモリ、 NVRAM 、ネットワークカードに関する情報を出力に記録します。</block>
-  <block id="4f52adca7234907fc88d3196c013afca" category="admonition">この情報を使用して、 node3 または node4 に転送するパーツやアクセサリを特定できます。ノードが V シリーズシステムであるか、 FlexArray 仮想化ソフトウェアがインストールされているかがわからない場合は、の出力からも確認できます。</block>
   <block id="183d8f9cbafac0e6a6d6ea1ecdc927af" category="list-text">ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオンラインになっているアグリゲートを記録します。</block>
   <block id="8e812627c78a44fd6a82255d855942ae" category="admonition">この情報と次の手順の情報を使用して、再配置時にオフラインになった短時間のアグリゲートとボリュームが手順全体でオンラインのままになっていることを確認できます。</block>
   <block id="75cf5ffcfa777a87d0faf388944df0a1" category="list-text">[[man_prepare_nodes_step19]] ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオフラインになっているボリュームを記録します。</block>
@@ -1808,16 +1699,11 @@
   <block id="ff03f81e3805469dd3ca43d2811a614d" category="list-text">次のコマンドを入力してシステムの出力を記録し、元のノードの FC ポートのデフォルト設定を取得します。</block>
   <block id="3e2b2bdb70af85f67ec523ee76a4f03b" category="paragraph">コマンドは、次の例に示すように、クラスタ内のすべての FC ポートに関する情報を表示します。</block>
   <block id="b0465c9d2f8edb4e2978de4f3bb93497" category="paragraph">アップグレード後の情報を使用して、新しいノードに FC ポートを設定できます。</block>
-  <block id="1c805b4cc00ee084b0e3a5a9c212e9a2" category="list-text">V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされたシステムをアップグレードする場合は、次のコマンドを入力して出力を記録し、元のノードのトポロジに関する情報を取得します。</block>
-  <block id="1f21d3af1ebfd92fe19ca32d07d90016" category="paragraph">「 storage array config show -switch 」です</block>
-  <block id="c83875af1cfc44dcf937e003fd6ad9bf" category="paragraph">次の例に示すようにトポロジ情報が表示されます。</block>
-  <block id="1bd4ed27f87546af3edbba37df0590cf" category="list-text">[man_prepare-to-downgrade 29]] 次の手順を実行します。</block>
   <block id="fd24198d12e02d20f511f9c35f66ebb1" category="list-text">元のいずれかのノードで次のコマンドを入力し、出力を記録します。</block>
   <block id="7321ac6691d90f67ea8ea42f26847df8" category="paragraph">「 service-processor show -node * -instance 」のように表示されます</block>
   <block id="72dfb8d3e52e5d9045db9ad00960535b" category="paragraph">両方のノードの SP に関する詳細情報が表示されます。</block>
   <block id="7f4649d278edc769a0ec529585086778" category="list-text">SP の IP アドレスやその他の情報を記録します。</block>
   <block id="2874b759bc0f9d6f832a84f482485f96" category="paragraph">リモート管理デバイスのネットワーク・パラメータ（この場合は SP ）を ' 新しいノードの SP の元のシステムから再利用することができますSP の詳細については ' を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 『 _System Administration Reference_and the ONTAP 9 Commands ： Manual Page Reference_』 にリンクするには、次の手順を実行します。</block>
-  <block id="73e2f3b9e6d19fe1e2189067c752d909" category="list-text">[man_prepare-to-downgrade 30]] 新しいノードに元のノードと同じライセンス機能を設定する場合は、次のコマンドを入力して元のシステムのクラスタライセンスを表示します。</block>
   <block id="57fb8c1782e77bfa17ea95c66f54a6dd" category="paragraph">「 system license show -owner * 」と表示されます</block>
   <block id="4f8f7baa705fb90b9c5bec95668e59f5" category="paragraph">次の例では、 cluster1 のサイトライセンスを表示しています。</block>
   <block id="b83718d5186db84761322d32f4ea05ac" category="list-text">新しいノードの新しいライセンスキーを the _NetApp Support Site_. に取得します。を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> からネットアップサポートサイトにリンクしてください。</block>
@@ -1838,63 +1724,19 @@
   <block id="4086f5138ec309c4999cbff0dc76073d" category="admonition">この時点では node2 の AutoSupport メッセージはネットアップに送信しないでください。これはあとで手順で送信します。</block>
   <block id="37fdb57fc31ec512b7d4dde37a7ab8d7" category="list-text">[man_prepare-to-downgrade 36 、 Step 36]] 次のコマンドを入力して、 AutoSupport メッセージが送信されたことを確認します。</block>
   <block id="28dd44ad0b0bcceee8ca8498734facba" category="paragraph">「 Last Subject Sent ：」フィールドと「 Last Time Sent ：」フィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。</block>
-  <block id="fdeff716288a3bd8ca18c4ffee31f259" category="paragraph">完了する必要がある場合があります <block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>または <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
   <block id="5e8f88089134f38f7cf630a3a4ce36ff" category="admonition">ネットアップのマーケティング資料では、 UTA2 という用語を CNA アダプタとポートという意味で使用している場合があります。ただし、 CLI では「 cna 」という用語を使用しています。</block>
-  <block id="0f7670789359a9e1e91e25e19d469dad" category="list-text">ノード 3 にオンボードの FC ポート、オンボードの UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクを搭載したシステムをアップグレードする場合は、に進みます <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
   <block id="218c1c22487e3cea0e94aedcabb843e2" category="paragraph">に保存した FC ポート設定の値を node1 で確認しておく必要があります <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
-  <block id="fb0e67401f3473ee656312bb98935878" category="cell">に進みます <block ref="4e8d6367d01e7a88b5b6b591ecf5d6db" category="inline-xref-macro-rx"></block></block>
-  <block id="32781b45218385923d91bc21b08c6b68" category="cell">に進みます <block ref="79ba4e2202506d0f17b14ab90d196879" category="inline-xref-macro-rx"></block></block>
-  <block id="838b228ad3b40461ad1dc100f5671807" category="list-text">[[man_config_3_step2] ノード 3 をブートし、メンテナンスモードにアクセスします。</block>
-  <block id="534ca774217e84be533a1aad9cf31936" category="cell">次のコマンドを入力します。 'system node hardware unified-connect show'</block>
-  <block id="fe780061729afd0c0f2800209c7c7bf6" category="cell">は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載し、ストレージアレイに接続されています</block>
-  <block id="b7911a4b9aaa4584cf3072f4df9d0033" category="cell">次のコマンドを「 ucadmin show 」と入力します</block>
-  <block id="d0f2b99979906267ea4c720be3fdf8c1" category="list-text">[[step4]] ノード 3 の FC 設定を、ノード 1 から前に取得した設定と比較します。</block>
-  <block id="befe3449c034cb6f4631649c7a4ed066" category="list-text">[man_config_3_step5] 次のいずれかの操作を実行します</block>
   <block id="7f3a5152afa49c8421359b8761a9a8ad" category="cell">新しいノードのデフォルトの FC 設定</block>
   <block id="cb4a7a262c1057120daeee2df7839247" category="cell">ノード 1 で取得したものと同じです</block>
-  <block id="2b56e7490fdbb3cfe1904501429274b7" category="cell">に進みます <block ref="c6c9a381b48f60f002c0199635146c23" category="inline-xref-macro-rx"></block>。</block>
   <block id="2cc211fd01662dba325fa6afb2cb24dc" category="cell">ノード 1 で取得したものとは異なります</block>
-  <block id="3a3387d05eb4dc59724516e63ce89fe1" category="cell">に進みます <block ref="cb1e6c315615cb7630d3b8a437827bc2" category="inline-xref-macro-rx"></block>。</block>
-  <block id="8858cbf1016a885e6783f73cde18ddf4" category="list-text">[[man_config_3_step6] 次のいずれかの操作を実行します。</block>
-  <block id="eef9069309a77ac006f5011dca4b9f9a" category="paragraph">次のいずれかのコマンドを入力して、必要に応じて node3 の FC ポートを変更します。</block>
-  <block id="0f46f9b9f7235f322cd04b338ecda49c" category="list-text">[[step7]] 次のいずれかの操作を実行します。</block>
-  <block id="85a79ca9227090c23bb3d6d14dbbe0af" category="cell">次のコマンドを入力し、出力を調べて、新しい設定を確認します。「 system node hardware unified-connect show 」</block>
-  <block id="ae1a6eb25c428a13de7c805301540516" category="cell">次のコマンドを入力し、出力を確認して、新しい設定を確認します。 ucadmin show</block>
-  <block id="2c6e937b15ebe6468c586dd1b4eb466a" category="list-text">[[step8] 次のコマンドを入力して、メンテナンスモードを終了します。</block>
-  <block id="b3a919f35f16fa3a39c85eac5d885d2f" category="list-text">[[step9] コマンドを入力したら、ブート環境のプロンプトでシステムが停止するまで待ちます。</block>
-  <block id="c62d6d151dbb06716a8276f4f8bb89e0" category="list-text">[[step10]] 次のいずれかの操作を実行します。</block>
-  <block id="8e49fbf8016e97e15077debef6c06b54" category="cell">は、 V シリーズシステム、または clustered Data ONTAP 8.3 を実行する FlexArray 仮想化ソフトウェアを備えています</block>
-  <block id="51ae224ccdb747cc08ff98ed97fed51f" category="cell">ブート環境プロンプトの「 boot_ontap maint 」で、ノード 3 をブートし、メンテナンスにアクセスします</block>
-  <block id="8cf0032370f0f9233266234c2a7feab7" category="cell">は、 V シリーズシステムではないか、 FlexArray 仮想化ソフトウェアがインストールされていません</block>
-  <block id="7e422d66a2b07e1e654868dee6aae687" category="cell">ブート環境プロンプトで node3 を起動します</block>
-  <block id="1509937ac092a7690a93d056a0c33d58" category="list-text">[man_config_3_step11]] 次のいずれかの操作を実行します</block>
   <block id="3e5bf76136102b434c2a000604dc77c1" category="list-text">ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合は、に進みます <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>。</block>
   <block id="306e854e226a650b7acec40ba5a0e249" category="list-text">ノード 3 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、この手順を省略してください <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> にアクセスします <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
-  <block id="6c804c4adac8740743dd6f41da471795" category="list-text">node3 にカードポートまたはオンボードポートがある場合は、に進みます <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>。</block>
-  <block id="1f81aa18292065e5242ce30775d96e2c" category="paragraph">次の例のような出力が表示されます。</block>
   <block id="581e0d52eede5c7a9002197a5955188f" category="list-text">[[step3]] 「 system node hardware unified-connect show 」コマンドまたは「 ucadmin show 」コマンドの出力を調べて、 UTA / UTA2 ポートに希望するパーソナリティがあるかどうかを確認します。</block>
   <block id="39e1a687c8a1a3bb49c730ad7b98a3d5" category="cell">に進みます <block ref="2fc3b3e515184c116c95342a9ca8cb9f" category="inline-xref-macro-rx"></block>。</block>
-  <block id="aeeda50cd3cc8fa0b7819c50d25802cc" category="cell">手順 5 から 12 を省略して、に進みます <block ref="e8dc02ba0ba84dfdb12d2955f04811ca" category="inline-xref-macro-rx"></block>。</block>
-  <block id="8c1235ea1bd5309fe2724d440119a7bf" category="list-text">[man_check_3_step5] 次のいずれかの操作を実行します</block>
-  <block id="702b58a3a2c0f7ca9c1ff79304cc3846" category="cell">ストレージディスクがあり、 clustered Data ONTAP 8.3 を実行している</block>
-  <block id="177fe53a2ca3ad4477bf20631953c74e" category="cell">node3 を起動し、「 boot_ontap maint 」というメンテナンスモードに切り替えます</block>
-  <block id="9bc874604b7939971f9993fe8c042cc5" category="cell">に進みます <block ref="f6d13a5ff9438ee0d4458e3f2ffb2fd3" category="inline-xref-macro-rx"></block>。すでにメンテナンスモードになっている必要があります。</block>
-  <block id="3b9a8502a8d7047daccb7dc1e076d1db" category="list-text">[[man_check_3_step6] 次のいずれかの操作を実行します。</block>
-  <block id="1f14f34deb68e1ccfd51fd969391f85b" category="cell">に進みます <block ref="e0afe2f8b687f2b937ad04447e0f4504" category="inline-xref-macro-rx"></block>。</block>
-  <block id="fe13e7c4af341791013b658ec3446e14" category="cell">手順 7 を省略して、に進みます <block ref="21867c7d0c2b8bc3921bf40e9edec561" category="inline-xref-macro-rx"></block>。</block>
-  <block id="5d8cdb858d03ccbaab4933257301ad1f" category="list-text">[[man_check_3_step7] アダプタがイニシエータモードの場合、 UTA / UTA2 ポートがオンラインの場合は、 UTA / UTA2 ポートをオフラインにします。</block>
   <block id="de2f29988a1562cff5aece8243895ec3" category="paragraph">ターゲットモードのアダプタは、メンテナンスモードで自動的にオフラインになります。</block>
-  <block id="f5127a07c0da9806f59a276c6a53e07b" category="list-text">[man_check_3_step8] 現在の設定が目的の用途に一致しない場合は、必要に応じて設定を変更します。</block>
-  <block id="20a6fed477bc68dded7a110a5998c20e" category="admonition">テープドライブ、 FlexArray 仮想化システム、および MetroCluster 構成には、 FC イニシエータを使用する必要があります。SAN クライアントには FC ターゲットを使用する必要があります。</block>
   <block id="87f04db4bf78b3f620b7363444f3162e" category="list-text">システムを停止します。</block>
-  <block id="42a282655a6bcf78e540d618abe8f39f" category="cell">保守モードで再起動します（「 boot_NetApp maint 」）</block>
   <block id="4ccd0b13a5d5d3be43ff2600a91655cc" category="list-text">[[step11]] 設定を確認します。</block>
-  <block id="f2cc2cb82b7d41d7e5604b8610c271a3" category="cell">は V シリーズまたは FlexArray 仮想化ソフトウェアを備えており、ストレージアレイに接続されています</block>
   <block id="52b727613ccb81e1e924ffec991b2e74" category="paragraph">次の例の出力は ' アダプタ「 1b 」の FC4 タイプがイニシエータに変更されており ' アダプタ「 2a 」および「 2b 」のモードが「 cna' 」に変更されていることを示しています</block>
-  <block id="fa05264b5c812e55c8ce27a16e3cb341" category="list-text">[[step12a] 次のいずれかのコマンドをポートごとに 1 回入力して、任意のターゲットポートをオンラインにします。</block>
-  <block id="7bf32aee58782ae16c1d768b4bf38822" category="list-text">[[man_check_3_step13]] ポートをケーブル接続します。</block>
-  <block id="ed79a6f393f23524ed190af7b250c69b" category="list-text">[[step14]] 次のいずれかの操作を実行します。</block>
-  <block id="eb62d15c59e51a7bf19844fae4092453" category="cell">に進みます <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
   <block id="a96ea627b3d5d65e112aacf5d7b2c1e1" category="inline-link-macro">node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF を確認します</block>
   <block id="1d92796a70af1d22c31d2b64c9064278" category="inline-link-macro">ノード 2 のルート以外のアグリゲートをノード 3 からノード 4 に再配置します</block>
   <block id="8a934a6945c2524f52729212e6e676c1" category="doc">node2 によって所有されている NAS データ LIF を node3 に移動する</block>
@@ -1973,52 +1815,25 @@
   <block id="5528857f98fded77afccd9d97a9a0711" category="list-text">[[step3]] ケーブルノード 3 を接続し、ノード 1 からノード 3 に接続を移動します。</block>
   <block id="63cc66bd900313017fb0834b1cbbbc81" category="list-text">[[man_install3_step4]] ノード 3 の電源をオンにしてから、コンソール端末で Ctrl+C キーを押してブートプロセスを中断し、ブート環境プロンプトにアクセスします。</block>
   <block id="6c2cb2a49908831d5791f25bb5371a3d" category="list-text">[[man_install3_step5]] で警告メッセージが表示される場合 <block ref="189d751c0d059b7e2fcaef080c81111f" category="inline-xref-macro-rx"></block>を使用して、次の操作を実行します。</block>
-  <block id="7efd430adfeaf9ea4f3e48e21d2c4f96" category="admonition">* 注意 * ：遅延は無視しないでください。バッテリーの充電に失敗すると、データが失われるおそれがあります。</block>
-  <block id="5b8c681411bac96a813b6b62eba17d9c" category="list-text">[[man_install3_step6] 次のいずれかの操作を実行します。</block>
-  <block id="ad9768b53d0a33cd1368bd0b1d373a3b" category="cell">手順 7 から 12 を省略して、に進みます <block ref="85131af613f0169831e213f11ca11041" category="inline-xref-macro-rx"></block>。</block>
-  <block id="66b6cfbf89b613b9a80d84ec1d7b5fa0" category="list-text">このセクションに戻って、から始めて残りの手順を実行します <block ref="239474d202713b3a406727408fd68f72" category="inline-xref-macro-rx"></block>。</block>
-  <block id="120d825f771126cb963c76c2ff005e6d" category="list-text">[man_install3_step7] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。</block>
-  <block id="12aae7624013a12c0ade8f6f2e309d62" category="paragraph">システムにテープ SAN がある場合は、イニシエータをゾーニングする必要があります。手順については、ストレージアレイおよびゾーニングに関するドキュメントを参照してください。</block>
-  <block id="0dd10d8b45274d5c198af78bfab2e446" category="list-text">[man_install3_step8] FC イニシエータポートをストレージアレイに新しいホストとして追加し、アレイ LUN を新しいホストにマッピングします。</block>
-  <block id="5cca5c853f000ca16ba17533a6116cd7" category="list-text">[[man_install3_step9] ストレージアレイのアレイ LUN に関連付けられたホストまたはボリュームグループでの World Wide Port Name （ WWPN ；ワールドワイドポート名）の値を変更します。</block>
-  <block id="6a81c1ece5ddd721a1ff7521454f87c9" category="list-text">[man_install3_step10] ：構成でスイッチベースのゾーニングを使用している場合は、ゾーニングを調整して新しい WWPN 値を反映させます。</block>
-  <block id="fa1040cb978ca2065cad32e28e6d9d58" category="list-text">[[man_install3_step11]] アレイ LUN が node3 に表示されることを確認します。</block>
-  <block id="d8096974edc78f9fe2db726869876695" category="paragraph">各 FC イニシエータポートで認識されるすべてのアレイ LUN が表示されます。アレイ LUN が表示されない場合は、このセクションで後述する node1 から node3 にディスクを再割り当てすることはできません。</block>
-  <block id="b69192040391e08f61402b09c27822b8" category="list-text">[[man_install3_step12]] Ctrl+C キーを押してブートメニューを表示し、メンテナンスモードを選択します。</block>
-  <block id="fe85761838c7d215174afe4ace6c66f0" category="list-text">[[man_install3_step13]] メンテナンスモードのプロンプトで、次のコマンドを入力します。</block>
-  <block id="907c22891918b5b80e66731ae6eed77e" category="list-text">[[man_install3_step14]] 次のいずれかの操作を実行します</block>
   <block id="8b2f23f3c3f7445164b524932e61d65b" category="cell">アップグレード後のシステムの構成</block>
   <block id="1f00007c6687ede4ed2d2b6e91ce451d" category="cell">デュアルシャーシ構成（コントローラが別々のシャーシに搭載されている場合）</block>
-  <block id="1ec921c80439dda2ee883653fa1acb7b" category="cell">に進みます <block ref="4332c8cc4c85f33bda2a347fe16e2dc6" category="inline-xref-macro-rx"></block>。</block>
   <block id="0471a95f16e566048e66f2d81f432967" category="cell">シングルシャーシ構成（コントローラが同じシャーシに搭載されている場合）</block>
   <block id="0aaa18e158b2b22ed630223549710480" category="list-text">コンソールケーブルを node3 から node4 に切り替えます。</block>
   <block id="ffb09ffc35bea252e4e21d97d6400ddf" category="list-text">ノード 4 の電源をオンにしてから、コンソール端末で Ctrl+C キーを押してブートプロセスを中断し、ブート環境プロンプトにアクセスします。</block>
   <block id="85418bdb866bf209cc89fc9250fd0f04" category="paragraph">両方のコントローラが同じシャーシ内にある場合は、電源はすでにオンになっているはずです。</block>
   <block id="620bed07fd84663ccd35004111b0a13c" category="list-text">に警告メッセージが表示される場合は <block ref="189d751c0d059b7e2fcaef080c81111f" category="inline-xref-macro-rx"></block>の手順に従ってください <block ref="593996bb06ec10671cada9089fb35dd4" category="inline-xref-macro-rx"></block></block>
   <block id="a70d58ca96ede2bc6122de5eaba9afaf" category="list-text">コンソールケーブルを node4 から node3 に戻します。</block>
-  <block id="7c0d2cf152b2cde561a140a996176952" category="list-text">[[man_install3_step15]] ONTAP の node3 の設定：</block>
   <block id="0546806bd19b344e7d0ca13460d96992" category="list-text">[[man_install3_step17]] node3 にインストールされている ONTAP のバージョンが、 node1 にインストールされている ONTAP 9 のバージョンと同じかそれ以降である場合は、ディスクをリストして新しい node3 に再割り当てします。</block>
-  <block id="b04b66d312941ba2b1d5910ec5f5fb36" category="list-text">[[man_install3_step18]] CTRL-C を押してブートメニューを表示します。</block>
   <block id="7be8c6136747afe24ab6f25f931c2451" category="list-text">[[man_install3_step19]] 次のいずれかの操作を実行します</block>
   <block id="b65dee077de24058e64aa96e60e2a56a" category="cell">Does _ not_ have the correct or current ONTAP version on node3 （ノード 3 に正しい バージョンまたは現在の バージョンがありません</block>
-  <block id="a17dd4e0d7995e108ec012fad7f027d2" category="cell">に進みます <block ref="f66707bf1ec53e37a427dd9510962619" category="inline-xref-macro-rx"></block>。</block>
   <block id="de22fad1fba6c28f624ef4e272674d1c" category="cell">ノード 3 に正しいバージョンまたは最新バージョンの ONTAP があること</block>
-  <block id="46f709b9c191a3a487187b13c2365dfb" category="cell">に進みます <block ref="c27981c94d7a26c42c925c89e96e7aa2" category="inline-xref-macro-rx"></block>。</block>
-  <block id="fd96d8e5cccd1d83cf17d6327a03d1c6" category="list-text">[[man_install3_step20]] 次のいずれかの操作を実行して、ネットブート接続を設定します。</block>
-  <block id="c6515be7805d880dbdafbd44b289b127" category="list-text">[[man_install3_step21] ノード 3 でネットブートを実行します。</block>
   <block id="060bac7551430a178937e2648b5887ad" category="cell">netboot\http://web_server_ip/path_to_webaccessible_directory/netboot/kernel`</block>
   <block id="00b4984c2d25fdcefc8d29921eef1f1e" category="cell">netboot\http://web_server_ip/path_to_webaccessible_directory/ontap_version_image.tgz`</block>
-  <block id="2fb52103bc9daf7b4aede017a96951c9" category="list-text">[man_install3_step22]] ブートメニューから、オプション * （ 7 ） Install new software * first を選択します。</block>
   <block id="69a0e067620a40fba4263752d3fe4568" category="paragraph">コントローラのアップグレードではなく、 ONTAP による環境の無停止アップグレードも記録されています。</block>
-  <block id="04099f33ed449c6b9e9de3b50608f5b9" category="list-text">[man_install3_step23]] 手順を続行するかどうかを確認するメッセージが表示されたら 'y`' と入力し ' パッケージのプロンプトが表示されたら ' 次の URL を入力します</block>
   <block id="3c0f763f2bc1dd7e6fadcfba8981f852" category="paragraph">http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` にアクセスします</block>
-  <block id="2c7541d49584476284eeeb476f886996" category="list-text">[[man_install3_step24]] 次の手順を実行します</block>
-  <block id="f5344ffb10f5a3797c46c51d263a2247" category="list-text">[man_install3_step25]] '*(5) Maintenance mode boot を選択しますこれには '5` を入力し ' ブートを続行するように求められたら 'y' を入力します</block>
   <block id="785f077ce03eca259bde1ebc98236191" category="list-text">[[man_install3_step26]] 続行する前に、に進みます <block ref="fae618cfa140cbca52d057afef5df1da" category="inline-link-macro-rx"></block> ノードの FC ポートまたは UTA / UTA2 ポートに必要な変更を加えるため。</block>
   <block id="28d8bed0b221acc406520dd121da3607" category="paragraph">これらのセクションで推奨される変更を行ってからノードをリブートし、メンテナンスモードに切り替えます。</block>
-  <block id="3c2b28e2fbf2a2223e837ab88d03f849" category="list-text">[[man_install3_step27]] node3 のシステム ID を確認します。</block>
   <block id="11856588314d0c959b2b916a938edde8" category="inline-link-macro">ルート以外のアグリゲートを node1 から node2 に再配置します。</block>
-  <block id="5193fe09e1ceefb41d5d867b112b9d76" category="list-text">[man_install3_step28] 再割り当てするノードのスペア、ルートに属するディスク、およびでノード 2 に再配置されなかったルート以外のアグリゲート <block ref="b90d8347ded957c31748eee44116abad" category="inline-link-macro-rx"></block>。</block>
   <block id="e58f70cf5e99e435b7646dac5761bf14" category="paragraph">システムに共有ディスクがあるかどうかに応じて、適切な形式の「 disk reassign 」コマンドを入力します。</block>
   <block id="b7e4748ce69e686648ca756a108c4b9a" category="cell">ディスクタイプ</block>
   <block id="7dcd3c42056665a1fe2861837141a4ef" category="cell">実行するコマンド</block>
@@ -2040,8 +1855,6 @@
   <block id="0c06e4208a8e928e9b4bef1d6977045b" category="list-text">[[man_install3_step39]] 必要に応じて、 node3 の日付を設定します。</block>
   <block id="837e654f683f43c3c5fa5a8cbc3e1758" category="list-text">[man_install3_step40]] ノード 3 で、ブート環境のプロンプトで時刻を確認します。</block>
   <block id="eddc7836dd13de8cd3248be302e5a1a2" category="list-text">[[man_install3_step41] 必要に応じて、 node3 に時間を設定します。</block>
-  <block id="39556538db3e5f05fbb53219f4983f96" category="inline-xref">手順 28</block>
-  <block id="7485a5597807044bfa9f5d885f51e65e" category="list-text">[[man_install3_step42]] パートナーシステム ID がで説明したとおりに正しく設定されていることを確認します <block ref="a332b57e87c8a775e38e07b999240874" category="inline-xref-macro-rx"></block> アン下の -p スイッチ：</block>
   <block id="ec135f98d38764e511e3c524db87080e" category="list-text">[[man_install3_step43] 必要に応じて、 node3 にパートナーシステム ID を設定します。</block>
   <block id="7cab439150d9019f1bfd1705f608418d" category="list-text">[man_install3_step44]] ブート環境プロンプトでブートメニューにアクセスします</block>
   <block id="09022876876a6198264f6a07698a4d4c" category="list-text">[man_install3_step45]] ブートメニューで ' プロンプトで '6` を入力して 'option *(6) Update flash from backup config* を選択します</block>
@@ -2132,8 +1945,6 @@
   <block id="2e5d45b5b4c7ee72c9442a1c00ef4881" category="list-text">[[Step6] ノードの 1 つで次のコマンドを入力して、ノード 3 とノード 4 の両方がクォーラムにあることを確認します。</block>
   <block id="07794a041dac9632db557c4f4b050f28" category="paragraph">event log show -messagename scsiblade. *</block>
   <block id="340477541e5fdc93ffc7488a1377706f" category="paragraph">次の例は、クラスタ内のノードがクォーラムにある場合の出力を示しています。</block>
-  <block id="4885a30c7d2ead3e5bbc5a7722e06fbc" category="admonition">このドキュメントでは、元のノードの名前は _node1_AND _node2 _ で、新しいノードの名前は _node3 _ と _node4 _ です。説明されている手順では、 node1 は node3 に置き換えられ、 node2 は node4 に置き換えられます。_node1_、 _node2 、 _node3 _ 、および _node4 _ という用語は、元のノードと新しいノードを区別するためだけに使用されます。手順を使用するときは、元のノードと新しいノードの実際の名前を置き換える必要があります。ただし実際には、ノードの名前は変更されません。 node3 には node1 という名前が付けられ、 node4 にはコントローラハードウェアのアップグレード後に node2 という名前が付けられます。本ドキュメントでは、 FlexArray 仮想化ソフトウェアを搭載した「 _systems 」という用語は、これらの新しいプラットフォームに属するシステムを意味します。用語 V シリーズシステム _ とは、ストレージアレイに接続可能な独立したハードウェアシステムを指します</block>
-  <block id="58d2951f9fe54692264bb8d42558291f" category="list-text">この FlexArray システム、 V シリーズシステム、 AFF システム、および手順環境 FAS 仮想化ソフトウェアを搭載したシステムです。必要なライセンスがインストールされていれば、 ONTAP 9 以降にリリースされた FAS システムをストレージアレイに接続できます。既存の V シリーズシステムは ONTAP 9 でサポートされます。ストレージアレイと V シリーズのモデルについては、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe へのリンクおよび V シリーズサポートマトリックスを参照してください。</block>
   <block id="d5560010a4b579866a98e0b680b5c248" category="paragraph">SnapMirror 関係が Transferring 状態でない場合は、中止は失敗します。</block>
   <block id="4799633d9eb6a31235d0102c0d2b1812" category="list-text">スイッチの設定が保存されたことを確認します。</block>
   <block id="1dd8fdc75f0d1d8e00ce9ec094e07e48" category="list-text">で作成したケーブルレイアウトを使用して、両方の FC-to-SAS ブリッジを FC スイッチにケーブル接続します <block ref="1e3a603a58f58380bbf882725903f11b" category="inline-link-macro-rx"></block>。</block>
@@ -2166,51 +1977,22 @@
   <block id="866ca6e46d7456a7c276afd3eb54db5d" category="list-text">[[man_record_node1_step11]] どちらかのコントローラで次のコマンドを入力します。</block>
   <block id="9bcd562ef44a8e11e5fd0e0492ebe6c4" category="paragraph">次の例に示すように、 node1 に関する情報が表示されます。</block>
   <block id="5b9519c4c2b57166c18827dfa9f50f7c" category="list-text">[[man_record_node1_step12]] セクションで使用する NVRAM システム ID 番号を記録します <block ref="b27daeccf5fbd8a2e88a3636ee615b74" category="inline-link-macro-rx"></block>。</block>
-  <block id="a5eaebf8eb363498d59b7e808ae14a67" category="paragraph">完了する必要がある場合があります <block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block>、 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
   <block id="d3724945a8761461ffee756c3d88b5f7" category="paragraph">ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、または UTA / UTA2 カードがなく、ストレージディスクが搭載されたシステムをアップグレードする場合は、に進みます <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
-  <block id="3b2aededaf9eb7fa977a61a8bd235fc8" category="cell">に進みます <block ref="6df4b9385815488582550ff3bec853dc" category="inline-xref-macro-rx"></block>。</block>
-  <block id="d0eda6a9db5e17455c4a85cb11800962" category="cell">に進みます <block ref="9afe493afbfd571f8e15cdbbaa7d8361" category="inline-xref-macro-rx"></block>。</block>
-  <block id="52b26cd7e65738a95d72c027a1b843c2" category="list-text">[[man_config_4_Step2]] メンテナンスモードにアクセスします。</block>
   <block id="bdb2780eb5f1795b94cdb7892cd5237b" category="list-text">新しいノードの FC 設定を、元のノードで取り込んだ設定と比較します。</block>
-  <block id="605ac6e16f1de07910babd12f8cb0f9e" category="list-text">[[man_config_4_Step5]] 次のいずれかの操作を行います。</block>
   <block id="348795cf2ff362808ef4789bfce998c1" category="paragraph">`-type ` は FC4 のタイプ、ターゲットまたはイニシエータである。</block>
-  <block id="aa056114701909ed085099828ff012a9" category="cell">次のコマンドを入力し、出力を調べて、新しい設定を確認します。 'system node unified-connect show'</block>
   <block id="e7df8bff382bf85b07ece9703c2f6808" category="cell">元のノードでキャプチャしたのと同じです</block>
-  <block id="222214d2643fdfb746a901984df3eaaa" category="cell">に進みます <block ref="313690309739126de0c32c721924102b" category="inline-xref-macro-rx"></block>。</block>
   <block id="7327bd79e6072c9ccdc2b478d3afacfb" category="cell">元のノードでキャプチャしたものとは異なります</block>
-  <block id="2fe2c4e80b1376975584751f41c867c9" category="inline-xref">手順 8.</block>
-  <block id="ebe743318b7324b4ebeb99a0a3c72423" category="cell">に進みます <block ref="60c689da671dfc85fbc244a8ddc19d6a" category="inline-xref-macro-rx"></block>。</block>
-  <block id="98570637b82059e5ffc8aa3289c7a48b" category="list-text">[[man_config_4_Step8] メンテナンスモードを終了します：</block>
-  <block id="f93d9d44ef64b7bd548bb1548837f7c9" category="cell">は、 V シリーズシステムであるか、 Data ONTAP 8.3.0 以降を実行する FlexArray 仮想化ソフトウェアがインストールされています</block>
-  <block id="ae67b2e6adc83ff617429f7470e3fcf2" category="cell">ブート環境プロンプトで「 boot_ontap maint 」というコマンドを入力し、保守モードにアクセスします</block>
-  <block id="a2aebe9559cbe6e73c0a0bf0d1bb9ef4" category="cell">は、 V シリーズシステムではなく、 FlexArray 仮想化ソフトウェアもありません</block>
-  <block id="1747e775d1492fb4a122964eb0ce6abd" category="cell">ブート環境プロンプトで「 boot_ontap 」と入力し、 node4 をブートします</block>
-  <block id="be71806e78200788394953879d8e5b6a" category="list-text">[[man_config_4_Step11]] 次のいずれかの操作を行います。</block>
   <block id="5f05ecbc9bc4d038e9ed396780511251" category="list-text">に進みます <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> ノード 4 に UTA / UTA2A カードまたは UTA / UTA2 オンボードポートがある場合</block>
   <block id="1e7bd254c963a338c489202373c4ab17" category="list-text">セクションをスキップして、に進みます <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block> ノード 4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合</block>
-  <block id="08b25b9ad88e79131839ab732517a679" category="list-text">に進みます <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> ノード 4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合</block>
   <block id="fe3a7dc1b68f02ec33d1b3d2d4f9bc56" category="list-text">「 system node hardware unified-connect show 」コマンドと「 ucadmin show 」コマンドの出力を調べ、 UTA / UTA2 ポートに希望するパーソナリティが設定されているかどうかを確認します。</block>
   <block id="e48bdf2afbb963c9c495bf4f571895e3" category="cell">に進みます <block ref="ffd96dfebf67595a1e4a6d625bee7496" category="inline-xref-macro-rx"></block>。</block>
   <block id="fa74cc012fef0feff6e924f8039749e1" category="cell">手順 5 から 12 を省略して、に進みます <block ref="ff1d63240cee2bdc1933860b7f07a8df" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e6d6e537e4b0f2bf8e825c2e64f00645" category="list-text">[[man_check_4_Step5]] 次のいずれかの操作を行います。</block>
-  <block id="37633c05750191dfa133d84e3b55c00e" category="cell">ストレージディスクがあり、 Data ONTAP 8.3 を実行している</block>
-  <block id="8445b1a045f75f905d430fc7d5f5e71c" category="cell">node4 をブートし、メンテナンスモードに入ります。「 boot_ontap maint 」と入力します</block>
-  <block id="6769a0fd294ca78345db234c229b8959" category="cell">に進みます <block ref="2c3bbf8d53e9379a42c94980adfa90a7" category="inline-xref-macro-rx"></block>。すでにメンテナンスモードになっている必要があります。</block>
-  <block id="c61e8c3c627841f886b0a3031439d4ce" category="list-text">[[man_check_4_Step6]] 次のいずれかの操作を行います。</block>
   <block id="6515c49355bf1419526d1fd9c737ec8c" category="cell">UTA / UTA2A カードのポート</block>
-  <block id="eaff3678ecd6d545f7ac3a0842914aa5" category="cell">に進みます <block ref="f4d4591f64bb8abe68f0b67355d1fe59" category="inline-xref-macro-rx"></block>。</block>
-  <block id="4cb16c5207497dcfcaffd56afa4f1814" category="cell">手順 7 を省略して、に進みます <block ref="d63e67436ac7351debc07c052c32757d" category="inline-xref-macro-rx"></block>。</block>
-  <block id="117986e3a34af461f5f6e6bb88045f84" category="list-text">[[man_check_4_Step7] アダプタがイニシエータモードの場合、 UTA / UTA2 ポートがオンラインの場合は、 UTA / UTA2 ポートをオフラインにします。</block>
-  <block id="286e43e6e6a24f0c4b7567121cef9f66" category="list-text">[[man_check_4_Step8] 現在の設定が目的の使用方法と一致しない場合は、次のコマンドを入力して必要に応じて設定を変更します。</block>
   <block id="36408e09de8feb146f54fe1e158d953d" category="list-text">「 -m' 」はパーソナリティ・モードである FC または 10 GbE UTA です。</block>
   <block id="0e0addb82f30f2aa03c68b146f054849" category="list-text">次のコマンドを入力し、出力を確認して、設定を確認します。</block>
   <block id="315359e3c6323d4eda359054319c0815" category="list-text">次のいずれかを実行します。</block>
-  <block id="893a166b79c7215fddb938b9ba769f94" category="cell">は、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアを搭載したストレージアレイに接続され、 Data ONTAP 8.3 を実行しているシステムです</block>
-  <block id="5ac574a53621b9436797f566cbab7941" category="cell">保守モードで再起動します（「 boot_ontap maint 」）</block>
-  <block id="5dd9d9d622ac506af56607785cc61574" category="cell">次のコマンドを入力します。 ucadmin show</block>
   <block id="9b035cae403b89af2a989a976daad295" category="paragraph">次の例の出力では ' アダプタ「 1b 」の FC4 タイプがイニシエータに変更されており ' アダプタ「 2a 」と「 2b 」のモードが CNA に変更されています</block>
   <block id="f8cd2564c015235fc797e229583e1023" category="list-text">[[man_check_4_Step13]] ポートをケーブル接続します。</block>
-  <block id="439c508e4033b6c215e1a9262db35444" category="cell">に進みます <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
   <block id="4cd072d48be3e3705aa89a6c546ddb3c" category="paragraph">ONTAP 9.5 以降では、 Key Management Interoperability Protocol （ KMIP ）サーバを使用して認証キーを管理できます。</block>
   <block id="0d687993b6b67e20ff0472f32d9693b0" category="paragraph">新しいコントローラモジュールおよび新しいディスクシェルフと既存の FC スイッチとのケーブル接続を決定する必要があります。</block>
   <block id="6485f9afbf9c5f34e988054e67e3b142" category="paragraph">このタスクは MetroCluster サイトごとに実行する必要があります。</block>
@@ -2260,7 +2042,6 @@
   <block id="0e3cd42cd6320745185eaab80053ad4a" category="paragraph">node2 のイプシロンを true に設定し、 node1 のイプシロンを false に設定します。</block>
   <block id="f11c9613319f6e81aa0fa42fd830a1cb" category="list-text">セットアップが 2 ノードスイッチレスクラスタかどうかを確認します。</block>
   <block id="f72b72c0926d6dd4d51ae53a658c3ab1" category="list-text">node1 プロンプトから node1 を停止します。</block>
-  <block id="7d63f771d73dc7f75f06e358cd9a7510" category="admonition">* 注意 * ： node1 が node2 と同じシャーシにある場合は、電源スイッチを使用するか、電源ケーブルを引き抜いて、シャーシの電源を切断しないでください。その場合は、データを提供している node2 が停止します。</block>
   <block id="ecd3525fa194c253a8cabf432a4a5041" category="list-text">システムを停止するかどうかを確認するメッセージが表示されたら、「 y 」と入力します。</block>
   <block id="4554f5f9818af46c131a159c2ec43887" category="paragraph">ノードはブート環境のプロンプトで停止します。</block>
   <block id="839c9527e6867357b4949b3cb19bd5a6" category="list-text">node1 にブート環境プロンプトが表示されたら、シャーシまたはラックからブート環境プロンプトを削除します。</block>
@@ -2512,9 +2293,6 @@
   <block id="bc6bec578fabd4f81f97a21373822230" category="paragraph">このアップグレードに固有のコンテンツを次の表に示します。</block>
   <block id="f15c1cae7882448b3fb0404682e17e61" category="cell">内容</block>
   <block id="e2ea913994dd610f57aa9df505badbaa" category="cell"><block ref="e2ea913994dd610f57aa9df505badbaa" category="inline-link-macro-rx"></block></block>
-  <block id="5837907b0451e478a454e8fc87e92342" category="inline-link-macro">ファブリック接続 MetroCluster のインストールと設定</block>
-  <block id="a3b8dcbb945865e5ef0e1c83b68c8824" category="cell"><block ref="a3b8dcbb945865e5ef0e1c83b68c8824" category="inline-link-macro-rx"></block></block>
-  <block id="2894d35f6fa87d4eee09a10919737e2f" category="cell"><block ref="2894d35f6fa87d4eee09a10919737e2f" category="inline-link-macro-rx"></block></block>
   <block id="07ae19817dfc58c8d1b72b612a233da3" category="inline-link-macro">MetroCluster の管理とディザスタリカバリ</block>
   <block id="c750cfcf9c6045b6e0b4b0d6de2212f3" category="inline-link-macro">MetroCluster のアップグレードと拡張</block>
   <block id="d1b75581244e03161b57c29a9ac4bb22" category="inline-link-macro">CLI によるディスクおよびアグリゲートの管理</block>
@@ -2589,13 +2367,11 @@
   <block id="f7099f8383ed0316e1e0935c4d6ccef1" category="list-text">[[map_97_7] ノード管理ブロードキャストドメインを調整し、必要に応じてノード管理 LIF とクラスタ管理 LIF を移行します。</block>
   <block id="273df14d79796f9686588da9d3449080" category="list-text">必要に応じて、のコマンドを使用して、クラスタ間ブロードキャストドメインを調整し、クラスタ間 LIF を移行します <block ref="ff47d2d93900744c317edfe39ed00899" category="inline-xref-macro-rx"></block>。</block>
   <block id="34c3e41105245eedc58a41b84d06a8da" category="list-text">必要に応じて、のコマンドを使用して、他のブロードキャストドメインを調整してデータ LIF を移行します <block ref="ff47d2d93900744c317edfe39ed00899" category="inline-xref-macro-rx"></block>。</block>
-  <block id="da988c28044d8fc8463a4db2336f20f0" category="list-text">_ インストールおよびセットアップ手順 _ または _ FlexArray 仮想化インストール要件およびリファレンス _ （ノード 4 プラットフォーム用）</block>
   <block id="72860e73833a237fd9811df9152c9a7a" category="list-text">該当するディスクシェルフの手順を選択します</block>
   <block id="6afaaeefe5c37f69581ad1614c57cff4" category="paragraph">に進みます <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 _Network Management_ または _ONTAP 9 コマンド：マニュアルページリファレンスにリンクしてください。</block>
   <block id="9f60baa5d0a7e514432de3c5beb88857" category="paragraph">ルートアグリゲートまたはデータアグリゲートが含まれるコントローラを内蔵ディスクドライブにアップグレードする場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ボリュームまたは storage を移動して _Upgrade にリンクし、 Data ONTAP に移動して、 clustered 手順を実行するノードのペアをアップグレードする _ に進みます。</block>
   <block id="ae307041467b0820fea754d90cc7abda" category="admonition">クラスタ内のノードの ONTAP をアップグレードする場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> リンク先： ONTAP のアップグレード _ 。</block>
   <block id="26284a568c7e38bb6355694c41ff5f8d" category="paragraph">いずれかのディスクで障害が発生した場合は、 CLI での _Disk およびアグリゲートの管理の手順に従ってディスクを取り外します。を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI を使用してディスクおよびアグリゲートの管理にリンクするには、を参照してください）。</block>
-  <block id="2722bd9e96d97f6dd8c071e92fb500ce" category="list-text">_ インストールおよびセットアップ手順 _ または _ FlexArray 仮想化インストール要件およびリファレンス _ （ node3 プラットフォーム用）</block>
   <block id="025b7f36f1c9c8c4d48374557ce1ad36" category="paragraph">storage aggregate relocation コマンドの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI_ および ONTAP 9 コマンド：マニュアルページリファレンス _ を使用してディスクおよびアグリゲートの管理にリンクするには、次の手順を実行します。</block>
   <block id="30e26e7bc72201dff893ca95a6a239d8" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI の _content および ONTAP 9 コマンド：マニュアル・ページ・リファレンスで、ストレージ・アグリゲートの再配置コマンドの詳細を確認するには、 _ ディスクおよびアグリゲートの管理にリンクしてください。</block>
   <block id="b146e8621e721a92c4b9d852f016cd74" category="paragraph">RCF を使用するためには、 FC スイッチポートの用途がファブリック接続 MetroCluster インストールおよび設定コンテンツに記載されている用途と同じである必要があります。に進みます <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ファブリック接続 MetroCluster インストールおよびコンフィギュレーションコンテンツにリンクするには、次の手順を実行します。</block>
@@ -2879,7 +2655,6 @@
   <block id="823095cde7c39355f11b0bd61e896495" category="paragraph">新しいライセンスキーがない場合は、クラスタで現在ライセンスされている機能を新しいコントローラで使用でき、引き続き使用できます。ただし、ライセンスされていない機能をコントローラで使用するとライセンス契約に違反する可能性があるため、アップグレードの完了後に新しいコントローラの新しいライセンスキーをインストールする必要があります。</block>
   <block id="4244f87afdd4c8b0ebf9ac5e3301a435" category="list-text">「 * Go ！ * 」を選択します</block>
   <block id="de418d0eb742cb1027dedde84846a1a0" category="paragraph">UTA / UTA2 ポートは、ネイティブの FC モードまたは UTA / UTA2 モードに設定できます。FC モードは FC イニシエータと FC ターゲットをサポートします。 UTA / UTA2 モードは、同じ 10GbE SFP+ インターフェイスを共有する NIC と FCoE のトラフィックの同時処理を可能にし、 FC ターゲットをサポートします。</block>
-  <block id="a286b63bee5a5b535ee4aacbaf102732" category="admonition">* 注意 * ：ストレージディスクがあるシステムの場合、保守モードに移行するよう指示されていないかぎり、クラスタプロンプトでこのセクションのコマンドを入力する必要があります。V シリーズシステムを使用している場合や FlexArray 仮想化ソフトウェアを使用していて、ストレージアレイに接続している場合は、このセクションのメンテナンスモードプロンプトでコマンドを入力する必要があります。UTA / UTA2 ポートを設定する場合は、メンテナンスモードにする必要があります。</block>
   <block id="76c7e3320831285f65d8e81c92ccd88a" category="paragraph">手順の実行中に、交換用コントローラハードウェアを使用して元のコントローラハードウェアをアップグレードし、ルート以外のアグリゲートの所有権を切り替えます。アグリゲートをノードからノードに複数回移行して、アップグレード手順 全体を通じて、少なくとも 1 つのノードがアグリゲートからデータを提供していることを確認します。また、処理を続行する前に、データ論理インターフェイス（ LIF ）を移行し、新しいコントローラのネットワークポートをインターフェイスグループに割り当てます。</block>
   <block id="c95c6a92ffa35efbbd76f2afcad3663c" category="list-title">重要な情報：</block>
   <block id="90b3509f7da0bd37fd6636cace1d2404" category="paragraph">正しいセットアップを確認するには、 HA ペアを有効にする必要があります。さらに、 node3 と node4 が相互のストレージにアクセスできること、およびクラスタ内の他のノードに属するデータ LIF を所有していないことを確認する必要があります。また、 node3 が node1 のアグリゲートを所有しており、 node4 が node2 のアグリゲートを所有していること、および両方のノードのボリュームがオンラインであることを確認する必要があります。</block>
@@ -2913,13 +2688,9 @@
   <block id="9e8e7bf29c653d52cfbdfb677b4fb6bf" category="list-text">[man_lif_verify_3_step8] SAN LIF が node3 の正しいポートにあることを確認します。</block>
   <block id="78216d3d261872be404d0ef7c21408bf" category="paragraph">UTA / UTA2 ポートは、ネイティブの FC モードまたは UTA / UT2A モードに設定できます。FC モードは FC イニシエータと FC ターゲットをサポートします。 UTA / UTA2 モードを使用すると、 NIC と FCoE の同時トラフィックで同じ 10GbE SFP+ インターフェイスを共有し、 FC ターゲットをサポートすることができます。</block>
   <block id="916e7815c3f105e14fd158f1ffbeb91d" category="paragraph">ただし、ノード 4 の UTA / UTA2 ポートの設定を確認し、必要に応じて変更することができます。</block>
-  <block id="1dbdfcd87542afd818176aeea97fb3be" category="admonition">テープドライブおよび FlexArray 仮想化システムには、 FC イニシエータを使用する必要があります。SAN クライアントには FC ターゲットを使用する必要があります。</block>
   <block id="85f1db26fc36597793844fca03a7f854" category="paragraph">ノード 4 をラックに設置し、ノード 2 の接続をノード 4 に転送し、ノード 4 をブートする必要があります。ノード 2 のスペア、ルートに属するディスク、および node3 でそれよりも前に再配置されなかったルート以外のアグリゲートも再割り当てする必要があります。</block>
   <block id="a5ac04d57c5af778b5a6063c21c23be1" category="admonition">ネットブート接続として管理ポートおよび IP アドレスを使用する必要があります。アップグレードの実行中にデータ LIF の IP アドレスを使用しないでください。データ LIF が停止する可能性があります。</block>
   <block id="080d5dc3ee89ba9cabba1525988c4bea" category="list-text">外付けディスクが搭載されたシステムから、内蔵ディスクと外付けディスクをサポートするシステム（ A800 システムなど）にアップグレードする場合は、 node4 を root として設定し、 node2 のルートアグリゲートからブートすることを確認します。</block>
-  <block id="71f2b118caea9cbcfebf7ac7442b9368" category="list-text">FlexArray 仮想化ソフトウェアまたは V シリーズシステムを搭載したシステムへの FAS システムの追加。</block>
-  <block id="d5c14f42965c8b82b46e75794e25ffe5" category="list-text">FlexArray 仮想化ソフトウェアまたは V シリーズシステムを FAS システムに移行するシステム。ただし、 FlexArray 仮想化ソフトウェアまたは V シリーズシステムにアレイ LUN がない場合に限ります。</block>
-  <block id="3db88a2cbbf154448bdd1843909d0e67" category="list-text">V シリーズシステムから、 FlexArray 仮想化ソフトウェアまたは V シリーズシステムを搭載したシステムへのアップグレード。</block>
   <block id="59af70dd915dcdb0e4027b17846b1638" category="paragraph">発生した問題に対する解決策 が見つからない場合は、テクニカルサポートにお問い合わせください。</block>
   <block id="ca96ef2d79771ffe95064c2ba8f795ee" category="paragraph">ノード 2 をシャットダウンして撤去する前に、クラスタネットワーク、管理、および FC ポートとその NVRAM システム ID に関する情報を記録しておく必要があります。この情報は、 node2 を node4 にマッピングしてディスクを再割り当てするときに、手順で必要となります。</block>
   <block id="0e1dd14206fc60d11a3acb5ef31b4193" category="paragraph">元のノードを交換する前に、ノードが HA ペア構成になっていて、不足しているディスクや障害ディスクがないこと、相互のストレージにアクセスできること、およびクラスタ内の他のノードに割り当てられているデータ LIF を所有していないことを確認する必要があります。また、元のノードに関する情報を収集し、クラスタが SAN 環境にある場合は、クラスタ内のすべてのノードがクォーラムにあることを確認する必要があります。</block>
@@ -2933,7 +2704,6 @@
   <block id="37522abc5c58d8935eb7c6c44799dd5d" category="list-text">[man_prepare-to-downgrade 15]] ノード 1 とノード 2 で同じ ONTAP リリースが実行されていることを確認します。</block>
   <block id="c685ef92ee54cacdd0c225fa2bb12fbe" category="cell">ステージ 6 ： _ 新しいコントローラが正しくセットアップされていることを確認します _</block>
   <block id="0ec2ad7eda30b3cde303c205b91073e8" category="paragraph">ノード 1 を撤去するには、ノード 2 で HA ペアを無効にし、ノード 1 を正しくシャットダウンしてラックまたはシャーシから取り外します。</block>
-  <block id="d3f49e44800c8ff8556d915b88782e44" category="list-title">選択肢：</block>
   <block id="ab329064c02455ccdd701ac2ba43fd04" category="admonition">アグリゲートおよび LIF のホーム所有者は変更されません。現在の所有者のみが変更されます。</block>
   <block id="a237d7c8e8a8ae58e2aad1d8f40bc092" category="paragraph">処理が一時停止することで、ノード 1 のルート以外のアグリゲートと SAN 以外のデータ LIF がすべて node2 に移行されているかどうかを確認できます。</block>
   <block id="4aacc9aec1f66da10a6f4c09d02fe381" category="paragraph">ノード 1 をシャットダウンして廃棄する前に、クラスタネットワークポート、管理ポート、および FC ポートとその NVRAM システム ID に関する情報を記録しておく必要があります。この情報は、ノード 1 をノード 3 にマッピングし、ディスクを再割り当てするときに、手順で必要になります。</block>
@@ -3004,10 +2774,7 @@
   <block id="afe5b70a93730d0b136c0f9de3376f9e" category="summary">ONTAP 9.8 以降を実行しているコントローラでの手動 ARL アップグレード時に、 node2 のクラスタネットワーク、管理、 FC ポート、および NVRAM システム ID に関する情報を記録します。</block>
   <block id="ad7dc11f39fb32e1f4ba6e7e9644fdd2" category="summary">手動の ARL アップグレード手順 を使用して、 ONTAP 9.8 以降を実行するコントローラハードウェアをアップグレードし、ルート以外のアグリゲートの所有権を切り替えます。</block>
   <block id="1124fb2cf4d1e4ab29aa545667f1d946" category="list-text">FAS システムから FAS システムへの移動</block>
-  <block id="e083e9919602f31d35ef93e48f70d9cd" category="list-text">FlexArray 仮想化ソフトウェアまたは V シリーズシステムを搭載したシステムへの FAS システムの追加</block>
   <block id="0c3fa4233df158763903bac5cebd18a9" category="list-text">AFF システムから AFF システムへの移動</block>
-  <block id="2880fc0b9a65eb57f0e8bad72d95374b" category="list-text">FlexArray 仮想化ソフトウェアまたは V シリーズシステムを使用する FAS システムにアレイ LUN がない場合、 FlexArray 仮想化ソフトウェアまたは V シリーズシステムを使用するシステム。</block>
-  <block id="b6397dbdbee8f2b8989612e223d68e93" category="list-text">V シリーズシステムから FlexArray 仮想化ソフトウェアまたは V シリーズシステムを実行するシステムへの移動</block>
   <block id="a08819cb67238a1ec917f745d4de58c8" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードするには、特定のツールとドキュメントが必要です。</block>
   <block id="555d9e461a574dac83e9908b06022e17" category="summary">ONTAP 9.8 以降を実行しているコントローラでの手動 ARL アップグレード時に、オンボードの FC ポート、 UTA / UTA2 ポート、または UTA / UTA2 カードをノード 3 に設定します。</block>
   <block id="0623848243436b0f8821316dbca47636" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードしたあと、古いシステムが動作しなくなったことをネットアップに知らせてください。</block>
@@ -3236,7 +3003,6 @@
   <block id="edbeb952c4054f67ce1836afbda00903" category="cell">FAS8060</block>
   <block id="8ed24dd5fb292ecefe76fe92a5fc3988" category="cell">FAS8080</block>
   <block id="e2060bf680bf4facfccf3befec69ef04" category="cell">9.8P12以降のパッチ</block>
-  <block id="c7f409d27e38c597f7352e5c3444f367" category="list-text">node3で次のコマンドを入力し、現在ポートがどのように設定されているかを確認します。</block>
   <block id="ba579f865c148542656e741f915bc210" category="section-title">AFF A700またはFAS9000コントローラモジュールを取り外します</block>
   <block id="831816e1924f3edb2d170ec4c291d0f3" category="section-title">AFF A700またはFAS9000 NVRAMモジュールを取り外します</block>
   <block id="3d748e41fa426d2025ff3eb80b369ede" category="admonition">AFF A700またはFAS9000 NVRAMモジュールはスロット6にあり、システム内の他のモジュールの2倍の高さです。</block>
@@ -3330,12 +3096,9 @@
   <block id="b7c4bc0233b5c046a49d8389a2f3bd41" category="paragraph">「storage aggregate relocation start -NODE_node4」-aggr_aggr_node_A_1 -destination_node3 _」を入力します</block>
   <block id="9259024b4056dbe3033dcf92fea0fbe0" category="paragraph">storage aggregate show -aggregate aggr1、aggr2、aggr3_-fields home-name</block>
   <block id="edb6746a53c95d308002222717f4a589" category="paragraph">「_aggr1、aggr2、aggr3__」は、node1が元のホーム所有者であるアグリゲートのリストです。</block>
-  <block id="df2e7d9f4faae89420497850debf6ccc" category="paragraph">system node hardware unified-connect modify-type |-t target-adapter_port_name_`</block>
-  <block id="097ea61069dbe7cfc4b8a4c5d2e39926" category="paragraph">'system node unified-connect modify type|-t initiator-adapter_port_name_`</block>
   <block id="c693fda729d6e359f8eb8a8fbc88eee8" category="paragraph">storage disable adapter_adapter_adapter_adapter_name_`</block>
   <block id="5861bf10ae07bb7c0e6218d5663221a4" category="paragraph">ucadmin modify -m fc | cna-t initiator | target_adapter_name_`</block>
   <block id="c5fabf666636164983c54a60426edaab" category="cell">「network fcp adapter modify -node node_name --adapter_adapter_adapter_adapter_name_-state up」の形式で指定します</block>
-  <block id="e07e74f9f1df10fa040f36e818e29bd1" category="cell">'fcp config_adapter_name_up'</block>
   <block id="cde8cf801e542566f503970c16a89b61" category="admonition">event log showコマンドを実行すると'発生したエラーが表示されます</block>
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph">storage aggregate online -aggregate _aggr_name_`</block>
   <block id="ffd863d528f6b76a6f398dd53b185d1d" category="cell">`disk reassign -s `_node2 _sysid_-d _node4 _sysid_-p _node3 _sysid_`</block>
@@ -3375,8 +3138,6 @@
   <block id="bbbfa87c5efa2321ddc7c2656baf791f" category="paragraph">'network port show -node1_-type physical’</block>
   <block id="842f84c9ecff4442b192c3b8a383847f" category="paragraph">network fcp adapter show -node-node1_`</block>
   <block id="f9e6ffe449370be951e5dee9a5e83028" category="paragraph">system node show -instance -node _node1_`</block>
-  <block id="a49d3e4ab576cd5b3c708cbd85a5f926" category="list-text">ターゲット・ポートをプログラムするには：system node hardware unified-connect modify -type |-t target-adapter_port_name_`</block>
-  <block id="b14f7ec84bbc0ee6e43f8a43e7e8b239" category="list-text">イニシエータ・ポートをプログラムするには' system node hardware unified-connect modify -type |-t initiator -adapter_port_name_`を使用します</block>
   <block id="3145572f78011e126938a030752352da" category="paragraph">storage aggregate relocation start -node1_-destination_node2 _-aggregate-list *-nd-controller-upgrade true」を入力します</block>
   <block id="89f25b06955b673d3b572700377e5520" category="paragraph">storage aggregate relocation show -Node_node1_`</block>
   <block id="1f57e30e6554ed05fdfab4749db897a5" category="list-text">障害が発生したアグリゲートまたは拒否したアグリゲートを再配置します。storage aggregate relocation start -node1_destination_node2 _aggregate-list *-nd-controller-upgrade true</block>
@@ -3613,10 +3374,6 @@
   <block id="647b6fb99516f69a9148d30b911dd4fd" category="cell">ディレクトリの一覧に次のファイルが表示されます。<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block>注：の内容を展開する必要はありません<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block> ファイル。</block>
   <block id="289138dc47ec0ab93b89cbb18e8d1de4" category="paragraph"><block ref="9cc92842c7e6e65d356004300ce50ecb" prefix="" category="inline-code"></block></block>
   <block id="090f49148634c0de3dbfc9d8f505c5ec" category="summary">ONTAP 9.7以前を実行しているコントローラでARLを手動でアップグレードする場合は、node2のnode1 NASデータLIFをnode2からnode3に移動します。</block>
-  <block id="63c4659c472d1e3272c7a9dbd54f652c" category="admonition">システムにストレージディスクがある場合は、クラスタプロンプトでこのセクションのコマンドを入力する必要があります。V シリーズシステムまたは FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムの場合は、このセクションのメンテナンスモードでコマンドを入力します。</block>
-  <block id="32993181f2c2c45f225637e1dd8b41fe" category="paragraph"><block ref="dd3b9ee4e31d5ea407eb0e6f5ec37627" prefix="" category="inline-code"></block></block>
-  <block id="e95e1d787e7711325a726a908ab4f7d0" category="paragraph"><block ref="b7cc4b6b2b8c0f37377b5cc259385de0" prefix="" category="inline-code"></block> は、FC4タイプ、ターゲット、イニシエータです。</block>
-  <block id="895f00a95ca4fe2726b1bd5a099d3a1b" category="admonition">FCポートはイニシエータとしてプログラムする必要があります。</block>
   <block id="996083c6bbb6dbd6baa714a3a92b8e3d" category="paragraph">ステージ 3 で、ノード 3 をインストールしてブートし、クラスタポートとノード管理ポートをノード 1 からノード 3 にマッピングし、ノード 3 のインストールを確認して、ノード 1 に属するデータ LIF と SAN LIF をノード 2 からノード 3 に移動します。また、すべてのアグリゲートをnode2からnode3に再配置し、node2によって所有されているデータLIFとSAN LIFをnode3に移動します。</block>
   <block id="be8545a85af27afe951a6085f68cae22" category="summary">2ノードクラスタの場合はノード1のNASデータLIFをノード2に、ONTAP 9.7以前を実行しているコントローラでは手動でARLをアップグレードする場合は3つ目のノードに移動します。</block>
   <block id="9341d89128ab2b3446ee084ac02aab48" category="list-text">[man_map_2_step5] クラスタ LIF とノード管理 / クラスタ管理 LIF をホストするブロードキャストドメインを調整します。各ブロードキャストドメインに正しいポートが含まれていることを確認します。ホストしているブロードキャストドメイン間または LIF がホームにあるブロードキャストドメイン間でポートを移動することはできないため、次の手順に示すように、 LIF を移行して変更しなければならない場合があります。</block>
@@ -3633,15 +3390,11 @@
   <block id="88a0eec75ccbf727881e52be21050e3c" category="paragraph">ステージ5で、node4のインストールとブートの際には、クラスタポートとノード管理ポートをnode2からnode4にマッピングし、node4のインストールを確認して、node2に属するデータLIFとSAN LIFをnode3からnode4に移動します。node2のアグリゲートをnode3からnode4に再配置し、ノード2のNAS LIFをnode3からnode4に移動します。</block>
   <block id="17713187c4e0912bc419e03d9496d3ae" category="paragraph">ステージ6では、新しいノードが正しくセットアップされていることを確認し、新しいノードで暗号化が有効になっている場合はストレージ暗号化またはNetApp Volume Encryptionをセットアップします。また、古いノードの運用を停止し、SnapMirror処理を再開する必要があります。</block>
   <block id="ecd942205bedf95694f574a1e603a6d3" category="admonition">Storage Virtual Machine（SVM）ディザスタリカバリの更新は、割り当てられたスケジュールどおりに中断されません。</block>
-  <block id="e5ade921515245eca4eff93f56ae42b3" category="admonition">VシリーズまたはFlexArray 仮想化ソフトウェアを使用してONTAP をブートする前に、FCオンボードポート、CNAオンボードポート、およびCNAカードを再設定する必要があります。</block>
   <block id="0fa2804ab676b4c1ef9de6071a2f7c81" category="admonition">node4にはブート環境のプロンプトが表示されたままにします。node4には戻ります <block ref="f326c815b47f4f2909494bae5cd735d5" category="inline-link-macro-rx"></block>。</block>
   <block id="0be88c4bca37291303f8b31b2c15960b" category="paragraph">ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。<block ref="08e9ed1febc3e725e8201311cddea860" prefix=" " category="inline-code"></block></block>
   <block id="9217255664b7bb463d1293cee7c132b2" category="paragraph"><block ref="854a4be4b1fce65bf3a90ee74692188e" prefix="" category="inline-code"></block> は、ストレージシステムのIPアドレスです（必須）。<block ref="220b0a4790e2c047ae96a881e506e1fe" prefix=" " category="inline-code"></block> は、ストレージシステムのネットワークマスクです（必須）。<block ref="14fb245f7140583707d1cda241eeeff2" prefix=" " category="inline-code"></block> は、ストレージシステムのゲートウェイです（必須）。<block ref="573c932508ccab841c5c117fb2cd2186" prefix=" " category="inline-code"></block> は、ネットワーク上のネームサーバのIPアドレスです（オプション）。<block ref="79e5a69f76d034adaafbb5cb6cb8fc45" prefix=" " category="inline-code"></block> は、ドメインネームサービス（DNS）ドメイン名です。このオプションパラメータを使用する場合は、ネットブートサーバの URL に完全修飾ドメイン名を指定する必要はなく、サーバのホスト名だけを指定します。</block>
   <block id="e06e3f1d2982c656928c1758ea5cd5d2" category="paragraph"><block ref="d289f6fdbc3a8ef953e4ecbc75c5e367" prefix="" category="inline-code"></block></block>
   <block id="c3bf4c58440a787e2baab726de5e13a2" category="admonition">新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールすると、正しいイメージがインストールされない場合があります。この問題環境はすべての ONTAP リリースに対応しています。オプションを指定してネットブート手順 を実行する<block ref="164ab89f87a6d8b32c239f7ca0be1f74" prefix=" " category="inline-code"></block> ブートメディアを消去して、同じONTAP バージョンのONTAP を両方のイメージパーティションに配置します。</block>
-  <block id="02c22536183e30deed7894475787f7d5" category="admonition">システムにストレージディスクがある場合は、クラスタプロンプトでこのセクションのコマンドを入力します。V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合は、このセクションに示すコマンドを保守モードで入力します。</block>
-  <block id="d9aba1a0e78e20e5794df9e5fcc38cae" category="paragraph">必要に応じて、次のコマンドを入力して、node3のFCポートを変更します。</block>
-  <block id="f4ab9bf62bf77a4a6d6e3123e634bc11" category="admonition">FCポートはイニシエータとしてプログラムする必要があります。</block>
   <block id="59b90ab4d9f5cec87646c2acefb98a3b" category="paragraph">診断ユーザアカウントは、簡単な診断だけを目的としています。テクニカルサポートから指示があった場合にのみ使用してください。</block>
   <block id="9e2835c14d1a15176d9244c6778b33fd" category="paragraph">ユーザアカウントのロック解除については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。</block>
   <block id="b2b2df04bed57a6afc9f9e93074818b6" category="paragraph">ブート環境プロンプトで次のコマンドを入力して、接続を手動で設定します。<block ref="8bea5c8cfd4cc82c9ee736493781c9a2" prefix=" " category="inline-code"></block></block>
@@ -3661,7 +3414,6 @@
   <block id="b782fb0a43ba5a997562172fe5afc493" category="paragraph">ステージ4で、ルート以外のアグリゲートとNASデータLIFをnode2からnode3に再配置します。node2の情報は、あとで手順 で使用するために記録してから、node2を撤去することもできます。</block>
   <block id="ee70b93b550a5730542d0185fb89b3ce" category="paragraph">ステージ6では、新しいノードが正しくセットアップされていることを確認し、暗号化が有効な新しいノードがある場合はストレージ暗号化またはNVEを設定してセットアップします。また、古いノードの運用を停止し、SnapMirrorの処理を再開する必要があります。</block>
   <block id="acd5b1c4fce9ef3151224f03792cb99f" category="paragraph">ディレクトリの一覧に次のファイルが表示されます。<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block></block>
-  <block id="93e8beec297b8781a36255a18449c4be" category="admonition">システムにストレージディスクがある場合は、クラスタプロンプトでこのセクションのコマンドを入力します。「 V シリーズシステム」または FlexArray 仮想化ソフトウェアを使用していて、ストレージアレイに接続している場合は、このセクションにメンテナンスモードでコマンドを入力します。</block>
   <block id="d64291323d18992b3445302961a6c6cb" category="paragraph"><block ref="5f228d2a3233663cd573460dd92ad9ce" prefix="" category="inline-code"></block></block>
   <block id="f8c0ac61744d21aa2bb63045fa011ea5" category="summary">必要に応じて、を使用してONTAP 9.8以降を実行しているコントローラをアップグレードする場合は、NVEまたはNAE用に新しいコントローラモジュールを設定します<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> コマンド</block>
   <block id="f1ce13c7bdc83a7edc61f28f1b45e2b3" category="paragraph">新しいコントローラの交換したコントローラまたはハイアベイラビリティ（HA）パートナーがNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、新しいコントローラモジュールをNVEまたはNAE用に設定する必要があります。</block>
@@ -3758,7 +3510,6 @@
   <block id="f0b1dfc1f82eec89fa61235553e2e4d0" category="cell">FIPS 140-2レベル2の自己暗号化要件に準拠したNSEドライブ</block>
   <block id="6187854879f5d4cd0a5fb4b97e2fc7a8" category="list-text">特別なブートメニューに移動してオプションを選択します<block ref="9181412f3c9d818fd261b168a3f00b5d" prefix=" " category="inline-code"></block>。</block>
   <block id="37c1d52cd8ef96c03d235ed6413794e2" category="paragraph">パスフレーズと、前の手順で手順 に記録しておいたバックアップ情報を入力します。を参照してください <block ref="67f80d13cf548292184bc05f4b74227a" category="inline-link-macro-rx"></block>。</block>
-  <block id="d3a8c316a5ba12124362fe019c4475b7" category="admonition">VシリーズシステムでONTAP をブートする前に、FCオンボードポート、UTA / UTA2オンボードポート、およびUTA / UTA2カードを再設定する必要があります。</block>
   <block id="6250ffa8b605242265415231c2c23025" category="list-text">NetApp Storage Encryption（NSE）ドライブを搭載している場合は、次の手順を実行します。</block>
   <block id="28556bd95def05fed56f5833d7b0b25b" category="inline-link-macro">オンボードキーマネージャを使用してストレージ暗号化を管理します</block>
   <block id="2f3067e385c13bed8c91d99a529e1f6c" category="paragraph">オンボードキーマネージャ（OKM）を使用して暗号化キーを管理できます。OKMをセットアップした場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。</block>
@@ -3985,8 +3736,6 @@
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">同じシャーシのコントローラモデルをARLでアップグレードする際に、交換用システムモジュールをノード2に取り付けます。</block>
   <block id="7339c5b8269b308a3bb75b606b220a40" category="doc">交換用システムモジュールをノード2に取り付けます</block>
   <block id="d1cf73ac3312e046217517b06817c8be" category="list-text">取り外すコントローラから、コンソール、管理、SASストレージ、データネットワークのケーブルをすべて外します。</block>
-  <block id="d31ea2ed80c8ed7a812def7ec46c2274" category="admonition">ベイBは、シャーシの下部にあります。</block>
-  <block id="e5c4a336c6c9037915d316eae71744e6" category="admonition">シャーシはすでに電源がオンになっているため、完全に装着されるとすぐに node2 がブートを開始します。ノード2がブートしないように、NetAppでは、コントローラモジュールをスロットに完全に挿入する前に、コンソールケーブルと管理ケーブルをノード2のコントローラモジュールに接続することを推奨しています。</block>
   <block id="0999b94892b1b34eb0ef08c34b267bc1" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ノード2のインストールと交換用モジュールを確認します。</block>
   <block id="0774c7bfeafd6a8db85f6f40e93164c5" category="paragraph">ノード2のインストールと交換用システムモジュールを確認する必要があります。物理ポートは変更されないため、古いnode2の物理ポートを交換するnode2にマッピングする必要はありません。</block>
   <block id="16c540fdea11cde8dcdbc04d5a6b8bf4" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードするには、特定のツールとドキュメントが必要です。</block>
@@ -4219,8 +3968,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="caaabddaf0ae26915d0c67052254e13f" category="admonition">AFF A700s、AFF A800、AFF C800、またはASA A800システムをドライブシェルフに変換することはできません。</block>
   <block id="e83ec3e9b2b468e112627883187c2fd0" category="section-title">追加の手順が必要になる可能性がある状況</block>
   <block id="e6dd5543cbcf668267e622e1c4af270f" category="list-text">新しいシステムのスロット数が元のシステムのスロット数より少ない場合、またはポートのタイプが異なる場合は、新しいシステムにアダプタを追加しなければならないことがあります。を参照してください<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>。</block>
-  <block id="cb1a8b9d3abd4e33bdd8ea771ae95f90" category="inline-link">FlexArray for NetAppコントローラのアップグレードと交換で実行する具体的な手順</block>
-  <block id="719139d3840fec9d3f2eb2a98eeabf46" category="list-text">元のノードまたは新しいノードでFlexArray仮想化ソフトウェアを使用している場合は、ナレッジベースの記事を参照してください。<block ref="aa5f5c779b9d140822ad13dbd4dfcaef" category="inline-link-rx"></block>。</block>
   <block id="68792e096612147f50fb8d94652f05d8" category="list-text">クラスタに SAN ホストがある場合は、 LUN シリアル番号の変更に関する問題を解決するための手順が必要になることがあります。サポート技術情報の記事を参照してください<block ref="569d16567e50864529bd25223ae78934" category="inline-link-rx"></block>。</block>
   <block id="553f010b7f82ef72c54ff1aa7c24fbf4" category="inline-link">インバンドACPのセットアップとサポート</block>
   <block id="2b9392a1d0dffc02bd7ad128f6e559e1" category="list-text">システムでアウトオブバンド ACP を使用している場合は、アウトオブバンド ACP からインバンド ACP への移行が必要になることがあります。サポート技術情報の記事を参照してください<block ref="2fbb58c4060c5b42a116b319c000325d" category="inline-link-rx"></block></block>
@@ -4274,19 +4021,12 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="527226c39d06e4e2f6eec2dca988d2ba" category="list-text">iSCSI SANボリュームを移動する場合は、 <block ref="6f18756f17709181fa11fd9271f705fc" category="inline-link-macro-rx"></block>。</block>
   <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">可能な場合は、元のノードと新しいノードで同じバージョンのONTAPを実行することをNetAppで推奨します。これができない場合は、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードと新しいノードのバージョンの差が4つ以下になるように、サポートされる最大バージョンに変更します。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。</block>
   <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>。</block>
-  <block id="ebf27722a719cbdcb3983568ea50ef42" category="cell">_Install に戻り、 node3 をブートして、のセクションを再開します <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
   <block id="1e4625a567102c02db411f8ac4403956" category="list-text">[[unset_maxwait_system_commands]]構成で自己暗号化ドライブを使用している場合は、を設定します<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例：で） <block ref="e646557bd849df21a23243b7031e90bc" category="inline-link-macro-rx"></block>）を使用している場合は、次のように変数を設定解除</block>
   <block id="b0da566a6b16767a9a4f6a9815cc8a8c" category="image-alt">ケーブル管理ARMの取り外し</block>
   <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">カムハンドルを開く</block>
   <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">に記載されているストレージ暗号化のbootargsをチェックしてリセットします <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>。</block>
   <block id="e807a193ac5d601655295b7da3f1b093" category="paragraph">ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合に、ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、 UTA / UTA2 カードがないときは、 _Install and boot node4 セクションに戻って再開する必要があります <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。ノード 4 に十分なラックスペースがあることを確認してください。node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場所に node4 を配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。</block>
-  <block id="1e46f02c6c16752b68ae9ed5650557a7" category="list-text">node4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがない場合は、 section_Check をスキップして UTA / UTA2 ポートを設定し、 node4 に戻ってブートノードを再開します <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。</block>
-  <block id="deee248d6405c9db93b26d1add330e26" category="cell">section_Install および boot node4 _ に戻り、のセクションを再開します <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。</block>
   <block id="6b9fac60e06c90ccfa462d0bed7926e6" category="list-text">ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、 _Install に戻り、 node3 を再度起動して再開します <block ref="69768913474e5068248c1757dc80b632" category="inline-link-macro-rx"></block>。</block>
-  <block id="83432b93e47408926e2f9d1271b103a1" category="list-text">node3 にカードポートまたはオンボードポートがない場合は、を省略します <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>をクリックし、 _Install に戻り、 node3 をブートして、で再開します <block ref="481a145f420f6aa5236e7c999fd1b8de" category="inline-link-macro-rx"></block>。</block>
-  <block id="8175f9681530613457de61e5da0e90c4" category="cell">_Install に戻り、 node3 をブートし、で再開します <block ref="481a145f420f6aa5236e7c999fd1b8de" category="inline-link-macro-rx"></block>。</block>
-  <block id="3e2666421648278a5df2289ddcbcf930" category="paragraph">ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続されている FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、これで完了です <block ref="533e5b5383ee7eeec7355f568e8aaf6b" category="inline-xref-macro-rx"></block> から <block ref="593996bb06ec10671cada9089fb35dd4" category="inline-xref-macro-rx"></block>をクリックします <block ref="72140e6a9de023ebc205559b767779ea" category="inline-xref-macro-rx"></block> およびの手順に従ってください <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> および <block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block> 必要に応じて、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <block ref="239474d202713b3a406727408fd68f72" category="inline-xref-macro-rx"></block>。</block>
-  <block id="2e2fd13bfb2c4fbd1d4fc09aab6cf4ed" category="list-text">に進みます <block ref="fae618cfa140cbca52d057afef5df1da" category="inline-link-macro-rx"></block> をクリックし、サブセクションを完了します <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> および <block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block>必要に応じて、システムに適用されます。</block>
   <block id="f21399d0ef733f2bac07631b61733da2" category="list-text">オフラインのボリュームがある場合は、で取得したオフラインボリュームのリストと比較します  <block ref="f8559d826afe76e8a44f3ff6b2b551c5" category="inline-link-macro-rx"></block> で、各ボリュームに対して次のコマンドを 1 回入力して、アップグレードの準備をし、必要に応じてオフラインのボリュームをオンラインにします。</block>
   <block id="3bc4849f9b157d49c1711e6e16889370" category="list-text">[[unset_maxwait_manual]]構成で自己暗号化ドライブを使用している場合は、を設定します<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例：で） <block ref="90030e72e0588538d4fa2173f000cf21" category="inline-link-macro-rx"></block> of _ Install and boot node3 _）では、変数の設定を解除する必要があります。</block>
   <block id="53658d8e911ed99b785059dfe4444ff6" category="paragraph">でキャプチャした出力と比較できます <block ref="9931aed421ff2a2523e8089d4d074996" category="inline-link-macro-rx"></block> で、ノードをアップグレードする準備をしています。</block>
@@ -4387,11 +4127,9 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="d754882e684dd040085cc74dc3abd6e4" category="list-text"><block ref="40d68d018a02788fd741d99e7433a2dc" category="inline-link-rx"></block>。</block>
   <block id="07538505561069fd5bcb91c73862236d" category="list-text">LOADERプロンプトからシステムをブートします。</block>
   <block id="11aad7411698d9a2a766f840bc4edcc3" category="paragraph">ブート環境のプロンプトでCtrl+Cキーを押して、AUTOBOOTを中断します。</block>
-  <block id="0d4005176e5e7e1fa879701f01da7baf" category="paragraph">セクションまたはその両方を完了する必要がある場合があります <block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block> <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> 。</block>
   <block id="7ed92f84948f4fe94d9e740b0e479a4e" category="paragraph-title">MetroCluster FC 構成</block>
   <block id="5ffd3baa415444f7f3227edef43b10d9" category="paragraph">MetroCluster FC構成では、できるだけ早くディザスタリカバリ/フェイルオーバーサイトのノードを交換する必要があります。コントローラモデルの不一致が原因で原因ディザスタリカバリのミラーリングがオフラインになる可能性があるため、 MetroCluster 内のコントローラモデルの不一致はサポートされません。2つ目のサイトでノードを交換する場合は、コマンドを使用し<block ref="bf0b9d28548e0e53fb793faa9566bdc3" prefix=" " category="inline-code"></block> てMetroClusterチェックをバイパスします。</block>
   <block id="df3d0238913361ab2420c20a053ba0d8" category="list-text">[[man_install4_step6]]ノード4の電源をオンにし、Ctrl+Cキーを押してブートを中断してブート環境プロンプトにアクセスします。</block>
-  <block id="5109ad8944e00ebd941b9f7cfd563728" category="list-text">Ctrl+Cキーを押してブートメニューを表示し、メンテナンスモードを選択します。</block>
   <block id="24a28632436fc3dd7e0e4fbde05fdf59" category="paragraph">アグリゲートの再配置は手順に代わるものです。新しいノードを使用してクラスタを拡張および縮小する必要はないため、2ノードのスイッチレスクラスタの場合に便利です。アグリゲートの再配置によるデータの移動は、ボリュームの移動時にアグリゲート間でデータをコピーするよりも高速です。</block>
   <block id="21e5a4b07b3d917519fb1f0a2c21d347" category="list-text"><block ref="21e5a4b07b3d917519fb1f0a2c21d347" category="inline-link-macro-rx"></block></block>
   <block id="2c4564f93114738d1a23cefcb9f1a209" category="paragraph">ストレージの移動によるコントローラハードウェアのアップグレードは、システムの停止を伴う手順です。アップグレードを開始する前に、一般的なアップグレードシナリオとアップグレードに関する考慮事項を確認してください。</block>
@@ -4729,9 +4467,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP スイッチのドキュメント</block>
   <block id="664f9c52f93e2fbf6e801148b0f573ad" category="inline-link-macro">HAペアの管理</block>
   <block id="fc0b22bb38f11521c03de86c56643d5d" category="cell"><block ref="fc0b22bb38f11521c03de86c56643d5d" category="inline-link-macro-rx"></block></block>
-  <block id="89f76e97cb211d84e00c11992dfadf74" category="paragraph">ノード4プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_の手順書、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。</block>
-  <block id="26c5c260ce25606c1c0bb202b032dfa3" category="paragraph">FlexArray仮想化インストール要件およびReference_and_HA pair management_へのリンクを参照してください<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>。</block>
-  <block id="b082861c64ae79f202957f36b4724f12" category="paragraph">ノード3プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。</block>
   <block id="62e8c46614cda642480e223b008f5dfc" category="list-text">HAペア管理のドキュメント</block>
   <block id="147e1330d5f2538de36e6ee787c5446d" category="paragraph">HAペア管理_へのリンクを参照し<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>、HAペアの_ベストプラクティス_セクションに従ってください。元のノードのどちらも 50% 以上の利用率で実行しないでください。あるノードの利用率が 50% 未満の場合は、コントローラのアップグレード中に両方のノードの負荷を処理できます。</block>
   <block id="270b6acdba0a7f34d4c1dd4dd05525ab" category="paragraph">いずれかのノードが部分的なギブバック状態の場合は、<block ref="b27ff28f78c71d3027cc2fb76f6fe30c" prefix=" " category="inline-code"></block>コマンドを使用してギブバックを実行し、コマンドを使用してギブバック<block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix=" " category="inline-code"></block>が必要なアグリゲートがないことを確認します。コマンドの詳細については、「_HA pair management_」へのリンクを参照して<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>ください。</block>
@@ -4869,7 +4604,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="f14c29a2d4657e0d20bb6c436555ab0a" category="list-text">ASA A900、AFF A900、またはFAS9500コントローラとNVRAMモジュールおよびパーツ</block>
   <block id="7f3a77f47a750d11ea0b8dcef1b075f0" category="list-text">ONTAPの管理に関する経験があり、診断権限モードで作業する場合のリスクを十分に理解していること。</block>
   <block id="edc69b05de587e21933630d809693320" category="list-text">新しいコントローラを新しいHAペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する。</block>
-  <block id="6538e30381f93431fff8cf0335edca69" category="list-text">アップグレードする既存のシステムでFlexArray仮想化ソフトウェアを使用している。</block>
   <block id="448247c62e342441af5c3c7e3b49c977" category="list-text">MetroCluster IP設定をアップグレードしています。</block>
   <block id="8884732b6a8d41b619d86cb386681073" category="paragraph">新しいシャーシを含む完全なシステムとして新しいAFF A30、AFF A150 A50、AFF A70、AFF、AFF、AFF A900、AFF A90 C30、AFF C60、AFF C80、FAS2820、またはFAS9500を受け取った場合は、「system controller replace」コマンドを参照して、<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードしてください_。</block>
   <block id="9d6b5ac201fed9ad7c34e292b0ad5101" category="admonition">この手順は、以下のアップグレード構成を厳密に環境します。他のシステムの組み合わせ間でアップグレードを実行する場合は、この手順を使用しないでください。他のすべてのコントローラモデルについては、link to _use「system controller replace」コマンドを参照し<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>て、ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードしてください。また、アグリゲートの再配置を使用して、ONTAP 9.8以降を実行しているコントローラハードウェアを手動でアップグレードしてください。</block>
@@ -4897,7 +4631,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="3ce524daf7c7a462720f07ffe80b1e82" category="list-text">手順を開始して最初のノードをアップグレードすると、コントローラのアップグレードをキャンセルしたり元に戻したりすることはできません。</block>
   <block id="ce8932055faee80499a682eed0006014" category="list-text">ONTAP 9.15.1以降を実行している。</block>
   <block id="6c95aebccb5899bde2beeb8d5d4de872" category="list-text">新しいコントローラを新しいHAペアとしてクラスタに追加したり、ボリューム移動手順を使用してデータを移行したりすることはありません。</block>
-  <block id="ea168cafe9d6c1f639359b30e7152b3d" category="list-text">バックエンドストレージに外付けアレイを使用して、VシリーズシステムまたはFlexArray仮想化ストレージシステムをアップグレードする。VシリーズまたはFlexArrayシステムのアップグレードオプションについては、テクニカルサポートにお問い合わせください。</block>
   <block id="3f0336dfa0e5a25ff8e8c549a2b18cef" category="list-text">MetroCluster FCまたはIP構成をアップグレードしています。MetroCluster構成をアップグレードするには、MetroClusterのアップグレードおよび拡張に関するドキュメント_へのリンクを参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 。</block>
   <block id="ebf1d57729bed03eb5fd256caca2fe3f" category="sidebar">AFF A800またはAFF C800の交換</block>
   <block id="761e2863e356e8bb23f79549fde56e25" category="cell">FAS8200、FAS8300、FAS9000</block>
@@ -4905,8 +4638,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="179f979e0b97fa0abce7d9de4a3dcf35" category="cell">FAS70では9.15.1P3、FAS50ではFAS90 9.16.1P2</block>
   <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="cell">FAS8700</block>
   <block id="5ea464078a881a86e75acbaa27ab0f3f" category="inline-link-macro">ノード1のディスクをノード3に再割り当て（手順9）</block>
-  <block id="fb5a9693a9865f2503ac1d604da7e6f1" category="cell">にアクセスします。</block>
-  <block id="2fdbbb745e51610452548329a23e078d" category="cell">に移動<block ref="cc5cb3430eee3043fed71981b076513b" category="inline-xref-macro-rx"></block></block>
   <block id="c66431825370525b71d1cf42669b4ad1" category="paragraph"><block ref="03d492bafa8bfc48b6d8087b415cb7c8" prefix="" category="inline-code"></block></block>
   <block id="cbf9a76a9a31fb5d20cbab55c42d6eb4" category="paragraph">ノード2をノード4に交換する前に、ノード2に関するAutoSupportメッセージを送信し、ノード2で所有されているルート以外のアグリゲートをノード3に再配置する必要があります。</block>
   <block id="a2f8774c7412a03482b475c596da177f" category="list-text">ノード2のAutoSupportメッセージをNetAppに送信します。</block>
@@ -4915,11 +4646,7 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="ce3a9a61e80721a6fb4afa31a98b6267" category="paragraph">再配置後のアグリゲートについては、出力に「done」と表示されます。</block>
   <block id="d8a4c81968f4b397fdbe83d1475d852c" category="list-text">node2がルート以外のオンラインのアグリゲートを所有していないことを確認します。</block>
   <block id="6eb24316934652e1e079aaa905d2761d" category="inline-link-macro">ノード1のディスクをノード3に再割り当て（手順1）</block>
-  <block id="694da05c353b1b646b03401140a4677f" category="paragraph">FC構成またはUTA / UTA2構成がない場合は、を実行して<block ref="7b43b3c87e448bde55a855b04c4928b3" category="inline-link-macro-rx"></block>ノード3がノード1のディスクを認識できるようにします。</block>
-  <block id="75875e8575c0484970422ed4463fb855" category="list-text">[[auto9597_istall3_step29]] MetroCluster構成、Vシリーズシステム、およびFlexArray仮想化ソフトウェアを搭載したシステムの場合は、に進みます<block ref="7b43b3c87e448bde55a855b04c4928b3" category="inline-link-macro-rx"></block>。</block>
   <block id="395e67264cbfd126e7e619c2e945ea24" category="inline-link-macro">ノード2のディスクをノード4の手順1に再割り当てします。</block>
-  <block id="8ed0087f4c418464709f5b7126cdb5d9" category="paragraph">FC構成またはUTA / UTA2構成がない場合は、を実行して<block ref="ace03be593207203d3866989bca07afe" category="inline-link-macro-rx"></block>ノード4がノード2のディスクを認識できるようにします。</block>
-  <block id="aa1438615d0eb30e62032b75a79e3ea7" category="list-text">[[step29]] MetroCluster構成、Vシリーズシステム、およびFlexArray仮想化ソフトウェアをストレージアレイに接続したシステムの場合は、に進みます<block ref="ace03be593207203d3866989bca07afe" category="inline-link-macro-rx"></block>。</block>
   <block id="1b32b5e4ec6b1b018326446e0609b810" category="paragraph">ステージ3では、ノード3をインストールしてブートし、クラスタポートとノード管理ポートをノード1からノード3にマッピングし、ノード1のディスクをノード3に再割り当てして、ノード3のインストールを確認します。必要に応じて、ノード3でFCまたはUTA / UTA2設定を設定し、ノード3がクォーラムに参加していることを確認します。さらに、node1のNASデータLIFとルート以外のアグリゲートをnode2からnode3に再配置し、SAN LIFがnode3にあることを確認します。</block>
   <block id="712f0ba3d50de0cb380baae0e79744aa" category="paragraph">ステージ5では、ノード4をインストールしてブートし、ノード2のクラスタポートとノード管理ポートをノード4にマッピングし、ノード2のディスクをノード4に再割り当てして、ノード4のインストールを確認します。必要に応じて、ノード4でFCまたはUTA / UTA2設定を設定し、ノード4がクォーラムに参加していることを確認します。node2のNASデータLIFとルート以外のアグリゲートもnode3からnode4に再配置し、SAN LIFがnode4にあることを確認します。</block>
   <block id="9ca791f14c256e2e8b46018369acf7a1" category="admonition">このコマンドは、advanced権限レベルでのみ実行できます。<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
@@ -4937,21 +4664,12 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="d4e6d4af7a18f0230aee51bbefe6a070" category="paragraph">外付けディスクを使用するシステムから、内蔵ディスクと外付けディスクの両方をサポートするシステム（AFF A800システムなど）にアップグレードする場合は、に進みます。<block ref="8c0d0b39d1dbad6b09344e6b9dfb08e2" category="inline-xref-macro-rx"></block></block>
   <block id="63b1972a97912f5fcb68bfc394d5e9c3" category="list-text">[[auto_check_4_step8]] LOADERプロンプトでブートします。</block>
   <block id="31f48890b5f492311b0370002ee80c45" category="paragraph">ストレージディスクを搭載したシステムをアップグレードする場合、ノード4にオンボードFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、に進みます。<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block></block>
-  <block id="4039a8202bf701ee008da1c534871be6" category="paragraph">ただし、VシリーズシステムまたはFlexArray仮想化ソフトウェアを使用していて、ストレージアレイに接続されていて、ノード4にオンボードのFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、_Installに戻ってブートし、node4_に戻ってから再開する必要があります<block ref="1a99f6ce933cd745b2b02e54c9272506" category="inline-link-macro-rx"></block>。</block>
   <block id="0557ba2404e82e19ae1f9975c3ce6b5f" category="paragraph">ノード 4 に十分なラックスペースがあることを確認してください。node4 と node2 が別々のシャーシにある場合は、 node4 を node3 と同じ場所に配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。</block>
-  <block id="d341955a87fd28709fd423c2f61dc066" category="list-text">ノード4にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、このセクションをスキップしてに進みます<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
-  <block id="fdfa8108573164295f74a4a44e8b43c2" category="list-text">スキップ_ノード4のUTA / UTA2カードまたはUTA / UTA2オンボードポートを確認して設定するノード4にUTA / UTA2オンボードポートがない場合は、_に戻ってnode4_をインストールしてブートし、で再開します。<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block></block>
-  <block id="fc62ebdcdad1c598fd567dcc92127be3" category="cell">にアクセスします。</block>
-  <block id="39ec961403963bac4327f37c3a91e53d" category="cell">_Installに戻り、node4_をブートし、で再開します<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>。</block>
   <block id="328a7a0648a6342a4e5d9762596df977" category="inline-link-macro">ノード2のディスクをノード4に再割り当て（手順9）</block>
   <block id="b08503fa695caa40c403fd4b0a68ee5a" category="list-text">ストレージディスクを搭載したシステムをアップグレードする場合、ノード3にオンボードのFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、に進みます。<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
-  <block id="bc6f0afd18b3a2600b507899a377b115" category="list-text">ただし、Vシリーズシステムまたはストレージアレイを搭載したFlexArray仮想化ソフトウェアを搭載したシステムで、node3にオンボードのFCポート、オンボードUTA / UTAポート、またはUTA / UTA2カードがない場合は、_Installに戻ってnode3_をブートし、で再開します<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
   <block id="fc1748891fee59e7ee68e749f479c431" category="list-text">ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、この手順をスキップし<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>てに進みます<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
-  <block id="b27b356ae2a147d00190cd72af494265" category="list-text">ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、この手順をスキップし<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>て_Installに戻り、node3_ at resumeをブートします<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
-  <block id="9d99141c043979e1bfbe43acb03250c2" category="cell">にアクセスします。</block>
   <block id="7578581e3a33edeb6b72193b779ff242" category="paragraph">^1^ AFF A800システムに必要なその他の手順については、セクション<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>、またはのA800に関する説明に記載されている手順に進みます<block ref="a9b70e5969497a28f737eb804f3061d5" category="inline-link-macro-rx"></block>。</block>
   <block id="ca05d8f8894d6ff273a92135000e282c" category="admonition">ネットブート接続として管理ポートおよび IP を使用する必要があります。データLIF IPは使用しないでください。使用しないと、アップグレードの実行中にデータが停止する可能性があります。</block>
-  <block id="187e2c8014ea1f526c1b4abd904abf74" category="paragraph">FCまたはUTA / UTA2の設定がない場合は、ノード4がノード2のディスクを認識できるようにを実行します<block ref="197c7e9b993124512db50edc55b3520e" category="inline-link-macro-rx"></block>。</block>
   <block id="6ce2823803aa2f6a15c6368e9054699b" category="paragraph">ステージ3では、ノード3をインストールしてブートし、ノード1のクラスタポートとノード管理ポートがノード3でオンラインになったことを確認し、ノード1のディスクをノード3に再割り当てして、ノード3のインストールを確認します。NetApp Volume Encryption（NVE）を使用している場合は、キー管理ツールの設定をリストアします。必要に応じて、ノード3にFCまたはUTA / UTA2設定を設定します。さらに、node1のNASデータLIFとルート以外のアグリゲートをnode2からnode3に再配置し、SAN LIFがnode3にあることを確認します。</block>
   <block id="9603a3cc81e2986384f6025c38748416" category="paragraph">ステージ5では、ノード4をインストールしてブートし、ノード2のクラスタポートとノード管理ポートがノード4でオンラインになったことを確認し、ノード2のディスクをノード4に再割り当てして、ノード4のインストールを確認します。NVEを使用している場合は、key-manager configurationをリストアします。必要に応じて、ノード4でFCまたはUTA / UTA2設定を設定します。node2のNASデータLIFとルート以外のアグリゲートもnode3からnode4に再配置し、SAN LIFがnode4にあることを確認します。</block>
   <block id="11f7f4fd840cd198a2f280c91b7faacb" category="list-text">このコマンドは、advanced権限レベルでのみ実行でき<block ref="2b4e2bfd3f993678e0b6870d28304a76" prefix=" " category="inline-code"></block>ます。</block>
@@ -4967,16 +4685,7 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="21dfc0371365c18907d7dbc160a0c2c4" category="paragraph">外付けディスクを使用するシステムから、内蔵ディスクと外付けディスクの両方をサポートするシステム（AFF A800システムなど）にアップグレードする場合は、に進みます。<block ref="ba3fb5e9a0164ee5baf520c4c38cd787" category="inline-xref-macro-rx"></block></block>
   <block id="b76881a9f4b6f1230f9720635fa52f19" category="list-text">[[reassign-node2-node4-app-step8]] Loaderプロンプトでブートします。</block>
   <block id="dc6402eb152631527f95b84d9f3ce723" category="admonition">この段階でエラーが発生する場合があります。エラーが発生した場合は、システムが正常にブートするまでの手順を繰り返し <block ref="79bd087280897d4f7e3333262b04aa6c" category="inline-xref-macro-rx"></block> ます。</block>
-  <block id="1ffa309b87ea47e57a243a8856ad001d" category="paragraph">ストレージディスクを搭載したシステムをアップグレードする場合、ノード4にオンボードFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、に進みます。<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block></block>
-  <block id="188f0556290d62cea45959405efb3bd0" category="paragraph">ただし、Vシリーズシステムを使用しているかFlexArray仮想化ソフトウェアを使用していて、ストレージアレイに接続されていて、ノード4にオンボードFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードが搭載されて<block ref="1a99f6ce933cd745b2b02e54c9272506" category="inline-link-macro-rx"></block>いない場合は、_のインストールとブートに戻って、node4_の手順を再開する必要があります。</block>
-  <block id="ce329eb9bee0d5646d8763528bd98e7e" category="list-text">ノード4にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、このセクションをスキップしてに進みます<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
-  <block id="ec5c95c32056d74d6a1bcfef9db57ed5" category="list-text">スキップ_ノード4のUTA / UTA2ポートを確認して設定します。ノード4にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、_に戻ってnode4_をインストールしてブートし、の手順を再開します<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>。</block>
   <block id="09fd616bd129dbb6b064a8d755638ea6" category="inline-link-macro">ノード2のディスクをノード4に再割り当て（手順9）</block>
-  <block id="03cfdc59281567bffdff0dbb6def2026" category="list-text">ストレージディスクを搭載したシステムをアップグレードする場合、ノード3にオンボードFCポート、オンボードUTA / UTA2ポート、またはUTA / UTA2カードがない場合は、に進みます。<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
-  <block id="9444c5a2921797201ef65c5f6bae3196" category="list-text">ただし、Vシリーズシステムまたはストレージアレイを搭載したFlexArray仮想化ソフトウェアを搭載したシステムで、node3にオンボードFCポート、オンボードUTA / UTAポート、またはUTA / UTA2カードがない場合は、_Installに戻り、node3_をブートしてから手順を再開します。<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block></block>
-  <block id="812ad699d52f740e9c44459a956e3f62" category="list-text">ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、ノード3_のUTA / UTA2ポートを設定してに進みます。<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
-  <block id="bd450dc25cacad31613a3b3330c2ed64" category="list-text">ノード3にUTA / UTA2カードまたはUTA / UTA2オンボードポートがない場合は、ノード3_のUTA / UTA2ポートを設定してから_に戻ってノード3_のインストールとブートを行ってから、の手順を再開します。<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block></block>
-  <block id="3a5beba976b4dab80c814dbb93201e2d" category="cell">_Installに戻ってnode3_をブートし、手順を再開し<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>ます。</block>
   <block id="efbbd979af9db0d702ab6a5273480e16" category="paragraph">アップグレードを続行する前に、ノード3のソフトウェア設定がノード3の物理接続と一致している必要があり、ネットワーク接続がリストアされている必要があります。</block>
   <block id="0750b6fd70b5c02e0dc63a82e8430e4a" category="admonition">この手順では、アグリゲートをノード3からノード2に再配置しないでください。その結果、アグリゲートがオフラインになり、再配置されたアグリゲートのデータが利用できなくなります。</block>
   <block id="569f02d62115823f4fea09e43e09614c" category="list-text">ノード3でパートナーシステムIDが正しく設定されていることを確認します。</block>
@@ -5004,10 +4713,7 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="71b6de83a4e8abd455d17a4d6af4374a" category="list-text">ノードをブートメニューでブートします。</block>
   <block id="2177cbe7b3a717ce6d53713b3fc10bd9" category="list-text">[[step14]]ノードをブートメニューでブートします。</block>
   <block id="a4767f09ed98441b185563427dd0a442" category="paragraph">AFF A800システムにアップグレードする場合は、に進みます<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
-  <block id="5a7f7aa2acda9d8cf0b886b9d97aa6d5" category="list-text">[[step14]]を実行してノードをブートメニューにブートし<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>ます。AFF A800システムにアップグレードする場合は、に進みます<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>。</block>
-  <block id="798d18731b87565ff109b6fed67d6b99" category="paragraph">FC構成またはUTA / UTA2構成がない場合は、を実行して<block ref="b7ef417e87a2f1cf82b2e7cf12272083" category="inline-link-macro-rx"></block>ノード3がノード1のディスクを認識できるようにします。</block>
   <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">AFF A800システムにアップグレードする場合は、に進みます<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
-  <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[step14]]を実行してノードをブートメニューにブートし<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>ます。AFF A800システムにアップグレードする場合は、に進みます<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
   <block id="007afae70e6899ccd5a02bd1b8e30413" category="list-text">交換用ノードは、共有のクラスタHAイーサネットポートを使用します。</block>
   <block id="96a4f5b30dbe8d55de9aa12c4b2e6602" category="list-text">クラスタスイッチに、共有クラスタHAポートをサポートするリファレンス構成ファイル（RCF）がインストールされていることを確認します。</block>
   <block id="1ef8dca5df94c49347909211a3845f3f" category="list-text">スイッチの既存の設定を削除します。</block>
@@ -5053,7 +4759,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="e9e731a9f4962a1d8b683234f1b71e92" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block>そして<block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
   <block id="077a3792f816c368d84f9a714136be02" category="paragraph">ノード4にノード2にインストールされているONTAP 9と同じバージョンがインストールされていない場合は、ノード4をネットブートする必要があります。node4 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、以下の手順に従って、以降のシステムブートに必要なファイルをブートメディアデバイスにダウンロードしてください。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block> 。</block>
   <block id="b4f090990739dcde90138932f4f42a92" category="paragraph">ただし、node2 にインストールされている ONTAP 9 と同じバージョンまたはそれ以降のバージョンが node4 にインストールされている場合は、node4 をネットブートする必要はありません。</block>
-  <block id="53f8565734b5f44ba5955cb44c379a8e" category="list-text">Vシリーズシステムまたはストレージアレイに接続されたFlexArray仮想化ソフトウェアを搭載したシステムをアップグレードする場合は、以下の手順を完了する必要があります。 <block ref="a48f24f7fd083b3ec1c1fb7f5bee1e25" category="inline-xref-macro-rx"></block>を通して<block ref="23a128901edc6abd74721071977e73e9" category="inline-xref-macro-rx"></block>このセクションは<block ref="4b3dcb4f5ad67f2f001c91135169a837" category="inline-xref-macro-rx"></block>そして、 <block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block>必要に応じて、メンテナンスモードでコマンドを入力してください。その後、このセクションに戻って手順を再開してください。 <block ref="9b924d5c1ba14dd46bf7c40da5a15e7c" category="inline-xref-macro-rx"></block> 。</block>
   <block id="92909e480346a929ed3538f8fb727042" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、セクションに進む必要があります。 <block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
   <block id="13f6606372b0497bd7d8f495e2c93873" category="paragraph">ディレクトリ内の情報を使用するには、 <block ref="ab6acaf1648b65fe7eff652317a95a17" category="inline-link-macro-rx"></block> 。</block>
   <block id="ab58313074490a46c5f45119c9303e60" category="paragraph">「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。LIFがダウンしている場合は、 <block ref="103588ef7fbd849a8c4b92e24d1fe01e" category="inline-link-macro-rx"></block>セクション。</block>
@@ -5244,7 +4949,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="43a39f2ab9e3339214d6fda05936d597" category="list-text"><block ref="43a39f2ab9e3339214d6fda05936d597" category="inline-link-macro-rx"></block></block>
   <block id="1ee623098df2f7856a034824be882999" category="inline-link-macro">外部キー管理の暗号化キーのリストア</block>
   <block id="116698f9b98f4e456ff27e95e38fccf3" category="list-text"><block ref="116698f9b98f4e456ff27e95e38fccf3" category="inline-link-macro-rx"></block></block>
-  <block id="18b86b85ac7e74bdaf460ba1e2f65f0e" category="list-text">[[auto_install4_step27]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
   <block id="bdac4e49f25f09fd22688c1a0aaf704a" category="paragraph">認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。これらのボリュームをオンラインに戻すには、 <block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block>指示。</block>
   <block id="0095109d5b66e24afe910457a637e763" category="list-text">[[A900_boot_node1]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
   <block id="c79e58170822a59a6dd931336ca868ed" category="list-text">[[boot_node2_step1]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
@@ -5427,4 +5131,163 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="6a6bad6107988979a4c7bb4f9b6e3f47" category="sidebar">AFF A250からAFF A400へのアップグレードについて</block>
   <block id="1c89ca7629177ffaec440b31de61e887" category="sidebar">FAS2820からのアップグレード</block>
   <block id="10952bb20745dcf0f30d5dd264d03924" category="sidebar">FAS2820からのアップグレードについて</block>
+  <block id="220b7076a9e851bf1e13056c1e583d05" category="paragraph">使用することができます<block ref="773b5d44fd1b5ae080ff3a379be13169" prefix=" " category="inline-code"></block>次の出力例に示すように、現在のポート構成を表示または確認するには、コマンドを使用します。</block>
+  <block id="2a73f4871f45ffc6a9f01730de436222" category="paragraph">UTA/UTA2 ポートはアドオン アダプタまたはコントローラ マザーボード上に存在し、次の構成になっていますが、ノード 3 の UTA/UTA2 ポートの構成を確認し、必要に応じて変更する必要があります。</block>
+  <block id="c594ac60ecfaa8945df018f2ca32a141" category="admonition">UTA/UTA2 ポートを構成するには、メンテナンス モードになっている必要があります。このセクションのコマンドをメンテナンス モードのシェル プロンプトで入力します。</block>
+  <block id="d5f0cabb5a163f2af827009890866160" category="list-text">UTA/UTA2 ポート設定を確認します。</block>
+  <block id="beaeb1b2c5fc204b2484aafd9e9f6f0d" category="paragraph">出力を調べて、UTA/UTA2 ポートに必要な特性があるかどうかを判断します。</block>
+  <block id="5962a796ca572c6b0011450c60d621d4" category="paragraph">次の例の出力は、アダプタ「1b」のタイプがイニシエーターに変更され、アダプタ「2a」と「2b」のモードが「cna」に変更されていることを示しています。  CNA モードでは、カードをネットワーク アダプタとして使用できます。</block>
+  <block id="053506df2d6bd471d3a1f3825e80a99b" category="cell">行きます <block ref="a777e0610e99ffeb84340abf2e20d6b9" category="inline-xref-macro-rx"></block>。</block>
+  <block id="9101e07b7198a3b70bd0f52befdab323" category="cell">ステップ4からステップ8をスキップして、<block ref="507f599b2e258f18809a90b59e54fc15" category="inline-xref-macro-rx"></block> 。</block>
+  <block id="cb67be816cb33ec83c5f54600baa76d7" category="list-text">[[auto_check3_step4]]次のいずれかのアクションを実行します。</block>
+  <block id="e212342c243be552531d1bb84b0017d2" category="cell">へ移動<block ref="e33bb2c935af60d67309f774bd9b33e2" category="inline-xref-macro-rx"></block></block>
+  <block id="57a2cdf3b3dc9766dd15cf3fc167ebba" category="cell">ステップ5をスキップして<block ref="56fda18004a1ae4a50f11b5c9c8283e3" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3c9564edf2bf79805b158e68dcccf2de" category="list-text">[[auto_check3_step5]]アダプタがイニシエーターモードであり、UTA/UTA2 ポートがオンラインの場合は、UTA/UTA2 ポートをオフラインにします。</block>
+  <block id="b3c0d59f1fa098e490810b0e947e6307" category="paragraph"><block ref="1bc3d7ab80a4d1e7b06ad3035b0dad16" prefix="" category="inline-code"></block></block>
+  <block id="419db2f6cae0f1c733c2fedf632cbe6b" category="list-text">[[auto_check3_step6]]現在の構成が目的の用途と一致しない場合は、必要に応じて構成を変更します。</block>
+  <block id="749cabc3295eb5c2617db20882147797" category="paragraph"><block ref="b519f271b77c8d1348414ff37a36f0bb" prefix="" category="inline-code"></block></block>
+  <block id="39931503dd9a7b610d4d262d2c2b6e27" category="admonition">テープ ドライブおよびMetroCluster構成には FC イニシエーターを使用する必要があります。  SAN クライアントには FC ターゲットを使用する必要があります。</block>
+  <block id="a8becce9de15555e0f918cf4cf2a3586" category="list-text">各ポートに対して次のコマンドを 1 回ずつ入力して、ターゲット ポートをオンラインにします。</block>
+  <block id="3b9ed7a46b0f268f34eda95a2e6e7155" category="paragraph"><block ref="568cfe4bc2866fbf3035079380589631" prefix="" category="inline-code"></block></block>
+  <block id="a9fa10cd960a90339e9537639288e8d5" category="admonition">このセクションのコマンドをメンテナンス モードのシェル プロンプトで入力します。</block>
+  <block id="e903689bf069822cbaebac637c25da42" category="list-text">ノード 4 でポートが現在どのように構成されているかを確認します。</block>
+  <block id="e0da692c52eefbb9374f562f5c4d1167" category="cell">ステップ5からステップ9をスキップして、<block ref="3dac065a0ae79c18e762b88c6c0915e9" category="inline-xref-macro-rx"></block> 。</block>
+  <block id="ffa1a4006ff690c1fe619664539ec2cf" category="cell">へ移動<block ref="e3d5822abe2a01f4d8a1736b1307364c" category="inline-xref-macro-rx"></block></block>
+  <block id="f7ca9c3e3c996fb164af633649679b6b" category="cell">ステップ6をスキップして<block ref="8fa9bd2d3aca152bc08859144a7af8fa" category="inline-xref-macro-rx"></block>。</block>
+  <block id="a76b2c102215e9321521e6154e1cd5ee" category="list-text">[[auto_check_4_step6]]アダプタがイニシエーターモードであり、UTA/UTA2 ポートがオンラインの場合は、UTA/UTA2 ポートをオフラインにします。</block>
+  <block id="81ca7960b6cf21700302678cb2053a77" category="list-text">次のコマンドを各ポートごとに 1 回入力して、ターゲット ポートをオンラインにします。</block>
+  <block id="9c90dd8c87a40e63c84acec5736c1290" category="paragraph">node3 にオンボードまたはアドオン FC アダプタ上の FC ポートがある場合、システムの出荷時にポートが事前構成されていないため、ノードをサービスに投入する前にノード上でポート構成を設定する必要があります。ポートを設定しないと、サービスが中断される可能性があります。</block>
+  <block id="5cb12b259721a136cc774cadc7c074c9" category="list-text">ノード 3 の FC 設定を、先ほどノード 1 からキャプチャした設定と比較します。</block>
+  <block id="44d823d11b37a4e72218ebe9865f38b4" category="list-text">必要に応じて、次のいずれかのアクションを実行して、ノード 3 の FC ポートを変更します。</block>
+  <block id="026a4424da277a7d743c4bc846f17290" category="paragraph">メンテナンス モードの場合 (ブート メニューのオプション 5):</block>
+  <block id="28076ede4cc9f21832c85190c6641187" category="list-text">ターゲット ポートとしてプログラムするには:</block>
+  <block id="0782d8d4c61a7cd89e1abafbe5ea5255" category="paragraph"><block ref="2f3fb83fbfeaa6dcc145c9439a60e023" prefix="" category="inline-code"></block></block>
+  <block id="9ffe34631932030e10674c15e5213255" category="paragraph">例えば：<block ref="4e577f3e00b1b52e4b863618794a0722" prefix=" " category="inline-code"></block></block>
+  <block id="713274c6cee4384b9c2c819d3adb4dd8" category="paragraph"><block ref="723b7d909caa5ed8fb8b4fb5ddc6bf17" prefix="" category="inline-code"></block></block>
+  <block id="0dda9a087e4138dae07efa04e54ed27b" category="paragraph">例えば：<block ref="9965a7cb08ecefbc1f4975409538e128" prefix=" " category="inline-code"></block></block>
+  <block id="81c599f2e39a1b5800a3e53397bc8f88" category="list-text">次のコマンドを使用して出力を調べ、新しい設定を確認します。</block>
+  <block id="0968f508b9ca398ddaefa4b831996c2c" category="paragraph">node4 にオンボードまたはアドオン FC アダプタ上の FC ポートがある場合、システムの出荷時にポートが事前構成されていないため、ノードをサービスに投入する前にノード上でポート構成を設定する必要があります。必要に応じてポートを構成しないと、サービスが中断される可能性があります。</block>
+  <block id="9e2ce1b17e529e39148b31409085100b" category="list-text">システム上のすべての FC および統合ネットワーク アダプタに関する情報を表示します。</block>
+  <block id="a9e60974603befa4a60deaa890cc9cb2" category="paragraph">node4 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」ドキュメントを使用して、次の接続をケーブル接続します。</block>
+  <block id="dd6436446d7d688a029171fa10354c40" category="paragraph">参照<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>_HAペア管理_にリンクします。</block>
+  <block id="8762049cc66fa921ae6bcffe8755d4e6" category="admonition">*遅延を無視しないでください。バッテリーの充電が不十分だと、データが失われる可能性があります。*</block>
+  <block id="3b4a6d51e129532942e72a2637a3248a" category="paragraph">node3 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」ドキュメントを使用して、次の接続をケーブル接続します。</block>
+  <block id="621db0217765431b65fd2df9431bc8c1" category="paragraph">完了する必要があるかもしれません<block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block>または<block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
+  <block id="bc7c7cb879348cd44e26c92f94f95bf6" category="admonition">この手順では、交換用コントローラハードウェアが新品であり、使用されていないことを前提としているため、<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>コマンドはこの手順には含まれません。交換用コントローラ ハードウェアが以前に使用されていた場合、特にコントローラが 7-Mode でData ONTAPを実行していた場合には、テクニカル サポートに連絡する必要があります。</block>
+  <block id="4bd95100dfdd41a46154bae000c5b050" category="admonition">NVRAM の内容を消去しないでください。  NVRAMの内容をクリアする必要がある場合は、 NetAppテクニカル サポートにお問い合わせください。</block>
+  <block id="dbe7ddc508cb8ca92b05d2610724662c" category="admonition">メンテナンス モードに入るように指示されない限り、このセクションのコマンドをクラスター プロンプトに入力します。  MetroCluster FC システムを使用している場合は、UTA/UTA2 ポートを構成するにはメンテナンス モードにする必要があります。</block>
+  <block id="0e98bb417c519b40ee1d3347c345b891" category="list-text">[[man_check_4_Step5]]システムにストレージディスクがあり、 Data ONTAP 8.3 を実行している場合は、ノード 4 を起動してメンテナンス モードに入ります。</block>
+  <block id="e86a9012a5d4ad0636d87c7796bb7d1b" category="cell">行きます <block ref="d63e67436ac7351debc07c052c32757d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="fb702fd1f687697c34ccfb84155cb694" category="cell">ステップ8をスキップして<block ref="a1e1d631f88d089f1ee9acd195dec0d6" category="inline-xref-macro-rx"></block>。</block>
+  <block id="c3149530803c8516fe41237a78a3dd5b" category="list-text">[[man_check_4_Step8]]アダプタがイニシエーターモードであり、UTA/UTA2 ポートがオンラインの場合は、UTA/UTA2 ポートをオフラインにします。</block>
+  <block id="4bf18c040a9afd064df8863c218a3eec" category="list-text">[[man_check_4_Step9]]現在の構成が目的の用途と一致しない場合は、次のコマンドを入力して、必要に応じて構成を変更します。</block>
+  <block id="97af051b1347b43f64a2dd75db18e91a" category="admonition">テープ ドライブには FC イニシエーターを使用し、SAN クライアントには FC ターゲットを使用する必要があります。</block>
+  <block id="856a11ba995fa1cbf53c4a85a43d0980" category="list-text">システムにストレージ ディスクがある場合は、次のコマンドを入力します。</block>
+  <block id="a35f563649b182d8977f02ecb7f20b3a" category="admonition">メンテナンス モードに入るように指示されない限り、このセクションのコマンドをクラスター プロンプトに入力します。</block>
+  <block id="4040bda75e60fc0b567141a275aad366" category="list-text">node3 で次のコマンドを入力して、現在のポート構成を確認します。</block>
+  <block id="4ecde66f03240143dac0d90d096f6780" category="cell">ステップ5からステップ13をスキップして、<block ref="4428c1fc0f08dec3d9acadc30523cad8" category="inline-xref-macro-rx"></block> 。</block>
+  <block id="4233f37c2cb0b60e70d554b36bb33363" category="list-text">[[man_check_3_step5]]システムにストレージディスクがあり、clustered Data ONTAP 8.3 を実行している場合は、ノード 3 を起動してメンテナンス モードに入ります。</block>
+  <block id="8244a2cadfeaafc752ee234621d096f6" category="cell">行きます <block ref="21867c7d0c2b8bc3921bf40e9edec561" category="inline-xref-macro-rx"></block>。</block>
+  <block id="362c8977dd18b22b881396c98e231639" category="cell">ステップ8をスキップして<block ref="7673ca413989375816bebedf63a95837" category="inline-xref-macro-rx"></block>。</block>
+  <block id="ff01dd932491a7d15acd63376b61eb99" category="list-text">[[man_check_3_step8]]アダプタがイニシエーターモードであり、UTA/UTA2 ポートがオンラインの場合は、UTA/UTA2 ポートをオフラインにします。</block>
+  <block id="b132fdfbd29d789bf36881e164c565c2" category="list-text">[[man_check_3_step9]]現在の構成が目的の用途と一致しない場合は、必要に応じて構成を変更します。</block>
+  <block id="60a6a8d5e976d6384be5d506c66c6141" category="admonition">テープ ドライブおよびMetroCluster構成には FC イニシエーターを使用する必要があります。  SAN クライアントには FC ターゲットを使用する必要があります。</block>
+  <block id="791c7a5bc5fb0f4369c531ce796c42ae" category="list-text">[[step12a]]各ポートごとに次のコマンドを入力して、ターゲット ポートをオンラインにします。</block>
+  <block id="2cfd520b3625da2bfe9f292ecfb505bb" category="list-text">[[man_check_3_step14]]ポートにケーブルを接続します。</block>
+  <block id="4525bdcac0945de44b388c01b79ae542" category="admonition">このセクションのコマンドをクラスタープロンプトに入力します。</block>
+  <block id="40006608fc0851f42cd30b2d3e226efa" category="list-text">システム上のすべての FC および統合ネットワーク アダプタに関する情報を表示します。</block>
+  <block id="13ca7c6b28be117550eab0e903fe7042" category="list-text">ノード 3 の FC 設定を、先ほどノード 1 からキャプチャした設定と比較します。</block>
+  <block id="46c1d2d2ab0409405da04b960b56f8de" category="list-text">[[man_config_3_step3]]次のいずれかのアクションを実行します。</block>
+  <block id="860b5f3398c4c1ac377f75a86c1e4600" category="cell">行きます <block ref="0a519386d36c411c6e59b5652ee1904f" category="inline-xref-macro-rx"></block>。</block>
+  <block id="ffd972a1e4dacd5cdc292817e7c737c1" category="cell">行きます <block ref="a8e030c5a102b1fbda5775e36f0a3aae" category="inline-xref-macro-rx"></block>。</block>
+  <block id="9bf0ee2cd9be64a7f34f45028aa43cd2" category="list-text">[[man_config_3_step4]]必要に応じて、次のいずれかのコマンドを入力して、ノード3 の FC ポートを変更します。</block>
+  <block id="ae7f13b8bbb7c9fd51dda562a16b36c8" category="paragraph"><block ref="8857bb6c0bb9926ea77bdcc5d45b1108" prefix="" category="inline-code"></block></block>
+  <block id="9ad3055e0dfd10e8b8535d0eb1ec2c52" category="paragraph"><block ref="cbe131c5c17c1fd0759ff1501f01be67" prefix="" category="inline-code"></block></block>
+  <block id="c004940bc59ffe780370727ce9c08711" category="list-text">次のコマンドを入力して出力を調べ、新しい設定を確認します。</block>
+  <block id="0a49b83d5ed667f66c92da05a2d65f2c" category="list-text">ブート環境プロンプトで node3 をブートします。</block>
+  <block id="194cac65f4711838b5222d0a41b5b28b" category="list-text">[[man_config_3_step9]]次のいずれかのアクションを実行します。</block>
+  <block id="0ae92264480b0c931bbdea5d1d57a92c" category="paragraph"><block ref="4b631d03a77b2a6d951be9d9a540756e" prefix="" category="inline-code"></block></block>
+  <block id="431202ecef1ca91c6f3605e2e81d51ff" category="paragraph"><block ref="a11184dcc096f5133e1c0f8ac45f1c93" prefix="" category="inline-code"></block></block>
+  <block id="ae855446dba335efeaa8a4d44a6480e2" category="cell">行きます <block ref="a919aec136b010962e2696a7b07f4e92" category="inline-xref-macro-rx"></block>。</block>
+  <block id="0ad004d090a4ba2bc694d75d245c3231" category="inline-xref">ステップ6</block>
+  <block id="d7513ce41e00d6137be0cf8419a5ad77" category="cell">行きます <block ref="35d93f5d48cef40ae4085e0163170098" category="inline-xref-macro-rx"></block>。</block>
+  <block id="257ce8d832995e33306fc7bb744f1ebe" category="list-text">[[man_config_4_Step6]]メンテナンスモードを終了します。</block>
+  <block id="7573f254272d2c6220e77b150551b633" category="list-text">ブート環境プロンプトで次のコマンドを入力して、node4 をブートします。</block>
+  <block id="e30b112573a3cee86acf023252d05a4b" category="list-text">[[man_config_4_Step9]]次のいずれかのアクションを実行します。</block>
+  <block id="3b9ace6b56c3470111592188ef786b68" category="list-text">node3 プラットフォームのインストールとセットアップ手順</block>
+  <block id="49e85d2cb5dc17786beece61ce67579b" category="list-text">メンテナンス モード プロンプトで、次のコマンドを入力します。</block>
+  <block id="defaf387837a5ac57c453e436af7ffe6" category="cell">行きます <block ref="57e0c5137c5e4ee9559e4abc3701552f" category="inline-xref-macro-rx"></block>。</block>
+  <block id="b543203df1cba169912b116fd99674ff" category="list-text">[[man_install3_step8]] ONTAP用にノード3を設定します。</block>
+  <block id="b6894d5bdf50a826cb6b87d0ca6a44d3" category="list-text">CTRL-C を押してブート メニューを表示します。</block>
+  <block id="28e28932e1038b7cc2979611172e5f48" category="cell">行きます <block ref="85131af613f0169831e213f11ca11041" category="inline-xref-macro-rx"></block>。</block>
+  <block id="b9da98e99c8057fc3b9a54d9d19ff501" category="inline-xref">ステップ18</block>
+  <block id="7c524e8842cf8de298e4c6e1291bb583" category="cell">行きます <block ref="f5b2f21e8ce0ab7d4e5603147e143520" category="inline-xref-macro-rx"></block>。</block>
+  <block id="9956c97018b98e6a80cd00a916ddd524" category="list-text">[[man_install3_step13]]次のいずれかのアクションを選択して、ネットブート接続を構成します。</block>
+  <block id="0ba73a93969c15a375ed35ee1a41b1a9" category="list-text">ノード3でネットブートを実行します。</block>
+  <block id="6c04fe5c456662eaf6717c6408fbf87e" category="list-text">ブートメニューから、まずオプション*(7) 新しいソフトウェアをインストールする*を選択します。</block>
+  <block id="39ee6091b18246476c0e6651a7fd4f12" category="list-text">手順を続行するように求められた場合は、<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>パッケージの入力を求められた場合は、次の URL を入力します。</block>
+  <block id="f01be43ac6c987e6640f5f08edb5f11b" category="list-text">[[man_install3_step18]]*(5)メンテナンスモードブート*を選択して、<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>を入力し、<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>起動を続行するかどうかを尋ねるプロンプトが表示されたら。</block>
+  <block id="d31abf3785333c7ae6bdd20bb76938b0" category="list-text">node3 のシステム ID を見つけます。</block>
+  <block id="b198ad033208091ab84e492d02bfce14" category="list-text">[[man_install3_step21]]ノード1のスペアディスク、ルートに属するディスク、および以前にノード2に再配置されなかったルート以外のアグリゲートを再割り当てします。<block ref="b90d8347ded957c31748eee44116abad" category="inline-link-macro-rx"></block> 。</block>
+  <block id="ba96a003ae21abcf0849770cd88fb7e8" category="list-text">[[man_install3_step42]]パートナーシステムIDが、<block ref="aa83c5880412a41ab5941be2fb5cf080" category="inline-xref-macro-rx"></block> -p スイッチの場合:</block>
+  <block id="491969df085a332f2dc58e6126ce8248" category="list-text">node4プラットフォームのインストールとセットアップ手順</block>
+  <block id="41a45c7516e3accdf36922b3be4f91a5" category="admonition">*遅延を無効にしないでください。バッテリーを充電しないと、データが失われる可能性があります。*</block>
+  <block id="718011d4445365a925a4826e5010d02d" category="list-text">[[man_install4_Step8]]メンテナンス モード プロンプトで、次のコマンドを入力します。</block>
+  <block id="555274cce9ccea93856f2174d70c44ff" category="cell">行きます <block ref="d6a59fffa5883ae870f11e0e2cadcd2d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="4d613f78d648e0daee8012c631b3bbdd" category="cell">行きます <block ref="d121c2002749495f5b774cb63902ead8" category="inline-xref-macro-rx"></block>。</block>
+  <block id="34ef85ee99bf02077fc9c9aa28a2c37c" category="list-text">[[man_install4_Step13]]次のいずれかのアクションを選択して、ネットブート接続を構成します。</block>
+  <block id="e5f32c16ba5e3145cb5ae201de5c31a6" category="list-text">[[man_install4_Step18]]メンテナンスモードを選択<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>ブートメニューから入力<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>起動を続行するかどうかを尋ねるプロンプトが表示されたら。</block>
+  <block id="d6a004498c167875d1bd15d43aaf2600" category="list-text">[[man_install4_Step19]]続行する前に、<block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block>ノード上の FC または UTA/UTA2 ポートに必要な変更を加えます。これらのセクションで推奨されている変更を行い、ノードを再起動して、メンテナンス モードに切り替えます。</block>
+  <block id="287bc804244a679c73d0cac4cb0c0b2c" category="inline-xref">ステップ19</block>
+  <block id="0886208fefc0d1222bb49b4f36ef5c2a" category="list-text">パートナーシステムIDが、以下のとおり正しく設定されていることを確認してください。<block ref="ce69cce3220d739038c7a73754bd5bab" category="inline-xref-macro-rx"></block>オプションの下。</block>
+  <block id="05b5d63be92fcd8a68e0fda7b3a1f065" category="admonition">NVRAM の内容を消去しないでください。  NVRAMの内容をクリアする必要がある場合は、 NetAppテクニカル サポートにお問い合わせください。</block>
+  <block id="2cf91c502117e7873efab1893f5a510c" category="admonition">この情報を使用して、ノード 3 またはノード 4 に転送する可能性のある部品またはアクセサリを識別できます。</block>
+  <block id="6d30bf3ea0165e7000975bb05a8c4504" category="list-text">[[man_prepare_nodes_step28]]次のサブステップを完了します。</block>
+  <block id="79c5ad6ed190de6f4df05537c544794f" category="list-text">[[man_prepare_nodes_step29]]新しいノードに元のノードと同じライセンス機能を持たせたい場合は、次のコマンドを入力して元のシステムのクラスター ライセンスを確認します。</block>
+  <block id="f8e6361ef8eb617e90fcace7cda2e6e5" category="admonition">ノード 1 がノード 2 と同じシャーシ内にある場合は、電源スイッチを使用したり、電源ケーブルを引いたりしてシャーシの電源をオフにしないでください。そうすると、データを提供しているノード2がダウンしてしまいます。</block>
+  <block id="d6e4db81e9067d45ffa53a5fa5494e1a" category="admonition">このドキュメントでは、元のノードは _node1_ と _node2_ と呼ばれ、新しいノードは _node3_ と _node4_ と呼ばれます。ガイド内の手順では、ノード1をノード3に、ノード2をノード4に置き換えます。 _node1_、_node2_、_node3_、_node4_ という用語は、元のノードと新しいノードを区別するためにのみ使用されます。手順を実行する際には、元のノードと新しいノードの実際の名前に置き換えてください。ただし、コントローラのハードウェアをアップグレードしてもノードの名前は変わりません。ノード3の名前はノード1のまま、ノード4はノード2のままです。</block>
+  <block id="86365511dddf1ee8bef313eb726711e8" category="list-text">この手順は、 FASシステムとAFFシステムに適用されます。</block>
+  <block id="3b8041789e9cd5e417af3d65ef7a2e1b" category="inline-link-macro">ノード3でFCまたはUTA/UTA2構成を設定する</block>
+  <block id="e2b66b348c7594fa3e3649551d2d03bb" category="list-text">FCまたはUTA/UTA2構成のシステムをお持ちの場合は、<block ref="0f65c4eac03b5c41bcd2baef6caa94a0" category="inline-link-macro-rx"></block> 。</block>
+  <block id="26e2328a3e5846745002b5222faffd73" category="inline-link-macro">ノード1のディスクをノード3に再割り当てする</block>
+  <block id="9ea71500e3c5fa7d1f03e9c76e619439" category="list-text">FCまたはUTA/UTA2構成がない場合は、<block ref="731ce5d7564b7c32e4081aed35d74ddf" category="inline-link-macro-rx"></block>ノード3がノード1のディスクを認識できるようにする。</block>
+  <block id="9c6cfb181f34c77d766f4b64b947b0be" category="list-text">MetroCluster構成の場合、<block ref="731ce5d7564b7c32e4081aed35d74ddf" category="inline-link-macro-rx"></block> 。</block>
+  <block id="5850374394963dcf609f49933e6ae097" category="list-text">[[auto_install4_step22]] NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。</block>
+  <block id="f95c3d6692e56fe33212589fc58ee4ae" category="inline-link-macro">ノード4でFCまたはUTA/UTA2構成を設定する</block>
+  <block id="b03f4dc28a467dbdb927171247a0b5b9" category="list-text">FCまたはUTA/UTA2構成のシステムをお持ちの場合は、<block ref="a5fd50e267aa742edfb254af48aa31df" category="inline-link-macro-rx"></block> 。</block>
+  <block id="84778c2e84fe5df40eb6e09940c8e6da" category="inline-link-macro">ノード2のディスクをノード4に再割り当てする、ステップ1</block>
+  <block id="cb0e98223d1b689567ca884a4ed62d2f" category="list-text">FCまたはUTA/UTA2構成がない場合は、<block ref="77bda7bfb356817385991b20570adf55" category="inline-link-macro-rx"></block>ノード4がノード2のディスクを認識できるようにする。</block>
+  <block id="d043c2da61f7d367f9629fa3d167d15a" category="list-text">[[step8]]このセクションをスキップして<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>node4 に UTA/UTA2 カードまたは UTA/UTA2 オンボード ポートがない場合。</block>
+  <block id="187112eef07fb14778dfdc513543ea21" category="list-text">[[auto_check_4_step10]]メンテナンスモードを終了:</block>
+  <block id="5407697632a0e9289cbc1571bb74a606" category="list-text">その他のシステムアップグレードについては、<block ref="344c6df46b49421d4efd3ea3dc243233" category="inline-link-macro-rx"></block> 。</block>
+  <block id="532277e802a820c7b240fc524a2dec1d" category="list-text">実行してノードをブートメニューで起動します。<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block> 。</block>
+  <block id="9e5cb50e1c577a8bbe485a517d02859d" category="list-text">AFF A800システムにアップグレードする場合は、<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block> 。</block>
+  <block id="90d15882071659f5c278c3188642dcdd" category="list-text">その他のシステムアップグレードについては、<block ref="85de4eaf81abb5e5b335f49a296af5f4" category="inline-link-macro-rx"></block> 。</block>
+  <block id="1f3fcdf9022a6aa0f67562f35de18fd5" category="admonition">この段階では、 MetroCluster構成は正常な状態ではなく、解決すべきエラーが発生する可能性があります。見る<block ref="14c0e32a98a31f9fd4a16b635b2f7ebd" category="inline-link-macro-rx"></block>。</block>
+  <block id="eae0d196e9a099a5039af7d8b6c1eb85" category="admonition">ベイ B はシャーシの右側にあります。</block>
+  <block id="36e28ccc6b6e4a11682d10de117d21e0" category="admonition">シャーシの電源はすでにオンになっているため、ノード 2 は完全に装着されるとすぐに起動を開始します。ノード 2 が起動しないようにするには、コントローラ モジュールを完全に挿入する前に、コンソール ケーブルと管理ケーブルを接続します。</block>
+  <block id="851d3d8a0258ed7660584e68159aae4e" category="inline-link-macro">ノード3のFCまたはUTA/UTA2ポートを設定および構成する</block>
+  <block id="9066510c72210c33ee0037190ab1e1ff" category="list-text">FCまたはUTA/UTA2構成のシステムをお持ちの場合は、<block ref="a2860b8490ec5aaef9fa8fc42929bb0a" category="inline-link-macro-rx"></block> 。</block>
+  <block id="f6195d58e46fb7461b72fc0f7cfb9d9e" category="inline-link-macro">ノード1のディスクをノード3に再割り当てする、ステップ1</block>
+  <block id="058639902ce677f10cb736388c7e4acb" category="list-text">FCまたはUTA/UTA2構成がない場合は、<block ref="e90905ab01074cf314222ce3c67aed26" category="inline-link-macro-rx"></block>ノード3がノード1のディスクを認識できるようにする。</block>
+  <block id="b145ed74f423471704ac13c05f313b4d" category="list-text">MetroCluster構成の場合、<block ref="a2860b8490ec5aaef9fa8fc42929bb0a" category="inline-link-macro-rx"></block>ノードに接続されているディスクを検出します。</block>
+  <block id="4a38f566dc08a2281060f30394eff9f6" category="inline-link-macro">ノード4のFCまたはUTA/UTA2ポートを設定および構成する</block>
+  <block id="bacbfc77fc4e2d757322081c15c52a00" category="list-text">FCまたはUTA/UTA2構成の場合、<block ref="ad45ffc801f32cf9fa6b670aff5c067c" category="inline-link-macro-rx"></block> 。</block>
+  <block id="c52fd43175a81b4010edafc888294155" category="list-text">FCまたはUTA/UTA2構成がない場合は、<block ref="e4d2a56d6aa2b01471a43eefb927dea7" category="inline-link-macro-rx"></block>ノード4がノード2のディスクを認識できるようにする。</block>
+  <block id="625f5185360b3cd291dbecb432926ddf" category="list-text">MetroCluster構成の場合、<block ref="ad45ffc801f32cf9fa6b670aff5c067c" category="inline-link-macro-rx"></block>ノードに接続されているディスクを検出します。</block>
+  <block id="e82b74d07826c2bc6650aa170acd2745" category="paragraph">ノード4にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block> 。</block>
+  <block id="20f32956fc865957eac4865ba888e9ba" category="list-text">ノード4にUTA/UTA2カードまたはUTA/UTA2オンボードポートがない場合は、「ノード4のUTA/UTA2ポートの確認と設定」をスキップして、<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block> 。</block>
+  <block id="e5330a3f067b20c0bc653c95754f0003" category="paragraph">ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block> 。</block>
+  <block id="5ec3ea1c092d9baccac3f18b114cbb19" category="cell">ノード 3 の場合...</block>
+  <block id="43b887bce260431997df1d009b1f86d3" category="cell">UTA/UTA2 カードまたは UTA/UTA2 オンボード ポートを搭載</block>
+  <block id="b218cf02d86731be6eb24c55f95238d6" category="cell">へ移動<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block></block>
+  <block id="c1d0c27818786bcecaad04b77cee8c31" category="cell">UTA/UTA2 カードまたは UTA/UTA2 オンボード ポートがありません</block>
+  <block id="cb46a1722edd0d184e8f5160da79aef5" category="cell">_ノード3のUTA/UTA2ポートの確認と設定_をスキップして、<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block> 。</block>
+  <block id="2466a7dc80883b138ff2ff9dd6381cb2" category="list-text">AFF A800システムにアップグレードする場合は、<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block> 。</block>
+  <block id="72bb382f624988c585ab0960bd64853a" category="paragraph">node4 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」の手順に従って、次の接続をケーブル接続します。</block>
+  <block id="52c7a636e7de8a73f74cbbbbba1d2bf1" category="cell">リンク:https://docs.netapp.com/us-en/ontap-/install/index.html</block>
+  <block id="8ea9f47b485e9358783b1f1f3bd0f67e" category="paragraph">完了する必要があるかもしれません<block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>または<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
+  <block id="138a022be246afc5755a650cb07e42bf" category="list-text">ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カードがなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block> 。</block>
+  <block id="ed601239c6d656a1963ef5d273a4656e" category="list-text">ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block> 。</block>
+  <block id="e2711d5d01384ccd88b7e7edd60ba51f" category="paragraph">ノード4にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block> 。</block>
 </blocks>

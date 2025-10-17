@@ -24,7 +24,6 @@ summary: ONTAP 9.8 以降を実行しているコントローラをアップグ�
 [IMPORTANT]
 ====
 * AFF A800 または AFF C800 コントローラのアップグレードでは、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
-* ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続された FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、を完了する必要があります <<auto_install3_step1,手順 1.>> から <<auto_install3_step21,手順 21>>をクリックしてから、このセクションの指示に従います link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] 必要に応じて、メンテナンスモードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<auto_install3_step23,手順 23>>。
 * ストレージディスクが搭載されたシステムをアップグレードする場合は、このセクション全体を完了して、にアクセスする必要があります link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"] および link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"] セクションで、クラスタ・プロンプトでコマンドを入力します。
 
 
@@ -41,10 +40,10 @@ NOTE: 両方のノードを同じシャーシに搭載したシステムにア�
 
 . [[auto_install3_step3]] ケーブルノード 3 を接続し、ノード 1 からノード 3 に接続を移動します。
 +
-ノード3プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。
+node3 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」ドキュメントを使用して、次の接続をケーブル接続します。
 
 +
-FlexArray仮想化インストール要件およびReference_and_HA pair management_へのリンクを参照してくださいlink:other_references.html["参考資料"]。
+参照link:other_references.html["参考資料"]_HAペア管理_にリンクします。
 
 +
 ** コンソール（リモート管理ポート）
@@ -79,7 +78,7 @@ To override this delay, press 'c' followed by 'Enter'
 .. バッテリの充電と起動プロセスが完了するまで待ちます。
 +
 
-WARNING: * 注意：遅延は無視しないでください。バッテリーの充電に失敗すると、データが失われるおそれがあります。 *
+WARNING: *遅延を無視しないでください。バッテリーの充電が不十分だと、データが失われる可能性があります。*
 
 +
 
@@ -250,41 +249,9 @@ setsetenv partner-sysid_node2 _sysid_`
 +
 printenv partner-sysid
 
-. [[step22]] 次のいずれかの操作を実行します。
-+
-[cols="30,70"]
-|===
-| システムの状態 | 説明 
 
 
-| ディスクがあり、バックエンドストレージがない | に移動<<auto_install3_step27,ステップ27>> 
-
-
-| は、 V シリーズシステム、または FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムです  a| 
-.. セクションに移動します link:set_fc_or_uta_uta2_config_on_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"] をクリックし、このセクションのサブセクションを完了します。
-.. このセクションに戻って、から始めて残りの手順を実行します <<auto_install3_step23,手順 23>>。
-
-
-
-IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用してONTAP をブートする前に、FCオンボードポート、CNAオンボードポート、およびCNAカードを再設定する必要があります。
-
-|===
-. [[auto_install3_step23]] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。
-+
-システムにテープ SAN がある場合は、イニシエータをゾーニングする必要があります。必要に応じて、を参照してオンボードポートをイニシエータに変更します link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["ノード 3 で FC ポートを設定しています"]。ゾーニングの詳細な手順については、ストレージアレイとゾーニングに関するドキュメントを参照してください。
-
-. [[step24]] ストレージアレイに FC イニシエータポートを新しいホストとして追加し、アレイ LUN を新しいホストにマッピングします。
-+
-手順については、ストレージアレイおよびゾーニングに関するドキュメントを参照してください。
-
-. [[step25]] ストレージアレイ上のアレイ LUN に関連付けられたホストまたはボリュームグループで、 World Wide Port Name （ WWPN ）値を変更します。
-+
-新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。
-
-. [[step26]] スイッチベースのゾーニングを使用する構成の場合は、ゾーニングを調整して新しい WWPN 値を反映します。
-
-
-[[auto_install3_step27]]
+[[auto_install3_step22]]
 . NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。
 +
 
@@ -319,8 +286,10 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 +
 「 boot_ontap menu
 
-+
-FC構成またはUTA / UTA2構成がない場合は、を実行してlink:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step1["ノード1のディスクをノード3に再割り当て（手順1）"]ノード3がノード1のディスクを認識できるようにします。
 
-. [step29] FlexArray 仮想化ソフトウェアがストレージアレイに接続されている MetroCluster 構成、 V シリーズシステム、およびシステムについて、ノードに接続されているディスクを検出するために、ノード 3 の FC ポートまたは UTA / UTA2 ポートを設定する必要があります。このタスクを完了するには、セクションに進んでください link:set_fc_or_uta_uta2_config_on_node3.html["ノード 3 で FC または UTA / UTA2 設定を設定します"]。
+
+.次の手順
+* FCまたはUTA/UTA2構成のシステムをお持ちの場合は、link:set_fc_or_uta_uta2_config_on_node3.html["ノード3のFCまたはUTA/UTA2ポートを設定および構成する"] 。
+* FCまたはUTA/UTA2構成がない場合は、link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step1["ノード1のディスクをノード3に再割り当てする、ステップ1"]ノード3がノード1のディスクを認識できるようにする。
+* MetroCluster構成の場合、link:set_fc_or_uta_uta2_config_on_node3.html["ノード3のFCまたはUTA/UTA2ポートを設定および構成する"]ノードに接続されているディスクを検出します。
 

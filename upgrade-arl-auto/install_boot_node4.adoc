@@ -24,7 +24,6 @@ node2 に同じバージョンの ONTAP 9 がインストールされていな�
 [IMPORTANT]
 ====
 * AFF A800 または AFF C800 コントローラのアップグレードの場合、ノード 2 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
-* ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続されている FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、これで完了です <<auto_install4_step1,手順 1.>> から <<auto_install4_step21,手順 21>>をクリックしてから、このセクションの指示に従ってください link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["ノード 4 の FC ポートを設定します"] およびへ link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["ノード 4 の UTA / UTA2 ポートを確認して設定してください"]、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<auto_install4_step23,手順 23>>。
 * ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 link:set_fc_or_uta_uta2_config_node4.html["ノード 4 で FC または UTA / UTA2 設定を設定します"]クラスタープロンプトでコマンドを入力します。
 
 
@@ -37,10 +36,10 @@ node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場
 . ノードモデルの _Installation and Setup Instructions _ の手順に従って、ノード 4 をラックに設置します。
 . ノード 4 をケーブル接続します。 node2 から node4 に接続を移動します。
 +
-ノード4プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_の手順書、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。
+node4 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」ドキュメントを使用して、次の接続をケーブル接続します。
 
 +
-FlexArray仮想化インストール要件およびReference_and_HA pair management_へのリンクを参照してくださいlink:other_references.html["参考資料"]。
+参照link:other_references.html["参考資料"]_HAペア管理_にリンクします。
 
 +
 ** コンソール（リモート管理ポート）
@@ -75,7 +74,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 .. バッテリの充電と起動プロセスが完了するまで待ちます。
 +
 
-WARNING: * 注意：遅延は無視しないでください。バッテリーの充電に失敗すると、データが失われるおそれがあります。 *
+WARNING: *遅延を無視しないでください。バッテリーの充電が不十分だと、データが失われる可能性があります。*
 
 +
 
@@ -242,43 +241,9 @@ setsetenv partner-sysid_node3 _sysid_`
 +
 printenv partner-sysid
 
-. [[step22]] 次のいずれかの操作を実行します。
-+
-[cols="30,70"]
-|===
-| システムの状態 | 作業 
 
 
-| ディスクがあり、バックエンドストレージがない | にアクセスします。 
-
-
-| は、 V シリーズシステム、または FlexArray 仮想化ソフトウェアがストレージアレイに接続されたシステムです  a| 
-.. セクションに移動します link:set_fc_or_uta_uta2_config_node4.html["ノード 4 で FC または UTA / UTA2 設定を設定します"] をクリックし、このセクションのサブセクションを完了します。
-.. このセクションに戻って、から始めて残りの手順を実行します <<auto_install4_step23,手順 23>>。
-
-
-
-IMPORTANT: VシリーズまたはFlexArray 仮想化ソフトウェアを使用してONTAP をブートする前に、FCオンボードポート、CNAオンボードポート、およびCNAカードを再設定する必要があります。
-
-|===
-
-
-. [[auto_install4_step23]] 新しいノードの FC イニシエータポートをスイッチゾーンに追加します。
-+
-必要に応じて、を参照してオンボードポートをイニシエータに変更します link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["ノード 4 の FC ポートを設定します"]。ゾーニングの詳細な手順については、ストレージアレイとゾーニングに関するドキュメントを参照してください。
-
-. FC イニシエータポートをストレージアレイに新しいホストとして追加し、アレイ LUN を新しいホストにマッピングします。
-+
-手順については、ストレージアレイおよびゾーニングに関するドキュメントを参照してください。
-
-. ストレージアレイ上のアレイ LUN に関連付けられたホストまたはボリュームグループの World Wide Port Name （ WWPN ；ワールドワイドポート名）値を変更する。
-+
-新しいコントローラモジュールを設置すると、各オンボード FC ポートに関連付けられている WWPN の値が変更されます。
-
-. スイッチベースのゾーニングを使用している場合は、新しい WWPN 値が反映されるようにゾーニングを調整します。
-
-
-. [[auto_install4_step27]]NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。
+. [[auto_install4_step22]] NetApp Storage Encryption (NSE) ドライブがインストールされている場合は、次の手順を実行します。
 +
 
 NOTE: 手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["ドライブがFIPS認定かどうかを確認する方法"^] 使用している自己暗号化ドライブのタイプを確認するため。
@@ -309,8 +274,10 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 +
 「 boot_ontap menu
 
-+
-FC構成またはUTA / UTA2構成がない場合は、を実行してlink:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["ノード2のディスクをノード4の手順1に再割り当てします。"]ノード4がノード2のディスクを認識できるようにします。
 
-. [[step29]] MetroCluster構成、Vシリーズシステム、およびFlexArray仮想化ソフトウェアをストレージアレイに接続したシステムの場合は、に進みますlink:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["ノード2のディスクをノード4の手順1に再割り当てします。"]。
+
+.次の手順
+* FCまたはUTA/UTA2構成のシステムをお持ちの場合は、link:set_fc_or_uta_uta2_config_node4.html["ノード4でFCまたはUTA/UTA2構成を設定する"] 。
+* FCまたはUTA/UTA2構成がない場合は、link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["ノード2のディスクをノード4に再割り当てする、ステップ1"]ノード4がノード2のディスクを認識できるようにする。
+* MetroCluster構成の場合、link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["ノード1のディスクをノード3に再割り当てする"] 。
 

@@ -59,7 +59,6 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 +
 上記の表に記載されているアップグレードを実行するには、「to _use "system controller replace"コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードする」を参照してくださいlink:other_references.html["参考資料"]。
 
-* バックエンドストレージに外付けアレイを使用して、VシリーズシステムまたはFlexArray仮想化ストレージシステムをアップグレードする。VシリーズまたはFlexArrayシステムのアップグレードオプションについては、テクニカルサポートにお問い合わせください。
 * MetroCluster FCまたはIP構成をアップグレードしています。MetroCluster構成をアップグレードするには、MetroClusterのアップグレードおよび拡張に関するドキュメント_へのリンクを参照してください link:other_references.html["参考資料"] 。
 
 

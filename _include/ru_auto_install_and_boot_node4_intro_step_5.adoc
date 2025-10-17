@@ -7,7 +7,6 @@ node2 に同じバージョンの ONTAP 9 がインストールされていな�
 [IMPORTANT]
 ====
 * AFF A800 または AFF C800 コントローラのアップグレードの場合、ノード 2 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
-* ストレージアレイに接続されている V シリーズシステム、またはストレージアレイに接続されている FlexArray 仮想化ソフトウェアを使用するシステムをアップグレードする場合は、これで完了です <<auto_install4_step1,手順 1.>> から <<auto_install4_step21,手順 21>>をクリックしてから、このセクションの指示に従ってください link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["ノード 4 の FC ポートを設定します"] およびへ link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["ノード 4 の UTA / UTA2 ポートを確認して設定してください"]、保守モードでコマンドを入力します。その後、このセクションに戻ってからを使用して再開する必要があります <<auto_install4_step23,手順 23>>。
 * ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 link:set_fc_or_uta_uta2_config_node4.html["ノード 4 で FC または UTA / UTA2 設定を設定します"]クラスタープロンプトでコマンドを入力します。
 
 
@@ -20,10 +19,10 @@ node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場
 . ノードモデルの _Installation and Setup Instructions _ の手順に従って、ノード 4 をラックに設置します。
 . ノード 4 をケーブル接続します。 node2 から node4 に接続を移動します。
 +
-ノード4プラットフォームの_インストールおよびセットアップ手順_または_ FlexArray仮想化インストール要件およびリファレンス_の手順書、該当するディスクシェルフドキュメント、および_ HAペア管理_を使用して、次の接続をケーブル接続します。
+node4 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」ドキュメントを使用して、次の接続をケーブル接続します。
 
 +
-FlexArray仮想化インストール要件およびReference_and_HA pair management_へのリンクを参照してくださいlink:other_references.html["参考資料"]。
+参照link:other_references.html["参考資料"]_HAペア管理_にリンクします。
 
 +
 ** コンソール（リモート管理ポート）
@@ -58,7 +57,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 .. バッテリの充電と起動プロセスが完了するまで待ちます。
 +
 
-WARNING: * 注意：遅延は無視しないでください。バッテリーの充電に失敗すると、データが失われるおそれがあります。 *
+WARNING: *遅延を無視しないでください。バッテリーの充電が不十分だと、データが失われる可能性があります。*
 
 +
 

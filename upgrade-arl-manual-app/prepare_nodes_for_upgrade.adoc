@@ -49,7 +49,7 @@ node3 と node4 を物理的にチェックして、 NVMEM または NVRAM バ�
 
 +
 
-WARNING: * 注意 * NVRAM の内容は消去しないでください。NVRAM の内容をクリアする必要がある場合は、ネットアップテクニカルサポートにお問い合わせください。
+WARNING: NVRAM の内容を消去しないでください。  NVRAMの内容をクリアする必要がある場合は、 NetAppテクニカル サポートにお問い合わせください。
 
 . node3 と node4 にある ONTAP のバージョンを確認します。
 +
@@ -360,7 +360,7 @@ NOTE: この情報を使用して、ディスクの再割り当てと元のノ�
 
 +
 
-NOTE: この情報を使用して、 node3 または node4 に転送するパーツやアクセサリを特定できます。ノードが V シリーズシステムであるか、 FlexArray 仮想化ソフトウェアがインストールされているかがわからない場合は、の出力からも確認できます。
+NOTE: この情報を使用して、ノード 3 またはノード 4 に転送する可能性のある部品またはアクセサリを識別できます。
 
 .. ノード 1 とノード 2 の両方で次のコマンドを入力し、両方のノードでオンラインになっているアグリゲートを記録します。
 +
@@ -591,32 +591,7 @@ node2   0d      fc      initiator -       -         online
 +
 アップグレード後の情報を使用して、新しいノードに FC ポートを設定できます。
 
-. V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされたシステムをアップグレードする場合は、次のコマンドを入力して出力を記録し、元のノードのトポロジに関する情報を取得します。
-+
-「 storage array config show -switch 」です
-
-+
-次の例に示すようにトポロジ情報が表示されます。
-
-+
-....
-cluster::> storage array config show -switch
-
-      LUN LUN                                  Target Side Initiator Side Initi-
-Node  Grp Cnt Array Name    Array Target Port  Switch Port Switch Port    ator
------ --- --- ------------- ------------------ ----------- -------------- ------
-node1 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:3  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:4  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:1  0c
-node2 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:1  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:2  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:3  0c
-                            208600a0b84772da   vgbr6510b:5  vgbr6510s163:4  2a
-7 entries were displayed.
-....
-. [man_prepare-to-downgrade 29]] 次の手順を実行します。
+. [[man_prepare_nodes_step28]]次のサブステップを完了します。
 +
 .. 元のいずれかのノードで次のコマンドを入力し、出力を記録します。
 +
@@ -633,7 +608,7 @@ node2 0   50  I_1818FAStT_1
 
 
 
-. [man_prepare-to-downgrade 30]] 新しいノードに元のノードと同じライセンス機能を設定する場合は、次のコマンドを入力して元のシステムのクラスタライセンスを表示します。
+. [[man_prepare_nodes_step29]]新しいノードに元のノードと同じライセンス機能を持たせたい場合は、次のコマンドを入力して元のシステムのクラスター ライセンスを確認します。
 +
 「 system license show -owner * 」と表示されます
 

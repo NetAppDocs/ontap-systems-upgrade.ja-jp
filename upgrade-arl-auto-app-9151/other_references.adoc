@@ -40,49 +40,46 @@ summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコン�
 | link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI によるディスクおよびアグリゲートの管理"^] | CLI を使用して ONTAP 物理ストレージを管理する方法について説明します。アグリゲートを作成、拡張、管理する方法、 Flash Pool アグリゲートを使用する方法、ディスクを管理する方法、および RAID ポリシーを管理する方法を示します。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 仮想化インストール要件およびリファレンスガイド"^] | FlexArray 仮想化システムのケーブル接続手順とその他の情報について説明します 
+| リンク:https://docs.netapp.com/us-en/ontap-/install/index.html | link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HAペアの管理"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HAペアの管理"^] | ストレージフェイルオーバー、テイクオーバー / ギブバックなどのハイアベイラビリティクラスタ構成をインストールおよび管理する方法について説明します。 
+| ストレージフェイルオーバー、テイクオーバー / ギブバックなどのハイアベイラビリティクラスタ構成をインストールおよび管理する方法について説明します。 | link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI を使用した論理ストレージ管理"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI を使用した論理ストレージ管理"^] | ボリューム、 FlexClone ボリューム、ファイル、 LUN を使用して論理ストレージリソースを効率的に管理する方法について説明します。 FlexCache 、重複排除、圧縮、 qtree 、およびクォータ 
+| ボリューム、 FlexClone ボリューム、ファイル、 LUN を使用して論理ストレージリソースを効率的に管理する方法について説明します。 FlexCache 、重複排除、圧縮、 qtree 、およびクォータ | link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster のアップグレードと拡張"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster のアップグレードと拡張"^] | MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。 
+| MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。 | link:https://docs.netapp.com/us-en/ontap/network-management/index.html["Network Management の略"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/network-management/index.html["Network Management の略"^] | クラスタで物理 / 仮想ネットワークポート（ VLAN およびインターフェイスグループ）、 LIF 、ルーティング、およびホスト解決サービスを設定および管理する方法、ロードバランシングでネットワークトラフィックを最適化する方法、および SNMP を使用してクラスタを監視する方法について説明します。 
+| クラスタで物理 / 仮想ネットワークポート（ VLAN およびインターフェイスグループ）、 LIF 、ルーティング、およびホスト解決サービスを設定および管理する方法、ロードバランシングでネットワークトラフィックを最適化する方法、および SNMP を使用してクラスタを監視する方法について説明します。 | link:https://docs.netapp.com/us-en/ontap-cli-9131/index.html["ONTAP 9.13.1 コマンド：マニュアルページリファレンス"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-cli-9131/index.html["ONTAP 9.13.1 コマンド：マニュアルページリファレンス"^] | サポートされる ONTAP 9.13.1 コマンドの構文と使用法について説明します。 
+| サポートされる ONTAP 9.13.1 コマンドの構文と使用法について説明します。 | link:https://docs.netapp.com/us-en/ontap-cli-9141/index.html["ONTAP 9.14.1 コマンド：マニュアルページリファレンス"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-cli-9141/index.html["ONTAP 9.14.1 コマンド：マニュアルページリファレンス"^] | サポートされる ONTAP 9.14.1 コマンドの構文と使用法について説明します。 
+| サポートされる ONTAP 9.14.1 コマンドの構文と使用法について説明します。 | link:https://docs.netapp.com/us-en/ontap-cli/index.html["ONTAP 9.15.1 コマンド：マニュアルページリファレンス"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-cli/index.html["ONTAP 9.15.1 コマンド：マニュアルページリファレンス"^] | サポートされる ONTAP 9.15.1 コマンドの構文と使用法について説明します。 
+| サポートされる ONTAP 9.15.1 コマンドの構文と使用法について説明します。 | link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI での SAN 管理"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI での SAN 管理"^] | iSCSI および FC プロトコルを使用して LUN 、 igroup 、ターゲットを設定および管理する方法、 NVMe/FC プロトコルを使用してネームスペースとサブシステムを設定および管理する方法について説明します。 
+| iSCSI および FC プロトコルを使用して LUN 、 igroup 、ターゲットを設定および管理する方法、 NVMe/FC プロトコルを使用してネームスペースとサブシステムを設定および管理する方法について説明します。 | link:https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN 構成リファレンス"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN 構成リファレンス"^] | FC と iSCSI のトポロジと配線方式について説明します 
+| FC と iSCSI のトポロジと配線方式について説明します | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"^] | ストレージまたはボリュームを移動してクラスタ内のコントローラハードウェアを簡単にアップグレードする方法について説明します。サポートされるモデルをディスクシェルフに変換する方法についても説明します。 
+| ストレージまたはボリュームを移動してクラスタ内のコントローラハードウェアを簡単にアップグレードする方法について説明します。サポートされるモデルをディスクシェルフに変換する方法についても説明します。 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP をアップグレードします"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP をアップグレードします"^] | ONTAP のダウンロードとアップグレードの手順については、を参照してください 
+| ONTAP のダウンロードとアップグレードの手順については、を参照してください | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"^] | 古いシステムシャーシとディスクをそのまま使用して、システムを無停止でアップグレードするために必要なアグリゲートの再配置手順について説明します。 
+| 古いシステムシャーシとディスクをそのまま使用して、システムを無停止でアップグレードするために必要なアグリゲートの再配置手順について説明します。 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"^] | ONTAP 9.8 を実行するコントローラを、 system controller replace コマンドを使用して無停止でアップグレードする場合に必要なアグリゲートの再配置手順について説明します。 
-
-
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアは、アグリゲートの再配置を使用して手動でアップグレードします"^] | ONTAP 9.8 以降を実行するコントローラの手動無停止アップグレードを実行するために必要なアグリゲートの再配置手順について説明します。 
+| ONTAP 9.8 を実行するコントローラを、 system controller replace コマンドを使用して無停止でアップグレードする場合に必要なアグリゲートの再配置手順について説明します。 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアは、アグリゲートの再配置を使用して手動でアップグレードします"^] 
 |===
 
 
