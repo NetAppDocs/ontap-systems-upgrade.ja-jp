@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/lif-migration-failure.html 
+keywords: lif, migration, failure, mtu 
+summary: 第2段階、第3段階、または第5段階でARLを使用して同じシャーシ内のコントローラモデルをアップグレードすると、移行後にLIFがオンラインにならない。 
+---
+= LIF の移行が失敗しました
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+LIF の移行後、ステージ 2 、ステージ 3 、またはステージ 5 で移行後にオンラインにならない場合があります。
+
+.手順
+. ポートの MTU サイズがソースノードと同じであることを確認します。
++
+たとえば、ソースノードのクラスタポートの MTU サイズが 9000 の場合、デスティネーションノードは 9000 にする必要があります。
+
+. ポートの物理的な状態が「所有」である場合は、ネットワークケーブルの物理的な接続を確認します。
+

@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html 
+keywords: aggregate, relocation, failures, arl, stage 2, stage 3, stage 5 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードするときに発生する可能性があるアグリゲートの再配置エラーをトラブルシューティングします。 
+---
+= アグリゲートの再配置に失敗しまし
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+アグリゲートの再配置（ ARL ）がアップグレード中に別のポイントで失敗することがあります。
+
+
+
+== アグリゲートの再配置に失敗していないかどうか
+
+手順の処理中に、ステージ 2 、ステージ 3 、またはステージ 5 で ARL が失敗することがあります。
+
+.手順
+. 次のコマンドを入力し、出力を確認します。
++
+「 storage aggregate relocation show 」を参照してください
+
++
+「 storage aggregate relocation show 」コマンドを実行すると、正常に再配置されたアグリゲートと再配置されなかったアグリゲート、および障害の原因が表示されます。
+
+. コンソールで EMS メッセージを確認します。
+. 次のいずれかを実行します。
++
+** 「 storage aggregate relocation show 」コマンドの出力と EMS メッセージの出力に応じて、適切な方法を実行します。
+** 「 storage aggregate relocation start 」コマンドの「 override-vetoes 」オプションまたは「 override-vetoes destination-checks 」オプションを使用して、アグリゲートまたはアグリゲートの強制的な再配置を実行します。
+
+
++
+「 storage aggregate relocation start 」、「 override-vetoes 」、および「 override-vetoes destination-checks 」オプションの詳細については、を参照してください link:other_references.html["参考資料"] ONTAP 9 コマンド：マニュアルページリファレンスにリンクするには、次の手順を実行します。
+
+
+
+
+
+== アップグレードの完了後、元々 node1 にあるアグリゲートは node2 によって所有されています
+
+アップグレード手順の最後に、 node1 がホームノードとして使用されていたアグリゲートの新しいホームノードになっている必要があります。このパスはアップグレード後に再配置できます。
+
+.このタスクについて
+次の状況で、アグリゲートを再配置できず、ノード 1 ではなくホームノードとしてノード 2 になっている可能性があります。
+
+* ステージ 3 で、アグリゲートが node2 から node1 に再配置されたとき。
++
+再配置する一部のアグリゲートのホームノードが node1 に含まれている。たとえば、このようなアグリゲートのことを aggr_node_A_1 と呼びます。ステージ 3 で aggr_node_A_1 の再配置が失敗し、強制的に再配置を実行できない場合は、アグリゲートは node2 で残ります。
+
+* ステージ4のあと、ノード2を新しいシステムモジュールに交換したとき。
++
+node2 を交換すると、 aggr_node_A_1 は、 node2 ではなくノード 1 とホームノードとしてオンラインになります。
+
+
+
+ストレージフェイルオーバーを有効にしたあと、ステージ 6 に続けて所有権に関する誤った問題を修正するには、次の手順を実行します。
+
+.手順
+. アグリゲートのリストを取得します。
++
+storage aggregate show -nodes_node2 __-is-home true
+
++
+正しく再配置されていないアグリゲートを特定するには、セクションで取得した node1 のホーム所有者を含むアグリゲートのリストを参照してください link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] コマンドの出力と比較してください。
+
+. 手順 1 の出力と、セクションで確認した node1 用の出力を比較します link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"] 再配置されていないアグリゲートがあることを確認します。
+. node2 の残りのアグリゲートを再配置します。
++
+storage aggregate relocation start -node2_-aggr_aggr_node_A_1 -destination_node1_`
+
++
+この再配置の実行時は、 -nd-controller-upgrade パラメータを使用しないでください。
+
+. node1 がアグリゲートのホーム所有者になったことを確認します。
++
+storage aggregate show -aggregate aggr1、aggr2、aggr3_-fields home-name
+
++
+「_aggr1、aggr2、aggr3__」は、node1が元のホーム所有者であるアグリゲートのリストです。
+
++
+ホーム所有者としてノード 1 を持たないアグリゲートは、手順 3 で同じ再配置コマンドを使用してノード 1 に再配置できます。
+
+

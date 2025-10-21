@@ -3769,7 +3769,6 @@
   <block id="1f08ef6e3750d69789334fc412377b8b" category="list-text">ONTAPのバージョンでサポートされていないスイッチおよびアップグレード先の交換用システムがある場合は、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe にリンクするには、次の手順を実行します。</block>
   <block id="c6d40070c0f6f6a69481f2755cd2ca3d" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードするために必要な参照用コンテンツとWebサイト。</block>
   <block id="61ade0ef1111239ef33a751208b321eb" category="inline-link-macro">「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします</block>
-  <block id="70d1727ffc9c452707805fb17e6a5b52" category="cell"><block ref="70d1727ffc9c452707805fb17e6a5b52" category="inline-link-macro-rx"></block></block>
   <block id="654c7caa1182ea592a8682474243e9b1" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合、ノード2のノード1のNASデータLIFがノード2からノード1に再配置されたことを確認します。</block>
   <block id="1fa11ae5ee8ea18f6cb8353961e9a024" category="paragraph">ステージ5では、アップグレードしたノード2用に受け取った新しいシステムモジュールをインストールし、次にノード2をネットブートします。</block>
   <block id="de5811c666f3438943e03926d9b216fd" category="summary">同じシャーシ内のコントローラモデルをアップグレードするARL手順の仕組みを理解します。</block>
@@ -4430,7 +4429,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="cd9547b52fda0ee4b09ec2df334b7b51" category="section-title">ONTAP 9 .15.1以降では、「system controller replace」コマンドを使用します。</block>
   <block id="83606cabd222d0d058cfae8874f35382" category="example-title">サポートされるシステムの表示</block>
   <block id="37b7186b6ae7b3227f80bbe1da693be7" category="section-title">同じシャーシでコントローラモデルをアップグレード</block>
-  <block id="34cc21c16ca659d7ddb97f634ed86150" category="paragraph">アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、<block ref="8e6a41e8fa329b194a3382ccde9289cd" category="inline-link-macro-rx"></block>アップグレード手順を開始します。</block>
   <block id="3fe507461c708cfe67db6ed39b069266" category="cell">古いシステム</block>
   <block id="7a3b05b130c9ce12ac95ac076b53bfcf" category="cell">AFF A70またはAFF A90</block>
   <block id="3e44bbb802d299056c9839f8bdfc777a" category="cell">9.15.1以降</block>
@@ -4746,14 +4744,10 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="dde2acdfbdb2dfacc273b5e47e81dc83" category="inline-link-macro">コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します</block>
   <block id="e891c1eb94e2ca8bb3b7b8dadb898400" category="list-text"><block ref="6bdc44b5c51cc632715ca157799c6ae3" category="inline-link-macro-rx"></block>です。</block>
   <block id="4ae096e0267d8683306cc7a7a6a39a64" category="paragraph">参照<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _ONTAP 9 ドキュメント_にリンクします。</block>
-  <block id="937a8df1c80e54683e0177667f449b05" category="list-text">AFF A800 または AFF C800 コントローラのアップグレードの場合、ノード 2 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください <block ref="3ce85b0276a5a4a19a086a672b09e2c0" category="inline-link-macro-rx"></block>。</block>
   <block id="e9b64afb92831f1198d95f80d156d793" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 <block ref="a6d322e902b744ff3a11f02b5c6d9496" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
-  <block id="c74f168430164144f422884d5bbb85e6" category="list-text">AFF A800 または AFF C800 コントローラのアップグレードでは、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください <block ref="3ce85b0276a5a4a19a086a672b09e2c0" category="inline-link-macro-rx"></block>。</block>
   <block id="5bd058344f8aec8219e043cff27b0f39" category="admonition">両方のノードを同じシャーシに搭載したシステムにアップグレードする場合は、 node4 と node3 をシャーシに設置します。そうしないと、ノード 3 を起動すると、ノードはデュアル シャーシ構成であるかのように動作し、ノード 4 を起動すると、ノード間の相互接続が確立されません。</block>
   <block id="dce5ed79f31a7baa48db39721ab1ead2" category="inline-link-macro">ARLを使用してコントローラモデルをアップグレードし、既存のシステムシャーシとディスクを維持します。</block>
-  <block id="fae6fac48399ed6c0672a8befcbb7722" category="list-text">。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています</block>
   <block id="744c8ae51567237f1e51aca67e4478ec" category="inline-link-macro">既存のシステムシャーシとディスクを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します。</block>
-  <block id="04ec978432ffe9711e6d07422c94b30d" category="paragraph"><block ref="41af86518c952ad2e3cd73523bdc9ba7" category="inline-link-macro-rx"></block>です。</block>
   <block id="8b53acd1242404623585fa614cf7d039" category="paragraph">ノード 1 にインストールされている ONTAP 9 と同じバージョンがノード 3 にインストールされていない場合は、ノード 3 をネットブートする必要があります。node3 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、以降のシステムブートで使用するブートメディアデバイスに正しいファイルをダウンロードできます。を参照して <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
   <block id="756d35654041df32f1be206cb5d73d40" category="paragraph">ただし、node3 に node1 にインストールされている ONTAP 9 と同じバージョンまたはそれ以降のバージョンがインストールされている場合は、node3 をネットブートする必要はありません。</block>
   <block id="e9e731a9f4962a1d8b683234f1b71e92" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block>そして<block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
@@ -5290,4 +5284,13 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="138a022be246afc5755a650cb07e42bf" category="list-text">ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カードがなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block> 。</block>
   <block id="ed601239c6d656a1963ef5d273a4656e" category="list-text">ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block> 。</block>
   <block id="e2711d5d01384ccd88b7e7edd60ba51f" category="paragraph">ノード4にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block> 。</block>
+  <block id="5995503f0157016dc9126220426976d1" category="cell"><block ref="5995503f0157016dc9126220426976d1" category="inline-link-macro-rx"></block></block>
+  <block id="bfe40fd278079f510bcfb6a7a10f9369" category="list-text">AFF A800またはAFF C800コントローラのアップグレードの場合、ノード 2 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
+  <block id="56bfe01fd4ea060925fdb4a5681a751e" category="list-text">AFF A800またはAFF C800コントローラのアップグレードの場合、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
+  <block id="b73b0ab9c4b2187dc386ae1c43da7a8d" category="list-text">AFF A800やAFF C800など、同じシャーシ内のコントローラモジュールを交換してシステムをアップグレードする場合、 NetApp、<block ref="51f73d2815dfaf31a7f9c6af800582d7" category="inline-link-macro-rx"></block> 。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています。</block>
+  <block id="04f0b7701d1f9864fc94b5ec9ec68b2d" category="paragraph"><block ref="50932ac5c7bb93210d274e46c6eba169" category="inline-link-macro-rx"></block>。</block>
+  <block id="31eca10b08fe3338a95b8415c5f3e0eb" category="paragraph">パーマリンク: upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html リダイレクト: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html</block>
+  <block id="b17a443c8b1c59c4de1ea415914cd2f3" category="paragraph">パーマリンク: upgrade-arl-auto-affa900/resume_snapmirror_operations.html リダイレクト: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html</block>
+  <block id="fcf09bf7ec3b71c764141820f1fc8020" category="paragraph">パーマリンク: upgrade-arl-auto-affa900/retire_node1.html リダイレクト: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html</block>
+  <block id="21033397b04c40cfe5bfedb2ddbd85d7" category="paragraph">アップグレードシナリオが以下のサポート対象システムマトリックスに記載されている場合は、<block ref="19860560e89446d8ca0f4e7091d110a0" category="inline-link-macro-rx"></block>アップグレード手順を開始します。</block>
 </blocks>

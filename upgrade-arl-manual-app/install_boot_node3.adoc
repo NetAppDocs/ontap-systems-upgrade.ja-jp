@@ -23,7 +23,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで、 ARL を�
 
 [IMPORTANT]
 ====
-* AFF A800 または AFF C800 コントローラのアップグレードでは、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、を参照してください link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
+* AFF A800またはAFF C800コントローラのアップグレードの場合、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、 link:../upgrade-arl-auto-in-chassis/replace-node1-affa800.html["AFF A800またはAFF C800コントローラモジュールを交換"]。
 * ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["ノード 3 の FC ポートを設定"]そしてlink:set_fc_uta_uta2_config_node3.html#uta-ports-node3["ノード 3 の UTA / UTA2 ポートを確認して設定してください"]クラスタープロンプトでコマンドを入力します。
 
 

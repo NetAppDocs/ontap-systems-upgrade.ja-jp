@@ -1,0 +1,145 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/cable-node2-for-shared-cluster-HA-storage.html 
+keywords: cluster, ha, aff, a800, shared, storage, data, management 
+summary: 以前AFF A800ノード2に接続されていたクラスタ、HA、ストレージ、およびデータ接続を、新しくインストールしたAFF A90またはAFF A70ノード1に接続します。 
+---
+= 共有クラスタHAとストレージ用のノード2をケーブル接続する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+次のいずれかのアップグレードを実行する場合は、既存のシステム上のノード 2 に以前接続されていたクラスタ、HA、ストレージ、データ、および管理接続を、交換用システム上の新しくインストールされたノード 2 に接続する必要があります。
+
+[cols="35,65"]
+|===
+| 既存のシステム | 交換用システム 
+
+
+| AFF A250用 | AFF A30、AFF A50 
+
+
+| AFF C250用 | AFF C30、AFF C60 
+
+
+| AFF A800用 | AFF A70、AFF A90 
+
+
+| AFF C800用 | AFF C80用 
+|===
+
+
+== e0MポートとBMCポートを接続
+
+既存のシステムに管理ポート（e0M）とBMCポートがある場合は、e0MポートとBMCポートが組み合わされ、交換用システムの「レンチ」ポートからアクセスされます。交換用システムに接続する前に、e0MポートとBMCポートが既存システムの同じスイッチとサブネットに接続されていることを確認する必要があります。
+
+[cols="35,65"]
+|===
+| 状況 | 作業 
+
+
+| e0MとBMCのIPアドレスが同じIPサブネット上にある | 既存システムのe0MポートまたはBMCポートを、交換用システムの「レンチ」ポートに接続します。 
+
+
+| e0MとBMCのIPアドレスが別 々 のサブネットにあります  a| 
+. e0MとBMCのIPアドレスを1つのIPサブネットにマージします。
+. 既存システムのe0MポートまたはBMCポートを、交換用システムの「レンチ」ポートに接続します。
+
+
+|===
+
+
+== 2ノードスイッチレスクラスタに接続
+
+次の表に、2ノードスイッチレスクラスタ構成でのスイッチポートの用途を示します。
+
+|===
+| ポートタイプ | AFF A800、AFF C800 | AFF A90用 | AFF A70、AFF C80 
+
+
+| クラスタ | e0a | e1a | e1a 
+
+
+| クラスタ | e1a | e7a（e7aがない場合はe1bを使用） | e1b 
+
+
+| はあ | e0b | 接続しないでください | 接続しないでください 
+
+
+| はあ | e1b | 接続しないでください | 接続しないでください 
+
+
+| SASストレージポート（存在し、使用している場合） | 使用可能な任意のポート | 使用可能な任意のポート | 使用可能な任意のポート 
+
+
+| NS224シェルフのイーサネットストレージポート | 使用可能な任意のポート | イーサネットストレージ接続のマッピングを参照 | イーサネットストレージ接続のマッピングを参照 
+|===
+|===
+| ポートタイプ | AFF A250、AFF C250 | AFF A30、AFF C60 | AFF A50用 
+
+
+| クラスタ | e0c | e1a (一時的なクラスタ相互接続には e1a を使用) | e1a (一時的なクラスタ相互接続には e1a を使用) 
+
+
+| クラスタ | e0d | e1b (一時的なクラスタ相互接続には e1b を使用) | e1b (一時的なクラスタ相互接続には e1b を使用) 
+
+
+| はあ | e0c HAポートはクラスタポートと共有されます | ノード1のe4aは100 GbEケーブルを使用してノード2のe4aに直接接続されています。 | ノード1のe4aは100 GbEケーブルを使用してノード2のe4aに直接接続されています。 
+
+
+| はあ | e0d HAポートはクラスタポートと共有されます | ノード 1 の e2a は、100 GbE ケーブルを使用してノード 2 の e2a に直接接続されます。e2a が存在しないか、100 GbE をサポートしていない場合は、100 GbE ケーブルを使用してノード 1 の e4b をノード 2 の e4b に直接接続します。 | ノード 1 の e2a は、100 GbE ケーブルを使用してノード 2 の e2a に直接接続されます。e2a が存在しないか、100 GbE をサポートしていない場合は、100 GbE ケーブルを使用してノード 1 の e4b をノード 2 の e4b に直接接続します。 
+
+
+| イーサネットストレージポート | 使用可能な任意のポート | e3a、e3b | e3a、e3b 
+
+
+| SASストレージポート | 使用可能な任意のポート | 3a、3b | 3a、3b 
+|===
+
+
+== スイッチ接続クラスタへの接続
+
+スイッチ接続クラスタの場合は、AFF A30、AFF A50、AFF A70、AFF A90、AFF C30、AFF C60、またはAFF C80（交換用）ノードの次の要件を満たしていることを確認します。
+
+* 交換用ノードの同一のクラスタポートが同じスイッチ上にあります。たとえば、アップグレードが完了したら、node1のe1aとnode2のe1aを1つのクラスタスイッチに接続する必要があります。同様に、両方のノードの2番目のクラスタポートを2番目のクラスタスイッチに接続する必要があります。共有クラスタHAポート（ノード1のe1aがスイッチAに接続され、ノード2のe1aがスイッチBに接続されている）をクロス接続すると、HA通信に障害が発生します。
+* 交換用ノードは、共有のクラスタHAイーサネットポートを使用します。
+* クラスタスイッチに、共有クラスタHAポートをサポートするリファレンス構成ファイル（RCF）がインストールされていることを確認します。
++
+.. スイッチの既存の設定を削除します。
++
+[cols="30,70"]
+|===
+| スイッチのモデル | 手順 
+
+
+| Cisco Nexus | ナレッジベースの記事link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["リモート接続を維持したままCiscoインターコネクトスイッチの設定をクリアする方法"^] 
+
+
+| Broadcom BES-53248 | ナレッジベースの記事link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["リモート接続を維持したままBroadcomインターコネクトスイッチの設定をクリアする方法"^] 
+|===
+.. スイッチのセットアップを設定して確認します。
++
+[cols="30,70"]
+|===
+| スイッチのモデル | 手順 
+
+
+| Cisco Nexus 9336C-FX2 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html["リファレンス構成ファイル（RCF）のアップグレード"^] 
+
+
+| Broadcom BES-53248 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html["リファレンス構成ファイル（RCF）のアップグレード"^] 
+
+
+| NVIDIA SN2100 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html["リファレンス構成ファイル（RCF）スクリプトのインストールまたはアップグレード"^] 
+|===
+
+
+
+
+
+NOTE: クラスタ スイッチが 10/25 GbE の速度のみをサポートしている場合は、クラスタ相互接続の交換システムのスロット 1 またはスロット 2 で X60130A、4 ポート 10/25GbE カードを使用する必要があります。

@@ -1,0 +1,116 @@
+---
+section: upgrade-arl-auto-in-chassis
+title: "「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"
+entries:
+- title: ARL手順について学ぶ
+  url: "/upgrade-arl-auto-in-chassis/index.html"
+- title: このARL手順を使用するかどうかを決定する
+  url: "/upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html"
+- title: 必要な工具とドキュメント
+  url: "/upgrade-arl-auto-in-chassis/required-tools-and-documentation.html"
+- title: コントローラのアップグレードに関するガイドラインを参照してください
+  url: "/upgrade-arl-auto-in-chassis/guidelines-for-upgrading-controllers-with-arl.html"
+- title: ARLアップグレードシーケンスについて学ぶ
+  url: "/upgrade-arl-auto-in-chassis/overview-of-the-arl-upgrade.html"
+- title: ステージ 1 ：アップグレードを準備
+  pdf-filename: ステージ 1 ：アップグレードを準備（AFF A900またはFAS9500にアップグレード）
+  entries:
+  - title: アップグレードハードウェアを確認します
+    url: "/upgrade-arl-auto-in-chassis/verify-upgrade-hardware.html"
+  - title: ノードをアップグレードする準備をします
+    url: "/upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html"
+  - title: オンボードキーマネージャを使用してストレージ暗号化を管理します
+    url: "/upgrade-arl-auto-in-chassis/manage-storage-encryption-using-okm.html"
+- title: ステージ2。リソースを再配置してnode1を撤去します
+  entries:
+  - title: ノード 1 が所有するルート以外のアグリゲートと NAS データ LIF をノード 2 に再配置します
+    url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html"
+  - title: 障害が発生したアグリゲートを再配置するか
+    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
+  - title: ノード 1 を撤去
+    url: "/upgrade-arl-auto-in-chassis/retire-node1.html"
+  - title: ノード1のシステムモジュールを交換します
+    entries:
+    - title: AFF A250またはAFF C250の交換
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html"
+    - title: AFF A800またはAFF C800の交換
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa800.html"
+    - title: AFF A220、AFF A200、AFF C190、FAS2620、FAS2720の交換
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html"
+    - title: AFF A700またはFAS9000の交換
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-aff700-fas900.html"
+  - title: ネットブート node1
+    url: "/upgrade-arl-auto-in-chassis/netboot-node1.html"
+- title: ステージ 3 ：交換用システムモジュールでノード1をブートします
+  entries:
+  - title: 共有クラスタHAストレージのノード1をケーブル接続します。
+    url: "/upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html"
+  - title: 交換用システムモジュールでノード1をブートします
+    url: "/upgrade-arl-auto-in-chassis/boot-node1-with-a900-controller-and-nvs.html"
+  - title: ノード 1 のインストールを確認します
+    url: "/upgrade-arl-auto-in-chassis/verify-node1-installation.html"
+  - title: アップグレードした node1 でキー管理ツールの設定をリストアします
+    url: "/upgrade-arl-auto-in-chassis/restore-key-manager-config-upgraded-node1.html"
+  - title: ノード1のルート以外のアグリゲートとNASデータLIFをノード2からアップグレード後のノード1に移動します。
+    url: "/upgrade-arl-auto-in-chassis/move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html"
+- title: ステージ4。リソースを再配置してノード2を撤去します
+  entries:
+  - title: ルート以外のアグリゲートと NAS データ LIF を node2 から node1 に再配置します
+    url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html"
+  - title: ノード 2 を撤去
+    url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
+- title: ステージ5。交換用システムモジュールをノード2に取り付けます
+  entries:
+  - title: 交換用システムモジュールをノード2に取り付けます
+    entries:
+    - title: AFF A30、AFF A50、AFF C30、またはAFF C60の取り付け
+      url: "/upgrade-arl-auto-in-chassis/install-aff-a30-a50-c30-c50-node2.html"
+    - title: AFF A90またはAFF A70のインストール
+      url: "/upgrade-arl-auto-in-chassis/install-affa90-affa70-on-node2.html"
+    - title: ASA A150、AFF A150、またはFAS2820の設置
+      url: "/upgrade-arl-auto-in-chassis/install-asa150-affa150-fas2820-on-node2.html"
+    - title: ASA A900、AFF A900、またはFAS9500の設置
+      url: "/upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html"
+  - title: ネットブート node2
+    url: "/upgrade-arl-auto-in-chassis/netboot-node2.html"
+- title: ステージ6。交換用システムモジュールでノード2をブートします
+  entries:
+  - title: 共有クラスタHAストレージ用のノード2をケーブル接続する
+    url: "/upgrade-arl-auto-in-chassis/cable-node2-for-shared-cluster-HA-storage.html"
+  - title: 交換用システムモジュールでノード2をブートします
+    url: "/upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html"
+  - title: node2 のインストールを確認します
+    url: "/upgrade-arl-auto-in-chassis/verify-node2-installation.html"
+  - title: キー管理ツールの設定を node2 にリストアします
+    url: "/upgrade-arl-auto-in-chassis/restore-key-manager-config-node2.html"
+  - title: クラスタスイッチのRCF構成を確認する
+    url: "/upgrade-arl-auto-in-chassis/verify-rcf-configuration.html"
+  - title: ルート以外のアグリゲートと NAS データ LIF を node2 に戻します
+    url: "/upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html"
+- title: ステージ 7 ：アップグレードを完了します
+  entries:
+  - title: KMIP サーバを使用して認証を管理します
+    url: "/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html"
+  - title: 新しいコントローラが正しくセットアップされていることを確認します
+    url: "/upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html"
+  - title: 新しいコントローラモジュールで Storage Encryption をセットアップします
+    url: "/upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html"
+  - title: 新しいコントローラモジュールでNetApp VolumeまたはAggregate Encryptionをセットアップします
+    url: "/upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html"
+  - title: 古いシステムの運用を停止
+    url: "/upgrade-arl-auto-in-chassis/decommission-old-system.html"
+  - title: SnapMirror 処理を再開します
+    url: "/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html"
+- title: トラブルシューティングを行う
+  pdf-filename: トラブルシューティング（AFF A900またはFAS9500にアップグレード）
+  entries:
+  - title: アグリゲートの再配置に失敗しまし
+    url: "/upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html"
+  - title: リブート、パニック、電源再投入
+    url: "/upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html"
+  - title: 手順の複数の段階で発生する可能性のある問題
+    url: "/upgrade-arl-auto-in-chassis/issues-in-multiple-stages-of-procedure.html"
+  - title: LIF の移行が失敗しました
+    url: "/upgrade-arl-auto-in-chassis/lif-migration-failure.html"
+- title: 参考資料
+  url: "/upgrade-arl-auto-in-chassis/other-references.html"

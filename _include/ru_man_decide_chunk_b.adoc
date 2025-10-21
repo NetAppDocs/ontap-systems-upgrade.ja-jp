@@ -4,9 +4,9 @@
 
 [NOTE]
 ====
-* 。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています
+* AFF A800やAFF C800など、同じシャーシ内のコントローラモジュールを交換してシステムをアップグレードする場合、 NetApp、link:../upgrade-arl-auto-in-chassis/index.html["ARLを使用してコントローラモデルをアップグレードし、既存のシステムシャーシとディスクを維持します。"] 。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています。
 +
-link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["既存のシステムシャーシとディスクを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します。"]です。
+link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis["既存のシステムシャーシとディスクを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します。"]。
 
 * この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume Encryption（NVE）、およびNetApp Aggregate Encryption（NAE）を使用できます。
 

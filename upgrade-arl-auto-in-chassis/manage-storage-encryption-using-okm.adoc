@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/manage-storage-encryption-using-okm.html 
+keywords: storage, encryption, authentication, key, manager, external 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ストレージ暗号化の設定と管理、認証キーの管理、SnapMirror関係の休止が行われます。 
+---
+= オンボードキーマネージャを使用してストレージ暗号化を管理します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+オンボードキーマネージャ（OKM）を使用して暗号化キーを管理できます。OKMをセットアップした場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。
+
+.手順
+. クラスタ全体のパスフレーズを記録します。
++
+これは、CLIまたはREST APIを使用してOKMを設定または更新したときに入力したパスフレーズです。
+
+. を実行して、キー管理ツールの情報をバックアップします `security key-manager onboard show-backup` コマンドを実行します
+
+
+
+
+== SnapMirror 関係を休止します（オプション）。
+
+手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。
+
+.手順
+. デスティネーションクラスタの SnapMirror 関係のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
++
+[NOTE]
+====
+このステータスが「Transferring」の場合は、転送を中止する必要があります。snapmirror abort -destination -vserver _vserver_name _`
+
+====
++
+SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は失敗します。
+
+. クラスタ間のすべての関係を休止します。
++
+`snapmirror quiesce -destination-vserver *`
+
+

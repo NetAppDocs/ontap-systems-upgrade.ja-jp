@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/retire-node1.html 
+keywords: retiring, node1, node, retire 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ノード2のHAペアを無効にしてノード1をシャットダウンします。 
+---
+= ノード 1 を撤去
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノード1を撤去するには、自動処理を再開して、ノード2でHAペアを無効にし、ノード1を正しくシャットダウンします。
+
+.手順
+. 処理を再開します。
++
+「システムコントローラの交換が再開」
+
+. ノード 1 が停止されたことを確認します。
++
+「 system controller replace show-sdetails 」というエラーが表示されます
+
++
+ノード 1 が完全に停止したら、 node1 の LOADER プロンプトが表示されている必要があります。LOADER プロンプトを表示するには、 node1 のシリアルコンソールに接続します。
+
+

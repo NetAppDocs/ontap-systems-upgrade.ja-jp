@@ -1,0 +1,156 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html 
+keywords: moving, non-root, aggregates, nas, lif, node1, node2 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合、ノード2のノード1のNASデータLIFがノード2からノード1に再配置されたことを確認します。 
+---
+= ノード1のルート以外のアグリゲートとNASデータLIFをノード2からアップグレード後のノード1に移動します。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノード1でネットワーク設定を確認し、ノード2からノード1にアグリゲートを再配置する前に、現在ノード2にあるノード1に属するNASデータLIFがノード2からノード1に再配置されていることを確認します。また、 SAN LIF が node1 に存在することも確認する必要があります。
+
+.このタスクについて
+アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 1 をオンラインにしたら、 LIF が正常に機能しており、適切なポート上に配置されていることを確認する必要があります。
+
+.手順
+. 再配置処理を再開します。
++
+「システムコントローラの交換が再開」
+
++
+システムは次のタスクを実行します。
+
++
+--
+** クラスタクォーラムチェック
+** システム ID の確認
+** イメージのバージョンチェック
+** ターゲットプラットフォームのチェック
+** ネットワーク到達可能性チェック
+
+
+--
++
+ネットワーク到達可能性チェックのこの段階で処理が一時停止します。
+
+. ネットワーク到達可能性チェックを実行します。
++
+network port reachability show -node node1
+
++
+インターフェイスグループポートおよび VLAN ポートを含むすべての接続ポートのステータスが「 OK 」であることを確認します。
+
+. 次のアップグレードでは、FCP SAN LIFを再割り当てする必要があります。
++
+[cols="35,65"]
+|===
+| 既存のシステム | 交換用システム 
+
+
+| AFF A250用 | AFF A30、AFF A50 
+
+
+| AFF C250用 | AFF C30、AFF C60 
+
+
+| AFF A800用 | AFF A70、AFF A90 
+
+
+| AFF C800用 | AFF C80用 
+|===
++
+その他のすべてのシステムのアップグレードについては、に進みます<<resume_relocation_step4,手順 4>>。
+
++
+.. FCPまたはFC-NVMeデータアクセスに使用するFCP SAN LIFを正しいホームポートに再割り当てします。
++
+`network interface show -vserver <vserver_hosting_fcp_lifs>`
+
+.. 現在のノードがアップグレード後のノード1であり、現在のポートが「status oper」になっているLIFについては（ポートはAFF A800ノードに存在していたがAFF A90ノードには存在しないため）、現在のポートをオンラインにする前に変更します。
++
+FC LIFを移動する必要があるFCターゲットポートへの物理的な接続が確立されていることを確認します。
+
++
+--
+... LIF のステータスを「 down 」に設定します。
++
+`network interface modify -vserver <vserver_name> -lif <lif_name>  -status-admin down`
+
+... LIFのホームポートを変更します。
++
+`network interface modify -vserver <vserver_name> -lif <lif_name> - home-node <node1> -home-port <FC_target_port>`
+
+... LIFのステータスを「up」に設定します。
++
+`network interface modify -vserver <vserver> -lif <lif_name>  -status-admin up`
+
+
+
+--
++
+node1のホームにあるFC SAN LIFごとに手順aとbを繰り返します。
+
+
+
+. [[resume_relocation_step4]]再配置操作を再開します
++
+「システムコントローラの交換が再開」
+
++
+システムは次のチェックを実行します。
+
++
+--
+** クラスタの健全性チェック
+** クラスタ LIF のステータスを確認します
+
+
+--
++
+これらのチェックの実行後、システムは、 node1 で所有されているルート以外のアグリゲートと NAS データ LIF を新しい node1 に再配置します。
+
++
+リソースの再配置が完了すると、コントローラの交換処理が一時停止します。
+
+. アグリゲートの再配置処理と NAS データ LIF の移動処理のステータスを確認します。
++
+「 system controller replace show-sdetails 」というエラーが表示されます
+
++
+コントローラ交換用手順が一時停止している場合は、エラーがある場合はチェックして修正し、次に「問題 re sume 」をクリックして操作を続行します。
+
+. 必要に応じて、取り外した LIF をリストアしてリバートします。取り外した LIF を表示します。
++
+cluster controller -replacement network ヒエラー（クラスタコントローラ交換ネットワークが取り外されました） -interface show
+
++
+LIF が表示されなくなった場合は、ホームノードをノード 1 にリストアします。
+
++
+クラスタ・コントローラ交換ネットワークが取り外されましたインタフェース・リストア -home-node
+
+. この処理を再開すると、必要なポストチェックの実行をシステムに求めるプロンプトが表示されます。
++
+「システムコントローラの交換が再開」
+
++
+次のポストチェックが実行されます。
+
++
+** クラスタクォーラムチェック
+** クラスタの健全性チェック
+** アグリゲートの再構築チェック
+** アグリゲートのステータスを確認します
+** ディスクのステータスを確認します
+** クラスタ LIF のステータスを確認します
+** ボリュームチェック
+
+
+

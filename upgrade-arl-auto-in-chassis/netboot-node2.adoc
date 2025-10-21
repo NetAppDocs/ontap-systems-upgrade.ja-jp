@@ -1,0 +1,241 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/netboot-node2.html 
+keywords: preparing, prepare, netboot, ontap, node2 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、対応する交換用ノード2システムモジュールを交換したあとに、それらのモジュールをネットブートする必要があります。 
+---
+= ネットブート node2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+対応する交換用ノード2のシステムモジュールを交換したあと、モジュールのネットブートが必要になる場合があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートを準備するときは、システムがアクセスできるWebサーバにONTAP 9ブートイメージのコピーを配置します。
+
+交換用コントローラモジュールのブートメディアにインストールされているONTAPのバージョンは、シャーシにインストールされ電源が投入されていない限り確認できません。交換用システムのブートメディアにあるONTAPのバージョンは、アップグレードする古いシステムで実行されているONTAPのバージョンと同じであり、プライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。イメージを設定するには、ネットブートを実行してから `wipeconfig`ブートメニューからコマンドを実行します。コントローラモジュールが以前に別のクラスタで使用されていた場合、  `wipeconfig`コマンドはブート メディア上の残りの構成をすべてクリアします。
+
+また、 USB ブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["システムの初期セットアップのためにONTAP をインストールするためにboot_recovery loaderコマンドを使用する方法"^]。
+
+.作業を開始する前に
+* システムから HTTP サーバにアクセスできることを確認します。
+* ご使用のシステムに必要なシステムファイルと適切なバージョンの ONTAP を、 _NetApp サポートサイトからダウンロードします。を参照してください link:other_references.html["参考資料"] からネットアップサポートサイトにリンクできます。
+
+
+.このタスクについて
+元のコントローラと同じバージョンの ONTAP 9 がインストールされていない場合は、新しいコントローラをネットブートする必要があります。新しいコントローラをそれぞれ取り付けたら、 Web サーバに保存されている ONTAP 9 イメージからシステムをブートします。その後、以降のシステムブートで使用するブートメディアデバイスに正しいファイルをダウンロードできます。
+
+.手順
+. を参照してください link:other_references.html["参考資料"] ネットアップサポートサイトへのリンクをクリックして、システムのネットブートの実行に使用するファイルをダウンロードします。
+. [netboot_t2_step2] ネットアップサポートサイトのソフトウェアダウンロードセクションから適切な ONTAP ソフトウェアをダウンロードし、「 ONTAP_version_image.tgz 」ファイルを Web にアクセスできるディレクトリに保存します。
+. Web にアクセスできるディレクトリに移動し、必要なファイルが利用可能であることを確認します。
+. ディレクトリの一覧に「 ONTAP_version_image.tgz 」が含まれている必要があります。
+. 次のいずれかを実行してネットブート接続を設定します。
++
+
+NOTE: ネットブート接続として管理ポートおよび IP を使用する必要があります。アップグレードの実行中にデータ LIF IP を使用しないでください。データ LIF が停止する可能性があります。
+
++
+[cols="35,65"]
+|===
+| 動的ホスト構成プロトコル（ DHCP ）の状態 | 作業 
+
+
+| 実行中です | ブート環境プロンプトで次のコマンドを使用して、自動的に接続を設定します。 ifconfig e0M -auto 
+
+
+| 実行されていません  a| 
+ブート環境プロンプトで次のコマンドを使用して、接続を手動で設定します。
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` は、ストレージシステムのIPアドレスです（必須）。
+`_netmask_` は、ストレージシステムのネットワークマスクです（必須）。
+`_gateway_` は、ストレージシステムのゲートウェイです（必須）。
+`_dns_addr_` は、ネットワーク上のネームサーバのIPアドレスです（オプション）。
+`_dns_domain_` は、Domain Name Service（DNS；ドメインネームサービス）ドメイン名です（オプション）。
+
+
+NOTE: インターフェイスによっては、その他のパラメータが必要になる場合もあります。ファームウェア・プロンプトで「 help ifconfig 」と入力すると、詳細が表示されます。
+
+|===
+. node2 でネットブートを実行します。
++
+netboot\http://web_server_ip/path_to_web_accessible_directory/netboot/kernel`
+
++
+
+NOTE: トランクを中断しないでください。
+
+. 交換用コントローラモジュールでnode2がブートし、ブートメニューオプションが表示されるまで待ちます（次の出力を参照）。
++
+[listing]
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)?
+----
+. 起動メニューからオプション（ 7 ） Install new software first （新しいソフトウェアを最初にインストール）を選択します。
++
+このメニューオプションを選択すると、新しい ONTAP イメージがブートデバイスにダウンロードおよびインストールされます。
+
++
+次のメッセージは無視してください。
+
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
+
++
+環境の無停止の ONTAP ソフトウェアアップグレード。コントローラのアップグレードは含まれません。
+
++
+
+NOTE: 新しいノードを希望するイメージに更新する場合は、必ずネットブートを使用してください。別の方法で新しいコントローラにイメージをインストールした場合、正しいイメージがインストールされないことがあります。この問題環境 All ONTAP リリースオプションを指定してネットブート手順 を実行する `(7) Install new software` ブートメディアを消去して、両方のイメージパーティションに同じONTAP バージョンを配置します。
+
+. 手順を続行するかどうかを確認するメッセージが表示されたら 'y' と入力し ' パッケージの入力を求められたら 'URL:\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` と入力します
++
+「 path_to_the_web-accessible_directory 」は、「 ONTAP_version_image.tgz 」をダウンロードした場所を指します <<netboot_node2_step2,手順 2>>。
+
+. 次の手順を実行してコントローラモジュールをリブートします。
++
+.. 次のプロンプトが表示されたら 'n' を入力してバックアップ・リカバリをスキップします
++
+[listing]
+----
+Do you want to restore the backup configuration now? {y|n}
+----
+.. 次のプロンプトが表示されたら 'y' と入力して再起動します
++
+[listing]
+----
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+----
++
+コントローラモジュールはリブートしますが、ブートメニューで停止します。これは、ブートデバイスが再フォーマットされたことにより、構成データをリストアする必要があるためです。
+
+
+
+. ブート メディア上の以前の構成をすべてクリアします。
++
+.. 次のプロンプトで、  `wipeconfig`コマンドを入力し、Enter キーを押します。
++
+[listing]
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? wipeconfig
+----
+.. 次のメッセージが表示されたら、回答は「はい」を選択します。
++
+[listing]
+----
+This will delete critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?:
+----
+.. ノードがリブートして「 wipeconfig 」を終了し、ブートメニューで停止します。
++
+
+NOTE: ノードがブートメニューで停止するまで待ちます。  `wipeconfig`手術。
+
+
+
+. ブート・メニューからメンテナンス・モード「 5 」を選択し、ブートを続行するように求めるプロンプトが表示されたら「 y 」と入力します。
+. コントローラとシャーシが「 HA 」として構成されていることを確認します。
++
+「 ha-config show 」
+
++
+次に 'ha-config show コマンドの出力例を示します
+
++
+[listing]
+----
+Chassis HA configuration: ha
+Controller HA configuration: ha
+----
+. コントローラとシャーシが「 ha 」として設定されていない場合は、次のコマンドを使用して設定を修正します。
++
+「 ha-config modify controller ha 」を参照してください
+
++
+「 ha-config modify chassis ha 」を参照してください
+
+. ノード 2 を停止します。
++
+「 halt 」
+
++
+node2 で LOADER プロンプトが停止します。
+
+. ノード1で、システムの日付、時刻、およびタイムゾーンを確認します。
++
+「食事」
+
+. node2 で、ブート環境のプロンプトで次のコマンドを使用して日付を確認します。
++
+「日付」
+
+. 必要に応じて、 node2 で日付を設定します。
++
+'set date_mm/dd/yyyy_`
+
++
+
+NOTE: node2 で対応する UTC 日付を設定します。
+
+. node2 で、ブート環境のプロンプトで次のコマンドを使用して時刻を確認します。
++
+「時間」
+
+. 必要に応じて、 node2 で時刻を設定します。
++
+'set time_hh:mm:ss_`
+
++
+
+NOTE: node2 で対応する UTC 時間を設定します。
+
+. node2にパートナーシステムIDを設定します。
++
+setENV partner-sysid_node1_sysid_`
+
++
+node2の場合、 `partner-sysid` アップグレードするノード1のノード1である必要があります。
+
++
+.. 設定を保存します。
++
+'aveenv
+
+
+
+. node2のLOADERプロンプトで、を確認します `partner-sysid` ノード2の場合：
++
+printenv partner-sysid
+
+
