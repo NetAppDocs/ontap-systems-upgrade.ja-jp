@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html 
+permalink: upgrade-arl-auto-in-chassis/confirm-new-controllers-are-set-up-correctly.html 
 keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability 
 summary: HAペアが有効になっていることを確認し、ノード1とノード2のストレージアクセスとLIFを確認し、同じシャーシ内のコントローラモデルをアップグレードしたあとにアグリゲートの所有権を確認します。 
 ---
