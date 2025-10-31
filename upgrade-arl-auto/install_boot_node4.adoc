@@ -279,5 +279,5 @@ FIPSドライブは、同じノードまたはHAペアで他のタイプのド�
 .次の手順
 * FCまたはUTA/UTA2構成のシステムをお持ちの場合は、link:set_fc_or_uta_uta2_config_node4.html["ノード4でFCまたはUTA/UTA2構成を設定する"] 。
 * FCまたはUTA/UTA2構成がない場合は、link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["ノード2のディスクをノード4に再割り当てする、ステップ1"]ノード4がノード2のディスクを認識できるようにする。
-* MetroCluster構成の場合、link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["ノード1のディスクをノード3に再割り当てする"] 。
+* MetroCluster構成の場合、link:set_fc_or_uta_uta2_config_node4.html["ノード4でFCまたはUTA/UTA2構成を設定する"]ノードに接続されているディスクを検出します。
 

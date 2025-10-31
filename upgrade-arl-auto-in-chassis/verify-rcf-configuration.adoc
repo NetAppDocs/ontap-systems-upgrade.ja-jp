@@ -41,7 +41,7 @@ summary: スイッチ接続クラスタのアップグレード用に、クラ�
 
 | `Down` | こちらへ<<verify-rcf-step3,手順 3>>. 
 |===
-. クラスター ポートを確認し、RCF を切り替えます。
+. [[verify-rcf-step3]]クラスタ ポートとスイッチ RCF を確認します。
 +
 詳細については、を参照してください link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["スイッチ接続クラスタへの接続"]。
 

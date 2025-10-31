@@ -59,7 +59,10 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 node3 にオフラインのボリュームがある場合は、各ボリュームに対して次のコマンドを実行してそれらのボリュームをオンラインにします。
 
 +
-`volume online -vserver <vserver_name> -volume <volume_name>` < ザ `vserver_name`このコマンドで使用する方法は、前の出力で確認できます。  `volume show`指示。
+`volume online -vserver <vserver_name> -volume <volume_name>`
+
++
+その `vserver_name`このコマンドで使用する方法は、前の出力で確認できます。  `volume show`指示。
 
 . LIF が正しいポートに移動され、ステータスが「 up 」になっていることを確認します。LIF が 1 つでも停止している場合は、次のコマンドを LIF ごとに 1 回入力して、 LIF の管理ステータスを「 up 」に設定します。
 +

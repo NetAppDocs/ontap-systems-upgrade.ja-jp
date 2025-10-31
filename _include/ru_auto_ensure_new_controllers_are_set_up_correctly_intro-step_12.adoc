@@ -111,7 +111,7 @@ Do you want to continue? {y|n}: y
 +
 出力を、セクションでキャプチャした出力と比較できます link:prepare_nodes_for_upgrade.html["ノードをアップグレードする準備をします"]。
 
-. [[unset_maxwait_system_commands]]構成で自己暗号化ドライブを使用している場合は、を設定します `kmip.init.maxwait` 変数をに設定します `off` （例：で） link:install_boot_node4.html#auto_install4_step27["Node4 をインストールしてブートします（手順 27 ）"]）を使用している場合は、次のように変数を設定解除
+. [[unset_maxwait_system_commands]]自己暗号化ドライブが構成で使用されており、 `kmip.init.maxwait`変数に `off`（例えば、link:install_boot_node4.html#auto_install4_step22["ノード4のインストールと起動、ステップ22"] ）の場合は、変数を設定解除する必要があります。
 +
 `set diag; systemshell -node-node_name --コマンドsudo kenv -u -p kmip.init.maxwait`
 

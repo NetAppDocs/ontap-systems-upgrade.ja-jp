@@ -14,7 +14,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 [role="lead"]
-これで、交換用モジュールを搭載したノード2をブートする準備が完了しました。サポートされている交換用モジュールについては、を参照してlink:index.html#supported-systems,["サポートされるシステムマトリックス"]ください。
+交換用モジュールを搭載した Node2 の起動準備が完了しました。サポートされている交換モジュールは、link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["サポートされるシステムマトリックス"] 。
 
 
 NOTE: コンソール接続と管理接続の移動は、システムモジュールを交換してアップグレードする場合にのみ行います。

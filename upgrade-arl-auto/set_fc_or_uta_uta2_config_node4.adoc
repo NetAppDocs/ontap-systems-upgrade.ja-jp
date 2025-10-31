@@ -80,7 +80,12 @@ ucadmin modify -m fc -t initiator_adapter_`
 . 保守モードのブート・メニューからオプション「 5 」を選択します。
 
 
-. [[step8]]このセクションをスキップしてlink:reassign-node2-disks-to-node4.html["ノード2のディスクをノード4に再割り当てします。"]node4 に UTA/UTA2 カードまたは UTA/UTA2 オンボード ポートがない場合。
+. [[step8]] 次のいずれかの操作を実行します。
++
+** に進みます <<ノード 4 の UTA / UTA2 ポートを確認して設定してください>> ノード 4 に UTA / UTA2 カードまたは UTA / UTA2 オンボードポートがある場合
+** ノード4にUTA/UTA2カードまたはUTA/UTA2オンボードポートがない場合は、「ノード4のUTA/UTA2ポートの確認と設定」をスキップして、link:reassign-node2-disks-to-node4.html["ノード2のディスクをノード4に再割り当てします。"] 。
+
+
 
 
 

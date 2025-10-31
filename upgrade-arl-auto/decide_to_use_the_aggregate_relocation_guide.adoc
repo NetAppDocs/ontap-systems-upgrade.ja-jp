@@ -62,7 +62,7 @@ NOTE: コントローラのアップグレードモデルの組み合わせが�
 
 ^1 ^ARL AFF A700 システムの自動アップグレードは、 ONTAP 9.7P2 からサポートされています。
 
-^2^ 内蔵ディスクと外付けディスクをサポートする AFF A800 システムに更新する場合は、内蔵 NVMe ディスクのルートアグリゲートに関する具体的な手順に従う必要があります。を参照してください link:set_fc_or_uta_uta2_config_on_node3.html#step14["ノード 3 の UTA / UTA2 ポートを確認して設定します。手順 14"] および link:set_fc_or_uta_uta2_config_node4.html#step14["ノード 4 の UTA / UTA2 ポートの確認と設定、手順 14"]。
+^2^ AFF A800または内部ディスクと外部ディスクをサポートするシステムにアップデートする場合は、内部 NVMe ディスク上のルート アグリゲートに関する特定の手順に従う必要があります。参照link:reassign-node1-disks-to-node3.html#auto_check3_step9["ノード1のディスクをノード3に再割り当て（手順9）"]そしてlink:reassign-node2-disks-to-node4.html#auto_check_4_step9["ノード2のディスクをノード4に再割り当て（手順9）"]。
 
 ^3^ARL AFF A300 から AFF A800 システムへの自動アップグレードは、 ONTAP 9.7P5 からサポートされています。
 

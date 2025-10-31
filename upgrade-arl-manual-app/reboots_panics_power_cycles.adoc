@@ -46,7 +46,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手�
 再配置されたアグリゲートの所有権は、ホーム所有者が変更されていないためにテイクオーバーされたルート以外のアグリゲートの所有権と同じように見えます。node1 の状態が「 waiting for giveback state 」になると、 node2 はノード 1 のルート以外のすべてのアグリゲートをギブバックします。
 
 .手順
-. - 完了しました link:relocate_non_root_aggr_node1_node2.html#step1["手順 1."] セクションの _root 以外のアグリゲートをノード 1 から node2 _ に再配置する
+. 完了link:relocate_non_root_aggr_node1_node2.html#relocate-step1["手順 1."]_非ルート アグリゲートをノード 1 からノード 2 に再配置_ のセクションで再度実行します。
 . ノードペアのアップグレード用手順に進みます。
 
 
@@ -74,7 +74,7 @@ node2 はテイクオーバーしませんが、ルート以外のすべての�
 ノード 1 は、ノード 2 のすべてのアグリゲートと、ノード 2 に再配置された独自のアグリゲートをテイクオーバーします。node2 が Waiting for giveback' 状態になると、 node1 は node2 のすべてのアグリゲートをギブバックします。
 
 .手順
-. - 完了しました link:relocate_non_root_aggr_node1_node2.html#step1["手順 1."] セクションの _root 以外のアグリゲートをノード 1 から node2 _ に再配置する
+. 完了link:relocate_non_root_aggr_node1_node2.html#relocate-step1["手順 1."]_非ルート アグリゲートをノード 1 からノード 2 に再配置_ のセクションで再度実行します。
 . ノードペアのアップグレード用手順に進みます。
 
 
@@ -123,7 +123,7 @@ node2 の一部またはすべてのアグリゲートが node3 に再配置さ�
 
 .手順
 . node2 を起動します。
-. 残りのアグリゲートの再配置は完了して実行します link:relocate_non_root_aggr_node2_node3.html#step1["手順 1."] から link:relocate_non_root_aggr_node2_node3.html#step3["手順 3"] セクションの _root 以外のアグリゲートを node2 から node3 _ に移動する
+. 残りの骨材を再配置するには、link:relocate_non_root_aggr_node2_node3.html#verify-partner-sys-id["手順 1."]を通してlink:relocate_non_root_aggr_node2_node3.html#relocate-step5["手順 5"]「_非ルート アグリゲートをノード 2 からノード 3 に再配置する_」セクション。
 . ノードペアのアップグレード用手順に進みます。
 
 
@@ -149,7 +149,7 @@ node2 では残りのアグリゲートの処理が続行されますが、 node
 
 .手順
 . ノード 3 を起動します。
-. - 完了しました link:relocate_non_root_aggr_node2_node3.html#step3["手順 3"] セクションの「ルート以外のアグリゲートを node2 から node3 _ に再配置する」を再度実行します。
+. 完了link:relocate_non_root_aggr_node2_node3.html#relocate-step5["手順 5"]_非ルート アグリゲートをノード 2 からノード 3 に再配置する_ セクションで再度実行します。
 . ノードペアのアップグレード用手順に進みます。
 
 
@@ -220,6 +220,6 @@ node3 が再度ブートするまでは、残りのアグリゲートが停止�
 
 .手順
 . ノード 4 を起動します。
-. 再度完了して、 node2 に属していた残りのアグリゲートを再配置します link:relocate_node2_non_root_aggr_node3_node4.html#Step1["手順 1."] から link:relocate_node2_non_root_aggr_node3_node4.html#step3["手順 3"] In _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置します。
+. ノード2に属していた残りのアグリゲートを再度実行して再配置します。link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1["手順 1."]を通してlink:relocate_node2_non_root_aggr_node3_node4.html#step3["手順 3"]_node2 の非ルート アグリゲートを node3 から node4 に再配置_。
 . ノードペアのアップグレード用手順に進みます。
 

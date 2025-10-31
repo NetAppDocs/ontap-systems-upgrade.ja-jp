@@ -116,7 +116,7 @@ Do you want to continue? {y|n}: y
 「 system license show 」を参照してください
 
 +
-でキャプチャした出力と比較できます link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step30["手順 30"] で、ノードをアップグレードする準備をしています。
+出力をキャプチャした出力と比較することができますlink:prepare_nodes_for_upgrade.html#man_prepare_nodes_step29["手順 29"]_アップグレード用にノードを準備する_。
 
 . 両方のノードで次のコマンドを実行して、 SP を設定します。
 +

@@ -110,7 +110,6 @@
   <block id="3b70100fce1839004dba40191f90a2c9" category="list-text">処理を再開します。</block>
   <block id="21d67404cbc8811a82f375c6eb59ce82" category="paragraph">ノードは自動的に停止します。</block>
   <block id="ac616410952c35e808a3c7ce4ea5b4a7" category="inline-link-macro">古いシステムの運用を停止</block>
-  <block id="b39850fa882a12596e03ef7779fcfebc" category="list-text"><block ref="5e1bb6d16e6bc7a1d750ae669f510747" category="inline-xref-macro-rx"></block></block>
   <block id="2061ab494eae73f1e7251b76a58b27d3" category="cell">ストレージまたはボリュームを移動してクラスタ内のコントローラハードウェアを簡単にアップグレードする方法について説明します。サポートされるモデルをディスクシェルフに変換する方法についても説明します。</block>
   <block id="595e15ec8af10c3d959522d0d1eab769" category="cell">MetroCluster 構成でコントローラとストレージモデルをアップグレードし、 MetroCluster FC 構成から MetroCluster IP 構成に移行し、ノードを追加して MetroCluster 構成を拡張する手順について説明します。</block>
   <block id="b42a2144e64bfdf4eecf966f7bb495c5" category="inline-link-macro">ONTAP 9.0 コマンド：マニュアルページリファレンス</block>
@@ -209,7 +208,6 @@
   <block id="556a407c4a4faf57fc56c1b7137d5f36" category="paragraph">ライセンスの詳細については、を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。</block>
   <block id="291e8826d2b19041a0543b448060f314" category="paragraph">ノード 4 でオンボードの FC ポート、オンボードのユニファイドターゲットアダプタ（ UTA / UTA2 ）ポート、または UTA / UTA2 カードが使用されている場合は、残りの手順を完了する前に設定する必要があります。</block>
   <block id="405ab80b96586360ea83735c37305935" category="inline-link-macro">ノード 4 のインストールを確認します</block>
-  <block id="e5d8ce1e4e0f9c50b3cbdf452d60972e" category="inline-link-macro">手順 22</block>
   <block id="cd7dd5075be56af4a3298feff04bb98a" category="paragraph">ノード 4 にオンボードまたは FC アダプタのいずれかの FC ポートがある場合は、ポートが事前に構成されていないため、ノードを稼働状態にする前にポートの設定を行う必要があります。ポートが設定されていないと、サービスが停止する可能性があります。</block>
   <block id="3bb2def349bd01a4e09f553241c547bb" category="paragraph">セクションに保存した node2 の FC ポート設定の値を確認しておく必要があります <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
   <block id="8651f71cd1a76b7df1a83cae390627a8" category="paragraph">システムに FC 構成がない場合は、このセクションをスキップしてかまいません。システムにオンボード UTA / UTA2 ポートまたは UTA / UTA2 アダプタが搭載されている場合は、で設定します <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>。</block>
@@ -416,7 +414,6 @@
   <block id="9a940b51cdd2b2d508cffc6eecff9e32" category="paragraph">次の出力が表示されます。</block>
   <block id="0b0ab53ca7ce0880a8c5c074d260f0ab" category="paragraph">すべてのパッケージを削除するには 'y' を入力します</block>
   <block id="f52d44aaa981f34fa588225f9d4cc820" category="paragraph">「 system license show 」を参照してください</block>
-  <block id="9dabc4c6addd92ab1be1dd1cd49038f7" category="inline-link-macro">Node4 をインストールしてブートします（手順 27 ）</block>
   <block id="1534946b2dbb4d79955a0d451c913c4c" category="list-text">[[Step13]] 両方のノードで次のコマンドを使用して、 SP を設定します。</block>
   <block id="e4c074cd0d17a1426d4153413c21f2b8" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> SP および _SP ONTAP 9.8 コマンドの詳細については ' システム管理リファレンスにリンクするには ' マニュアルページリファレンスを参照してください system の service-processor network modify コマンドの詳細については ' を参照してください</block>
   <block id="5fd1bcc8472b38442961eb87ca3f844a" category="paragraph">「 advanced 」の権限が必要です</block>
@@ -902,9 +899,6 @@
   <block id="08b8b3c8e271efd7690222a017e7f380" category="cell">FAS8700 、 FAS9000 、 FAS8300 ^4^ 、 ^5^</block>
   <block id="da8b8662f7c1d5fff02df5d395e1d253" category="cell">AFF A700 ^1 ^ 、 AFF A800 ^2 ^ ^ 、 ^3^ 、 AFF A400 ^ 4 ^ ^ 、 ^5^</block>
   <block id="e51c635d01c8dc3e816e9f14ad0767cf" category="paragraph">^1 ^ARL AFF A700 システムの自動アップグレードは、 ONTAP 9.7P2 からサポートされています。</block>
-  <block id="1ab9ac762ff98f776b6d5cfddf56bf6f" category="inline-link-macro">ノード 3 の UTA / UTA2 ポートを確認して設定します。手順 14</block>
-  <block id="d16c604a3cddc9316d5dfc1514c5da11" category="inline-link-macro">ノード 4 の UTA / UTA2 ポートの確認と設定、手順 14</block>
-  <block id="854e3fd862be50a0cf7e5d697506a33c" category="paragraph">^2^ 内蔵ディスクと外付けディスクをサポートする AFF A800 システムに更新する場合は、内蔵 NVMe ディスクのルートアグリゲートに関する具体的な手順に従う必要があります。を参照してください <block ref="983c366997f9ae38fb70a96bf899b5fb" category="inline-link-macro-rx"></block> および <block ref="c637ff237000263c980a88d3850be72b" category="inline-link-macro-rx"></block>。</block>
   <block id="cc31b65361b7c697a4d3c0f75b928baf" category="paragraph">^3^ARL AFF A300 から AFF A800 システムへの自動アップグレードは、 ONTAP 9.7P5 からサポートされています。</block>
   <block id="2e2d0e127c8eb55e752ddae9109b7b26" category="paragraph">^4^ARL AFF A300 から AFF A400 への自動アップグレード、および FAS8200 から FAS8300 への自動アップグレードは、 ONTAP 9.7P8 からサポートされています。</block>
   <block id="0d17b2b0ee5853657bc79eefe010abec" category="paragraph">^5^ AFF A300 から AFF A400 または FAS8200 を 2 ノードスイッチレスクラスタ構成で FAS8300 システムにアップグレードする場合は、コントローラのアップグレード用の一時的なクラスタポートを選択する必要があります。AFF A400 および FAS8300 システムは、イーサネットバンドルとして、メザニンカードポートはイーサネットタイプ、 FC タイプの FC バンドルとして、 2 種類の構成で提供されます。</block>
@@ -1897,7 +1891,6 @@
   <block id="3bf7f9a82df0c130b46780052ca49e4c" category="list-text">次のコマンドを使用して、新しいノードでキー管理サーバセットアップウィザードを起動します。</block>
   <block id="a5e463e5138622ba8c2355b41f67a0ff" category="paragraph">このコマンドには、オンボードキーマネージャ（ OKM ）のパスフレーズが必要です</block>
   <block id="ce4c94d5e669859aacda58a7f2429ddf" category="cell">その他すべての ONTAP バージョン</block>
-  <block id="fedb2a32e0130d4ae814cd5cc418f72f" category="list-text">[[step1] 次の手順を実行して、ルート以外のアグリゲートを再配置します。</block>
   <block id="db3c32b2915aa7ffd2fcacb5e017dbc9" category="list-text">ノード 1 で次のコマンドを入力して、再配置ステータスを確認します。</block>
   <block id="d550e31a6ccbb056c2d7ab1e68692363" category="admonition">ノード 1 に所有されているルート以外のアグリゲートがすべて node2 に再配置されてから、次の手順に進みます。</block>
   <block id="b77ef5d765d72155b0da6da7cb47f0ed" category="cell">再配置の場合</block>
@@ -2094,7 +2087,6 @@
   <block id="141bacc3e7a6f502bd3657db72437350" category="list-text">コンソールで、システムで発行された EMS メッセージを確認し、推奨される対処方法を実行します。</block>
   <block id="7495ab667ca2ae1018dd9d3dd2908757" category="section-title">HA を有効にして第 2 段階の実行中または直後にノード 1 がクラッシュする</block>
   <block id="6647bb8df429d773e26f287ab8630e64" category="paragraph">一部またはすべてのアグリゲートがノード 1 からノード 2 に再配置されており、 HA が有効なままです。node2 は、 node1 のルートボリュームと再配置されていないルート以外のアグリゲートをテイクオーバーします。</block>
-  <block id="91cf7a0902c4d8935fa01c715ec744dc" category="list-text">- 完了しました <block ref="293daa0ef1b8dc10a56298f74ae852e0" category="inline-link-macro-rx"></block> セクションの _root 以外のアグリゲートをノード 1 から node2 _ に再配置する</block>
   <block id="74d5b8b871208d748fdac979190074e1" category="section-title">HA を無効にすると、ステージ 2 のあとにノード 1 がクラッシュします</block>
   <block id="9ad3dc0563b6521da592666e0c96170d" category="paragraph">node2 はテイクオーバーしませんが、ルート以外のすべてのアグリゲートから引き続きデータを提供しています。</block>
   <block id="cf843a9114c64e407d26e842eb2aa5c2" category="inline-link-macro">予期しない「 storage failover show 」コマンドの出力が表示されます</block>
@@ -2112,12 +2104,10 @@
   <block id="123d371d6f3654b02ea395d3cdce7a43" category="section-title">一部またはすべてのアグリゲートの再配置後、ステージ 3 でノード 2 がクラッシュする</block>
   <block id="3312049a8df38d6a9cc500f8d982615c" category="paragraph">node2 の一部またはすべてのアグリゲートが node3 に再配置され、再配置されたアグリゲートからデータが提供されます。HA が無効になっています。</block>
   <block id="4293c82d89ec7602e20335979cb19469" category="paragraph">再配置されなかったアグリゲートのクライアントが停止します。</block>
-  <block id="325bf4ef0d3493b41794238266e0490a" category="list-text">残りのアグリゲートの再配置は完了して実行します <block ref="789a9a29365551abd6a71d3f355e39cb" category="inline-link-macro-rx"></block> から <block ref="a9ed1005965421826d33fd16a9c02ffe" category="inline-link-macro-rx"></block> セクションの _root 以外のアグリゲートを node2 から node3 _ に移動する</block>
   <block id="7777ccf7f0f06dad3ffad451bb0e83b8" category="section-title">ステージ 3 でノード 2 からアグリゲートが再配置される前に、ノード 3 がクラッシュした場合</block>
   <block id="ec2cd6235f2c50a1e7fed067fe8301f8" category="section-title">アグリゲートの再配置中に、ステージ 3 でノード 3 がクラッシュした場合</block>
   <block id="bdf12c9e6bf2221b5ef584b80346aaaf" category="paragraph">node2 によるアグリゲートのノード 3 への再配置中にノード 3 がクラッシュした場合、 node2 を使用すると残りのアグリゲートの再配置が中止されます。</block>
   <block id="5f54439349a0049ded037d046c54cb66" category="paragraph">node2 では残りのアグリゲートの処理が続行されますが、 node3 のブート中にすでに node3 に再配置されたアグリゲートでクライアントが停止する可能性があります。</block>
-  <block id="e9f32c360440ff87eefc6b2ac000051b" category="list-text">- 完了しました <block ref="a9ed1005965421826d33fd16a9c02ffe" category="inline-link-macro-rx"></block> セクションの「ルート以外のアグリゲートを node2 から node3 _ に再配置する」を再度実行します。</block>
   <block id="78d6fd9200a4f713a83c4db59f80581d" category="section-title">ステージ 3 でクラッシュすると、ノード 3 がブートしない</block>
   <block id="1f3a2d115338d5055575085be720a753" category="paragraph">重大な障害が原因で、ステージ 3 のクラッシュ後に node3 をブートすることはできません。</block>
   <block id="50c2d2087402d2dc8c5767a6ac83e96d" category="paragraph">テクニカルサポートにお問い合わせください。</block>
@@ -2134,7 +2124,6 @@
   <block id="17772501b6724fd9858e76539d802bae" category="section-title">ステージ 5 でノード 4 がクラッシュした場合</block>
   <block id="ed77b7aeb374975ae2dc4f8a9a5d5551" category="paragraph">ノード 3 の一部またはすべてのアグリゲートが node4 に再配置されている。node3 は、自身が所有しているルート以外のアグリゲートおよび再配置されていないアグリゲートを引き続き提供します。HA が無効になっています。</block>
   <block id="599f33809165d54cb3217e306c6f0f1f" category="paragraph">ノード 4 が再びブートするまで再配置されたルート以外のアグリゲートは停止します。</block>
-  <block id="4756394ada9b0ffaa73813469d36b72d" category="list-text">再度完了して、 node2 に属していた残りのアグリゲートを再配置します <block ref="21d698177270cdcc53abb50c511e3bde" category="inline-link-macro-rx"></block> から <block ref="c5be787c4fcfd0f49f014e8618d28c15" category="inline-link-macro-rx"></block> In _Relocate node2 のルート以外のアグリゲートを node3 から node4 に再配置します。</block>
   <block id="fb876532a1278ecbe2a9e2aa30ef59c2" category="list-text">AutoSupport メッセージが送信されたことを確認します。</block>
   <block id="632ce4fa5102cfac495b3c1490de0513" category="paragraph">「 Last Subject Sent ：」および「 Last Time Sent ：」のフィールドには、最後に送信されたメッセージのメッセージタイトルと、メッセージが送信された時刻が含まれています。</block>
   <block id="33cfec7231d81810ac482a09c5b69c00" category="list-text">node2 が所有するアグリゲートを表示します。</block>
@@ -2184,7 +2173,6 @@
   <block id="f1645d1878d86f7024812da747846642" category="list-text">期限切れのライセンスをすべて削除するには、次のように入力します</block>
   <block id="fd6db757e3a6fb12f04139c8f48aab93" category="list-text">未使用のライセンスをすべて削除するには、次のように入力し</block>
   <block id="0fae8f5a8ab68238375deb31e474111d" category="list-text">クラスタから特定のライセンスを削除するには、ノードで次のコマンドを入力します。</block>
-  <block id="7092e15f19aa79a4b642157f15a4bcf6" category="inline-link-macro">手順 30</block>
   <block id="65816664fef74fe3f15406730c518f76" category="list-text">両方のノードで次のコマンドを実行して、 SP を設定します。</block>
   <block id="3d39e72120bdfa8b32eb4183896ece25" category="paragraph">に進みます <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> SP の詳細については ' システム管理リファレンスにリンクし '_System ONTAP 9 コマンド：マニュアルページリファレンスにリンクし 'system service-processor network modify コマンドの詳細については ' を参照してください</block>
   <block id="52eb8cb5708af7396828abc72517413d" category="list-text">新しいノードにスイッチレスクラスタをセットアップする場合は、に進みます <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ネットワークサポートサイトへのリンクをクリックし、 2 ノードスイッチレスクラスタへの移行の手順に従ってください。</block>
@@ -2288,7 +2276,6 @@
   <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">元のノードを分離</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">ノード 4 で FC または UTA / UTA2 設定を設定します</block>
   <block id="82a3300ad94a5e1dcf0a6abbfe1060e2" category="paragraph">このコンテンツの手順を実行するときは、参照コンテンツを参照するか、参照 Web サイトにアクセスする必要があります。</block>
-  <block id="14f94d0b133a9aa34a775e955c95b8bc" category="list-text"><block ref="13e4a2cf4e0a4edbef519c9af2452c86" category="inline-xref-macro-rx"></block></block>
   <block id="ec5873b9b6861954a7c07d183dd486b0" category="section-title">参照コンテンツ</block>
   <block id="bc6bec578fabd4f81f97a21373822230" category="paragraph">このアップグレードに固有のコンテンツを次の表に示します。</block>
   <block id="f15c1cae7882448b3fb0404682e17e61" category="cell">内容</block>
@@ -3474,7 +3461,6 @@
   <block id="97da9a68ce886c4978d84008bc3d4e8b" category="list-text">プロンプトが表示されたら、バックアップデータを入力します。</block>
   <block id="71e3a0c9ae3930c06f28eb84647c689b" category="admonition">でパスフレーズとバックアップデータを入手しておく必要があります <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> この手順のセクション。</block>
   <block id="df032103f8364ffe0942ab84f5f27f22" category="list-text">システムが再度特別な起動メニューを起動したら、オプション*（1）Normal Boot *を実行します</block>
-  <block id="5daba08f0febc7be0229c918d3deaa4d" category="admonition">この段階でエラーが発生する場合があります。エラーが発生した場合は、の手順を繰り返します <block ref="1abe7aef97cf6f4670adea7171f10403" category="inline-xref-macro-rx"></block> システムが正常に起動するまで。</block>
   <block id="37bcf5964cba22a5e1026e3bfd999926" category="list-text">ノード3から次のコマンドを実行します。</block>
   <block id="9b4b091bf0690393965fb7724be0006b" category="list-text">データアグリゲートを再配置する前に、ノード3のSVM-KEKキーが「true」にリストアされたことを確認します。</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">例</block>
@@ -3974,23 +3960,8 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="0c3ddb60effd6213b641983514a7b646" category="summary">一般に、コントローラハードウェアのアップグレード方法は、元のノードのプラットフォームモデルによって異なります。アップグレードするには、アグリゲートまたはボリュームストレージを移動するか（無停止の手順）、またはストレージを移動します（停止を伴う手順）。</block>
   <block id="81cf1b6821a9509701aa3ffa438696e8" category="doc">コントローラハードウェアのアップグレード手順を選択</block>
   <block id="730782d87341664d3c754f5ff1a5e235" category="paragraph">一般に、コントローラハードウェアのアップグレード方法は、元のノードのプラットフォームモデルによって異なります。アップグレードするには、アグリゲートの再配置またはボリュームの移動（どちらも無停止の手順）、またはストレージを移動（停止を伴う手順）します。元のノードと新しいノードでONTAPのバージョンが異なる場合は、ハードウェアのアップグレードを開始する前にソフトウェアのアップグレードを実行しなければならないことがあります。</block>
-  <block id="d28610d01016f5bb58284f316bba1cf4" category="paragraph">内蔵ドライブを搭載したシステムのアップグレード手順を選択します。次のリストを参照してください。</block>
-  <block id="5502efa05d4fb31521ff855aca634085" category="paragraph">お使いのシステムがリストにない場合は、<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> 内蔵ドライブがあるかどうかを確認します。</block>
-  <block id="271991a921c3cf77fdc4a8243ff66c54" category="inline-image-macro">アップグレード手順の選択の決定ワークフロー</block>
-  <block id="9e22cf6af1f2c4fe2e159cbec557ce04" category="paragraph"><block ref="9e22cf6af1f2c4fe2e159cbec557ce04" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5830cd7f72f9e60e4fa7226df7a6e5b4" category="open-title">外付けドライブのみを搭載したシステム</block>
-  <block id="02f90960209613fdabef2c9b69f51f1a" category="paragraph">外付けドライブのみを搭載したシステムのアップグレード手順を選択します。次のリストを参照してください。</block>
-  <block id="fdbb97a31e1f96988fd0043d40890691" category="list-text">FAS8200、FAS8300、FAS8700、FAS9000、FAS9500</block>
-  <block id="da6fda94fbd6619e64543f3aae22461a" category="list-text">AFF A300、AFF A320、AFF A400、AFF A700、AFF A900</block>
   <block id="c9996a1b1fe92047dfbcfbef9989c233" category="list-text">AFF C400</block>
-  <block id="65843c424385c187542a7f02ef944f93" category="list-text">ASA A400、ASA A900、およびASA AFF A700</block>
-  <block id="6595bfc8c334bd6ea5c2da878f55e46c" category="paragraph">お使いのシステムがリストにない場合は、<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> 外付けドライブのみがあるかどうかを確認します。</block>
-  <block id="06248cec6a83b53b418520bd0b9d07a5" category="paragraph"><block ref="06248cec6a83b53b418520bd0b9d07a5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4a7fecfc06856645d10df298d5553ed7" category="paragraph">コントローラハードウェアのアップグレード手順について説明します。</block>
   <block id="1f43d36a6bcfed2f5249ca5ba8e671ba" category="inline-link-macro">アグリゲートの再配置を使用したアップグレード</block>
-  <block id="8f9fb90f68730e000102778c18115044" category="list-text"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block></block>
-  <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">*注2 *：無停止アップグレードでは、元のシステムのデータを格納するために、独自のストレージとシェルフを備えた新しいシステムが必要です。</block>
-  <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">*注3 *：ボリュームを移動することでアップグレードする場合は、新しいノードを追加し、ボリュームとLIFを新しいノードに移動してから、クラスタから削除するノードを分離します。2ノードスイッチレスクラスタをアップグレードする場合は、新しいノードを追加する前に、クラスタスイッチのペアを使用してスイッチ接続クラスタに変換します。</block>
   <block id="ef69680bc1ee7b1fd5e0950d56699d33" category="list-text">この手順環境 MetroCluster の 4 ノード構成と 8 ノード構成では、 ONTAP 9.5 以前が実行されています。ONTAP 9.6 以降を実行する MetroCluster 構成の場合は、に進みます <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> to _using "system controller replace"コマンドを使用して、ONTAP 9.5を実行しているコントローラハードウェアをONTAP 9.7_にアップグレードする。</block>
   <block id="187aa569481ce25a564facc34217dda3" category="list-text">ホストのコマンドと例は、Linuxオペレーティングシステムに固有のものです。</block>
   <block id="fcbf56c541d4d283030e94ff96a44848" category="paragraph">USBブートオプションを使用してネットブートを実行することもできます。サポート技術情報の記事を参照してください <block ref="184f8f7294797efad8be0da4fb907563" category="inline-link-macro-rx"></block>。</block>
@@ -4019,16 +3990,11 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="f4050efc501652e600f6e7e735cf5616" category="inline-link-macro">新しいiSCSI接続が作成されました</block>
   <block id="527226c39d06e4e2f6eec2dca988d2ba" category="list-text">iSCSI SANボリュームを移動する場合は、 <block ref="6f18756f17709181fa11fd9271f705fc" category="inline-link-macro-rx"></block>。</block>
   <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">可能な場合は、元のノードと新しいノードで同じバージョンのONTAPを実行することをNetAppで推奨します。これができない場合は、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードと新しいノードのバージョンの差が4つ以下になるように、サポートされる最大バージョンに変更します。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。</block>
-  <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">*注1 *：元のノードで実行されているONTAPのバージョンが新しいノードでサポートされている必要があります。必要に応じて、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 元のノードでサポートされる最大バージョン。元のノードと新しいノードのバージョンの違いを4つ以上にすることはできません。たとえば、ONTAP 9.8と9.12.1がサポートされますが、ONTAP 9.8と9.13.1はサポートされません。<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>。</block>
-  <block id="1e4625a567102c02db411f8ac4403956" category="list-text">[[unset_maxwait_system_commands]]構成で自己暗号化ドライブを使用している場合は、を設定します<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例：で） <block ref="e646557bd849df21a23243b7031e90bc" category="inline-link-macro-rx"></block>）を使用している場合は、次のように変数を設定解除</block>
   <block id="b0da566a6b16767a9a4f6a9815cc8a8c" category="image-alt">ケーブル管理ARMの取り外し</block>
   <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">カムハンドルを開く</block>
   <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">に記載されているストレージ暗号化のbootargsをチェックしてリセットします <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e807a193ac5d601655295b7da3f1b093" category="paragraph">ただし、 V シリーズシステムまたは FlexArray 仮想化ソフトウェアがインストールされていて、ストレージアレイに接続されている場合に、ノード 4 にオンボードの FC ポート、オンボード UTA / UTA2 ポート、 UTA / UTA2 カードがないときは、 _Install and boot node4 セクションに戻って再開する必要があります <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。ノード 4 に十分なラックスペースがあることを確認してください。node4 が node2 とは別のシャーシにある場合は、 node3 と同じ場所に node4 を配置できます。node2 と node4 が同じシャーシにある場合は、 node4 が適切なラックの場所にすでに存在しているとします。</block>
-  <block id="6b9fac60e06c90ccfa462d0bed7926e6" category="list-text">ただし、ストレージアレイを搭載した FlexArray 仮想化ソフトウェアを搭載した V シリーズシステムまたはシステムがあり、 node3 にはオンボードの FC ポート、 UTA / UTA ポート、または UTA / UTA2 カードがない場合は、 _Install に戻り、 node3 を再度起動して再開します <block ref="69768913474e5068248c1757dc80b632" category="inline-link-macro-rx"></block>。</block>
   <block id="f21399d0ef733f2bac07631b61733da2" category="list-text">オフラインのボリュームがある場合は、で取得したオフラインボリュームのリストと比較します  <block ref="f8559d826afe76e8a44f3ff6b2b551c5" category="inline-link-macro-rx"></block> で、各ボリュームに対して次のコマンドを 1 回入力して、アップグレードの準備をし、必要に応じてオフラインのボリュームをオンラインにします。</block>
   <block id="3bc4849f9b157d49c1711e6e16889370" category="list-text">[[unset_maxwait_manual]]構成で自己暗号化ドライブを使用している場合は、を設定します<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 変数をに設定します<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例：で） <block ref="90030e72e0588538d4fa2173f000cf21" category="inline-link-macro-rx"></block> of _ Install and boot node3 _）では、変数の設定を解除する必要があります。</block>
-  <block id="53658d8e911ed99b785059dfe4444ff6" category="paragraph">でキャプチャした出力と比較できます <block ref="9931aed421ff2a2523e8089d4d074996" category="inline-link-macro-rx"></block> で、ノードをアップグレードする準備をしています。</block>
   <block id="7f56dbb7f8f9c7edeba6759e22db809d" category="admonition">システムにクラスタ間 LIF がない可能性があります。クラスタ管理 LIF は、ノードペアの一方のノードにしか配置しません。クラスタ管理LIFがの出力例に表示されます。 <block ref="bd32fdbc5854e6c20c0a8915777bab3f" category="inline-link-macro-rx"></block> インレコード node1 のポート情報 _ 。</block>
   <block id="654d75bbbd9ba4437d62775d8c78fd4e" category="paragraph">をクリックします<block ref="4bc6af92800eaece42a512a876786ce9" prefix=" " category="inline-code"></block> で取得した情報を使用します。 <block ref="4bd427aca76f4838cf29941d65834087" category="inline-link-macro-rx"></block> をクリックします。の場合<block ref="3a5307c9225c62c92d2cd1fab07d458d" prefix=" " category="inline-code"></block>で取得した情報を使用します。 <block ref="9c7125eb7b33f2cb03297a560d0660b0" category="inline-xref-macro-rx"></block>。</block>
   <block id="c1ec927231ff7eccaa7988a2e2070107" category="paragraph">の出力にいくつかの変更が表示される場合があります。<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> コマンドですが、これは一般的なコマンドであり、手順には影響しません。トラブルシューティングのセクションを参照してください <block ref="75a39bd28c4eb9db95179fd2fef50fb3" category="inline-link-macro-rx"></block>。</block>
@@ -4114,7 +4080,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="b6025c8f8309b4b8106567e8e60f52ac" category="admonition">BMCでユーザアカウントを作成するには、管理者権限が必要です。</block>
   <block id="a64a5798382cc068c2d777ff826bccb5" category="doc">ONTAPハードウェアのアップグレードに関するドキュメント</block>
   <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAPハードウェアシステムのドキュメント</block>
-  <block id="c2bb4d5f8818bc80f7aa15d94d57c6e3" category="paragraph">個 々 のコンポーネントを交換する場合は、を参照してください。<block ref="e18a2433f1085adba8dc86307fee18d1" category="inline-link-rx"></block> およびそのコンポーネントのField Replaceable Unit（FRU；フィールド交換可能ユニット）のリーフレットを参照してください。</block>
   <block id="dec452d8e293e5516524ae8a86713211" category="sidebar">このサイトでは、AFF、FAS、およびASAストレージシステムのアップグレード手順について説明します。ストレージシステムに適したアップグレード手順を選択します。</block>
   <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">ONTAPハードウェアシステムのドキュメント</block>
   <block id="1320db1e300a995e122ea5d434b23e9b" category="list-text">ノード1 /ノード2に接続していたシェルフのストレージシェルフケーブルをノード3 /ノード4に接続します。</block>
@@ -4129,8 +4094,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="7ed92f84948f4fe94d9e740b0e479a4e" category="paragraph-title">MetroCluster FC 構成</block>
   <block id="5ffd3baa415444f7f3227edef43b10d9" category="paragraph">MetroCluster FC構成では、できるだけ早くディザスタリカバリ/フェイルオーバーサイトのノードを交換する必要があります。コントローラモデルの不一致が原因で原因ディザスタリカバリのミラーリングがオフラインになる可能性があるため、 MetroCluster 内のコントローラモデルの不一致はサポートされません。2つ目のサイトでノードを交換する場合は、コマンドを使用し<block ref="bf0b9d28548e0e53fb793faa9566bdc3" prefix=" " category="inline-code"></block> てMetroClusterチェックをバイパスします。</block>
   <block id="df3d0238913361ab2420c20a053ba0d8" category="list-text">[[man_install4_step6]]ノード4の電源をオンにし、Ctrl+Cキーを押してブートを中断してブート環境プロンプトにアクセスします。</block>
-  <block id="24a28632436fc3dd7e0e4fbde05fdf59" category="paragraph">アグリゲートの再配置は手順に代わるものです。新しいノードを使用してクラスタを拡張および縮小する必要はないため、2ノードのスイッチレスクラスタの場合に便利です。アグリゲートの再配置によるデータの移動は、ボリュームの移動時にアグリゲート間でデータをコピーするよりも高速です。</block>
-  <block id="21e5a4b07b3d917519fb1f0a2c21d347" category="list-text"><block ref="21e5a4b07b3d917519fb1f0a2c21d347" category="inline-link-macro-rx"></block></block>
   <block id="2c4564f93114738d1a23cefcb9f1a209" category="paragraph">ストレージの移動によるコントローラハードウェアのアップグレードは、システムの停止を伴う手順です。アップグレードを開始する前に、一般的なアップグレードシナリオとアップグレードに関する考慮事項を確認してください。</block>
   <block id="7679a865afb03bdbcc1cbd8757f79d09" category="list-text"><block ref="7679a865afb03bdbcc1cbd8757f79d09" category="inline-link-macro-rx"></block></block>
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">ストレージを移動してアップグレードするには、元のノードを準備し、新しいノードをセットアップします。一部のプラットフォームモデルでは、新しいノードへの内蔵ストレージの移行がサポートされています。新しいノードにディスクを再割り当てし、ルートボリュームの設定をリストアし、ネットワークポートを設定します。</block>
@@ -4501,7 +4464,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="a413d295f5d536c0e6c64fa5cd9479fb" category="cell">AFF A50、AFF A30</block>
   <block id="724bf3ae18d86521a5b9d77a13fcfddb" category="cell">AFF C80用</block>
   <block id="b9234e77b4a8b2f78eab4a2947850612" category="inline-link-macro">サポートされるシステムマトリックス</block>
-  <block id="2472f42d5b7cd821b446998ec10cc3d7" category="paragraph">これで、交換用モジュールを含むノード1をブートする準備が整いました。サポートされている交換用モジュールについては、を参照して<block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>ください。</block>
   <block id="cd021900ed941327c8cbaab423602fea" category="paragraph">コントローラモジュールを交換する場合は、すべての接続を古いコントローラモジュールから交換用コントローラモジュールに移動します。</block>
   <block id="ca76cff03dc67711aed20c19584f555a" category="paragraph">コントローラモジュールとNVRAMモジュールを交換する場合は、コンソール接続と管理接続のみを移動します。</block>
   <block id="32fc669b4855ba474461c53a3b65197d" category="list-text">（AFF A250、AFF C250、AFF A800、またはAFF C800アップグレードのみ）Loaderプロンプトでメンテナンスモードに切り替えます。</block>
@@ -4542,7 +4504,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="7be812dd65bbd3f39bbb06fd50caac76" category="list-text"><block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block></block>
   <block id="3a7170fc4a84869f969e046621bc8c18" category="inline-link">NetApp Bugs OnlineのバグID1127315</block>
   <block id="7e3f4ab9cf33dd84dd92d4491c7263da" category="list-text"><block ref="7e3f4ab9cf33dd84dd92d4491c7263da" category="inline-link-rx"></block></block>
-  <block id="29f0fa6d1a27f17f1b4884d6a3e9c28f" category="list-text">にダウンタイムが含まれている既存のシステムからアップグレードする場合<block ref="d463ec7d55f485d162a89eaf4dff8371" category="inline-xref-macro-rx"></block>は、ストレージを移動することでコントローラハードウェアをアップグレードするか、テクニカルサポートにお問い合わせください。「ボリュームまたはストレージの移動によるアップグレード」へのリンクを参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 。</block>
   <block id="316abd6cd53d12f8bf03ae8388826d10" category="doc">AFF A30、AFF A50、AFF C30、またはAFF C60モジュールをノード2に取り付けます。</block>
   <block id="bdb39b5926a304a8f387b036b6fd9445" category="list-text">キャビネットまたはTelcoラックの中央にあるレールにストレージシステムを配置し、ストレージシステムを下から支えて所定の位置にスライドさせます。</block>
   <block id="b9772390f34f13ee0716466b74abfc71" category="admonition">手順の後半で指示されるまで、コントローラモジュールをシャーシに完全に挿入しないでください。</block>
@@ -4639,7 +4600,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="c66431825370525b71d1cf42669b4ad1" category="paragraph"><block ref="03d492bafa8bfc48b6d8087b415cb7c8" prefix="" category="inline-code"></block></block>
   <block id="cbf9a76a9a31fb5d20cbab55c42d6eb4" category="paragraph">ノード2をノード4に交換する前に、ノード2に関するAutoSupportメッセージを送信し、ノード2で所有されているルート以外のアグリゲートをノード3に再配置する必要があります。</block>
   <block id="a2f8774c7412a03482b475c596da177f" category="list-text">ノード2のAutoSupportメッセージをNetAppに送信します。</block>
-  <block id="726243540d365dca09b0baa8a651d18b" category="list-text">ルート以外のアグリゲートを再配置します。</block>
   <block id="4b183b97df2f1d6ce9c112a7ed3e980c" category="paragraph">再配置はバックグラウンドで実行されます。アグリゲートの再配置には数秒から数分かかる場合があります。この時間には、クライアントの停止部分と停止部分の両方が含まれます。コマンドでは、オフラインまたは制限されたアグリゲートは再配置されません。</block>
   <block id="ce3a9a61e80721a6fb4afa31a98b6267" category="paragraph">再配置後のアグリゲートについては、出力に「done」と表示されます。</block>
   <block id="d8a4c81968f4b397fdbe83d1475d852c" category="list-text">node2がルート以外のオンラインのアグリゲートを所有していないことを確認します。</block>
@@ -4686,7 +4646,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="09fd616bd129dbb6b064a8d755638ea6" category="inline-link-macro">ノード2のディスクをノード4に再割り当て（手順9）</block>
   <block id="efbbd979af9db0d702ab6a5273480e16" category="paragraph">アップグレードを続行する前に、ノード3のソフトウェア設定がノード3の物理接続と一致している必要があり、ネットワーク接続がリストアされている必要があります。</block>
   <block id="0750b6fd70b5c02e0dc63a82e8430e4a" category="admonition">この手順では、アグリゲートをノード3からノード2に再配置しないでください。その結果、アグリゲートがオフラインになり、再配置されたアグリゲートのデータが利用できなくなります。</block>
-  <block id="569f02d62115823f4fea09e43e09614c" category="list-text">ノード3でパートナーシステムIDが正しく設定されていることを確認します。</block>
   <block id="fb0111f9cd842757d08889f0a7863a8b" category="list-text">ノード3のパートナーシステムIDを表示します。</block>
   <block id="5a17539dbeea2e1642b36b86ee06822c" category="paragraph"><block ref="089ce08d08dd1b75c3f614830a776a5d" prefix="" category="inline-code"></block></block>
   <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">例を示します</block>
@@ -4761,7 +4720,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="5e5ea622fae7536bc86af7f458b72c82" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、 <block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>セクション。発生する可能性のある障害に関する情報は、手順のフェーズごとに記載されています。 <block ref="8d67bce17772a82227e57f45fab19967" category="inline-link-macro-rx"></block> 。</block>
   <block id="20d941e77026ae8ce1f7960037569d8a" category="inline-link-macro">ARLを使用したコントローラのアップグレードに関するガイドライン</block>
   <block id="ad37cb22fa2be28796074eb07740fcc0" category="list-text">この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、以下の内容を読んで理解する必要があります。 <block ref="29a777f478b575f6de532dbc614acf56" category="inline-link-macro-rx"></block>そして<block ref="25c64b56e1634b7195570b2ce4c1228b" category="inline-link-macro-rx"></block>アップグレードを開始する前に。</block>
-  <block id="8b21e9b95f604354c13a34d474ccbb41" category="admonition">特定のコントローラのアップグレードでは、アグリゲートの再配置を使用して、内部ドライブを備えたシステムをアップグレードできます。<block ref="9a4bb8e5ecd8c78c6c81f07972a0f610" category="inline-link-macro-rx"></block>です。</block>
   <block id="dbc1fd5a23bc6b740244f75d960b1e10" category="doc">ストレージワークフローを移行してアップグレード</block>
   <block id="b0015c54c1bbb0e310d3dcd2ae34c8df" category="doc">ボリュームの移動によるアップグレードワークフロー</block>
   <block id="892ec2dad40436ef5448c89d8134c110" category="doc">ボリューム移動のアップグレードを完了する</block>
@@ -4801,7 +4759,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="9c936df3ea153c74d872576b972cfc63" category="cell"><block ref="9c936df3ea153c74d872576b972cfc63" category="inline-link-macro-rx"></block></block>
   <block id="8cb1597db65a7387842cef341e165e21" category="cell"><block ref="8cb1597db65a7387842cef341e165e21" category="inline-link-macro-rx"></block></block>
   <block id="0f82d37b39d321fc9b25cdd372b37e32" category="cell"><block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block></block>
-  <block id="c76662e993de5ab0f1eb25d582914989" category="paragraph">これで、交換用モジュールを搭載したノード2をブートする準備が完了しました。サポートされている交換用モジュールについては、を参照して<block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>ください。</block>
   <block id="3803a496b59603445ff8102b5b762db9" category="cell">e1a (一時的なクラスタ相互接続には e1a を使用)</block>
   <block id="05078edefd215e2eb6ebd175b2f619a9" category="cell">e1b (一時的なクラスタ相互接続には e1b を使用)</block>
   <block id="6fd5e95dc0bce8329da87e1152677b48" category="cell">不要</block>
@@ -4839,7 +4796,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="f4e202b16d4110d20d433ad7438f5314" category="list-text">AFF A250およびAFF C250システムは、クラスタインターコネクトに10/25GbEオンボードポートを使用します。AFFA250またはAFF C250システムの2ノードスイッチレスクラスタをAFF A50、AFF A30、AFF C60、またはAFF C30システムにアップグレードするには、両ノードのスロット1にX60132A 4ポート10/25GbEカードを使用する必要があります。これにより、クラスタLIF用のクラスタインターコネクトが、ターゲットプラットフォーム上の一時ポートに提供されます。</block>
   <block id="78c398b9af8fd88a6f91bb80a4953770" category="paragraph">アップグレード用に受け取った交換用コントローラモジュールをノード2に取り付けます。Node2 は、システムの背面からコントローラを見たときにシャーシの下半分に配置されているコントローラ B です。</block>
   <block id="9b44a31a05d8aaba8e74ed9fbe14e789" category="list-text">2ノードのスイッチレス構成の場合、ノード2のスロット1にX60132A（4ポート10/25GbEカード）が装着されていることを確認してください。X60132Aカードは、アップグレード中のクラスタ相互接続に必要です。</block>
-  <block id="568dca3900cf222d69b642e60354ebc8" category="paragraph">交換用コントローラモジュールのブートメディアにインストールされているONTAPのバージョンは、シャーシにインストールされ電源が投入されていない限り確認できません。アップグレードで交換用システムのブートメディア上のONTAPのバージョンがアップグレードする古いシステムで実行されているONTAPのバージョンと同じである必要があり、ブートメディア上のプライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。サポートされる最小ONTAPバージョンを確認するには、 <block ref="52d7cf77f93561ecdeaa91d81a4c035b" category="inline-link-macro-rx"></block> 。</block>
   <block id="a7632bc525df3f119a06420f80bce02b" category="list-text">ブート メディア上の以前の構成をすべてクリアします。</block>
   <block id="85c959b092ae248c6236b1f442d3cbeb" category="list-text">次のプロンプトで、 <block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>コマンドを入力し、Enter キーを押します。</block>
   <block id="b658f4f5938289ac1a7001b05fddd0b2" category="admonition">ノードがブートメニューで停止するまで待ちます。 <block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>手術。</block>
@@ -4902,7 +4858,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="064ec30fe59f186a96ff3a7e79b1e783" category="section-title">このARL手順ではアップグレードはサポートされていません</block>
   <block id="66cdfd07ff0fbee9893a68a3166c5bfc" category="paragraph">次の状況では、この ARL 手順を使用してノードのペアをアップグレードすることはできません。</block>
   <block id="be9f82c7235ff72f6fd3d42c68cd413e" category="paragraph">以下の表は、ONTAP 9.15.1以降で導入されたAFFおよびFASシステムにおいて、ARLを使用したサポートされているコントローラアップグレードの組み合わせを示しています。コントローラアップグレードの組み合わせがリストにない場合は、テクニカルサポートにお問い合わせください。</block>
-  <block id="d73475334ea9f3a270694cffcdf3c214" category="paragraph">コントローラのアップグレード中に問題が発生した場合の詳細と考えられる解決方法については、を参照して <block ref="b67d05b64e9d4ae5d62b287f015eac9d" category="inline-link-macro-rx"></block> ください。</block>
   <block id="c1003b834b455285971eb1c777fc1ebb" category="paragraph">コントローラハードウェアをアップグレードするためのアグリゲート再配置（ARL）方法はいくつかあります。このARL手順では、ONTAP 9.15.1以降で導入されたAFFおよびFASストレージシステムのHAコントローラペアを、既存のデータとディスクを維持しながら新しいコントローラにアップグレードする方法について説明します。</block>
   <block id="06727a9cd6d12b6c8838b9bb7623731f" category="list-text">というメッセージが表示されてシステムのリブートループが発生した場合は<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>、ディスクの再割り当てで問題が発生したことを示しています。問題を解決するには、を参照してください <block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block> 。</block>
   <block id="dbc81fa6dbd491d7e15e2010ef2df8eb" category="cell"><block ref="dbc81fa6dbd491d7e15e2010ef2df8eb" category="inline-link-macro-rx"></block></block>
@@ -4929,7 +4884,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="b3b5d42abc670ac795f4b90cfc221655" category="paragraph"><block ref="cb38fc2887221a0ca6581f1d73b29ec5" prefix="" category="inline-code"></block></block>
   <block id="028c6aaad70991eeba5c4bb66ea88329" category="paragraph">その<block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>このコマンドで使用する方法は、前の出力で確認できます。 <block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>指示。</block>
   <block id="7edece7677f8bef06093b6be08879c67" category="paragraph"><block ref="b79a4da2e325c3015ed2f7afe206a96b" prefix="" category="inline-code"></block></block>
-  <block id="a29df3ccd4c80ed70466ab7e616060db" category="paragraph"><block ref="c1415a35d798d0e1bc89dfc239e96300" prefix="" category="inline-code"></block> &lt; ザ<block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>このコマンドで使用する方法は、前の出力で確認できます。 <block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>指示。</block>
   <block id="316bb78c78d8c5d743c44432528cc2c4" category="paragraph"><block ref="4221e144bb878e9d4c97a49eaf2eb814" prefix="" category="inline-code"></block></block>
   <block id="4d090b6b4178c6d326829a98b05a4cd7" category="paragraph"><block ref="534a01a4ca515955efe8376e84615e84" prefix="" category="inline-code"></block></block>
   <block id="b7836a7a1972d5f8803e2f44bd3cb658" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block><block ref="6d203e2c19155492a108b65377909131" prefix=" " category="inline-code"></block></block>
@@ -4963,7 +4917,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="61decb38566b6125e910fda107613c86" category="cell">こちらへ<block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block>.</block>
   <block id="2b23c6643a7989ea797dcc7318e69941" category="cell"><block ref="08a38277b0309070706f6652eeae9a53" prefix="" category="inline-code"></block></block>
   <block id="42eed74bc7449c06a58949763bc19a72" category="cell">こちらへ<block ref="5b8028286d92c73a97e17186fd614dd6" category="inline-xref-macro-rx"></block>.</block>
-  <block id="b124461fc46687d506b67d1ab775e491" category="list-text">クラスター ポートを確認し、RCF を切り替えます。</block>
   <block id="e2ee618006d829a530b146576cce509a" category="list-text">「IC RDMA接続」のステータスが次のように変更されていることを確認します。<block ref="258f49887ef8d14ac268c92b02503aaa" prefix=" " category="inline-code"></block> ：</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">次の手順</block>
   <block id="0d500821bdc96d479f52180017fd421c" category="paragraph"><block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block></block>
@@ -5126,7 +5079,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="1c89ca7629177ffaec440b31de61e887" category="sidebar">FAS2820からのアップグレード</block>
   <block id="10952bb20745dcf0f30d5dd264d03924" category="sidebar">FAS2820からのアップグレードについて</block>
   <block id="220b7076a9e851bf1e13056c1e583d05" category="paragraph">使用することができます<block ref="773b5d44fd1b5ae080ff3a379be13169" prefix=" " category="inline-code"></block>次の出力例に示すように、現在のポート構成を表示または確認するには、コマンドを使用します。</block>
-  <block id="2a73f4871f45ffc6a9f01730de436222" category="paragraph">UTA/UTA2 ポートはアドオン アダプタまたはコントローラ マザーボード上に存在し、次の構成になっていますが、ノード 3 の UTA/UTA2 ポートの構成を確認し、必要に応じて変更する必要があります。</block>
   <block id="c594ac60ecfaa8945df018f2ca32a141" category="admonition">UTA/UTA2 ポートを構成するには、メンテナンス モードになっている必要があります。このセクションのコマンドをメンテナンス モードのシェル プロンプトで入力します。</block>
   <block id="d5f0cabb5a163f2af827009890866160" category="list-text">UTA/UTA2 ポート設定を確認します。</block>
   <block id="beaeb1b2c5fc204b2484aafd9e9f6f0d" category="paragraph">出力を調べて、UTA/UTA2 ポートに必要な特性があるかどうかを判断します。</block>
@@ -5167,7 +5119,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="8762049cc66fa921ae6bcffe8755d4e6" category="admonition">*遅延を無視しないでください。バッテリーの充電が不十分だと、データが失われる可能性があります。*</block>
   <block id="3b4a6d51e129532942e72a2637a3248a" category="paragraph">node3 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」ドキュメントを使用して、次の接続をケーブル接続します。</block>
   <block id="621db0217765431b65fd2df9431bc8c1" category="paragraph">完了する必要があるかもしれません<block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block>または<block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
-  <block id="bc7c7cb879348cd44e26c92f94f95bf6" category="admonition">この手順では、交換用コントローラハードウェアが新品であり、使用されていないことを前提としているため、<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>コマンドはこの手順には含まれません。交換用コントローラ ハードウェアが以前に使用されていた場合、特にコントローラが 7-Mode でData ONTAPを実行していた場合には、テクニカル サポートに連絡する必要があります。</block>
   <block id="4bd95100dfdd41a46154bae000c5b050" category="admonition">NVRAM の内容を消去しないでください。  NVRAMの内容をクリアする必要がある場合は、 NetAppテクニカル サポートにお問い合わせください。</block>
   <block id="dbe7ddc508cb8ca92b05d2610724662c" category="admonition">メンテナンス モードに入るように指示されない限り、このセクションのコマンドをクラスター プロンプトに入力します。  MetroCluster FC システムを使用している場合は、UTA/UTA2 ポートを構成するにはメンテナンス モードにする必要があります。</block>
   <block id="0e98bb417c519b40ee1d3347c345b891" category="list-text">[[man_check_4_Step5]]システムにストレージディスクがあり、 Data ONTAP 8.3 を実行している場合は、ノード 4 を起動してメンテナンス モードに入ります。</block>
@@ -5251,7 +5202,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="b03f4dc28a467dbdb927171247a0b5b9" category="list-text">FCまたはUTA/UTA2構成のシステムをお持ちの場合は、<block ref="a5fd50e267aa742edfb254af48aa31df" category="inline-link-macro-rx"></block> 。</block>
   <block id="84778c2e84fe5df40eb6e09940c8e6da" category="inline-link-macro">ノード2のディスクをノード4に再割り当てする、ステップ1</block>
   <block id="cb0e98223d1b689567ca884a4ed62d2f" category="list-text">FCまたはUTA/UTA2構成がない場合は、<block ref="77bda7bfb356817385991b20570adf55" category="inline-link-macro-rx"></block>ノード4がノード2のディスクを認識できるようにする。</block>
-  <block id="d043c2da61f7d367f9629fa3d167d15a" category="list-text">[[step8]]このセクションをスキップして<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>node4 に UTA/UTA2 カードまたは UTA/UTA2 オンボード ポートがない場合。</block>
   <block id="187112eef07fb14778dfdc513543ea21" category="list-text">[[auto_check_4_step10]]メンテナンスモードを終了:</block>
   <block id="5407697632a0e9289cbc1571bb74a606" category="list-text">その他のシステムアップグレードについては、<block ref="344c6df46b49421d4efd3ea3dc243233" category="inline-link-macro-rx"></block> 。</block>
   <block id="532277e802a820c7b240fc524a2dec1d" category="list-text">実行してノードをブートメニューで起動します。<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block> 。</block>
@@ -5259,7 +5209,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="90d15882071659f5c278c3188642dcdd" category="list-text">その他のシステムアップグレードについては、<block ref="85de4eaf81abb5e5b335f49a296af5f4" category="inline-link-macro-rx"></block> 。</block>
   <block id="1f3fcdf9022a6aa0f67562f35de18fd5" category="admonition">この段階では、 MetroCluster構成は正常な状態ではなく、解決すべきエラーが発生する可能性があります。見る<block ref="14c0e32a98a31f9fd4a16b635b2f7ebd" category="inline-link-macro-rx"></block>。</block>
   <block id="eae0d196e9a099a5039af7d8b6c1eb85" category="admonition">ベイ B はシャーシの右側にあります。</block>
-  <block id="36e28ccc6b6e4a11682d10de117d21e0" category="admonition">シャーシの電源はすでにオンになっているため、ノード 2 は完全に装着されるとすぐに起動を開始します。ノード 2 が起動しないようにするには、コントローラ モジュールを完全に挿入する前に、コンソール ケーブルと管理ケーブルを接続します。</block>
   <block id="851d3d8a0258ed7660584e68159aae4e" category="inline-link-macro">ノード3のFCまたはUTA/UTA2ポートを設定および構成する</block>
   <block id="9066510c72210c33ee0037190ab1e1ff" category="list-text">FCまたはUTA/UTA2構成のシステムをお持ちの場合は、<block ref="a2860b8490ec5aaef9fa8fc42929bb0a" category="inline-link-macro-rx"></block> 。</block>
   <block id="f6195d58e46fb7461b72fc0f7cfb9d9e" category="inline-link-macro">ノード1のディスクをノード3に再割り当てする、ステップ1</block>
@@ -5279,7 +5228,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="cb46a1722edd0d184e8f5160da79aef5" category="cell">_ノード3のUTA/UTA2ポートの確認と設定_をスキップして、<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block> 。</block>
   <block id="2466a7dc80883b138ff2ff9dd6381cb2" category="list-text">AFF A800システムにアップグレードする場合は、<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block> 。</block>
   <block id="72bb382f624988c585ab0960bd64853a" category="paragraph">node4 プラットフォームの「インストールおよびセットアップ手順」、適切なディスク シェルフ ドキュメント、および「HA ペア管理」の手順に従って、次の接続をケーブル接続します。</block>
-  <block id="52c7a636e7de8a73f74cbbbbba1d2bf1" category="cell">リンク:https://docs.netapp.com/us-en/ontap-/install/index.html</block>
   <block id="8ea9f47b485e9358783b1f1f3bd0f67e" category="paragraph">完了する必要があるかもしれません<block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>または<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>、または両方のセクション。</block>
   <block id="138a022be246afc5755a650cb07e42bf" category="list-text">ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カードがなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block> 。</block>
   <block id="ed601239c6d656a1963ef5d273a4656e" category="list-text">ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block> 。</block>
@@ -5289,8 +5237,78 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="56bfe01fd4ea060925fdb4a5681a751e" category="list-text">AFF A800またはAFF C800コントローラのアップグレードの場合、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
   <block id="b73b0ab9c4b2187dc386ae1c43da7a8d" category="list-text">AFF A800やAFF C800など、同じシャーシ内のコントローラモジュールを交換してシステムをアップグレードする場合、 NetApp、<block ref="51f73d2815dfaf31a7f9c6af800582d7" category="inline-link-macro-rx"></block> 。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています。</block>
   <block id="04f0b7701d1f9864fc94b5ec9ec68b2d" category="paragraph"><block ref="50932ac5c7bb93210d274e46c6eba169" category="inline-link-macro-rx"></block>。</block>
-  <block id="31eca10b08fe3338a95b8415c5f3e0eb" category="paragraph">パーマリンク: upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html リダイレクト: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html</block>
-  <block id="b17a443c8b1c59c4de1ea415914cd2f3" category="paragraph">パーマリンク: upgrade-arl-auto-affa900/resume_snapmirror_operations.html リダイレクト: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html</block>
   <block id="fcf09bf7ec3b71c764141820f1fc8020" category="paragraph">パーマリンク: upgrade-arl-auto-affa900/retire_node1.html リダイレクト: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html</block>
   <block id="21033397b04c40cfe5bfedb2ddbd85d7" category="paragraph">アップグレードシナリオが以下のサポート対象システムマトリックスに記載されている場合は、<block ref="19860560e89446d8ca0f4e7091d110a0" category="inline-link-macro-rx"></block>アップグレード手順を開始します。</block>
+  <block id="066b4e06813cb4484b4d19373d95d0b8" category="paragraph">アドオン アダプタまたはコントローラ マザーボード上に UTA/UTA2 ポートがあり、次の構成になっている場合がありますが、ノード 3 の UTA/UTA2 ポートの構成を確認し、必要に応じて変更する必要があります。</block>
+  <block id="78475a8af5a97db71bf76492940ae509" category="inline-link-macro">ノード4のインストールと起動、ステップ22</block>
+  <block id="1559ddd5d383480aa8545cb986dfd8ed" category="list-text">[[unset_maxwait_system_commands]]自己暗号化ドライブが構成で使用されており、<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block>変数に<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block>（例えば、<block ref="84eec0795d86d5ec7c8468425b9e48d8" category="inline-link-macro-rx"></block> ）の場合は、変数を設定解除する必要があります。</block>
+  <block id="b8ef9e4414711297f1f6127d87d8e422" category="admonition">中古コントローラーを準備するために必要な手順は、<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>この手順では、交換用コントローラ ハードウェアが新品であり、使用されていないことを前提としているため、これらのコマンドはこの手順には含まれていません。交換用コントローラ ハードウェアが以前に使用されていた場合、特にコントローラが 7-Mode でData ONTAPを実行していた場合には、テクニカル サポートに連絡する必要があります。</block>
+  <block id="4e36bc200e35ce76e1def1c9847c6f6c" category="paragraph">出力をキャプチャした出力と比較することができます<block ref="cec31d5141a762ae7d38f72febf6b8d9" category="inline-link-macro-rx"></block>_アップグレード用にノードを準備する_。</block>
+  <block id="c88514cf6aa90bbe248ea107fd638b94" category="list-text">完了<block ref="76543dc4b088af7954881ae9114056a2" category="inline-link-macro-rx"></block>_非ルート アグリゲートをノード 1 からノード 2 に再配置_ のセクションで再度実行します。</block>
+  <block id="2bd7251adb6cb85d06594cef2e46f762" category="list-text">残りの骨材を再配置するには、<block ref="c897e2b1fa0d7ad13f886cf1538be3eb" category="inline-link-macro-rx"></block>を通して<block ref="5adaf2d8e29100eb9027e3120c811323" category="inline-link-macro-rx"></block>「_非ルート アグリゲートをノード 2 からノード 3 に再配置する_」セクション。</block>
+  <block id="92755986e66b1c1b799f94e506b0e78b" category="list-text">完了<block ref="5adaf2d8e29100eb9027e3120c811323" category="inline-link-macro-rx"></block>_非ルート アグリゲートをノード 2 からノード 3 に再配置する_ セクションで再度実行します。</block>
+  <block id="0b20a5d3b7dcba1ce2ef1c3a32c62b57" category="list-text">ノード2に属していた残りのアグリゲートを再度実行して再配置します。<block ref="bd44335b572d50c129363547aa87bcee" category="inline-link-macro-rx"></block>を通して<block ref="c5be787c4fcfd0f49f014e8618d28c15" category="inline-link-macro-rx"></block>_node2 の非ルート アグリゲートを node3 から node4 に再配置_。</block>
+  <block id="7c83d808889f08051a5ca591ce7c8e27" category="list-text">[[relocate-step1]]次のサブステップを実行して、ルート以外のアグリゲートを再配置します。</block>
+  <block id="fc0d545a8e3aca29e30f066934728447" category="list-text">ノード 3 でパートナー システム ID が正しく設定されていることを確認します。</block>
+  <block id="dfcbf33b107ee8cbdb248e3973591ecd" category="list-text">[[relocate-step5]]ルート以外のアグリゲートを再配置します。</block>
+  <block id="ed787946b7250668aadee490b38bc4a4" category="section-title">どのアップグレード手順を使用すればよいですか?</block>
+  <block id="dd04b613766be00015be37c27c9287a8" category="paragraph">適切なアップグレード手順を選択するには、下の表に記載されているすべての質問を確認してください。</block>
+  <block id="40c8ff48fe09ea0079684fdd1a250ec0" category="cell">自分自身に問いかけてみましょう…</block>
+  <block id="3b67351e5cad04409e6a96d3746ac449" category="cell">答えが「はい」であれば、これを行うことができます...</block>
+  <block id="7276d228ae5909a1600376ea04afcc20" category="cell">元のノードと新しいノードで異なるソフトウェア バージョンを実行していますか?</block>
+  <block id="d36d3c0e8d8d1ae2b69767c2d21f4de1" category="cell">元のノード上のONTAPバージョンを、サポートされている最高バージョンにアップグレードします。可能であれば、新しいノードは元のノードで実行されているONTAPバージョンをサポートする必要があります。これが不可能な場合は、<block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block>元のノードをサポートされている最高バージョンにアップグレードします。元のノードと新しいノード間のバージョンの差は 4 を超えることはできません。たとえば、 ONTAP 9.8 および 9.12.1 はサポートされていますが、 ONTAP 9.8 および 9.13.1 はサポートされていません。<block ref="e34181b97f6f4b1fe67c330fb826ba03" category="inline-link-macro-rx"></block>。</block>
+  <block id="218b292436939056129ace4ef7a755ab" category="cell">中断を伴うアップグレードを実行しますか?</block>
+  <block id="7556c42574b8863b01a23cb64beb17f6" category="cell"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block>。これには、元のシステムのデータを保存するための独自のストレージと棚を備えた新しいシステムが必要です。特定のアップグレードでは、コントローラ シェルフからの変換が可能です。</block>
+  <block id="8988c8c891d1b170244fa2801c8f7823" category="cell">中断のないアップグレードを実行しますか?</block>
+  <block id="2f5546c2bb23945783cbdb6d6e128cdf" category="paragraph">次のいずれかの方法でアップグレードします。</block>
+  <block id="0678555704a75d8c6ba937ca89e44347" category="inline-link-macro">ボリュームを移動する</block>
+  <block id="7a5d9d481746c5a733396a92b9fa9ad9" category="list-text"><block ref="7a5d9d481746c5a733396a92b9fa9ad9" category="inline-link-macro-rx"></block></block>
+  <block id="7c15b3f4f4497023a45b26abfbd34fa1" category="paragraph">これには、新しいノードを結合し、ボリュームと LIF を新しいノードに移動し、クラスターから削除するノードを結合解除する必要があります。  2 ノードのスイッチレス クラスターをアップグレードする場合は、新しいノードを追加する前に、クラスター スイッチのペアを使用してスイッチ接続クラスターに変換します。</block>
+  <block id="6de3b933715f67f0e1503dadf7be11b5" category="inline-link-macro">集約再配置を使用する</block>
+  <block id="1326c781e22221bcfee09723f0a2bfc2" category="list-text"><block ref="1326c781e22221bcfee09723f0a2bfc2" category="inline-link-macro-rx"></block></block>
+  <block id="af07e0611bc43f9c7f0e394b682e76a9" category="paragraph">ARL は交換手順です。新しいノードを使用してクラスターを拡張および縮小する必要がないため、2 ノードのスイッチレス クラスターには有利です。ボリュームを移動するときに、アグリゲートを再配置してデータを移動すると、アグリゲート間でデータをコピーするよりも高速になります。</block>
+  <block id="999f41e22973138ebb057a2c18787f5b" category="cell">モジュラーシステムはありますか?  *注*: モジュラー システムでは、コントローラには内部ディスクがなく、すべてのストレージは外部接続されたシェルフ内にあります。</block>
+  <block id="48dea881883b05a136108fac6e95bcae" category="cell"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block>。</block>
+  <block id="87f099da08cbe3849d9395ec1b7d8604" category="cell">統合システムがあり、ボリュームを移動してアップグレードしたいですか? *注*: 統合システムでは、コントローラには内部ディスクがあり、ストレージはコントローラ シャーシ内と外部接続されたシェルフに収容されています。外部シェルフはストレージ拡張用であり、すべてのシステム構成に含まれているとは限りません。</block>
+  <block id="03478f7299af730e1a78b0850b26043c" category="inline-link-macro">システムがサポートされていることを確認する</block>
+  <block id="d66f8add2b0ea52e5e5255f9e37c4dfd" category="list-text"><block ref="a057e8af1198737f32477ae9faf7d879" category="inline-link-macro-rx"></block>。</block>
+  <block id="8362baab856f8e12516f78c5f4908211" category="list-text"><block ref="73d856629c7408ec32b9b5ffa5af9ed6" category="inline-link-macro-rx"></block>。</block>
+  <block id="bb9da06465d483320cbe6e41cf99dc3f" category="cell">統合システムがあり、既存のシャーシとディスクを維持しながら、コントローラー モジュールのみを交換してアップグレードしたいと考えていますか?</block>
+  <block id="6087f2f30b2a32c0234e7e376519a44e" category="inline-link-macro">同じシャーシとディスクを維持しながら、ARL を使用してアップグレードします。</block>
+  <block id="dfd865f2d8a7847deea386561d57d6ab" category="cell"><block ref="d5dab9ae669d9433d7055784bb29c8c7" category="inline-link-macro-rx"></block>。</block>
+  <block id="c016f2ad87c195aba089a085eb1654e7" category="cell">SVM を再配置していますか?</block>
+  <block id="4fb2cb21dc3e75dde8f863702755da43" category="inline-link-macro">SVMのデータ移動 - 概要</block>
+  <block id="1c42ed2b59214b87d822dd5017bc2e77" category="cell">参照<block ref="f5ec7b921dd29fa0a34c4b5d1f4565b8" category="inline-link-macro-rx"></block>。</block>
+  <block id="9ec7090eb33407e101e04bf9b69e3589" category="cell">MetroCluster構成をアップグレードしていますか?</block>
+  <block id="52e927fa9ff9982893744a27582c6c25" category="cell">参照<block ref="64af35d559b5326923c0d917526da292" category="inline-link-macro-rx"></block>。</block>
+  <block id="ee02ff06a678b4f0bf35d84ad8172be2" category="cell">個々のコンポーネントを交換するのですか?</block>
+  <block id="d65572507ebaf55db388e34a847557ea" category="cell">参照<block ref="bcf4c677eadf935a910ed0b1e7ac432c" category="inline-link-macro-rx"></block>そのコンポーネントのフィールド交換可能ユニット (FRU) のチラシを見つけます。</block>
+  <block id="4c57db980fd04065c39ac4dffcef854a" category="section-title">例: FAS9500からFAS90へのアップグレード</block>
+  <block id="18f154e130f3704e87f40b22af08eb89" category="paragraph">この例では、 FAS9500から FAS90 コントローラーへのアップグレードの可能な回答を示します。</block>
+  <block id="a97ea56b0e00b2379736ae60869ff66a" category="cell">質問</block>
+  <block id="67ca848a550c561e54a81891f0d6d223" category="cell">回答例</block>
+  <block id="be3ad2de4d2b8e3ba0b5c1aa4b8cb05b" category="cell">いいえFAS9500と FAS90 はどちらもONTAP 9.15.1 を実行します。</block>
+  <block id="d3334963d764fa4e8de5f77317d6ec86" category="cell">中断を伴うアップグレードを実行しますか?</block>
+  <block id="5eeadbc38fb7c86d39e9b4b88587473b" category="cell">いいえ。アップグレード中も実稼働環境をオンラインのままにしておきたいのです。</block>
+  <block id="980384b8326ad5f69899ae62e2ab1ecb" category="cell">○システムがモジュラー式か統合式かに応じて、ボリュームを移動するか、アグリゲート再配置 (ARL) を使用することでアップグレードできます。</block>
+  <block id="639cdefe077091e96c8787665fcbb7ca" category="cell">モジュラーシステムはありますか?</block>
+  <block id="1a4026ddffb82b6b9ac717175bed5832" category="cell">○FAS9500は、外部ストレージ シェルフを備えたモジュラー システムです。  ARL を使ってアップグレードできます。</block>
+  <block id="6b5453e8fcd8e2749847ab38c45261c3" category="cell">統合システムがあり、ボリュームを移動してアップグレードしたいですか?</block>
+  <block id="9af392aee692c2ff21ce87eb631be389" category="cell">いいえFAS9500はモジュラー システムなので、これは適用されません。</block>
+  <block id="575a6b1f82c7a41dfcc1260ff9935fcc" category="cell">いいえ。同じ SVM を維持しながらハードウェアをアップグレードしています。</block>
+  <block id="5d32d7e49401b6906ebfeb106c811c06" category="cell">いいえ。これは標準の HA ペア クラスタです。</block>
+  <block id="01f86cedd6c4c38a70b4de409ea5b9cd" category="cell">いいえ。コントローラーシステム全体をアップグレードしています。</block>
+  <block id="c608ae28350f6ab483c6756e71344bef" category="paragraph">*この例の推奨アップグレード パス:*<block ref="a1631b4a67814fc247ed3125116eb66b" category="inline-link-macro-rx"></block> FAS9500はモジュラー システムであり、ARL は中断のないアップグレード方法を提供するためです。</block>
+  <block id="8ae064b1f26a14a321bdd37f8e7c147b" category="cell">AFF C60、AFF C80</block>
+  <block id="a01ca45740c62abf88d40d7c6b75626c" category="paragraph">^2^ AFF A800または内部ディスクと外部ディスクをサポートするシステムにアップデートする場合は、内部 NVMe ディスク上のルート アグリゲートに関する特定の手順に従う必要があります。参照<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>そして<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
+  <block id="8ea4792550e67c99e46356bbdb3b5adc" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、<block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>セクション。発生する可能性のある障害に関する情報は、手順のフェーズごとにリストされています。<block ref="1e7f97890c56f8e84d1c3bfb7b3e84a7" category="inline-link-macro-rx"></block> 。</block>
+  <block id="9461d51010fac8414124b0927dca8e3d" category="list-text">MetroCluster構成の場合、<block ref="a5fd50e267aa742edfb254af48aa31df" category="inline-link-macro-rx"></block>ノードに接続されているディスクを検出します。</block>
+  <block id="576aba72a7a92b2c78395c8632ac2b4a" category="admonition">この段階でエラーが発生する可能性があります。エラーが発生した場合は、以下のサブステップを繰り返します。<block ref="3d86a68aa8fb2ef1661a4814f02f3b64" category="inline-xref-macro-rx"></block>システムが正常に起動するまで。</block>
+  <block id="1b251a6545aaa60cfce829c062bad4c6" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、<block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>詳細情報および可能な解決策については、こちらをご覧ください。</block>
+  <block id="7595b5b2f33e67aef80e7fb106f5d9c7" category="paragraph">交換用モジュールを搭載した Node1 の起動準備が完了しました。サポートされている交換モジュールは、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
+  <block id="814388f801b80ae9095417204e6c9db9" category="paragraph">交換用モジュールを搭載した Node2 の起動準備が完了しました。サポートされている交換モジュールは、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
+  <block id="03abda8c19912cead385e464a7c36590" category="list-text">ダウンタイムを含む既存のシステムからアップグレードする場合は、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block>ストレージを移動してコントローラ ハードウェアをアップグレードするか、テクニカル サポートにお問い合わせください。参照<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>_ボリュームまたはストレージの移動によるアップグレード_にリンクします。</block>
+  <block id="b2cf47c2f8de48c91a2658d1bae42ab8" category="admonition">シャーシの電源はすでにオンになっているため、node2 は完全に装着されるとすぐに起動を開始します。ノード2 が起動しないようにするには、コントローラー モジュールを完全に挿入する前に、コンソール ケーブルと管理ケーブルを接続します。</block>
+  <block id="914a76ca2b7f6ddaae8d7322d8dfd459" category="paragraph">交換用コントローラ モジュールがシャーシにインストールされ、電源がオンになっていない限り、交換用コントローラ モジュールのブート メディアにインストールされているONTAPのバージョンを確認することはできません。交換システムのブート メディア上のONTAPバージョンは、アップグレードする古いシステムで実行されているONTAPバージョンと同じである必要があり、ブート メディア上のプライマリ ブート イメージとバックアップ ブート イメージの両方が一致している必要があります。アップグレードでサポートされる最小のONTAPバージョンを確認するには、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
+  <block id="fa25f8cd417cf37165c34fcb9720ffe3" category="list-text">[[verify-rcf-step3]]クラスタ ポートとスイッチ RCF を確認します。</block>
 </blocks>
