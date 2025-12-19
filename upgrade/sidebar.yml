@@ -64,8 +64,8 @@ entries:
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"
   - title: SAN LIF を移動、削除、または作成する
     url: "/upgrade/upgrade_move_delete_recreate_san_lifs.html"
-  - title: 元のノードを分離
-    url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
+  - title: 元のノードを削除する
+    url: "/upgrade/upgrade-remove-original-nodes.html"
   - title: アップグレードを完了する
     url: "/upgrade/upgrade-complete-move-volumes.html"
 - title: AFF A250をAFF A400にアップグレード

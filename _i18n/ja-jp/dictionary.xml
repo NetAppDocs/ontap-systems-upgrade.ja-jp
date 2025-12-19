@@ -1263,7 +1263,6 @@
   <block id="56089842bd614396cfba7cdf9bb6601f" category="list-text">サポート対象モデルのノードをディスクシェルフに変換し、新しいノードに接続することを計画している。</block>
   <block id="3d9010fa119828bc81f438c75af15b63" category="paragraph">ストレージを移動してコントローラハードウェアをアップグレードする手順では、元のノードは node1 と node2 に、新しいノードは node3 と node4 と呼ばれます。説明されている手順では、 node1 は node3 に置き換えられ、 node2 は node4 に置き換えられます。</block>
   <block id="5b3de670b2de55fec257c6f89ab421bc" category="summary">ボリュームを移動してアップグレードする場合は、元のノードを準備し、新しいノードをクラスタに追加します。ボリュームを新しいノードに移動し、 LIF を設定して、クラスタから元のノードを削除します。ボリュームの移動によるアップグレード手順は無停止で実行できます。</block>
-  <block id="cf9dafa4aad7081e3241e5bc4acb350f" category="inline-xref-macro">クラスタから元のノードを分離</block>
   <block id="f5b49dd631a7fa0c45fc2aea8bcfa384" category="paragraph">使用している ONTAP のバージョンに対応した手順を使用する必要があります。</block>
   <block id="51bea01f527b8a0a7714408789058c6b" category="summary">元のノードをシャットダウンして削除するときは、アップグレードについての AutoSupport メッセージを送信し、メールボックスを削除し、ノードの電源をオフにして、シャーシを取り外す必要があります。</block>
   <block id="0b5874c3f69c1393f6461a11d78dfa9c" category="list-text">node1 と node2 から AutoSupport メッセージを送信し、テクニカルサポートにアップグレードについて通知します。</block>
@@ -1301,16 +1300,9 @@
   <block id="b14047e1956c68f095842760b1beaea2" category="paragraph">次の画面はブートメニューのプロンプトを示しています。</block>
   <block id="d4041bfba261eda3180ae9fbf6285d95" category="list-text">次のようなプロンプトが表示されたら 'yes' と入力します</block>
   <block id="8b8e41e588d3f28837be58712aeec25a" category="paragraph">システムは wipeconfig 手順を起動し、再起動します。手順が完了すると、システムはブートメニューに戻ります。</block>
-  <block id="be560856af220999f45b0e64a842465a" category="summary">ボリュームを新しいノードに移動したら、クラスタから元のノードを削除します。ノードを削除すると、ノードの設定が消去され、すべてのディスクが初期化されます。</block>
-  <block id="f61d9690213fcb44fc551adab505eb85" category="paragraph">ボリュームを新しいノードに移動したら、クラスタから元のノードを削除します。ノードを削除すると、ノードの設定が消去され、すべてのディスクが初期化されます。</block>
   <block id="72992cc1c16f1dbbbcb7cc77a55977d9" category="list-text">advanced 権限レベルに切り替えます。</block>
   <block id="dc4a67b269dfaba9479198e3f11a2a68" category="list-text">イプシロンが設定されたノードを特定します。</block>
   <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">次の例では、「 node0 」に現在イプシロンが設定されています。</block>
-  <block id="c66d0d8c1fe1605513edaaeec7a73d16" category="list-text">元のノードのいずれかにイプシロンが設定されている場合は、別のノードにイプシロンを移動します。</block>
-  <block id="91ab806eca55f1234d360a9bf96615a0" category="list-text">クラスタに残すノードから、元の各ノードをクラスタから削除します（ advanced 権限レベル）。</block>
-  <block id="a38cfcfcdebdf9c05a1cd632c11918b8" category="paragraph">参加していないノードは自動的にリブートされ、ブートメニューで停止します。</block>
-  <block id="7ab0d0bb58501cb25dab62cdcffddfb5" category="list-text">未参加ノードのブートメニューからオプション * （ 4 ） Clean configuration and initialize all disks * を選択して、ノードの設定を消去し、すべてのディスクを初期化します。</block>
-  <block id="35c0226d4e8a9cad1a873c648504d626" category="list-text">両方のプロンプトで「 y 」と入力します。</block>
   <block id="7f1e916ec0aa6a4296149be58ba61a1b" category="list-text">クラスタにノードが 2 つしか残っていない場合は、 2 ノードクラスタのハイアベイラビリティを設定します。</block>
   <block id="c1f192f6d626bc5f27fc74b0848a1250" category="paragraph">cluster ha modify -configured true</block>
   <block id="3f1179e7186b307a8709f115c39b6447" category="summary">交換用ノードを稼働状態に戻す前に、 LIF がホームポートにあることを確認し、 AutoSupport が有効な場合は交換用ノードのシリアル番号を登録して、自動ギブバックをリセットする必要があります。</block>
@@ -2273,7 +2265,6 @@
   <block id="51e0a0afc4d011a307d3419bfe742eba" category="sidebar">ボリュームを移動してアップグレード</block>
   <block id="ff56b4f5944c3419d2cbe4a5a19eb150" category="sidebar">新しいノードを設置して追加</block>
   <block id="f86f16f11e093ddd1a9acafc8ee58e6f" category="sidebar">SAN 以外のデータ LIF とクラスタ管理 LIF を移動する</block>
-  <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">元のノードを分離</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">ノード 4 で FC または UTA / UTA2 設定を設定します</block>
   <block id="82a3300ad94a5e1dcf0a6abbfe1060e2" category="paragraph">このコンテンツの手順を実行するときは、参照コンテンツを参照するか、参照 Web サイトにアクセスする必要があります。</block>
   <block id="ec5873b9b6861954a7c07d183dd486b0" category="section-title">参照コンテンツ</block>
@@ -2372,7 +2363,6 @@
   <block id="55b615d5a5d5462e3f46ce9376778ab0" category="list-text">node3 の起動後に node3 に VLAN とインターフェイスグループの情報を再作成できるように、 VLAN とインターフェイスグループの情報を記録します。</block>
   <block id="a2e30cff23423051f81bd802a4867e92" category="list-text">ポートおよびインターフェイスグループの情報をまだ保存していない場合は、ノード 3 のブート後にそれらの VLAN とインターフェイスグループをノード 3 で再作成できるように、それらの情報を記録します。</block>
   <block id="d5736566f3b38c38d89537f2b1d352ca" category="list-text">まだ保存していない場合は、 VLAN および ifgrp の情報を記録して、ノード 3 のブート後に VLAN および ifgrp を作成し直すことができます。</block>
-  <block id="94e9d0bee98aefbd97c04b1401f6c790" category="paragraph">クラスタが SAN 環境にある場合は、元のノードから不要になった SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。</block>
   <block id="2b3144340f2db340218f76914a6af256" category="doc">新しい SAN LIF を作成するか、削除した SAN LIF を再作成します</block>
   <block id="051662f99e538a90d87104fddd664c40" category="inline-link">ネットワークインターフェイスが作成されます</block>
   <block id="0b3461f9ff1cc0e9748c51914f12d1ac" category="paragraph">クラスタ環境の要件に応じて、この手順で削除した新しい SAN LIF を作成するか、または SAN LIF を再作成することができます。を使用して、 SAN LIF を作成または再作成できます<block ref="307c1988750a87c4014551385f0a3aa7" category="inline-link-rx"></block> OnCommand ® System Manager_documentation を使用したクラスタ管理の手順</block>
@@ -2998,10 +2988,6 @@
   <block id="038bf310b30027962de2d4e7d3c544e6" category="paragraph">「system node AutoSupport invoke -node _node_name」-type all -message " MAINT=2h Upgrading _node_name _from_platform_original_to _platform_new_new_"」というメッセージが表示されます</block>
   <block id="10de09f0f92f196f1e5984884c43ba27" category="list-text">storage failover modify -node node_name -enabled false</block>
   <block id="981b4567a35216af18afaec3c97bc50d" category="paragraph">system node halt -node _node_name _`</block>
-  <block id="59e7cb89beb0d9c0f35ba87b5c4549e3" category="list-text">元のノードでハイアベイラビリティ構成を無効にします：「storage failover modify -node _original_node_name __ enabled false</block>
-  <block id="787149e64a0bc37710b15cd205977d92" category="list-text">元のノードからイプシロンを削除します。+`cluster modify -node _original_node_name __-epsilon false</block>
-  <block id="cbb7de31a52f2a91eb5415ac80ca9da6" category="list-text">別のノードにイプシロンを割り当てます。+`cluster modify -node _new_node_name __-epsilon true</block>
-  <block id="01d317947cf0fa7c03a1243dac797c57" category="paragraph">'cluster unjoin -NODE_ORIGNED_NODE_NAME_`</block>
   <block id="57160bbb15f3acc82c1eac8e82c87937" category="paragraph">「network port modify -node _node_name --port_port_name_-mtu 9000 -ipspace Cluster」</block>
   <block id="1db9d300a7d27735fb49e694ad616a9e" category="paragraph">「network interface migrate -vserver_vserver_name __ lif_lif_name_-source-node node1 -destination-node node1 -destination-port_name_`</block>
   <block id="cf8f2405fecce8ee1f21a7233d89115d" category="paragraph">「network interface modify -vserver Cluster -lif LIF_name–home-port_port_name_`」です</block>
@@ -4018,7 +4004,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="66686106038dcdf0e7037a2679e6be2b" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="a931a68d44bca92701e3cc2575cb8e58" category="inline-link-macro-rx"></block></block>
   <block id="2431d8b533362d8472db79a8849836be" category="paragraph">クラスタの内容とクラスタ環境に応じて、SAN LIFを移動、削除、作成するか、削除したSAN LIFを再作成します。</block>
   <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">7</block>
-  <block id="3c49f3e0113334d7428d508b5d1dba98" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="a6976dfe70e597796c77b019f33f6b95" category="inline-link-macro-rx"></block></block>
   <block id="baca0ca6729684fd54206793ae4b5bd5" category="inline-image-macro">8</block>
   <block id="266c2a634fcfab43713325017c0d1fc1" category="paragraph-title"><block ref="430057c670c01688e904ed2ba129a0b5" category="inline-image-macro-rx" type="image"></block><block ref="25f018c3ca0d5083cf0a96e5a5daf8b3" category="inline-link-macro-rx"></block></block>
   <block id="55388932978c50267bc31e99b8d1d4d9" category="paragraph">ボリュームを移動することでアップグレードの手順を完了するには、サービスプロセッサ（SP）を設定し、新しいライセンスをインストールし、AutoSupportをセットアップします。また、ストレージまたはボリュームの暗号化を設定し、FCポートまたはNCAポートを設定する必要がある場合もあります。</block>
@@ -4098,7 +4083,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="7679a865afb03bdbcc1cbd8757f79d09" category="list-text"><block ref="7679a865afb03bdbcc1cbd8757f79d09" category="inline-link-macro-rx"></block></block>
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">ストレージを移動してアップグレードするには、元のノードを準備し、新しいノードをセットアップします。一部のプラットフォームモデルでは、新しいノードへの内蔵ストレージの移行がサポートされています。新しいノードにディスクを再割り当てし、ルートボリュームの設定をリストアし、ネットワークポートを設定します。</block>
   <block id="ffaf71c89815c9497697e87f8d77a27d" category="paragraph">ボリュームの移動によるコントローラハードウェアのアップグレードは無停止で実行できます。アップグレードを開始する前に、一般的なアップグレードシナリオとアップグレードに関する考慮事項を確認してください。</block>
-  <block id="cf41c84e5298fdad396a8a0dd7eaf0f3" category="paragraph">ボリュームを移動してアップグレードするには、元のノードを準備し、新しいノードをクラスタに追加します。新しいノードにボリュームを移動し、LIFを設定し、クラスタから元のノードを削除します。</block>
   <block id="4b5907b5b5c704438991bdf09784779a" category="list-text">ブートメニューで、「8」と入力してノードをリブートし、自動ブート中にCtrl+Cキーを押してノードをLOADERプロンプトで停止します。</block>
   <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">ARLのアップグレード手順を選択</block>
   <block id="e2de59a5a77b66213e7d85b56f1eb224" category="list-text">LOADERプロンプトで、メンテナンスモードに切り替えます。</block>
@@ -5263,7 +5247,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="2f5546c2bb23945783cbdb6d6e128cdf" category="paragraph">次のいずれかの方法でアップグレードします。</block>
   <block id="0678555704a75d8c6ba937ca89e44347" category="inline-link-macro">ボリュームを移動する</block>
   <block id="7a5d9d481746c5a733396a92b9fa9ad9" category="list-text"><block ref="7a5d9d481746c5a733396a92b9fa9ad9" category="inline-link-macro-rx"></block></block>
-  <block id="7c15b3f4f4497023a45b26abfbd34fa1" category="paragraph">これには、新しいノードを結合し、ボリュームと LIF を新しいノードに移動し、クラスターから削除するノードを結合解除する必要があります。  2 ノードのスイッチレス クラスターをアップグレードする場合は、新しいノードを追加する前に、クラスター スイッチのペアを使用してスイッチ接続クラスターに変換します。</block>
   <block id="6de3b933715f67f0e1503dadf7be11b5" category="inline-link-macro">集約再配置を使用する</block>
   <block id="1326c781e22221bcfee09723f0a2bfc2" category="list-text"><block ref="1326c781e22221bcfee09723f0a2bfc2" category="inline-link-macro-rx"></block></block>
   <block id="af07e0611bc43f9c7f0e394b682e76a9" category="paragraph">ARL は交換手順です。新しいノードを使用してクラスターを拡張および縮小する必要がないため、2 ノードのスイッチレス クラスターには有利です。ボリュームを移動するときに、アグリゲートを再配置してデータを移動すると、アグリゲート間でデータをコピーするよりも高速になります。</block>
@@ -5311,4 +5294,56 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="b2cf47c2f8de48c91a2658d1bae42ab8" category="admonition">シャーシの電源はすでにオンになっているため、node2 は完全に装着されるとすぐに起動を開始します。ノード2 が起動しないようにするには、コントローラー モジュールを完全に挿入する前に、コンソール ケーブルと管理ケーブルを接続します。</block>
   <block id="914a76ca2b7f6ddaae8d7322d8dfd459" category="paragraph">交換用コントローラ モジュールがシャーシにインストールされ、電源がオンになっていない限り、交換用コントローラ モジュールのブート メディアにインストールされているONTAPのバージョンを確認することはできません。交換システムのブート メディア上のONTAPバージョンは、アップグレードする古いシステムで実行されているONTAPバージョンと同じである必要があり、ブート メディア上のプライマリ ブート イメージとバックアップ ブート イメージの両方が一致している必要があります。アップグレードでサポートされる最小のONTAPバージョンを確認するには、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
   <block id="fa25f8cd417cf37165c34fcb9720ffe3" category="list-text">[[verify-rcf-step3]]クラスタ ポートとスイッチ RCF を確認します。</block>
+  <block id="2138fe46f5a4636fa20671bcd5e370b9" category="paragraph">これには、新しいノードを結合し、ボリュームと LIF を新しいノードに移動し、クラスターから削除するノードを結合解除する必要があります。2 ノードのスイッチレス クラスターをアップグレードする場合は、新しいノードを追加する前に、クラスター スイッチのペアを使用してスイッチ接続クラスターに変換します。</block>
+  <block id="1e7b20b34e3e14bc87b5019115ef6319" category="paragraph">ボリュームを移動してアップグレードするには、元のノードを準備し、新しいノードをクラスターに参加させます。ボリュームを新しいノードに移動し、LIF を構成して、元のノードをクラスターから削除します。</block>
+  <block id="febd744aeea49809fb1302b73fa6bd8c" category="inline-link-macro">元のノードをクラスターから削除する</block>
+  <block id="5f9dcd9884f9526b20b37705a8075dc7" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
+  <block id="04c0dc0ac08f266118ef312b94f34222" category="paragraph">ボリュームが新しいノードに移動されたら、元のノードをクラスターから削除します。ノードを削除すると、ノードの構成が消去され、すべてのディスクが初期化されます。</block>
+  <block id="1411918bbf69ad4104cdc56864b603a3" category="paragraph"><block ref="1411918bbf69ad4104cdc56864b603a3" category="inline-link-macro-rx"></block></block>
+  <block id="cbbd4da8364a1dcf2593c3eec92abe27" category="paragraph"><block ref="cbbd4da8364a1dcf2593c3eec92abe27" category="inline-link-macro-rx"></block></block>
+  <block id="cf954e9acfd74a54fe766c2c130222c6" category="paragraph"><block ref="cf954e9acfd74a54fe766c2c130222c6" category="inline-link-macro-rx"></block></block>
+  <block id="638758de43a31bd2903f659581f78fa7" category="paragraph"><block ref="638758de43a31bd2903f659581f78fa7" category="inline-link-macro-rx"></block></block>
+  <block id="d350fa659f98e0153758612c202e6a04" category="summary">ボリュームが新しいノードに移動されたら、元のノードをクラスターから削除します。ノードを削除すると、ノードの構成が消去され、すべてのディスクが初期化されます。</block>
+  <block id="174d5560f210e4b4b5a29f385b2c8035" category="paragraph">ボリュームを元のノードから新しいノードに移動し、データ LIF を移動または削除した後、元のノードをクラスターから削除します。ノードを削除すると、ノードの構成が消去され、すべてのディスクが初期化されます。</block>
+  <block id="fcd2352296590a0e2accae2dd13e31d6" category="list-text">[[disable-ha]]元のノードの高可用性（HA）構成を無効にします。</block>
+  <block id="2c1e3c1177e032883dd8cedb7237369c" category="paragraph"><block ref="cfb56c7a6f1b3b0505ee17fb92209fba" prefix="" category="inline-code"></block></block>
+  <block id="bf80321073982fe86a71c1af9fac0650" category="list-text">[[epsilon-true]]元のノードの 1 つが epsilon を保持している場合は、クラスターから削除しないノードに epsilon を移動します。</block>
+  <block id="4b839279170b4ba0703853fb5c2cb9da" category="list-text">元のノードからイプシロンを削除します。</block>
+  <block id="222406298d9a2f2c033dca8a74afd55c" category="paragraph"><block ref="de7321e59bd990ec3ef09ca78116a7b0" prefix="" category="inline-code"></block></block>
+  <block id="7a788eb6946d9ba1aaad7df7bfb5f5b2" category="list-text">イプシロンを別のノードに割り当てます。</block>
+  <block id="b0c1e0271345231f93266b65411815c2" category="paragraph"><block ref="45f47d97caec3e0967eb10311176b1bb" prefix="" category="inline-code"></block></block>
+  <block id="14f47a56746d8dd06d7152a27fa22219" category="list-text">現在のマスター ノードを特定します。</block>
+  <block id="e477c0774c6014b5173ffa6810d512ab" category="paragraph"><block ref="484f24f8e4da80a1185aa63fa1d5fc08" prefix="" category="inline-code"></block></block>
+  <block id="f56d76980d50ef81b1a4f2246dbcf0da" category="paragraph">マスターノードは、次のようなプロセスを保持するノードです。<block ref="d724f231a9a7b89757c4394d6622bc47" prefix=" " category="inline-code"></block>、<block ref="7b588256fbdc51b849239cf8988219ff" prefix=" " category="inline-code"></block>、<block ref="4855d47f82dd3929173aadd191f2a0ee" prefix=" " category="inline-code"></block>、<block ref="1ed70af3fcff64fcd6c818d86b6e6150" prefix=" " category="inline-code"></block>、 そして<block ref="29fa19e764c47fa898f697bf7bb940db" prefix=" " category="inline-code"></block>。</block>
+  <block id="b799370e99c40124bdcc44e4ed7a5704" category="list-text">削除するノードが現在のマスター ノードである場合は、クラスター内に残っているノードをマスター ノードとして選択できるようにします。</block>
+  <block id="ac13fc86d8d30a4abbb50425385fe453" category="list-text">現在のマスター ノードをクラスターに参加できないようにします。</block>
+  <block id="7021c105080628669b133405100efc63" category="paragraph"><block ref="f2b8f9d3d7fb27d37deaaf84ee69a072" prefix="" category="inline-code"></block></block>
+  <block id="84023f697c3d7f175eb48d9e7f81fe97" category="paragraph">適格性が回復されるまで、ノードは異常としてマークされます。マスター ノードが参加できなくなると、クラスタ クォーラムによって残りのノードの1つが新しいマスターとして選出されます。</block>
+  <block id="834ca6428bef51142e4d70a6c409829e" category="paragraph">HA ペアの最初のノードでこの手順を実行する場合は、そのノードのみを不適格としてマークする必要があります。HA パートナーのステータスを変更しないでください。</block>
+  <block id="c45a4c98c59ca383859dc9ca2d7b3243" category="paragraph">パートナー ノードが新しいマスターとして選択された場合は、イプシロンを保持しているかどうかを確認する必要があります。パートナー ノードがイプシロンを保持している場合は、イプシロンを無効にする前に、クラスター内に残っている別のノードにイプシロンを移動する必要があります。これらの手順を繰り返してパートナー ノードを削除するときにこれを実行します。</block>
+  <block id="fa46d2d3d8cfe760c5a42ee99c2bb479" category="list-text">以前のマスター ノードを再びクラスタに参加できるようにします。</block>
+  <block id="c1f0c4bf4b8a0d924276f97311b2b56c" category="paragraph"><block ref="14dcae85a302a6e4089a3c2a5636ff04" prefix="" category="inline-code"></block></block>
+  <block id="342dbc3880ef101e1ed2b5b78347d7d3" category="list-text">クラスタ内に残っているノードのリモート ノード管理 LIF またはクラスタ管理 LIF にログインし、元の各ノードをクラスタから削除します (高度な権限レベル)。</block>
+  <block id="eb1f2131641f5195e8a8d9b93f797562" category="paragraph">ノード名付き:</block>
+  <block id="9900c92f7c4f327f3d129fcdb88c5a95" category="paragraph">ノード IP の場合:</block>
+  <block id="e1b2dd8ee5d4a8767f514f7140d3b5b7" category="paragraph">混合バージョンのクラスタがあり、最後の下位バージョンのノードを削除する場合は、<block ref="980f71817e3a06bee87bd061faeb423d" prefix=" " category="inline-code"></block> これらのコマンドにパラメータを指定します。</block>
+  <block id="76732b147c5a72422d23da150a4c5434" category="paragraph">次の内容のメッセージが表示されます。</block>
+  <block id="f80f10147ba45bd1fef6e3c0af2ad9b6" category="list-text">ノードのフェイルオーバー パートナーをクラスタから削除する必要があること。</block>
+  <block id="f8794e0f00d445cfe92a1a1eeb5fdb7d" category="list-text">ノードを削除した後、クラスターに再度参加させる前に、ブート メニュー オプション *(4) 構成を消去してすべてのディスクを初期化する* またはオプション *(9) 高度なドライブ パーティションの構成* を使用して、ノードの構成を消去し、すべてのディスクを初期化する必要があります。</block>
+  <block id="4fcbf7b91c2fe0247f60ee2199672575" category="paragraph">ノードを削除する前に対処が必要な条件がある場合は、エラー メッセージが表示されます。メッセージの内容は、たとえば、ノードに削除が必要な共有リソースがある、あるいはノードのクラスタHA構成またはストレージ フェイルオーバー構成を無効にする必要があるなどの場合があります。</block>
+  <block id="39e6f8500af6b07f2903990336145751" category="paragraph">ノードがクォーラム マスターの場合、クラスタのクォーラムがいったん失われて、すぐに戻ります。クォーラムが失われるのは一時的であり、データの操作には影響しません。</block>
+  <block id="5b04742f17c701ff3b58fe32667cc471" category="list-text">失敗メッセージがエラー状態を示している場合は、それらの状態に対処して再度実行してください。<block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> または<block ref="5d16191a3b7abaee7967de5fd82cd336" prefix=" " category="inline-code"></block> 指示。</block>
+  <block id="bb73c71d58dba4f68bd9a8e3fa5709b6" category="paragraph">ノードがクラスターから正常に削除されると、自動的に再起動します。</block>
+  <block id="b16b992bede9cd61adafd05ccfa8b5db" category="list-text">ノードを転用する場合は、ノードの設定を消去し、すべてのディスクを初期化します。</block>
+  <block id="f68297d08c23f1c81caf07d193fce59a" category="list-text">ブート プロセス時に、プロンプトに応じてCtrl+Cキーを押してブート メニューを表示します。</block>
+  <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">ブートメニューオプション*(4) 構成をクリーンアップし、すべてのディスクを初期化する*を選択します。</block>
+  <block id="82049266f76a1c9f2f0a3be4c999f4d2" category="list-text">[[return-admin]]クラスター内の新しいノードの 1 つで管理者権限レベルに戻ります。</block>
+  <block id="c4ca4238a0b923820dcc509a6f75849b" category="inline-xref">1</block>
+  <block id="d3d9446802a44259755d38e6d163e820" category="inline-xref">10</block>
+  <block id="d189cecc16115f8a1464438558157df4" category="list-text">手順を繰り返す <block ref="ad03471bc3c3d3a60bb07d8e505cecf8" category="inline-xref-macro-rx"></block> に <block ref="0b50026eb51fd5abcc3f6c551ad9a731" category="inline-xref-macro-rx"></block> クラスターからフェールオーバー パートナーを削除します。</block>
+  <block id="168c92437cbc3465963cce1942e62338" category="paragraph"><block ref="168c92437cbc3465963cce1942e62338" category="inline-link-macro-rx"></block></block>
+  <block id="b442cda004fcb2b77f9a06066859253e" category="paragraph">クラスタが SAN 環境にある場合は、元のノードをクラスタから削除する前に、不要になった SAN LIF を元のノードから削除する必要があります。</block>
+  <block id="de2c8f88da32b208ab4a1bf0c1405c32" category="paragraph"><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
+  <block id="0187590ed6627836f657d0d4157f4bd9" category="paragraph"><block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block></block>
+  <block id="9cab58d086b1e90a5b2f49ae6b194edb" category="sidebar">元のノードを削除する</block>
 </blocks>

@@ -493,3 +493,6 @@ sanlun lun show -p
 multipath -ll -d
 ----
 
+
+.次の手順
+link:upgrade-create-aggregate-move-volumes.html["アグリゲートを作成してボリュームを新しいノードに移動"]

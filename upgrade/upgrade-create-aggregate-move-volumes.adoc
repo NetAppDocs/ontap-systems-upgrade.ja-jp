@@ -112,3 +112,6 @@ NOTE: ストレージ構成に暗号化が有効なボリュームが含まれ�
 `volume show -vserver _svm_name_`
 
 
+
+.次の手順
+link:upgrade-move-lifs-to-new-nodes.html["SAN以外のデータLIFとクラスタ管理LIFを新しいノードに移動する"]

@@ -49,3 +49,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 ク�
 'system node AutoSupport invoke -node node_name Type all -message "Upgrading node_name from_platform_original_to _platform_new_new_"
 
 
+
+.次の手順
+link:upgrade-install-and-join-new-nodes-move-vols.html["新しいノードを設置してクラスタに追加"]

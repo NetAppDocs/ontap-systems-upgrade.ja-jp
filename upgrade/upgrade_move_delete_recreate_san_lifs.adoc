@@ -35,7 +35,7 @@ LIF の移動中は、システムを停止することなく次のタスクを�
 
 == 不要になったSAN LIFを削除する
 
-クラスタが SAN 環境にある場合は、元のノードから不要になった SAN LIF を削除してから、元のノードをクラスタから削除する必要があります。
+クラスタが SAN 環境にある場合は、元のノードをクラスタから削除する前に、不要になった SAN LIF を元のノードから削除する必要があります。
 
 .手順
 . iSCSI イニシエータを使用している場合は、次の手順を実行します。
@@ -91,3 +91,6 @@ js11      ps0          mixed    LIF1,                   igroup1
 == 新しい SAN LIF を作成するか、削除した SAN LIF を再作成します
 
 クラスタ環境の要件に応じて、この手順で削除した新しい SAN LIF を作成するか、または SAN LIF を再作成することができます。を使用して、 SAN LIF を作成または再作成できます https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_creating_network_interfaces.html["ネットワークインターフェイスが作成されます"^] OnCommand ® System Manager_documentation を使用したクラスタ管理の手順
+
+.次の手順
+link:upgrade-remove-original-nodes.html["元のノードをクラスターから削除する"]
