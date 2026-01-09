@@ -25,8 +25,10 @@ NOTE: T6ベースのイーサネットネットワークインターフェイス
 .手順
 . 再配置処理を再開します。
 +
-「システムコントローラの交換が再開」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 システムは次のタスクを実行します。
 
@@ -43,8 +45,10 @@ NOTE: T6ベースのイーサネットネットワークインターフェイス
 
 . 再配置処理を再開します。
 +
-「システムコントローラの交換が再開」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 システムは次のチェックを実行します。
 
@@ -58,25 +62,58 @@ NOTE: T6ベースのイーサネットネットワークインターフェイス
 
 . アグリゲートの再配置処理と NAS データ LIF の移動処理のステータスを確認します。
 +
-「 system controller replace show-sdetails 」というエラーが表示されます
-
+[source, cli]
+----
+system controller replace show-details
+----
 +
 コントローラ交換用手順が一時停止している場合は、エラーがある場合はチェックして修正し、次に「問題 re sume 」をクリックして操作を続行します。
 
-. 必要に応じて、取り外した LIF をリストアしてリバートします。取り外した LIF を表示します。
+. 必要に応じて、移動された LIF を復元して元に戻すか、自動的に再配置できなかったノード 1 LIF をノード 3 に手動で移行して変更します。
 +
-cluster controller -replacement network ヒエラー（クラスタコントローラ交換ネットワークが取り外されました） -interface show
-
+[role="tabbed-block"]
+====
+.移動したLIFを復元して元に戻す
+--
+.. 移動した LIF をリストします。
 +
-LIF が表示されなくなった場合は、ホームノードをノード 3 にリストアします。
-
+[source, cli]
+----
+cluster controller-replacement network displaced-interface show
+----
+.. LIF が表示されなくなった場合は、ホームノードをノード 3 にリストアします。
 +
-クラスタ・コントローラ交換ネットワークが取り外されましたインタフェース・リストア -home-node
+[source, cli]
+----
+cluster controller-replacement network displaced-interface restore-home-node -node <node3_nodename> -vserver <vserver name> -lif-name <lif_name>
+----
 
+
+--
+.LIFを手動で移行および変更する
+--
+.. 自動的に再配置できなかった LIF をノード 3 に移行します。
++
+[source, cli]
+----
+network interface migrate -vserver <vserver name> -lif <lif_name> -destination-node <node3_nodename> -destination-port <port_on_node3>
+----
+.. 移行された LIF のホーム ノードとホーム ポートを変更します。
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <data_lif_name> -home-node <node3_nodename> -home-port <home_port>
+----
+
+
+--
+====
 . この処理を再開すると、必要なポストチェックの実行をシステムに求めるプロンプトが表示されます。
 +
-「システムコントローラの交換が再開」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 次のポストチェックが実行されます。
 

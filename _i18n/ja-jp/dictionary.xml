@@ -3,7 +3,6 @@
   <block id="1a02fe8fc6a186319dd3345573fc3717" category="doc">ノード 4 をインストールしてブートします</block>
   <block id="75586863c552442d574a9bbfc3a0d408" category="paragraph">ノード 4 をラックに設置し、ノード 2 の接続をノード 4 に転送し、ノード 4 をブートして、 ONTAP をインストールする必要があります。次に、このセクションで説明するように、ノード 2 のスペアディスク、ルートボリュームに属するディスク、およびプロセスの前にノード 3 に再配置されなかったルート以外のアグリゲートを再割り当てする必要があります。</block>
   <block id="550ffaa7219faf74146770514db0d8e8" category="inline-link-macro">ネットブートを準備</block>
-  <block id="cdb3662e6ecd47991de3008672ab3eb8" category="paragraph">node2 に同じバージョンの ONTAP 9 がインストールされていない場合は、 node4 をネットブートする必要があります。node4 のインストールが完了したら、 Web サーバに格納されている ONTAP 9 イメージからブートします。その後、の手順に従って、後続のシステムのブートに使用する正しいファイルをブートメディアデバイスにダウンロードできます <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
   <block id="89023b09a8e04215547178052eb90222" category="inline-link-macro">ノード 4 の FC ポートを設定します</block>
   <block id="113dd8c6d49d13f5871e1cbe53350eb2" category="inline-link-macro">ノード 4 の UTA / UTA2 ポートを確認して設定してください</block>
   <block id="6f4a225b29c0975663d0e4b9e1f4547f" category="inline-xref">手順 1.</block>
@@ -96,10 +95,7 @@
   <block id="9b1668278d2d17d21775af5a0c8c14b3" category="list-text">アグリゲートの再配置処理と NAS データ LIF の移動処理のステータスを確認します。</block>
   <block id="f1e1b94ce2ba7179506b74127da77af2" category="paragraph">「 system controller replace show-sdetails 」というエラーが表示されます</block>
   <block id="ff23473696232fd91c1e2dcb460109e4" category="paragraph">コントローラ交換用手順が一時停止している場合は、エラーがある場合はチェックして修正し、次に「問題 re sume 」をクリックして操作を続行します。</block>
-  <block id="b5cd09b90221c700e1c2cf9d6253d6a1" category="list-text">必要に応じて、取り外した LIF をリストアしてリバートします。取り外した LIF を表示します。</block>
-  <block id="0b66eef739f727e3f877d8fd0e6b8862" category="paragraph">cluster controller -replacement network ヒエラー（クラスタコントローラ交換ネットワークが取り外されました） -interface show</block>
   <block id="e288d72d848472060faab52648a13f10" category="paragraph">LIF が取り外された場合は、ホームノードをノード 4 にリストアします。</block>
-  <block id="26490175c6a9bb3f68c33041e7c3bd2e" category="paragraph">クラスタ・コントローラ交換ネットワークが取り外されましたインタフェース・リストア -home-node</block>
   <block id="6def760ec3a422405912b1de335c67db" category="list-text">この処理を再開すると、必要なポストチェックの実行をシステムに求めるプロンプトが表示されます。</block>
   <block id="f3bf2563f63e5f2af4793dec3cbb4411" category="paragraph">次のポストチェックが実行されます。</block>
   <block id="9e9f6a103b5a748cadf8dfd54b8e29ac" category="list-text">アグリゲートの再構築チェック</block>
@@ -359,7 +355,6 @@
   <block id="56fd5e5051297f55fa1e22d93c8d71b8" category="list-text">[[auto_install3_step1] ノード 3 のラックスペースがあることを確認します。</block>
   <block id="2c6541bc32b15b7aae8bab68f0ca5874" category="paragraph">ノード 1 とノード 2 が別々のシャーシに搭載されている場合は、ノード 3 をノード 1 と同じラックの場所に設置できます。ただし、 node1 が node2 の同じシャーシに設置されている場合は、 node3 を専用のラックスペースに配置する必要があります。その場合は、 node1 の場所に近い場所に配置することを推奨します。</block>
   <block id="b76de3994341c25067b438fe161926b7" category="list-text">[[auto_install3_step2] ノードモデルの _Installation and Setup Instructions_ に従って、ラックにノード 3 をインストールします。</block>
-  <block id="e642674ff2b68ba9c6309b786d87c4f9" category="admonition">両方のノードを同じシャーシに搭載したシステムにアップグレードする場合は、 node4 と node3 をシャーシに設置します。そうしないと、ノードをブートしたときにノードがデュアルシャーシ構成と同じように動作し、 node4 をブートした場合、ノード間のインターコネクトは稼働しません。</block>
   <block id="c558275e7d3a61c5ffa4c89d17138a8e" category="list-text">[[auto_install3_step3]] ケーブルノード 3 を接続し、ノード 1 からノード 3 に接続を移動します。</block>
   <block id="a237c9d74ab3870e45b318a1071c10f4" category="admonition">ほとんどのプラットフォームモデルには一意のインターコネクトカードモデルがあるため、インターコネクトカードまたはクラスタインターコネクトケーブルの接続を node1 から node3 に移動する必要はない場合があります。MetroCluster 構成の場合、 FC-VI ケーブルの接続を node1 から node3 に移動する必要があります。新しいホストに FC-VI カードがない場合は、 FC-VI カードの移動が必要になることがあります。</block>
   <block id="a5492c1c64c93543c424918fe38a847e" category="list-text">[[auto_install3_step4]] ノード 3 の電源をオンにしてから、コンソール端末で Ctrl+C を押してブートプロセスを中断し、ブート環境プロンプトにアクセスします。</block>
@@ -2420,7 +2415,6 @@
   <block id="1204caf15b63ea601a42b09bd0feafca" category="paragraph">この再配置の実行時は、 -nd-controller-upgrade パラメータを使用しないでください。</block>
   <block id="9840fa5d3c651e50130a98db335d1163" category="list-text">node1 がアグリゲートのホーム所有者になったことを確認します。</block>
   <block id="445fae138e0209c0bbf33e92c38c82b6" category="paragraph">ホーム所有者としてノード 1 を持たないアグリゲートは、手順 3 で同じ再配置コマンドを使用してノード 1 に再配置できます。</block>
-  <block id="6224b74d5b0b8d2ad6d1e4b341f1fa19" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 1 をオンラインにしたら、 LIF が正常に機能しており、適切なポート上に配置されていることを確認する必要があります。</block>
   <block id="0bff73dcb819ba800842aebfbaa1ea03" category="list-text">ネットワーク到達可能性チェックを実行します。</block>
   <block id="22754bd796837dc212cb05d513ad94cb" category="paragraph">インターフェイスグループポートおよび VLAN ポートを含むすべての接続ポートのステータスが「 OK 」であることを確認します。</block>
   <block id="d22abe120efea253d7c808e8381ed917" category="paragraph">これらのチェックの実行後、システムは、 node1 で所有されているルート以外のアグリゲートと NAS データ LIF を新しい node1 に再配置します。</block>
@@ -2456,7 +2450,6 @@
   <block id="30c92ab6acc222d81011f6b7ee804f3f" category="paragraph">volume show -node node1 -state offline`</block>
   <block id="85e5ea53a85c7a28840f38eea6491b3c" category="paragraph">ノード 1 上のボリュームのいずれかがオフラインになっている場合は、各ボリュームについて 1 回、 node1 で次のコマンドを使用してボリュームをオンラインにします。</block>
   <block id="6e13fc9d1e75c160461788f1b750083d" category="list-text">次のコマンドを使用して、 node2 にデータ LIF が残っていないことを確認します。</block>
-  <block id="ee2ce060961db1c7ec1f363acef87d91" category="paragraph">アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。node2 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認する必要があります。</block>
   <block id="b990f6960d7072e815b8e4d805f92035" category="paragraph">LIF が取り外された場合、ホームノードを node2 にリストアします。</block>
   <block id="51108f40a613018fdc6b3ad89f42122e" category="list-text">この手順は、交換用コントローラハードウェアが新しく購入されていて、他のシステムで使用されていないことを前提としています。使用済みのコントローラを「 wipeconfig 」コマンドで準備するために必要な手順は、この手順には含まれていません。交換用コントローラハードウェアが以前に別の ONTAP クラスタまたはスタンドアロンのシングルノードシステムとして使用されていた場合は、テクニカルサポートにお問い合わせください。</block>
   <block id="5077f34346404c6e6b1972588ad2c047" category="list-text">ONTAP コマンドラインの advanced 権限モードで次のコマンドを入力して、コントローラの交換プロセスを開始します。</block>
@@ -3782,9 +3775,7 @@
   <block id="fcff81c7528d1100eb58e37ad90535bd" category="admonition">オンボードキーマネージャを使用したNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、手順の後半の工程でキー管理ツールの再同期を実行できるように、キー管理ツールのパスフレーズを準備しておいてください。</block>
   <block id="1cb0cfe1b06273ad55b3f7189d138bb6" category="paragraph">この手順には、手順を自動化するための手順が用意されています。この手順では、自動ディスク割り当てとネットワークポートの到達可能性チェックを使用して、コントローラのアップグレードを簡易化します。</block>
   <block id="7903419bce057c444e1bce59010158ec" category="paragraph">対応する交換用システムモジュールを交換したら、node1をネットブートする必要があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートの準備では、システムがアクセスできるWebサーバにONTAP 9ブートイメージのコピーを追加します。</block>
-  <block id="4524533c84ef78e7e46b023d69fd771f" category="paragraph">ノード2でネットワーク設定を確認し、ノード1からノード2にアグリゲートを再配置する前に、現在ノード1にあるノード2に属するNASデータLIFがノード1からノード2に再配置されていることを確認します。また、SAN LIFがノード2に存在することも確認する必要があります。</block>
   <block id="aeadb581bc234293016c883a2bc49cc9" category="paragraph">ノード1を撤去するには、自動処理を再開して、ノード2でHAペアを無効にし、ノード1を正しくシャットダウンします。</block>
-  <block id="374c76f74637c44ca649d6a92a52de14" category="paragraph">ノード1でネットワーク設定を確認し、ノード2からノード1にアグリゲートを再配置する前に、現在ノード2にあるノード1に属するNASデータLIFがノード2からノード1に再配置されていることを確認します。また、 SAN LIF が node1 に存在することも確認する必要があります。</block>
   <block id="656030f2bc1d7ad32243a38c007d0770" category="paragraph">交換用システムモジュールでノード1をブートしたら、正しく取り付けられていることを確認します。node2 がクォーラムに参加するまで待ってから、コントローラの交換処理を再開する必要があります。</block>
   <block id="fc654fff4abe048148189ff6fa5e3c9c" category="paragraph">セットアップが正しいことを確認するには、HAペアが有効になっていることを確認します。また、ノード1とノード2がお互いのストレージにアクセスできること、およびクラスタの他のノードに属するデータLIFをどちらも所有していないことを確認します。さらに、すべてのデータアグリゲートが正しいホームノードにあること、および両方のノードのボリュームがオンラインであることを確認します。新しいノードの 1 つにユニファイドターゲットアダプタがある場合は、ポート設定をすべてリストアする必要があり、場合によってはアダプタの使用方法の変更が必要になることがあります。</block>
   <block id="37e06fbb743ab1c1935f7d96672ee924" category="paragraph">対応する交換用ノード2のシステムモジュールを交換したあと、モジュールのネットブートが必要になる場合があります。ネットブートという用語は、リモート・サーバに保存された ONTAP イメージからブートすることを意味します。ネットブートを準備するときは、システムがアクセスできるWebサーバにONTAP 9ブートイメージのコピーを配置します。</block>
@@ -4124,14 +4115,10 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="1541d30bc97104d196a4b30a48265600" category="paragraph">ASA A900、AFF A900、またはFAS9500 NVRAMモジュールをノード2のスロット6に取り付けます。</block>
   <block id="ede80ab611f3725304fd9e964c65b970" category="paragraph">ノード2のASA A900、AFF A900、またはFAS9500コントローラモジュールを設置、ケーブル接続します。</block>
   <block id="b9b8de16ec06ff60ede24d2818e0abab" category="list-text">FCPまたはFC-NVMeデータアクセスに使用するFCP SAN LIFを正しいホームポートに再割り当てします。</block>
-  <block id="a1e8ba06d77acad7fa970ba8e0f0e467" category="paragraph"><block ref="16135bd5b92713cfb36ebe367a4ca458" prefix="" category="inline-code"></block></block>
   <block id="2de38c1e5aa6aa649940e819b4ebf8dd" category="list-text">現在のノードがアップグレード後のノード1であり、現在のポートが「status oper」になっているLIFについては（ポートはAFF A800ノードに存在していたがAFF A90ノードには存在しないため）、現在のポートをオンラインにする前に変更します。</block>
   <block id="dc7986d888f3be0cb2a2215b9580886d" category="paragraph">FC LIFを移動する必要があるFCターゲットポートへの物理的な接続が確立されていることを確認します。</block>
-  <block id="20aae0c682908a321c4cb1ad3ed45571" category="paragraph"><block ref="6c2cad085a4937044f2937a01cb285f3" prefix="" category="inline-code"></block></block>
   <block id="b6257f5e9d4beab0291d2ae4dcfcbbd8" category="list-text">LIFのホームポートを変更します。</block>
-  <block id="d354b1900f4972b1b49a933cfce61941" category="paragraph"><block ref="867b8ae03fe5d96f67794b8aa4dc8589" prefix="" category="inline-code"></block></block>
   <block id="4dbb86eefaa0a209d0215f725cf0c953" category="list-text">LIFのステータスを「up」に設定します。</block>
-  <block id="461987576b6bc9795673a818ccac3663" category="paragraph"><block ref="c69d259c6c2cd4b5fceaec835bc7e8b1" prefix="" category="inline-code"></block></block>
   <block id="5ed9b0adde6f557c682b59271b680376" category="paragraph">node1のホームにあるFC SAN LIFごとに手順aとbを繰り返します。</block>
   <block id="9948b60bcf24c5a577ac51ca46681211" category="list-text">[[resume_relocation_step4]]再配置操作を再開します</block>
   <block id="c8d0afb25c26087738c4c8847b04be0f" category="list-text">交換用コントローラモジュールで実行されているnode1がブートし、ブートメニューオプションが次のように表示されるまで待ちます。</block>
@@ -4260,13 +4247,7 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="5f6dcf2dc8c9275db98fa671806a2df2" category="list-text">到達可能性スキャンを使用して、iSCSI LIFが正しいホームポートを自動的に検出します。FCおよびNVMe/FC SAN LIFは自動的には移動しません。アップグレード前のホームポートは引き続き表示されます。</block>
   <block id="896fb328ef1870ab0c1426f849038173" category="paragraph">ノード3のSAN LIFを確認します。</block>
   <block id="986b69e60fa399c84378e8d8fdc4169e" category="list-text">「停止」処理ステータスを報告しているiSCSI SAN LIFを新しいデータポートに変更します。</block>
-  <block id="d9969d4bf831f15759b98f7f207624b0" category="paragraph"><block ref="10a9afb32a3e32e2f6c74223ba2ea3bf" prefix="" category="inline-code"></block></block>
-  <block id="6f1ad881dbf1eabf2024524fef9e1724" category="paragraph"><block ref="ef02172e95be012def2cc33ea87abf3b" prefix="" category="inline-code"></block></block>
-  <block id="4f79deb8615933038d14dd5ea648ed45" category="paragraph"><block ref="e880cca787f2bb3d426379f39b8412bb" prefix="" category="inline-code"></block></block>
   <block id="d2106fca8a6ec5ee92267756d2ba5ed8" category="list-text">新しいコントローラのホームにあるFCおよびNVMe/FC SAN LIFを変更し、新しいコントローラのFCPポートに「停止」の動作ステータスを報告します。</block>
-  <block id="374a3532b059f787794fea3a4eceed27" category="paragraph"><block ref="fd39e72aaaaed002f894920981daeb07" prefix="" category="inline-code"></block></block>
-  <block id="09d339146e9f1aea7c732982453d56de" category="paragraph"><block ref="b60b5b228661943ca32fb9e03105246b" prefix="" category="inline-code"></block></block>
-  <block id="844aa209b69b21c6b4ac8b353001bf6c" category="paragraph"><block ref="340db2fa4901e2bebbaa48beb251cc09" prefix="" category="inline-code"></block></block>
   <block id="5041f3d5ede13a9dd794a52168aacdb3" category="summary">コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをアップグレードする際に、ノード3にあるノード2のNASデータLIFがノード3からノード4に再配置されたことを確認します<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="37795240818b6015e8cc10cd9fdd35e1" category="paragraph">ノード4のSAN LIFを確認します。</block>
   <block id="b13a176ba8c67756fe909d3d869f8300" category="summary">コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラのアップグレードに必要な参照用コンテンツとWebサイト<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
@@ -4688,14 +4669,11 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="e891c1eb94e2ca8bb3b7b8dadb898400" category="list-text"><block ref="6bdc44b5c51cc632715ca157799c6ae3" category="inline-link-macro-rx"></block>です。</block>
   <block id="4ae096e0267d8683306cc7a7a6a39a64" category="paragraph">参照<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _ONTAP 9 ドキュメント_にリンクします。</block>
   <block id="e9b64afb92831f1198d95f80d156d793" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 <block ref="a6d322e902b744ff3a11f02b5c6d9496" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
-  <block id="5bd058344f8aec8219e043cff27b0f39" category="admonition">両方のノードを同じシャーシに搭載したシステムにアップグレードする場合は、 node4 と node3 をシャーシに設置します。そうしないと、ノード 3 を起動すると、ノードはデュアル シャーシ構成であるかのように動作し、ノード 4 を起動すると、ノード間の相互接続が確立されません。</block>
   <block id="dce5ed79f31a7baa48db39721ab1ead2" category="inline-link-macro">ARLを使用してコントローラモデルをアップグレードし、既存のシステムシャーシとディスクを維持します。</block>
   <block id="744c8ae51567237f1e51aca67e4478ec" category="inline-link-macro">既存のシステムシャーシとディスクを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します。</block>
   <block id="8b53acd1242404623585fa614cf7d039" category="paragraph">ノード 1 にインストールされている ONTAP 9 と同じバージョンがノード 3 にインストールされていない場合は、ノード 3 をネットブートする必要があります。node3 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、以降のシステムブートで使用するブートメディアデバイスに正しいファイルをダウンロードできます。を参照して <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
   <block id="756d35654041df32f1be206cb5d73d40" category="paragraph">ただし、node3 に node1 にインストールされている ONTAP 9 と同じバージョンまたはそれ以降のバージョンがインストールされている場合は、node3 をネットブートする必要はありません。</block>
   <block id="e9e731a9f4962a1d8b683234f1b71e92" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block>そして<block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
-  <block id="077a3792f816c368d84f9a714136be02" category="paragraph">ノード4にノード2にインストールされているONTAP 9と同じバージョンがインストールされていない場合は、ノード4をネットブートする必要があります。node4 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、以下の手順に従って、以降のシステムブートに必要なファイルをブートメディアデバイスにダウンロードしてください。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block> 。</block>
-  <block id="b4f090990739dcde90138932f4f42a92" category="paragraph">ただし、node2 にインストールされている ONTAP 9 と同じバージョンまたはそれ以降のバージョンが node4 にインストールされている場合は、node4 をネットブートする必要はありません。</block>
   <block id="92909e480346a929ed3538f8fb727042" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、セクションに進む必要があります。 <block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
   <block id="13f6606372b0497bd7d8f495e2c93873" category="paragraph">ディレクトリ内の情報を使用するには、 <block ref="ab6acaf1648b65fe7eff652317a95a17" category="inline-link-macro-rx"></block> 。</block>
   <block id="ab58313074490a46c5f45119c9303e60" category="paragraph">「 * Status Admin/Oper * 」列を参照して、停止している LIF がないかどうかを確認します。LIFがダウンしている場合は、 <block ref="103588ef7fbd849a8c4b92e24d1fe01e" category="inline-link-macro-rx"></block>セクション。</block>
@@ -5346,4 +5324,30 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="de2c8f88da32b208ab4a1bf0c1405c32" category="paragraph"><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
   <block id="0187590ed6627836f657d0d4157f4bd9" category="paragraph"><block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block></block>
   <block id="9cab58d086b1e90a5b2f49ae6b194edb" category="sidebar">元のノードを削除する</block>
+  <block id="ebcb74e1716134fe203a42a8cd428baa" category="paragraph">node4 のONTAPバージョンが node2 のONTAPバージョンと異なる場合は、node4 をネットブートする必要があります。node4 をインストールしたら、Web サーバーに保存されているONTAP 9 イメージから起動します。その後、次の手順に従って、次回以降のシステム起動時に正しいファイルをブートメディアデバイスにダウンロードすることができます。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
+  <block id="f9e30dbcc8818a264a749f4e39bc4fab" category="admonition">両方のノードが同じシャーシ内にあるシステムにアップグレードする場合は、シャーシに node4 と node3 をインストールします。両方のノードを同じシャーシにインストールしないと、ノード 3 を起動するとデュアルシャーシ構成のように動作し、ノード 4 を起動するとノード間の相互接続が確立されません。</block>
+  <block id="37fe0d7aeb22bd42f48b3712743c4b39" category="paragraph">ノード 4 のONTAPバージョンがノード 2 のONTAPバージョンと異なる場合は、ノード 4 をネットブートする必要があります。node4 をインストールしたら、Web サーバーに保存されているONTAP 9 イメージから起動します。その後、次の手順に従って、次回以降のシステム起動時に正しいファイルをブートメディアデバイスにダウンロードすることができます。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
+  <block id="e8b6b737376aeb606702dc2af5d474cd" category="paragraph">ただし、node4 のONTAPバージョンが node2 のONTAPバージョンと同じかそれ以降の場合は、node4 をネットブートする必要はありません。</block>
+  <block id="abe51e27581a803d580b27106c8fbcc9" category="list-text">必要に応じて、移動された LIF を復元して元に戻すか、自動的に再配置できなかったノード 1 LIF をノード 3 に手動で移行して変更します。</block>
+  <block id="fa9a7ae0c5e4e008996b0538541864c2" category="open-title">移動したLIFを復元して元に戻す</block>
+  <block id="a576509acad193e321ac9d885bc9528e" category="list-text">移動した LIF をリストします。</block>
+  <block id="0ea61c0cbfb23f5c46127b958ce17c92" category="open-title">LIFを手動で移行および変更する</block>
+  <block id="8d89c65969f1e32bf8b6c9fb92b19f08" category="list-text">自動的に再配置できなかった LIF をノード 3 に移行します。</block>
+  <block id="3a062c1f7aa95f546bf6583c39ceb2fd" category="list-text">移行された LIF のホーム ノードとホーム ポートを変更します。</block>
+  <block id="064dc3dc8b7fdd4f038fd92a236f9b83" category="paragraph">ノード 4 のネットワーク構成を確認した後、ノード 2 が所有する NAS データ LIF をノード 3 からノード 4 に再配置し、SAN LIF がノード 4 に存在することを確認する必要があります。</block>
+  <block id="ed77334ffc92a501bf542c2f2d717f14" category="paragraph">リモート LIF は、アップグレード手順中に SAN LUN へのトラフィックを処理します。アップグレード中のクラスタまたはサービスの健全性のために、SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がある場合を除き、移動されません。</block>
+  <block id="738a28f5784910fea735841a7a946127" category="paragraph">node4 をオンラインにした後、LIF が正常であり、正しいポートに配置されていることを確認します。</block>
+  <block id="f5ddff38abc8c1b895f6621c588d31b9" category="paragraph">ネットワーク到達可能性チェックのこの段階で、システムは操作を一時停止します。</block>
+  <block id="3d2471dd6cc645b6dc421dfb8f23f60f" category="list-text">必要に応じて、移動された LIF を復元して元に戻すか、自動的に再配置できなかったノード 2 LIF をノード 4 に手動で移行して変更します。</block>
+  <block id="ca2db2e739635d249ad481bb473976e7" category="list-text">自動的に再配置できなかった LIF をノード 4 に移行します。</block>
+  <block id="ba5c068e6cda04378d720403021dfbd4" category="paragraph">ノード 4 のONTAPバージョンがノード 2 のONTAPバージョンと異なる場合は、ノード 4 をネットブートする必要があります。node4 をインストールしたら、Web サーバーに保存されているONTAP 9 イメージから起動します。その後、次の手順に従って、次回以降のシステム起動時に正しいファイルをブートメディアデバイスにダウンロードすることができます。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
+  <block id="9121a5ed9235664a166062eb989f8200" category="paragraph">ノード 2 のネットワーク構成を確認した後、ノード 2 が所有する NAS データ LIF をノード 1 からノード 2 に再配置し、SAN LIF がノード 2 に存在することを確認する必要があります。</block>
+  <block id="1055c88411bbfa6c3eba01720acdc22a" category="paragraph">node2 をオンラインにした後、LIF が正常であり、正しいポートに配置されていることを確認します。</block>
+  <block id="acad873850f7dfac35785963df3cc61f" category="paragraph">システムはネットワーク到達可能性チェックのこの段階で操作を一時停止します。</block>
+  <block id="781572d7ed485284c30a93586bc8b92a" category="list-text">必要に応じて、移動された LIF を復元して元に戻すか、node2 への自動再配置に失敗した node2 LIF を手動で移行して変更します。</block>
+  <block id="f64bf283d31880054e5afd8aaefe6a39" category="list-text">自動的に再配置できなかった LIF をノード 2 に移行します。</block>
+  <block id="ea32bdbc38b1afc744063f63942db19d" category="paragraph">ノード 1 のネットワーク構成を確認した後、ノード 1 が所有する NAS データ LIF をノード 2 からノード 1 に再配置し、SAN LIF がノード 1 に存在することを確認する必要があります。</block>
+  <block id="e1bbac43e553387c297781314d0b0a41" category="paragraph">node1 をオンラインにした後、LIF が正常であり、正しいポートに配置されていることを確認します。</block>
+  <block id="62a56d2b56c0cc31edabe0668b713cd8" category="list-text">必要に応じて、移動された LIF を復元して元に戻すか、または node1 への自動再配置に失敗した node1 LIF を手動で移行して変更します。</block>
+  <block id="619e87d98142a98df53ed32236cf583d" category="list-text">自動的に再配置できなかった LIF をノード 1 に移行します。</block>
 </blocks>

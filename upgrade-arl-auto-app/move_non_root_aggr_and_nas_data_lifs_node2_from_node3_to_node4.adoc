@@ -14,10 +14,12 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 
 
 [role="lead"]
-ノード 4 のネットワーク設定を確認し、ノード 3 からノード 4 にアグリゲートを再配置する前に、ノード 2 に現在ノード 3 に属する NAS データ LIF が、ノード 3 からノード 4 に再配置されていることを確認する必要があります。また、ノード 4 に SAN LIF が存在することも確認する必要があります。
+ノード 4 のネットワーク構成を確認した後、ノード 2 が所有する NAS データ LIF をノード 3 からノード 4 に再配置し、SAN LIF がノード 4 に存在することを確認する必要があります。
 
 .このタスクについて
-アップグレード手順の実行中、リモート LIF は SAN LUN へのトラフィックを処理します。アップグレード時にクラスタやサービスの健全性を維持するために、 SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がないかぎり移動されません。ノード 4 をオンラインにしたあと、 LIF が正常に機能しており、適切なポートに配置されていることを確認します。
+リモート LIF は、アップグレード手順中に SAN LUN へのトラフィックを処理します。アップグレード中のクラスタまたはサービスの健全性のために、SAN LIF を移動する必要はありません。SAN LIF は、新しいポートにマッピングする必要がある場合を除き、移動されません。
+
+node4 をオンラインにした後、LIF が正常であり、正しいポートに配置されていることを確認します。
 
 
 NOTE: T6ベースのイーサネットネットワークインターフェイスカードまたはマザーボードポートのポート速度を変更すると、速度変換後に不正な形式のパケットが受信されることがあります。を参照してください https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["NetApp Bugs OnlineのバグID1570339"^] ナレッジベースの記事 https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["40GbEから100GbEへの変換後のT6ポートのCRCエラー"^] を参照してください。
@@ -25,8 +27,10 @@ NOTE: T6ベースのイーサネットネットワークインターフェイス
 .手順
 . 再配置処理を再開します。
 +
-「システムコントローラの交換が再開」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 システムは次のタスクを実行します。
 
@@ -39,12 +43,14 @@ NOTE: T6ベースのイーサネットネットワークインターフェイス
 
 
 +
-ネットワーク到達可能性チェックのこの段階で処理が一時停止します。
+ネットワーク到達可能性チェックのこの段階で、システムは操作を一時停止します。
 
 . 再配置処理を再開します。
 +
-「システムコントローラの交換が再開」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 システムは次のチェックを実行します。
 
@@ -58,25 +64,58 @@ NOTE: T6ベースのイーサネットネットワークインターフェイス
 
 . アグリゲートの再配置処理と NAS データ LIF の移動処理のステータスを確認します。
 +
-「 system controller replace show-sdetails 」というエラーが表示されます
-
+[source, cli]
+----
+system controller replace show-details
+----
 +
 コントローラ交換用手順が一時停止している場合は、エラーがある場合はチェックして修正し、次に「問題 re sume 」をクリックして操作を続行します。
 
-. 必要に応じて、取り外した LIF をリストアしてリバートします。取り外した LIF を表示します。
+. 必要に応じて、移動された LIF を復元して元に戻すか、自動的に再配置できなかったノード 2 LIF をノード 4 に手動で移行して変更します。
 +
-cluster controller -replacement network ヒエラー（クラスタコントローラ交換ネットワークが取り外されました） -interface show
-
+[role="tabbed-block"]
+====
+.移動したLIFを復元して元に戻す
+--
+.. 移動した LIF をリストします。
 +
-LIF が取り外された場合は、ホームノードをノード 4 にリストアします。
-
+[source, cli]
+----
+cluster controller-replacement network displaced-interface show
+----
+.. LIF が取り外された場合は、ホームノードをノード 4 にリストアします。
 +
-クラスタ・コントローラ交換ネットワークが取り外されましたインタフェース・リストア -home-node
+[source, cli]
+----
+cluster controller-replacement network displaced-interface restore-home-node -node <node4_nodename> -vserver <vserver name> -lif-name <lif_name>
+----
 
+
+--
+.LIFを手動で移行および変更する
+--
+.. 自動的に再配置できなかった LIF をノード 4 に移行します。
++
+[source, cli]
+----
+network interface migrate -vserver <vserver name> -lif <lif_name> -destination-node <node4_nodename> -destination-port <port_on_node4>
+----
+.. 移行された LIF のホーム ノードとホーム ポートを変更します。
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <data_lif_name> -home-node <node4_nodename> -home-port <home_port>
+----
+
+
+--
+====
 . この処理を再開すると、必要なポストチェックの実行をシステムに求めるプロンプトが表示されます。
 +
-「システムコントローラの交換が再開」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 次のポストチェックが実行されます。
 
