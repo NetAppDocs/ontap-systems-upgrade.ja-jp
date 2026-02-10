@@ -1257,7 +1257,6 @@
   <block id="8cdba56188d6642a771d0c327a72af57" category="paragraph">ボリュームの移動によるアップグレードは無停止で実行できます。</block>
   <block id="56089842bd614396cfba7cdf9bb6601f" category="list-text">サポート対象モデルのノードをディスクシェルフに変換し、新しいノードに接続することを計画している。</block>
   <block id="3d9010fa119828bc81f438c75af15b63" category="paragraph">ストレージを移動してコントローラハードウェアをアップグレードする手順では、元のノードは node1 と node2 に、新しいノードは node3 と node4 と呼ばれます。説明されている手順では、 node1 は node3 に置き換えられ、 node2 は node4 に置き換えられます。</block>
-  <block id="5b3de670b2de55fec257c6f89ab421bc" category="summary">ボリュームを移動してアップグレードする場合は、元のノードを準備し、新しいノードをクラスタに追加します。ボリュームを新しいノードに移動し、 LIF を設定して、クラスタから元のノードを削除します。ボリュームの移動によるアップグレード手順は無停止で実行できます。</block>
   <block id="f5b49dd631a7fa0c45fc2aea8bcfa384" category="paragraph">使用している ONTAP のバージョンに対応した手順を使用する必要があります。</block>
   <block id="51bea01f527b8a0a7714408789058c6b" category="summary">元のノードをシャットダウンして削除するときは、アップグレードについての AutoSupport メッセージを送信し、メールボックスを削除し、ノードの電源をオフにして、シャーシを取り外す必要があります。</block>
   <block id="0b5874c3f69c1393f6461a11d78dfa9c" category="list-text">node1 と node2 から AutoSupport メッセージを送信し、テクニカルサポートにアップグレードについて通知します。</block>
@@ -1296,7 +1295,6 @@
   <block id="d4041bfba261eda3180ae9fbf6285d95" category="list-text">次のようなプロンプトが表示されたら 'yes' と入力します</block>
   <block id="8b8e41e588d3f28837be58712aeec25a" category="paragraph">システムは wipeconfig 手順を起動し、再起動します。手順が完了すると、システムはブートメニューに戻ります。</block>
   <block id="72992cc1c16f1dbbbcb7cc77a55977d9" category="list-text">advanced 権限レベルに切り替えます。</block>
-  <block id="dc4a67b269dfaba9479198e3f11a2a68" category="list-text">イプシロンが設定されたノードを特定します。</block>
   <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">次の例では、「 node0 」に現在イプシロンが設定されています。</block>
   <block id="7f1e916ec0aa6a4296149be58ba61a1b" category="list-text">クラスタにノードが 2 つしか残っていない場合は、 2 ノードクラスタのハイアベイラビリティを設定します。</block>
   <block id="c1f192f6d626bc5f27fc74b0848a1250" category="paragraph">cluster ha modify -configured true</block>
@@ -3554,7 +3552,6 @@
   <block id="b81d07712272425546299d94028eada1" category="list-text">メンテナンスモードを終了します。</block>
   <block id="6a3104dd603be761e5020da6f96a9944" category="inline-xref-macro">ドライブシェルフに変換して、AFF A250をAFF A400にアップグレードします</block>
   <block id="15cef8c52a9390a0d7fe3fdbd4c153c8" category="summary">ストレージやクラスタスイッチを追加購入することなく、エントリレベルのNetApp AFF およびFAS システムに対してNDUを実行できます。</block>
-  <block id="f023a71f63cfb01aeff4e5fe98a66467" category="paragraph">この手順 では、AFF A250ハイアベイラビリティ（HA）ペアコントローラの名前はノード1およびノード2、交換用AFF A400 HAペアコントローラの名前はノード3およびノード4です。</block>
   <block id="b3105979177988818fc1f2f63701e999" category="inline-xref-macro">ノード2のLIFとデータアグリゲートをノード1に移行します</block>
   <block id="ea7226a78f02b3e8ba077638a2e6fb6a" category="inline-xref-macro">node2をドライブシェルフに変換し、node4に接続します</block>
   <block id="3dd43dc6ebaff4c46e6ce0976cbd1a04" category="inline-xref-macro">ドライブをノード2からノード4に再割り当てします</block>
@@ -4004,19 +4001,13 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="e1d9300a5e6bf8e78b0757b6849a8ce6" category="paragraph">これで物理ポートのマッピングが完了しました。アップグレードを完了するには、に進みます <block ref="00ba9232a950e876c165749336dea823" category="inline-link-macro-rx"></block>。</block>
   <block id="c3241c585c0680bacd1308d6f2c7f051" category="paragraph">以下の手順は、 ONTAP 9.7 以前を実行するシステムに該当します。ONTAP 9.8以降を実行している場合は、の手順 を使用する必要があります <block ref="2a32a1887b2d01dbc6f66ce7f3bde379" category="inline-link-macro-rx"></block>。</block>
   <block id="14c8c7cd715ed376698ba17d9b3263a3" category="list-text">ONTAP 9.8以降を実行しているシステムの場合は、* STOP *をクリックします。の手順を使用する必要があります <block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block>。</block>
-  <block id="019e462408d5236cafe9463f4045db3d" category="paragraph">NetApp AFF A250システムからNetApp AFF A400システムへの無停止アップグレードを実行するには、各AFF A250ノードをNS224ドライブシェルフに変換し、AFF A400の交換用ノードに接続します。</block>
   <block id="ee1607b96090f48bac4dd25134093834" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="f5b56c210a0d4c20980ddfe8b334c676" category="inline-link-macro-rx"></block></block>
   <block id="316fbda1f1480f59ea91e4245a06ca9b" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="89f7cee20d9833c231c0e50fc41ce58d" category="inline-link-macro-rx"></block></block>
-  <block id="bbadb0866103c09529bf7f6484a7d090" category="paragraph">AFF A250 node2をNS224ドライブシェルフに変換し、AFF A400 node4に接続してから、node2からnode4にドライブを再割り当てします。</block>
   <block id="2fce8a2d690ba83af5432e4cae17de6f" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="3c6ba9b5c38f48cb17c85b592674d539" category="inline-link-macro-rx"></block></block>
-  <block id="e718380a27225cee9937552d63279ec4" category="paragraph">AFF A250 node2をNS224ドライブシェルフに変換してAFF A400 node4に接続したら、node2に属していたドライブをnode4に再割り当てします。</block>
   <block id="f82507a2b9b5f8c5aefa824395d9718d" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="e2c52cb2e34e893afee819116adecafb" category="inline-link-macro-rx"></block></block>
-  <block id="d05c49cd0e63bffcd5674e232b1afbb9" category="paragraph">AFF A250 node1をドライブシェルフに変換する前に、node1のデータアグリゲート、イプシロン、およびLIFをAFF A400 node4に移行します。</block>
   <block id="81dc3cbf2118e8579a9b2450f7a12e5d" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="e86b9bc23de1f214996444ef551bacb8" category="inline-link-macro-rx"></block></block>
   <block id="58cb6081dfeeba17660c15ea6ea91ba5" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="2fbb74e3e06daf149b588471e96a56a4" category="inline-link-macro-rx"></block></block>
-  <block id="00c1c8079c802e3e24aa7784bdfb9fbf" category="paragraph">AFF A250 node1をNS224ドライブシェルフに変換してAFF A400 node3に接続したら、node1に属していたドライブをnode3に再割り当てします。</block>
   <block id="fe2f8aac9baa1b8fcda89bf672f09bc8" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="bfdfbe3df70ea3584435d9a8c7e7cd9c" category="inline-link-macro-rx"></block></block>
-  <block id="663e41c83a5c4afbfe905c75bda6d9cd" category="paragraph">アップグレードを完了するには、ノード3をノード4に接続し、ノード4のデータLIFとデータアグリゲートをノード3に移行します。</block>
   <block id="18101d4aba30800c4dc0822c723a1de6" category="paragraph">これらの手順は、ONTAP 9.8以降を実行しているシステムに適用されます。ONTAP 9.7 以前を実行している場合は、の手順を使用する必要があります <block ref="df92ac10eb53320f3aee49e68f1573a2" category="inline-link-macro-rx"></block>。</block>
   <block id="2408bbc2877d469c8a828dd2f71d5815" category="list-text">ONTAP 9.7 以前を実行しているシステムの場合は、 * stop * と入力します。の手順を使用する必要があります <block ref="df92ac10eb53320f3aee49e68f1573a2" category="inline-link-macro-rx"></block>。</block>
   <block id="323f7a087e92b0783382d6a319113ac8" category="cell">この手順をスキップして、 <block ref="84a764803e273063ea87749716b7c654" category="inline-xref-macro-rx"></block>。</block>
@@ -4499,8 +4490,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="e0646aaa208b06f2b9c991f8d1d06277" category="doc">AFF A800またはAFF C800コントローラモジュールを交換</block>
   <block id="b9f8db0a3b83103e79c00296ab293002" category="section-title">AFF A800またはAFF C800コントローラモジュールの取り外し</block>
   <block id="84a1bd056cdf96c5313ffeb160884063" category="paragraph">ケーブルマネジメントデバイスを既存のモジュールから取り外し、コントローラをシャーシから少し引き出します。</block>
-  <block id="9377ce9760d2e42c9e31f172d37994a5" category="section-title">AFF A90、AFF A70、またはAFF C80コントローラモジュールの設置</block>
-  <block id="1c11a10891fa20f98660572f553b2716" category="paragraph">ノード1のAFF A90、AFF A70、またはAFF C80コントローラモジュールを取り付け、ケーブル接続します。</block>
   <block id="95699993f4e4282e1516a59b8f8b3a24" category="paragraph">アップグレードを開始する前に、交換用システムに適したモジュールがあることを確認してください。不足しているパーツがある場合は、テクニカルサポートまたはNetAppの営業担当者にお問い合わせください。</block>
   <block id="fbe8d8aaa2d545f1170258a5901312fe" category="cell">コントローラモジュール×2と新しいIOモジュール</block>
   <block id="ce648a37807e4da2fbd09030fea537d2" category="list-text">AFF A220、AFF A200、AFF C190</block>
@@ -4958,18 +4947,12 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="bb7601ffb9123f9786cdac8af94211f0" category="paragraph"><block ref="bb7601ffb9123f9786cdac8af94211f0" category="inline-link-macro-rx"></block></block>
   <block id="1e74494f5772c735812d575a898596c1" category="summary">各ノードを DS212C ドライブ シェルフに変換し、交換用ノードに接続することで、 FAS2820への無停止アップグレードを実行します。</block>
   <block id="ab73d8c2e94481a6ff48a7c91868d2c2" category="doc">DS212Cドライブシェルフへの変換によるFAS2820からのアップグレード</block>
-  <block id="b013bc2ad201f8e021040fd0a4c8d714" category="paragraph">各ノードを DS212C ドライブ シェルフに変換し、それを交換ノードに接続することで、 NetApp FAS2820の無停止アップグレードを実行できます。</block>
-  <block id="9b4eafb4e3bcfaad97fc5e7af7aa1955" category="paragraph">この手順では、 FAS2820高可用性 (HA) ペア コントローラは node1 および node2 と呼ばれ、交換用 HA ペア コントローラは node3 および node4 と呼ばれます。</block>
   <block id="d1d868e382ab4b08e3be5f07e03e038d" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="91744e9af34171046ee51e4df1cdf2ab" category="inline-xref-macro-rx"></block></block>
-  <block id="8313cf9b12eae77b602124631070e7c4" category="paragraph">FAS2820ノード 2 をドライブ シェルフに変換する前に、ノード 2 の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。</block>
   <block id="58169b6641f5811fe5a42525bb985f58" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="9ad99f16aefbb0da0c8192358055567b" category="inline-xref-macro-rx"></block></block>
-  <block id="34e12f96079e8f2641f0bc5f76a14f3b" category="paragraph">FAS8280 ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続してから、ノード 2 からノード 4 にドライブを再割り当てします。</block>
   <block id="0054cc808f512bbb3f118ca4abd076c2" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="d3f3d357ab78b548fc1601824fb28e41" category="inline-xref-macro-rx"></block></block>
   <block id="5a6af6abdd490940dc1f9df9cde04966" category="paragraph">FAS2820ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続した後、以前ノード 2 に属していたドライブをノード 4 に再割り当てします。</block>
   <block id="48f978643e148ed2cc94db905b383041" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="02b623c9dbb2d160132ae446a4c7a0c7" category="inline-xref-macro-rx"></block></block>
-  <block id="009ec9a2eb4000ba1aeab38e275d3dd4" category="paragraph">FAS2820ノード 1 をドライブ シェルフに変換する前に、ノード 1 のデータ アグリゲート、イプシロン、および LIF をノード 4 に移行します。</block>
   <block id="26def2138cc961c62254cd174c55a771" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="9c43bd8b004df1da7b21ce814f6eafc2" category="inline-xref-macro-rx"></block></block>
-  <block id="fc0b4fd01b008060b7a81ca3f154ea4b" category="paragraph">FAS2820ノード 1 を DS212C ドライブ シェルフに変換し、ノード 3 に接続してから、ノード 1 からノード 3 にドライブを再割り当てします。</block>
   <block id="a382921dc03bfcb77c9d970e45fe1495" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="9773b7b5ae1a3a9b51916da2f5695c60" category="inline-xref-macro-rx"></block></block>
   <block id="d794a00a08edf3e003b5895b03494ddf" category="paragraph">FAS2820ノード 1 を DS212C ドライブに変換し、ノード 3 に接続した後、以前ノード 1 に属していたドライブをノード 3 に再割り当てします。</block>
   <block id="850e71b118b51db23f5fa234e21d6eef" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="c1ca954fc21d09fcd7cbc3b5808e040e" category="inline-xref-macro-rx"></block></block>
@@ -5218,9 +5201,7 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="40c8ff48fe09ea0079684fdd1a250ec0" category="cell">自分自身に問いかけてみましょう…</block>
   <block id="3b67351e5cad04409e6a96d3746ac449" category="cell">答えが「はい」であれば、これを行うことができます...</block>
   <block id="7276d228ae5909a1600376ea04afcc20" category="cell">元のノードと新しいノードで異なるソフトウェア バージョンを実行していますか?</block>
-  <block id="d36d3c0e8d8d1ae2b69767c2d21f4de1" category="cell">元のノード上のONTAPバージョンを、サポートされている最高バージョンにアップグレードします。可能であれば、新しいノードは元のノードで実行されているONTAPバージョンをサポートする必要があります。これが不可能な場合は、<block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block>元のノードをサポートされている最高バージョンにアップグレードします。元のノードと新しいノード間のバージョンの差は 4 を超えることはできません。たとえば、 ONTAP 9.8 および 9.12.1 はサポートされていますが、 ONTAP 9.8 および 9.13.1 はサポートされていません。<block ref="e34181b97f6f4b1fe67c330fb826ba03" category="inline-link-macro-rx"></block>。</block>
   <block id="218b292436939056129ace4ef7a755ab" category="cell">中断を伴うアップグレードを実行しますか?</block>
-  <block id="7556c42574b8863b01a23cb64beb17f6" category="cell"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block>。これには、元のシステムのデータを保存するための独自のストレージと棚を備えた新しいシステムが必要です。特定のアップグレードでは、コントローラ シェルフからの変換が可能です。</block>
   <block id="8988c8c891d1b170244fa2801c8f7823" category="cell">中断のないアップグレードを実行しますか?</block>
   <block id="2f5546c2bb23945783cbdb6d6e128cdf" category="paragraph">次のいずれかの方法でアップグレードします。</block>
   <block id="0678555704a75d8c6ba937ca89e44347" category="inline-link-macro">ボリュームを移動する</block>
@@ -5228,7 +5209,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="6de3b933715f67f0e1503dadf7be11b5" category="inline-link-macro">集約再配置を使用する</block>
   <block id="1326c781e22221bcfee09723f0a2bfc2" category="list-text"><block ref="1326c781e22221bcfee09723f0a2bfc2" category="inline-link-macro-rx"></block></block>
   <block id="af07e0611bc43f9c7f0e394b682e76a9" category="paragraph">ARL は交換手順です。新しいノードを使用してクラスターを拡張および縮小する必要がないため、2 ノードのスイッチレス クラスターには有利です。ボリュームを移動するときに、アグリゲートを再配置してデータを移動すると、アグリゲート間でデータをコピーするよりも高速になります。</block>
-  <block id="999f41e22973138ebb057a2c18787f5b" category="cell">モジュラーシステムはありますか?  *注*: モジュラー システムでは、コントローラには内部ディスクがなく、すべてのストレージは外部接続されたシェルフ内にあります。</block>
   <block id="48dea881883b05a136108fac6e95bcae" category="cell"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block>。</block>
   <block id="87f099da08cbe3849d9395ec1b7d8604" category="cell">統合システムがあり、ボリュームを移動してアップグレードしたいですか? *注*: 統合システムでは、コントローラには内部ディスクがあり、ストレージはコントローラ シャーシ内と外部接続されたシェルフに収容されています。外部シェルフはストレージ拡張用であり、すべてのシステム構成に含まれているとは限りません。</block>
   <block id="03478f7299af730e1a78b0850b26043c" category="inline-link-macro">システムがサポートされていることを確認する</block>
@@ -5245,7 +5225,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="ee02ff06a678b4f0bf35d84ad8172be2" category="cell">個々のコンポーネントを交換するのですか?</block>
   <block id="d65572507ebaf55db388e34a847557ea" category="cell">参照<block ref="bcf4c677eadf935a910ed0b1e7ac432c" category="inline-link-macro-rx"></block>そのコンポーネントのフィールド交換可能ユニット (FRU) のチラシを見つけます。</block>
   <block id="4c57db980fd04065c39ac4dffcef854a" category="section-title">例: FAS9500からFAS90へのアップグレード</block>
-  <block id="18f154e130f3704e87f40b22af08eb89" category="paragraph">この例では、 FAS9500から FAS90 コントローラーへのアップグレードの可能な回答を示します。</block>
   <block id="a97ea56b0e00b2379736ae60869ff66a" category="cell">質問</block>
   <block id="67ca848a550c561e54a81891f0d6d223" category="cell">回答例</block>
   <block id="be3ad2de4d2b8e3ba0b5c1aa4b8cb05b" category="cell">いいえFAS9500と FAS90 はどちらもONTAP 9.15.1 を実行します。</block>
@@ -5284,24 +5263,10 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="d350fa659f98e0153758612c202e6a04" category="summary">ボリュームが新しいノードに移動されたら、元のノードをクラスターから削除します。ノードを削除すると、ノードの構成が消去され、すべてのディスクが初期化されます。</block>
   <block id="174d5560f210e4b4b5a29f385b2c8035" category="paragraph">ボリュームを元のノードから新しいノードに移動し、データ LIF を移動または削除した後、元のノードをクラスターから削除します。ノードを削除すると、ノードの構成が消去され、すべてのディスクが初期化されます。</block>
   <block id="fcd2352296590a0e2accae2dd13e31d6" category="list-text">[[disable-ha]]元のノードの高可用性（HA）構成を無効にします。</block>
-  <block id="2c1e3c1177e032883dd8cedb7237369c" category="paragraph"><block ref="cfb56c7a6f1b3b0505ee17fb92209fba" prefix="" category="inline-code"></block></block>
-  <block id="bf80321073982fe86a71c1af9fac0650" category="list-text">[[epsilon-true]]元のノードの 1 つが epsilon を保持している場合は、クラスターから削除しないノードに epsilon を移動します。</block>
-  <block id="4b839279170b4ba0703853fb5c2cb9da" category="list-text">元のノードからイプシロンを削除します。</block>
-  <block id="222406298d9a2f2c033dca8a74afd55c" category="paragraph"><block ref="de7321e59bd990ec3ef09ca78116a7b0" prefix="" category="inline-code"></block></block>
-  <block id="7a788eb6946d9ba1aaad7df7bfb5f5b2" category="list-text">イプシロンを別のノードに割り当てます。</block>
-  <block id="b0c1e0271345231f93266b65411815c2" category="paragraph"><block ref="45f47d97caec3e0967eb10311176b1bb" prefix="" category="inline-code"></block></block>
   <block id="14f47a56746d8dd06d7152a27fa22219" category="list-text">現在のマスター ノードを特定します。</block>
-  <block id="e477c0774c6014b5173ffa6810d512ab" category="paragraph"><block ref="484f24f8e4da80a1185aa63fa1d5fc08" prefix="" category="inline-code"></block></block>
   <block id="f56d76980d50ef81b1a4f2246dbcf0da" category="paragraph">マスターノードは、次のようなプロセスを保持するノードです。<block ref="d724f231a9a7b89757c4394d6622bc47" prefix=" " category="inline-code"></block>、<block ref="7b588256fbdc51b849239cf8988219ff" prefix=" " category="inline-code"></block>、<block ref="4855d47f82dd3929173aadd191f2a0ee" prefix=" " category="inline-code"></block>、<block ref="1ed70af3fcff64fcd6c818d86b6e6150" prefix=" " category="inline-code"></block>、 そして<block ref="29fa19e764c47fa898f697bf7bb940db" prefix=" " category="inline-code"></block>。</block>
-  <block id="b799370e99c40124bdcc44e4ed7a5704" category="list-text">削除するノードが現在のマスター ノードである場合は、クラスター内に残っているノードをマスター ノードとして選択できるようにします。</block>
   <block id="ac13fc86d8d30a4abbb50425385fe453" category="list-text">現在のマスター ノードをクラスターに参加できないようにします。</block>
-  <block id="7021c105080628669b133405100efc63" category="paragraph"><block ref="f2b8f9d3d7fb27d37deaaf84ee69a072" prefix="" category="inline-code"></block></block>
-  <block id="84023f697c3d7f175eb48d9e7f81fe97" category="paragraph">適格性が回復されるまで、ノードは異常としてマークされます。マスター ノードが参加できなくなると、クラスタ クォーラムによって残りのノードの1つが新しいマスターとして選出されます。</block>
-  <block id="834ca6428bef51142e4d70a6c409829e" category="paragraph">HA ペアの最初のノードでこの手順を実行する場合は、そのノードのみを不適格としてマークする必要があります。HA パートナーのステータスを変更しないでください。</block>
-  <block id="c45a4c98c59ca383859dc9ca2d7b3243" category="paragraph">パートナー ノードが新しいマスターとして選択された場合は、イプシロンを保持しているかどうかを確認する必要があります。パートナー ノードがイプシロンを保持している場合は、イプシロンを無効にする前に、クラスター内に残っている別のノードにイプシロンを移動する必要があります。これらの手順を繰り返してパートナー ノードを削除するときにこれを実行します。</block>
   <block id="fa46d2d3d8cfe760c5a42ee99c2bb479" category="list-text">以前のマスター ノードを再びクラスタに参加できるようにします。</block>
-  <block id="c1f0c4bf4b8a0d924276f97311b2b56c" category="paragraph"><block ref="14dcae85a302a6e4089a3c2a5636ff04" prefix="" category="inline-code"></block></block>
-  <block id="342dbc3880ef101e1ed2b5b78347d7d3" category="list-text">クラスタ内に残っているノードのリモート ノード管理 LIF またはクラスタ管理 LIF にログインし、元の各ノードをクラスタから削除します (高度な権限レベル)。</block>
   <block id="eb1f2131641f5195e8a8d9b93f797562" category="paragraph">ノード名付き:</block>
   <block id="9900c92f7c4f327f3d129fcdb88c5a95" category="paragraph">ノード IP の場合:</block>
   <block id="e1b2dd8ee5d4a8767f514f7140d3b5b7" category="paragraph">混合バージョンのクラスタがあり、最後の下位バージョンのノードを削除する場合は、<block ref="980f71817e3a06bee87bd061faeb423d" prefix=" " category="inline-code"></block> これらのコマンドにパラメータを指定します。</block>
@@ -5309,13 +5274,10 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="f80f10147ba45bd1fef6e3c0af2ad9b6" category="list-text">ノードのフェイルオーバー パートナーをクラスタから削除する必要があること。</block>
   <block id="f8794e0f00d445cfe92a1a1eeb5fdb7d" category="list-text">ノードを削除した後、クラスターに再度参加させる前に、ブート メニュー オプション *(4) 構成を消去してすべてのディスクを初期化する* またはオプション *(9) 高度なドライブ パーティションの構成* を使用して、ノードの構成を消去し、すべてのディスクを初期化する必要があります。</block>
   <block id="4fcbf7b91c2fe0247f60ee2199672575" category="paragraph">ノードを削除する前に対処が必要な条件がある場合は、エラー メッセージが表示されます。メッセージの内容は、たとえば、ノードに削除が必要な共有リソースがある、あるいはノードのクラスタHA構成またはストレージ フェイルオーバー構成を無効にする必要があるなどの場合があります。</block>
-  <block id="39e6f8500af6b07f2903990336145751" category="paragraph">ノードがクォーラム マスターの場合、クラスタのクォーラムがいったん失われて、すぐに戻ります。クォーラムが失われるのは一時的であり、データの操作には影響しません。</block>
   <block id="5b04742f17c701ff3b58fe32667cc471" category="list-text">失敗メッセージがエラー状態を示している場合は、それらの状態に対処して再度実行してください。<block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> または<block ref="5d16191a3b7abaee7967de5fd82cd336" prefix=" " category="inline-code"></block> 指示。</block>
-  <block id="bb73c71d58dba4f68bd9a8e3fa5709b6" category="paragraph">ノードがクラスターから正常に削除されると、自動的に再起動します。</block>
   <block id="b16b992bede9cd61adafd05ccfa8b5db" category="list-text">ノードを転用する場合は、ノードの設定を消去し、すべてのディスクを初期化します。</block>
   <block id="f68297d08c23f1c81caf07d193fce59a" category="list-text">ブート プロセス時に、プロンプトに応じてCtrl+Cキーを押してブート メニューを表示します。</block>
   <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">ブートメニューオプション*(4) 構成をクリーンアップし、すべてのディスクを初期化する*を選択します。</block>
-  <block id="82049266f76a1c9f2f0a3be4c999f4d2" category="list-text">[[return-admin]]クラスター内の新しいノードの 1 つで管理者権限レベルに戻ります。</block>
   <block id="c4ca4238a0b923820dcc509a6f75849b" category="inline-xref">1</block>
   <block id="d3d9446802a44259755d38e6d163e820" category="inline-xref">10</block>
   <block id="d189cecc16115f8a1464438558157df4" category="list-text">手順を繰り返す <block ref="ad03471bc3c3d3a60bb07d8e505cecf8" category="inline-xref-macro-rx"></block> に <block ref="0b50026eb51fd5abcc3f6c551ad9a731" category="inline-xref-macro-rx"></block> クラスターからフェールオーバー パートナーを削除します。</block>
@@ -5350,4 +5312,46 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="e1bbac43e553387c297781314d0b0a41" category="paragraph">node1 をオンラインにした後、LIF が正常であり、正しいポートに配置されていることを確認します。</block>
   <block id="62a56d2b56c0cc31edabe0668b713cd8" category="list-text">必要に応じて、移動された LIF を復元して元に戻すか、または node1 への自動再配置に失敗した node1 LIF を手動で移行して変更します。</block>
   <block id="619e87d98142a98df53ed32236cf583d" category="list-text">自動的に再配置できなかった LIF をノード 1 に移行します。</block>
+  <block id="8707b7b9990e9180be9940c8e227c80e" category="cell">元のノード上のONTAPバージョンを、サポートされている最高バージョンにアップグレードします。可能であれば、新しいノードは元のノードで実行されているONTAPバージョンをサポートしている必要があります。これが不可能な場合は、<block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block>元のノードをサポートされている最高バージョンにアップグレードします。元のノードと新しいノード間のバージョン差は4を超えることはできません。例えば、ONTAP 9.8と9.12.1はサポートされていますが、ONTAP 9.8および9.13.1はサポートされていません。<block ref="e34181b97f6f4b1fe67c330fb826ba03" category="inline-link-macro-rx"></block>。</block>
+  <block id="1769a2237ae4aebbeab27e761de8385d" category="cell"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block>。これには、元のシステムのデータを保存するための独自のストレージとシェルフを備えた新しいシステムが必要です。特定のアップグレードでは、コントローラシェルフから変換できます。</block>
+  <block id="6e8c3ee76fcadeb6ec47dbcadea47a38" category="inline-link-macro">ストレージを移動する</block>
+  <block id="0375fb3f43aabda281925c908026849c" category="list-text"><block ref="0375fb3f43aabda281925c908026849c" category="inline-link-macro-rx"></block></block>
+  <block id="09a27d80d33fa90559928cfbde0eef27" category="paragraph">AFF A250からAFF A400へ、またはFAS2820から交換用システムへ、元のノードをドライブシェルフに変換し、ドライブシェルフを交換用ノードに接続してオンボードストレージを移動することで、無停止でアップグレードできます。</block>
+  <block id="8c17b87f02bbfd2bbced4a5b26d31331" category="cell">モジュラーシステムはありますか？*注*：モジュラーシステムでは、コントローラには内部ディスクがなく、すべてのストレージは外部接続されたシェルフ内にあります。</block>
+  <block id="2999348514687ff52ce58b7afc2f296c" category="paragraph">この例は、FAS9500 から FAS90 コントローラへのアップグレードに関する可能な回答を示しています。</block>
+  <block id="24124867dfccf8690c5f7cdd9ce6bd62" category="paragraph">NetApp FAS2820システムの各ノードをDS212Cドライブシェルフに変換することで、無停止アップグレードを実行します。次に、ドライブシェルフを交換用ノードに接続します。これにより、FAS2820のオンボードストレージが交換システムに移動されます。</block>
+  <block id="4213d01441857f93da68c80fb33581fe" category="paragraph">ボリュームまたはストレージを移動してアップグレードする場合の一般的なアップグレードシナリオとアップグレードの考慮事項を確認します：</block>
+  <block id="71f84f778009454b2b2138137c802a1c" category="paragraph">FAS2820ハイアベイラビリティ（HA）ペアコントローラはnode1とnode2であり、交換用HAペアコントローラはnode3とnode4です。</block>
+  <block id="799a6e7bff23c95a2dd5d417bacbfe63" category="paragraph">FAS2820ノード2をドライブシェルフに変換する前に、ノード2上の論理インターフェイス（LIF）とデータアグリゲートをノード1に移行します。</block>
+  <block id="75872fa3c18278304dd0eb39783d804a" category="paragraph">FAS2820 node2 を DS212C ドライブシェルフに変換してから node4 に接続し、node2 から node4 にドライブを再割り当てします。</block>
+  <block id="ec64d38caa130d059cd72713bcfc7f48" category="paragraph">FAS2820 node2 を DS212C ドライブシェルフに変換して node4 に接続したら、以前 node2 に属していたドライブを node4 に再割り当てします。</block>
+  <block id="365b9dada8659a517a8fd469ca7247ff" category="paragraph">FAS2820ノード1をドライブシェルフに変換する前に、ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します。</block>
+  <block id="6f57e15b9ebf56efad25a58405528420" category="paragraph">FAS2820ノード1をDS212Cドライブシェルフに変換してノード3に接続してから、ノード1からノード3にドライブを再割り当てします。</block>
+  <block id="610a64418a192f74fc706aefe0947fb4" category="paragraph">FAS2820 node1 を DS212C ドライブシェルフに変換して node3 に接続したら、以前 node1 に属していたドライブを node3 に再割り当てします。</block>
+  <block id="49efc5ac77a134695034e6d41774f7a7" category="paragraph">アップグレードを完了するには、node3をnode4に接続し、node4のデータLIFとデータアグリゲートをnode3に移行します。</block>
+  <block id="17fa19bd817fcd421a3320663299d3fe" category="summary">ボリュームを移動してアップグレードする場合は、元のノードを準備し、新しいノードをクラスターに参加させます。ボリュームを新しいノードに移動し、LIFを構成して、元のノードをクラスターから削除します。ボリュームを移動してアップグレードすることは、無停止の手順です。</block>
+  <block id="8a3e1e55cf4f3f7698b5923333b44f7a" category="list-text">権限レベルをadvancedに変更します。</block>
+  <block id="2c572e0b3f8df41472dc3cc55d4f3675" category="list-text">クラスター内でイプシロンを持つノードを識別します：</block>
+  <block id="ac11b00437102d46834c44f688bb816b" category="list-text">[[epsilon-true]]削除するノードがepsilonを保持している場合：</block>
+  <block id="da3029d4f58fca3ccf4049fbe3f8d5a9" category="list-text">削除するノードからイプシロンを移動します：</block>
+  <block id="fe432e6a2040f760b86fdb6fb2475ea2" category="list-text">削除しないノードにepsilonを移動します：</block>
+  <block id="535d3fb6510351991395e311dafd715a" category="list-text">削除するノードが現在のマスター ノードである場合は、クラスター内の別のノードをマスター ノードとして選出できるようにします：</block>
+  <block id="9a1fed4d7eb734f9652172206c2b6c97" category="paragraph">適格性が回復されるまで、ノードは異常としてマークされます。マスターノードが不適格になると、残りのノードの1つがクラスタークォーラムによって新しいマスターとして選出されます。</block>
+  <block id="0dea226ebb02761023dc688056ea4997" category="paragraph">HAペアの最初のノードでこの手順を実行する場合は、そのノードのみを不適格としてマークしてください。HAパートナーのステータスは変更しないでください。</block>
+  <block id="5b2f9fa3a4d06ceb986a95a26f1bfbeb" category="paragraph">パートナー ノードが新しいマスターとして選択された場合は、そのノードが不適格となる前にイプシロンを保持しているかどうかを確認する必要があります。パートナー ノードがイプシロンを保持している場合は、そのノードを不適格にする前に、クラスター内に残っている別のノードにイプシロンを移動する必要があります。パートナー ノードを削除するためにこれらの手順を繰り返すときに、これを実行します。</block>
+  <block id="2c3337f10b57ece73ad05be4f4418e0d" category="list-text">クラスタから削除しないノード上のリモート ノード管理 LIF またはクラスタ管理 LIF にログインします。</block>
+  <block id="6006a3969e4a49af5bcf372d6a4b6f76" category="list-text">クラスターからノードを削除します：</block>
+  <block id="1a59e73da663791d8cc1a4162cc79daa" category="cell">ONTAPバージョン</block>
+  <block id="5380cb1d86fac77428bc4816a9400818" category="paragraph">ONTAP 9.3</block>
+  <block id="673c94a242aa517fb75dfb1350772ecc" category="paragraph">ONTAP 9.4以降</block>
+  <block id="758c1d632758dd4e740d6be764f6eefd" category="paragraph">ノードがクォーラム マスターの場合、クラスタのクォーラムがいったん失われて、すぐに戻ります。クォーラムが失われるのは一時的であり、データの操作には影響しません。</block>
+  <block id="ee3943d184071eb8b00fa718413c59da" category="paragraph">ノードはクラスターから正常に削除された後、自動的に再起動します。</block>
+  <block id="72e4185215c581a01dbad2e58ec475eb" category="list-text">[[return-admin]]管理者権限レベルに戻る：</block>
+  <block id="3c24247c970dc2603902ae01f38a7edc" category="paragraph">AFF A250 ノードを NS224 ドライブシェルフに変換することで、AFF A250 システムから AFF A400 システムへの無停止アップグレードを実行します。次に、それらを AFF A400 交換ノードに接続します。これにより、AFF A250 オンボードストレージが AFF A400 交換システムに移動されます。</block>
+  <block id="f9db51ad5ae75a45a96e719689af7351" category="paragraph">AFF A250ハイアベイラビリティ（HA）ペアコントローラはnode1とnode2であり、交換用AFF A400 HAペアコントローラはnode3とnode4です。</block>
+  <block id="e21bba92a872660c5525b68393fccdd6" category="paragraph">AFF A250 node2をドライブシェルフに変換する前に、node2上の論理インターフェイス（LIF）とデータアグリゲートをnode1に移行します。</block>
+  <block id="5f2bd886a1ddbc0f18d7dda59298b8e8" category="paragraph">AFF A250 node2 を NS224 ドライブシェルフに変換して AFF A400 node4 に接続したら、以前 node2 に属していたドライブを node4 に再割り当てします。</block>
+  <block id="39f91ec3fbd4d906c846b0ee83a740e8" category="paragraph">AFF A250 node1をドライブシェルフに変換する前に、node1上のデータアグリゲート、イプシロン、LIFをAFF A400 node4に移行します。</block>
+  <block id="ce2f3556362c3cfcb43ad4834d6282a4" category="paragraph">AFF A250 node1をNS224ドライブシェルフに変換してAFF A400 node3に接続したら、以前node1に属していたドライブをnode3に再割り当てします。</block>
+  <block id="a636e9bc040eb70e113d52373fce20bc" category="paragraph">AFF A90、AFF A70、またはAFF C80コントローラモジュールをインストールします。ノード1にAFF A90、AFF A70、またはAFF C80コントローラモジュールをインストールし、ケーブルを接続します。</block>
 </blocks>
