@@ -1,22 +1,22 @@
 ---
-permalink: upgrade/migrate-fas2820-node2-lifs-aggregates.html 
+permalink: upgrade/migrate-node2-lifs-aggregates.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs 
-summary: 'ノード 2 をドライブ シェルフに変換する前に、 FAS2820ノード 2 上の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。' 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs 
+summary: node2 をドライブシェルフに変換する前に、node2 上の論理インターフェイス（LIF）とデータアグリゲートを node1 に移行します。 
 ---
-= FAS2820ノード2のLIFとデータアグリゲートをノード1に移行する
+= ノード2のLIFとデータアグリゲートをノード1に移行します
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-ノード 2 をドライブ シェルフに変換する前に、 FAS2820ノード 2 上の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。
+node2 をドライブシェルフに変換する前に、node2 上の論理インターフェイス（LIF）とデータアグリゲートを node1 に移行します。
 
 .作業を開始する前に
 次の要件を満たしていることを確認します。
 
-* FAS2820と交換用コントローラには、可能な場合は同じONTAPリリースとパッチ バージョンがあります。参照 https://hwu.netapp.com["NetApp Hardware Universe の略"^]サポートされているONTAPリリースの場合。
+* 元のコントローラと交換用コントローラのONTAPリリースバージョンとパッチバージョンが同じであること（可能な場合）。サポートされているONTAPリリースについては、 https://hwu.netapp.com["NetApp Hardware Universe の略"^]を参照してください。
 
 
 [NOTE]
@@ -31,10 +31,9 @@ summary: 'ノード 2 をドライブ シェルフに変換する前に、 FAS28
 * 必要なケーブルはすべて揃っています。
 
 
-.このタスクについて
-次の手順は、 FAS2820ノード 1 で実行されます。
-
 .手順
+node1でこれらの手順を実行します。
+
 . advanced 権限レベルに切り替えます。
 +
 [source, cli]
@@ -144,4 +143,4 @@ halt -node <node2> -inhibit-takeover true -ignore-quorum-warnings true
 
 
 .次の手順
-link:convert-fas2820-node2-drive-shelf.html["node2をドライブシェルフに変換し、node4に接続します"]
+link:convert-node2-to-drive-shelf.html["node2をドライブシェルフに変換し、node4に接続します"]

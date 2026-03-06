@@ -1,0 +1,58 @@
+---
+permalink: upgrade/convert-to-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, FAS, systems, entry, level 
+summary: 各ノードをドライブシェルフに変換し、交換ノードに接続することで、無停止アップグレードを実行します。 
+---
+= AFF A150、AFF A220、またはFAS2820をドライブシェルフに変換してストレージを移動する方法について学ぶ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFF A150、AFF A220、またはFAS2820システムの無停止アップグレードを実行します。まず、AFF A150、AFF A220、またはFAS2820システムの各ノードをドライブシェルフに変換します。次に、それらを交換用ノードに接続します。これにより、オンボードストレージが交換用システムに移動します。
+
+.このタスクについて
+この手順では、次のシステム変換がサポートされています：
+
+* AFF A150またはAFF A220をDS224Cドライブシェルフに変換する
+* FAS2820をDS212Cドライブシェルフに変換する
+
+
+高可用性（HA）ペアコントローラはnode1とnode2であり、交換用HAペアコントローラはnode3とnode4です。
+
+.作業を開始する前に
+ボリュームまたはストレージを移動してアップグレードする場合の一般的なアップグレードシナリオとアップグレードの考慮事項を確認します：
+
+* link:upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードするかどうかを決定します"]
+* link:upgrade-considerations.html["コントローラハードウェアのアップグレードに関する考慮事項"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"]xref:migrate-node2-lifs-aggregates.adoc[ノード2のLIFとデータアグリゲートをノード1に移行します]
+[role="quick-margin-para"]
+ノード2をドライブシェルフに変換する前に、ノード2の論理インターフェイス（LIF）とデータアグリゲートをノード1に移行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"]xref:convert-node2-to-drive-shelf.adoc[node2をドライブシェルフに変換し、node4に接続します]
+[role="quick-margin-para"]
+node2をドライブシェルフに変換してnode4に接続してから、node2からnode4にドライブを再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]xref:reassign-node2-drives.adoc[ドライブをノード2からノード4に再割り当てします]
+[role="quick-margin-para"]
+node2 をドライブシェルフに変換して node4 に接続したあとに、以前 node2 に属していたドライブを node4 に再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."]xref:migrate-aggregates-epsilon-lifs.adoc[ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します]
+[role="quick-margin-para"]
+node1をドライブシェルフに変換する前に、node1上のデータアグリゲート、epsilon、およびLIFをnode4に移行します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"]xref:convert-node1-to-drive-shelf.adoc[node1をドライブシェルフに変換し、node3に接続します]
+[role="quick-margin-para"]
+node1をドライブシェルフに変換してnode3に接続してから、node1からnode3にドライブを再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"]xref:reassign-node1-drives.adoc[ドライブをノード1からノード3に再割り当てします]
+[role="quick-margin-para"]
+node1 をドライブシェルフに変換して node3 に接続した後、以前 node1 に属していたドライブを node3 に再割り当てします。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]xref:migrate-node4-lIfs-aggregates.adoc[ノード4のLIFとデータアグリゲートをノード3に移行します]
+[role="quick-margin-para"]
+アップグレードを完了するには、node3をnode4に接続し、node4のデータLIFとデータアグリゲートをnode3に移行します。

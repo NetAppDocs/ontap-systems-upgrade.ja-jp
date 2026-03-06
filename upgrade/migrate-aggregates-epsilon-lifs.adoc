@@ -1,22 +1,21 @@
 ---
-permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html 
+permalink: upgrade/migrate-aggregates-epsilon-lifs.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
 summary: 'ノード 1 のデータ アグリゲート、イプシロン、および論理インターフェイス (LIF) をノード 4 に移行します。' 
 ---
-= FAS2820ノード1上のデータアグリゲート、イプシロン、LIFをノード4に移行する
+= ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-FAS2820ノード 1 上のデータ アグリゲート、イプシロン、および論理インターフェイス (LIF) をノード 4 に移行します。
-
-.このタスクについて
-ノード4 で次の手順を実行します。
+ノード 1 のデータ アグリゲート、イプシロン、および論理インターフェイス (LIF) をノード 4 に移行します。
 
 .手順
+node4でこれらの手順を実行します。
+
 . node4 の LOADER プロンプトで、パートナー システム ID を設定します。
 +
 [source, cli]
@@ -208,4 +207,4 @@ halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
 
 
 .次の手順
-link:convert-fas2820-node1-drive-shelf.html["node1をドライブシェルフに変換し、node3に接続します"]
+link:convert-node1-to-drive-shelf.html["node1をドライブシェルフに変換し、node3に接続します"]

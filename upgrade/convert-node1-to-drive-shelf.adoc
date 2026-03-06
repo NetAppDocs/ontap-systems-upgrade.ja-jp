@@ -1,0 +1,29 @@
+---
+permalink: upgrade/convert-node1-to-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: node1をドライブシェルフに変換してnode3に接続してから、node1からnode3にドライブを再割り当てします。 
+---
+= node1をドライブシェルフに変換し、node3に接続します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+node1をドライブシェルフに変換してnode3に接続してから、node1からnode3にドライブを再割り当てします。
+
+.手順
+. ノード1からすべてのネットワークケーブルを外します。
+. ノード1をAFF A150、AFF A220、またはFAS2820シャーシから取り外します。
+. IOM12 または IOM12B モジュールをノード 1 のベイに挿入します。
+. ノード3のSASポートをIOM12またはIOM12Bモジュールの使用可能なポートにケーブル接続します。link:https://hwu.netapp.com["Hardware Universe"^]を参照して、システムのSASポートを確認します。
+. ノード 4 のクラスター ポートをノード 3 の任意のクラスター ポートに接続して、一時的なクラスター接続を作成します。
++
+
+NOTE: node3 が 10GbE クラスター接続のみをサポートしている場合は、一時的なクラスター接続を作成するには 10GbE ケーブルが必要です。
+
+
+
+.次の手順
+link:reassign-node1-drives.html["ドライブをノード1からノード3に再割り当てします"]

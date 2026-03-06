@@ -1,25 +1,24 @@
 ---
-permalink: upgrade/reassign-fas2820-node2-drives.html 
+permalink: upgrade/reassign-node2-drives.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
-summary: FAS2820ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続した後、以前ノード 2 に属していたドライブをノード 4 に再割り当てします。 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: node2 をドライブシェルフに変換して node4 に接続した後、以前 node2 に属していたドライブを node4 に再割り当てします。 
 ---
-= FAS2820ノード2からノード4にドライブを再割り当てする
+= ドライブをノード2からノード4に再割り当てします
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-以前FAS2820ノード 2 に属していたドライブをノード 4 に再割り当てします。
+以前ノード2に属していたドライブをノード4に再割り当てします。
 
 .作業を開始する前に
 ノード3とノード4の両方でLOADERプロンプトがスタンバイになっていることを確認します。
 
-.このタスクについて
-ノード4 で次の手順を実行します。
-
 .手順
+node4でこれらの手順を実行します。
+
 . LOADERプロンプトで、ノード4をメンテナンスモードでブートします。
 +
 [source, cli]
@@ -84,4 +83,4 @@ halt
 
 
 .次の手順
-link:migrate-fas2820-aggregates-epsilon-lifs.html["ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します"]
+link:migrate-aggregates-epsilon-lifs.html["ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します"]

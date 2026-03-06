@@ -3303,7 +3303,6 @@
   <block id="fb4b0cb9efc21f6a0b33d6eb082f6db1" category="list-text">元のノードのSATA、SSD、またはSASドライブキャリアが、新しいドライブシェルフと互換性がある必要があります。</block>
   <block id="3b95007d4159237fc8935f46a265e025" category="list-text">ドライブシェルフには、元のノードのSATA、SSD、またはSASドライブキャリアを収容するための十分な空きベイが必要です。</block>
   <block id="22e05b02f02d6d6148cff29e1b86d6eb" category="sidebar">ONTAP 9.8以降で完了します</block>
-  <block id="e48a139c95341faecb199d5908a54e2e" category="paragraph">^4^次の表に、これらのコントローラアップグレードの組み合わせでサポートされる最小ONTAP バージョンとそれ以降のバージョンを示します。</block>
   <block id="b8e707d2be1c734648eb91b029352369" category="cell">9.10.1から9.12.1</block>
   <block id="4f0b48e1f65ca4ae15a6720f28d58824" category="cell">9.10.1P3～9.12.1</block>
   <block id="04d01679d16bbccad3f9da82789a187b" category="paragraph">上記の表にあるアップグレードの組み合わせについては、次の点に注意してください。</block>
@@ -3556,7 +3555,6 @@
   <block id="45993060a44a5e6d17ba07cb1a841a66" category="paragraph">AFF A250 node2をドライブシェルフに変換する前に、node2の論理インターフェイス（LIF）とデータアグリゲートをnode1に移行します。</block>
   <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">次の要件を満たしていることを確認します。</block>
   <block id="0d44c7acdd1367079b91981b80442797" category="list-text">適切なケーブル配線をすべて用意しておきます。</block>
-  <block id="8e9e1246932fe59d1bc52f76ee1575a1" category="paragraph">次の手順は、AFF A250 node1で実行します。</block>
   <block id="eac6f02df6a7e3c70219adde0a26c9c1" category="list-text">HAペアの両方のノードでLIFの自動リバートを無効にします。</block>
   <block id="4d71038ff6c6532bb7d82441384470f1" category="paragraph"><block ref="6579825e76cb92aa00ca8ad4f32bae01" prefix="" category="inline-code"></block></block>
   <block id="002e3e6384dcf90dc6e7967cba2ee6c7" category="list-text">すべてのデータネットワークLIFのステータスを表示します。</block>
@@ -3578,7 +3576,6 @@
   <block id="bdbdd80897c0788773e2926936349dd7" category="list-text">ノード4の100GbEポートe0cとNSM Bのポートe0aをケーブル接続して、NSMをノード4に接続します。</block>
   <block id="530f824f291c9dbf82563102e66eb4ee" category="summary">ノード2からノード4にドライブを再割り当てする前に、ノード2をノード4に物理的に接続します。</block>
   <block id="e90f638890adabd702a0e4a41624e1e7" category="paragraph">AFF A250 node2をNS224ドライブシェルフに変換してAFF A400 node4に接続したら、node2に属していたドライブをnode4に再割り当てする必要があります。</block>
-  <block id="f451745de9dc10b2155ba09d2c6a86fa" category="paragraph">ノード4で次の手順を実行します。</block>
   <block id="3ff02d1b5db59825508b26f5c12d7855" category="list-text">LOADERプロンプトで、ノード4をメンテナンスモードでブートします。</block>
   <block id="493f827b1132078fbdd11bc0ceceed47" category="list-text">すべてのドライブをノード2からノード4に再割り当てします。</block>
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
@@ -3669,7 +3666,6 @@
   <block id="7ddd1afbac1a277de03fa094daad77c5" category="paragraph">クラスタ内の各ノードには、独自のNetAppライセンスファイル（NLF）が必要です。</block>
   <block id="30dd71524a143fcc15ccb8b0a68ac138" category="paragraph">NLFがない場合は、クラスタの現在ライセンスされている機能を新しいコントローラで使用できます。ただし、ライセンスされていない機能をコントローラで使用するとライセンス契約に違反する可能性があるため、アップグレードの完了後に新しいコントローラ用のNLFをインストールする必要があります。</block>
   <block id="eea8e10b14d24c73640832e981f14a14" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> NLFを取得できる_ NetApp Support Site _にリンクします。NLFは、_ソフトウェアライセンス_の_ My Support_セクションで入手できます。必要なNLFがサイトにない場合は、NetAppの営業担当者にお問い合わせください。</block>
-  <block id="60d1099ae1e93eaac7e66c4226617560" category="summary">同じシャーシ内のコントローラモデルをアップグレードするARL手順を使用するかどうかを決定します。</block>
   <block id="8a1d06fd27bf0bfc6535b6a49185e591" category="cell">AFF A150</block>
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">ARLを使用して同じシャーシのコントローラモデルをアップグレードする場合は、必要に応じてアップグレード後のnode1でキー管理ツールの設定をリストアします。</block>
@@ -3793,7 +3789,6 @@
   <block id="0814a528a6e09bdfa454da4598d03b6a" category="cell">ASA A150</block>
   <block id="0e096ce16590ab86950913510752010e" category="cell">ASA A900</block>
   <block id="0d1ed1043a9669e13b81f70da0ae56bb" category="list-text">ASA A150、AFF A150、またはFAS2820コントローラ</block>
-  <block id="23025a0dc68c759874f99e85d38e7ede" category="section-title">ASA A150、AFF A150、またはFAS2820コントローラモジュールの設置</block>
   <block id="70b323769da32749c57798f0d8e782e5" category="list-text">コアダンプデバイスをAFF A700 NVRAMモジュールからASA A900またはAFF A900 NVRAMモジュールに移動しないでください。</block>
   <block id="74cae3e1383e831697d2a89099232c43" category="inline-xref">ASA A900、AFF A900、またはFAS9500のNVRAMとコントローラモジュールをノード2に設置します。</block>
   <block id="a2f2586b0e85eb39267cb5c9d9e043d2" category="paragraph">アップグレード用に受け取ったASA A900、AFF A900、またはFAS9500のNVRAMとコントローラモジュールをノード2に取り付けます。node2 は、システムの背面からコントローラを見るときにシャーシの右側に配置されたコントローラ B です。</block>
@@ -4086,7 +4081,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="f60554150b9183af4229445611dee7e7" category="paragraph">9.10.1P15、9.11.1P11以降^2^</block>
   <block id="1445b140af84df0e7f83e7c1a538e1ae" category="cell">AFF A220、AFF A200、AFF C190、FAS2620、またはFAS2720</block>
   <block id="86c15a425269c6a2503b9871021e6df8" category="cell">AFF A700またはFAS9000</block>
-  <block id="7f42c48311ba942f81d7a07c44c47d3b" category="admonition">このドキュメントでは、ノード名の参照としてのみ * node1 * と * node2 * という用語が使用されています。この手順を実行する場合は、ノードの実際の名前に置き換える必要があります。</block>
   <block id="011359cc38c137752e931fd997e519a7" category="image-alt">AFF A90またはAFF A70の取り付け</block>
   <block id="b360374fb1c72b27ec9072588d678096" category="admonition">シャーシの電源がすでにオンになっているため、ノード1はBIOSの初期化を開始し、完全に装着されるとすぐに自動ブートを実行します。ノード 1 のブートを中断するには、コントローラモジュールをスロットに完全に挿入する前に、シリアルコンソールケーブルと管理ケーブルをノード 1 のコントローラモジュールに接続することを推奨します。</block>
   <block id="da7cf8ace467e07feef604bd9a07fa23" category="list-text">自動ブートを中断すると、ノード1はLOADERプロンプトで停止します。時間内に自動ブートを中断せずにnode1がブートを開始した場合は、プロンプトが表示されるまで待ち、Ctrl+Cキーを押してブートメニューに移動します。ノードがブートメニューで停止したら、オプションを使用し<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> てノードをリブートし、リブート時に自動ブートを中断します。</block>
@@ -4463,7 +4457,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="dc892aee96b29d3a55989d5b4bf5bf99" category="admonition">ノード1とノード2の電源接続が相互に接続されています。ノード1のケーブルだけを抜くように注意してください。ノード1とノード2のケーブルを外すと、HAペアの両方のノードで停電が発生する可能性があります。</block>
   <block id="b73bf21f79f3c289f366daee581bf764" category="list-text">コントローラモジュールの側面を両手で持ち、シャーシからゆっくりと引き出し、平らで安定した場所に置きます。</block>
   <block id="4a3384bd24285dffe1c47e552595c810" category="paragraph">このとき、スライドしてシャーシから引き出すときは、必ずコントローラモジュールの重量を支えてください。</block>
-  <block id="9fe1782e885d97109753fb3c6010b557" category="section-title">AFF A30、AFF A50、AFF C30、またはAFF C60コントローラモジュールの取り付け</block>
   <block id="9e602ed6376aabcfeb78f35f1ed4b314" category="paragraph">交換用モジュールをノード1に取り付け、ケーブル接続します。</block>
   <block id="5577eee5ab487d69261df7fcdd77d00e" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、AFF A800またはAFF C800のnode1システムモジュールを交換します。</block>
   <block id="e0646aaa208b06f2b9c991f8d1d06277" category="doc">AFF A800またはAFF C800コントローラモジュールを交換</block>
@@ -4637,8 +4630,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="e891c1eb94e2ca8bb3b7b8dadb898400" category="list-text"><block ref="6bdc44b5c51cc632715ca157799c6ae3" category="inline-link-macro-rx"></block>です。</block>
   <block id="4ae096e0267d8683306cc7a7a6a39a64" category="paragraph">参照<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _ONTAP 9 ドキュメント_にリンクします。</block>
   <block id="e9b64afb92831f1198d95f80d156d793" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 <block ref="a6d322e902b744ff3a11f02b5c6d9496" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
-  <block id="dce5ed79f31a7baa48db39721ab1ead2" category="inline-link-macro">ARLを使用してコントローラモデルをアップグレードし、既存のシステムシャーシとディスクを維持します。</block>
-  <block id="744c8ae51567237f1e51aca67e4478ec" category="inline-link-macro">既存のシステムシャーシとディスクを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します。</block>
   <block id="8b53acd1242404623585fa614cf7d039" category="paragraph">ノード 1 にインストールされている ONTAP 9 と同じバージョンがノード 3 にインストールされていない場合は、ノード 3 をネットブートする必要があります。node3 のインストールが完了したら、 Web サーバに保存されている ONTAP 9 イメージからブートします。その後、以降のシステムブートで使用するブートメディアデバイスに正しいファイルをダウンロードできます。を参照して <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
   <block id="756d35654041df32f1be206cb5d73d40" category="paragraph">ただし、node3 に node1 にインストールされている ONTAP 9 と同じバージョンまたはそれ以降のバージョンがインストールされている場合は、node3 をネットブートする必要はありません。</block>
   <block id="e9e731a9f4962a1d8b683234f1b71e92" category="list-text">ストレージディスクを備えたシステムをアップグレードする場合は、このセクション全体を完了してから、 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block>そして<block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block>クラスタープロンプトでコマンドを入力します。</block>
@@ -4650,8 +4641,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="5e5ea622fae7536bc86af7f458b72c82" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、 <block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>セクション。発生する可能性のある障害に関する情報は、手順のフェーズごとに記載されています。 <block ref="8d67bce17772a82227e57f45fab19967" category="inline-link-macro-rx"></block> 。</block>
   <block id="20d941e77026ae8ce1f7960037569d8a" category="inline-link-macro">ARLを使用したコントローラのアップグレードに関するガイドライン</block>
   <block id="ad37cb22fa2be28796074eb07740fcc0" category="list-text">この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、以下の内容を読んで理解する必要があります。 <block ref="29a777f478b575f6de532dbc614acf56" category="inline-link-macro-rx"></block>そして<block ref="25c64b56e1634b7195570b2ce4c1228b" category="inline-link-macro-rx"></block>アップグレードを開始する前に。</block>
-  <block id="dbc1fd5a23bc6b740244f75d960b1e10" category="doc">ストレージワークフローを移行してアップグレード</block>
-  <block id="b0015c54c1bbb0e310d3dcd2ae34c8df" category="doc">ボリュームの移動によるアップグレードワークフロー</block>
   <block id="892ec2dad40436ef5448c89d8134c110" category="doc">ボリューム移動のアップグレードを完了する</block>
   <block id="366ec5c2ea3e32c0cc46917d38a1da18" category="list-text">新しいノードに FC ポート (オンボードまたは FC アダプタ上)、オンボード CNA ポート、または CNA カードがある場合は、ストレージ システム プロンプトから次のコマンドを入力して FC ポートまたは CNA ポートを構成します。</block>
   <block id="73ae66defa729fd9f93ef92db6f80630" category="summary">ONTAP 9.8 以降、または ONTAP 9.7 以前で移動ストレージ アップグレードを完了します。</block>
@@ -4704,7 +4693,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="f859b8a85ea4a1245c83ad3d66881ed0" category="cell">ノード 1 の e2a は、100 GbE ケーブルを使用してノード 2 の e2a に直接接続されます。e2a が存在しないか、100 GbE をサポートしていない場合は、100 GbE ケーブルを使用してノード 1 の e4b をノード 2 の e4b に直接接続します。</block>
   <block id="2043a419cf79fdc0b6afedbe7e533563" category="cell">イーサネットストレージポート</block>
   <block id="a5724e5363039338aa167a6a20c3d258" category="cell">SASストレージポート</block>
-  <block id="b85fa6dbc4b8cb7277b6ec50cb42ce1d" category="paragraph">コントローラハードウェアのアップグレードには、アグリゲート再配置（ARL）の方法が複数あります。このコンテンツでは、既存のシステムシャーシとディスクを維持しながら、既存のシステムを交換用システムに変換することで、HAペアのストレージコントローラをアップグレードする方法について説明します。この複雑な手順は、経験豊富なONTAP管理者のみが実行してください。</block>
   <block id="55b3b05db9055606671b051fe4236544" category="paragraph">この ARL 手順がコントローラ ハードウェアのアップグレードに適しているかどうかを判断するには、サポートされているアップグレードとサポートされていないアップグレードについて、次のすべての状況を確認する必要があります。</block>
   <block id="871454d4d8b52d5705122acba094ed53" category="section-title">このARLアップグレードでサポートされています</block>
   <block id="5abc8df60e8d415ff015e9e2e3973831" category="paragraph">この ARL 手順は、次の状況で使用できます。</block>
@@ -4713,16 +4701,11 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="3e60f35ad38278776a582bf610bffc73" category="list-text">アップグレードに必要な最小ONTAPバージョンを実行しています。詳細については、を参照して<block ref="e5691ac2da280c045e4d1368089517a3" category="inline-xref-macro-rx"></block>ください。</block>
   <block id="91e93ca207dc42fbee7f177284d507e7" category="section-title">この ARL アップグレードではサポートされていません</block>
   <block id="c424df23c6758d8896c397de148f1596" category="paragraph">次の状況では、この ARL 手順は使用できません。</block>
-  <block id="f49f4d87d3956047a1927e32214f4938" category="paragraph">次の表は、既存のシステム シャーシとディスクを維持しながら、既存のシステムを交換用システムに変換してコントローラーのアップグレードを実行する場合にサポートされるシステム マトリックスを示しています。</block>
   <block id="5d77c551fcc52ba39339152542fd8be8" category="paragraph">^2^ AFF A200 および FAS2620 システムは、9.11.1 以降の ONTAP バージョンをサポートしていません。</block>
   <block id="6737079a71b9087ba88f738e86f76246" category="paragraph">特定のシステム構成では、コントローラのアップグレードがサポートされます。参照<block ref="3a60505e6c6bc1b5faa8db6223b2dcf2" category="inline-link-macro-rx"></block>サポートされているシステムと最小 ONTAP バージョンのリストについては、こちらをご覧ください。</block>
   <block id="b8af03edd79592588bbec4688d5b70ee" category="paragraph">問題が発生した場合は、 <block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>詳細情報と可能な解決策については、手順の最後にあるセクションをご覧ください。発生する可能性のある障害に関する情報は、手順のフェーズごとに記載されています。 <block ref="1e7f97890c56f8e84d1c3bfb7b3e84a7" category="inline-link-macro-rx"></block> 。</block>
   <block id="8bfe558f0142a4614ccf00a267ed0e88" category="paragraph">発生した問題の解決策が見つからない場合は、テクニカル サポートにお問い合わせください。</block>
-  <block id="41982c3ee615c1b7a13ffd1bd6c67351" category="paragraph">コントローラハードウェアをアップグレードするには、アグリゲート再配置（ARL）の方法がいくつか存在します。この手順では、既存のシステムシャーシとディスクを維持しながら、既存のシステムを交換用システムに変換することで、HAペアのストレージコントローラをアップグレードする方法について説明します。</block>
-  <block id="46c60382e39145c44dd560eaa1c9e59f" category="paragraph">アップグレード手順を開始する前に、重要な要素を考慮する必要があります。</block>
-  <block id="76e2f4028c44efb6c34f689d1ebe6592" category="admonition">アップグレード手順を開始する前に、以下の重要な情報をすべて確認する必要があります。</block>
   <block id="7a33c380da7173854208ef2ecf3ad83b" category="inline-link-macro">コントローラーのアップグレードに関するガイドライン</block>
-  <block id="92a3358213b0f43d57f561169e8f875b" category="list-text">この手順は複雑で、 ONTAP の高度な管理スキルがあることを前提としています。また、以下の内容を読んで理解する必要があります。 <block ref="6b6f97d32522c6f76cca4a6bb67fbbb2" category="inline-link-macro-rx"></block>そして<block ref="1e7f97890c56f8e84d1c3bfb7b3e84a7" category="inline-link-macro-rx"></block>アップグレードを開始する前に。</block>
   <block id="f4e202b16d4110d20d433ad7438f5314" category="list-text">AFF A250およびAFF C250システムは、クラスタインターコネクトに10/25GbEオンボードポートを使用します。AFFA250またはAFF C250システムの2ノードスイッチレスクラスタをAFF A50、AFF A30、AFF C60、またはAFF C30システムにアップグレードするには、両ノードのスロット1にX60132A 4ポート10/25GbEカードを使用する必要があります。これにより、クラスタLIF用のクラスタインターコネクトが、ターゲットプラットフォーム上の一時ポートに提供されます。</block>
   <block id="78c398b9af8fd88a6f91bb80a4953770" category="paragraph">アップグレード用に受け取った交換用コントローラモジュールをノード2に取り付けます。Node2 は、システムの背面からコントローラを見たときにシャーシの下半分に配置されているコントローラ B です。</block>
   <block id="9b44a31a05d8aaba8e74ed9fbe14e789" category="list-text">2ノードのスイッチレス構成の場合、ノード2のスロット1にX60132A（4ポート10/25GbEカード）が装着されていることを確認してください。X60132Aカードは、アップグレード中のクラスタ相互接続に必要です。</block>
@@ -4781,14 +4764,12 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="76f80cf48421dced5b6ed01629219e35" category="paragraph">コントローラハードウェアをアップグレードするには、アグリゲート再配置（ARL）の方法が複数あります。この手順では、ONTAP 9.8以降を実行しているシステムで、「システムコントローラ置換コマンド」を使用してアグリゲート再配置（ARL）を行い、コントローラハードウェアをアップグレードする方法について説明します。</block>
   <block id="5a675c0359307c3756f5ce8ecbdf0426" category="cell"><block ref="5a675c0359307c3756f5ce8ecbdf0426" category="inline-link-macro-rx"></block></block>
   <block id="2c6036afe51f4d90caf7924a4ae63865" category="cell"><block ref="2c6036afe51f4d90caf7924a4ae63865" category="inline-link-macro-rx"></block></block>
-  <block id="67fd1cd00615f9776e741301ee938715" category="paragraph">コントローラハードウェアのアップグレードには、アグリゲート再配置（ARL）の方法が複数あります。このARL手順では、ONTAP 9.15.1以降で導入されたAFFおよびFASストレージシステムのHAコントローラペアを、既存のデータとディスクを維持しながら新しいコントローラにアップグレードする方法について説明します。これは複雑な手順であるため、経験豊富なONTAP管理者のみが使用してください。</block>
   <block id="5daf883910faf2d5eadea06713284457" category="section-title">このARL手順でサポートされているアップグレード</block>
   <block id="1469d2028ec2228d8d36d8cf07b28901" category="paragraph">次の状況では、この ARL 手順を使用してノードのペアをアップグレードできます。</block>
   <block id="576138a7562c7f1ec2b14775dc28dbd2" category="list-text">ハードウェアアップグレードの組み合わせは、 <block ref="f4d2643a6e6be5d2fbb4418143d26e27" category="inline-xref-macro-rx"></block> 。</block>
   <block id="064ec30fe59f186a96ff3a7e79b1e783" category="section-title">このARL手順ではアップグレードはサポートされていません</block>
   <block id="66cdfd07ff0fbee9893a68a3166c5bfc" category="paragraph">次の状況では、この ARL 手順を使用してノードのペアをアップグレードすることはできません。</block>
   <block id="be9f82c7235ff72f6fd3d42c68cd413e" category="paragraph">以下の表は、ONTAP 9.15.1以降で導入されたAFFおよびFASシステムにおいて、ARLを使用したサポートされているコントローラアップグレードの組み合わせを示しています。コントローラアップグレードの組み合わせがリストにない場合は、テクニカルサポートにお問い合わせください。</block>
-  <block id="c1003b834b455285971eb1c777fc1ebb" category="paragraph">コントローラハードウェアをアップグレードするためのアグリゲート再配置（ARL）方法はいくつかあります。このARL手順では、ONTAP 9.15.1以降で導入されたAFFおよびFASストレージシステムのHAコントローラペアを、既存のデータとディスクを維持しながら新しいコントローラにアップグレードする方法について説明します。</block>
   <block id="06727a9cd6d12b6c8838b9bb7623731f" category="list-text">というメッセージが表示されてシステムのリブートループが発生した場合は<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>、ディスクの再割り当てで問題が発生したことを示しています。問題を解決するには、を参照してください <block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block> 。</block>
   <block id="dbc81fa6dbd491d7e15e2010ef2df8eb" category="cell"><block ref="dbc81fa6dbd491d7e15e2010ef2df8eb" category="inline-link-macro-rx"></block></block>
   <block id="9c08ad3dbc04fc900358990ae96d6d48" category="cell"><block ref="9c08ad3dbc04fc900358990ae96d6d48" category="inline-link-macro-rx"></block></block>
@@ -4905,39 +4886,14 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="41982d264a2a2a5af9a67f777e02916a" category="list-text">[[auto_check_4_step11]]ノード 4 がブート メニューで停止したら、ノード 4 で次のコマンドを実行して、ノード 2 のディスクをノード 4 に再割り当てします。</block>
   <block id="1e1ddf24bfeddc76d571c4800f2d82ad" category="summary">ONTAP 9.15.1以降を実行しているコントローラをアップグレードするときに、障害が発生したアグリゲートまたは拒否されたアグリゲートを手動でノード2に再配置します。<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>コマンド。</block>
   <block id="3129d56ef5cc88b17f6e15c1da3476f1" category="summary">ONTAP 9.15.1以降を実行しているコントローラをアップグレードするときに、障害が発生したアグリゲートまたは拒否されたアグリゲートを手動でノード3に再配置します。<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>コマンド。</block>
-  <block id="39bb0497bdbb1e04586599bcfb4c0318" category="summary">FAS2820ノード 1 を DS212C ドライブ シェルフに変換し、ノード 3 に接続してから、ノード 1 からノード 3 にドライブを再割り当てします。</block>
-  <block id="6d8572f1d7fdac9c27f62e363921947c" category="doc">FAS2820ノード1をドライブシェルフに変換し、ノード3に接続します。</block>
-  <block id="663fdf50ecba63371090c62811c866ac" category="paragraph">FAS2820ノード 1 を DS212C ドライブ シェルフに変換します。ノード 1 からノード 3 にドライブを再割り当てする前に、ノード 3 に接続します。</block>
-  <block id="8fe56965007c8482ebfb12c197c02d7e" category="list-text">FAS2820シャーシからノード 1 を削除します。</block>
   <block id="a315276c33006971edc828b2d5f48c91" category="list-text">IOM12 または IOM12B モジュールをノード 1 のベイに挿入します。</block>
-  <block id="fcef638e0d5cb441f69abe1851a71025" category="list-text">ノード 3 SAS ポートを IOM12 または IOM12B モジュールの使用可能なポートにケーブル接続します。参照<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>システムの SAS ポートを確認します。参照<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>システムの SAS ポートを確認します。</block>
   <block id="9aa378ddd116d4c0628d0af695d9cc17" category="list-text">ノード 4 のクラスター ポートをノード 3 の任意のクラスター ポートに接続して、一時的なクラスター接続を作成します。</block>
   <block id="3936d65ca4d32956127070b6e56b2e64" category="admonition">node3 が 10GbE クラスター接続のみをサポートしている場合は、一時的なクラスター接続を作成するには 10GbE ケーブルが必要です。</block>
-  <block id="a369db1a615acf5202411aa57b6b0a3d" category="paragraph"><block ref="a369db1a615acf5202411aa57b6b0a3d" category="inline-link-macro-rx"></block></block>
-  <block id="2ad020d481d0a25e01559a9e966da553" category="summary">ノード 2 (FAS2820) を DS212C ドライブ シェルフに変換し、ノード 4 に接続します。</block>
-  <block id="d1257ec65502e0686c1e2a24a928f8f4" category="doc">FAS2820ノード2をドライブシェルフに変換し、ノード4に接続します。</block>
-  <block id="e5478c453b4e355829aeee75f0775944" category="paragraph">FAS2820ノード2 を DS212C ドライブ シェルフに変換します。ノード 2 からノード 4 にドライブを再割り当てする前に、ノード 4 に接続します。  Node1 と node2 は、DS212C シェルフ内のコントローラーです。</block>
-  <block id="64f46bf8cb3f756ca2a4b5e8380b0b81" category="list-text">FAS2820シャーシからノード2 を取り外します。</block>
   <block id="ea390a7342e757edb35e4cfe75d8ecdb" category="list-text">IOM12 または IOM12B モジュールをノード 2 のベイに挿入します。</block>
   <block id="1a7776196607803ade98b6e8e9df8344" category="list-text">ノード 4 のシリアル接続 SCSI (SAS) ポートを IOM12 または IOM12B モジュールの使用可能なポートにケーブル接続します。参照<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>システムの SAS ポートを確認します。</block>
   <block id="725e2ebaa93fe8f09185c00e43898f5f" category="list-text">ノード 1 のポート e0a と e0b をノード 4 の任意の 2 つの 25GbE ポートに接続して、一時的なクラスター接続を作成します。</block>
   <block id="86f6785d45d16c2b0ff31a1179934c9f" category="admonition">node4 が 10GbE クラスター接続のみをサポートしている場合は、一時的なクラスター接続を作成するには 10GbE ケーブルが必要です。</block>
-  <block id="bb7601ffb9123f9786cdac8af94211f0" category="paragraph"><block ref="bb7601ffb9123f9786cdac8af94211f0" category="inline-link-macro-rx"></block></block>
-  <block id="1e74494f5772c735812d575a898596c1" category="summary">各ノードを DS212C ドライブ シェルフに変換し、交換用ノードに接続することで、 FAS2820への無停止アップグレードを実行します。</block>
-  <block id="ab73d8c2e94481a6ff48a7c91868d2c2" category="doc">DS212Cドライブシェルフへの変換によるFAS2820からのアップグレード</block>
-  <block id="d1d868e382ab4b08e3be5f07e03e038d" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="91744e9af34171046ee51e4df1cdf2ab" category="inline-xref-macro-rx"></block></block>
-  <block id="58169b6641f5811fe5a42525bb985f58" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="9ad99f16aefbb0da0c8192358055567b" category="inline-xref-macro-rx"></block></block>
-  <block id="0054cc808f512bbb3f118ca4abd076c2" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="d3f3d357ab78b548fc1601824fb28e41" category="inline-xref-macro-rx"></block></block>
-  <block id="5a6af6abdd490940dc1f9df9cde04966" category="paragraph">FAS2820ノード 2 を DS212C ドライブ シェルフに変換し、ノード 4 に接続した後、以前ノード 2 に属していたドライブをノード 4 に再割り当てします。</block>
-  <block id="48f978643e148ed2cc94db905b383041" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="02b623c9dbb2d160132ae446a4c7a0c7" category="inline-xref-macro-rx"></block></block>
-  <block id="26def2138cc961c62254cd174c55a771" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="9c43bd8b004df1da7b21ce814f6eafc2" category="inline-xref-macro-rx"></block></block>
-  <block id="a382921dc03bfcb77c9d970e45fe1495" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="9773b7b5ae1a3a9b51916da2f5695c60" category="inline-xref-macro-rx"></block></block>
-  <block id="d794a00a08edf3e003b5895b03494ddf" category="paragraph">FAS2820ノード 1 を DS212C ドライブに変換し、ノード 3 に接続した後、以前ノード 1 に属していたドライブをノード 3 に再割り当てします。</block>
-  <block id="850e71b118b51db23f5fa234e21d6eef" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="c1ca954fc21d09fcd7cbc3b5808e040e" category="inline-xref-macro-rx"></block></block>
   <block id="3ac3cdc91bfaa2a43c0fca9946253b03" category="summary">ノード 1 のデータ アグリゲート、イプシロン、および論理インターフェイス (LIF) をノード 4 に移行します。</block>
-  <block id="39e528beab0388f2308ca06481682fe6" category="doc">FAS2820ノード1上のデータアグリゲート、イプシロン、LIFをノード4に移行する</block>
-  <block id="ec407094615b8064b7141eebdc4faf0a" category="paragraph">FAS2820ノード 1 上のデータ アグリゲート、イプシロン、および論理インターフェイス (LIF) をノード 4 に移行します。</block>
-  <block id="70431d2a3b3171dc183ad62c2cdf164e" category="paragraph">ノード4 で次の手順を実行します。</block>
   <block id="29ef9d409bfc5bf6a0af1a52e7e295a9" category="list-text">node4 の LOADER プロンプトで、パートナー システム ID を設定します。</block>
   <block id="9732d4a7f425483bed6ea088b429c321" category="list-text">パートナーのシステム ID を確認します。</block>
   <block id="48aa8461c43c6d434c042a1f7cd26163" category="list-text">変更を保存します。</block>
@@ -4953,22 +4909,12 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="01392697d52d1d375332f041d834fead" category="list-text">イプシロンを node1 から削除し、node4 に移動して移行します。</block>
   <block id="118cd161d4f37abbb3a8c4baec04ed48" category="list-text">クラスターのステータスを表示して、イプシロンの変更を確認します。</block>
   <block id="9ad3f03c93e9dcbdf6be7194a18902d9" category="list-text">LIFがダウンしている場合は、その管理ステータスを<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>各 LIF に対して次のコマンドを 1 回入力します。</block>
-  <block id="df891edbd6b0f00d98d3d2376a067122" category="paragraph"><block ref="df891edbd6b0f00d98d3d2376a067122" category="inline-link-macro-rx"></block></block>
-  <block id="e0a957b08ecb5a9fd1e825f68f0e64dc" category="summary">ノード 2 をドライブ シェルフに変換する前に、 FAS2820ノード 2 上の論理インターフェイス (LIF) とデータ アグリゲートをノード 1 に移行します。</block>
-  <block id="601722b4c9c69820b9d720c8c940f724" category="doc">FAS2820ノード2のLIFとデータアグリゲートをノード1に移行する</block>
-  <block id="7d37ff2d3a9b0f3b21eda882f20eaae5" category="list-text">FAS2820と交換用コントローラには、可能な場合は同じONTAPリリースとパッチ バージョンがあります。参照<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>サポートされているONTAPリリースの場合。</block>
   <block id="80cd304d38e2aed4d842aa1630bc0dad" category="list-text">FAS2820システムのONTAPバージョンと一致させるには、ノード 3 とノード 4 にONTAPバージョンをネットブートしてインストールする必要があります。  Node3 と node4 は交換用コントローラーです。</block>
   <block id="80c7e88957d9462b8f6fac12ec261b8d" category="list-text">node3 コントローラと node4 コントローラのプライマリ ブート イメージとバックアップ ブート イメージの両方に同じONTAPバージョンが必要です。</block>
   <block id="adc2a6d6f08e30b20353435634048f79" category="list-text">ノード3とノード4の残りのクラスタ構成をクリアするには、<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>ブートメニューから。</block>
   <block id="da1ea0ee367c83a05341c10eb92921b5" category="list-text">両方の交換用コントローラは、LOADER プロンプトでスタンバイ状態になります。</block>
   <block id="9cdda3ac4f8a5af7408c9611f78f7bf9" category="list-text">必要なケーブルはすべて揃っています。</block>
-  <block id="4465c00fc828473105f269a899d79c21" category="paragraph">次の手順は、 FAS2820ノード 1 で実行されます。</block>
   <block id="5965c3c2057d5bfeb9e7cd6aa1da843d" category="list-text">クラスターhaを無効にする:</block>
-  <block id="2e82d870a2b26cff3089793672f0342d" category="paragraph"><block ref="2e82d870a2b26cff3089793672f0342d" category="inline-link-macro-rx"></block></block>
-  <block id="70213ce8df6f326c8c858906eda1740c" category="summary">アップグレードを完了するには、FAS2820node3 を node4 に接続し、node4 のデータ論理インターフェイス (LIF) とデータ アグリゲートを node3 に移行します。</block>
-  <block id="ac03f0a9aed6d7cc8cc2f9aa06ab5c2f" category="doc">FAS2820ノード4のLIFとデータアグリゲートをノード3に移行する</block>
-  <block id="798b92db311a432e12d579940612d93b" category="paragraph">アップグレードを完了するには、 FAS2820ノード 3 をノード 4 に接続し、ノード 4 のデータ論理インターフェイス (LIF) とデータ アグリゲートをノード 3 に移行します。</block>
-  <block id="546ad9f8a047416e6263ed28b1b6a61c" category="paragraph">node3 で次の手順を実行します。</block>
   <block id="a76e7f8c364a7e27930ee7ff49df6e37" category="list-text">クラスターと HA ポートがノード 3 とノード 4 の間で接続されていることを確認します。</block>
   <block id="6052d7b32607b02e8d7092b4374824ed" category="list-text">ノード3とノード4のクラスターとHAポートを表示します。</block>
   <block id="32710cda7c5dad348e2b2e03cf81d971" category="list-text">両方のノード上のすべてのクラスタ ネットワーク LIF を計画したホーム ポートに移行します。</block>
@@ -4979,28 +4925,18 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="98ec39406efb767f83dc79971d983c15" category="list-text">ノード3とノード4のストレージフェイルオーバーを有効にして検証します。</block>
   <block id="a04136bb695577e89cb64bd8d566305d" category="list-text">node3 が所有する必要がある node4 が所有するデータ集約を移行します。</block>
   <block id="7ff9c5727fd29deb9cd8032b2551cd2b" category="admonition">クラスター レポート出力では、ノードが別のノードに属するアグリゲートを誤って所有している可能性があります。この問題が発生した場合は、クラスターの両側からテイクオーバーとギブバックを実行します。</block>
-  <block id="b7ed6d2578c289a342dff3870c0458e4" category="doc">FAS2820ノード1からノード3にドライブを再割り当てします</block>
-  <block id="67242858a5a960ad59c4112deff89a57" category="paragraph">以前FAS2820ノード 1 に割り当てられていたドライブをノード 3 に再割り当てします。</block>
   <block id="2cc2671439ba3e907dc353e6fa9e2f82" category="paragraph">メンテナンス モードのプロンプトが表示されます。</block>
   <block id="50ef837b20ef82f8d6c3ad3818c7e3b9" category="list-text">ローカル システム ID 値を記録します。これは、ノード 3 のシステム ID です。また、「OWNER」列から node1 と node4 のシステム ID を記録します。</block>
   <block id="fc626981b1ece2c6c05c047f46bbfcbf" category="open-title">ディスク全体を使用する場合</block>
   <block id="337d79852891a37d41285c9101c3fff4" category="paragraph">次のコマンドを実行します。</block>
   <block id="17c26bafe75c18b3bcd768f9147f1213" category="open-title">パーティション化されたディスクを使用している場合</block>
   <block id="7a276578eb1d5f5ba51a40f9a3c06c94" category="admonition">ドライブが表示されない場合は、*停止*してテクニカル サポートに連絡して支援を受けてください。</block>
-  <block id="f2301c41e07cf933742b943a7d3ecb4e" category="paragraph"><block ref="f2301c41e07cf933742b943a7d3ecb4e" category="inline-link-macro-rx"></block></block>
-  <block id="c76f454b1b8b44e22cf7a34d06691591" category="doc">FAS2820ノード2からノード4にドライブを再割り当てする</block>
-  <block id="52ce99ed56c027ff91b3e909018de81d" category="paragraph">以前FAS2820ノード 2 に属していたドライブをノード 4 に再割り当てします。</block>
   <block id="e5549cfce8a8e0264f304166398e83fb" category="list-text">すべてのドライブをノード 2 からノード 4 に再割り当てします。</block>
-  <block id="08ca03a8874a1a38c5541456cb7a250f" category="paragraph"><block ref="08ca03a8874a1a38c5541456cb7a250f" category="inline-link-macro-rx"></block></block>
   <block id="c2dd662463f4b0b3f6efeb80332e50d6" category="list-text"><block ref="1aa042908822fc17e30db57dc8f3c350" category="inline-link-macro-rx"></block>（非破壊的手順）</block>
-  <block id="d81919377c1c1774d8ca7b45cc02103c" category="inline-link-macro">ドライブシェルフへの変換によるFAS2820からのアップグレード</block>
-  <block id="8b2e9677889c0f0b26cd5e5a2e524532" category="list-text"><block ref="f9bfe9dff8f74d561bd9015eaa95aca7" category="inline-link-macro-rx"></block>（非破壊的手順）</block>
   <block id="ed58851cec153c1db74f982f7968d38c" category="inline-link-macro">AFF A250をドライブシェルフに変換し、 AFF A400にアップグレードします</block>
   <block id="a0d4e0637e12b87691937ec2f86fe18e" category="list-text"><block ref="182a6b47297b5fcc5de9721f7f6d6e2c" category="inline-link-macro-rx"></block>（非破壊的手順）</block>
   <block id="af72e67cdd4847ff8df836082e1ecd28" category="sidebar">AFF A250をAFF A400にアップグレード</block>
   <block id="6a6bad6107988979a4c7bb4f9b6e3f47" category="sidebar">AFF A250からAFF A400へのアップグレードについて</block>
-  <block id="1c89ca7629177ffaec440b31de61e887" category="sidebar">FAS2820からのアップグレード</block>
-  <block id="10952bb20745dcf0f30d5dd264d03924" category="sidebar">FAS2820からのアップグレードについて</block>
   <block id="220b7076a9e851bf1e13056c1e583d05" category="paragraph">使用することができます<block ref="773b5d44fd1b5ae080ff3a379be13169" prefix=" " category="inline-code"></block>次の出力例に示すように、現在のポート構成を表示または確認するには、コマンドを使用します。</block>
   <block id="c594ac60ecfaa8945df018f2ca32a141" category="admonition">UTA/UTA2 ポートを構成するには、メンテナンス モードになっている必要があります。このセクションのコマンドをメンテナンス モードのシェル プロンプトで入力します。</block>
   <block id="d5f0cabb5a163f2af827009890866160" category="list-text">UTA/UTA2 ポート設定を確認します。</block>
@@ -5158,8 +5094,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="5995503f0157016dc9126220426976d1" category="cell"><block ref="5995503f0157016dc9126220426976d1" category="inline-link-macro-rx"></block></block>
   <block id="bfe40fd278079f510bcfb6a7a10f9369" category="list-text">AFF A800またはAFF C800コントローラのアップグレードの場合、ノード 2 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
   <block id="56bfe01fd4ea060925fdb4a5681a751e" category="list-text">AFF A800またはAFF C800コントローラのアップグレードの場合、ノード 1 を取り外す前に、シャーシ内のすべてのドライブがミッドプレーンにしっかりと固定されていることを確認する必要があります。詳細については、 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
-  <block id="b73b0ab9c4b2187dc386ae1c43da7a8d" category="list-text">AFF A800やAFF C800など、同じシャーシ内のコントローラモジュールを交換してシステムをアップグレードする場合、 NetApp、<block ref="51f73d2815dfaf31a7f9c6af800582d7" category="inline-link-macro-rx"></block> 。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています。</block>
-  <block id="04f0b7701d1f9864fc94b5ec9ec68b2d" category="paragraph"><block ref="50932ac5c7bb93210d274e46c6eba169" category="inline-link-macro-rx"></block>。</block>
   <block id="fcf09bf7ec3b71c764141820f1fc8020" category="paragraph">パーマリンク: upgrade-arl-auto-affa900/retire_node1.html リダイレクト: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html</block>
   <block id="21033397b04c40cfe5bfedb2ddbd85d7" category="paragraph">アップグレードシナリオが以下のサポート対象システムマトリックスに記載されている場合は、<block ref="19860560e89446d8ca0f4e7091d110a0" category="inline-link-macro-rx"></block>アップグレード手順を開始します。</block>
   <block id="066b4e06813cb4484b4d19373d95d0b8" category="paragraph">アドオン アダプタまたはコントローラ マザーボード上に UTA/UTA2 ポートがあり、次の構成になっている場合がありますが、ノード 3 の UTA/UTA2 ポートの構成を確認し、必要に応じて変更する必要があります。</block>
@@ -5194,7 +5128,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="8362baab856f8e12516f78c5f4908211" category="list-text"><block ref="73d856629c7408ec32b9b5ffa5af9ed6" category="inline-link-macro-rx"></block>。</block>
   <block id="bb9da06465d483320cbe6e41cf99dc3f" category="cell">統合システムがあり、既存のシャーシとディスクを維持しながら、コントローラー モジュールのみを交換してアップグレードしたいと考えていますか?</block>
   <block id="6087f2f30b2a32c0234e7e376519a44e" category="inline-link-macro">同じシャーシとディスクを維持しながら、ARL を使用してアップグレードします。</block>
-  <block id="dfd865f2d8a7847deea386561d57d6ab" category="cell"><block ref="d5dab9ae669d9433d7055784bb29c8c7" category="inline-link-macro-rx"></block>。</block>
   <block id="c016f2ad87c195aba089a085eb1654e7" category="cell">SVM を再配置していますか?</block>
   <block id="4fb2cb21dc3e75dde8f863702755da43" category="inline-link-macro">SVMのデータ移動 - 概要</block>
   <block id="1c42ed2b59214b87d822dd5017bc2e77" category="cell">参照<block ref="f5ec7b921dd29fa0a34c4b5d1f4565b8" category="inline-link-macro-rx"></block>。</block>
@@ -5223,11 +5156,7 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="9461d51010fac8414124b0927dca8e3d" category="list-text">MetroCluster構成の場合、<block ref="a5fd50e267aa742edfb254af48aa31df" category="inline-link-macro-rx"></block>ノードに接続されているディスクを検出します。</block>
   <block id="576aba72a7a92b2c78395c8632ac2b4a" category="admonition">この段階でエラーが発生する可能性があります。エラーが発生した場合は、以下のサブステップを繰り返します。<block ref="3d86a68aa8fb2ef1661a4814f02f3b64" category="inline-xref-macro-rx"></block>システムが正常に起動するまで。</block>
   <block id="1b251a6545aaa60cfce829c062bad4c6" category="paragraph">コントローラのアップグレード中に問題が発生した場合は、<block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>詳細情報および可能な解決策については、こちらをご覧ください。</block>
-  <block id="7595b5b2f33e67aef80e7fb106f5d9c7" category="paragraph">交換用モジュールを搭載した Node1 の起動準備が完了しました。サポートされている交換モジュールは、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
-  <block id="814388f801b80ae9095417204e6c9db9" category="paragraph">交換用モジュールを搭載した Node2 の起動準備が完了しました。サポートされている交換モジュールは、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
-  <block id="03abda8c19912cead385e464a7c36590" category="list-text">ダウンタイムを含む既存のシステムからアップグレードする場合は、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block>ストレージを移動してコントローラ ハードウェアをアップグレードするか、テクニカル サポートにお問い合わせください。参照<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>_ボリュームまたはストレージの移動によるアップグレード_にリンクします。</block>
   <block id="b2cf47c2f8de48c91a2658d1bae42ab8" category="admonition">シャーシの電源はすでにオンになっているため、node2 は完全に装着されるとすぐに起動を開始します。ノード2 が起動しないようにするには、コントローラー モジュールを完全に挿入する前に、コンソール ケーブルと管理ケーブルを接続します。</block>
-  <block id="914a76ca2b7f6ddaae8d7322d8dfd459" category="paragraph">交換用コントローラ モジュールがシャーシにインストールされ、電源がオンになっていない限り、交換用コントローラ モジュールのブート メディアにインストールされているONTAPのバージョンを確認することはできません。交換システムのブート メディア上のONTAPバージョンは、アップグレードする古いシステムで実行されているONTAPバージョンと同じである必要があり、ブート メディア上のプライマリ ブート イメージとバックアップ ブート イメージの両方が一致している必要があります。アップグレードでサポートされる最小のONTAPバージョンを確認するには、<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
   <block id="fa25f8cd417cf37165c34fcb9720ffe3" category="list-text">[[verify-rcf-step3]]クラスタ ポートとスイッチ RCF を確認します。</block>
   <block id="2138fe46f5a4636fa20671bcd5e370b9" category="paragraph">これには、新しいノードを結合し、ボリュームと LIF を新しいノードに移動し、クラスターから削除するノードを結合解除する必要があります。2 ノードのスイッチレス クラスターをアップグレードする場合は、新しいノードを追加する前に、クラスター スイッチのペアを使用してスイッチ接続クラスターに変換します。</block>
   <block id="1e7b20b34e3e14bc87b5019115ef6319" category="paragraph">ボリュームを移動してアップグレードするには、元のノードを準備し、新しいノードをクラスターに参加させます。ボリュームを新しいノードに移動し、LIF を構成して、元のノードをクラスターから削除します。</block>
@@ -5256,9 +5185,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="b16b992bede9cd61adafd05ccfa8b5db" category="list-text">ノードを転用する場合は、ノードの設定を消去し、すべてのディスクを初期化します。</block>
   <block id="f68297d08c23f1c81caf07d193fce59a" category="list-text">ブート プロセス時に、プロンプトに応じてCtrl+Cキーを押してブート メニューを表示します。</block>
   <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">ブートメニューオプション*(4) 構成をクリーンアップし、すべてのディスクを初期化する*を選択します。</block>
-  <block id="c4ca4238a0b923820dcc509a6f75849b" category="inline-xref">1</block>
-  <block id="d3d9446802a44259755d38e6d163e820" category="inline-xref">10</block>
-  <block id="d189cecc16115f8a1464438558157df4" category="list-text">手順を繰り返す <block ref="ad03471bc3c3d3a60bb07d8e505cecf8" category="inline-xref-macro-rx"></block> に <block ref="0b50026eb51fd5abcc3f6c551ad9a731" category="inline-xref-macro-rx"></block> クラスターからフェールオーバー パートナーを削除します。</block>
   <block id="168c92437cbc3465963cce1942e62338" category="paragraph"><block ref="168c92437cbc3465963cce1942e62338" category="inline-link-macro-rx"></block></block>
   <block id="b442cda004fcb2b77f9a06066859253e" category="paragraph">クラスタが SAN 環境にある場合は、元のノードをクラスタから削除する前に、不要になった SAN LIF を元のノードから削除する必要があります。</block>
   <block id="de2c8f88da32b208ab4a1bf0c1405c32" category="paragraph"><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
@@ -5293,20 +5219,9 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="8707b7b9990e9180be9940c8e227c80e" category="cell">元のノード上のONTAPバージョンを、サポートされている最高バージョンにアップグレードします。可能であれば、新しいノードは元のノードで実行されているONTAPバージョンをサポートしている必要があります。これが不可能な場合は、<block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block>元のノードをサポートされている最高バージョンにアップグレードします。元のノードと新しいノード間のバージョン差は4を超えることはできません。例えば、ONTAP 9.8と9.12.1はサポートされていますが、ONTAP 9.8および9.13.1はサポートされていません。<block ref="e34181b97f6f4b1fe67c330fb826ba03" category="inline-link-macro-rx"></block>。</block>
   <block id="1769a2237ae4aebbeab27e761de8385d" category="cell"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block>。これには、元のシステムのデータを保存するための独自のストレージとシェルフを備えた新しいシステムが必要です。特定のアップグレードでは、コントローラシェルフから変換できます。</block>
   <block id="6e8c3ee76fcadeb6ec47dbcadea47a38" category="inline-link-macro">ストレージを移動する</block>
-  <block id="0375fb3f43aabda281925c908026849c" category="list-text"><block ref="0375fb3f43aabda281925c908026849c" category="inline-link-macro-rx"></block></block>
-  <block id="09a27d80d33fa90559928cfbde0eef27" category="paragraph">AFF A250からAFF A400へ、またはFAS2820から交換用システムへ、元のノードをドライブシェルフに変換し、ドライブシェルフを交換用ノードに接続してオンボードストレージを移動することで、無停止でアップグレードできます。</block>
   <block id="8c17b87f02bbfd2bbced4a5b26d31331" category="cell">モジュラーシステムはありますか？*注*：モジュラーシステムでは、コントローラには内部ディスクがなく、すべてのストレージは外部接続されたシェルフ内にあります。</block>
   <block id="2999348514687ff52ce58b7afc2f296c" category="paragraph">この例は、FAS9500 から FAS90 コントローラへのアップグレードに関する可能な回答を示しています。</block>
-  <block id="24124867dfccf8690c5f7cdd9ce6bd62" category="paragraph">NetApp FAS2820システムの各ノードをDS212Cドライブシェルフに変換することで、無停止アップグレードを実行します。次に、ドライブシェルフを交換用ノードに接続します。これにより、FAS2820のオンボードストレージが交換システムに移動されます。</block>
   <block id="4213d01441857f93da68c80fb33581fe" category="paragraph">ボリュームまたはストレージを移動してアップグレードする場合の一般的なアップグレードシナリオとアップグレードの考慮事項を確認します：</block>
-  <block id="71f84f778009454b2b2138137c802a1c" category="paragraph">FAS2820ハイアベイラビリティ（HA）ペアコントローラはnode1とnode2であり、交換用HAペアコントローラはnode3とnode4です。</block>
-  <block id="799a6e7bff23c95a2dd5d417bacbfe63" category="paragraph">FAS2820ノード2をドライブシェルフに変換する前に、ノード2上の論理インターフェイス（LIF）とデータアグリゲートをノード1に移行します。</block>
-  <block id="75872fa3c18278304dd0eb39783d804a" category="paragraph">FAS2820 node2 を DS212C ドライブシェルフに変換してから node4 に接続し、node2 から node4 にドライブを再割り当てします。</block>
-  <block id="ec64d38caa130d059cd72713bcfc7f48" category="paragraph">FAS2820 node2 を DS212C ドライブシェルフに変換して node4 に接続したら、以前 node2 に属していたドライブを node4 に再割り当てします。</block>
-  <block id="365b9dada8659a517a8fd469ca7247ff" category="paragraph">FAS2820ノード1をドライブシェルフに変換する前に、ノード1のデータアグリゲート、イプシロン、およびLIFをノード4に移行します。</block>
-  <block id="6f57e15b9ebf56efad25a58405528420" category="paragraph">FAS2820ノード1をDS212Cドライブシェルフに変換してノード3に接続してから、ノード1からノード3にドライブを再割り当てします。</block>
-  <block id="610a64418a192f74fc706aefe0947fb4" category="paragraph">FAS2820 node1 を DS212C ドライブシェルフに変換して node3 に接続したら、以前 node1 に属していたドライブを node3 に再割り当てします。</block>
-  <block id="49efc5ac77a134695034e6d41774f7a7" category="paragraph">アップグレードを完了するには、node3をnode4に接続し、node4のデータLIFとデータアグリゲートをnode3に移行します。</block>
   <block id="17fa19bd817fcd421a3320663299d3fe" category="summary">ボリュームを移動してアップグレードする場合は、元のノードを準備し、新しいノードをクラスターに参加させます。ボリュームを新しいノードに移動し、LIFを構成して、元のノードをクラスターから削除します。ボリュームを移動してアップグレードすることは、無停止の手順です。</block>
   <block id="8a3e1e55cf4f3f7698b5923333b44f7a" category="list-text">権限レベルをadvancedに変更します。</block>
   <block id="2c572e0b3f8df41472dc3cc55d4f3675" category="list-text">クラスター内でイプシロンを持つノードを識別します：</block>
@@ -5325,7 +5240,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="758c1d632758dd4e740d6be764f6eefd" category="paragraph">ノードがクォーラム マスターの場合、クラスタのクォーラムがいったん失われて、すぐに戻ります。クォーラムが失われるのは一時的であり、データの操作には影響しません。</block>
   <block id="ee3943d184071eb8b00fa718413c59da" category="paragraph">ノードはクラスターから正常に削除された後、自動的に再起動します。</block>
   <block id="72e4185215c581a01dbad2e58ec475eb" category="list-text">[[return-admin]]管理者権限レベルに戻る：</block>
-  <block id="3c24247c970dc2603902ae01f38a7edc" category="paragraph">AFF A250 ノードを NS224 ドライブシェルフに変換することで、AFF A250 システムから AFF A400 システムへの無停止アップグレードを実行します。次に、それらを AFF A400 交換ノードに接続します。これにより、AFF A250 オンボードストレージが AFF A400 交換システムに移動されます。</block>
   <block id="f9db51ad5ae75a45a96e719689af7351" category="paragraph">AFF A250ハイアベイラビリティ（HA）ペアコントローラはnode1とnode2であり、交換用AFF A400 HAペアコントローラはnode3とnode4です。</block>
   <block id="e21bba92a872660c5525b68393fccdd6" category="paragraph">AFF A250 node2をドライブシェルフに変換する前に、node2上の論理インターフェイス（LIF）とデータアグリゲートをnode1に移行します。</block>
   <block id="5f2bd886a1ddbc0f18d7dda59298b8e8" category="paragraph">AFF A250 node2 を NS224 ドライブシェルフに変換して AFF A400 node4 に接続したら、以前 node2 に属していたドライブを node4 に再割り当てします。</block>
@@ -5346,7 +5260,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="ea74aa661bf9ba2c79c2b33036d932a4" category="paragraph">node1 AFF A700またはFAS9000 NVRAMモジュールのロックを解除し、取り外します。</block>
   <block id="5d14417f8702231142efb65651cceb29" category="section-title">ステップ 3：ASA A900、AFF A900、またはFAS9500 NVRAMモジュールを取り付けます</block>
   <block id="03b810b0757f0f71cebb2860f21b9ecc" category="paragraph">node1にASA A900、AFF A900、またはFAS9500 NVRAMモジュールを設置、ケーブル接続、および接続します。</block>
-  <block id="72c43a13e28b3b256c59b033aebd13e3" category="section-title">ステップ4：ASA A900、AFF A900、またはFAS9500コントローラモジュールをnode1にインストールします。</block>
   <block id="689243b43cadf776afe30e85949066b8" category="paragraph">node1にASA A900、AFF A900、またはFAS9500コントローラモジュールを設置し、ケーブルを配線して接続します。</block>
   <block id="99857e10071c8cc3859b61ac27506dc7" category="paragraph">node1 AFF A220、AFF A200、AFF C190、FAS2620、またはFAS2720コントローラモジュールをASA A150、AFF A150、またはFAS2820コントローラモジュールに交換します。</block>
   <block id="fd145079b47a0096f42999dff507ae5f" category="section-title">ステップ 1：AFF A220、AFF A200、AFF C190、FAS2620、または FAS2720 コントローラモジュールの取り外し</block>
@@ -5354,7 +5267,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="d42c2b83a79bc8106d3e93d7c46a08ea" category="doc">node1 AFF A250 または AFF C250 コントローラモジュールを交換します</block>
   <block id="cab5820b2e113949ed5605f5691f01eb" category="paragraph">node1 AFF A250またはAFF C250コントローラモジュールをAFF A30、AFF A50、AFF C30、またはAFF C60コントローラモジュールに交換します。</block>
   <block id="dc3246454c20434eaed50f263f08775c" category="section-title">手順1：AFF A250またはAFF C250コントローラモジュールを取り外します</block>
-  <block id="121951e57696e257502866d280fc89a1" category="paragraph">node1 コントローラモジュールを取り外すには、ケーブル管理デバイスを取り外し、ロックラッチのロックを解除します。次に、コントローラモジュールをシャーシから取り外します。</block>
   <block id="a431e3799c389bc434ccd297a4270782" category="doc">node1 AFF A800 または AFF C800 コントローラモジュールを交換します</block>
   <block id="9bf660b6d88b976d50b98515b454303f" category="paragraph">node1 AFF A800またはAFF C800コントローラモジュールをAFF A90、AFF A70、またはAFF C80コントローラモジュールと交換します。</block>
   <block id="f5ea8a442f248d14db9a4a73a74e09b9" category="paragraph">この段階では、node1がダウンしており、すべてのデータはnode2によって提供されます。node1コントローラモジュールのみを取り外すように注意する必要があります。システムの背面からコントローラを見ると、コントローラはスタックされており、通常はコントローラAが上にあります。コントローララベルは、コントローラモジュールの真上のシャーシにあります。</block>
@@ -5376,4 +5288,96 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="061f5aacc4ad4bf1188f94219f3b6e15" category="section-title">ステップ2：AFF A90、AFF A70、またはAFF C80コントローラモジュールの取り付け</block>
   <block id="1c11a10891fa20f98660572f553b2716" category="paragraph">ノード1にAFF A90、AFF A70、またはAFF C80コントローラモジュールを設置し、ケーブルを配線して接続します。</block>
   <block id="027cb97f7c47a83a65901ff25c4e441c" category="admonition">次のステップで node1 コントローラモジュールを挿入すると、シャーシの電源がすでにオンになっているため、node1 はすぐに BIOS の初期化を開始し、その後 AUTOBOOT が実行されます。モジュールを挿入する前にシリアルケーブルとコンソールケーブルを接続することで、この AUTOBOOT を回避できます。</block>
+  <block id="95ce56469451e9b5827461ba8a31398d" category="inline-link-macro">ARLを使用してコントローラモデルをアップグレードし、既存のシステムシャーシ、ディスク、データを維持します</block>
+  <block id="a26d1952871f72b0e6b15be7ce1117a3" category="list-text">同じシャーシ内のコントローラモジュールを交換してシステムをアップグレードする場合、例えば AFF A800 または AFF C800 、NetApp は<block ref="f0c360c1f2007c68e98ebd0f07087dc2" category="inline-link-macro-rx"></block>アップグレード手順の使用を強く推奨します。この ARL 手順には、アップグレード手順中にコントローラを取り外したり取り付けたりするときに、内部ディスクがシャーシ内で安全な状態を保つための手順が含まれています。</block>
+  <block id="37304138ccb252f2d66663b2f2c4e32c" category="inline-link-macro">既存のシステムシャーシ、ディスク、データを維持しながら、ARLを使用してサポートされているシステムアップグレードの組み合わせについて学習します</block>
+  <block id="9ea2ea59d7a76beaa66fbe50119f99fa" category="paragraph"><block ref="19cdef5e27f932dc954b49d7b0c72c37" category="inline-link-macro-rx"></block>。</block>
+  <block id="d4e63d058a86f0f1101c4997d2ce66f8" category="list-text">元のシステムをドライブシェルフに変換し、ストレージを移動します：</block>
+  <block id="bbc58eb253d7e7d64f9d178663616b80" category="inline-link-macro">AFF A250をドライブシェルフに変換し、ストレージをAFF A400に移動</block>
+  <block id="51098bb1fd24b278aad5150038f2ab40" category="list-text"><block ref="51098bb1fd24b278aad5150038f2ab40" category="inline-link-macro-rx"></block></block>
+  <block id="affe9d9027d6b4a4087d2ef80defa1c0" category="inline-link-macro">AFF A150、AFF A220、またはFAS2820をドライブシェルフに変換し、サポートされている交換システムにストレージを移動します</block>
+  <block id="ff426e26799f871af69b33577c9ca1ff" category="list-text"><block ref="ff426e26799f871af69b33577c9ca1ff" category="inline-link-macro-rx"></block></block>
+  <block id="f2355123de2876749a367e9559a77b91" category="cell"><block ref="d421c98c8f1c1a52b114edc3b2879342" category="inline-link-macro-rx"></block>。</block>
+  <block id="10a3b9d8abb7462243ec46dafe8ab270" category="summary">node1をドライブシェルフに変換してnode3に接続してから、node1からnode3にドライブを再割り当てします。</block>
+  <block id="fcad3c07db94afbd863a42c15d1d88c8" category="list-text">ノード1をAFF A150、AFF A220、またはFAS2820シャーシから取り外します。</block>
+  <block id="7ec3aa535aad1dfe74117d1b1e340340" category="list-text">ノード3のSASポートをIOM12またはIOM12Bモジュールの使用可能なポートにケーブル接続します。<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>を参照して、システムのSASポートを確認します。</block>
+  <block id="49dc3298041bfa5204d7deeccd489dd1" category="paragraph"><block ref="49dc3298041bfa5204d7deeccd489dd1" category="inline-link-macro-rx"></block></block>
+  <block id="39983d78a4cc361670665bba4323430f" category="summary">node2をドライブシェルフに変換してnode4に接続してから、node2からnode4にドライブを再割り当てします。</block>
+  <block id="16cc7e1b1439f66291eb4fbdd6d1f976" category="paragraph">ノード 2 をドライブシェルフに変換し、ノード 4 に接続してから、ノード 2 からノード 4 にドライブを再割り当てします。Node1 と node2 は、ドライブシェルフ内のコントローラです。</block>
+  <block id="a08aea8a953c4d7f9c2071a6d577d7a3" category="list-text">ノード2をAFF A150、AFF A220、またはFAS2820シャーシから取り外します。</block>
+  <block id="f326b42ede2c76b980b2397c7c287fa5" category="paragraph"><block ref="f326b42ede2c76b980b2397c7c287fa5" category="inline-link-macro-rx"></block></block>
+  <block id="af72ed4d8ccde52d5d56d1b8ddcb1534" category="summary">各ノードをドライブシェルフに変換し、交換ノードに接続することで、無停止アップグレードを実行します。</block>
+  <block id="2c4081e5460f9658df5181682b9b263b" category="doc">AFF A150、AFF A220、またはFAS2820をドライブシェルフに変換してストレージを移動する方法について学ぶ</block>
+  <block id="d39fbe5454b2184453dbe6b92cd27dbc" category="paragraph">AFF A150、AFF A220、またはFAS2820システムの無停止アップグレードを実行します。まず、AFF A150、AFF A220、またはFAS2820システムの各ノードをドライブシェルフに変換します。次に、それらを交換用ノードに接続します。これにより、オンボードストレージが交換用システムに移動します。</block>
+  <block id="1e04c763017622cf18ea21d3e8688d4e" category="paragraph">この手順では、次のシステム変換がサポートされています：</block>
+  <block id="152858eff630bc9a315c531d0117c8ff" category="list-text">AFF A150またはAFF A220をDS224Cドライブシェルフに変換する</block>
+  <block id="8c4f1726028cb95ef1d66fd493efee96" category="list-text">FAS2820をDS212Cドライブシェルフに変換する</block>
+  <block id="1744fe750406e21c396a8e4c89362b53" category="paragraph">高可用性（HA）ペアコントローラはnode1とnode2であり、交換用HAペアコントローラはnode3とnode4です。</block>
+  <block id="7852940e7fb5ce1cde904900ff2c77cf" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="3c93e4919fe9173279b416ce6cbad5ca" category="inline-xref-macro-rx"></block></block>
+  <block id="475bd531b702ae61186dfccd545215dc" category="paragraph">ノード2をドライブシェルフに変換する前に、ノード2の論理インターフェイス（LIF）とデータアグリゲートをノード1に移行します。</block>
+  <block id="4174321e08a29b6f7870e82656d3885f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="4e5a388ad8fe4c3815b9585dc37cbe68" category="inline-xref-macro-rx"></block></block>
+  <block id="760d1dea18635174990e7953a45a5122" category="paragraph">node2をドライブシェルフに変換してnode4に接続してから、node2からnode4にドライブを再割り当てします。</block>
+  <block id="b01cb192e087aafd1de457343925d043" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="7bd518c76efbd2aef7176a8f50e8cf2e" category="inline-xref-macro-rx"></block></block>
+  <block id="6af4c458ddb02299622c17ca8137dbd5" category="paragraph">node2 をドライブシェルフに変換して node4 に接続したあとに、以前 node2 に属していたドライブを node4 に再割り当てします。</block>
+  <block id="894e6849a5500349df29cc1c2680fbd1" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="369919f1d6791c86d5486824bd50df6d" category="inline-xref-macro-rx"></block></block>
+  <block id="8d18cb062dd45fd475487a4e4ae40a81" category="paragraph">node1をドライブシェルフに変換する前に、node1上のデータアグリゲート、epsilon、およびLIFをnode4に移行します。</block>
+  <block id="33e63f79556a87281e8de9d8ba37f5f5" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="ece5a483b89709db8820de418819044a" category="inline-xref-macro-rx"></block></block>
+  <block id="9f3787f77a3d708bfd899656a1d33473" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="58261ec40fab79eddcd526a99ebeb740" category="inline-xref-macro-rx"></block></block>
+  <block id="8c097303e8c47e0358dee664485228ad" category="paragraph">node1 をドライブシェルフに変換して node3 に接続した後、以前 node1 に属していたドライブを node3 に再割り当てします。</block>
+  <block id="eb6c87afcabfd3eb60c8d87f7b2fa75d" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="8df2fdb5b5907c7ff547185a007acea7" category="inline-xref-macro-rx"></block></block>
+  <block id="dbd49bc5d5ba19572dc566632d2aced5" category="paragraph">アップグレードを完了するには、node3をnode4に接続し、node4のデータLIFとデータアグリゲートをnode3に移行します。</block>
+  <block id="f03ac6f1409311cad39eb41e53a62b5d" category="paragraph">node4でこれらの手順を実行します。</block>
+  <block id="a10e919e5952f3c6e23ac5a3030258d9" category="paragraph"><block ref="a10e919e5952f3c6e23ac5a3030258d9" category="inline-link-macro-rx"></block></block>
+  <block id="d1a554f14a805a8cbde15ab2fc035750" category="summary">node2 をドライブシェルフに変換する前に、node2 上の論理インターフェイス（LIF）とデータアグリゲートを node1 に移行します。</block>
+  <block id="7f9f4b424a4b8ce0da7760628b186fec" category="list-text">元のコントローラと交換用コントローラのONTAPリリースバージョンとパッチバージョンが同じであること（可能な場合）。サポートされているONTAPリリースについては、<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>を参照してください。</block>
+  <block id="5b9d38142e25513e59ced377c1d7e1d3" category="paragraph">node1でこれらの手順を実行します。</block>
+  <block id="82f39335034368e21e31b36de524ac1b" category="paragraph"><block ref="82f39335034368e21e31b36de524ac1b" category="inline-link-macro-rx"></block></block>
+  <block id="b2e3bc46fa98f19faa67c4ef610f8eb9" category="summary">アップグレードを完了するには、node3をnode4に接続し、node4のデータ論理インターフェイス（LIF）とデータアグリゲートをnode3に移行します。</block>
+  <block id="0cbdd642df9c6b7626ea09faa5dfa2f6" category="paragraph">node3 でこれらの手順を実行します。</block>
+  <block id="4a8bbdeeb22409da918e731c54125d26" category="summary">node1 をドライブシェルフに変換して node3 に接続した後、以前 node1 に属していたドライブを node3 に再割り当てします。</block>
+  <block id="a1d731ff75e84a7f9e79232086b552ed" category="paragraph">以前ノード1に割り当てられていたドライブをノード3に再割り当てします。</block>
+  <block id="ff82ebc559928d9683db52ca87d348f5" category="paragraph"><block ref="ff82ebc559928d9683db52ca87d348f5" category="inline-link-macro-rx"></block></block>
+  <block id="63370e030e33005f4f55adec7b2090bf" category="summary">node2 をドライブシェルフに変換して node4 に接続した後、以前 node2 に属していたドライブを node4 に再割り当てします。</block>
+  <block id="9e84c30b2ace13f08f4087f3efab5b1f" category="paragraph">以前ノード2に属していたドライブをノード4に再割り当てします。</block>
+  <block id="4d16c806ce6e12813ba1cbb84ca716b2" category="paragraph"><block ref="4d16c806ce6e12813ba1cbb84ca716b2" category="inline-link-macro-rx"></block></block>
+  <block id="6d3f81448564a0b32b4d013b2d4bd9dc" category="doc">ストレージを移動してアップグレードする方法について説明します</block>
+  <block id="0d319a2a433b68f06822ee84efa8ce74" category="inline-link-macro">AFF A150、AFF A220、またはFAS2820をドライブシェルフに変換してアップグレード</block>
+  <block id="71a025d0cf4ff3dc04b09a13d1bc8af2" category="list-text"><block ref="cb44511d3d00b84d74239b2fb8d8c2f8" category="inline-link-macro-rx"></block>（無停止手順）</block>
+  <block id="08ba22069fb08383b52faed7f4d345cd" category="doc">ボリュームの移動によるアップグレードについて</block>
+  <block id="6802043b9764056878d8b5ef9ddbbd43" category="inline-link-macro">AFF A250をドライブシェルフに変換してストレージをAFF A400に移動する方法について学ぶ</block>
+  <block id="763f4209ffce97d23f6673475006733b" category="list-text"><block ref="bcabb97dd08679e52044087ec7bdb13e" category="inline-link-macro-rx"></block>（無停止手順）</block>
+  <block id="c81e728d9d4c2f636f067f89cc14862c" category="inline-xref">2</block>
+  <block id="6512bd43d9caa6e02c990b0a82652dca" category="inline-xref">11</block>
+  <block id="787c7719fa749347a794f7e1715d310f" category="list-text">手順<block ref="d620136553e0db181cbabd4e786d51d0" category="inline-xref-macro-rx"></block>から<block ref="0cdb75663ca2bca3e5cd87c4a0e87b1c" category="inline-xref-macro-rx"></block>を繰り返して、クラスターからフェールオーバー パートナーを削除します。</block>
+  <block id="d80bf331f0f9427935a241c929519965" category="paragraph">AFF A250 システムから AFF A400 システムへの無停止アップグレードを実行します。まず、AFF A250 ノードを NS224 ドライブシェルフに変換します。次に、それらを AFF A400 交換用ノードに接続します。これにより、AFF A250 オンボードストレージが AFF A400 交換用システムに移動されます。</block>
+  <block id="26d78a3edefb574dd0df2bc37cf2a575" category="paragraph">AFF A250 node2をNS224ドライブシェルフに変換してからAFF A400 node4に接続し、ドライブをnode2からnode4に再割り当てします。</block>
+  <block id="6f77466dc1dc6acbc495e39fd470459a" category="paragraph">AFF A250 node1をNS224ドライブシェルフに変換してからAFF A400 node3に接続し、ドライブをnode1からnode3に再割り当てします。</block>
+  <block id="684a9f0ee975657b52767f3c39cae98b" category="paragraph">AFF A250 node1でこれらの手順を実行します。</block>
+  <block id="a77a3985e5c19cf5801afeb5d2a29dff" category="paragraph">AFF A400 node4でこれらの手順を実行します。</block>
+  <block id="ce39be5d7f3311f3002d90b356ccdc14" category="cell">FAS2620^4^、FAS2720^4^</block>
+  <block id="ed2a65a81b323e108bb0f144e03c3c4f" category="paragraph">^4^次の表は、コントローラのアップグレードの組み合わせでサポートされているONTAPバージョンを示しています。</block>
+  <block id="b69791a38ba725881c6a2fc5ecab63cb" category="cell">9.13.1以降</block>
+  <block id="e1a6f05f3e6c48b5646a68b138034f8d" category="cell">FAS2760</block>
+  <block id="d03f05e2115035868849d9a9b6ed185f" category="cell">9.11.1P7以前</block>
+  <block id="9a2ca2c6b724df9b3fbb3069f5f8c313" category="paragraph">コントローラハードウェアをアップグレードするには、アグリゲートの再配置（ARL）方法がいくつかあります。このARL手順では、ONTAP 9.15.1以降で導入されたAFFおよびFASストレージシステムのコントローラHAペアを、既存のディスクと保存されたデータを維持しながら新しいコントローラにアップグレードする方法について説明します。これは複雑な手順であり、経験豊富なONTAP管理者のみが使用する必要があります。</block>
+  <block id="d18476c9d1a0957d7bcf05df7ef687bb" category="paragraph">コントローラハードウェアをアップグレードするには、アグリゲートの再配置（ARL）方法がいくつかあります。このARL手順では、ONTAP 9.15.1以降で導入されたAFFおよびFASストレージシステムのコントローラHAペアを、既存のディスクと保存されたデータを維持しながら新しいコントローラにアップグレードする方法について説明します。</block>
+  <block id="d431073ae71950468aefd4d8436e1ef0" category="paragraph">交換用モジュールを搭載した Node1 の起動準備が完了しました。サポートされている交換モジュールは、<block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block>に記載されています。</block>
+  <block id="be478cf082a439418badbebb9d611315" category="paragraph">交換用モジュールを搭載した Node2 の起動準備が完了しました。サポートされている交換モジュールは、<block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block>に記載されています。</block>
+  <block id="cab3f425a0777f41648c6d4726a06447" category="summary">同じシャーシ内のコントローラモデル、ディスク、およびディスクに保存されているデータをアップグレードするARL手順を使用するかどうかを決定します。</block>
+  <block id="96bf76a630247b51d6c8f5df6b966909" category="paragraph">コントローラハードウェアをアップグレードするには、アグリゲートの再配置（ARL）方法がいくつかあります。このコンテンツでは、既存のシステムシャーシ、ディスク、およびディスクに保存されているデータを保持しながら、既存のシステムを交換用システムに変換して、HAペアのストレージコントローラをアップグレードする方法について説明します。この複雑な手順は、経験豊富なONTAP管理者のみが使用してください。</block>
+  <block id="824809df238d78e18fbcfd6304a80889" category="paragraph">次の表は、既存のシステムシャーシ、ディスク、およびそこに保存されているデータを保持しながら、既存のシステムを交換用システムに変換してコントローラのアップグレードを実行する場合にサポートされるシステムマトリックスを示しています。</block>
+  <block id="b07e9ba95e5cf8b7919d234b427a3d31" category="paragraph">コントローラハードウェアをアップグレードするには、アグリゲートの再配置（ARL）方法がいくつかあります。この手順では、既存のシステムシャーシ、ディスク、およびディスクに保存されているデータを保持したまま、既存のシステムを交換用システムに変換して、HAペアのストレージコントローラをアップグレードする方法について説明します。</block>
+  <block id="14f619eb0a47ac2fd0196211abf8331d" category="admonition">このドキュメントでは、*node1* および *node2* という用語はノード名の参照としてのみ使用されます。手順に従うときは、ノードの実際の名前を使用する必要があります。</block>
+  <block id="116b139548e4e899fce4be8e1f409730" category="paragraph">アップグレードを開始する前に重要な要素を考慮する必要があります。</block>
+  <block id="9ef033d8c14c127b977f9ddb9717418d" category="admonition">以下の重要な情報をすべて確認する必要があります。</block>
+  <block id="8493a6f580de1fd683dd89e3f871b7c7" category="list-text">この手順は複雑であり、高度な ONTAP 管理スキルがあることを前提としています。アップグレードを開始する前に、<block ref="6b6f97d32522c6f76cca4a6bb67fbbb2" category="inline-link-macro-rx"></block>と<block ref="1e7f97890c56f8e84d1c3bfb7b3e84a7" category="inline-link-macro-rx"></block>を読んで理解する必要があります。</block>
+  <block id="2a5d58408c1e4dabe02db81822ef7e37" category="list-text"><block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block>に含まれるダウンタイムを伴う既存のシステムからアップグレードする場合は、ストレージを移動するか、テクニカルサポートに連絡することで、コントローラーハードウェアをアップグレードできます。<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>を参照して、_ボリュームまたはストレージの移動によるアップグレード_にリンクしてください。</block>
+  <block id="cdebc1687e2a3fcf7e10d696e347a0b9" category="paragraph">交換用コントローラモジュールのブートメディアにインストールされているONTAPのバージョンは、シャーシにインストールして電源をオンにしない限り確認できません。交換用システムのブートメディア上のONTAPバージョンは、アップグレード対象の古いシステムで実行されているONTAPバージョンと同じである必要があり、ブートメディア上のプライマリブートイメージとバックアップブートイメージの両方が一致している必要があります。アップグレードでサポートされる最小ONTAPバージョンを確認するには、<block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="55bbe63dc2510d221cc5a30666c866c1" category="section-title">ステップ4：ASA A900、AFF A900、またはFAS9500コントローラモジュールをノード1にインストールする</block>
+  <block id="44bc263b79949f06fdd989ec293c19b4" category="section-title">ステップ2：ASA A150、AFF A150、またはFAS2820コントローラモジュールを取り付けます</block>
+  <block id="d6502f1be5391b0a8898fed8416aa2bd" category="paragraph">node1コントローラモジュールを取り外すには、ケーブル管理デバイスを取り外し、ロックラッチのロックを解除します。次に、コントローラモジュールをシャーシから取り外します。</block>
+  <block id="1aedb7d8f3d716ca9b88187c1f40d3f7" category="section-title">ステップ2：AFF A30、AFF A50、AFF C30、またはAFF C60コントローラモジュールを取り付けます</block>
+  <block id="283e63573648e755da79f3b7a34aa3cd" category="sidebar">ドライブシェルフに変換してストレージを移動する</block>
+  <block id="32ca24eb108d799d36ecd2d1002c8264" category="sidebar">AFF A150、AFF A220、またはFAS2820のアップグレード</block>
+  <block id="0b4077116ebfa4bc8667472d8079b0c4" category="sidebar">AFF A150、AFF A220、またはFAS2820のアップグレードについて学ぶ</block>
 </blocks>
