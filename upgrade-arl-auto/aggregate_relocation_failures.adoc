@@ -38,7 +38,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 
 
 +
-「 storage aggregate relocation start 」、「 override-vetoes 」、および「 override-vetoes destination-checks 」オプションの詳細については、を参照してください link:other_references.html["参考資料"] ONTAP 9 コマンド：マニュアルページリファレンスにリンクするには、次の手順を実行します。
+ `storage aggregate relocation start`、 `override-vetoes`、 `override-destination-checks`オプションの詳細については、link:other_references.html["参考資料"]を参照して_ONTAP 9 Command reference_にリンクしてください。
 
 
 

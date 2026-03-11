@@ -315,7 +315,7 @@ vs0
 network interface revert -vserver * -lif *
 
 +
-network interface revert コマンドの詳細については、を参照してください link:other_references.html["参考資料"] ONTAP 9 コマンド：マニュアルページリファレンスにリンクするには、次の手順を実行します。
+ `network interface revert`コマンドの詳細については、link:other_references.html["参考資料"]を参照して_ONTAP 9 Command reference_にリンクしてください。
 
 . ノード 1 とノード 2 で障害ディスクが所有されているかどうかを確認します。
 +

@@ -50,7 +50,7 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 * 新しいコントローラを新しいHAペアとしてクラスタに追加し、ボリューム移動を使用してデータを移行する。
 * MetroCluster IP設定をアップグレードしています。
 +
-MetroCluster IP構成をアップグレードするには、MetroCluster Upgrade and Expansion_contentへのリンクを参照してくださいlink:other_references.html["参考資料"]。
+MetroCluster IP構成をアップグレードするには、link:other-references.html["参考資料"]を参照して_MetroClusterのアップグレードと拡張_コンテンツにリンクしてください。
 
 
 
@@ -61,7 +61,7 @@ MetroCluster IP構成をアップグレードするには、MetroCluster Upgrade
 次の表は、既存のシステムシャーシ、ディスク、およびそこに保存されているデータを保持しながら、既存のシステムを交換用システムに変換してコントローラのアップグレードを実行する場合にサポートされるシステムマトリックスを示しています。
 
 
-CAUTION: この手順は、以下のアップグレード構成を厳密に環境します。他のシステムの組み合わせ間でアップグレードを実行する場合は、この手順を使用しないでください。他のすべてのコントローラモデルについては、link to _use「system controller replace」コマンドを参照しlink:other_references.html["参考資料"]て、ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードしてください。また、アグリゲートの再配置を使用して、ONTAP 9.8以降を実行しているコントローラハードウェアを手動でアップグレードしてください。
+CAUTION: この手順は、次のアップグレード構成に厳密に適用されます。他のシステムの組み合わせ間でのアップグレードには、この手順を使用しないでください。その他のコントローラモデルについては、link:other-references.html["参考資料"]を参照して、_ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードするための「system controller replace」コマンドの使用_および_ONTAP 9.8以降を実行しているコントローラハードウェアを手動でアップグレードするためのアグリゲートの再配置の使用_にリンクしてください。
 
 [cols="20,20,40"]
 |===

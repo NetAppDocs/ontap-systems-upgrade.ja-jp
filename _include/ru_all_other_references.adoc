@@ -39,37 +39,7 @@
 | link:https://docs.netapp.com/us-en/ontap/network-management/index.html["Network Management の略"^] | クラスタで物理 / 仮想ネットワークポート（ VLAN およびインターフェイスグループ）、 LIF 、ルーティング、およびホスト解決サービスを設定および管理する方法、ロードバランシングでネットワークトラフィックを最適化する方法、および SNMP を使用してクラスタを監視する方法について説明します。 
 
 
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-900%2Fhome.html["ONTAP 9.0 コマンド：マニュアルページリファレンス"^] | サポートされる ONTAP 9.0 コマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-910%2Fhome.html["ONTAP 9.1 コマンド：マニュアルページリファレンス"^] | ONTAP 9.1 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-920%2Fhome.html["ONTAP 9.2 コマンド：マニュアルページリファレンス"^] | ONTAP 9.2 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-930%2Fhome.html["ONTAP 9.3 コマンド：マニュアルページリファレンス"^] | ONTAP 9.3 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-940%2Fhome.html["ONTAP 9.4 コマンド：マニュアルページリファレンス"^] | ONTAP 9.4 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-950%2Fhome.html["ONTAP 9.5 コマンド：マニュアルページリファレンス"^] | ONTAP 9.5 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-960%2Fhome.html["ONTAP 9.6 コマンド：マニュアルページリファレンス"^] | ONTAP 9.6 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-970%2Fhome.html["ONTAP 9.7 コマンド：マニュアルページリファレンス"^] | ONTAP 9.7 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-980/home.html["ONTAP 9.8 コマンド：マニュアルページリファレンス"^] | サポートされている ONTAP 9.8 コマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-991/home.html["ONTAP 9.9.1 コマンド：マニュアルページリファレンス"^] | ONTAP 9.9.1 でサポートされるコマンドの構文と使用法について説明します。 
-
-
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-9101/home.html["ONTAP 9.10.1 コマンド：マニュアルページリファレンス"^] | サポートされる ONTAP 9.10.1 コマンドの構文と使用法について説明します。 
+| link:https://docs.netapp.com/us-en/ontap-cli/index.html["ONTAP 9 コマンドリファレンス"^] | サポートされているONTAPコマンドの構文と使用法について説明します。 
 
 
 | link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI での SAN 管理"^] | iSCSI および FC プロトコルを使用して LUN 、 igroup 、ターゲットを設定および管理する方法、 NVMe/FC プロトコルを使用してネームスペースとサブシステムを設定および管理する方法について説明します。 
