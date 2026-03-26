@@ -3406,7 +3406,6 @@
   <block id="7de07b30845475194f5305d135dd504b" category="paragraph">オンボードキーマネージャ（OKM）を使用して認証キーを管理できます。OKMをセットアップした場合は、アップグレードを開始する前にパスフレーズとバックアップ資料を記録しておく必要があります。</block>
   <block id="b57235dcd9249f0e9bf6001eecd99ce5" category="list-text">クラスタ全体のパスフレーズを記録します。</block>
   <block id="f97bf876165b297d6e8425acab009019" category="paragraph">これは、CLIまたはREST APIを使用してOKMを設定または更新したときに入力したパスフレーズです。</block>
-  <block id="8cada82213a4eb50c1f0cba46389bd44" category="list-text">を実行して、キー管理ツールの情報をバックアップします<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> コマンドを実行します</block>
   <block id="219d5a10054a3daaa60cc6dc3881a506" category="paragraph">ノード 1 とノード 2 が別々のシャーシに搭載されている場合は、ノード 3 をノード 1 と同じラックの場所に設置できます。ただし、ノード1がノード2と同じシャーシに搭載されていた場合は、ノード3をノード1の場所に近い独自のラックスペースに配置する必要があります。</block>
   <block id="7abb4d22dfb96ceb2a52ebfc5cef2026" category="admonition">ほとんどのプラットフォームモデルには一意のインターコネクトカードモデルがあるため、インターコネクトカードまたはクラスタインターコネクトケーブルの接続を node1 から node3 に移動する必要はない場合があります。MetroCluster 構成の場合は、FC-VIケーブルの接続をノード1からノード3に移行する必要があります。新しいホストに FC-VI カードがない場合は、 FC-VI カードの移動が必要になることがあります。</block>
   <block id="28fabaf13c83a39f567169d484c2bdb7" category="admonition">手順 でこれまでに行ったことがない場合は、Knowledge Baseの記事を参照してください<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> 使用している自己暗号化ドライブのタイプを確認するため。</block>
@@ -5357,4 +5356,9 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="49e4f8e3ed6f9b425b3302443b88af26" category="paragraph"><block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>に移動して、詳細については『ネットワーク管理』または『ONTAP 9 コマンド リファレンス』にリンクしてください。</block>
   <block id="79ed614e57a84cb3ea78a7ec6a71e230" category="paragraph">詳細については、<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> を参照して _Network Management_ または _ONTAP 9 Command reference_ にリンクし、_Configuring failover settings on a LIF_ に進んでください。</block>
   <block id="bf4898b462ec44974d0fd35d857406f4" category="paragraph">手順の前半で記録したパスフレーズとバックアップ情報を入力します。<block ref="67f80d13cf548292184bc05f4b74227a" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="160d9607adcb68efced47d6deb7493eb" category="list-text">パスフレーズとキーマネージャーの操作を確認してください：</block>
+  <block id="35e13cf28e19f82138f24d5704edb686" category="paragraph">プロンプトが表示されたら、前の手順で記録したクラスタ全体のOKMパスフレーズを入力します。</block>
+  <block id="86e557f58bf6d6ffc84353711ad398d6" category="list-text">以下のコマンドの出力を確認して、cc-modeが有効になっていることを確認します：</block>
+  <block id="c1c5360be7e00706ec4adf74606262d2" category="paragraph"><block ref="8bb1a67a3cdda2dcc6e451017bb9da4d" prefix="" category="inline-code"></block></block>
+  <block id="66a6e497892fb616eb108dd90d697bfb" category="list-text">key-manager情報をバックアップします。</block>
 </blocks>

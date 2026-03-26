@@ -21,7 +21,21 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 +
 これは、CLIまたはREST APIを使用してOKMを設定または更新したときに入力したパスフレーズです。
 
-. を実行して、キー管理ツールの情報をバックアップします `security key-manager onboard show-backup` コマンドを実行します
+. パスフレーズとキーマネージャーの操作を確認してください：
++
+「セキュリティキーマネージャオンボード同期」
+
++
+プロンプトが表示されたら、前の手順で記録したクラスタ全体のOKMパスフレーズを入力します。
+
+. 以下のコマンドの出力を確認して、cc-modeが有効になっていることを確認します：
++
+`security key-manager config show`
+
+. key-manager情報をバックアップします。
++
+「 securitykey manager onboard show-backup 」を参照してください
+
 
 
 
