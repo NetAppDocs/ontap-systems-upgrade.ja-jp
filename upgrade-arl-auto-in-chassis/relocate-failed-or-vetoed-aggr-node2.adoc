@@ -41,3 +41,6 @@ summary: ARL を使用して同じシャーシ内のコントローラ モデル
 `storage aggregate relocation start -node node1 -destination node2 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
 |===
 
+
+.次の手順
+失敗した、または拒否されたアグリゲートをノード2に移動した後、link:retire-node1.html["node1を撤去"]。

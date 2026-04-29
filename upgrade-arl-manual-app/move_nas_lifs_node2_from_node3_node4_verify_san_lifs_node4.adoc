@@ -314,3 +314,6 @@ NOTE: SAN LIF は、元のポートとリンク速度が同じポートに移動
 「network interface modify -vserver vserver_name __-lif LIF_name -status-admin up
 
 
+
+.次の手順
+node2が所有するNASデータLIFをnode3からnode4に移動した後、node4でSAN LIFを検証し、。

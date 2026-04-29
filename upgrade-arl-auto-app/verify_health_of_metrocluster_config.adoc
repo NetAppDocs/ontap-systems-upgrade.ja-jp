@@ -60,3 +60,6 @@ MetroCluster オペレーション履歴 show -job-id 38`
 「 system health alert show 」というメッセージが表示されます
 
 
+
+.次の手順
+MetroCluster構成の健全性を確認したら、link:check_for_metrocluster_config_errors.html["MetroCluster構成エラーを確認します"]。

@@ -17,7 +17,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 node4 のインストールとブートの完了後、正しくインストールされていること、クラスタの一部であること、および node3 と通信できることを確認する必要があります。
 
 .このタスクについて
-手順のこの時点で、ノード 4 がクォーラムに参加する間、処理が一時停止します。
+この手順のこの時点で、node4がクォーラムに参加するため、操作は一時停止します。
 
 .手順
 . ノード 4 がクォーラムに参加していることを確認し
@@ -38,7 +38,7 @@ cluster show -node node4 -fields health`
 . 交換したコントローラが MetroCluster 構成に対して正しく設定されており、スイッチオーバーモードでないことを確認します。
 +
 
-CAUTION: この段階では、 MetroCluster構成は正常な状態ではなく、解決すべきエラーが発生する可能性があります。見るlink:verify_health_of_metrocluster_config.html["MetroCluster 構成の健全性を確認"]。
+CAUTION: この段階では、MetroCluster設定が正常な状態ではなく、解決すべきエラーが発生している可能性があります。link:verify_health_of_metrocluster_config.html["MetroCluster 構成の健全性を確認"]を参照してください。
 
 
 
@@ -74,7 +74,7 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 
 == ノード 4 でキー管理ツールの設定をリストアします
 
-NetApp Aggregate Encryption（NAE）またはNetApp Volume Encryption（NVE）を使用してアップグレードするシステムのボリュームを暗号化する場合は、暗号化設定を新しいノードに同期する必要があります。key-managerをリストアしない場合は、ARLを使用してnode2のアグリゲートをnode3からnode4に再配置すると、暗号化されたボリュームがオフラインになります。
+NetApp Aggregate Encryption（NAE）またはNetApp Volume Encryption（NVE）を使用してアップグレードするシステムのボリュームを暗号化している場合は、暗号化構成を新しいノードと同期する必要があります。キーマネージャを復元しない場合、ARLを使用してnode2のアグリゲートをnode3からnode4に再配置すると、暗号化されたボリュームがオフラインになります。
 
 .手順
 . オンボードキーマネージャの暗号化設定を同期するには、クラスタプロンプトで次のコマンドを実行します。

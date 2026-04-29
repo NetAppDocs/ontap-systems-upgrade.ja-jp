@@ -134,3 +134,6 @@ system controller replace resume
 
 
 
+
+.次の手順
+非ルート集約とNASデータLIFをnode2に戻した後、link:manage-authentication-using-kmip-servers.html["KMIPサーバを使用して認証を管理する"]。

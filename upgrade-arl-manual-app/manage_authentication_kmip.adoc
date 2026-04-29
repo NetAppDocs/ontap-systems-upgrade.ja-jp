@@ -34,3 +34,6 @@ security key-manager setup -node _new_controller_name_`
 security key-manager restore -node _new_controller_name_`
 
 
+
+.次の手順
+KMIPサーバーを使用して認証を管理した後、link:ensure_controllers_set_up_correctly.html["新しいコントローラが正しくセットアップされていることを確認します"]。

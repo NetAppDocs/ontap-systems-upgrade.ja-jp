@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/complete-preparation-for-upgrade.html 
+keywords: storage, encryption, authentication, key, manager, external 
+summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、ストレージ暗号化の設定と管理、認証キーの管理、SnapMirror関係の休止が行われます。 
+---
+= アップグレードの準備を完了する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Onboard Key Manager（OKM）を使用したONTAPライセンスとStorage Encryptionの管理について学習します。必要に応じて、SnapMirror関係を休止します。
+
+
+
+== ONTAPライセンスについて学ぶ
+
+クラスタ内の各ノードには、独自のNetAppライセンスファイル（NLF）が必要です。
+
+NLFがない場合は、クラスタの現在ライセンスされている機能を新しいコントローラで使用できます。ただし、ライセンスされていない機能をコントローラで使用するとライセンス契約に違反する可能性があるため、アップグレードの完了後に新しいコントローラ用のNLFをインストールする必要があります。
+
+link:other-references.html["参考資料"]を参照して、NLFを取得できる_NetApp Support Site_にリンクしてください。NLFは、_My Support_セクションの_Software licenses_から入手できます。必要なNLFがサイトにない場合は、NetApp営業担当者にお問い合わせください。
+
+ONTAPライセンスの詳細については、link:other-references.html["参考資料"]を参照して_System Administration Reference_にリンクしてください。
+
+
+
+== オンボードキーマネージャを使用してストレージ暗号化を管理します
+
+暗号化キーの管理には、オンボードキーマネージャ（OKM）を使用します。OKMが設定されている場合は、アップグレードを開始する前にパスフレーズとバックアップデータを記録しておく必要があります。
+
+.手順
+. クラスタ全体のパスフレーズを記録します。
++
+これは、CLIまたはREST APIを使用してOKMを設定または更新したときに入力したパスフレーズです。
+
+. パスフレーズとキーマネージャーの操作を確認してください：
++
+「セキュリティキーマネージャオンボード同期」
+
++
+プロンプトが表示されたら、前の手順で記録したクラスタ全体のOKMパスフレーズを入力します。
+
+. 以下のコマンドの出力を確認して、cc-modeが有効になっていることを確認します：
++
+`security key-manager config show`
+
+. key-manager情報をバックアップします。
++
+「 securitykey manager onboard show-backup 」を参照してください
+
+
+
+
+
+== オプションで、SnapMirror関係を休止します
+
+手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。
+
+.手順
+. デスティネーションクラスタの SnapMirror 関係のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
++
+[NOTE]
+====
+このステータスが「Transferring」の場合は、転送を中止する必要があります。snapmirror abort -destination -vserver _vserver_name _`
+
+====
++
+SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は失敗します。
+
+. クラスタ間のすべての関係を休止します。
++
+`snapmirror quiesce -destination-vserver *`
+
+
+
+.次の手順
+アップグレードの準備後、link:relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html["node1が所有する非ルートアグリゲートとNASデータLIFをnode2に再配置する"]。

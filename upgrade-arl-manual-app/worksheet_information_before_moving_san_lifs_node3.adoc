@@ -69,3 +69,5 @@ node3 への移行が完了したら、 node3 の LIF の「 adapter 」と「 s
 
 |  |  |  |  |  |  
 |===
+.次の手順
+各 LIF の `adapter`と `switch-port`の情報を記録したら、link:relocate_non_root_aggr_node2_node3.html["非ルートアグリゲートをノード2からノード3に再配置する"]。

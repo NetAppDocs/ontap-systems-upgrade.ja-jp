@@ -23,6 +23,12 @@ AFF A250、AFF C250、AFF A800、またはAFF C800のアップグレードの場
 
 手順のこの時点で、コントローラのアップグレード処理はノード 1 がクォーラムへの自動参加を試みるため一時停止している必要があります。
 
+
+
+== 手順1：node1がクォーラムに参加していることを確認する
+
+node1がクォーラムに含まれていることを確認してください。次に、コントローラー交換作業を再開してください。
+
 .手順
 . node1 がクォーラムに参加していることを確認します
 +
@@ -112,12 +118,12 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 
 NOTE: この手順 では、 VLAN 、 ifgrp 、およびブロードキャストドメインのセクション _ が、 node1 で _ ネットワーク設定のリストア _ という名前に変更されています。
 
-. コントローラの交換が一時停止状態になった状態で、に進みます <<ノード 1 でネットワーク設定をリストアします>>。
+. コントローラーの交換が一時停止状態になったら、<<restore_network_configuration_on_node1,ノード 1 でネットワーク設定をリストアします>>に進みます。
 
 
 
 
-== ノード 1 でネットワーク設定をリストアします
+== ステップ2：node1でネットワーク構成を復元する
 
 node1 がクォーラムにあり、 node2 と通信できることを確認したら、 node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインが node1 で認識されていることを確認します。また、ノード 1 のすべてのネットワークポートが正しいブロードキャストドメインに設定されていることを確認します。
 
@@ -214,7 +220,7 @@ Warning: Repairing port "node1:e1b" may cause it to move into a different broadc
 「 network port reachability show 」のように表示されます
 
 +
-到達可能性の修復が実行されると、 ONTAP は正しいブロードキャストドメインにポートを配置しようとします。ただし、ポートの到達可能性を判別できず、既存のどのブロードキャストドメインにも属していない場合、 ONTAP はこれらのポート用に新しいブロードキャストドメインを作成します。
+到達可能性修復が実行されると、ONTAPはポートを正しいブロードキャストドメインに配置しようと試みます。ただし、ONTAPがポートの到達可能性を判断できず、そのポートが既存のブロードキャストドメインのいずれにも属していない場合、ONTAPはこれらのポート用に新しいブロードキャストドメインを作成します。
 
 . ポートの到達可能性を確認します
 +
@@ -248,3 +254,6 @@ Warning: Repairing port "node1:e1b" may cause it to move into a different broadc
 network interface show -fields home-port 、 status-admin
 
 
+
+.次の手順
+node1のインストールを確認した後、link:restore-key-manager-config-upgraded-node1.html["アップグレードされたnode1でkey-managerの設定を復元する"]。

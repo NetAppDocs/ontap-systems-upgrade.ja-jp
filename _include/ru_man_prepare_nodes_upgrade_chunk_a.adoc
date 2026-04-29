@@ -157,7 +157,7 @@ node2          node1          true     Connected to node1
 storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
 
 +
-node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していない場合、次の例のようなメッセージが返されます。
+node1もnode2も、自身が現在の所有者である（ただし、ホーム所有者ではない）アグリゲートを所有していない場合、システムは次の例のようなメッセージを返します：
 
 +
 ....

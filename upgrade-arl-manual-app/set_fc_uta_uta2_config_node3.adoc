@@ -259,3 +259,6 @@ NOTE: テープ ドライブおよびMetroCluster構成には FC イニシエー
 
 . [[man_check_3_step14]]ポートにケーブルを接続します。
 
+
+.次の手順
+node3でFCまたはUTA/UTA2構成を設定した後、link:map_ports_node1_node3.html["node1からnode3へポートをマッピングする"]。

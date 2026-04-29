@@ -1,10 +1,10 @@
-= 使用許諾
+= ONTAPライセンスについて学ぶ
 :allow-uri-read: 
 
 
 
 
-== 使用許諾
+== ONTAPライセンスについて学ぶ
 
 一部の機能にはライセンスが必要ですが、1つ以上の機能を含む_packages_として発行されます。クラスタで使用する各機能のキーは、クラスタ内の各ノードに独自に設定する必要があります。
 
@@ -12,4 +12,4 @@
 
 を参照してください link:other_references.html["参考資料"] ONTAPの新しい28文字のライセンスキーを取得できる_ NetApp Support Site _にリンクします。キーは、 _ ソフトウェアライセンス _ の _ マイサポート _ セクションにあります。必要なライセンスキーがサイトにない場合は、ネットアップの営業担当者にお問い合わせください。
 
-ライセンスの詳細については、を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。
+ONTAPライセンスの詳細については、link:other_references.html["参考資料"]を参照して_System Administration Reference_にリンクしてください。

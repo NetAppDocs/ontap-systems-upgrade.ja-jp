@@ -19,8 +19,8 @@ entries:
   entries:
   - title: ノードをアップグレードする準備をします
     url: "/upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html"
-  - title: オンボードキーマネージャを使用してストレージ暗号化を管理します
-    url: "/upgrade-arl-auto-app-9151/manage_storage_encryption_using_okm.html"
+  - title: アップグレードの準備を完了する
+    url: "/upgrade-arl-auto-app-9151/complete-preparation-for-upgrade.html"
 - title: ステージ 2 ：移行してノード 1 を撤去
   pdf-filename: ステージ2。ノード1を再配置して撤去する（ONTAP 9.15.1以降では「system controller replace」を使用してアップグレード）
   entries:

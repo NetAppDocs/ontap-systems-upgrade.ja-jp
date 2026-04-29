@@ -108,5 +108,6 @@ Enable Switchless Cluster: false/true
 「特権管理者」
 
 . どちらかのコントローラで次のコマンドを入力してnode2を停止します。system node halt -node _node2 _`
-. ノード 2 が完全にシャットダウンしたら、シャーシまたはラックからノードを取り外します。アップグレードの完了後に、 node2 の運用を停止できます。を参照してください link:decommission_old_system.html["古いシステムの運用を停止"]。
+. node2が完全にシャットダウンしたら、シャーシまたはラックから取り外してください。
+. 必要に応じて、アップグレード完了後にnode2を廃止してください。link:decommission_old_system.html["古いシステムの運用を停止"]を参照してください。
 

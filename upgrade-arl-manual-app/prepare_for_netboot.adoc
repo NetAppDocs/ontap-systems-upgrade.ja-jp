@@ -56,3 +56,6 @@ NOTE: Windows で内容を展開する場合は、 7-Zip または WinRAR を使
 ディレクトリ内の情報を使用するには、 link:install_boot_node3.html["ステージ 3"] 。
 
 
+
+.次の手順
+ネットブートの準備後、link:relocate_non_root_aggr_node1_node2.html["非ルートアグリゲートをnode1からnode2に再配置する"]。

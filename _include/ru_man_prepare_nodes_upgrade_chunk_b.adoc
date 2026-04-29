@@ -79,7 +79,7 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 「network port vlan show -node _node_name _」のように入力します
 
 +
-VLAN は物理ポートを介して設定されます。物理ポートが変わった場合は、あとで手順で VLAN を再作成する必要があります。
+VLANは物理ポート上で設定されます。物理ポートが変更された場合は、手順の後半でVLANを再作成する必要があります。
 
 +
 次の例に示すように、ノードに設定されている VLAN が表示されます。
@@ -112,7 +112,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 「network interface show -vserver _vserver_name --data-protocol iscsi | fcp」というメッセージが表示されます
 
 +
-SVM に iSCSI も FC も設定されていない場合、次の例のようなメッセージが表示されます。
+SVMに対してiSCSIもFCも設定されていない場合、コマンドは次の例のようなメッセージを表示します：
 
 +
 ....
@@ -123,7 +123,7 @@ There are no entries matching your query.
 ノードが NAS 環境にあることを確認するには '-data-protocol nfs|cifs パラメータを指定した network interface show コマンドを使用します
 
 +
-SVM に iSCSI または FC が設定されている場合、次の例のようなメッセージが表示されます。
+SVMにiSCSIまたはFCのいずれかが設定されている場合、コマンドは次の例のようなメッセージを表示します：
 
 +
 ....

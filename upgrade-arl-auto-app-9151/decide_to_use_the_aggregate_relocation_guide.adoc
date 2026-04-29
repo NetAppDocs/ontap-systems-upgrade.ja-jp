@@ -116,3 +116,6 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 
 .関連情報
 参照link:other_references.html["参考資料"] _ONTAP 9 ドキュメント_にリンクします。
+
+.次の手順
+このARL手順を使用することを決定した後、link:required_tools_and_documentation.html["必要なツールとドキュメントについて学ぶ"]。

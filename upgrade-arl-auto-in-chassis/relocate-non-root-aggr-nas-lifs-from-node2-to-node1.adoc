@@ -71,3 +71,6 @@ volume show -node node1 -state offline`
 network interface show -curr-node _node2 -role data
 
 
+
+.次の手順
+非ルート集約とNASデータLIFをnode2からnode1に移動した後、link:relocate-failed-or-vetoed-aggr-node1.html["障害が発生した、または拒否されたアグリゲートをnode1に再配置する"]。

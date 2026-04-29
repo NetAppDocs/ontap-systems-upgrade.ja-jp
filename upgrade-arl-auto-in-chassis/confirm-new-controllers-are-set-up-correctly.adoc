@@ -139,3 +139,6 @@ link:other-references.html["参考資料"]を参照して、SPに関する情報
 
 .完了後
 node1とnode2でStorage Encryptionが有効になっている場合は、link:set-up-storage-encryption-new-module.html["新しいコントローラモジュールで Storage Encryption をセットアップします"]のセクションを完了します。それ以外の場合は、link:decommission-old-system.html["古いシステムの運用を停止"]のセクションを完了します。
+
+.次の手順
+新しいコントローラーが正しく設定されていることを確認した後、link:set-up-storage-encryption-new-module.html["新しいコントローラモジュールで Storage Encryption を設定する"]。

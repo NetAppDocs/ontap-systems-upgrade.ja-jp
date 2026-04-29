@@ -34,3 +34,6 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラを "system con
 
 . テーブルでクラスタを見つけ、 Product Tool Set （製品ツールセット）ドロップダウンメニューから * Decommission this system * （このシステムのデコミッション）を選択します。
 
+
+.次の手順
+旧システムを廃止した後、link:resume_snapmirror_operations.html["SnapMirror処理を再開する"]。

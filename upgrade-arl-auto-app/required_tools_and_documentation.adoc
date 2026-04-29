@@ -23,3 +23,6 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 
 
 にアクセスします link:other_references.html["参考資料"] セクションでは、このアップグレードに必要な参照ドキュメントと参照サイトのリストを参照できます
+
+.次の手順
+必要なツールとドキュメントを確認したら、link:guidelines_for_upgrading_controllers_with_arl.html["ARLを使用したコントローラのアップグレードに関するガイドライン"]について学習します。

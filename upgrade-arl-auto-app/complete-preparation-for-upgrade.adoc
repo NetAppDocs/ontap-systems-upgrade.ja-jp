@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/complete-preparation-for-upgrade.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードする場合は "system controller replace" コマンドを使用して " ストレージ暗号化の構成と管理 " 認証キーの管理 " および SnapMirror 関係の休止を行います' 
+---
+= アップグレードの準備を完了する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Onboard Key Manager（OKM）を使用したONTAPライセンスとStorage Encryptionの管理について学習します。必要に応じて、SnapMirror関係を休止します。
+
+
+
+== ONTAPライセンスについて学ぶ
+
+一部の機能にはライセンスが必要ですが、1つ以上の機能を含む_packages_として発行されます。クラスタで使用する各機能のキーは、クラスタ内の各ノードに独自に設定する必要があります。
+
+新しいライセンスキーがない場合は、クラスタで現在ライセンスされている機能を新しいコントローラで使用できます。ただし、ライセンスされていない機能をコントローラで使用するとライセンス契約に違反する可能性があるため、アップグレードの完了後に新しいコントローラのライセンスキーをインストールする必要があります。
+
+を参照してください link:other_references.html["参考資料"] ONTAPの新しい28文字のライセンスキーを取得できる_ NetApp Support Site _にリンクします。キーは、 _ ソフトウェアライセンス _ の _ マイサポート _ セクションにあります。必要なライセンスキーがサイトにない場合は、ネットアップの営業担当者にお問い合わせください。
+
+ONTAPライセンスの詳細については、link:other_references.html["参考資料"]を参照して_System Administration Reference_にリンクしてください。
+
+
+
+== オンボードキーマネージャを使用してストレージ暗号化を管理します
+
+暗号化キーの管理には、オンボードキーマネージャ（OKM）を使用します。OKMが設定されている場合は、アップグレードを開始する前にパスフレーズとバックアップデータを記録しておく必要があります。
+
+.手順
+. クラスタ全体のパスフレーズを記録します。
++
+これは、CLIまたはREST APIを使用してOKMを設定または更新したときに入力したパスフレーズです。
+
+. パスフレーズとキーマネージャーの操作を確認してください：
++
+「セキュリティキーマネージャオンボード同期」
+
++
+プロンプトが表示されたら、前の手順で記録したクラスタ全体のOKMパスフレーズを入力します。
+
+. 以下のコマンドの出力を確認して、cc-modeが有効になっていることを確認します：
++
+`security key-manager config show`
+
+. key-manager情報をバックアップします。
++
+「 securitykey manager onboard show-backup 」を参照してください
+
+
+
+
+
+== オプションで、SnapMirror関係を休止します
+
+手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。
+
+.手順
+. デスティネーションクラスタの SnapMirror 関係のステータスを確認します。
++
+「 Snapmirror show 」のように表示されます
+
++
+[NOTE]
+====
+このステータスが「Transferring」の場合は、転送を中止する必要があります。snapmirror abort -destination -vserver _vserver_name _`
+
+====
++
+SnapMirror 関係の状態が「 Transferring 」でない場合は、中止は失敗します。
+
+. クラスタ間のすべての関係を休止します。
++
+`snapmirror quiesce -destination-vserver *`
+
+
+
+.次の手順
+アップグレードの準備後、link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["node1が所有する非ルートアグリゲートとNASデータLIFをnode2に再配置する"]。

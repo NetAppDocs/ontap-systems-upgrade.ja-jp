@@ -60,3 +60,6 @@ security key-manager setup -node _new_controller_name_`
 security key-manager restore -node _new_controller_name_`
 
 
+
+.次の手順
+新しいコントローラーモジュールでStorage Encryptionを設定した後、link:set_up_netapp_encryption_on_new_controller.html["新しいコントローラモジュールでNetApp Volume EncryptionまたはAggregate Encryptionを設定"]。

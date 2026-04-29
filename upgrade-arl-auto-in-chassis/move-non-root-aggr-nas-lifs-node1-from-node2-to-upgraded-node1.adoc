@@ -203,3 +203,6 @@ system controller replace resume
 
 
 
+
+.次の手順
+node1の非ルート集約とNASデータLIFをnode2からアップグレードされたnode1に移動した後、link:relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html["非ルート・アグリゲートとNASデータLIFをnode2からnode1に再配置する"]。

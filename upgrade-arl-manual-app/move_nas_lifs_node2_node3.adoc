@@ -149,3 +149,6 @@ Distribution Function: ip
 
 
 
+
+.次の手順
+ノード2が所有するNASデータLIFをノード3に移動した後、link:record_node2_information.html["ノード2の情報を記録します"]。

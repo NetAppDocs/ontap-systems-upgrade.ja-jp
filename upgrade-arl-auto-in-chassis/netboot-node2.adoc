@@ -130,7 +130,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 . ブート メディア上の以前の構成をすべてクリアします。
 +
-.. 次のプロンプトで、  `wipeconfig`コマンドを入力し、Enter キーを押します。
+.. 次のプロンプトで、 `wipeconfig`コマンドを実行します。次に Enter を選択します：
 +
 [listing]
 ----
@@ -239,3 +239,6 @@ node2の場合、 `partner-sysid` アップグレードするノード1のノー
 printenv partner-sysid
 
 
+
+.次の手順
+node2をネットブートした後、link:cable-node2-for-shared-cluster-HA-storage.html["共有クラスタHAおよびストレージ用のケーブルnode2"]。

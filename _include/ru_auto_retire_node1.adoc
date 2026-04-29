@@ -13,7 +13,5 @@
 +
 「 system controller replace show-sdetails 」というエラーが表示されます
 
+. 必要に応じて、アップグレード完了後にノード1を運用停止します。link:decommission_old_system.html["古いシステムの運用を停止"]を参照してください。
 
-
-.完了後
-アップグレードが完了したら、 node1 の運用を停止できます。を参照してください link:decommission_old_system.html["古いシステムの運用を停止"]。

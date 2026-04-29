@@ -37,7 +37,7 @@ storage aggregate show-owner-name_node3_-home-id_node2 _system_id_`
 storage aggregate relocation show -node_node3_`
 
 +
-アグリゲートが再配置されると、そのアグリゲートに対しては「 1 」と表示されます。
+出力には、再配置後のアグリゲートの `Done`が表示されます。
 
 +
 

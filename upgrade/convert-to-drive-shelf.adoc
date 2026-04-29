@@ -58,6 +58,6 @@ node1をドライブシェルフに変換してnode3に接続してから、node
 [role="quick-margin-para"]
 node1 をドライブシェルフに変換して node3 に接続した後、以前 node1 に属していたドライブを node3 に再割り当てします。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]xref:migrate-node4-lIfs-aggregates.adoc[ノード4のLIFとデータアグリゲートをノード3に移行します]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]xref:migrate-node4-lifs-aggregates.adoc[ノード4のLIFとデータアグリゲートをノード3に移行します]
 [role="quick-margin-para"]
 アップグレードを完了するには、node3をnode4に接続し、node4のデータLIFとデータアグリゲートをnode3に移行します。

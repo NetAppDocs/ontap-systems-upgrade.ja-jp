@@ -139,3 +139,6 @@ link:other_references.html["参考資料"]を参照して、SPに関する情報
 
 .完了後
 ノード 3 とノード 4 でストレージ暗号化が有効になっている場合は、セクションを完了します link:set_up_storage_encryption_new_module.html["新しいコントローラモジュールで Storage Encryption をセットアップします"]。それ以外の場合は、の項を実行します link:decommission_old_system.html["古いシステムの運用を停止"]。
+
+.次の手順
+新しいコントローラーが正しく設定されていることを確認した後、link:set_up_storage_encryption_new_module.html["新しいコントローラモジュールで Storage Encryption を設定する"]。

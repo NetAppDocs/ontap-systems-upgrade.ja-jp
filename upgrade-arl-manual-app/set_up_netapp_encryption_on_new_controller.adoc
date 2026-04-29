@@ -68,3 +68,6 @@ security key-manager setup -node _new_controller_name_`
 
 .完了後
 認証キーを使用できなかったか、外部キー管理サーバにアクセスできなかったためにボリュームがオフラインになっていないかを確認します。これらのボリュームをオンラインに戻すには、  `volume online`指示。
+
+.次の手順
+新しいコントローラモジュールでNetApp Volume or Aggregate Encryptionを設定したら、link:decommission_old_system.html["旧システムを廃止する"]。
