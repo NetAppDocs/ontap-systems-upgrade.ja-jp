@@ -274,7 +274,6 @@
   <block id="d061d57f2d82b85a7aa74e13aaec4c96" category="paragraph">次のアップグレードは実行できません。</block>
   <block id="70a3b031f6a4e388e4285d647440ec82" category="list-text">元のコントローラに接続されたディスクシェルフをサポートしない交換用コントローラへの接続</block>
   <block id="23498de552873202eefb3139773f663c" category="paragraph">を参照してください <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ディスクサポート情報の Hardware Universe にリンクするには、次の手順を実行します。</block>
-  <block id="d5457a285ea7fce244bde8387644b062" category="list-text">内蔵ドライブを搭載したエントリレベルのコントローラ。たとえば、 FAS 2500 などです。</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="inline-link-macro">トラブルシューティングを行う</block>
   <block id="d5dcbeb79cc6a2aa334dc821840400c2" category="summary">アグリゲートの再配置（ ARL ）がアップグレード中に別のポイントで失敗することがあります。</block>
   <block id="b02aac451baf6d7b36d981f898537961" category="doc">アグリゲートの再配置に失敗しまし</block>
@@ -2044,12 +2043,6 @@
   <block id="1dc7145853b865022c2423c0562bf7ed" category="list-text">ノード 3 ですべてのボリュームがオンラインになっていることを確認します。</block>
   <block id="8526a5587200c78144bc2d1fabd13d3a" category="paragraph">ノード 3 でオフラインになっているボリュームがある場合は、各ボリュームについて 1 回、オンラインにする必要があります。</block>
   <block id="232cf0d45bdcae298c19689d1bf05bea" category="paragraph">ルート以外のオンラインアグリゲートがすべて node3 にすでに再配置されているため、コマンドの出力にルート以外のオンラインアグリゲートが表示されないようにする必要があります。</block>
-  <block id="71c5d3d7f0857c67830fb002783fd24e" category="paragraph">手順の各フェーズについては、セクションの表を参照してください <block ref="25c64b56e1634b7195570b2ce4c1228b" category="inline-link-macro-rx"></block>。発生する可能性がある障害の情報は、手順のフェーズ別に表示されます。</block>
-  <block id="96518cf6fc4836f38d5963152c3b52fc" category="list-text"><block ref="96518cf6fc4836f38d5963152c3b52fc" category="inline-link-macro-rx"></block></block>
-  <block id="b41eca4a9e61478c5412544da1b31c9f" category="list-text"><block ref="b41eca4a9e61478c5412544da1b31c9f" category="inline-link-macro-rx"></block></block>
-  <block id="03f183bce69c6c170ce7d98b73a0da9b" category="list-text"><block ref="03f183bce69c6c170ce7d98b73a0da9b" category="inline-link-macro-rx"></block></block>
-  <block id="bffc8177304b2cba0a93e9425c22a1b7" category="list-text"><block ref="bffc8177304b2cba0a93e9425c22a1b7" category="inline-link-macro-rx"></block></block>
-  <block id="e74451404fb8d41f6db27c4f815f8cf3" category="list-text"><block ref="e74451404fb8d41f6db27c4f815f8cf3" category="inline-link-macro-rx"></block></block>
   <block id="2df3dd26d8dceded8e8da8277098895a" category="paragraph">ファブリック内のスイッチを永続的に有効にする必要があります。</block>
   <block id="5c399963772634ba1fc18f52ce25b7d5" category="paragraph">スイッチを永続的に有効にします。</block>
   <block id="1b9078b6f6fd34ef368d1162644a9f35" category="list-text">Brocade スイッチの場合は、「 witchCfgPersistentenable 」コマンドを使用します。</block>
@@ -5422,9 +5415,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="4ff3a20772d8d7adf38ea1a25699b898" category="paragraph">ONTAPライセンスの詳細については、<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>を参照して_System Administration Reference_にリンクしてください。</block>
   <block id="9de6a6f6ea48099b1305eeb9301f7679" category="paragraph">アップグレードの準備後、<block ref="0d08e260c4bde2d13bb947f0a9e09267" category="inline-link-macro-rx"></block>。</block>
   <block id="8f77a5ae2857206a750f5c0ad3144dba" category="paragraph">新しいコントローラーが正しく設定されていることを確認した後、<block ref="3971d535deb9d86527af888c19f530a0" category="inline-link-macro-rx"></block>。</block>
-  <block id="8d20c5aabf9dd75444b513dba9105128" category="list-text">コントローラーのハードウェアをアップグレードする別の方法を希望し、ボリュームの移動を行う意思がある場合は、<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>を参照して_ボリュームまたはストレージを移動してアップグレードする_にリンクしてください。</block>
-  <block id="e7832b913f3afc75dba2c326b1f78e53" category="paragraph"><block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>を参照して、_ONTAP 9 Documentation_にリンクしてください。</block>
-  <block id="a2bbeda24395d719b706b64dfe948579" category="paragraph">このARL手順を使用することを決定した後、<block ref="91151593e881bd87765e26c1297041b3" category="inline-link-macro-rx"></block>。</block>
   <block id="507d933d47a6537d92195e190c11484a" category="list-text"><block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>を参照して_NetApp Support Site_にリンクしてログインしてください。</block>
   <block id="9f92af96b5d3b869fcf7eab42bd5cc08" category="paragraph">旧システムを廃止した後、<block ref="f4079db79b5429ce771ea3a34eb1e8f9" category="inline-link-macro-rx"></block>。</block>
   <block id="e7b8e0fba9c9b33b762bd4e7d2cb39c1" category="paragraph">コントローラーのアップグレードに関するガイドラインを確認した後、<block ref="7eb250b820c3db26ee334554a9610b65" category="inline-link-macro-rx"></block>。</block>
@@ -5602,4 +5592,23 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="8695aaca9524014699a6d443a2a534fa" category="paragraph">各LIFの<block ref="8a7a38cfa57d4ac98cced700b804556a" prefix=" " category="inline-code"></block>と<block ref="3139ea911ab60226789083923e2852c9" prefix=" " category="inline-code"></block>の情報を記録したら、<block ref="0e10c1b69c827b2c86d2f4757a767a1f" category="inline-link-macro-rx"></block>。</block>
   <block id="2e7f5b6308a3207b532f2eb213ce3976" category="sidebar">ステージ5。node2交換システムモジュールをインストールします。</block>
   <block id="5a71019ad7fb5de4924f41950c599ee0" category="sidebar">node2システムモジュールを交換します</block>
+  <block id="c61e96543ff55077f64d8dd03940c2c6" category="cell">AFF A70</block>
+  <block id="6733c91021834f836a56aa42deec9ed1" category="cell">9.18.1以降</block>
+  <block id="f8f6ba2d572ef729148f2d89d8ff810a" category="cell">AFF A30用</block>
+  <block id="bab1b59b0a2ad746796448276777fdbd" category="cell">AFF C30</block>
+  <block id="7a1f08f539146079eaeae8f4a563cce2" category="cell">AFF C60</block>
+  <block id="017db3debbf4b1ed577798b78fd96b66" category="cell">FAS70を使用したチャンク アップロード署名要求がサポートされるようになりました。</block>
+  <block id="ae53f9b6c37e8ea6aae42847aa6b0621" category="list-text">内部ドライブを備えたエントリーレベルのコントローラ（例：FAS2750）。</block>
+  <block id="d3444d99e26820a0501e10f63ff02ce8" category="cell">AFF A70 ^1^</block>
+  <block id="21e93d495fc43df48584edd71b0d597d" category="cell">AFF A30 ^1^</block>
+  <block id="224aecc1813d58390c83fb8decc63b6b" category="cell">AFF A20 ^1^</block>
+  <block id="9c72db8ed6f22f44a2b4fa3a8e594dff" category="cell">AFF A30 ^3^、AFF A50</block>
+  <block id="358489a49dc54c3e41e29084805d95cb" category="cell">AFF C30 ^1^</block>
+  <block id="9194367b74a77f509bf82a9c405501e3" category="cell">FAS70 ^1^</block>
+  <block id="eb5f65df42e892b67421158d46262d5b" category="paragraph">^3^ 2ノードスイッチレスクラスタ構成における AFF A20 から AFF A30 へのアップグレードには、ポート接続に関する特定の要件があります：</block>
+  <block id="b9defe65cc630cb29fcf83583ad21bf6" category="list-text">AFF A20は、クラスタ インターコネクト用にX60132A（4ポート10/25GbE CX7）およびX60131A（2ポート10/25GbE CX6-LX）をサポートしています。</block>
+  <block id="d8c33c1b9cb7049a65e4a3bb2c51cb30" category="list-text">AFF A30は、クラスタ インターコネクトとしてX60130A（2ポート100GbE CX6-DX）のみをサポートします。</block>
+  <block id="eb0245b89d287738a56a5047aeb3152b" category="list-text">一時的な 10/25GbE カードを使用して、AFF A20 から AFF A30 に一時的に接続します。4 ポートまたは 2 ポートの 10/25GbE カードは、AFF A20 でのクラスタリングをサポートします。AFF A20 と AFF A30 で同じカードを使用することをお勧めします。新しいカードをお持ちでない場合は、AFF A20 のカードを一時的なクラスタ インターコネクトとして使用できます。</block>
+  <block id="f3cccb510b48124791f68ef8a99fca3a" category="list-text">AFF A30 ノード3がオンラインになると、HA IC ポートを100GbEに設定し、クラスタ LIF を10/25GbE ポートに配置しようとします。ONTAP はこれらのポートが AFF A20 に接続されていることを検出します。ONTAP がこれらのポートを自動的に検出しない場合は、一時的なクラスタポートを手動で変更できます。その後、必要に応じて、クラスタ LIF を一時的なクラスタポートに移動できます。</block>
+  <block id="9aa79fb991cdc044a96dc2dbd05e3bd6" category="list-text">AFF A20 node1をアップグレードし、AFF A20 node2がアップグレードの準備のためにダウンした後、一時的な10/25GbEクラスタポートからの接続を削除し、100GbE共有クラスタポートのみを使用する必要があります。AFF A30 node3とnode4が100GbEポートで接続されると、接続が確立され、アップグレードを完了できます。</block>
 </blocks>
