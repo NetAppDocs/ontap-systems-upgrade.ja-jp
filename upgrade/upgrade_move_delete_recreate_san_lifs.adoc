@@ -15,6 +15,7 @@ summary: クラスタの内容とクラスタ環境に応じて、 SAN LIF を�
 
 
 
+[[considerations-for-moving-san-lifs]]
 == SAN LIF の移動に関する考慮事項
 
 クラスタにノードを追加したりクラスタからノードを削除するなど、クラスタの構成を変更する場合は、 SAN LIF を移動するだけで済みます。LIF を移動した場合、 FC ファブリックを再ゾーニングしたり、クラスタに接続されたホストとその新しいターゲットインターフェイスとの間に新しい iSCSI セッションを作成したりする必要はありません。
@@ -33,6 +34,7 @@ LIF の移動中は、システムを停止することなく次のタスクを�
 
 
 
+[[delete-san-lifs-no-longer-required]]
 == 不要になったSAN LIFを削除する
 
 クラスタが SAN 環境にある場合は、元のノードをクラスタから削除する前に、不要になった SAN LIF を元のノードから削除する必要があります。
@@ -88,6 +90,7 @@ js11      ps0          mixed    LIF1,                   igroup1
 
 
 
+[[create-new-san-lifs-or-re-create-deleted-san-lifs]]
 == 新しい SAN LIF を作成するか、削除した SAN LIF を再作成します
 
 クラスタ環境の要件に応じて、この手順で削除した新しい SAN LIF を作成するか、または SAN LIF を再作成することができます。を使用して、 SAN LIF を作成または再作成できます https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_creating_network_interfaces.html["ネットワークインターフェイスが作成されます"^] OnCommand ® System Manager_documentation を使用したクラスタ管理の手順

@@ -19,7 +19,7 @@ entries:
   - title: スイッチレイアウトの再構成の準備
     url: "/upgrade-arl-manual/reconfig_index.html"
   - title: カスタム AutoSupport メッセージは、スイッチの再設定前に送信します
-    url: "/upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html"
+    url: "/upgrade-arl-manual/send_custom_autosupport_message_prior_reconfig_switches.html"
   - title: MetroCluster 構成の健全性を確認
     url: "/upgrade-arl-manual/verify_health_mcc_config.html"
   - title: MetroCluster 構成エラーがないかどうかを確認します

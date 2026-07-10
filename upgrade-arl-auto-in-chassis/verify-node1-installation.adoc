@@ -25,6 +25,7 @@ AFF A250、AFF C250、AFF A800、またはAFF C800のアップグレードの場
 
 
 
+[[step-1-verify-that-node1-is-in-quorum]]
 == 手順1：node1がクォーラムに参加していることを確認する
 
 node1がクォーラムに含まれていることを確認してください。次に、コントローラー交換作業を再開してください。
@@ -123,6 +124,8 @@ NOTE: この手順 では、 VLAN 、 ifgrp 、およびブロードキャスト
 
 
 
+[[step-2-restore-network-configuration-on-node1]]
+[[restore_network_configuration_on_node1]]
 == ステップ2：node1でネットワーク構成を復元する
 
 node1 がクォーラムにあり、 node2 と通信できることを確認したら、 node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインが node1 で認識されていることを確認します。また、ノード 1 のすべてのネットワークポートが正しいブロードキャストドメインに設定されていることを確認します。

@@ -20,10 +20,12 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 
+[[reboots-panics-or-power-cycles-during-the-pre-check-phase]]
 == 事前チェックフェーズでのリブート、パニック、電源再投入
 
 
 
+[[node1-or-node2-crashes-before-the-pre-check-phase-with-ha-pair-still-enabled]]
 === HA ペアを有効にして事前チェックフェーズの前にノード 1 またはノード 2 がクラッシュした場合
 
 事前チェックフェーズの前にノード 1 またはノード 2 がクラッシュした場合は、再配置されたアグリゲートがなく、 HA ペア構成が有効なままになります。
@@ -38,10 +40,12 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 
+[[reboots-panics-or-power-cycles-during-first-resource-release-phase]]
 == 最初のリソースリリースフェーズでリブート、パニック、電源再投入が発生した場合
 
 
 
+[[node1-crashes-during-the-first-resource-release-phase-with-ha-pair-still-enabled]]
 === HA ペアを有効にすると、リソースの最初のリリースフェーズでノード 1 がクラッシュします
 
 一部またはすべてのアグリゲートがノード 1 からノード 2 に再配置されており、 HA ペアが有効なままです。node2 は、ノード 1 のルートボリュームと再配置されていないルート以外のアグリゲートをテイクオーバーします。
@@ -58,6 +62,7 @@ node1 の状態が「 waiting for giveback 」になると、 node2 はノード
 
 
 
+[[node1-crashes-during-the-first-resource-release-phase-while-ha-pair-is-disabled]]
 === HA ペアを無効にすると、リソースの最初のリリースフェーズでノード 1 がクラッシュします
 
 node2 はテイクオーバーしませんが、ルート以外のすべてのアグリゲートから引き続きデータを提供しています。
@@ -69,6 +74,7 @@ node2 はテイクオーバーしませんが、ルート以外のすべての�
 
 
 
+[[node2-fails-during-the-first-resource-release-phase-with-ha-pair-still-enabled]]
 === リソースの最初のリリースフェーズで HA ペアを有効にした状態で node2 に障害が発生する
 
 ノード 1 の一部またはすべてのアグリゲートが node2 に再配置されています。HA ペアが有効になります。
@@ -83,6 +89,7 @@ node2 はテイクオーバーしませんが、ルート以外のすべての�
 
 
 
+[[node2-crashes-during-the-first-resource-release-phase-and-after-ha-pair-is-disabled]]
 === リソースの最初のリリースフェーズと HA ペアの無効化後に、ノード 2 がクラッシュします
 
 ノード 1 ではテイクオーバーが実行されません。
@@ -97,10 +104,12 @@ node2 のブート中に、すべてのアグリゲートでクライアント�
 
 
 
+[[reboots-panics-or-power-cycles-during-the-first-verification-phase]]
 == 最初の検証フェーズでリブート、パニック、または電源の再投入が発生した場合
 
 
 
+[[node2-crashes-during-the-first-verification-phase-with-ha-pair-disabled]]
 === HA ペアを無効にして最初の検証フェーズで node2 がクラッシュします
 
 HA ペアがすでに無効になっているため、ノード 1 は node2 のクラッシュ後にテイクオーバーしません。
@@ -115,6 +124,7 @@ node2 のブート中に、すべてのアグリゲートでクライアント�
 
 
 
+[[node1-crashes-during-the-first-verification-phase-with-ha-pair-disabled]]
 === HA ペアを無効にすると、最初の検証フェーズでノード 1 がクラッシュします
 
 node2 はテイクオーバーしませんが、ルート以外のすべてのアグリゲートから引き続きデータを提供しています。
@@ -126,10 +136,12 @@ node2 はテイクオーバーしませんが、ルート以外のすべての�
 
 
 
+[[reboots-panics-or-power-cycles-during-first-resource-regain-phase]]
 == 最初のリソース再取得フェーズでのリブート、パニック、電源再投入
 
 
 
+[[node2-crashes-during-the-first-resource-regain-phase-during-aggregate-relocation]]
 === アグリゲートの再配置中にリソースを再取得する最初のフェーズでノード 2 がクラッシュする
 
 node2 の一部またはすべてのアグリゲートが node1 から node1 に再配置されています。node1 は、再配置されたアグリゲートからデータを提供します。HA ペアが無効になっているため、テイクオーバーはありません。
@@ -144,6 +156,7 @@ node2 の一部またはすべてのアグリゲートが node1 から node1 に
 
 
 
+[[node1-crashes-during-the-first-resource-regain-phase-during-aggregate-relocation]]
 === アグリゲートの再配置中にリソースを再取得する最初のフェーズでノード 1 がクラッシュする
 
 ノード 2 でアグリゲートをノード 1 に再配置しているときにノード 1 がクラッシュした場合、ノード 1 がブートしたあともタスクは続行されます。
@@ -158,10 +171,12 @@ node2 では残りのアグリゲートの処理が続行されますが、ノ�
 
 
 
+[[reboots-panics-or-power-cycles-during-post-check-phase]]
 == チェック後のフェーズでリブート、パニック、電源再投入が発生した場合
 
 
 
+[[node1-or-node2-crashes-during-the-post-check-phase]]
 === チェック後のフェーズでノード 1 またはノード 2 がクラッシュした
 
 HA ペアが無効になっているため、テイクオーバーは行われません。リブートしたノードに属するアグリゲートでクライアントが停止しています。
@@ -173,10 +188,12 @@ HA ペアが無効になっているため、テイクオーバーは行われ�
 
 
 
+[[reboots-panics-or-power-cycles-during-second-resource-release-phase]]
 == リソースの 2 つ目のリリースフェーズでリブート、パニック、電源の再投入が発生した場合
 
 
 
+[[node1-crashes-during-the-second-resource-release-phase]]
 === リソースの 2 つ目のリリースフェーズでノード 1 がクラッシュする
 
 node2 によるアグリゲートの再配置中にノード 1 がクラッシュした場合、ノード 1 がブートしたあとも処理が続行されます。
@@ -191,6 +208,7 @@ node2 によるアグリゲートの再配置中にノード 1 がクラッシ�
 
 
 
+[[node2-crashes-during-the-second-resource-release-phase]]
 === 2 番目のリソースリリースフェーズで node2 がクラッシュします
 
 アグリゲートの再配置時にノード 2 がクラッシュした場合、ノード 2 はテイクオーバーされません。
@@ -205,10 +223,12 @@ node2 によるアグリゲートの再配置中にノード 1 がクラッシ�
 
 
 
+[[reboots-panics-or-power-cycles-during-the-second-verification-phase]]
 == 2 回目の検証フェーズで、リブート、パニック、または電源の再投入が発生した場合
 
 
 
+[[node1-crashes-during-the-second-verification-phase]]
 === 第 2 の検証フェーズでノード 1 がクラッシュした
 
 このフェーズでノード 1 がクラッシュした場合、 HA ペアがすでに無効になっているため、テイクオーバーは実行されません。
@@ -223,6 +243,7 @@ node2 によるアグリゲートの再配置中にノード 1 がクラッシ�
 
 
 
+[[node2-crashes-during-the-second-verification-phase]]
 === 2 番目の検証フェーズで node2 がクラッシュします
 
 このフェーズで node2 がクラッシュすると、テイクオーバーは実行されません。node1 はアグリゲートからデータを提供します。

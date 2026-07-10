@@ -40,6 +40,7 @@ node3 の設定が異なる場合は、手順の後半でシステムが停止�
 
 
 
+[[re-create-vlans-interface-groups-and-broadcast-domains-on-node3]]
 == ノード 3 に、 VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します
 
 node3 がクォーラムにあり、 node2 と通信できることを確認したら、ノード 3 にある node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成する必要があります。node3 のポートは、新しく作成したブロードキャストドメインにも追加する必要があります。
@@ -68,6 +69,7 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 
 
 
+[[restore-key-manager-configuration-on-node3]]
 == ノード 3 でキー管理ツールの設定をリストアします
 
 NetApp Aggregate Encryption（NAE）またはNetApp Volume Encryption（NVE）を使用してアップグレードするシステムのボリュームを暗号化している場合は、暗号化構成を新しいノードと同期する必要があります。キーマネージャを復元しない場合、ARLを使用してnode1のアグリゲートをnode2からnode3に再配置すると、暗号化されたボリュームがオフラインになります。

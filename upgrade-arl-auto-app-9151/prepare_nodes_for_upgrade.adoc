@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html 
 keywords: preparing, nodes, upgrade 
-summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをアップグレードする際にノードを準備し、一連の事前確認を実行します `system controller replace` 。' 
+summary: 'ONTAP 9.15.1以降で導入されたコントローラへのアップグレード時に、 `system controller replace`コマンドを使用してノードを準備し、一連の事前チェックを実行します。' 
 ---
 = ノードをアップグレードする準備をします
 :hardbreaks:
@@ -18,19 +18,28 @@ summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコン�
 
 
 
-== ステップ1：ノードを準備する
+[[step-1-prepare-node1-and-node2]]
+== ステップ1：ノード1とノード2を準備する
 
-コントローラー交換プロセスを開始し、事前チェックを実行します。必要に応じて、使用されている自己暗号化ドライブの種類を特定します。
+コントローラーの交換プロセスを開始し、node1とnode2で事前チェックを実行します。必要に応じて、使用されている自己暗号化ドライブの種類を特定します。
 
 .手順
 . ONTAP コマンドラインで次のコマンドを入力して、コントローラの交換プロセスを開始します。
 +
-`system controller replace start -nodes <node_names>`
-
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
+[NOTE]
+====
+このコマンドは、advanced権限レベルでのみ実行でき `system controller replace start`ます。
 
-NOTE: system controller replace startコマンドは、advanced権限レベルでのみ実行できます。 `set -privilege advanced`
-
+[source, cli]
+----
+set -privilege advanced
+----
+====
 +
 以下のような出力が表示されます。出力には、クラスタで実行されている ONTAP バージョンが表示されます：
 
@@ -92,7 +101,7 @@ Controller replacement operation has been paused for user intervention.
 | クラスタ LIF ステータス | 両方のノードでクラスタ LIF が動作しているかどうかを確認します。クラスタ LIF が停止している場合は、タスクは失敗します。 
 
 
-| ASUP ステータスチェック | ASUP 通知が設定されていないと、タスクは失敗します。コントローラの交換用手順を開始する前に ASUP を有効にする必要があります。 
+| AutoSupport ステータスチェック | AutoSupport 通知が設定されていないと、タスクは失敗します。コントローラの交換用手順 を開始する前に、 AutoSupport を有効にする必要があります。 
 
 
 | CPU 利用率チェック | 交換するノードの CPU 利用率が 50% を超えていないかどうかを確認します。CPU 使用率がかなりの時間にわたって 50% を超えると、タスクは失敗します。 
@@ -123,25 +132,90 @@ Controller replacement operation has been paused for user intervention.
 各ノードに接続されているシリアルポートで、次のコマンドの出力を個別に実行して保存します。
 
 +
-** vserver services name-service dns show
-** `network interface show -curr-node <local> -role <cluster,intercluster,node-mgmt,cluster-mgmt,data>`
-** `network port show -node <local> -type physical`
-** `service-processor show -node <local> -instance`
-** `network fcp adapter show -node <local>`
-** `network port ifgrp show -node <local>`
-** `system node show -instance -node <local>`
-** `run -node <local> sysconfig`
-** `storage aggregate show -r`
-** `storage aggregate show -node <local>`
-** `volume show -node <local>`
-** `system license show -owner <local>`
-** 「 storage encryption disk show 」のように表示されます
-** 「 securitykey manager onboard show-backup 」を参照してください
-** 「 security key-manager external show 」と入力します
-** 「 security key-manager external show-status 」
-** `network port reachability show -detail -node <local>`
-
-
+[source, cli]
+----
+vserver services name-service dns show
+----
++
+[source, cli]
+----
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,cluster-mgmt,data
+----
++
+[source, cli]
+----
+network port show -node <local> -type physical
+----
++
+[source, cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source, cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source, cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source, cli]
+----
+system node show -instance -node <local>
+----
++
+[source, cli]
+----
+run -node <local> sysconfig
+----
++
+[source, cli]
+----
+storage aggregate show -r
+----
++
+[source, cli]
+----
+storage aggregate show -node <local>
+----
++
+[source, cli]
+----
+volume show -node <local>
+----
++
+[source, cli]
+----
+system license show -owner <local>
+----
++
+[source, cli]
+----
+storage encryption disk show
+----
++
+[source, cli]
+----
+security key-manager onboard show-backup
+----
++
+[source, cli]
+----
+security key-manager external show
+----
++
+[source, cli]
+----
+security key-manager external show-status
+----
++
+[source, cli]
+----
+network port reachability show -detail -node <local>
+----
 +
 
 NOTE: オンボードキーマネージャ（OKM）を使用したNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、手順の後半の工程でキー管理ツールの再同期を実行できるように、キー管理ツールのパスフレーズを準備しておいてください。
@@ -160,6 +234,7 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 
 
+[[step-2-correct-aggregate-ownership-if-an-arl-precheck-fails]]
 == ステップ2：ARLの事前チェックが失敗した場合は、アグリゲートの所有権を修正します
 
 アグリゲートステータスチェックに失敗した場合は、パートナーノードが所有するアグリゲートをホーム所有者ノードに戻し、事前確認プロセスを再度開始する必要があります。
@@ -167,12 +242,16 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 .手順
 . パートナーノードが現在所有しているアグリゲートをホーム所有者ノードに戻します。
 +
-storage aggregate relocation start -node-source_node__ destination_destination-node-aggregate-list *
-
+[source, cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 . node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していないことを確認します。
 +
-storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
-
+[source, cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 次の例は、アグリゲートの現在の所有者とホーム所有者の両方がノードにある場合のコマンドの出力例を示しています。
 
@@ -190,9 +269,61 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 . コントローラ交換プロセスを再開します。
++
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 
 
-'system controller replace start-nodes_node_name _`
+
+
+[[step-3-prepare-node3-and-node4]]
+== ステップ3：ノード3とノード4を準備する
+
+node3とnode4のビルドがNODAR（保存データの暗号化なし）イメージであるかどうかを確認してください。ビルドがNODARイメージの場合は、DARE（保存データの暗号化）イメージをインストールする必要があります。
+
+.このタスクについて
+node3とnode4で以下の手順を実行します。
+
+.手順
+. ノードをブートメニューでブートします。
++
+[source, cli]
+----
+LOADER> boot_ontap menu
+----
+. システムシェルに入ります：
++
+[source, cli]
+----
+systemshell
+----
+. [[check-build]]ビルドがNODARイメージであるかどうかを確認します。
++
+[source, cli]
+----
+cat /BUILD
+----
++
+コマンド出力で、 `build-type`がNODAR イメージであるかどうかを確認します。例えば、 `DEBUG SIM NODAR`。
+
++
+
+NOTE:  `build-type`がNODAR画像でない場合、そのビルドはDARE画像です。
+
+. ビルドがNODARイメージの場合は、DAREイメージをインストールしてください。
++
+.. システムシェルとブートメニューを終了します。
++
+[source, cli]
+----
+halt
+----
+.. DAREイメージをインストールします。詳細については、ナレッジベースの記事link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/Netbooting_a_FAS_and_AFF_Controller_in_ONTAP_9["ONTAP 9 での FAS および AFF コントローラのネットブート"^]を参照してください。
+
+
+
 
 .次の手順
 ノードを準備した後、link:complete-preparation-for-upgrade.html["アップグレードの準備を完了する"]。

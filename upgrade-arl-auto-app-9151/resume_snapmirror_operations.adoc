@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/resume_snapmirror_operations.html 
 keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
-summary: 'ONTAP 9.15.1以降を実行するコントローラのアップグレード時に、コマンドを使用してSnapMirror転送と関係を再開し `system controller replace` ます。' 
+summary: 'ONTAP 9.15.1以降で導入されたコントローラへのアップグレード時に、 `system controller replace`コマンドを使用して、SnapMirrorの転送と関係を再開します。' 
 ---
 = SnapMirror 処理を再開します
 :hardbreaks:

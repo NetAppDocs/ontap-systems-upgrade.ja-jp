@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html 
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
-summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをARLでアップグレードするかどうかを決定します `system controller replace` 。' 
+summary: 'ARLを使用して、ONTAP 9.15.1以降で導入されたコントローラへのアップグレードを行うかどうかを、 `system controller replace`コマンドを使用して決定します。' 
 ---
 = この集約再配置手順を使用するかどうかを決定します
 :hardbreaks:
@@ -14,12 +14,13 @@ summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコン�
 
 
 [role="lead"]
-コントローラハードウェアをアップグレードするには、アグリゲートの再配置（ARL）方法がいくつかあります。このARL手順では、ONTAP 9.15.1以降で導入されたAFFおよびFASストレージシステムのコントローラHAペアを、既存のディスクとディスクに保存されているデータを維持しながら、新しいコントローラにアップグレードする方法について説明します。これは複雑な手順であり、経験豊富なONTAP管理者のみが使用する必要があります。
+コントローラハードウェアをアップグレードするためのアグリゲート再配置（ARL）方法はいくつか存在します。このARL手順では、AFFおよびFASストレージシステムのHAペアのコントローラを、既存のディスクとディスクに保存されているデータを保持したまま、ONTAP 9.15.1以降で導入されたコントローラにアップグレードする方法について説明します。これは複雑な手順であり、経験豊富なONTAP管理者のみが使用してください。
 
 この ARL 手順がコントローラ ハードウェアのアップグレードに適しているかどうかを判断するには、サポートされているアップグレードとサポートされていないアップグレードについて、次のすべての状況を確認する必要があります。
 
 
 
+[[supported-upgrades-for-this-arl-procedure]]
 == このARL手順でサポートされているアップグレード
 
 次の状況では、この ARL 手順を使用してノードのペアをアップグレードできます。
@@ -35,6 +36,7 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 
 
 
+[[upgrades-not-supported-for-this-arl-procedure]]
 == このARL手順ではアップグレードはサポートされていません
 
 次の状況では、この ARL 手順を使用してノードのペアをアップグレードすることはできません。
@@ -57,13 +59,15 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 | AFF C800用 | AFF C80用 
 |===
 +
-上記の表に記載されているアップグレードを実行するには、「to _use "system controller replace"コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードする」を参照してくださいlink:other_references.html["参考資料"]。
+上記の表に記載されているアップグレードを実行するには、link:other_references.html["参考資料"] を参照して、_同じシャーシ内のコントローラモデルをアップグレードするための「system controller replace」コマンドの使用_にリンクしてください。
 
 * MetroCluster FCまたはIP構成をアップグレードしています。MetroCluster構成をアップグレードするには、MetroClusterのアップグレードおよび拡張に関するドキュメント_へのリンクを参照してください link:other_references.html["参考資料"] 。
 
 
 
 
+[[supported-system-upgrade-combinations]]
+[[sys_commands_9151_supported_systems]]
 == サポートされているシステムアップグレードの組み合わせ
 
 以下の表は、ONTAP 9.15.1以降で導入されたAFFおよびFASシステムにおいて、ARLを使用したサポートされているコントローラアップグレードの組み合わせを示しています。コントローラアップグレードの組み合わせがリストにない場合は、テクニカルサポートにお問い合わせください。
@@ -108,6 +112,7 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 別のハードウェアアップグレード手順を選択する
 
 * link:../upgrade-arl/index.html["コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します"]です。

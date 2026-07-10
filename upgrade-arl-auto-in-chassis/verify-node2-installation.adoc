@@ -23,6 +23,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 
+[[step-1-verify-that-node2-is-in-quorum]]
 == 手順1：node2がクォーラムに参加していることを確認する
 
 node2がクォーラムに参加していることを確認してください。次に、コントローラー交換作業を再開してください。
@@ -152,6 +153,8 @@ NOTE: この手順 では、 VLAN 、 ifgrp 、およびブロードキャスト
 
 
 
+[[step-2-restore-network-configuration-on-node2]]
+[[restore_network_configuration_on_node2]]
 == ステップ2：node2でネットワーク構成をリストアする
 
 node2 がクォーラムにあり、 node1 と通信できることを確認したら、 node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインが node2 に表示されていることを確認します。また、 node2 のすべてのネットワークポートが正しいブロードキャストドメインに設定されていることを確認します。

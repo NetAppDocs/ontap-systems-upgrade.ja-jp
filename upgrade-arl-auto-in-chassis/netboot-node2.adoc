@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-in-chassis/netboot-node2.html 
 keywords: preparing, prepare, netboot, ontap, node2 
-summary: ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、対応する交換用ノード2システムモジュールを交換したあとに、それらのモジュールをネットブートする必要があります。 
+summary: 同一シャーシ内でARLを使用してコントローラモデルをアップグレードする場合、対応する交換用システムモジュールを交換した後、node2をネットブートする必要があります。 
 ---
 = ネットブート node2
 :hardbreaks:

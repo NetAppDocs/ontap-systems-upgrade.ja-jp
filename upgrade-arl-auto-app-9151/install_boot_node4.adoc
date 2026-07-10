@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/install_boot_node4.html 
 keywords: install, boot, node4, install ONTAP 
-summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコントローラをアップグレードする場合、ノード4をインストールしてブートし、ONTAPソフトウェアをインストールし `system controller replace` ます。' 
+summary: 'ONTAP 9.15.1以降で導入されたコントローラへのアップグレード時に、 `system controller replace`コマンドを使用してnode4をインストールして起動し、ONTAPソフトウェアをインストールします。' 
 ---
 = ノード 4 をインストールしてブートします
 :hardbreaks:

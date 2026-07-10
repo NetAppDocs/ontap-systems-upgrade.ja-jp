@@ -28,6 +28,8 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 ====
 
 
+[[step-1-configure-fc-ports-on-node4]]
+[[configure-fc-ports-on-node4]]
 == ステップ1：node4でFCポートを設定する
 
 node4 にオンボードまたはアドオン FC アダプタ上の FC ポートがある場合、システムの出荷時にポートが事前構成されていないため、ノードをサービスに投入する前にノード上でポート構成を設定する必要があります。必要に応じてポートを構成しないと、サービスが中断される可能性があります。
@@ -90,6 +92,8 @@ ucadmin modify -m fc -t initiator_adapter_`
 
 
 
+[[step-2-check-and-configure-utauta2-ports-on-node4]]
+[[check-config-uta-uta2-node4]]
 == ステップ2：node4のUTA/UTA2ポートを確認して設定する
 
 ノード 4 でオンボード UTA / UTA2 ポートまたは UTA / UTA2A カードが使用されている場合は、アップグレードしたシステムの使用方法に応じて、ポートの設定を確認して設定する必要があります。

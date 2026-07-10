@@ -39,6 +39,8 @@ link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide
 ====
 
 
+[[supported-system-upgrade-combinations]]
+[[sys_commands_98_supported_systems]]
 == サポートされているシステムアップグレードの組み合わせ
 
 次の表は、この ARL 手順を使用してコントローラのアップグレードを実行する場合にサポートされるシステム マトリックスを示しています。
@@ -132,6 +134,7 @@ NOTE: コントローラのアップグレードモデルの組み合わせが�
 ====
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 別のハードウェアアップグレード手順を選択する
 
 * link:../upgrade-arl/index.html["コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します"]です。

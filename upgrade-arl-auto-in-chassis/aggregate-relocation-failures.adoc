@@ -18,6 +18,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 
+[[check-for-aggregate-relocation-failure]]
 == アグリゲートの再配置に失敗していないかどうか
 
 手順の処理中に、ステージ 2 、ステージ 3 、またはステージ 5 で ARL が失敗することがあります。
@@ -44,6 +45,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 
+[[aggregates-originally-on-node1-are-owned-by-node2-after-completion-of-the-upgrade]]
 == アップグレードの完了後、元々 node1 にあるアグリゲートは node2 によって所有されています
 
 アップグレード手順の最後に、 node1 がホームノードとして使用されていたアグリゲートの新しいホームノードになっている必要があります。このパスはアップグレード後に再配置できます。

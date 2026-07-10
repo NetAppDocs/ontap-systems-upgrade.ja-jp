@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/retire_node2.html 
 keywords: retire, node2 
-summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコントローラをアップグレードする場合は、ノード2をシャットダウンしてラックまたはシャーシから取り外し `system controller replace` ます。' 
+summary: 'ONTAP 9.15.1以降で導入されたコントローラへのアップグレード時に `system controller replace`コマンドを使用して、node2をシャットダウンしてラックまたはシャーシから取り外します。' 
 ---
 = ノード 2 を撤去
 :hardbreaks:

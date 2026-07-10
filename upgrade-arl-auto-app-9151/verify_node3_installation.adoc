@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/verify_node3_installation.html 
 keywords: verifying, verify, node, install, installation 
-summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをアップグレードする場合は、ノード1の物理ポートがノード3に正しくマッピングされていることを確認し、ノード3のネットワーク設定をリストアします `system controller replace` 。' 
+summary: 'ONTAP 9.15.1以降で導入されたコントローラにアップグレードする際に、 `system controller replace`コマンドを使用して、node1の物理ポートがnode3に正しくマッピングされていることを確認し、node3のネットワーク構成を復元します。' 
 ---
 = ノード 3 のインストールを確認します
 :hardbreaks:
@@ -29,6 +29,7 @@ node3 のインストールとブートが完了したら、正しくインス�
 
 
 
+[[step-1-verify-that-node3-is-in-quorum]]
 == 手順1：node3がクォーラムに参加していることを確認する
 
 node3がクォーラムに含まれていることを確認してください。次に、コントローラ交換処理を再開します
@@ -89,6 +90,8 @@ NOTE: この手順では、 VLAN 、 ifgrp 、およびブロードキャスト�
 
 
 
+[[step-2-restore-network-configuration-on-node3]]
+[[restore_network_configuration_on_node3_9151]]
 == ステップ2：node3でネットワーク構成をリストアする
 
 node3 がクォーラムにあり、 node2 と通信できることを確認したら、 node1 の VLAN 、インターフェイスグループ、およびブロードキャストドメインが node3 にあることを確認します。また、 node3 のすべてのネットワークポートが正しいブロードキャストドメインに設定されていることを確認します。

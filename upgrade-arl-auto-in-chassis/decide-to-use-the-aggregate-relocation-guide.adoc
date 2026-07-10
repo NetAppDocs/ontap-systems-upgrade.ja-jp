@@ -20,6 +20,7 @@ summary: 同じシャーシ内のコントローラモデル、ディスク、�
 
 
 
+[[supported-for-this-arl-upgrade]]
 == このARLアップグレードでサポートされています
 
 この ARL 手順は、次の状況で使用できます。
@@ -43,6 +44,7 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 
 
 
+[[not-supported-for-this-arl-upgrade]]
 == この ARL アップグレードではサポートされていません
 
 次の状況では、この ARL 手順は使用できません。
@@ -56,6 +58,8 @@ MetroCluster IP構成をアップグレードするには、link:other-reference
 
 
 
+[[supported-system-upgrade-combinations]]
+[[supported-systems]]
 == サポートされているシステムアップグレードの組み合わせ
 
 次の表は、既存のシステムシャーシ、ディスク、およびそこに保存されているデータを保持しながら、既存のシステムを交換用システムに変換してコントローラのアップグレードを実行する場合にサポートされるシステムマトリックスを示しています。
@@ -63,6 +67,7 @@ MetroCluster IP構成をアップグレードするには、link:other-reference
 
 CAUTION: この手順は、次のアップグレード構成に厳密に適用されます。他のシステムの組み合わせ間でのアップグレードには、この手順を使用しないでください。その他のコントローラモデルについては、link:other-references.html["参考資料"]を参照して、_ONTAP 9.8以降を実行しているコントローラハードウェアをアップグレードするための「system controller replace」コマンドの使用_および_ONTAP 9.8以降を実行しているコントローラハードウェアを手動でアップグレードするためのアグリゲートの再配置の使用_にリンクしてください。
 
+[[supported-systems-in-chassis]]
 [cols="20,20,40"]
 |===
 | 既存のシステム | 交換用システム | サポートされるONTAPのバージョン 
@@ -149,6 +154,7 @@ NetAppでは、可能であれば、古いシステムと交換用システム�
 
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 別のハードウェアアップグレード手順を選択する
 
 * link:../upgrade-arl/index.html["コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します"]です。

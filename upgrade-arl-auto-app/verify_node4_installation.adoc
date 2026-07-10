@@ -29,6 +29,7 @@ node2 の物理ポートが node4 の物理ポートに直接マッピングさ�
 
 
 
+[[step-1-verify-that-node4-is-in-quorum]]
 == 手順1：node4がクォーラムに参加していることを確認する
 
 node4がクォーラムに参加していることを確認してください。次に、コントローラ交換処理を再開します
@@ -143,6 +144,8 @@ NOTE: この手順では、 VLAN 、 ifgrp 、およびブロードキャスト�
 
 
 
+[[step-2-restore-network-configuration-on-node4]]
+[[restore_network_configuration_on_node4]]
 == ステップ2：node4でネットワーク構成をリストアする
 
 node4 がクォーラムにあり、 node3 と通信できることを確認したら、 node2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインが node4 にあることを確認します。また、ノード 4 のすべてのネットワークポートが正しいブロードキャストドメインに設定されていることを確認します。

@@ -15,6 +15,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップ�
 
 
 
+[[manage-storage-encryption-using-the-onboard-key-manager]]
 == オンボードキーマネージャを使用してストレージ暗号化を管理します
 
 暗号化キーの管理には、オンボードキーマネージャ（OKM）を使用します。OKMが設定されている場合は、アップグレードを開始する前にパスフレーズとバックアップデータを記録しておく必要があります。
@@ -43,6 +44,7 @@ summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップ�
 
 
 
+[[optionally-quiesce-the-snapmirror-relationships]]
 == オプションで、SnapMirror関係を休止します
 
 手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。

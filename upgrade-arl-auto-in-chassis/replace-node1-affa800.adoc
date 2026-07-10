@@ -26,6 +26,7 @@ CAUTION: ノード1とノード2は同じシャーシに搭載され、同じ電
 
 
 
+[[step-1-remove-the-aff-a800-or-aff-c800-controller-module]]
 == ステップ1：AFF A800またはAFF C800コントローラモジュールを取り外します
 
 既存のnode1モジュールからケーブル管理デバイスを取り外し、コントローラをシャーシから少し外します。
@@ -107,6 +108,7 @@ image:black_circle_two.png["番号 2"]
 
 
 
+[[step-2-install-the-aff-a90-aff-a70-or-aff-c80-controller-module]]
 == ステップ2：AFF A90、AFF A70、またはAFF C80コントローラモジュールの取り付け
 
 ノード1にAFF A90、AFF A70、またはAFF C80コントローラモジュールを設置し、ケーブルを配線して接続します。

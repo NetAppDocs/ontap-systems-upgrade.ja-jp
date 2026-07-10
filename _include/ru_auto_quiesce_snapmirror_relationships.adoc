@@ -4,6 +4,7 @@
 
 
 
+[[optionally-quiesce-the-snapmirror-relationships]]
 == オプションで、SnapMirror関係を休止します
 
 手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。

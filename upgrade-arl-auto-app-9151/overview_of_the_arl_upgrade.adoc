@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/overview_of_the_arl_upgrade.html 
 keywords: overview, arl, upgrade, owner, controller, hardware 
-summary: 'コマンドを使用してONTAP 9.15.1以降を実行するコントローラをアップグレードする手順を理解する `system controller replace` 。' 
+summary: 'ONTAP 9.15.1以降で `system controller replace`コマンドを使用してコントローラをアップグレードする手順の仕組みを理解します。' 
 ---
 = ARLアップグレードシーケンスについて学ぶ
 :hardbreaks:
@@ -18,12 +18,14 @@ ARL を使用してノードをアップグレードする前に、手順の動�
 
 
 
+[[upgrade-the-node-pair]]
 == ノードペアをアップグレードします
 
 ノードペアをアップグレードするには、元のノードを準備し、元のノードと新しいノードの両方で一連の手順を実行する必要があります。その後、元のノードの運用を停止できます。
 
 
 
+[[arl-upgrade-sequence-overview]]
 == ARL アップグレードシーケンスの概要
 
 手順では、交換用コントローラハードウェアを使用して元のコントローラハードウェアを一度に 1 台ずつアップグレードし、 HA ペア構成を利用してルート以外のアグリゲートの所有権を切り替えます。すべてのルート以外のアグリゲートで、アップグレード後の正しいノードである最終デスティネーションに到達するために、 2 つの再配置を実行する必要があります。

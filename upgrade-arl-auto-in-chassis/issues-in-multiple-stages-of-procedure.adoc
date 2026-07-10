@@ -18,6 +18,7 @@ summary: ARLを使用して同じシャーシ内のコントローラモデル�
 
 
 
+[[unexpected-storage-failover-show-command-output]]
 == 予期しない「 storage failover show 」コマンドの出力が表示されます
 
 手順の実行中に、すべてのデータアグリゲートをホストするノードがパニック状態になったり、誤ってリブートされたりした場合は、リブート、パニック状態、電源再投入の前後に「 storage failover show 」コマンドの出力が想定外に表示されることがあります。

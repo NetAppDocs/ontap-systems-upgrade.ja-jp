@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html 
 keywords: cluster, ha, aff, a800, shared, storage, data, management 
-summary: AFF A800 node1に接続していたクラスタ接続、HA接続、ストレージ接続、およびデータ接続を、新しく設置したAFF A90またはAFF A70 node1に接続します。 
+summary: 以前 AFF A800 node1 に接続されていたクラスター、HA、ストレージ、およびデータ接続を、新しくインストールされた AFF A90 または AFF A70 node1 に接続します。 
 ---
 = 共有クラスタHAとストレージのノード1をケーブル接続します。
 :hardbreaks:
@@ -34,6 +34,7 @@ summary: AFF A800 node1に接続していたクラスタ接続、HA接続、ス�
 |===
 
 
+[[connect-the-e0m-and-bmc-ports]]
 == e0MポートとBMCポートを接続
 
 既存のシステムに管理ポート（e0M）とBMCポートがある場合は、e0MポートとBMCポートが組み合わされ、交換用システムの「レンチ」ポートからアクセスされます。交換用システムに接続する前に、e0MポートとBMCポートが既存システムの同じスイッチとサブネットに接続されていることを確認する必要があります。
@@ -54,6 +55,7 @@ summary: AFF A800 node1に接続していたクラスタ接続、HA接続、ス�
 |===
 
 
+[[connect-to-a-two-node-switchless-cluster]]
 == 2ノードスイッチレスクラスタに接続
 
 次の表に、2ノードスイッチレスクラスタ構成でのスイッチポートの用途を示します。
@@ -99,6 +101,8 @@ summary: AFF A800 node1に接続していたクラスタ接続、HA接続、ス�
 |===
 
 
+[[connect-to-a-switch-attached-cluster]]
+[[connect-switch-attached-cluster]]
 == スイッチ接続クラスタへの接続
 
 スイッチ接続クラスタの場合は、AFF A30、AFF A50、AFF A70、AFF A90、AFF C30、AFF C60、またはAFF C80（交換用）ノードの次の要件を満たしていることを確認します。

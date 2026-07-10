@@ -26,6 +26,7 @@ CAUTION: ノード1とノード2は同じシャーシに搭載され、同じ電
 
 
 
+[[step-1-remove-the-aff-a220-aff-a200-aff-c190-fas2620-or-fas2720-controller-module]]
 == ステップ 1：AFF A220、AFF A200、AFF C190、FAS2620、または FAS2720 コントローラモジュールの取り外し
 
 node2 コントローラ内部のコンポーネントにアクセスするには、コントローラモジュールをシステムから取り外し、コントローラモジュールのカバーを取り外します。
@@ -48,6 +49,7 @@ image:drw_2240_x_opening_cam_latch.png["カムハンドルを開く"]
 
 
 
+[[step-2-install-the-asa-a150-aff-a150-or-fas2820-controller-module]]
 == ステップ2：ASA A150、AFF A150、またはFAS2820コントローラモジュールの取り付け
 
 アップグレード用に受け取った ASA A150、AFF A150、または FAS2820 コントローラモジュールを node2 にインストールします。

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/set_up_storage_encryption_new_module.html 
 keywords: set up storage, encryption, controller, module, node 
-summary: '必要に応じて、コマンドを使用してONTAP 9.15.1以降を実行するコントローラをアップグレードする際に、ストレージ暗号化を設定し、SSL証明書をインストールし、キー管理サーバをセットアップし `system controller replace` ます。' 
+summary: '必要に応じて、ONTAP 9.15.1以降で導入されたコントローラにアップグレードする際に、 `system controller replace`コマンドを使用してストレージ暗号化を設定し、SSL証明書をインストールし、キー管理サーバーをセットアップしてください。' 
 ---
 = 新しいコントローラモジュールで Storage Encryption をセットアップします
 :hardbreaks:

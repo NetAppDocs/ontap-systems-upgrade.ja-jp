@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html 
 keywords: guidelines, upgrading, controllers, ARL 
-summary: 'ONTAP 9.15.1以降を実行するコントローラをコマンドを使用してアップグレードできるかどうかを確認します。 `system controller replace`' 
+summary: 'ONTAP 9.15.1以降で導入されたコントローラーに `system controller replace`コマンドを使用してアップグレードできるかどうかを確認してください。' 
 ---
 = ARL を使用したコントローラのアップグレードに関するガイドライン
 :hardbreaks:
@@ -14,10 +14,11 @@ summary: 'ONTAP 9.15.1以降を実行するコントローラをコマンドを�
 
 
 [role="lead"]
-ONTAP 9.15.1以降を実行するコントローラのペアをARLを使用してアップグレードできるかどうかを理解するには、プラットフォームと元のコントローラと交換用コントローラの両方の構成によって異なります。
+ARL を使用して ONTAP 9.15.1 以降で導入されたコントローラのペアにアップグレードできるかどうかは、プラットフォームと、元のコントローラおよび交換用コントローラの両方の構成によって異なります。
 
 
 
+[[supported-upgrades-for-arl]]
 == ARL のアップグレードがサポートされます
 
 このARLの手順を使用してノードのペアをアップグレードする前に、次の要件を確認して、構成がサポートされていることを確認してください。
@@ -41,12 +42,14 @@ ARL を使用したコントローラのアップグレードは、 SnapLock Ent
 
 
 
+[[two-node-switchless-clusters]]
 == 2 ノードスイッチレスクラスタ
 
 2 ノードスイッチレスクラスタのノードをアップグレードする場合は、アップグレードの実行中もスイッチレスクラスタのノードをそのまま使用できます。スイッチクラスタに変換する必要はありません。
 
 
 
+[[upgrades-not-supported-for-arl]]
 == ARL のアップグレードはサポートされていません
 
 元のコントローラに接続されているディスクシェルフがサポートされない交換用コントローラはアップグレードできません。
@@ -57,6 +60,7 @@ ARL を使用したコントローラのアップグレードは、 SnapLock Ent
 
 
 
+[[troubleshoot]]
 == トラブルシューティングを行う
 
 コントローラのアップグレード中に問題が発生した場合は、link:aggregate_relocation_failures.html["トラブルシューティングを行う"]詳細情報および可能な解決策については、こちらをご覧ください。

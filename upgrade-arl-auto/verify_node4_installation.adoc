@@ -44,6 +44,7 @@ CAUTION: この段階では、MetroCluster設定が正常な状態ではなく�
 
 
 
+[[re-create-vlans-interface-groups-and-broadcast-domains-on-node4]]
 == ノード 4 で VLAN 、インターフェイスグループ、およびブロードキャストドメインを再作成します
 
 ノード 4 がクォーラムにあり、ノード 3 と通信できることを確認したら、ノード 2 の VLAN 、インターフェイスグループ、およびブロードキャストドメインをノード 4 に再作成する必要があります。node3 のポートは、新しく作成したブロードキャストドメインにも追加する必要があります。
@@ -72,6 +73,7 @@ VLAN 、インターフェイスグループ、およびブロードキャスト
 
 
 
+[[restore-key-manager-configuration-on-node4]]
 == ノード 4 でキー管理ツールの設定をリストアします
 
 NetApp Aggregate Encryption（NAE）またはNetApp Volume Encryption（NVE）を使用してアップグレードするシステムのボリュームを暗号化している場合は、暗号化構成を新しいノードと同期する必要があります。キーマネージャを復元しない場合、ARLを使用してnode2のアグリゲートをnode3からnode4に再配置すると、暗号化されたボリュームがオフラインになります。

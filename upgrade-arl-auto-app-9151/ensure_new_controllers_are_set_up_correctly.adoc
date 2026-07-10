@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/ensure_new_controllers_are_set_up_correctly.html 
 keywords: confirm, controllers, set up, ha, node3, node4, node2, lif, cluster, high, availability 
-summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコントローラをアップグレードしたあとに、HAペアを有効にし、ノード3とノード4のストレージアクセスを確認し、アグリゲートの所有権を確認します `system controller replace` 。' 
+summary: 'HAペアを有効にし、node3とnode4のストレージ アクセスを確認し、ONTAP 9.15.1以降で導入されたコントローラへのアップグレード後に `system controller replace`コマンドを使用してアグリゲートの所有権を確認します。' 
 ---
 = 新しいコントローラが正しくセットアップされていることを確認します
 :hardbreaks:

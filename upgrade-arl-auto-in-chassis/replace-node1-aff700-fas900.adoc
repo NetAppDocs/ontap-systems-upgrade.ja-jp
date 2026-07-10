@@ -26,6 +26,7 @@ CAUTION: ノード1とノード2は同じシャーシに搭載され、同じ電
 
 
 
+[[step-1-remove-the-aff-a700-or-fas9000-controller-module]]
 == ステップ1：AFF A700またはFAS9000コントローラモジュールを取り外す
 
 node1 AFF A700 または FAS9000 コントローラモジュールを取り外します。
@@ -66,6 +67,7 @@ image:black_circle_two.png["番号 2"]
 
 
 
+[[step-2-remove-the-aff-a700-or-fas9000-nvram-module]]
 == ステップ 2：AFF A700 または FAS9000 NVRAM モジュールを取り外します
 
 node1 AFF A700またはFAS9000 NVRAMモジュールのロックを解除し、取り外します。
@@ -108,6 +110,7 @@ image:black_circle_two.png["番号 2"]
 
 
 
+[[step-3-install-the-asa-a900-aff-a900-or-fas9500-nvram-module]]
 == ステップ 3：ASA A900、AFF A900、またはFAS9500 NVRAMモジュールを取り付けます
 
 node1にASA A900、AFF A900、またはFAS9500 NVRAMモジュールを設置、ケーブル接続、および接続します。
@@ -144,6 +147,7 @@ image:black_circle_two.png["番号 2"]
 
 
 
+[[step-4-install-the-asa-a900-aff-a900-or-fas9500-controller-module-in-node1]]
 == ステップ4：ASA A900、AFF A900、またはFAS9500コントローラモジュールをノード1にインストールする
 
 node1にASA A900、AFF A900、またはFAS9500コントローラモジュールを設置し、ケーブルを配線して接続します。

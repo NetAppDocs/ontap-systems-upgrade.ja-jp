@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/retire_node1.html 
 keywords: retiring, node 
-summary: 'コマンドを使用してONTAP 9.15.1以降を実行しているコントローラをアップグレードする場合は、ノード2のHAペアを無効にし、ノード1をシャットダウンし `system controller replace` ます。' 
+summary: 'ONTAP 9.15.1以降で導入されたコントローラーへのアップグレード時に、 `system controller replace`コマンドを使用して、node2でHAペアを無効にし、node1をシャットダウンします。' 
 ---
 = ノード 1 を撤去
 :hardbreaks:

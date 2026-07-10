@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: upgrade-arl/index.html 
 keywords: aggregate, relocation, moving, manual, upgrade, relocate, hardware 
-summary: アグリゲートの再配置を使用してコントローラハードウェアをアップグレードする 
+summary: アグリゲートの再配置を使用して AFF、ASA、または FAS コントローラハードウェアをアップグレードする方法について説明します。 
 ---
-= ARLのアップグレード手順を選択
+= ここから始めましょう：AFF、ASA、またはFASコントローラハードウェアのARLアップグレード手順を選択してください
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: アグリゲートの再配置を使用してコントローラハー�
 
 
 [role="lead"]
-アグリゲートの再配置（ARL）を使用すると、システムを停止することなくコントローラハードウェアをアップグレードできます。コントローラハードウェアをアップグレードするその他の方法については、を参照してくださいlink:../upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"]。
+アグリゲートの再配置（ARL）を使用することで、AFF、ASA、またはFASコントローラのハードウェアを無停止でアップグレードできます。コントローラハードウェアをアップグレードするその他の方法については、link:../upgrade/upgrade-decide-to-use-this-guide.html["ボリュームまたはストレージを移動してアップグレードします"]を参照してください。
 
 ARLを使用すると、ルート以外のアグリゲートを元のノードから同じクラスタ内の新しいノードに移行して、ONTAPを実行しているノードのペアのコントローラハードウェアを無停止でアップグレードできます。アップグレード中は、アップグレード対象のノードでホストされているデータにアクセスできます。
 
@@ -24,9 +24,10 @@ ARLを使用してコントローラハードウェアをアップグレード�
 
 
 
-== ONTAP 9 .15.1以降では、「system controller replace」コマンドを使用します。
+[[upgrade-to-systems-introduced-in-ontap-9-15-1-or-later]]
+== ONTAP 9.15.1以降で導入されたシステムへのアップグレード
 
-アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、link:../upgrade-arl-auto-app-9151/index.html["ONTAP 9.15.1以降で導入されたコントローラハードウェアをアップグレードするには、「system controller replace」コマンドを使用します。"]アップグレード手順を開始します。
+アップグレードシナリオが以下のサポート対象システムマトリックスに記載されている場合は、link:../upgrade-arl-auto-app-9151/index.html["「system controller replace」コマンドを使用して、ONTAP 9.15.1以降で導入されたコントローラハードウェアにアップグレードします"]に移動してアップグレード手順を開始してください。
 
 .サポートされるシステムの表示
 [%collapsible]
@@ -64,6 +65,7 @@ ARLを使用してコントローラハードウェアをアップグレード�
 ====
 
 
+[[upgrade-controller-models-in-the-same-chassis]]
 == 同じシャーシでコントローラモデルをアップグレード
 
 アップグレードシナリオが以下のサポート対象システムマトリックスに記載されている場合は、link:../upgrade-arl-auto-in-chassis/index.html["「system controller replace」コマンドを使用して、同じシャーシ内のコントローラモデルをアップグレードします"]アップグレード手順を開始します。
@@ -142,6 +144,7 @@ ARLを使用してコントローラハードウェアをアップグレード�
 ====
 
 
+[[use-system-controller-replace-commands-with-ontap-9-8-or-later]]
 == ONTAP 9 .8以降で「system controller replace」コマンドを使用する
 
 アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、link:../upgrade-arl-auto-app/index.html["ONTAP 9.8 以降を実行しているコントローラハードウェアをアップグレードするには、「 system controller replace 」コマンドを使用します"]アップグレード手順を開始します。
@@ -182,6 +185,7 @@ ARLを使用してコントローラハードウェアをアップグレード�
 ====
 
 
+[[use-system-controller-replace-commands-with-ontap-9-5-to-9-7]]
 == ONTAP 9 .5 ~ 9.7で「system controller replace」コマンドを使用
 
 アップグレードシナリオが次のサポート対象システムマトリックスに記載されている場合は、に進み、link:../upgrade-arl-auto/index.html["「 system controller replace 」コマンドを使用して、 ONTAP 9.5 を実行するコントローラハードウェアを 9.7 にアップグレードします"]アップグレード手順を開始します。
@@ -208,6 +212,7 @@ ARLを使用してコントローラハードウェアをアップグレード�
 ====
 
 
+[[use-manual-arl-commands]]
 == 手動のARLコマンドを使用
 
 アップグレードシナリオが「system commands」でサポートされていない場合は、手動コマンドを使用してARLアップグレードを実行できます。

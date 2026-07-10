@@ -4,6 +4,8 @@
 
 
 
+[[step-2-check-and-configure-utauta2-ports-on-node4]]
+[[check-config-uta-uta2-node4]]
 == ステップ2：node4のUTA/UTA2ポートを確認して設定する
 
 ノード 4 でオンボード UTA / UTA2 ポートまたは UTA / UTA2A カードが使用されている場合は、アップグレードしたシステムの使用方法に応じて、ポートの設定を確認して設定する必要があります。

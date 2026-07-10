@@ -22,10 +22,12 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 
 NOTE: ネットアップのマーケティング資料では、 Converged Network Adapter （ CNA ；統合ネットワークアダプタ）アダプタおよびポートを UTA2 と呼ぶ場合があります。ただし、 CLI では CNA という用語が使用されます。
 
-ノード3にオンボードFCポート、オンボードUTA/UTA2ポート、またはUTA/UTA2カード（たとえば、 ONTAP 9.15.1以降に導入されたAFFおよびFASシステム）がなく、ストレージディスクを備えたシステムをアップグレードする場合は、link:reassign-node1-disks-to-node3.html["ノード1のディスクをノード3に再割り当て"] 。
+node3 にオンボード FC ポート、オンボード UTA/UTA2 ポート、または UTA/UTA2 カードがなく（たとえば、ONTAP 9.15.1 以降で導入された AFF および FAS システム）、ストレージディスクを搭載したシステムをアップグレードする場合は、link:reassign-node1-disks-to-node3.html["ノード1のディスクをノード3に再割り当て"] にスキップできます。
 
 
 
+[[step-1-configure-fc-ports-on-node3]]
+[[configure-fc-ports-on-node3]]
 == ステップ1：node3でFCポートを設定する
 
 node3 にオンボードまたはアドオン FC アダプタ上の FC ポートがある場合、システムの出荷時にポートが事前構成されていないため、ノードをサービスに投入する前にノード上でポート構成を設定する必要があります。ポートを設定しないと、サービスが中断される可能性があります。
@@ -94,6 +96,8 @@ ucadmin show
 
 
 
+[[step-2-check-and-configure-utauta2-ports-on-node3]]
+[[check-config-uta-uta2-node3]]
 == ステップ2：node3のUTA/UTA2ポートを確認して設定する
 
 ノード 3 にオンボード UTA / UTA2 ポートまたは UTA / UTA2 カードが搭載されている場合は、アップグレードしたシステムの使用方法によって、ポートの設定を確認し、場合によっては再設定する必要があります。

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/complete-preparation-for-upgrade.html 
 keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
-summary: 'コマンドを使用して、ONTAP 9.15.1以降を実行するコントローラをアップグレードする場合、ストレージ暗号化の設定と管理、認証キーの管理、およびSnapMirror関係の休止を `system controller replace` 行います。' 
+summary: 'ストレージ暗号化の設定と管理、認証キーの管理、およびONTAP 9.15.1以降で導入されたコントローラへのアップグレード時のSnapMirror関係の休止は、 `system controller replace`コマンドを使用して行います。' 
 ---
 = アップグレードの準備を完了する
 :hardbreaks:
@@ -18,6 +18,7 @@ Onboard Key Manager（OKM）を使用したONTAPライセンスとStorage Encryp
 
 
 
+[[learn-about-ontap-licensing]]
 == ONTAPライセンスについて学ぶ
 
 ONTAPライセンスの詳細については、を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["ライセンス管理"^]。
@@ -27,6 +28,8 @@ NOTE: ライセンスされていない機能をコントローラで使用す�
 
 
 
+[[manage-storage-encryption-using-the-onboard-key-manager]]
+[[manage_storage_encryption_using_okm]]
 == オンボードキーマネージャを使用してストレージ暗号化を管理します
 
 暗号化キーの管理には、オンボードキーマネージャ（OKM）を使用します。OKMが設定されている場合は、アップグレードを開始する前にパスフレーズとバックアップデータを記録しておく必要があります。
@@ -55,6 +58,7 @@ NOTE: ライセンスされていない機能をコントローラで使用す�
 
 
 
+[[optionally-quiesce-the-snapmirror-relationships]]
 == オプションで、SnapMirror関係を休止します
 
 手順を続行する前に、すべての SnapMirror 関係が休止状態になっていることを確認する必要があります。休止された SnapMirror 関係は、リブート後およびフェイルオーバー後も休止状態のままです。

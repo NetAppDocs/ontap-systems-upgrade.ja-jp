@@ -18,6 +18,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 
 
 
+[[step-1-prepare-the-nodes]]
 == ステップ1：ノードを準備する
 
 コントローラー交換プロセスを開始し、事前チェックを実行します。必要に応じて、使用されている自己暗号化ドライブの種類を特定します。
@@ -25,19 +26,25 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 .手順
 . ONTAP コマンドラインで次のコマンドを入力して、コントローラの交換プロセスを開始します。
 +
-'system controller replace start-nodes_node_name _`
-
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
 [NOTE]
 ====
 ** ONTAP 9.10.1 以降では、 4 ノードの MetroCluster FC 構成のデフォルトの自動ネゴシエートスイッチオーバー（ NSO ）ベースのアップグレード手順が使用されます。4 ノード MetroCluster FC 構成をアップグレードする場合、「 system controller replace start 」コマンドを問題するときに、「 -nso 」パラメータを「 false 」に設定して、 NSO ベースの手順の起動を禁止する必要があります。
 +
-'system controller replace start-nodes _node_name --nso false
-
+[source, cli]
+----
+system controller replace start -nodes <node_names> -nso false
+----
 ** このコマンドは、advanced権限レベルでのみ実行でき `system controller replace start`ます。
 +
-「 advanced 」の権限が必要です
-
+[source, cli]
+----
+set -privilege advanced
+----
 
 
 ====
@@ -106,7 +113,7 @@ Controller replacement operation has been paused for user intervention.
 | クラスタ LIF ステータス | 両方のノードでクラスタ LIF が動作しているかどうかを確認します。クラスタ LIF が停止している場合は、タスクは失敗します。 
 
 
-| ASUP ステータスチェック | ASUP 通知が設定されていないと、タスクは失敗します。コントローラの交換用手順を開始する前に ASUP を有効にする必要があります。 
+| AutoSupport ステータスチェック | AutoSupport 通知が設定されていないと、タスクは失敗します。コントローラの交換用手順 を開始する前に、 AutoSupport を有効にする必要があります。 
 
 
 | CPU 利用率チェック | 交換するノードの CPU 利用率が 50% を超えていないかどうかを確認します。CPU 使用率がかなりの時間にわたって 50% を超えると、タスクは失敗します。 
@@ -127,25 +134,90 @@ NOTE: FAS8080 や AFF8080 システムなど、ノードあたり 3 つ以上の
 各ノードに接続されているシリアルポートで、次のコマンドの出力を個別に実行して保存します。
 
 +
-** vserver services name-service dns show
-** `network interface show -curr-node _local_ -role _cluster,intercluster,node-mgmt,cluster-mgmt,data_`
-** `network port show -node _local_ -type physical`
-** `service-processor show -node _local_ -instance`
-** `network fcp adapter show -node _local_`
-** `network port ifgrp show -node _local_`
-** `system node show -instance -node _local_`
-** `run -node _local_ sysconfig`
-** `storage aggregate show -node _local_`
-** `volume show -node _local_`
-** storage array config show -switch_switch_name_`
-** `system license show -owner _local_`
-** 「 storage encryption disk show 」のように表示されます
-** 「 securitykey manager onboard show-backup 」を参照してください
-** 「 security key-manager external show 」と入力します
-** 「 security key-manager external show-status 」
-** `network port reachability show -detail -node _local_`
-
-
+[source, cli]
+----
+vserver services name-service dns show
+----
++
+[source, cli]
+----
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,cluster-mgmt,data
+----
++
+[source, cli]
+----
+network port show -node <local> -type physical
+----
++
+[source, cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source, cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source, cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source, cli]
+----
+system node show -instance -node <local>
+----
++
+[source, cli]
+----
+run -node <local> sysconfig
+----
++
+[source, cli]
+----
+storage aggregate show -node <local>
+----
++
+[source, cli]
+----
+volume show -node <local>
+----
++
+[source, cli]
+----
+storage array config show -switch <switch_name>
+----
++
+[source, cli]
+----
+system license show -owner <local>
+----
++
+[source, cli]
+----
+storage encryption disk show
+----
++
+[source, cli]
+----
+security key-manager onboard show-backup
+----
++
+[source, cli]
+----
+security key-manager external show
+----
++
+[source, cli]
+----
+security key-manager external show-status
+----
++
+[source, cli]
+----
+network port reachability show -detail -node <local>
+----
 +
 
 NOTE: オンボードキーマネージャ（OKM）を使用したNetApp Volume Encryption（NVE）またはNetApp Aggregate Encryption（NAE）を使用している場合は、手順の後半の工程でキー管理ツールの再同期を実行できるように、キー管理ツールのパスフレーズを準備しておいてください。
@@ -171,6 +243,7 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 
 
+[[step-2-correct-aggregate-ownership-if-an-arl-precheck-fails]]
 == ステップ2：ARLの事前チェックが失敗した場合は、アグリゲートの所有権を修正します
 
 アグリゲートステータスチェックに失敗した場合は、パートナーノードが所有するアグリゲートをホーム所有者ノードに戻し、事前確認プロセスを再度開始する必要があります。
@@ -178,12 +251,16 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 .手順
 . パートナーノードが現在所有しているアグリゲートをホーム所有者ノードに戻します。
 +
-storage aggregate relocation start -node-source_node__ destination_destination-node-aggregate-list *
-
+[source, cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 . node1 と node2 のどちらも現在の所有者（ホーム所有者ではない）アグリゲートを所有していないことを確認します。
 +
-storage aggregate show -nodes_node_name -is-home false -fields owner-name、home-name、stateを指定します
-
+[source, cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 次の例は、アグリゲートの現在の所有者とホーム所有者の両方がノードにある場合のコマンドの出力例を示しています。
 
@@ -201,9 +278,12 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 . コントローラ交換プロセスを再開します。
++
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 
-
-'system controller replace start-nodes_node_name _`
 
 .次の手順
 ノードを準備した後、link:complete-preparation-for-upgrade.html["アップグレードの準備を完了する"]。
