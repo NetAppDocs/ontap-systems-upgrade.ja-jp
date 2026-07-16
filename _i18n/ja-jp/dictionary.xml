@@ -3220,10 +3220,7 @@
   <block id="c5dc6358f70b9b01e402df306b4756e6" category="summary">必要に応じて、ONTAP 9.8以降を実行しているコントローラで、NVEまたはNAE用に新しいコントローラモジュールを手動でアップグレードする際に設定します。</block>
   <block id="f0a0eea61e7c18706f2be0d0b664df19" category="doc">新しいコントローラモジュールでNetApp VolumeまたはAggregte Encryptionをセットアップします</block>
   <block id="9c5b8b5e0f9e3862ddb4d7aea590526d" category="paragraph">ステージ2で、ルート以外のアグリゲートをノード1からノード2に再配置し、ノード1が所有するSAN以外のデータLIFを、障害アグリゲートまたは拒否アグリゲートを含めてノード2に移動します。また、手順 の後半で使用するために必要なノード1の情報を記録し、ノード1を撤去します。</block>
-  <block id="b1d2d80254a37ea644bb2f1ced221235" category="paragraph">ステージ3で、ノード3をインストールしてブートし、クラスタポートとノード管理ポートをノード1からノード3にマッピングし、ノード2からノード3に属するデータLIFとSAN LIFを移動します。また、すべてのアグリゲートを node2 から node3 に再配置し、 node2 によって所有されているデータ LIF と SAN LIF を node3 に移動します。</block>
   <block id="14404b4da2811fbc2d79f7bd9ba708f3" category="paragraph">ステージ4で、あとで手順 で使用するために必要なnode2の情報を記録し、node2を撤去します。アグリゲートの所有権は変更されません。</block>
-  <block id="7e21a9c9d8227ac88401921ab1292b41" category="paragraph">ステージ5で、node4をインストールしてブートし、クラスタポートとノード管理ポートをnode2からnode4にマッピングし、node2に属するデータLIFとSAN LIFをnode3からnode4に移動します。node2のアグリゲートをnode3からnode4に再配置し、node2によって所有されているデータLIFとSAN LIFをnode3に移動することもできます。</block>
-  <block id="3bd7ed4f2ac8c8bee0e26402197de3f8" category="paragraph">ステージ6では、新しいノードが正しくセットアップされていることを確認し、新しいノードで暗号化が有効になっている場合はストレージ暗号化またはNetApp Volume Encryptionをセットアップします。また、古いノードの運用を停止すると、SnapMirrorの処理が再開されます。</block>
   <block id="a6b2bef9fee39460e6de895c83a49b09" category="paragraph">ステージ2で、ノード1の非ルートアグリゲートとNASデータLIFをノード2に再配置します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。必要に応じて、障害が発生したアグリゲートまたは拒否されたアグリゲートを再ノード1を撤去する前に、手順 の後半で使用するために情報をメモしておきます。ネットブートnode3とnode4には、あとで手順 で準備することもできます。</block>
   <block id="b782fb0a43ba5a997562172fe5afc493" category="paragraph">ステージ4で、ルート以外のアグリゲートとNASデータLIFをnode2からnode3に再配置します。node2の情報は、あとで手順 で使用するために記録してから、node2を撤去することもできます。</block>
   <block id="ee70b93b550a5730542d0185fb89b3ce" category="paragraph">ステージ6では、新しいノードが正しくセットアップされていることを確認し、暗号化が有効な新しいノードがある場合はストレージ暗号化またはNVEを設定してセットアップします。また、古いノードの運用を停止し、SnapMirrorの処理を再開する必要があります。</block>
@@ -5588,4 +5585,14 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="296dded36176a3c0cddf588327506ee0" category="summary">同一シャーシ内でARLを使用してコントローラモデルをアップグレードする場合、対応する交換用システムモジュールを交換した後、node2をネットブートする必要があります。</block>
   <block id="f22b666a8f2e5bcdb8fb87b0f8aa7d19" category="summary">同一シャーシ内でARLを使用してコントローラモデルをアップグレードする場合、障害が発生した、または拒否されたアグリゲートを手動でnode1に再配置してください。</block>
   <block id="579119c4e708317159df0e8381e43324" category="list-text"><block ref="579119c4e708317159df0e8381e43324" category="inline-link-macro-rx"></block></block>
+  <block id="599b54171a77643ce7931a9986ea7c42" category="paragraph">ノードペアをアップグレードするには、元のノードを準備し、元のノードと新しいノードの両方でアップグレード手順を実行します。次に、元のノードを廃止します。</block>
+  <block id="d3f5a62906fe227e98435313989c588d" category="paragraph">HAペア構成を利用して非ルートアグリゲートの所有権を再配置し、元のコントローラハードウェアを交換用コントローラハードウェアに1台ずつアップグレードします。正しいアップグレード済みノードに到達するには、すべての非ルートアグリゲートを2回再配置する必要があります。</block>
+  <block id="017f0198cb149e001e7d1fbdbfeff2ab" category="paragraph">以下の表は、各段階の概要タスクと、各段階終了時点でのアグリゲートの所有権の状態を示しています。詳細な手順は、この手順の後半で説明します。</block>
+  <block id="926cb196a2b3f1a08efba3993217d3e0" category="paragraph">ステージ1では、必要に応じて、内蔵ディスクドライブにルートアグリゲートまたはデータアグリゲートが含まれていないことを確認し、アップグレードのためにノードを準備し、事前チェックを実行します。必要に応じて、Storage Encryption用のディスクのキーを再設定し、新しいコントローラのネットブートの準備をします。</block>
+  <block id="49ddc20064f4f29a69131c6812872ce2" category="paragraph">ステージ3では、node3をインストールして起動し、クラスターポートとノード管理ポートをnode1からnode3にマッピングします。NetApp Volume Encryption（NVE）を使用している場合は、キーマネージャの設定を復元します。次に、node1に属するデータLIFとSAN LIFをnode2からnode3に移動し、すべてのアグリゲートをnode2からnode3に再配置し、node2が所有するデータLIFとSAN LIFをnode3に移動します。</block>
+  <block id="af49fa765409efddf18e8edd7d047f69" category="paragraph">ステージ5では、node4をインストールして起動し、クラスターポートとノード管理ポートをnode2からnode4にマッピングします。NetApp Volume Encryption（NVE）を使用している場合は、キーマネージャの設定を復元します。次に、node2に属するデータLIFとSAN LIFをnode3からnode4に移動し、node2のアグリゲートをnode3からnode4に再配置し、node2が所有するデータLIFとSAN LIFをnode3に移動します。</block>
+  <block id="12177ec5bd50eaf788179fbe2ab3d1ff" category="summary">必要に応じて、ONTAP 9.8以降を実行しているコントローラで手動ARLアップグレード中に、node4上のキーマネージャ構成を復元します。</block>
+  <block id="74b1deeae7ed2c75aa8ad4c2ddea9d93" category="summary">必要に応じて、ONTAP 9.8以降を実行しているコントローラで手動ARLアップグレード中に、node3上のキーマネージャ構成を復元します。</block>
+  <block id="8ad3199cfb5e6cb3fc2da5bb1354e4c8" category="sidebar">node3 でキーマネージャの設定を復元する</block>
+  <block id="2cd0e87e95581377b5e99bb14328f296" category="sidebar">node4 でキーマネージャの設定を復元する</block>
 </blocks>

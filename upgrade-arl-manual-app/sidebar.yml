@@ -47,6 +47,8 @@ entries:
     url: "/upgrade-arl-manual-app/set_fc_uta_uta2_config_node3.html"
   - title: ポートを node1 から node3 にマッピングします
     url: "/upgrade-arl-manual-app/map_ports_node1_node3.html"
+  - title: node3 でキーマネージャの設定を復元する
+    url: "/upgrade-arl-manual-app/restore_key-manager_configuration_node3.html"
   - title: node1 で所有されている NAS データ LIF を node2 から node3 に移動し、ノード 3 の SAN LIF を確認します
     url: "/upgrade-arl-manual-app/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html"
   - title: ワークシート： NAS データ LIF をノード 3 に移動する前に記録する情報
@@ -71,6 +73,8 @@ entries:
     url: "/upgrade-arl-manual-app/set_fc_uta_uta2_config_node4.html"
   - title: node2 のポートを node4 にマッピングします
     url: "/upgrade-arl-manual-app/map_ports_node2_node4.html"
+  - title: node4 でキーマネージャの設定を復元する
+    url: "/upgrade-arl-manual-app/restore_key-manager_config_node4.html"
   - title: node2 によって所有されている NAS データ LIF を node3 から node4 に移動し、 node4 にある SAN LIF
       を確認します
     url: "/upgrade-arl-manual-app/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html"
