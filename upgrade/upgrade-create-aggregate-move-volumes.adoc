@@ -114,4 +114,4 @@ NOTE: ストレージ構成に暗号化が有効なボリュームが含まれ�
 
 
 .次の手順
-link:upgrade-move-lifs-to-new-nodes.html["SAN以外のデータLIFとクラスタ管理LIFを新しいノードに移動する"]
+アグリゲートを作成し、ボリュームを新しいノードに移動した後、link:upgrade-move-lifs-to-new-nodes.html["非SANデータLIFとクラスタ管理LIFを新しいノードに移動する"]。

@@ -33,5 +33,5 @@ NOTE: このドキュメントでは、元のノードは _node1_ と _node2_ �
 * この手順を使用して、ノードが 3 つ以上あるクラスタでコントローラハードウェアをアップグレードできます。ただし、クラスタ内のハイアベイラビリティ（ HA ）ペアごとに手順を個別に実行する必要があります。
 
 
-* この手順環境 MetroCluster の 4 ノード構成と 8 ノード構成では、 ONTAP 9.5 以前が実行されています。ONTAP 9.6 以降を実行する MetroCluster 構成の場合は、に進みます link:other_references.html["参考資料"] to _using "system controller replace"コマンドを使用して、ONTAP 9.5を実行しているコントローラハードウェアをONTAP 9.7_にアップグレードする。
+* この手順は、ONTAP 9.5以前を実行しているMetroCluster 4ノードおよび8ノード構成に適用されます。ONTAP 9.6以降を実行しているMetroCluster構成については、link:other-references.html["参考資料"]を参照して、_「system controller replace」コマンドを使用してONTAP 9.5からONTAP 9.7へのコントローラハードウェアのアップグレード_へのリンクを確認してください。
 

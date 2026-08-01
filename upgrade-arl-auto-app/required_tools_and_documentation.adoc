@@ -22,7 +22,7 @@ summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグ
 * No.2 プラスドライバ
 
 
-にアクセスします link:other_references.html["参考資料"] セクションでは、このアップグレードに必要な参照ドキュメントと参照サイトのリストを参照できます
+link:other-references.html["参考資料"]セクションに移動して、このアップグレードに必要な参照文書と参照サイトの一覧にアクセスしてください。
 
 .次の手順
 必要なツールとドキュメントを確認したら、link:guidelines_for_upgrading_controllers_with_arl.html["ARLを使用したコントローラのアップグレードに関するガイドライン"]について学習します。

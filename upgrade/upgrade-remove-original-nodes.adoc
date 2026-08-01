@@ -20,6 +20,8 @@ summary: ボリュームが新しいノードに移動されたら、元のノ�
 ----
 storage failover modify -node <original_node_name> -enabled false
 ----
+
+
 . 権限レベルをadvancedに変更します。
 +
 [source, cli]
@@ -165,6 +167,7 @@ set -privilege admin
 ----
 
 
+[[return-admin]]
 . 手順<<disable-ha,2>>から<<return-admin,11>>を繰り返して、クラスターからフェールオーバー パートナーを削除します。
 . クラスタにノードが 2 つしか残っていない場合は、 2 ノードクラスタのハイアベイラビリティを設定します。
 +
@@ -175,4 +178,4 @@ cluster ha modify -configured true
 
 
 .次の手順
-link:upgrade-complete-move-volumes.html["ボリューム移動のアップグレードを完了する"]
+元のノードを削除した後、link:upgrade-complete-move-volumes.html["移動ボリュームのアップグレードを完了する"]。

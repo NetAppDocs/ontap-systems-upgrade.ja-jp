@@ -23,7 +23,7 @@ summary: 'ONTAP 9.8 以降を実行するコントローラをアップグレー
 * ONTAPの管理経験があり、diagnostic権限モードで作業する場合のリスクを十分に理解していること。
 * MetroCluster構成をアップグレードする場合は、4ノード以上のFC構成で、すべてのノードでONTAP 9.8以降が実行されています。
 +
-MetroCluster IP構成のアップグレードについては、MetroCluster Upgrade and Expansion_へのリンクを参照してくださいlink:other_references.html["参考資料"]。
+MetroCluster IP構成のアップグレードについては、link:other-references.html["参考資料"]を参照して『MetroCluster Upgrade and Expansion』にアクセスしてください。
 
 
 
@@ -138,11 +138,11 @@ NOTE: コントローラのアップグレードモデルの組み合わせが�
 == 別のハードウェアアップグレード手順を選択する
 
 * link:../upgrade-arl/index.html["コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します"]です。
-* コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+* コントローラーのハードウェアをアップグレードする別の方法を希望し、ボリュームの移動を行う意思がある場合は、link:other-references.html["参考資料"]を参照して_ボリュームまたはストレージを移動してアップグレードする_にリンクしてください。
 
 
 .関連情報
-参照link:other_references.html["参考資料"] _ONTAP 9 ドキュメント_にリンクします。
+link:other-references.html["参考資料"]を参照して、_ONTAP 9 Documentation_にリンクしてください。
 
 .次の手順
 この ARL 手順を使用するかどうかを決定した後、link:required_tools_and_documentation.html["必要なツールとドキュメント"]について学習します。

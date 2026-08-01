@@ -121,3 +121,6 @@ link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI での SAN �
 システムが LOADER プロンプトで停止します。
 
 
+
+.次の手順
+新しいノードを設定した後、必要に応じて、link:upgrade-move-internal-drives.html["内部ドライブを元のノードから移動します"]またはlink:upgrade-convert-node-to-shelf.html["元のノードをドライブ シェルフに変換する"]。次に、link:upgrade-attach-shelves-reassign-disks.html["ストレージシェルフを取り付けてディスクの所有権を再割り当てする"]。

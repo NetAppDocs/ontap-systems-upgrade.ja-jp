@@ -32,76 +32,35 @@ ARL を使用してノードをアップグレードする前に、手順の動�
 
 各アグリゲートにはホーム所有者と現在の所有者があります。ホーム所有者はアグリゲートの実際の所有者であり、現在の所有者は一時的な所有者です。
 
-次の表に、各フェーズで実行するタスクの概要と、そのフェーズの最後で実行したアグリゲートの所有権の状態を示します。詳細な手順については、手順の後半で説明します。
+各段階で実行する概要タスクと、各段階終了時点でのアグリゲート所有権の状態について説明します。詳細な手順は、この手順の後半で説明します。
 
-[cols="35,65"]
-|===
-| 段階 | 手順 
-
-
-| link:verify-upgrade-hardware.html["ステージ 1 ：アップグレードの準備"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"]link:verify-upgrade-hardware.html["ステージ 1 ：アップグレードの準備"]
+[role="quick-margin-para"]
 ステージ1では、アップグレードに適したハードウェアがあることを確認し、事前確認を実行します。また、必要に応じてアグリゲートの所有権も適切であることを確認します。オンボードキーマネージャを使用してストレージ暗号化を管理し、SnapMirror関係を休止できる場合は、特定の情報を記録しておく必要があります。
 
-ステージ 1 終了時のアグリゲートの所有権：
-
-* node1 は、 node1 アグリゲートのホーム所有者と現在の所有者です
-* node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します
-
-
-
-
-| link:relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html["ステージ2：リソースの再配置とnode1の撤去"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"]link:relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html["ステージ2：リソースの再配置とnode1の撤去"]
+[role="quick-margin-para"]
 ステージ2では、ノード1のルート以外のアグリゲートとNASデータLIFをノード1からノード2に再配置します。このプロセスは主に自動化されており、ステータスを確認するために処理が一時停止します。この処理は手動で再開する必要があります。必要に応じて、障害が発生したアグリゲートまたは拒否されたアグリゲートを再ノード1を撤去する前に、手順 の後半で使用するために情報をメモしておきます。ネットブートの準備は、手順 のあとから行うこともできます。
 
-ステージ 2 終了時のアグリゲートの所有権：
-
-* node2 には、 node1 アグリゲートの現在の所有者を指定します
-* node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します
-
-
-
-
-| link:cable-node1-for-shared-cluster-HA-storage.html["ステージ3：交換用システムモジュールでノード1をブートします"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]link:cable-node1-for-shared-cluster-HA-storage.html["ステージ3：交換用システムモジュールでノード1をブートします"]
+[role="quick-margin-para"]
 ステージ3では、アップグレードしたシステムモジュールでnode1をブートし、アップグレードしたnode1のインストールを確認します。NetApp Volume Encryption（NVE）を使用している場合は、キー管理ツールの設定をリストアします。ノード1のルート以外のアグリゲートとNASデータLIFをnode2からアップグレードしたnode1に再配置し、SAN LIFがnode1に存在することを確認します。
 
-ステージ 3 終了時のアグリゲートの所有権：
-
-* アップグレード後のnode1は、node1アグリゲートのホーム所有者で現在の所有者です
-* node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します
-
-
-
-
-| link:relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html["ステージ4：リソースの再配置とノード2の撤去"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."]link:relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html["ステージ4：リソースの再配置とノード2の撤去"]
+[role="quick-margin-para"]
 ステージ4で、ルート以外のアグリゲートとNASデータLIFをノード2からアップグレード後のノード1に再配置し、ノード2を撤去します。
 
-ステージ 4 終了時のアグリゲートの所有権：
-
-* アップグレードした node1 は、元は node1 に属していたアグリゲートのホーム所有者および現在の所有者です
-* アップグレードした node1 は、 node2 アグリゲートの現在の所有者です
-
-
-
-
-| link:install-aff-a30-a50-c30-c50-node2.html["ステージ5：node2交換システムモジュールをインストールする"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"]link:install-aff-a30-a50-c30-c50-node2.html["ステージ5：node2交換システムモジュールをインストールする"]
+[role="quick-margin-para"]
 ステージ5では、アップグレードしたノード2用に受け取った新しいシステムモジュールをインストールし、次にノード2をネットブートします。
 
-ステージ 5 終了時のアグリゲートの所有権：
-
-* アップグレードしたnode1は、最初にnode1に属していたアグリゲートのホーム所有者および現在の所有者です。
-* アップグレードされた node2 は、元々 node2 に属していたアグリゲートのホーム所有者と現在の所有者です。
-
-
-
-
-| link:cable-node2-for-shared-cluster-HA-storage.html["ステージ6：交換用システムモジュールでノード2をブートします"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"]link:cable-node2-for-shared-cluster-HA-storage.html["ステージ6：交換用システムモジュールでノード2をブートします"]
+[role="quick-margin-para"]
 ステージ 6 では、アップグレードされたシステム モジュールを使用してノード 2 を起動し、アップグレードされたノード 2 のインストールを確認します。NVE を使用している場合は、キー マネージャーの構成を復元します。スイッチ接続クラスタのアップグレードでは、クラスタ スイッチ参照構成ファイル (RCF) が共有クラスタ/HA ポートをサポートしていることを検証する必要があります。また、ノード 1 の非ルート アグリゲートと NAS データ LIF をノード 1 からアップグレードされたノード 2 に再配置し、SAN LIF がノード 2 に存在することを確認します。
 
-
-
-| link:manage-authentication-using-kmip-servers.html["ステージ 7 ：アップグレードを完了する"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"]link:manage-authentication-using-kmip-servers.html["ステージ 7 ：アップグレードを完了する"]
+[role="quick-margin-para"]
 ステージ7では、新しいノードが正しくセットアップされていることを確認し、暗号化が有効な新しいノードがある場合は、ストレージ暗号化またはNVEを設定してセットアップします。また、古いノードの運用を停止し、SnapMirrorの処理を再開する必要があります。
 
-|===
 .次の手順
 ARLアップグレードの手順を知った後、link:verify-upgrade-hardware.html["アップグレード用ハードウェアを確認する"]。

@@ -498,4 +498,4 @@ multipath -ll -d
 
 
 .次の手順
-link:upgrade-create-aggregate-move-volumes.html["アグリゲートを作成してボリュームを新しいノードに移動"]
+Linux iSCSI ホストを新しいノードに移動した後、link:upgrade-create-aggregate-move-volumes.html["アグリゲートを作成し、ボリュームを新しいノードに移動します"]。

@@ -17,7 +17,7 @@ summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手�
 node1の物理ポートがnode3の物理ポートに正しくマッピングされていることを確認する必要があります。これにより、アップグレード後もnode3はクラスタ内の他のノードやネットワークと通信できるようになります。
 
 .作業を開始する前に
-新しいノードのポートに関する情報を Hardware Universe から取得しておく必要があります。に進みます link:other_references.html["参考資料"] をクリックして、 Hardware Universe にリンクします。この情報は、このセクションおよびの後半で使用します link:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]。
+新しいノードのポートに関する情報は、既に_Hardware Universe_から入手している必要があります。（_Hardware Universe_へのリンクはlink:other-references.html["参考資料"]を参照してください。）この情報は、このセクションの後半とlink:map_ports_node2_node4.html["node2 のポートを node4 にマッピングします"]で使用します。
 
 アップグレードを続行する前に、ノード3のソフトウェア設定がノード3の物理接続と一致している必要があり、ネットワーク接続がリストアされている必要があります。
 
@@ -239,7 +239,7 @@ network interface modify -failover-group_failover-group__-failover-policy _failo
 network interface modify -vserver node3 -lif data1 failover-policy broadcast-domainwide -failover-group fg1
 ----
 +
-link:other_references.html["参考資料"]に移動して、詳細については『ネットワーク管理』または『ONTAP 9 コマンド リファレンス』にリンクしてください。
+link:other-references.html["参考資料"]に移動して、詳細については『ネットワーク管理』または『ONTAP 9 コマンド リファレンス』にリンクしてください。
 
 . ノード 3 で変更内容を確認します。
 +

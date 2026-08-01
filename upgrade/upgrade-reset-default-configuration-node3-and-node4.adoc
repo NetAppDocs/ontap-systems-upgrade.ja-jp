@@ -54,3 +54,6 @@ Rebooting to finish wipeconfig request.
 
 . ブートメニューから「8」を入力してノードを再起動し、AUTOBOOT中にCtrl-Cを入力してLOADERプロンプトでノードを停止します。
 
+
+.次の手順
+新しいノードのデフォルト設定をリセットした後、link:upgrade-install-new-nodes.html["新しいノードをインストールします"]。

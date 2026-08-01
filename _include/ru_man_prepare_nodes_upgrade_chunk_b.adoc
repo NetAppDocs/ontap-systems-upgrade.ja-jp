@@ -170,7 +170,7 @@ node1         node1         in-quorum     true          operational
 2 entries were displayed.
 ....
 +
-過半数のノードが正常で相互に通信可能な場合に、クラスタ内のノードがクォーラムを構成している。詳細については、を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。
+クラスタ内のノードは、ノードの過半数が正常で相互に通信できる状態にあるときに、クォーラム（定足数）を満たしていると言えます。詳細については、link:other-references.html["参考資料"] を参照して『システム管理リファレンス』へのリンクをご確認ください。
 
 . admin 権限レベルに戻ります。
 +
@@ -260,7 +260,7 @@ node2   0d      fc      initiator -       -         online
 . SP ネットワークが設定されていることを確認する。
 . SP の IP アドレスやその他の情報を記録します。
 +
-リモート管理デバイス（この場合は SP）のネットワークパラメータを、元のシステムから新しいノード上の SP に再利用することもできます。SP の詳細については、link:other_references.html["参考資料"]を参照して_システム管理リファレンス_および_ONTAP 9 コマンドリファレンス_にリンクしてください。
+リモート管理デバイス（この場合は SP）のネットワークパラメータを、元のシステムから新しいノード上の SP に再利用することもできます。SP の詳細については、link:other-references.html["参考資料"]を参照して_システム管理リファレンス_および_ONTAP 9 コマンドリファレンス_にリンクしてください。
 
 +
 .. [[man_prepare_nodes_step29]]新しいノードに元のノードと同じライセンス機能を持たせたい場合は、次のコマンドを入力して元のシステムのクラスター ライセンスを確認します。
@@ -286,7 +286,7 @@ FlexClone         site    FlexClone License     -
 SnapVault         site    SnapVault License     -
 6 entries were displayed.
 ....
-.. 新しいノードの新しいライセンスキーを the _NetApp Support Site_. に取得します。を参照してください link:other_references.html["参考資料"] からネットアップサポートサイトにリンクしてください。
+.. 新しいノードの新しいライセンスキーは、_NetApp Support Site_で入手してください。_NetApp Support Site_へのリンクについては、link:other-references.html["参考資料"]を参照してください。
 +
 必要なライセンスキーがサイトにない場合は、ネットアップの営業担当者にお問い合わせください。
 
@@ -321,7 +321,7 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | AutoSupport が有効になっていません ...  a| 
-AutoSupport を有効にするには、 _System Administration Reference_. の手順に従ってください。を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_. にリンクします。）
+『システム管理リファレンス』の指示に従って、AutoSupport を有効にしてください。（『システム管理リファレンス』へのリンクについては、link:other-references.html["参考資料"] を参照してください。）
 
 * 注： AutoSupport は、ストレージ・システムを初めて設定したときに、デフォルトで有効になっています。AutoSupport はいつでも無効にできますが、常に有効にしておく必要があります。AutoSupport を有効にすると、ストレージシステムに問題が発生したときに、その問題や解決策を特定するのに非常に役立ちます。
 
@@ -331,7 +331,7 @@ AutoSupport を有効にするには、 _System Administration Reference_. の�
 「 system node AutoSupport show -node node_name -instance 」の略
 
 +
-AutoSupportの詳細については、link:other_references.html["参考資料"]を参照して、_System Administration Reference_および_ONTAP 9 Command reference_にリンクしてください。
+AutoSupportの詳細については、link:other-references.html["参考資料"]を参照して、_System Administration Reference_および_ONTAP 9 Command reference_にリンクしてください。
 
 .. [[man_prepare-to-downgrade 35 、 Step 35]] 次のコマンドを入力して、 node1 のネットアップに AutoSupport メッセージを送信します。
 +

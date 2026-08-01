@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-manual/other_references.html 
+permalink: upgrade-arl-manual/other-references.html 
 keywords: other references, documentation, hardware universe, content, documentation center, information 
 summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、参照コンテンツと Web サイトが必要です。 
 ---

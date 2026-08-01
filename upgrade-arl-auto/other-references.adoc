@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-app/other_references.html 
+permalink: upgrade-arl-auto/other-references.html 
 keywords: other references, documentation, hardware universe, content, documentation center, information 
-summary: ONTAP 9.8 以降を実行しているコントローラのアップグレードをサポートするために必要なリファレンスコンテンツおよび Web サイトは、「 system controller replace 」コマンドを使用して参照できます。 
+summary: ONTAP 9.5 を実行するコントローラのアップグレードをサポートするために必要なリファレンスコンテンツと Web サイトは、「 system controller replace 」コマンドを使用して提供されます。 
 ---
 = 参考資料
 :hardbreaks:

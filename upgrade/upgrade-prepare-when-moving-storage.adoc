@@ -168,3 +168,6 @@ NOTE: 「 ONTAP_version_image.tgz 」ファイルの内容を抽出する必要�
 
 
 ディレクトリ内の情報をに使用します link:upgrade-set-up-new-nodes.html["新しいノードをセットアップ"]。
+
+.次の手順
+アップグレードの準備後、link:upgrade-shutdown-remove-original-nodes.html["元のノードをシャットダウンする"]。

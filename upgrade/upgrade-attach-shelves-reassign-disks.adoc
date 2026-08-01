@@ -14,13 +14,19 @@ summary: ノード 1 とノード 2 に属していたディスクを、それ�
 ノード 1 とノード 2 に属していたディスクを、それぞれノード 3 とノード 4 に再割り当てする必要があります。
 
 .このタスクについて
-このセクションの手順は、 node3 と node4 で実行します。そのあと、 node3 の各手順を完了してから次の手順に進みます。
+このセクションの手順は、node3とnode4で実行します。次のステップに進む前に、node3、次にnode4で各ステップを完了してください。
 
+[[reassign-spare-disks-step1]]
 .手順
-. ノード1 /ノード2に接続していたシェルフのストレージシェルフケーブルをノード3 /ノード4に接続します。
+. 以前に接続されていたシェルフからストレージシェルフケーブルを接続します。
++
+** node1のケーブルをnode3に接続します。
+** node2のケーブルをnode4に接続します。
 +
 
-CAUTION: このアップグレード手順の実行中は、新しいシェルフをノード3 /ノード4に接続しないでください。コントローラのアップグレードが完了したら、新しいシェルフをシステムに無停止で接続できます。
+CAUTION: このアップグレード手順中は、node3またはnode4に新しいディスク シェルフを接続しないでください。コントローラーのアップグレードが完了したら、システムに新しいディスク シェルフを無停止で接続できます。
+
+
 
 . 電源装置とシェルフの物理的な接続を確認します。
 . node3 の LOADER プロンプトから、メンテナンスモードでブートします。
@@ -39,26 +45,38 @@ Local System ID: 101268854
 ...
 ----
 +
-以下の手順 4 で使用する node3 のシステム ID を記録します。
+node3のシステムIDを記録して、<<reassign-disks-and-aggregates,手順 5>>で使用します。
 
-. ノード 1 のスペアディスク、ルートアグリゲートに属するディスク、およびデータアグリゲートを再割り当てします。
+
+
+[[reassign-disks-and-aggregates]]
+. ディスクとデータアグリゲートを再割り当てします。
 +
-「ディスクの再割り当て -s _node1 _sysid _ -d _node3 _sysid _ -p _node2 _SysID_ 」
-
-+
---
-** パラメータ '_node1_sysid_' は ' 元のノードのシャットダウン _ で記録した値です link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["手順 5"]。
-** 共有ディスクが存在する場合にのみ '--p partner_SysID_' パラメータを指定します
-
-
-[NOTE]
+[role="tabbed-block"]
 ====
-node2 のスペアディスク、ルートアグリゲートに属するディスク、およびすべてのデータアグリゲートを再割り当てする場合、コマンドは次のようになります。
-
-「ディスクの再割り当て -s node2_sysid -d node4 sysid -p node3 _SysID 」
-
-====
+.ノード3に再割り当て
 --
+node1の予備ディスク、ルートアグリゲートに属するディスク、およびすべてのデータアグリゲートをnode3に再割り当てします：
+
+`disk reassign -s <node1_sysid> -d <node3_sysid> -p <node4_sysid>`
+
+** パラメータ `node1_sysid`は、_元のノードのシャットダウン_で記録した値です。link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["手順 5"]。
+** パラメータ `-p <node2_sysid>`は、共有ディスクが存在する場合にのみ指定してください。
+
+
+--
+.node4に再割り当て
+--
+node2の予備ディスク、ルートアグリゲートに属するディスク、およびすべてのデータアグリゲートをnode4に再割り当てします：
+
+`disk reassign -s <node2_sysid> -d <node4_sysid> -p <node3_sysid>`
+
+** パラメータ `node2_sysid`は、「元のノードのシャットダウン」で記録した値です。link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["手順 5"]。
+** パラメータ `-p <node3_sysid>`は、共有ディスクが存在する場合にのみ指定してください。
+
+
+--
+====
 +
 次のようなメッセージが表示されます。
 
@@ -100,8 +118,12 @@ Do you want to continue (y/n)? y
           aggr0 online          raid_dp, aggr         root
                                 64-bit
 ----
-. メンテナンスモードを終了します。
+. [[reassign-spare-disks-step9]]メンテナンスモードを終了します：
 +
 「 halt 」
 
+. node4 で<<reassign-spare-disks-step1,手順 1.>>から<<reassign-spare-disks-step9,手順 9>>を繰り返します。
 
+
+.次の手順
+ストレージシェルフを取り付け、ディスクの所有権を再割り当てした後、link:upgrade-restore-root-volume-config.html["ルートボリューム構成を復元する"]。

@@ -56,3 +56,6 @@ Override system id? {y|n} [n] y
 
 
 コントローラのアップグレードに失敗し、「rlib_port_ipspace _assign」というエラーメッセージが表示された場合は、交換用システムでHAポートとして使用されている元のシステムのネットワークポートのLIFをリバートして削除する必要があります。詳細については、を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/PANIC_%3A_rlib_port_ipspace_assign%3A_port_e0a_could_not_be_moved_to_HA_ipspace["こちらの技術情報アーティクル"^]。
+
+.次の手順
+ルートボリューム構成を復元した後、link:upgrade-complete.html["ストレージアップグレードのワークフローを完了する"]。

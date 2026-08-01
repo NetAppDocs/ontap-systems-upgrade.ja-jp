@@ -59,9 +59,9 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 | AFF C800用 | AFF C80用 
 |===
 +
-上記の表に記載されているアップグレードを実行するには、link:other_references.html["参考資料"] を参照して、_同じシャーシ内のコントローラモデルをアップグレードするための「system controller replace」コマンドの使用_にリンクしてください。
+上記の表に記載されているアップグレードを実行するには、link:other-references.html["参考資料"] を参照して、_同じシャーシ内のコントローラモデルをアップグレードするための「system controller replace」コマンドの使用_にリンクしてください。
 
-* MetroCluster FCまたはIP構成をアップグレードしています。MetroCluster構成をアップグレードするには、MetroClusterのアップグレードおよび拡張に関するドキュメント_へのリンクを参照してください link:other_references.html["参考資料"] 。
+* MetroCluster FCまたはIP構成をアップグレードしています。MetroCluster構成をアップグレードするには、link:other-references.html["参考資料"]を参照して、_MetroCluster Upgrade and Expansion documentation_にリンクしてください。
 
 
 
@@ -116,11 +116,11 @@ NOTE: この手順 では、NetApp Storage Encryption（NSE）、NetApp Volume E
 == 別のハードウェアアップグレード手順を選択する
 
 * link:../upgrade-arl/index.html["コントローラハードウェアのアップグレードに使用できる代替ARL方法を確認します"]です。
-* コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+* コントローラーのハードウェアをアップグレードする別の方法を希望し、ボリュームの移動を行う意思がある場合は、link:other-references.html["参考資料"]を参照して_ボリュームまたはストレージを移動してアップグレードする_にリンクしてください。
 
 
 .関連情報
-参照link:other_references.html["参考資料"] _ONTAP 9 ドキュメント_にリンクします。
+link:other-references.html["参考資料"]を参照して、_ONTAP 9 Documentation_にリンクしてください。
 
 .次の手順
 このARL手順を使用することを決定した後、link:required_tools_and_documentation.html["必要なツールとドキュメントについて学ぶ"]。

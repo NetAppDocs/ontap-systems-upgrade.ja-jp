@@ -12,6 +12,6 @@ link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide
 
 
 ====
-コントローラハードウェアを別の方法でアップグレードして、ボリュームの移動を希望する場合は、を参照してください link:other_references.html["参考資料"] をクリックして、ボリュームまたは storage _ を移動して _ Upgrade にリンクします。
+コントローラーのハードウェアをアップグレードする別の方法を希望し、ボリュームの移動を行う意思がある場合は、link:other-references.html["参考資料"]を参照して_ボリュームまたはストレージを移動してアップグレードする_にリンクしてください。
 
-を参照してください link:other_references.html["参考資料"] から ONTAP 9 ドキュメントセンターにリンクして、 ONTAP 9 製品ドキュメントにアクセスできます。
+link:other-references.html["参考資料"]を参照して、ONTAP 9 製品ドキュメントにアクセスできる _ONTAP 9 Documentation Center_ にリンクしてください。

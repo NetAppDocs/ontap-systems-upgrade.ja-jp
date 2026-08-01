@@ -48,7 +48,7 @@ node4 と node3 が別々のシャーシにある場合は、 node4 を node2 �
 . ノードモデルの _Installation and Setup Instructions _ の手順に従って、ノード 4 をラックに設置します。
 . [[man_install4_Step4]] ケーブルノード 4 を接続し、ノード 2 からノード 4 に接続を移動します。
 +
-次の参考資料は、適切なケーブル接続を行う場合に役立ちます。に進みます link:other_references.html["参考資料"] をクリックしてリンクします。
+以下の資料は、適切なケーブル接続を行うのに役立ちます。link:other-references.html["参考資料"]にアクセスして、リンクを参照してください。
 
 +
 ** node4プラットフォームのインストールとセットアップ手順

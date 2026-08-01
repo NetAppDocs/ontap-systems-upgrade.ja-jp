@@ -22,4 +22,4 @@ summary: 'ONTAP 9.5 を実行しているコントローラを "system controlle
 * No.2 プラスドライバ
 
 
-にアクセスします link:other_references.html["参考資料"] セクションでは、このアップグレードに必要な参照ドキュメントと参照サイトのリストを参照できます
+link:other-references.html["参考資料"]セクションに移動して、このアップグレードに必要な参照文書と参照サイトの一覧にアクセスしてください。

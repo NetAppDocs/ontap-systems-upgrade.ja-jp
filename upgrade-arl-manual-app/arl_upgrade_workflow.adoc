@@ -36,72 +36,31 @@ HAペア構成を利用して非ルートアグリゲートの所有権を再配
 
 image:arl_upgrade_manual_image1.PNG["ARL 手順の各ステージを示す図"]
 
-以下の表は、各段階の概要タスクと、各段階終了時点でのアグリゲートの所有権の状態を示しています。詳細な手順は、この手順の後半で説明します。
+各段階で実行する概要タスクと、各段階終了時点でのアグリゲート所有権の状態について説明します。詳細な手順は、この手順の後半で説明します。
 
-[cols="35,65"]
-|===
-| 段階 | 手順 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"]link:determine_aggregates_on_internal_drives.html["ステージ 1 ：アップグレードの準備"]
+[role="quick-margin-para"]
+ステージ1で必要に応じて、内部ディスクドライブにルートアグリゲートまたはデータアグリゲートが含まれていないことを確認し、ノードをアップグレードの準備をしてから、一連の事前確認を実行します。必要に応じて、ストレージ暗号化のためにディスクのキーを変更し、新しいコントローラをネットブートする準備を行います。
 
-
-| link:determine_aggregates_on_internal_drives.html["ステージ 1 ：アップグレードの準備"]  a| 
-ステージ1では、必要に応じて、内蔵ディスクドライブにルートアグリゲートまたはデータアグリゲートが含まれていないことを確認し、アップグレードのためにノードを準備し、事前チェックを実行します。必要に応じて、Storage Encryption用のディスクのキーを再設定し、新しいコントローラのネットブートの準備をします。
-
-ステージ 1 終了時のアグリゲートの所有権：
-
-* node1 は、 node1 アグリゲートのホーム所有者と現在の所有者です。
-* node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します。
-
-
-
-
-| link:relocate_non_root_aggr_node1_node2.html["ステージ 2 ： node1 を廃棄する"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"]link:relocate_non_root_aggr_node1_node2.html["ステージ 2 ： node1 を廃棄する"]
+[role="quick-margin-para"]
 ステージ2で、ルート以外のアグリゲートをノード1からノード2に再配置し、ノード1が所有するSAN以外のデータLIFを、障害アグリゲートまたは拒否アグリゲートを含めてノード2に移動します。また、手順 の後半で使用するために必要なノード1の情報を記録し、ノード1を撤去します。
 
-ステージ 2 終了時のアグリゲートの所有権：
-
-* node1 は、 node1 アグリゲートのホーム所有者です。
-* node2 には、 node1 アグリゲートの現在の所有者を指定します。
-* node2 には、 node2 アグリゲートのホーム所有者と現在の所有者を指定します。
-
-
-
-
-| link:install_boot_node3.html["ステージ 3 ：ノード 3 をインストールしてブートします"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]link:install_boot_node3.html["ステージ 3 ：ノード 3 をインストールしてブートします"]
+[role="quick-margin-para"]
 ステージ3では、node3をインストールして起動し、クラスターポートとノード管理ポートをnode1からnode3にマッピングします。NetApp Volume Encryption（NVE）を使用している場合は、キーマネージャの設定を復元します。次に、node1に属するデータLIFとSAN LIFをnode2からnode3に移動し、すべてのアグリゲートをnode2からnode3に再配置し、node2が所有するデータLIFとSAN LIFをnode3に移動します。
 
-ステージ 3 終了時のアグリゲートの所有権：
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."]link:record_node2_information.html["ステージ 4 ： node2 を廃棄する"]
+[role="quick-margin-para"]
+ステージ4で、あとで手順 で使用するために必要なnode2の情報を記録し、node2を撤去します。
 
-* node2 は node2 アグリゲートのホーム所有者ですが、現在の所有者ではありません。
-* node3 は、 node1 にもともと属していたアグリゲートのホーム所有者および現在の所有者です。
-* node2 には、ホームの所有者とホームの所有者ではなく、 node2 に属するアグリゲートの現在の所有者が指定されます。
-
-
-
-
-| link:record_node2_information.html["ステージ 4 ： node2 を廃棄する"]  a| 
-ステージ4で、あとで手順 で使用するために必要なnode2の情報を記録し、node2を撤去します。アグリゲートの所有権は変更されません。
-
-
-
-| link:install_boot_node4.html["ステージ 5 ：ノード 4 をインストールしてブートします"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"]link:install_boot_node4.html["ステージ 5 ：ノード 4 をインストールしてブートします"]
+[role="quick-margin-para"]
 ステージ5では、node4をインストールして起動し、クラスターポートとノード管理ポートをnode2からnode4にマッピングします。NetApp Volume Encryption（NVE）を使用している場合は、キーマネージャの設定を復元します。次に、node2に属するデータLIFとSAN LIFをnode3からnode4に移動し、node2のアグリゲートをnode3からnode4に再配置し、node2が所有するデータLIFとSAN LIFをnode3に移動します。
 
-ステージ 5 終了時のアグリゲートの所有権：
-
-* node3 は、 node1 に属していたアグリゲートのホーム所有者および現在の所有者です。
-* node4 は、 node2 に属していたアグリゲートのホーム所有者および現在の所有者です。
-
-
-
-
-| link:manage_authentication_kmip.html["ステージ 6 ：アップグレードを完了する"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"]link:manage_authentication_kmip.html["ステージ 6 ：アップグレードを完了する"]
+[role="quick-margin-para"]
 ステージ6では、新しいノードが正しくセットアップされていることを確認し、新しいノードで暗号化が有効になっている場合はストレージ暗号化またはNetApp Volume Encryptionをセットアップします。また、古いノードの運用を停止し、SnapMirror処理を再開する必要があります。
 
-
-NOTE: ストレージ仮想マシン（SVM）のディザスタリカバリ更新は、割り当てられたスケジュールに従って中断されません。
-
-アグリゲートの所有権は変更されません。
-
-|===
 .次の手順
 ARLアップグレードのワークフローを確認した後、link:guidelines_upgrade_with_arl.html["ARLを使用したコントローラのアップグレードに関するガイドラインを確認"]。

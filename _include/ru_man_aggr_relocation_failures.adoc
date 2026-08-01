@@ -27,7 +27,7 @@
 
 
 +
- `storage aggregate relocation start`、 `override-vetoes`、 `override-destination-checks`オプションの詳細については、link:other_references.html["参考資料"]を参照して_ONTAP 9 Command reference_にリンクしてください。
+ `storage aggregate relocation start`、 `override-vetoes`、 `override-destination-checks`オプションの詳細については、link:other-references.html["参考資料"]を参照して_ONTAP 9 Command reference_にリンクしてください。
 
 
 

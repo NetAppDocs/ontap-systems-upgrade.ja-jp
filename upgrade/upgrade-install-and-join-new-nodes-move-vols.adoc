@@ -40,4 +40,4 @@ http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30
 
 
 .次の手順
-link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html["Linux iSCSIホストを新しいノードに移動"]
+新しいノードをインストールして参加させた後、link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html["Linux iSCSI ホストを新しいノードに移動する"]。

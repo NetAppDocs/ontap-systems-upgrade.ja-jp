@@ -7,7 +7,7 @@
 .手順
 . テイクオーバーモード時に両方のノードの負荷に対応できるだけの十分なリソースが元の各ノードにあることを確認します。
 +
-HAペア管理_へのリンクを参照しlink:other_references.html["参考資料"]、HAペアの_ベストプラクティス_セクションに従ってください。元のノードのどちらも 50% 以上の利用率で実行しないでください。あるノードの利用率が 50% 未満の場合は、コントローラのアップグレード中に両方のノードの負荷を処理できます。
+link:other-references.html["参考資料"]を参照して「HAペア管理」にリンクし、「HAペアのベストプラクティス」セクションに従ってください。元のノードはどちらも使用率が50%を超えて稼働してはなりません。ノードの使用率が50%未満であれば、コントローラのアップグレード中に両方のノードの負荷を処理できます。
 
 . 元のノードのパフォーマンスベースラインを作成するには、次の手順を実行します。
 +
@@ -17,23 +17,23 @@ HAペア管理_へのリンクを参照しlink:other_references.html["参考資�
 ====
 診断ユーザアカウントは、簡単な診断だけを目的としています。テクニカルサポートから指示があった場合にのみ使用してください。
 
-ユーザアカウントのロック解除については、を参照してください link:other_references.html["参考資料"] をクリックして、 _System Administration Reference_( システム管理リファレンス ) にリンクします。
+ユーザーアカウントのロック解除については、link:other-references.html["参考資料"]を参照して『システム管理リファレンス』にアクセスしてください。
 
 ====
-.. を参照してください link:other_references.html["参考資料"] ネットアップサポートサイトへのリンクには、 Performance and Statistics Collector （ Perfstat Converged ）をダウンロードしてください。
+.. link:other-references.html["参考資料"]を参照して、NetApp Support Siteにアクセスし、パフォーマンスおよび統計コレクター（Perfstat Converged）をダウンロードしてください。
 +
 Perfstat Converged ツールを使用すると、アップグレード後に比較するためのパフォーマンスのベースラインを設定できます。
 
 .. ネットアップサポートサイトの手順に従ってパフォーマンスのベースラインを作成します。
 
 
-. を参照してください link:other_references.html["参考資料"] からネットアップサポートサイトにリンクして、ネットアップサポートサイトでサポートケースをオープンしてください。
+. link:other-references.html["参考資料"]を参照して、NetApp Support Siteにリンクし、NetApp Support Siteでサポートケースを開いてください。
 +
 アップグレード中に発生する可能性がある問題をケースで報告できます。
 
 . node3 と node4 の NVMEM または NVRAM バッテリが充電されていることを確認し、充電されていない場合は充電します。
 +
-node3 と node4 を物理的にチェックして、 NVMEM または NVRAM バッテリが充電されているかどうかを確認する必要があります。node3 と node4 のモデルの LED の詳細については、を参照してください link:other_references.html["参考資料"] Hardware Universe にリンクするには、次の手順を実行します。
+node3とnode4を物理的にチェックして、NVMEMまたはNVRAMバッテリーが充電済みであることを確認する必要があります。node3およびnode4のモデルのLEDに関する情報については、link:other-references.html["参考資料"]を参照して _Hardware Universe_ にアクセスしてください。
 
 +
 
@@ -41,7 +41,7 @@ WARNING: NVRAM の内容を消去しないでください。  NVRAMの内容を�
 
 . node3 と node4 にある ONTAP のバージョンを確認します。
 +
-新しいノードには、元のノードと同じバージョンの ONTAP 9.x がインストールされている必要があります。新しいノードに別のバージョンの ONTAP がインストールされている場合は、設置後に新しいコントローラをネットブートする必要があります。ONTAP のアップグレード方法については、を参照してください link:other_references.html["参考資料"] リンク先： ONTAP のアップグレード _ 。
+新しいノードには、元のノードにインストールされているものと同じバージョンの ONTAP 9.x がインストールされている必要があります。新しいノードに異なるバージョンの ONTAP がインストールされている場合は、インストール後に新しいコントローラをネットブートする必要があります。ONTAP のアップグレード方法については、link:other-references.html["参考資料"] を参照して _Upgrade ONTAP_ にリンクしてください。
 
 +
 node3 と node4 にある ONTAP のバージョンに関する情報は、梱包箱に含める必要があります。ONTAP のバージョンは、ノードがブートするとき、またはノードを保守モードでブートしてコマンドを実行するときに表示されます。
@@ -150,7 +150,7 @@ node1          node2          true     Connected to node2, Partial giveback
 node2          node1          true     Connected to node1
 ....
 +
-いずれかのノードが部分的なギブバック状態の場合は、 `storage failover giveback`コマンドを使用してギブバックを実行し、コマンドを使用してギブバック `storage failover show-giveback`が必要なアグリゲートがないことを確認します。コマンドの詳細については、「_HA pair management_」へのリンクを参照してlink:other_references.html["参考資料"]ください。
+どちらかのノードが部分的なギブバック状態にある場合は、 `storage failover giveback`コマンドを使用してギブバックを実行し、次に `storage failover show-giveback`コマンドを使用して、まだギブバックが必要なアグリゲートがないことを確認してください。コマンドの詳細については、link:other-references.html["参考資料"]を参照して _HA ペア管理_ にリンクしてください。
 
 . [man_prepare-to-downgrade 9] 現在の所有者（ホーム所有者ではない）であるアグリゲートを node1 と node2 のどちらも所有していないことを確認します。
 +
@@ -239,7 +239,7 @@ node1    None                None
 node2    None                None
 ....
 +
-見つからないディスクがある場合は、CLI_を使用したディスクへのリンクとアグリゲートの管理、CLI_を使用した論理ストレージの管理、および_HAペアのMANAGEMENT_を参照してlink:other_references.html["参考資料"]、HAペアのストレージを設定してください。
+ディスクが欠落している場合は、link:other-references.html["参考資料"]を参照して、_CLI を使用したディスクおよびアグリゲートの管理_、_CLI を使用した論理ストレージの管理_、および_HA ペアの管理_にリンクし、HA ペアのストレージを設定してください。
 
 . ノード 1 とノード 2 が正常に機能しており、クラスタへの参加条件を満たしていることを確認します。
 +
@@ -315,14 +315,14 @@ vs0
 network interface revert -vserver * -lif *
 
 +
- `network interface revert`コマンドの詳細については、link:other_references.html["参考資料"]を参照して_ONTAP 9 Command reference_にリンクしてください。
+ `network interface revert`コマンドの詳細については、link:other-references.html["参考資料"]を参照して_ONTAP 9 Command reference_にリンクしてください。
 
 . ノード 1 とノード 2 で障害ディスクが所有されているかどうかを確認します。
 +
 storage disk show -nodelist_node1、node2 _-broken
 
 +
-いずれかのディスクで障害が発生した場合は、 CLI での _Disk およびアグリゲートの管理の手順に従ってディスクを取り外します。を参照してください link:other_references.html["参考資料"] CLI を使用してディスクおよびアグリゲートの管理にリンクするには、を参照してください）。
+ディスクに障害が発生した場合は、『CLI を使用したディスクおよびアグリゲートの管理』の手順に従って、該当するディスクを取り外してください。（『CLI を使用したディスクおよびアグリゲートの管理』へのリンクは link:other-references.html["参考資料"] を参照してください。）
 
 . 次の手順を実行して node1 と node2 に関する情報を収集し、各コマンドの出力を記録します。
 

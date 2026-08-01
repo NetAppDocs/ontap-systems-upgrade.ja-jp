@@ -115,7 +115,7 @@ High Availability Configured: false
 「 cluster show 」を参照してください
 
 +
-ノード数が偶数のクラスタの場合は同票となる可能性があるため、 1 つのノードにイプシロンと呼ばれる追加の投票荷重が設定されます。を参照してください link:other_references.html["参考資料"] 詳細については ' を参照してください
+ノード数が偶数のクラスターでは同票になる可能性があるため、1つのノードにはイプシロンと呼ばれる追加の小数投票重みが与えられます。詳細については、_System Administration Reference_ へのリンクを参照するにはlink:other-references.html["参考資料"]を参照してください。
 
 +
 [NOTE]

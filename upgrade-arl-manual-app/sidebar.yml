@@ -111,4 +111,4 @@ entries:
   - title: アップグレード後に LIF が無効なポートに接続されています
     url: "/upgrade-arl-manual-app/lifs_invalid_ports_after_upgrade.html"
 - title: 参考資料
-  url: "/upgrade-arl-manual-app/other_references.html"
+  url: "/upgrade-arl-manual-app/other-references.html"

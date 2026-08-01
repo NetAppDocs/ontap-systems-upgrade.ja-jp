@@ -134,9 +134,9 @@ Do you want to continue? {y|n}: y
 system service-processor network modify -node _node_name _`
 
 +
-link:other_references.html["参考資料"]を参照して、SPに関する情報については_System Administration Reference_に、system `service-processor network modify`コマンドの詳細については_ONTAP 9 Command reference_にリンクしてください。
+link:other-references.html["参考資料"]を参照して、SPに関する情報については_System Administration Reference_に、system `service-processor network modify`コマンドの詳細については_ONTAP 9 Command reference_にリンクしてください。
 
-. 新しいノードにスイッチレスクラスタをセットアップする場合は、を参照してください link:other_references.html["参考資料"] ネットアップサポートサイトへのリンクを設定するには、 _ 2 ノードスイッチレスクラスタへの移行の手順に従ってください。
+. 新しいノードにスイッチレスクラスタを設定する場合は、link:other-references.html["参考資料"]を参照して_NetApp Support Site_にリンクし、_Transitioning to a two-node switchless cluster_の手順に従ってください。
 
 
 .完了後

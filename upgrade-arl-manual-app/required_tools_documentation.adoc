@@ -22,7 +22,7 @@ summary: ONTAP 9.8 以降を実行しているコントローラで ARL を手�
 * No.2 プラスドライバ
 
 
-にアクセスします link:other_references.html["参考資料"] セクションをクリックして、このアップグレードに必要な参照ドキュメントのリストにアクセスします。
+link:other-references.html["参考資料"]セクションに移動して、このアップグレードに必要な参考資料の一覧にアクセスしてください。
 
 .次の手順
 必要なツールとドキュメントを確認した後、link:worksheet_information_before_during_upgrade.html["アップグレード時に使用するため、元のノード情報を記録する"]。

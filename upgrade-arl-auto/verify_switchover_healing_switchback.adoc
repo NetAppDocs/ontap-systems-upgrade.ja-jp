@@ -16,4 +16,4 @@ summary: 'ONTAP 9.5 を実行しているコントローラを 9.7 にアップ�
 [role="lead"]
 MetroCluster 構成のスイッチオーバー、修復、スイッチバックの処理を検証する必要があります。
 
-を参照してください link:other_references.html["参考資料"] MetroCluster の管理とディザスタリカバリのコンテンツにリンクし、ネゴシエートスイッチオーバー、修復、スイッチバックについて記載された手順を使用するには、次の手順を実行します。
+link:other-references.html["参考資料"]を参照して、_MetroCluster Management and Disaster Recovery_ コンテンツにリンクし、ネゴシエートスイッチオーバー、修復、およびスイッチバックに関する手順を使用してください。

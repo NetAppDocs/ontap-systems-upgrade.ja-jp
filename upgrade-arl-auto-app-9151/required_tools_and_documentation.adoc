@@ -22,7 +22,7 @@ summary: 'ONTAP 9.15.1以降で導入されたコントローラーを `system c
 * No.2 プラスドライバ
 
 
-にアクセスします link:other_references.html["参考資料"] セクションでは、このアップグレードに必要な参照ドキュメントと参照サイトのリストを参照できます
+link:other-references.html["参考資料"]セクションに移動して、このアップグレードに必要な参照文書と参照サイトの一覧にアクセスしてください。
 
 .次の手順
 必要なツールとドキュメントを確認した後、link:guidelines_for_upgrading_controllers_with_arl.html["ARLを使用したコントローラのアップグレードに関するガイドラインについて説明します"]。
