@@ -47,10 +47,7 @@ Local System ID: 101268854
 +
 node3のシステムIDを記録して、<<reassign-disks-and-aggregates,手順 5>>で使用します。
 
-
-
-[[reassign-disks-and-aggregates]]
-. ディスクとデータアグリゲートを再割り当てします。
+. [[reassign-disks-and-aggregates]]ディスクとデータアグリゲートを再割り当てします：
 +
 [role="tabbed-block"]
 ====

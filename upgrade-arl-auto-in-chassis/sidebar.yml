@@ -29,7 +29,7 @@ entries:
     url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html"
   - title: ノード 1 を撤去
     url: "/upgrade-arl-auto-in-chassis/retire-node1.html"
-  - title: ノード1のシステムモジュールを交換します
+  - title: node1のシステムモジュールを交換する
     entries:
     - title: AFF A250またはAFF C250の交換
       url: "/upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html"

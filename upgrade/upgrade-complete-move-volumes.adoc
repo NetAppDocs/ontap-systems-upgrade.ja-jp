@@ -2,7 +2,7 @@
 permalink: upgrade/upgrade-complete-move-volumes.html 
 sidebar: sidebar 
 keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade 
-summary: ボリュームを移動することでアップグレードの手順を完了するには、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは NCA ポートを設定する必要がある場合もあります。 
+summary: ボリュームを移動することでアップグレードを実行するには、サービス プロセッサ（SP）を設定し、新しいライセンスをインストールし、AutoSupportを設定する必要があります。また、ストレージまたはボリュームの暗号化を設定し、FCポートまたはNCAポートを設定する必要がある場合もあります。 
 ---
 = ボリューム移動のアップグレードを完了する
 :allow-uri-read: 

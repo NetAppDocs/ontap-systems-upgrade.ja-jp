@@ -2,7 +2,7 @@
 permalink: upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html 
 sidebar: sidebar 
 keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, port, lif, re-enable, service, processor, sp, license, autosupport, fc, cna, por, perform final upgrade steps in ontap 9.7 or earlier 
-summary: ストレージを移動することでアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。 
+summary: ストレージを移動することでアップグレードを実行するには、新しいノードから未使用のポートとLIFを削除し、ストレージ フェイルオーバーまたはハイアベイラビリティを再度有効にし、サービス プロセッサ（SP）を設定し、新しいライセンスをインストールし、AutoSupportを設定する必要があります。また、ストレージまたはボリュームの暗号化を設定し、FCポートまたはCNAポートを設定する必要がある場合もあります。 
 ---
 = ONTAP 9.7 以前で最終アップグレード手順を実行します
 :allow-uri-read: 

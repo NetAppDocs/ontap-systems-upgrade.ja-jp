@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual/set_fc_uta_uta2_config_node4.html 
-keywords: fc configuration, uta configuration, uta2 configuration, configure FC ports, uta/uta2 card, node4, target, adapter, ports 
-summary: ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に、ノード 4 のオンボード FC ポート、 UTA / UTA2 ポート、または UTA / UTA2 カードを設定します。 
+keywords: fc configuration, uta configuration, uta2 configuration, configure FC ports, uta, uta2 card, node4, target, adapter, ports 
+summary: ONTAP 9.7以前を実行しているコントローラーで手動ARLアップグレードを実行する際に、node4のオンボードFCポート、UTAおよびUTA2ポート、またはUTAおよびUTA2カードを設定します。 
 ---
 = ノード 4 で FC または UTA / UTA2 設定を設定します
 :hardbreaks:

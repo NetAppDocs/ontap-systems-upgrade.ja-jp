@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/reassign-node2-disks-to-node4.html 
-keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA/UTA2 card, node4, target, adapter, ports 
-summary: 'ONTAP 9.5 を実行しているコントローラを "system controller replace" コマンドを使用して 9.7 にアップグレードする場合は "node4 オンボード FC ポート "UTA/UTA2 ポート " または UTA/UTA2 カードを設定します' 
+keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA, UTA2 card, node4, target, adapter, ports 
+summary: system controller replace コマンドを使用して ONTAP 9.5 から 9.7 を実行するコントローラーをアップグレードする際に、node4 のオンボード FC ポート、UTA および UTA2 ポート、または UTA および UTA2 カードを設定します。 
 ---
 = ノード2のディスクをノード4に再割り当てします。
 :hardbreaks:

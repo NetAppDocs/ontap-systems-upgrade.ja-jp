@@ -900,7 +900,6 @@
   <block id="a0783764f121d0362f984f57649b230b" category="paragraph">ONTAP 9.0 以降</block>
   <block id="ed3f2da4177cc35b1433eccf1a2e9b37" category="paragraph">ONTAP 9.0 より前のリリース</block>
   <block id="8f2f5cebfa6b4e869a159dbf3cedb773" category="inline-link">使用しているバージョンの Data ONTAP 8 に対する『クラスタの拡張エクスプレスガイド』を検索してください</block>
-  <block id="2f22c527d871517945ac34102d2f6931" category="summary">ストレージを移動することでアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。</block>
   <block id="5112ce36807c8e031c9ab063bc28ce71" category="doc">ONTAP 9.7 以前で最終アップグレード手順を実行します</block>
   <block id="83e8f1a7c1a2c10d90059989f69becc7" category="list-text">ストレージシステムのプロンプトで、 LIF に関する情報を表示します。</block>
   <block id="de11c3d9da699c5b0528297ad39e25cb" category="list-text">新しいノードから未使用のポートを削除します（ advanced 権限レベル）。</block>
@@ -1062,7 +1061,6 @@
   <block id="6532a36b400d423741e990e7bfb3a4f9" category="paragraph">「 storage encryption disk modify 」</block>
   <block id="e7a03543f0b46d4d160d9cb6f548c923" category="list-text">現在のクラスタが 2 ノードのスイッチレス構成である場合は、希望するタイプのスイッチを使用する 2 ノードのスイッチクラスタに移行します。</block>
   <block id="a20d9980e43b578ea10896a930345b17" category="list-text">元の各ノードから AutoSupport メッセージを送信して、テクニカルサポートにアップグレードについて通知します。</block>
-  <block id="4d3a4f006fa6b11c769a39a41cac5793" category="summary">ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。</block>
   <block id="de87a7c00dcfcf1112ca50efd583f924" category="paragraph">ストレージを移動してアップグレードの手順を完了するには、新しいノードから未使用のポートと LIF を削除し、ストレージフェイルオーバーまたはハイアベイラビリティを再度有効にし、サービスプロセッサ（ SP ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは CNA ポートを設定する必要がある場合もあります。</block>
   <block id="0bde8f7cae6f7006cf8059b9d923c0a4" category="inline-xref-macro">ONTAP 9.7 以前で最終アップグレード手順を実行します</block>
   <block id="602dfb74c3c65622a6e81f6da6da5716" category="paragraph">高可用性を再度有効にします : 「 cluster ha modify -configured true</block>
@@ -1096,7 +1094,6 @@
   <block id="21694d70fa63b61a0a68e7a39cc96e19" category="paragraph">ディレクトリの一覧に次のファイルが表示されます。</block>
   <block id="00296cd0500c321060de54661554739a" category="paragraph">「 ONTAP_version_image.tgz 」</block>
   <block id="0caecd7c9276edc19599cb97a20eac4d" category="admonition">「 ONTAP_version_image.tgz 」ファイルの内容を抽出する必要はありません。</block>
-  <block id="c9b87fd8826330d02eb0f7e03c49023c" category="summary">ボリュームを移動することでアップグレードの手順を完了するには、サービスプロセッサ \ （ sp\ ）を設定し、新しいライセンスをインストールし、 AutoSupport をセットアップする必要があります。また、ストレージまたはボリュームの暗号化を設定し、 FC ポートまたは NCA ポートを設定する必要がある場合もあります。</block>
   <block id="d01decedde31fd5fc9aee34a816e3a84" category="paragraph">「 system node AutoSupport invoke -node node_name -type all -message 」 node_name が platform_old から platform_new にアップグレードされました</block>
   <block id="533d1f26c154725c9c91afdd1b89aaa4" category="list-text">[ インストール済みシステム ] ページで、フォームに古いシステムのシリアル番号を入力し、 [* Go!] をクリックします</block>
   <block id="44e9f0c666ea054f51421040e37dee98" category="summary">元のノードからボリュームを移動したら、 SAN 以外のデータ LIF とクラスタ管理 LIF を元のノードから新しいノードに移行する必要があります。</block>
@@ -2499,7 +2496,6 @@
   <block id="1565fea61c4b7c7821ea0d9a5ab00d22" category="summary">ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに 'system controller replace' コマンドを使用して ' 一般的な構成エラーがないかどうかを確認するには ' Config Advisor ツールを使用します</block>
   <block id="23826189d4179acfb46645b446f69080" category="summary">ONTAP 9.8 以降を実行しているコントローラをアップグレードするには 'system controller replace' コマンドを使用して ' 特定のツールとマニュアルを用意する必要があります</block>
   <block id="f8ed537bd19062002074276a187e6a78" category="summary">ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに 'system controller replace' コマンドを使用して 'node3 にある node2 の NAS データ LIF が node3 から node4 に再配置されていることを確認します</block>
-  <block id="bc8355e3ba73925a2f4cf661fa66be6a" category="summary">ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに 'system controller replace' コマンドを使用して 'node4 のオンボード FC ポート 'UTA/UTA2 ポート ' または UTA/UTA2 カードを設定します</block>
   <block id="48ec3f88b1540532a71a1bff492cf63b" category="summary">ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに 'system controller replace' コマンドを使用して 'node2 で HA ペアを無効にし 'node1 をシャットダウンします</block>
   <block id="08ff55c299fd8105ff1d7a024f588b9a" category="summary">ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに 'system controller replace' コマンドを使用して ' オンボード FC ポート 'UTA/UTA2 ポート ' または UTA/UTA2 カードをノード 3 に設定します</block>
   <block id="19742459913bf455e1f34dbda6e44b09" category="summary">ONTAP 9.8 以降を実行しているコントローラをアップグレードできるかどうかを確認するには 'system controller replace' コマンドを使用します</block>
@@ -2514,7 +2510,6 @@
   <block id="16285c696d110c3e6ece1092e2680d1b" category="paragraph">node4 のインストールとブートの完了後、正しくインストールされていること、クラスタの一部であること、および node3 と通信できることを確認する必要があります。</block>
   <block id="de6503b8a7fac41c2c9719a0c8144a9a" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、 SnapMirror 転送と SnapMirror 関係を再開します。</block>
   <block id="db3f9fca63856b4feb30f923ab1bd250" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードしたときに発生する可能性があるアグリゲートの再配置エラーのトラブルシューティングを行います。</block>
-  <block id="92f11749596b34888281bb0c579c2d25" category="summary">ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする際に、ノード 4 のオンボード FC ポート、 UTA / UTA2 ポート、または UTA / UTA2 カードを設定します。</block>
   <block id="00b7688be7e2c70e950c77f4946b4705" category="summary">ONTAP 9.8 以降を実行しているコントローラで ARL を手動でアップグレードする場合は、ノード 1 のクラスタネットワーク、管理、 FC ポート、および NVRAM システム ID に関する情報を記録します。</block>
   <block id="15d41a5d0f00f256b9567a9663dd77a0" category="paragraph">node2 から node3 にアグリゲートを再配置する前に、 node2 に現在ある node1 に属する NAS データ LIF を node2 から node3 に移動する必要があります。ノード 3 の SAN LIF も確認する必要があります。</block>
   <block id="a54f5c2e2731f201663a2d288e5fec98" category="summary">ONTAP 9.8 以降を実行しているコントローラで、 ARL を手動でアップグレードする際に、 node1 の物理ポートが node3 に正しくマッピングされていることを確認します。</block>
@@ -2618,7 +2613,6 @@
   <block id="6e221a4092f4a8a2601852d703a03630" category="admonition">リンク速度が元のポートと同じポートに SAN LIF を移動していることを確認する必要があります。</block>
   <block id="31185fb85292c7e722f79c9b5cb9cdde" category="paragraph">ノード 3 のインストールを確認し、 node2 から node3 にアグリゲートを再配置する前に、 node2 に現在あるノード 2 に属する NAS データ LIF を node2 から node3 に移動する必要があります。また、ノード 3 に SAN LIF が存在することも確認する必要があります。</block>
   <block id="0baae1538e3c38431027896976d50f54" category="admonition">SAN LIF を、元のポートとリンク速度が同じポートに移動したことを確認する必要があります。</block>
-  <block id="7625a2790853e03d706fd2e8a29fb7ba" category="summary">ONTAP 9.5 を実行しているコントローラを 'system controller replace' コマンドを使用して 9.7 にアップグレードする場合は 'node4 オンボード FC ポート 'UTA/UTA2 ポート ' または UTA/UTA2 カードを設定します</block>
   <block id="3ab0e6df482466ba6428f0535b2e2564" category="summary">ONTAP 9.5 を実行しているコントローラを 'system controller replace' コマンドを使用して 9.7 にアップグレードする場合は 'node2 で HA ペアを無効にし 'node1 をシャットダウンします</block>
   <block id="1609725c89da712556fac3c5249a458a" category="summary">ONTAP 9.5 を実行しているコントローラを 'system controller replace' コマンドを使用して 9.7 にアップグレードする場合は ' オンボード FC ポート 'UTA/UTA2 ポート ' または UTA/UTA2 カードを node3 に設定します</block>
   <block id="e9dcea61d06851c722ca01cdb7268d58" category="summary">ONTAP 9.5 を実行しているコントローラを 'system controller replace' コマンドを使用して 9.7 にアップグレードできるかどうかを理解します</block>
@@ -2632,7 +2626,6 @@
   <block id="054dcc71a9397a2cddfbf9b907aea5ed" category="summary">ONTAP 9.7 以前を実行しているコントローラで、 ARL を手動でアップグレードする際に、ノード 4 のインストールとノード 3 との通信を確認します。</block>
   <block id="0e472afa239c2cd65ab6d08bdaa80dff" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、 SnapMirror 転送と関係を再開します。</block>
   <block id="b4828d73e6a54a557f1d9c688f9afada" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に発生する可能性があるアグリゲートの再配置エラーのトラブルシューティングを行います。</block>
-  <block id="8dc470d3ebc8fcb9ed95d55471e7303a" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする際に、ノード 4 のオンボード FC ポート、 UTA / UTA2 ポート、または UTA / UTA2 カードを設定します。</block>
   <block id="2dc65c1b8b8821ab351c5b9fd3ab2b97" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、ノード 1 のクラスタネットワーク、管理、 FC ポート、および NVRAM システム ID に関する情報を記録します。</block>
   <block id="04a9af523510dc4b38fa46c583f9e00f" category="paragraph">ノード 3 のインストールを確認し、 node2 から node3 にアグリゲートを再配置する前に、 node2 に現在あるノード 2 に属する NAS データ LIF を node2 から node3 に移動する必要があります。ノード 3 の SAN LIF も確認する必要があります。</block>
   <block id="05743303a73462ef6d9bbfd30ac4d38e" category="summary">ONTAP 9.7 以前を実行しているコントローラで ARL を手動でアップグレードする場合は、 node1 の物理ポートが node3 に正しくマッピングされていることを確認します。</block>
@@ -3408,7 +3401,6 @@
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">ARLを使用して同じシャーシのコントローラモデルをアップグレードする場合は、必要に応じてアップグレード後のnode1でキー管理ツールの設定をリストアします。</block>
   <block id="f41084761f1192d11c824e139538a13d" category="summary">ARLを使用して同じシャーシ内のコントローラモデルをアップグレードする場合は、必要に応じてストレージ暗号化を設定し、SSL証明書をインストールし、キー管理サーバをセットアップします。</block>
-  <block id="82896d30ec8a78dd386c091a8c2121e6" category="inline-link-macro">ノード1のシステムモジュールを交換します</block>
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">アップグレードを開始する前に、同じシャーシ内のコントローラモデルをアップグレードするための正しいハードウェアがあることを確認してください。</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">コントローラモジュール×2</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">2台のコントローラと2台のNVRAMモジュール</block>
@@ -5483,7 +5475,6 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="d14ed5362debdfbe14cf14c4dcedb45e" category="list-text">node2のケーブルをnode4に接続します。</block>
   <block id="8ada17b153e1b3f1e2dd2eacad90b1e5" category="admonition">このアップグレード手順中は、node3またはnode4に新しいディスク シェルフを接続しないでください。コントローラーのアップグレードが完了したら、システムに新しいディスク シェルフを無停止で接続できます。</block>
   <block id="091cb162e71110eda2cc11ee235e5a9c" category="paragraph">node3のシステムIDを記録して、<block ref="3cda7ea9d16e86f3996fa25936d101de" category="inline-xref-macro-rx"></block>で使用します。</block>
-  <block id="c27d8f687453de71fe99b9638caaee93" category="list-text">ディスクとデータアグリゲートを再割り当てします。</block>
   <block id="576404acc1d2c468d9604cd99464b3e9" category="open-title">ノード3に再割り当て</block>
   <block id="19c7bb430e4d1bead9d5461984527c74" category="paragraph">node1の予備ディスク、ルートアグリゲートに属するディスク、およびすべてのデータアグリゲートをnode3に再割り当てします：</block>
   <block id="9e1eb9f52027541a9bd23e4f05a40757" category="paragraph"><block ref="3e85ddaa3eb6367e1aff5787943cd287" prefix="" category="inline-code"></block></block>
@@ -5592,4 +5583,12 @@ ONTAP 9.8以降では<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " ca
   <block id="7a5a00d513b1d27412425615c75af559" category="list-text">ONTAP 9.7 以前を実行している MetroCluster 構成については、<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block> にアクセスして、_アグリゲート再配置を使用した ONTAP 9.7 以前を実行するコントローラ ハードウェアの手動アップグレード_ へのリンクを参照してください。</block>
   <block id="2b661462fc016dd9ae9c124f189c3cb4" category="list-text">MetroCluster IP構成、およびファブリックMetroCluster構成の追加のアップグレード オプションについては、<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>にアクセスして、『MetroCluster Upgrade and Expansion』コンテンツへのリンクを参照してください。</block>
   <block id="217f0692dd6e3dd9e6ae89ae211d2e5e" category="sidebar">ステージ5．node2交換システムモジュールのインストール</block>
+  <block id="05de9e82bcc80e2e8396f0e503d037fd" category="list-text">[[reassign-disks-and-aggregates]]ディスクとデータアグリゲートを再割り当てします：</block>
+  <block id="dcb35290a699d5cd152b36befe0de1e2" category="summary">ボリュームを移動することでアップグレードを実行するには、サービス プロセッサ（SP）を設定し、新しいライセンスをインストールし、AutoSupportを設定する必要があります。また、ストレージまたはボリュームの暗号化を設定し、FCポートまたはNCAポートを設定する必要がある場合もあります。</block>
+  <block id="c4d0156d9500edcd23bba4f179a52fa7" category="summary">ストレージを移動することでアップグレードを実行するには、新しいノードから未使用のポートとLIFを削除し、ストレージ フェイルオーバーまたはハイアベイラビリティを再度有効にし、サービス プロセッサ（SP）を設定し、新しいライセンスをインストールし、AutoSupportを設定する必要があります。また、ストレージまたはボリュームの暗号化を設定し、FCポートまたはCNAポートを設定する必要がある場合もあります。</block>
+  <block id="aba8d067afe2b03d0a12cd1327ec564a" category="summary">system controller replace コマンドを使用して ONTAP 9.5 から 9.7 を実行するコントローラーをアップグレードする際に、node4 のオンボード FC ポート、UTA および UTA2 ポート、または UTA および UTA2 カードを設定します。</block>
+  <block id="6d20cbcee6958032c968a7b309bba444" category="summary">system controller replace コマンドを使用して ONTAP 9.8 以降を実行しているコントローラをアップグレードする際に、node4 のオンボード FC ポート、UTA および UTA2 ポート、または UTA および UTA2 カードを設定します。</block>
+  <block id="298812a1d89c69933bb37fd82a6a5814" category="summary">ONTAP 9.7以前を実行しているコントローラーで手動ARLアップグレードを実行する際に、node4のオンボードFCポート、UTAおよびUTA2ポート、またはUTAおよびUTA2カードを設定します。</block>
+  <block id="db5d818f482843c95ffb191e7d48c35e" category="summary">ONTAP 9.8以降を実行しているコントローラーの手動ARLアップグレード中に、node4オンボードFCポート、UTAおよびUTA2ポート、またはUTAおよびUTA2カードを設定します。</block>
+  <block id="1d1d3bd3fe7acd738c89cf279d744e1b" category="sidebar">node1のシステムモジュールを交換する</block>
 </blocks>

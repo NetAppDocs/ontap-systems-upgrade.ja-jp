@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/set_fc_or_uta_uta2_config_node4.html 
-keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA/UTA2 card, node4, target, adapter, ports 
-summary: 'ONTAP 9.8 以降を実行しているコントローラをアップグレードするときに "system controller replace" コマンドを使用して "node4 のオンボード FC ポート "UTA/UTA2 ポート " または UTA/UTA2 カードを設定します' 
+keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA, UTA2 card, node4, target, adapter, ports 
+summary: system controller replace コマンドを使用して ONTAP 9.8 以降を実行しているコントローラをアップグレードする際に、node4 のオンボード FC ポート、UTA および UTA2 ポート、または UTA および UTA2 カードを設定します。 
 ---
 = ノード 4 で FC または UTA / UTA2 設定を設定します
 :hardbreaks:
