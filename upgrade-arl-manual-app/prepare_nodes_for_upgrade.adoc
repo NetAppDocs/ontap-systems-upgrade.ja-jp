@@ -173,7 +173,7 @@ node1もnode2も、自身が現在の所有者である（ただし、ホーム�
 
 +
 ....
-cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,homename,state
+cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,home-name,state
 There are no entries matching your query.
 ....
 +
