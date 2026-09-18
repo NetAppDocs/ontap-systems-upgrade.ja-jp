@@ -18,8 +18,8 @@ NOTE: ASA R2交換システムへのASAアップグレードはサポートさ�
 
 
 
-[[which-upgrade-procedure-should-i-use]]
-== どのアップグレード手順を使用すればよいですか?
+[[step-1-select-the-correct-upgrade-procedure]]
+== ステップ 1：適切なアップグレード手順を選択する
 
 適切なアップグレード手順を選択するには、下の表に記載されているすべての質問を確認してください。
 
@@ -68,10 +68,24 @@ ARL は交換手順です。新しいノードを使用してクラスターを�
 | 統合システムがあり、既存のシャーシとディスクを維持しながら、コントローラー モジュールのみを交換してアップグレードしたいと考えていますか? | link:upgrade-arl-auto-in-chassis/index.html["ARL を使用して、同じシャーシ、ディスク、およびディスクに保存されているデータを維持しながらアップグレードします"]。 
 
 
+| MetroCluster構成をアップグレードしていますか? | 参照link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 構成をアップグレード、更新、または拡張します"^]。 
+|===
+
+
+[[step-2-prepare-for-the-upgrade]]
+== ステップ2：アップグレードの準備
+
+アップグレード手順を開始する前に、以下の表に記載されているすべての質問を確認してください。
+
+[cols="30,70"]
+|===
+| 自分自身に問いかけてみましょう… | お客様の回答が「はい」の場合は、これを実行する必要があります… 
+
+
 | SVM を再配置していますか? | 参照link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow["SVMのデータ移動 - 概要"^]。 
 
 
-| MetroCluster構成をアップグレードしていますか? | 参照link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 構成をアップグレード、更新、または拡張します"^]。 
+| 元のシステムのクラスタにFC SAN構成は存在しますか？ | 元のシステムと交換システムの両方のすべてのノードについて、SAN ゾーニング設定を検証します。link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html["ONTAPシステムによるFCおよびFCoEゾーニングについて学習します"^]およびlink:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html["ONTAPシステムに推奨されるFCおよびFCoEゾーニング設定"^]を参照してください。 
 
 
 | 個々のコンポーネントを交換するのですか? | 参照link:https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAPハードウェアシステムのドキュメント"^]そのコンポーネントのフィールド交換可能ユニット (FRU) のチラシを見つけます。 
@@ -88,7 +102,7 @@ ARL は交換手順です。新しいノードを使用してクラスターを�
 | 質問 | 回答例 
 
 
-| 元のノードと新しいノードで異なるソフトウェア バージョンを実行していますか? | いいえFAS9500と FAS90 はどちらもONTAP 9.15.1 を実行します。 
+| 元のノードと新しいノードで異なるソフトウェア バージョンを実行していますか? | いいえ。FAS9500 と FAS90 はどちらも ONTAP 9.17.1 を実行します。 
 
 
 | 中断を伴うアップグレードを実行しますか? | いいえ。アップグレード中も実稼働環境をオンラインのままにしておきたいのです。 
@@ -110,6 +124,9 @@ ARL は交換手順です。新しいノードを使用してクラスターを�
 
 
 | MetroCluster構成をアップグレードしていますか? | いいえ。これは標準の HA ペア クラスタです。 
+
+
+| 元のシステムのクラスタにFC SAN構成は存在しますか？ | はい。元のシステムと交換システムの両方の全ノードで、SAN ゾーニング設定を検証しました。 
 
 
 | 個々のコンポーネントを交換するのですか? | いいえ。コントローラーシステム全体をアップグレードしています。 
