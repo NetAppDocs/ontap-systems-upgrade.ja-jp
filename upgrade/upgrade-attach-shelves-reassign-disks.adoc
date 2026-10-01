@@ -58,7 +58,7 @@ node1の予備ディスク、ルートアグリゲートに属するディスク
 `disk reassign -s <node1_sysid> -d <node3_sysid> -p <node4_sysid>`
 
 ** パラメータ `node1_sysid`は、_元のノードのシャットダウン_で記録した値です。link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["手順 5"]。
-** パラメータ `-p <node2_sysid>`は、共有ディスクが存在する場合にのみ指定してください。
+** パラメータ `-p <node4_sysid>`は、共有ディスクが存在する場合にのみ指定してください。
 
 
 --
