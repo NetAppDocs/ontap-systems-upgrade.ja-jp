@@ -48,19 +48,19 @@ cluster show -node node1 -fields health`
 --
 node1 が自動的にクォーラムに参加しない場合:
 
-.. ポート e1a と e1b の IPspace を確認します。
+.. link:https://docs.netapp.com/us-en/ontap-systems/index.html["node1クラスタポートを確認します"^]次に、node1クラスタポートのIPspaceを確認します：
 +
 「 network port show 」のように表示されます
 
-.. IPspace が「Cluster」でない場合は、e1a と e1b の IPspace を「Cluster」に変更します。
+.. IPspaceが「Cluster」でない場合は、node1のクラスタポートでIPspaceを「Cluster」に変更してください：
 +
 `network port modify -node <node_name> -port <port> -ipspace Cluster`
 
-.. ポート e1a と e1b の IPspace が「Cluster」であることを確認します。
+.. node1クラスタポートのIPspaceが「Cluster」であることを確認してください：
 +
 「 network port show 」のように表示されます
 
-.. ノード1のクラスタLIFをe1aとe1bに移行します。
+.. node1クラスタのLIFをnode1クラスタのポートに移行します：
 +
 `network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
 
